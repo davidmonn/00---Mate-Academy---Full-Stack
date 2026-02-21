@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Variável const</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,44 +12,72 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">Aula Anterior - </a>
+        <a class="back" href="../05_expressoes/index.html">Aula Anterior - Expressões</a>
     </div>
     
     <main>
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">Variável const</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Aqui iremos entender um pouco melhor o funcionamento da variável <strong>const</strong>.
             </p>
 
         </article>
 
         <article class="conteudo">
 
-            <h3 class="cont-title"></h3>
+            <h3 class="cont-title">let</h3>
             <p>
-
+                São variáveis que podem sofrer alterações ao longo do nosso programa. Um exemplo seria:
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/variavel_let.png" alt="Variável let">
+                </picture>
+            </figure>
+            <p>
+                Dessa forma, mesmo que nossa primeira variável <strong>meuDinheiro</strong> tenha como valor 15, ele foi <strong>atribuído</strong> para 11 usando a mesma variável.
             </p>
 
+            <h3 class="separado">Entendendo variável</h3>
+            <p>
+                Para entendermos melhor, iremos explicar utilizando o código da primeira aula:
+            </p>
+            <figure>
+                <picture><img src="assets/imgs/exemplo.png" alt="Exemplo"></picture>
+            </figure>
+
+            <p class="junto">
+                Nesse código, podemos fazer algumas melhorias, como por exemplo: ao invés de usarmos a <strong>variável troco</strong>, podemos usar a própria variável <strong>meuDinheiro</strong>.
+            </p>
+            <figure>
+                <picture><img src="assets/imgs/updateCode.png" alt="Melhorando código"></picture>
+            </figure>
+            <p>
+                Nesse caso, o que houve foi que, ao usar a variável <strong>meuDinheiro</strong>, o valor foi reatribuído após a execução da expressão com a variável <strong>coxinha</strong>.
+            </p>
+
+            <h3 class="junto">const</h3>
+            <p>
+                São variáveis que não podem ser alteradas, tendo seu valor fixo. Se tentássemos fazer o mesmo, nosso código geraria um erro.
+            </p>
+            
         </article>
 
         <article class="conc">
             
-            <h3 class="cont-title">Exemplo usado em nosso código:</h3>
-            
-
         </article>
         
-         <!-- <h1>Testes JS se necessário</h1>
-        <script src="assets/js/jscript.js"></script> -->
+         <br><br><br>
+        <script src="assets/js/jscript.js"></script>
     </main>
 
     <div class="next">
-        <a class="next" href="../">Próxima Aula - </a>
+        <a class="next" href="../07_print_e_console/index.html">Próxima Aula - Print e Console</a>
     </div>
 
 </body>

@@ -1,0 +1,135 @@
+:root {
+    --bdColor: rgba(128, 0, 128, 0.813);
+    --mnColor: aqua;
+}
+
+/* Inter normal */
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/InterTwo/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+/* Inter italic */
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/InterTwo/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+}
+
+/* Bungee */
+@font-face {
+    font-family: 'Bungee';
+    src: url('../fonts/Bungee/Bungee-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bdColor);
+    font-family: 'Inter', sans-serif;
+    padding: 30px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 30px 40px 30px;
+    border-radius: 12px;
+    width: 75%;
+    margin: auto;
+    background-color: var(--mnColor);
+}
+
+#title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    font-weight: bolder;
+    font-size: 42px;
+    font-family: 'Bungee', sans-serif;
+}
+
+.intro {
+    display: flex;
+    text-indent: 40px;
+    padding: 25px;
+    flex-direction: column;
+    margin: auto;
+    font-size: 36px;
+}
+
+.next {
+    display: block;
+    text-align: right;
+    margin-top: 20px;
+}
+
+.next a {
+    display: inline-block;
+    color: #000;
+    /* padding: 15px; */
+}
+
+.back a {
+    display: inline-block;
+    color: #000;
+    padding: 15px;
+    /* padding: 15px; */
+}
+
+.cont-title {
+    font-size: 27px;
+    text-indent: 65px;
+    margin: 35px 0 0 0;
+    color: purple;
+}
+
+h3 {
+    font-size: 27px;
+    text-indent: 65px;
+}
+
+strong {
+    font-weight: 700;
+}
+
+.tJunto {
+    margin: 0;
+}
+
+.junto {
+    margin: 25px 0 0 0;
+}
+
+.separado { 
+    margin: 25px 0 25px 0;
+}
+
+p {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    text-indent: 25px;
+}
+
+ul {
+    padding: 15px;   
+    border-radius: 15px;
+    text-decoration: none;
+    background-color: bisque;
+    list-style: none;
+    max-width: 600px;
+}
+
+ul li {
+    padding: 2px;
+}
