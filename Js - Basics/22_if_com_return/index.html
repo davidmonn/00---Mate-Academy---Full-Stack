@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>if com return</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,36 +12,77 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">Aula Anterior - </a>
+        <a class="back" href="../21_else_if/index.html">Aula Anterior - else if</a>
     </div>
     
     <main>
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">if com return</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Na aula anterior vimos as condições de <strong>if</strong>, <strong>else</strong> e <strong>else if</strong>, utilizando mais de duas condições.
             </p>
 
         </article>
 
         <article class="conteudo">
 
-            <h3 class="cont-title"></h3>
-            <p>
+        <h3 class="junto">Exemplo</h3>
+        <p>
+            Iremos continuar com o mesmo exemplo de comprimento da aula anterior.
+        </p>
 
-            </p>
+        <h3 class="cont-title">if com return</h3>
+        <p>
+            Caso precisemos retornar um valor de uma função e armazená-lo em uma <strong>variável</strong>, é necessário utilizar o <strong>return</strong>. Dessa forma, o valor poderá ser salvo e reutilizado. Exemplo:
+        </p>
 
-        </article>
+        <h3 class="junto">Algumas formas diferentes + explicação:</h3>
+
+        <h3 class="junto">Sem return</h3>
+        <figure>
+            <picture>
+                <img src="assets/imgs/sem_return.png" alt="Sem return">
+            </picture>
+            <figcaption>
+                Usado quando não precisamos salvar ou reutilizar o valor retornado pela <strong>função</strong>, apenas exibi-lo.
+            </figcaption>
+        </figure>
+
+        <h3 class="junto">Com return, utilizando else if</h3>
+        <figure>
+            <picture>
+                <img src="assets/imgs/com_return_porem_else_if.png" alt="Return com else if">
+            </picture>
+            <figcaption>
+                Dessa forma podemos salvar o valor retornado e utilizá-lo posteriormente. Não está errado, porém pode ser simplificado.
+            </figcaption>
+        </figure>
+
+        <h3 class="junto">Com return, sem else if</h3>
+        <figure>
+            <picture>
+                <img src="assets/imgs/return_sem_else_if.png" alt="Return sem else if">
+            </picture>
+            <figcaption>
+                Essa é uma forma mais simples de usar <strong>return</strong> com <strong>if</strong>, pois o <strong>return</strong> já encerra a função. Assim, não é necessário utilizar <strong>else</strong> ou <strong>else if</strong>, bastando um <strong>return</strong> final caso nenhuma condição seja atendida.
+            </figcaption>
+        </figure>
+
+        <h3 class="junto">Obs:</h3>
+        <p>
+            Quando usamos <strong>return</strong> dentro de uma <strong>função</strong>, não é obrigatório utilizar <strong>else if</strong>, pois o <strong>return</strong> já encerra a execução da função. Dessa forma, podemos usar apenas <strong>if</strong> e, ao final, um <strong>return</strong>, que funciona como um <strong>else</strong>.
+        </p>
+
+    </article>
 
         <article class="conc">
             
             <!-- <h3 class="cont-title">Exemplo usado em nosso código:</h3> -->
             
-
         </article>
         
          <!-- <h1>Testes JS se necessário</h1> -->
@@ -49,7 +90,7 @@
         </main>
         
     <div class="next">
-        <a class="next" href="../">Próxima Aula - </a>
+        <a class="next" href="../23_array/index.html">Próxima Aula - array</a>
     </div>
 
 </body>
