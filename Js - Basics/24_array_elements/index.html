@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Array Elements</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,28 +12,59 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">Aula Anterior - </a>
+        <a class="back" href="../23_array/index.html">Aula Anterior - Array</a>
     </div>
     
     <main>
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">Array Elements</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Iremos continuar a entender sobre <strong>arrays</strong>. Agora iremos aprender a <strong>recuperar</strong> e <strong>adicionar</strong> um <strong>elemento</strong> dentro de um <strong>array</strong>.
             </p>
 
         </article>
 
         <article class="conteudo">
 
-            <h3 class="cont-title"></h3>
+            <h3 class="cont-title">Exemplo</h3>
             <p>
-
+                Iremos continuar com o mesmo exemplo da aula passada sobre <strong>lista de paises ou cidades</strong>.
             </p>
+
+            <h3 class="junto">.length</h3>
+            <p>
+                Se quisermos estar verificando a quantidade de valores dentro de um <strong>array</strong>, podemos usar o <strong>length</strong> para poder estar recebendo essa informacao. Para isso basta fazermos da seguinte forma: <br> 
+                <strong>console.log(countries.length) </strong> nesse caso como resultado, receberemos o valor 4, ja que temos 4 itens em nossa <strong>lista array</strong>.
+            </p>
+
+            <h3 class="junto">Selecionando</h3>
+            <p>
+                Podemos estar tambem utilizando o <strong>indice</strong> para podermos estar identificando um unico <strong>elemento</strong> de nossa lista. Exemplo: <br> <strong>console.log(countries[0]) </strong> como resultado teremos <strong>Japao</strong>. 
+            </p>
+            <p>
+                Agora se tivermos uma lista muito grande podemos fazer uma selecao da seguinte forma: <br> <strong>console.log(countries[countries.length-1]) </strong> Como resultado teremos o ultimo item de nossa lista <strong>array</strong>.
+            </p>
+
+            <h3 class="junto">Substituindo/Adicionando novo elemento no array</h3>
+            <p>
+                Para podermos estar substituindo um novo <strong>elemento</strong> em nossa lista array podemos fazer da seguinte forma: passamos o nome do <strong>array > [indice] > nome do novo elemento</strong>. Exemplo: <strong>countries[2] = 'Brasil'</strong>
+            </p>
+            <p>
+                Agora se quisermos sempre adicionar no final de nossa lista temos duas formas, podemos fazer da seguinte forma: <br> 
+                <strong>countries[countries.length] = Brasil </strong> essa forma e menos usada.
+                <strong>countries.push('Brasil');</strong> mais usada. Alem disso com <strong>push</strong> podemos adicionar mais de um <strong>elemento</strong> de uma vez so.
+            </p>
+
+            <h3 class="junto">Codigo usado:</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_array.png" alt="Exemplo">
+                </picture>
+            </figure>
 
         </article>
 
@@ -49,7 +80,7 @@
         </main>
         
     <div class="next">
-        <a class="next" href="../">Próxima Aula - </a>
+        <a class="next" href="../25_loop_for/index.html">Próxima Aula - Loop For</a>
     </div>
 
 </body>
