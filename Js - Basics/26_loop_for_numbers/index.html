@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Numeros em Loop For</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,18 +12,18 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">Aula Anterior - </a>
+        <a class="back" href="../25_loop_for/index.html">Aula Anterior - Loop For</a>
     </div>
     
     <main>
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">Numeros em Loop For</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Agora iremos ver lacos em operacoes matematicas.
             </p>
 
         </article>
@@ -32,9 +32,57 @@
 
             <h3 class="cont-title"></h3>
             <p>
+                Exemplo usado que iremos precisar imprimir na tela:
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_usado.png" alt="Exemplo usado">
+                </picture>
+            </figure>
 
+            <h3 class="junto">Somando valores no laco for</h3>
+            <p>
+                Iremos comecar criando uma funcao para percorrer do valor minimo ao maximo e somar o valor em um resultado final:
+                <figure>
+                    <picture>
+                        <img src="assets/imgs/soma_num.png" alt="Soma">
+                    </picture>
+                    <figcaption>
+                        Com isso conseguimos fazer a soma de todos os numeros de 1 a 5 ou seja 15. 1 + 2 + 3 + 4 + 5 = <strong>15</strong>
+                    </figcaption>
+                </figure>
             </p>
 
+            <h3 class="junto">Step</h3>
+            <p>
+                Também podemos usar um <strong>step</strong> em nosso laço. Nesse caso, o step define de quanto em quanto o valor será incrementado na soma. Exemplo:
+            </p>
+
+            <figure>
+                <img src="assets/imgs/soma_c_step.png" alt="Soma com step">
+                <figcaption>
+                    Nesse caso, definimos um valor <strong>padrão (default)</strong> de 1 para o step, assim não precisamos informar esse parâmetro sempre. 
+                    Utilizamos <strong>+=</strong> porque o <strong>++</strong> é apenas um atalho para +1. Ou seja, quando queremos incrementar com um valor diferente de 1, usamos <strong>+=</strong> com o valor desejado.
+                </figcaption>
+            </figure>
+
+            <h3 class="junto">Exemplo fatorial</h3>
+            <p>
+                Para calcular um fatorial, podemos fazer da seguinte forma:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exenplo_fatorial.png" alt="Exemplo Fatorial">
+                </picture>
+                <figcaption>
+                    Começamos com a variável <strong>result = 1</strong>, pois o fatorial é uma multiplicação sequencial.
+                    Em seguida, usamos o <strong>for</strong> com um índice (<strong>n</strong>) que vai de 1 até o valor de <strong>fat</strong> (por exemplo, 5).
+                    A cada repetição, multiplicamos o valor atual de <strong>result</strong> por <strong>n</strong>, formando o cálculo:
+                    <strong>1 × 2 × 3 × 4 × 5</strong>.
+                </figcaption>
+            </figure>
+            
         </article>
 
         <article class="conc">
@@ -49,7 +97,7 @@
         </main>
         
     <div class="next">
-        <a class="next" href="../">Próxima Aula - </a>
+        <a class="next" href="../27_for_strings/index.html">Próxima Aula - For com Strings</a>
     </div>
 
 </body>
