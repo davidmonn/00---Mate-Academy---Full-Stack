@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Loop For</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,28 +12,85 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">Aula Anterior - </a>
+        <a class="back" href="../24_array_elements/index.html">Aula Anterior - Elementos Array</a>
     </div>
     
     <main>
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">Loop For</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Nas aulas anteriores quando precisamos utilizar um comando muitas vezes, geralmente estavamos utilizando uma funcao para nao precisar repetir o codigo. Agora iremos ver o <strong>for (laco)</strong>.
             </p>
 
         </article>
 
         <article class="conteudo">
 
-            <h3 class="cont-title"></h3>
+            <h3 class="cont-title">For</h3>
             <p>
-
+                Com o <strong>for</strong> conseguimos criar <strong>repetições</strong> de um código até que sua condição seja atendida.
             </p>
+
+            <h3 class="junto">Como usar for</h3>
+            <p>
+                Utilizamos o <strong>for</strong> da seguinte forma:
+            </p>
+            <br>
+            <p>
+                <strong>
+                    for(let age = 1; age <= 5; age++){  <br>
+                        console.log(`Eu tenho ${age}`);  <br>
+                    }
+                </strong>
+            </p>
+
+            <h3 class="junto">Entendendo for</h3>
+            <ul>
+                <li>
+                    <strong>let age = 1;</strong>
+                    <ul>
+                        <li>Primeira parte: criamos a variável</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>age <= 5;</strong>
+                    <ul>
+                        <li>
+                            Condição: enquanto for menor ou igual a 5
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>age++</strong>
+                    <ul>
+                        <li>
+                            Incremento: aumenta o valor a cada repetição
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3 class="junto">Exemplo codigo:</h3>
+            <figure>
+                <caption>
+                    <img src="assets/imgs/exemplo_for.png" alt="Exemplo for">
+                </caption>
+            </figure>
+
+            <h3 class="junto">Mais opções</h3>
+            <p>
+                Além de incrementar, também podemos subtrair (-), multiplicar (*), começar por outro valor, fazer de forma decrescente, entre outras possibilidades.
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/mais_exemplos.png" alt="Mais exemplos">
+                </picture>
+            </figure>
 
         </article>
 
@@ -49,7 +106,7 @@
         </main>
         
     <div class="next">
-        <a class="next" href="../">Próxima Aula - </a>
+        <a class="next" href="../26_loop_for_numbers/index.html">Próxima Aula - Loop For Numbers</a>
     </div>
 
 </body>
