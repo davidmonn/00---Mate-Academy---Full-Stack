@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>For Of</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,27 +12,49 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">Aula Anterior - </a>
+        <a class="back" href="../28_substituir_caracteres_strings/index.html">Aula Anterior - Substituindo Caracteres Strings</a>
     </div>
     
     <main>
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">For Of</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Anteriormente vimos como utilizar o <strong>for</strong> para substituir os espaços por <strong>hífens (-)</strong>. 
+                Agora iremos ver outra forma de fazer isso utilizando o <strong>for of</strong>, que é mais simples para percorrer strings.
             </p>
 
         </article>
 
         <article class="conteudo">
 
-            <h3 class="cont-title"></h3>
+            <h3 class="cont-title">Utilizando for of</h3>
             <p>
+                Neste exemplo, criamos uma <strong>função</strong> com a mesma funcionalidade da anterior, porém utilizando o <strong>for of</strong>. 
+                A principal diferença é que agora percorremos diretamente cada caractere da <strong>string</strong>, sem precisar usar índice.
+            </p>
 
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_for_of.png" alt="Exemplo For Of">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Diferenças entre for e for of</h3>
+
+            <h3 class="junto">for</h3>
+            <p>
+                Utilizamos o <strong>for</strong> quando precisamos de mais controle, como definir o ponto inicial, final ou o passo do loop. 
+                Nesse caso, acessamos os valores através do <strong>índice</strong>, usando a sintaxe <strong>variável[indice]</strong>.
+            </p>
+
+            <h3 class="junto">for of</h3>
+            <p>
+                O <strong>for of</strong> é utilizado quando queremos apenas percorrer os valores de forma direta, sem precisar trabalhar com índices. 
+                Ele já retorna cada elemento da <strong>string</strong> ou array, tornando o código mais simples e fácil de ler.
             </p>
 
         </article>
