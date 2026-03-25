@@ -62,6 +62,66 @@
         <article class="conc">
             
             <!-- <h3 class="cont-title">Exemplo usado em nosso código:</h3> -->
+             <h3 class="junto">Exercício + Explicação:</h3>
+             
+<figure class="junto">
+    <picture>
+        <img src="assets/imgs/exercicio_1.png" alt="Jeito 1">
+    </picture>
+    <figcaption>
+        Nessa versão utilizamos <strong><=</strong> junto com <strong>length - 1</strong>, garantindo que o loop pare no último índice válido.
+    </figcaption>
+</figure>
+
+            <figure class="junto">
+                <picture>
+                    <img src="assets/imgs/exercicio_2.png" alt="Jeito 2">
+                </picture>
+                <figcaption>
+                    Aqui utilizamos apenas <strong><</strong> com <strong>length</strong>, que já impede o loop de ultrapassar o limite da string.
+                </figcaption>
+            </figure>
+
+            <h3 class="junto">Explicação:</h3>
+            <p>
+                A forma de contagem do <strong>length</strong> e do <strong>índice</strong> é diferente. 
+                O <strong>índice</strong> representa a <strong>posição</strong> dos caracteres, começando do 0, 
+                enquanto o <strong>length</strong> representa a <strong>quantidade total</strong> de caracteres.
+            </p>
+
+            <p>
+                Exemplo com a string <strong>"abc"</strong>:
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Índice:</strong> 0, 1, 2
+                </li>
+                <li>
+                    <strong>Length:</strong> 3
+                </li>
+            </ul>
+
+            <p>
+                Por isso, o último índice válido é sempre <strong>length - 1</strong>. 
+                Dessa forma, podemos usar tanto:
+            </p>
+
+            <p>
+                <strong>i &lt; length</strong> (forma mais comum)
+            </p>
+
+            <p>
+                ou
+            </p>
+
+            <p>
+                <strong>i &lt;= length - 1</strong>
+            </p>
+
+            <p>
+                Ambas funcionam, pois evitam acessar uma posição que não existe.
+            </p>
             
 
         </article>
