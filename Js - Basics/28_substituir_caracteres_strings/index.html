@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For com Strings</title>
+    <title>Substituindo Caracteres Strings</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,50 +12,47 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">Aula Anterior - </a>
+        <a class="back" href="../27_for_strings/index.html">Aula Anterior - For Strings</a>
     </div>
     
     <main>
 
         <article id="intro">
 
-            <h1 id="title">For com Strings</h1>
+            <h1 id="title">Substituindo Caracteres em Strings</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                Agora iremos ver como funciona o laço de repetição <strong>for</strong> ao interagir com <strong>strings</strong>.
+                Agora iremos ver como podemos substituir caracteres dentro de uma <strong>string</strong>.
             </p>
 
         </article>
 
         <article class="conteudo">
 
-            <h3 class="cont-title">Percorrendo String</h3>
+            <h3 class="cont-title">Substituindo caracteres</h3>
             <p>
-                Para percorrer uma <strong>string</strong> utilizando o <strong>for</strong>, podemos fazer da seguinte forma:
+                Quando estamos trabalhando com <strong>URLs</strong>, não é permitido utilizar <strong>espaços</strong> no texto. 
+                Por isso, precisamos substituir esses espaços por outros caracteres, como o <strong>hífen (-)</strong>.
             </p>
 
+            <h3 class="junto">Exemplo</h3>
+            <p>
+                Neste exemplo, utilizamos um laço <strong>for</strong> para percorrer uma <strong>string</strong> e transformá-la em um formato de <strong>URL</strong>. 
+                A ideia é substituir todos os espaços por <strong>hífens (-)</strong>, criando assim uma string formatada corretamente.
+            </p>
+
+            <h3 class="junto">Código Exemplo:</h3>
             <figure>
                 <picture>
-                    <img src="assets/imgs/exemplo_for_string.png" alt="For em String">
+                    <img src="assets/imgs/manipulando_string.png" alt="Exemplo de manipulação de string">
                 </picture>
-
                 <figcaption>
-                    Dessa forma, podemos observar que o laço <strong>for</strong> percorre todos os caracteres da string.
-                    
-                    Para isso, utilizamos a <strong>variável i</strong>, que representa o <strong>índice</strong> (posição) de cada caractere.
-                    
-                    Com esse índice, conseguimos acessar cada letra da string utilizando <strong>string[i]</strong>, permitindo manipulá-la.
-                    
-                    O <strong>.length</strong> é utilizado para definir até onde o laço deve ir, ou seja, o tamanho total da string.
-                    
-                    Portanto, a condição <strong>i &lt; title.length</strong> significa que o laço continuará enquanto o índice for menor que o tamanho da string.
+                    Nesse processo, percorremos cada caractere da <strong>string</strong> e substituímos os <strong>espaços</strong> por <strong>hífens (-)</strong>, gerando uma nova string formatada.
                 </figcaption>
-
             </figure>
 
         </article>
-
         <article class="conc">
             
             <!-- <h3 class="cont-title">Exemplo usado em nosso código:</h3> -->
@@ -68,7 +65,7 @@
         </main>
         
     <div class="next">
-        <a class="next" href="../28_substituir_caracteres_strings/index.html">Próxima Aula - Substituir Caracteres Strings</a>
+        <a class="next" href="../">Próxima Aula - </a>
     </div>
 
 </body>
