@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>String Method Usage</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,28 +12,67 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">Aula Anterior - </a>
+        <a class="back" href="../30_simple_string_methods/index.html">Aula Anterior - Simple String Methods</a>
     </div>
     
     <main>
 
-        <article id="intro">
+       <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">String Method Usage</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Agora iremos aprender como usar o <strong>for</strong> para contar caracteres específicos em uma string.
             </p>
 
         </article>
 
         <article class="conteudo">
 
-            <h3 class="cont-title"></h3>
+            <h3 class="cont-title">Exemplo</h3>
             <p>
-
+                Como exemplo, iremos criar uma <strong>função</strong> para contar as <strong>vogais</strong>.
             </p>
+
+            <h3 class="junto">Código Exemplo:</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/cont_vogais.png" alt="Contagem de Vogais">
+                </picture>
+                <figcaption>
+                    Dessa forma conseguimos fazer uma contagem de vogais.
+                </figcaption>
+            </figure>
+
+            <h3 class="junto">Contagem de Letras Código Exemplo:</h3>
+            
+            <p>
+                Agora faremos um exemplo semelhante, porém ao invés de vogais, iremos contar apenas letras.
+                Para isso, precisamos verificar se o caractere é realmente uma letra.
+            </p>
+            
+            <p>
+                Utilizamos a seguinte lógica:
+            </p>
+
+            <p class="separado">
+                <strong>let isLetters = ch.toLowerCase() != ch.toUpperCase();</strong>
+            </p>
+
+            <p>
+                Se o caractere for uma letra, sua versão maiúscula e minúscula serão diferentes.
+                Caso contrário (como espaços, números ou símbolos), o resultado será igual.
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/cont_letras.png" alt="Contagem de Letras">
+                </picture>
+                <figcaption>
+                    Essa verificação permite identificar letras sem precisar comparar caractere por caractere manualmente.
+                </figcaption>
+            </figure>
 
         </article>
 
