@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Array Includes e IndexOf</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,18 +12,18 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">Aula Anterior - </a>
+        <a class="back" href="../33_array_strings/index.html">Aula Anterior - Array Strings</a>
     </div>
     
     <main>
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">Array Includes e IndexOf</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Agora iremos ver como encontrar elementos individuais dentro de um <strong>array</strong>.
             </p>
 
         </article>
@@ -32,8 +32,49 @@
 
             <h3 class="cont-title"></h3>
             <p>
-
+                Iremos criar uma <strong>function</strong> chamada <strong>includes</strong>, onde com ela iremos identificar se ha ou nao um elemento especifico dentro de nosso array.
             </p>
+
+            <h3 class="junto">Exemplo:</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/procurando_elemento.png" alt="Exemplo search element">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Exemplo de indexOf</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/indOf.png" alt="IndexOF exemplo">
+                </picture>
+            </figure>
+
+            <h3 class="junto">indexOf</h3>
+            <p>
+                O <strong>indexOf</strong> é um método do JavaScript que retorna a posição (índice) de um elemento dentro de um array. 
+                Caso o elemento não exista, ele retorna -1.
+            </p>
+
+
+            <h3 class="junto">includes e indexOf</h3>
+            <p>
+                Para verificar se um array contém um elemento específico, podemos usar os métodos includes e indexOf. Eles funcionam de forma semelhante aos métodos de string correspondentes:
+            </p>
+            <p>
+                Esses métodos são úteis quando precisamos localizar um elemento em um array. Para critérios de pesquisa mais complexos, podemos usar um loop e verificar as condições dentro dele usando if.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>const words = ['apple', 'banana', 'cherry', 'date'];</strong>
+                </li>
+                <li>
+                    console.log(words.includes('apple')); // Use `includes` to search for an element in the array, result — `true`
+                </li>
+                <li>
+                    console.log(words.indexOf('apple')); // Use `indexOf` to find the index where the desired element starts, result — `0`
+                </li>
+            </ul>
 
         </article>
 
@@ -49,7 +90,7 @@
         </main>
         
     <div class="next">
-        <a class="next" href="../">Próxima Aula - </a>
+        <a class="next" href="../35_fim_fundamentos_js/index.html">Próxima Aula - Fim Fundamentos JS</a>
     </div>
 
 </body>
