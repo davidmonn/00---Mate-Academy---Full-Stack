@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Array Strings</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,28 +12,60 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">Aula Anterior - </a>
+        <a class="back" href="../33_array_strings/index.html">Aula Anterior - Array Strings</a>
     </div>
     
     <main>
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">Array Strings</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Agora iremos ver um array de strings.
             </p>
 
         </article>
 
         <article class="conteudo">
 
-            <h3 class="cont-title"></h3>
+            <h3 class="cont-title">Explicacao</h3>
             <p>
-
+                Iremos comecar criando um array com strigns, onde iremos separar cada uma das palavras que desejarmos.
             </p>
+
+            <h3 class="junto">split</h3>
+            <p>
+                O método <strong>.split()</strong> serve para quebrar uma string em partes e transformar essas partes em um array. Sintaxe: string.split(separador). <strong>let texto = "maça,banana,uva"; let resultado = texto.split(",");</strong>
+            </p>
+
+            <h3 class="junto">Exemplo split:</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_split.png" alt="Exempli split">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Quebrando com base string:</h3>
+            <p>
+                Agora se quisermos fazer uma quebra de uma string com base em palavras ou numeros de caracteres, iremos criar uma funcao, ficando da seguinte forma:
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/short_words.png" alt="Exemplo function + split">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Mais opcoes</h3>
+            <p>
+                Podemos tambem fazer uma modificacao em nosso resultado adicionando o <strong>.join</strong> para incluir um espaco entre eles. Ex:
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/join.png" alt="Join">
+                </picture>
+            </figure>
 
         </article>
 
@@ -49,7 +81,7 @@
         </main>
         
     <div class="next">
-        <a class="next" href="../">Próxima Aula - </a>
+        <a class="next" href="../34_array_includes_e_indexOf/index.html">Próxima Aula - Array Includes e IndexOf</a>
     </div>
 
 </body>
