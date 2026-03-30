@@ -23,17 +23,65 @@
 
             <h3 class="intro">Enunciado Exercicio:</h3>
             <p>
-                
+                Estamos atualizando nossos robôs! Agora eles podem converter comandos de movimento em sinais e se mover de acordo com eles:
+            </p>
+
+            <ul class="separado">
+                <li>
+                    'forward' se traduz em y + 1.
+                </li>
+                <li>
+                    'back' para y - 1.
+                </li>
+                <li>
+                    'right' para x + 1.
+                </li>
+                <li>
+                    'left' para x - 1.
+                </li>
+            </ul>
+
+            <p>
+                Mas seria ótimo se o robô pudesse rastrear sua localização sem GPS. Portanto, vamos criar a função getLocation que aceita dois parâmetros:
+            </p>
+
+            <ul class="separado">
+                <li>
+                    coordinates - uma matriz de coordenadas iniciais no formato [x, y].
+                </li>
+                <li>
+                    commands - uma matriz com um histórico de comandos como [‘command1’, ‘command2’, ‘command3’, ...].
+                </li>
+            </ul>
+
+            <p>
+                A função deve retornar uma matriz de coordenadas finais ([x, y]) após o movimento de acordo com os comandos.
+            </p>
+
+            <h3 class="junto">Exemplos:</h3>
+            <p>
+                1) As coordenadas após o primeiro comando são: [1, 1] (1 passo à esquerda).
+            </p>
+            <p class="separado">
+                2) Após o segundo comando - [1, 0] (1 passo para trás).
+            </p>
+            <p>
+                3) Após o terceiro comando - [1, -1] (1 passo para trás).
+            </p>
+            <p class="separado">
+                4) O resultado é a matriz [1, -1].
             </p>
 
         </article>
 
         <article class="conteudo">
 
-            <h3 class="cont-title"></h3>
-            <p>
-
-            </p>
+            <h3 class="cont-title">Resultado</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/result.png" alt="Resultado">
+                </picture>
+            </figure>
 
         </article>
 
