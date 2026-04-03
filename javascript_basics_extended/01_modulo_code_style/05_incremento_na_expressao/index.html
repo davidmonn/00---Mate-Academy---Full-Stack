@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incremento na Expressao</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../">Aula Anterior - </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Incremento na Expressao</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui veremos um pouco sob inrementacao em nossas exmpressoes.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Exemplo Usado</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo1.png" alt="Exemplo 1">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                Nesse caso temos a seguinte informacao em nosso <strong>console:</strong>
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/console1.png" alt="Demons Console">
+                </picture>
+            </figure>
+
+            <p>
+                Podemos observar que basicamente nosso resultado sai invertido, pois <strong>a: deveria ser 0</strong> e <strong>b: 1</strong>.
+            </p>
+            <p>
+                Isso acontece porque na linha de <strong>b</strong> temos a <strong>expressao de incremento</strong> sendo <strong>let b = a++;</strong> Com isso nesse caso o <strong>JS</strong> primeiro atribui o <strong>valor a para a variavel b</strong> e depois <strong>incrementa valor de a</strong>.
+            </p>
+            <p>
+                Se quisessemos primeiro <strong>incrementar o valor de 'a'</strong> e depois atribuir a <strong>'b'</strong>. Poderiamos fazer da seguinte forma: <code>let b = ++a;</code> onde como resultado teremos 1 tanto em <strong>'a'</strong> quanto em <strong>'b'</strong>.
+            </p>
+
+            <h3 class="junto">Recomendado</h3>
+            <p>
+                O recomendado para evitarmos esses tipos de erro, podemos fazer as <strong>operacoes antes</strong>.
+            </p>
+
+        </article>
+
+        <article class="conc">
+            
+            <!-- <h3 class="cont-title">Exemplo usado em nosso código:</h3> -->
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../06_simplificando_incremento/index.html">Próxima Aula - Simplificando Incremento</a>
+    </div>
+
+</body>
+</html>
