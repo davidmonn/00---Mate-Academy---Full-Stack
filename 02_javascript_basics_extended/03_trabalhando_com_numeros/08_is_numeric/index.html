@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>isNumeric</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../07_assignment/index.html">Aula Anterior - Assignment</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">isNumeric</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui teremos como suposicao que desejamos receber um <strong>input</strong> de nosso usuario e queremos conferir se esse <strong>inpput</strong> é um numero.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title"></h3>
+            <p>
+                Caso seja um numero temos formas de poder validar com <strong>JS</strong>. Como exemplo iremos utilizar de uma <strong>condicional</strong> onde se for um numero sera dado resultado como <strong>ok</strong> e caso <strong>false (Erro)</strong>.
+            </p>
+
+            <h3 class="junto">Operador unário +</h3>
+            <p>
+                Quando você usa o + antes de uma variável em JavaScript, isso se chama operador unário de soma. Ele serve para forçar a conversão de um valor para número.
+            </p>
+            <p>
+                Na prática, o que acontece é simples: se o valor puder virar número, ele vira. Se não puder, ele vira NaN (que significa “não é um número”). Por exemplo: um texto como "10" vira o número 10. Já um texto como "abc" não pode virar número, então vira NaN.
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_unario.png" alt="Exemplo unário">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Obs:</h3>
+            <p>
+                Muita gente usa isso dentro de condicionais para verificar se algo é número, mas isso não é 100% confiável, porque alguns valores podem enganar a verificação. Por isso, o nome correto do que você está usando não é exatamente “verificação de número”, e sim conversão de tipo usando o operador unário +. Resumindo de forma direta: você não está exatamente verificando, você está tentando converter — e depois usando o resultado dessa conversão para decidir algo.
+            </p>
+            
+            <h3 class="junto">Resolvendo problema unário +</h3>
+            <p>
+                Para solucionarmos esse problema podemos utilizar a <strong>funcao</strong> vista anteriormente <strong>isNaN()</strong>, porem para isso temos que negar nossa <strong>funcao</strong> pois <strong>isNaN()</strong> ira retornar um <strong>false</strong> caso o <strong>input (exemplo)</strong> seja um <strong>numero</strong> com isso se nao negarmos ela. Ela ira cair na vericacao de <strong>false</strong> e cair na opcao de <strong>erro</strong>. Ficando da seguinte forma:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_is_nan.png" alt="Exemplo isNaN()">
+                </picture>
+            </figure>
+
+            <h3 class="junto"></h3>
+            <p>
+                Porem ainda temos mais uma questao que devemos levar em consideracao, se por exemplo em nossa <strong>string</strong> tivermos um <strong>Infinity</strong>, apos salvarmos nosso codigo, iremos ver que <strong>isNaN()</strong> ira retornar <strong>true</strong> para <strong>Infinity</strong> isso pois para o <strong>JS</strong> ele e tratado como um numero. Para resolver esse problema podemos utilizar de outra forma sendo: <strong>isFinite</strong> porem agora ao usar <strong>isFinite</strong> se passarmos uma <strong>string</strong> vazia, tambem tera resultado como <strong>true</strong>.
+            </p>
+
+            <h3 class="junto">Solucao 01</h3>
+            <p>
+                Para solucionar esse problema entao precisamos verificar se nosso <strong>input (variavel exemplo)</strong> é um valor ou pussui algum valor e depois fazer a checagem para ver se e um valor finito <strong>isFinite()</strong> e para isso podemos fazer da seguinte forma:
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/conclusao.png" alt="Exemplo conclusao">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Solucao 02</h3>
+            <p>
+                Porem com a forma mencionada acima ainda podemos ter um erro sendo ele, se o usuario por exemplo der 3 espacos, entao o input sera reconhecido contendo valor. Para resolvermos isso podemos chamar o <strong>metodo trim()</strong>. Ficando da seguinte forma:
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_trim.png" alt="Exemplo trim">
+                </picture>
+                <figcaption>
+                    Porem como podemos observar os espacamentos mostrados, ainda podemos ter um problema mesmo com esse metodo, sendo ele que o <strong>trim</strong> so remove os espacamentos do comeco e no final e se tiver como no exemplo acima, ira nos retornar <strong>erro</strong>.
+                </figcaption>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+            
+            <!-- <h3 class="cont-title">Exemplo usado em nosso código:</h3> -->
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../09_random_number/index.html">Próxima Aula - Generate a random number</a>
+    </div>
+
+</body>
+</html>
