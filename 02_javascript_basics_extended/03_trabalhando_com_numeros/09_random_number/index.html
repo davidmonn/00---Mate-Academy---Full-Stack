@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate a random number</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../08_is_numeric/index.html">Aula Anterior - isNumeric</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Generate a random number</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui vamos aprender a gerar <strong>números aleatórios</strong> no <strong>JavaScript</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title"></h3>
+            <p>
+                Para isso, usamos um <strong>laço de repetição (for)</strong>, que serve para repetir uma ação várias vezes.
+            </p>
+
+            <p>
+                Nesse exemplo, o <strong>for</strong> vai repetir <strong>10 vezes</strong>, executando o código a cada repetição.
+            </p>
+
+            <p>
+                Dentro do laço, utilizamos a função <strong>Math.random()</strong>, que gera um número aleatório entre <strong>0 e 1</strong>.
+            </p>
+
+            <p>
+                Esse valor é armazenado na variável <strong>numberRandom</strong> e depois exibido usando <strong>console.log()</strong>.
+            </p>
+
+            <!-- <pre>
+                <code>
+                    <strong>
+                        for (let i = 0; i < 10; i++) {
+                            const numberRandom = Math.random();
+                            console.log(numberRandom);
+                        }
+                    </strong>
+                </code>
+            </pre> -->
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_random.png" alt="Exemplo 01" style="margin: 20px;">
+                </picture>
+            </figure>
+
+            <p>
+                <strong>Resumo:</strong> o <strong>for</strong> repete 10 vezes e, em cada repetição, o <strong>Math.random()</strong> gera um número aleatório.
+            </p>
+
+            <p>
+                <strong>Obs:</strong> se recarregarmos a pagina esses valores alteram.
+            </p>
+
+            <h3 class="junto">Random sem 0 e 1</h3>
+            <p>
+                Se quisermos valores aleatorios que nao fiquem apenas como 0 e 1, podemos conseguir fazendo isso da seguinte forma: 
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_random02.png" alt="Exemplo 02">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Inteiros</h3>
+            <p>
+                Para podermos obter valores inteiros podemos utilizar a funcao <strong>Math.floar()</strong>. Ira ficar da seguinte forma:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/random_int.png" alt="Random Inteiro">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+            
+            <!-- <h3 class="cont-title">Exemplo usado em nosso código:</h3> -->
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../10_tarefa_numeral_systems/index.html">Próxima Aula - Tarefa numeral systems</a>
+    </div>
+
+</body>
+</html>
