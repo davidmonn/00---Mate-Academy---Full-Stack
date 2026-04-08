@@ -23,17 +23,40 @@
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                O ramo de hotelaria não é fácil. O Grand Mate Hotel atualizou seu site para reserva de quartos. Além do número de telefone do hotel, agora há também um formulário de reserva.
             </p>
+
+            <p class="separado">
+                O formulário de reserva exige o número de hóspedes, mas infelizmente os programadores fizeram esse input tipo texto e agora o hotel obtém resultados do formulário como "1 hóspede", "3", "Eu e meu amor", "Dois hóspedes", " Talvez 6".
+            </p>
+
+            <p>
+                Vamos melhorar o software do hotel e escrever rapidamente a primeira versão da função getGuestsCount para eles, que pegará a string guestsInput e retornará o número de hóspedes somente se o número estiver no início da string. Caso contrário, será retornada a string not a number.
+            </p>
+
+            <h3 class="separado">Exemplos</h3>
+            <ul>
+                <li>
+                    getGuestsCount('Two') === 'not a number'
+                </li>
+                <li>
+                    getGuestsCount('I'll 1') === 'not a number'
+                </li>
+                <li>
+                    getGuestsCount('3 people') === 3
+                </li>
+            </ul>
 
         </article>
 
         <article class="conteudo">
 
-            <h3 class="cont-title"></h3>
-            <p>
-
-            </p>
+            <h3 class="cont-title">Resultado</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/image.png" alt="Resultado">
+                </picture>
+            </figure>
 
         </article>
 
@@ -49,7 +72,7 @@
         </main>
         
     <div class="next">
-        <a class="next" href="../">Próxima Aula - </a>
+        <a class="next" href="../">Proximo Modulo - Loops - Aula: Infinite loop</a>
     </div>
 
 </body>
