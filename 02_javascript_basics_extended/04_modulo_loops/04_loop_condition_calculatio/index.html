@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop Condition Calculation</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../04_loop_condition_calculatio/index.html">Aula Anterior - For Options</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Loop Condition Calculation</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos ver como podemos estar <strong>otimizando</strong> nosso <strong>for</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Exemplo</h3>
+            <p>
+                Aqui declaramos um <strong>laco de repeticao for</strong>, declaramos uma <strong>variavel 'i = 0'</strong> e com isso iremos <strong>iterar</strong> sobre nossa <strong>variavel</strong> enquanto o <strong>'i' < obterLimite()</strong> e <strong>incrementamos o valor de i em i++ (1 em cada iteracao)</strong>. Depois de feito nosso <strong>for</strong>, faremos tambem nossa <strong>funcion obterLimite()</strong>. Ficando da seguinte forma:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_for_e_function.png" alt="function dentro da iteracao for">
+                </picture>
+                <figcaption>
+                    Feito isso teremos em nosso console a repeticao de nosso console 11 vezes.
+                </figcaption>
+            </figure>
+
+            <p>
+                Mesmo pedindo <strong>10</strong> e <strong>10 o valor de obterLimite (nossa function)</strong>, isso ocorre porque comecamos do <strong>i = 0</strong> e do 0 ao 10 da 11.
+            </p>
+            <p>
+                Esse exemplo mostrado nao e algo bom de se fazer, pois ficara roubando performace de nossa <strong>aplicacao</strong>. Para melhorarmos nosso codigo, podemos chamar nossa <strong>funcao obterLimite()</strong> e <strong>atribuir</strong> seu valor a uma <strong>variavel</strong> e com isso dentro de nossa estrutura <strong>for</strong> chamamos essa variavel. Exemplo na pratica:
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo.png" alt="Exemplo funcao dentro da variavel">
+                </picture>
+                <figcaption>
+                    Dessa forma apos essa alteracao, quando chamamos nossa funcao, sera impresso dentro de nosso console apenas 1 vez nosso <strong>obterLimite()</strong>, isso ja melhora nosso codigo por deixar de chamar nosso codigo repetidas vezes.
+                </figcaption>
+            </figure>
+
+            <h3 class="junto">Exemplo 02</h3>
+            <p>
+                Agora iremos supor que dentro de nossa <strong>funcao obterLimite()</strong> ira nos retornar <strong>um numero de dias</strong>, e dentro de nosso <strong>laco de repeticao (for)</strong> queremos calcular os segundos desses dias que serao retornados por nosso <strong>obterLimite()</strong>. Para isso dentro de nosso for, podemos criar uma <strong>variavel segundos</strong> e esses <strong>segundos</strong> serao resultados de nosso <strong>i (indice)(numero de dias) * 60(numero de segundos que tem em 1 min) * 60(numero de minutos que temos em uma horas) * 24(numero de horas que temos em um dia)</strong>. Ficando da seguinte forma:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_dias_para_seg.png" alt="Exemplo convertendo dias para segundos">
+                </picture>
+                <figcaption>
+                    Dessa maneira ainda temos mais um problema de performace, pois a cada iteracao, estamos realizando <strong>3 multiplicacoes</strong>, podemos <strong>otimizar</strong> esse codigo movendo nossa <strong>operacao</strong> para uma varivel.
+                </figcaption>
+            </figure>
+            <p>
+                Com isso podemos fazer da seguinte forma:
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_dias_segundos_otimizado.png" alt="Otimizando nosso codigo">
+                </picture>
+                <figcaption>
+                    Embora pareca apenas uma pequena mudanca, pode ter um impacto muito grande em nosso codigo no dia a dia. Isso pois nesse caso estamos fazendo apenas <strong>10 iteracoes</strong> mas pode haver casos onde teremos muito mais e a longo prazo pode trazer muitos problemas de performace.
+                </figcaption>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+            
+            <!-- <h3 class="cont-title">Exemplo usado em nosso código:</h3> -->
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../05_when_to_use_infinite_loop/index.html">Próxima Aula - When To Use Infinite Loop</a>
+    </div>
+
+</body>
+</html>
