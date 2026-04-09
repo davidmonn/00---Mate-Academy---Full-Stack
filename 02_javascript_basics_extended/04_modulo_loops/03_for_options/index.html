@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Option</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../02_break_and_continue/index.html">Aula Anterior - Break and Continue</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">For Option</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Entendendo melhor o <strong>laco de repeticao</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Explicacao</h3>
+            <ul>
+                <li>
+                    1) <strong>Primeiro parametro</strong> de nossa <strong>estrutura for</strong> sendo ele, exemplo: <strong><code>let i = 0;</code></strong> sendo ele de onde queremos comecar.
+                </li>
+                <li>
+                    2) <strong>Condicao: i <= 3;</strong> que sera avaliada em cada <strong>iteracao (cada vez que for passando por ele novamente para saber quando se deve parar)</strong>.
+                </li>
+                <li>
+                    3) <strong>i++</strong> nosso <strong>"passo"</strong>, como a variavel por qual estamos <strong>iterando</strong> vai ser alterada.
+                </li>
+            </ul>
+
+            <h3 class="junto">i fora do for</h3>
+            <p>
+                Quando utilizamos o <strong>i</strong> como escopo <strong>global</strong>, nossa variavel <strong>i</strong> tambem podera ser acessada fora de nosso laco de repeticao. Exemplo de uso:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/i_fora_for.png" alt="i fora do for">
+                </picture>
+            </figure>
+            <p>
+                Dessa forma nosso codigo funcionara normal e ainda conseguiremos usar o valor final de <strong>i</strong> fora de nosso bloco for. Porem isso so funciona se nossa variavel <strong>i</strong> do <strong>for</strong> estiver como escopo global.
+            </p>
+
+            <h3 class="junto">Exemplo forma errada:</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_forma_errada.png" alt="Exemplo forma errada">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Alterando forma da <strong>condicional</strong></h3>
+            <p>
+                Assim como mudamos o <strong>i</strong>. Tambem podemos alterar a forma de uso de nossa <strong>condional</strong> dentro do <strong>escopo local</strong>. Ficando da seguinte forma:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_condicional.png" alt="Condicional">
+                </picture>
+            </figure>
+            <p>
+                Dessa forma passamos nossa <strong>condicional</strong> do <strong>for</strong>, para dentro de nosso <strong>bloco</strong>.
+            </p>
+            
+            <p class="junto">step (i++)</p>
+            <p>
+                Podemos fazer o mesmo tambem com nosso <strong>step</strong>. Ficando da seguinte forma:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_step.png" alt="Exemplo step">
+                </picture>
+            </figure>
+
+            <p>
+                Isso e para levarmos em consideracao que as vezes a gente pode ter acesso a <strong>variaveis externas</strong> de nosso laco de repeticao e <strong>iterar</strong> sobre ela e utilizarmos da maneira que precisar, adicionando a logica necessaria.
+            </p>
+
+
+            <a class="next" href="../03_for_options/ind.html">Correcao de explicacao</a>
+
+
+        </article>
+
+        
+
+        <article class="conc">
+            
+            <!-- <h3 class="cont-title">Exemplo usado em nosso código:</h3> -->
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../05">Próxima Aula - Loop Condition Calculation</a>
+    </div>
+
+</body>
+</html>
