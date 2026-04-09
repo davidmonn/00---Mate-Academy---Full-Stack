@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>When To Use Infinite Loop</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../04_loop_condition_calculatio/index.html">Aula Anterior - Loop Condition Calculation</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">When To Use Infinite Loop</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Uso para um <strong>laco de repeticao infinito</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title"></h3>
+            <p>
+                Aqui iremos criar uma <strong>funcao</strong> que se chama <strong>obterValor()</strong> apos isso criamos uma <strong>variavel valo</strong> que ira receber o <strong>metodo <code>Math.random();</code></strong>. Apos isso criamos uma <strong>condicinal</strong> que checamos se o valor retornado pelo <strong><code>Math.random</code></strong> é < (menor) doque 0.2 e se sim retornamos 0, e se nao retornamos o <strong>valor de <code>Math.random</code></strong>.
+            </p>
+            <p>
+                Depois criaremos uma nova <strong>variavel x</strong> que ira receber nosso resultado de <strong>function obterValor();</strong>, com isso criamos uma <strong>estrutura <code>while</code></strong> e com isso adicionamos uma <strong>condicao</strong> enquanto <strong>x > 0</strong>, e enquanto o <strong>x maior que 0</strong> iremos imprimir o valor de <strong>x</strong> e chamamos novamente o <strong>x = obterValor()</strong>. Com isso cada vez que nossa pagina se atualiza, tera um novo valor de <strong>x</strong>.
+            </p>
+
+            <p>
+                Ficando da seguinte forma:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exeplo_laco_d_repeticao.png" alt="Exemplo laco de repeticao for e while">
+                </picture>
+                <figcaption>
+                    Como vimos em nossa aula anterior, nao e muito conveniente ficar chamando varias vezes a funcao. O mais indicado seria chamar a <strong>funcao</strong> apenas uma vez, obter o seu valor e continuar com nosa iteracao.
+                </figcaption>
+            </figure>
+
+            <p class="separado">
+                Para esse caso podemos otimizar ele da seguinte forma:
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/otimizando.png" alt="Exemplo codigo otimizdo">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+            
+            <!-- <h3 class="cont-title">Exemplo usado em nosso código:</h3> -->
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../06_bank_deposit/index.html">Próxima Tarefa: Bank Deposit</a>
+    </div>
+
+</body>
+</html>
