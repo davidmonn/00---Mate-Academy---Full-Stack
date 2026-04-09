@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break and Continue</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../01_infinite_loop/index.html">Aula Anterior - Inifinite Loop</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Break and Continue</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos continar com o mesmo exemplo da aula anterior, para poder entender como podemos evitar que nosso codigo entre em um <strong>loop infinito</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Exemplo</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_for.png" alt="Exemplo for">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Algumas Alteracoes</h3>
+            <p>
+                Agora iremos fazer algumas alteracoes em nosso exemplo para entendermos melhor, ficando da seguinte forma:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_break.png" alt="Exemplo break">
+                </picture>
+            </figure>
+
+            <p>
+                Para evitarmos que nosso <strong>for</strong> seja ininito, podemos adicionar a ele uma <strong>condicional</strong>. Com esse exemplo acima, embora temos uma <strong>condicao</strong> inicial no <strong>for</strong>, para tornar esse <strong>for finito</strong>, adicionamos uma <strong>condicional de seguranca (break)</strong>, para podermos evitar uma <strong>condicao infinita</strong>.
+            </p>
+
+            <h3 class="junto">Exemplo Par</h3>
+            <p>
+                Nesse exemplo iremos ver se quisermos imprimir apenas os valores par, ficando da seguinte forma:
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_par.png" alt="Exemplo Par">
+                </picture>
+            </figure>
+
+            <p>
+                Podemos observar que dessa vez passamos os <strong>if</strong> para dentro do <strong>for</strong> para ser feito a verificacao antes de passar o valor de <strong>i</strong> assim passando apenas os valores <strong>par de i</strong>.
+            </p>
+
+            <h3 class="junto">Palavra reservada continue</h3>
+            <p>
+                Agora iremos ver um exemplo da palavra reservada <strong>continue</strong>. Ficando da seguinte forma em nosso codigo:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_continue.png" alt="Exemplo Continue">
+                </picture>
+            </figure>
+            <p>
+                O <strong>continue</strong> como podemos ver no exemplo acima, ira significar que quando a nossa <strong>condicao (if)</strong> for cumprida e o <strong>continue</strong> for chamado. Ao invez dele executar o restante do codigo, ele ira da por finalizado essa <strong>iteracao</strong>, no caso nao o ciclo mas a <strong>iteracao</strong>
+            </p>
+
+
+        </article>
+
+        <article class="conc">
+            
+            <!-- <h3 class="cont-title">Exemplo usado em nosso código:</h3> -->
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../03_for_options/index.html">Próxima Aula - For Options</a>
+    </div>
+
+</body>
+</html>
