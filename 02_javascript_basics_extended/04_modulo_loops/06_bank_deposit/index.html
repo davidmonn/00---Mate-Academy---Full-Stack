@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefa: Bank Deposit</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../05_when_to_use_infinite_loop/index.html">Aula Anterior - When To Use Infinite Loop</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Tarefa: Bank Deposit</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                No Banco Mate, você tem a oportunidade de depositar dinheiro a certo percentual e obter lucro após um tempo.
+            </p>
+
+            <p class="separado">
+                Por exemplo, se depositarmos 10000 por 3 anos a 4% ao ano, teremos:
+            </p>
+
+            <ul>
+                <li>
+                    primeiro ano: 10000 + 4% = 10400 (10000 + 10000 * 0,04);
+                </li>
+                <li>
+                    segundo ano: 10400 + 4% = 10816 (10400 + 10400 * 0,04);
+                </li>
+                <li>
+                    terceiro ano: 10816 + 4% = 11248,64 (10816 + 10816 * 0,04);
+                </li>
+                <li>
+                    lucro líquido: 11248,64 - 10000 = 1248,64.
+                </li>
+            </ul>
+            
+            <p class="separado">
+                Sua tarefa: implementar a função calculateProfit que aceita 3 parâmetros:
+            </p>
+
+            <ul>
+                <li>
+                    amount — o valor inicial que depositamos;
+                </li>
+                <li>
+                    percent — taxa de juros anual;
+                </li>
+                <li>
+                    period — o número de anos (o tempo durante o qual o dinheiro está depositado).
+                </li>
+            </ul>
+
+            <p>
+                A função deve calcular e retornar o lucro líquido total para todo o período.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Resultado</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/image.png" alt="Resposta">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+            
+            <!-- <h3 class="cont-title">Exemplo usado em nosso código:</h3> -->
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../07">Próxima Tarefa: </a>
+    </div>
+
+</body>
+</html>
