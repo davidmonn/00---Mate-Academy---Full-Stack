@@ -1,5 +1,6 @@
 const test = [2,6,15,3,8,9,12];
 
+//For
 function somarMaiorQFor(values) {
     let saveCont = [];
     let operator = 0;
@@ -15,6 +16,7 @@ function somarMaiorQFor(values) {
 
 console.log(somarMaiorQFor(test));
 
+//For Of
 function somarMaiorQOf(valores) {
     let contador = [];
     let soma = 0;
