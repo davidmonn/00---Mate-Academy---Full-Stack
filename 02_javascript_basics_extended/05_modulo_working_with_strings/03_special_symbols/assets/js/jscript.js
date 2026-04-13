@@ -1,0 +1,1 @@
+console.log('Que \"otima\" explicacao! Entendi foi nada');
