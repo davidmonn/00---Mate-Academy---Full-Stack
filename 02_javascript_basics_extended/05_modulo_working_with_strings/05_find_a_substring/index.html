@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a substring</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../04_html_strings/index.html">Aula Anterior - HTML Strings</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Find a substring</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui como exemplo de aprendizagem teremos o seguinte codigo:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/image.png" alt="Exemplo">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title"></h3>
+            <p>
+                Declaramos uma <strong>variavel</strong> chamada <code>'palavra'</code> e <strong>atribuimos</strong> a ela o <strong>valor</strong><code>'abcde';</code> e apos isso criamos mais uma <strong>variavel</strong> chamada <code>part</code> e <strong>atribuimos</strong> e atribuimos a ela o valor de <code>'bc;'</code>.
+            </p>
+            <p>
+                Feito isso, iremos supor que iremos fazer um <strong>exercicio</strong> no qual queremos saber se uma <strong>string</strong>, contem uma <strong>sub string (uma parte da string)</strong> para isso o <strong>JS</strong> nos oferece o <strong>metodo</strong> muito conveniente chamado de <strong>includes()</strong>.
+            </p>
+
+            <h3 class="junto">includes()</h3>
+            <p>
+                Para usar o <strong>includes</strong>, primeiro chamamos a <strong>variável</strong> e utilizamos o <strong>ponto (.)</strong> seguido de <strong>includes()</strong>. 
+                Dentro dos <strong>parênteses</strong>, passamos o <strong>valor que queremos verificar</strong>. Exemplo: <strong><code>console.log(palavra.includes(part));</code></strong>.
+            </p>
+            <p>
+                Como resultado no <strong>console</strong> de nosso navegador teremos como resultado <strong>true</strong>.  Isso pois nossa <strong>variavel</strong> part com valor de <strong>'bc'</strong> tem em nossa variavel <strong>palavra</strong>
+            </p>
+
+            <h3 class="junto">IndexOf - Achando o indice</h3>
+            <p>
+                Agora iremos ver onde comeca o <strong>indice</strong> de nossa variavel <strong>part</strong> dentro da variavel <strong>palavra</strong>. Para isso usaremos o <strong>metodo</strong> <strong><code>indexOf</code></strong>, para usar ele, tambem chamamos primeiramente a <strong>variavel</strong> seguido de <strong>ponto (.)</strong> seguido por <strong><code>indexOf</code></strong> e como <strong>parametro</strong> passamos oque desejamos verificar, no caso <strong>part</strong>. Ficando da seguinte forma em nosso codigo:
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/indexOf.png" alt="Index Of">
+                </picture>
+                <figcaption>
+                    Nesse caso em nosso console sera retornado o valor de <strong>01</strong> pois em nossa variavel <strong>palavra</strong> <strong>bc</strong> esta comeca no indice 1. Porem se no final tivermos novamente mais um <strong>bc</strong> ele ainda ira continuar retornando 1. Isso pois no <strong>JS</strong> o metodo <strong>indexOf</strong> vai retornar a primeira ocorrencia que ele encontra na <strong>string</strong>.
+                </figcaption>
+            </figure>
+
+            <h3 class="junto">lastIndexOf()</h3>
+            <p>
+                Se quisermos encontrar no caso a ultima parte tambem, podemos utilizar de outro <strong>metodo</strong> sendo ele: <strong><code>lastIndexOf(part)</code></strong>, ficando da seguinte forma
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/last_index_of.png" alt="lastIndexOf">
+                </picture>
+            </figure>
+
+            <h3 class="junto">startsWith()</h3>
+            <p>
+                Com ele conseguimos verificar se a <strong>palavra(string)</strong> que buscamos comeca com o que queremos, se sim teremos como resultado em nosso <strong>console</strong> como <strong>true</strong>. Ficando da seguinte forma em nosso codigo:
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/startsWith.png" alt="Exemplo startsWith">
+                </picture>
+            </figure>
+
+            <h3 class="junto">endsWith()</h3>
+            <p>
+                Faz o oposto de <strong>startsWith</strong>, assim como o nome sugere ele verifica se nossa ultima palavra termina igual oque buscamos. Ficando da seguinte forma:
+            </p>
+            <figure>
+                <picture>
+
+                </picture>
+            </figure>
+
+            <h3 class="junto">Obs:</h3>
+            <p>
+                Alguem importante saber é que os <strong>metodos</strong> <strong>indexOf</strong> e <strong>lastIndexOf</strong>, se nossa verificacao nao for encontrada, entao sera retornado <strong>-1</strong>
+            </p>
+
+        </article>
+
+        <article class="conc">
+            
+            <!-- <h3 class="cont-title">Exemplo usado em nosso código:</h3> -->
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../06_string_case_swapping/index.html">Próxima Aula - String Case Swapping</a>
+    </div>
+
+</body>
+</html>
