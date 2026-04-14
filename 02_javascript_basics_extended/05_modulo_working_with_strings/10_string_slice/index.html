@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Slice</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../09_comparing_strings/index.html">Aula Anterior - Comparing strings</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">String Slice</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Para essa aula teremos o seguinte codigo como exemplo:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo.png" alt="Exemplo">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Explicacao</h3>
+            <p>
+                Podemos observar que comecamos criando nossa variavel <strong>mensagem</strong> com seu devido valor, apos isso em nosso <strong>console</strong> imprimimos o valor com os seguintes <strong>metodos: substr(3, 5), substring(3, 5), slice(3, 5)</strong>.
+            </p>
+
+            <h3 class="junto">substr()</h3>
+            <p>
+                Quando chamamos nossa mensagem com o <strong>substr</strong> ele nos permite <strong>dois parametros</strong> primeiro o <strong>indice inicial</strong> e o segundo <strong>indice ate onde ira pegar</strong> ou seja, comecamos do 3 e pegamos os proximos <strong>5 caracteres</strong>. Resultado com nosso exemplo os valores 3,4,5,6,7.
+            </p>
+
+            <h3 class="junto">substring()</h3>
+            <p>
+                Muito similar ao primeiro seu primeiro parametro tambem e o <strong>indice que iremos comecar</strong> porem o <strong>segundo e onde iremos parar e nao sera incluido</strong> como resultado desse exemplo teremos em nosso console os valores de <strong>3,4</strong>.
+            </p>
+
+            <h3 class="junto">slice()</h3>
+            <p>
+                Tambem aceita os mesmos parametros e funciona parecido, porem sua diferenca da <strong>substring</strong> é que o <strong>slice</strong> tambem aceita valores negativos.
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/slice.png" alt="slice">
+                </picture>
+                <figcaption>
+                    Como resultado em nosso console teremos <strong>2,3,4,5,6,7</strong> isso pois <strong>(2, -2)</strong> o -2 esta dizendo para nao incluir os dois ultimos <strong>caracteres</strong>.
+                </figcaption>
+            </figure>
+
+            <h3 class="junto">Obs</h3>
+            <p>
+                Em ambos <strong>substring e slice</strong> tambem aceitam <strong>1 parametro</strong> se for passado apenas um parametro estamos dizendo de onde ele ira comecar e ira imprimir o restante de onde inicia.
+            </p>
+
+        </article>
+
+        <article class="conc">
+            
+            <!-- <h3 class="cont-title">Exemplo usado em nosso código:</h3> -->
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../11_string_trim/index.html">Próxima Aula - String trim</a>
+    </div>
+
+</body>
+</html>
