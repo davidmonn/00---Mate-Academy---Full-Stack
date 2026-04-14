@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String padStart, padEnd</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../11_string_trim/index.html">Aula Anterior - String trim</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">String padStart, padEnd</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Em algum momento iremos nos deparar com momentos onde iremos trabalhar com <strong>cartoes de credito</strong>, como em sites de compras e etc.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Exemplo</h3>
+            <p>
+                Como exemplo teremos o seguinte codigo:
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo.png" alt="Exemplo">
+                </picture>
+            </figure>
+
+            <p>
+                Uma das coisas que acontece normamente em sites de compras com cartoes de credito, quando inserimos os numeros de nosso cartao, o que geralemente vemos é uma serie de <strong>asteristicos ***</strong> seguido pelos ultimos 4 digitos do cartao.
+            </p>
+            <p>
+                Aqui iremos representar a mesma situacao usando o <strong>JS</strong>.
+            </p>
+
+            <h3 class="junto">Explicacao</h3>
+            <p>
+                Primeiro em nosso codigo temos duas variaveis a primeira ira receber <strong>simula</strong> o input com dados do cartao de credito e o segundo recebe o valor do primeiro e imprimimos no console o a segunda <strong>variavel</strong>.
+            </p>
+            <p>
+                Para podermos mascarar esses valores que desejamos do <strong>cartao</strong>, o <strong>JS</strong> tem alguns <strong>metodos</strong> aqui iremos ver duas delas, sendo elas: <strong>padStart</strong> e <strong>padEnd</strong>.
+            </p>
+
+            <h3 class="junto">padStart()</h3>
+            <p>
+                Nele podemos utilizar de <strong>dois parametros</strong> o primeiro nome da <strong>variavel</strong> e o segundo <strong>caractere que ira fazer separacao (substituir os valores)</strong>
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/padStart.png" alt="Exemplo padStart">
+                </picture>
+            </figure>
+            <p>
+                Podemos observar que, na variável <strong>ultimosQuatro</strong>, utilizamos o método <strong>.slice(-4)</strong>, ou seja, ele retorna apenas os 4 últimos caracteres da string.
+            </p>
+
+            <p>
+                Em seguida, utilizamos a propriedade <strong>.length</strong>, que serve para retornar o tamanho da string.
+            </p>
+
+            <p>
+                Por fim, no <strong>console</strong>, utilizamos a variável <strong>ultimosQuatro</strong>, que já contém apenas os 4 últimos caracteres. 
+                Além disso, aplicamos o método <strong>.padStart()</strong>, onde passamos como primeiro parâmetro o tamanho total da string e, como segundo parâmetro, os caracteres (<strong>****</strong>) que serão usados para preencher o início.
+            </p>
+
+            <p class="separado">
+                Agora se quisermos ao inves de retornar ou mascarar os ultimos 4 digitos. Mas por exemplo pegar os primeiros 4 tambem poderiamos fazer.
+            </p>
+
+            <h3 class="junto">padEnd</h3>
+            <p>
+                Com ele conseguimos fazer o basicamente o mesmo que <strong>padStart</strong> porem comecando do comeco.
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/padEnd.png" alt="Exemplo padEnd">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+            
+            <!-- <h3 class="cont-title">Exemplo usado em nosso código:</h3> -->
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../13_string_repeat/index.html">Próxima Aula - String repeat</a>
+    </div>
+
+</body>
+</html>
