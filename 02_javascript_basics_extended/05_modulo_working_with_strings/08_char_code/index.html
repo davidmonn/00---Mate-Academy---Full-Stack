@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Char Code</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../07_case_insensitive_search/index.html">Aula Anterior - Case Insensitive Search</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Char Code</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Exemplo</h3>
+            <p>
+                Como exemplo teremos o seguinte codigo:
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo.png" alt="Exemplo">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                Como podemos ver nesse codigo, foi declarado uma <strong>variavel 'mensagem'</strong> com seu devido valor, apos isso imprimimos no <strong>console</strong> esse valor da <strong>variavel 'mensagem'</strong>. Apos isso, utilizando o <strong>laco de repeticao for</strong> iremos percorrer cada um dos <strong>caracteres</strong> dessa <strong>string</strong> e apos isso imprimir em nosso <strong>console</strong> cada um desses <strong>caracteres</strong>.
+            </p>
+            <p>
+                No <strong>JS</strong> cada um dos <strong>caracteres</strong> representa um valor UTF-16 e podemos pegar o valor do <strong>caractere UTF</strong> atraves do seguinte codigo. Para isso iremos ver em nosso codigo ficando da seguinte forma:
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/code_utf.png" alt="Exemplo Char Code">
+                </picture>
+            </figure>
+            <p>
+                Com isso conseguimos obter os valores de <strong>utf</strong> de cada <strong>caractere</strong>, e da mesma forma tambem podemos obter cada caractere baseada em seu codigo usando o <strong>String.fromCharCode(codigoUtf);</strong>. ficando da seguinte forma:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/string_from_char_code.png" alt="Exemplo String From Char Code">
+                </picture>
+            </figure>
+
+            <h3 class="separado">Resumindo</h3>
+            <h3 class="junto">charCodeAt()</h3>
+            <p>
+                Conseguimos passar os valores dos <strong>caracteres</strong> para utf.
+            </p>
+
+            <h3 class="junto">String.fromCharCode()</h3>
+            <p>
+                Conseguimos passar os valores de <strong>utf</strong> para <strong>caracteres</strong>.
+            </p>
+
+        </article>
+
+        <article class="conc">
+            
+            <!-- <h3 class="cont-title">Exemplo usado em nosso código:</h3> -->
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../09_comparing_strings/index.html">Próxima Aula - Comparing Strings</a>
+    </div>
+
+</body>
+</html>
