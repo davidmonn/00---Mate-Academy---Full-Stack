@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparing strings</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../08_char_code/index.html">Aula Anterior - Char Code</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Comparing strings</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Agora iremos aprender mais um pouco sobre <strong>comparacao de strings</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Exemplo</h3>
+            <p>
+                Para isso teremos o seguinte codigo como exemplo:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/codigo_exemplo.png" alt="Codigo de Exemplo">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                Temos duas variaveis ambas com nomes atribuidos, apos isso em nosso primeiro <strong>console.log</strong> estamos imprimindo ambos nomes e se o <strong>nome1</strong> e <strong>> nome2</strong>. Nessa comparacao feita entre <strong>variaveis</strong> dentro do <strong>console</strong> tera como resultado <strong>true</strong> pois o nome1 é maior que o nome2
+            </p>
+            <p>
+                Ja no segundo treco de codigo, estamos imprimindo no console o <strong>primeiro caractere de cada um dos nomes e o codigo de cada um desses caracteres</strong>. No <strong>JS</strong> quando fazemos comparacao de string, oque o <strong>JS</strong> faz e comparar letra por letra, mas oque realmente e comparado e o <strong>codigo daquela letra</strong>.
+            </p>
+            <p>
+                Um exemplo seria se ambos os nome1 e nome2, comecassem com as mesmas letras, o <strong>JS</strong> iria para a proxima para comparar, e ele vai fazendo isso ate encontrar valores diferentes e chagar a conclusao de qual e maior.
+            </p>
+            <p>
+                Porem temos um problema, se fizermos por exemplo uma comparacao desses ambos nomes se acabarmos mudando a letra do primeiro ou segundo para <strong>minusculo</strong> o resultado pode acabar sendo alterado, isso pois cada caractere tem um valor e <strong>maiusculo e minusculo</strong> tambem tem diferentes valores. Para evitarmos esse tipo de sistuacoes de comparacoes de strings, o que podemos fazer para resolver e fazer uma comparacao justa é podermos fazer antes da <strong>comparacao</strong>, converter ambas <strong>varaiveis</strong> para <strong>toLowerCase</strong> assim teremos ambas da mesma forma de caracteres e nao teremos resultado inesperados. Podendo ser feito da seguinte:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/maninp_comparar.png" alt="Manipulando antes de Comparar">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                Tem alguns casos onde por exemplo em <strong>portugues</strong> que temos caracteres especiais, um exemplo seria <strong>ç</strong> e <strong>ã</strong>.
+            </p>
+
+            <h3 class="junto">localeCompare</h3>
+            <p>
+                Nesses casos podemos fazer uso do metodo <strong>localeCompare</strong>, que ira retornar <strong>1</strong> se o nome na comparacao seja maior que o outro e <strong>-1</strong> se essa comparacao retornar false.
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/localeCompare.png" alt="Exemplo localeCompare">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+            
+            <!-- <h3 class="cont-title">Exemplo usado em nosso código:</h3> -->
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../10_string_slice/index.html">Próxima Aula - String slice</a>
+    </div>
+
+</body>
+</html>
