@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarefa: Tidy number</title>
+    <title>Tarefa: Scrolling text</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,22 +12,48 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../16_tarefa_is_special_number/index.html">Aula Anterior - Tarefa: Is special number</a>
+        <a class="back" href="../17_tidy_numbers/index.html">Aula Anterior - Tidy number</a>
     </div>
     
     <main>
 
         <article id="intro">
 
-            <h1 id="title">Tarefa: Tidy number</h1>
+            <h1 id="title">Tarefa: Scrolling text</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                Vamos verificar se todos os nossos números estão organizados. Um número está organizado se cada um de seus dígitos for maior ou igual ao anterior.
+                Agora você vai aprender como alterar a ordem dos caracteres em uma string.
             </p>
-            <p>
-                que aceita um número positivo e retorna <strong>true</strong> se ele for organizado e <strong>false</strong> caso contrário.
+
+            <p class="separado">
+                Escreva a função scrollingText que:
             </p>
+
+            <ul>
+                <li>
+                    aceita a string word;
+                </li>
+                <li>
+                    earranja sequencialmente todos os caracteres na string do índice zero até o último;
+                </li>
+                <li>
+                    retorna um array com a string dada e todas as combinações recebidas em maiúsculas.
+                </li>
+            </ul>
+
+            <p class="separado">
+                Por exemplo, para a palavra 'robot' temos:
+            </p>
+
+            <ul>
+                <li>
+                    pegue o primeiro caractere r e coloque-o no final da palavra — 'obotr';
+                </li>
+                <li>
+                    pegue o primeiro caractere atual da 'obotr' (o) e coloque-o no final — 'botro' e assim por diante.
+                </li>
+            </ul>
 
         </article>
 
@@ -54,7 +80,7 @@
         </main>
         
     <div class="next">
-        <a class="next" href="../18_scrollin_text/index.html">Próxima Tarefa: Scrolling text</a>
+        <a class="next" href="../19">Próxima Tarefa: Jumping numbers</a>
     </div>
 
 </body>
