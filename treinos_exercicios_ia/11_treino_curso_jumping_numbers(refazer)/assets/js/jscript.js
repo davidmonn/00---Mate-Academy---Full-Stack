@@ -1,3 +1,0 @@
-function isJumping(n) {
-   
-}
