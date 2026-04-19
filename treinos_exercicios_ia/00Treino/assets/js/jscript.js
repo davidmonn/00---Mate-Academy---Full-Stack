@@ -1,113 +1,85 @@
 /*
-Objetivo: treinar for + índice.
-
-Crie uma função que:
-
-recebe uma string.
-retorna um array com cada caractere separado
-
-Crie uma função de seta greeter, que recebe uma string name como argumento e retorna uma saudação com o formato Hi, ${name}!.
-
-Por favor, não use a palavra-chave return.
-
-const getString = () => {
-  const jobTitle = "I am a programmer";
-  return jobTitle;
-}
+retorna um array com cada caractere separado.
 */
 
-let teste = 'David';
+// Testes STRING
+/*
+const testStr = 'David Monteiro';
 
-let greeter = name => `Hi, ${name}!`;
-console.log(greeter(teste));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const test = 'David oiu';
-
-function caracteres(chars) {
-    chars = chars.split('');
+function separar(caracteres) {
+    let armazenar = caracteres.split('');
     let result = [];
 
-    for(let char = 0; char < chars.length; char++) {
-        result.push(chars[char]);
+    for(let char = 0; char < armazenar.length; char++) {
+        result.push(armazenar[char]);
+    }
+    return result;
+}
+console.log(separar(testStr));;
+
+
+function separarForOf(chars) {
+    let storeChars = chars.split('');
+    let result = [];
+
+    for(let char of storeChars) {
+        result.push(char);
+    }
+    return result;
+}
+console.log(separarForOf(testStr));
+
+
+function sepInvert(chars) {
+    let storeInvert = chars.split('');
+    let result = [];
+
+    for(let char = storeInvert.length -1; char >= 0; char--) {
+        result.push(storeInvert[char]);
+    }
+    return result;
+}
+console.log(sepInvert(testStr));
+
+function sepInvertForOf(chars) {
+    let storeInvert = chars.split('')
+    let result = [];
+    let count = chars.length - 1;
+
+    for(let char of storeInvert) {
+        result[count] = char;
+        count--;
+    }
+    return result;
+}
+console.log(sepInvertForOf(testStr));
+
+*/
+
+// TESTES ARRAYS
+const testArr = ['David Monteiro'];
+const testNumb = 12345;
+
+function separarArrFor(chars) {
+    let storeChars = chars.join('');
+    let result = '';
+
+    for(let char = 0; char < storeChars.length; char++){
+        result += storeChars[char];
+        if(char < storeChars.length -1) {
+            result += '.';
+        }
     }
     return result;
 }
 
-console.log(caracteres(test));
+console.log(separarArrFor(testArr));
 
-function ivertion(chars) {
-    let inverterChar = chars.split('');
-    let resultado = [];
+function separarArrForOf(chars) {
+    let storeArr = chars.join('');
+    
+    if(storeArr)
 
-    for(let inverter = inverterChar.length - 1; inverter >= 0; inverter--) {
-        // resultado += inverter; nesse caso se estou convertento para um array pq funciona das duas formas ?
-        resultado.push(inveter)
-
-    }
-    return resultado;
 }
 
-console.log(ivertion(test));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function ivertion(chars) {
-    let arrayDeChars = chars.split(''); // ["D", "a", "v", "i", "d"]
-    let resultado = [];
-
-    // 1. Começamos no 4 (arrayDeChars.length - 1)
-    // 2. Enquanto o índice for maior ou igual a 0
-    // 3. Diminuímos 1 a cada volta (inverter--)
-    for(let inverter = arrayDeChars.length - 1; inverter >= 0; inverter--) {
-        
-        // Pegamos o caractere naquela posição e guardamos no array novo
-        resultado.push(arrayDeChars[inverter]);
-    }
-
-    return resultado;
-}
+console.log(separarArrForOf(testArr));
