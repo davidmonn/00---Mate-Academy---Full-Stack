@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arguments and Rest params</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../01_skipped_arguments_and_default_values/index.html">Aula Anterior - Skipped arguments and default values</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Arguments and Rest params</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Para essa aula teremos o seguinte codigo como exemplo:
+            </p>
+            <figure>
+                <picture>
+                     <img src="assets/imgs/exemplo.png" alt="Exemplo">
+                </picture>
+            </figure>
+            <p>
+                Temos um exmplo semelheante a aula anterior, porem nesse caso. Estamos passando mais <strong>argumentos</strong> doque temos de <strong>parametros</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Mais Argumentos que Parametros</h3>
+            <p>
+                Nesse caso nao aparesentara erro em nosso <strong>console</strong>, porem, ira aparecer apenas os dois primeros valores passado e o resto sao ignorados.
+            </p>
+
+            <h3 class="junto">Arguments</h3>
+            <p>
+                Com ele conseguimos ver tudo que e passado para nossa <strong>funcao</strong>, ficando da seguinte forma:
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/arguments.png" alt="arguments">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Ficando da seguinte forma em nosso console:</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/result_arguments.png" alt="Arguments Console">
+                </picture>
+                <figcaption>
+                    Podemos observar que temos na primeira opcao temos os valores 5 e 7 como resultado tambem temos um array onde 0->5 e 1->7. Porem na segunda <strong>funcao</strong> onde passamos 4 <strong>argumentos</strong> aqui temos outro <strong>array</strong> porem com <strong>4 valores</strong> 0->1, 1->2, 2->3, 3->4. Temos algumas alternativas doque podemos fazer nesse caso. Podemos utilizar um <strong>operador</strong> do <strong>JS</strong> que se chama <strong>rest operator</strong>, para utiliza-lo em nosso argumento, podemos usar <strong>3 pontos (...args)</strong>. Ficando da seguinte forma em nosso codigo:
+                </figcaption>
+            </figure>
+
+            <h3 class="junto">rest opetarator</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/args.png" alt="args">
+                </picture>
+            </figure>
+            <h3>Console:</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/args_console.png" alt="args  console">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Explicacao args</h3>
+            <p>
+                Como resultado, podemos observar que o primeiro tem um <strong>array vazio</strong> isso pois sao atribuidos a <strong>a b</strong> e o <strong>segundo 'resto'</strong>. Quando queremos escrever uma <strong>funcao</strong> que aceita qualquer numero de <strong>parametros</strong>, podemos por exemplo ignorar <strong>a b</strong> removendo eles e <strong>atribuir</strong> nosso <strong>rest operator</strong> e dar algum nome para essa variavel ( no caso chamamos ela de <strong>args</strong> ). Ficando da seguinte forma em nosso codigo:
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/usando_args.png" alt="usando args">
+                </picture>
+            </figure>
+            <p>
+                Aqui teremos como valores <strong>[5, 7]</strong> para nosso primeira chamada da funcao e  valores [1,2,3,4] para a segunda chamada de nosa funca. O importante e notar que o resultado desse <strong>args</strong> e notar se tornam um <strong>array</strong> com esses novos <strong>argumentos</strong>
+            </p>
+
+        </article>
+
+        <article class="conc">
+            
+            <a href="chat.html" class="next">Versao Gemini - Explicacao Corrigida</a>
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../03_arrow_function/index.html">Próxima Aula - Arrow function</a>
+    </div>
+
+</body>
+</html>
