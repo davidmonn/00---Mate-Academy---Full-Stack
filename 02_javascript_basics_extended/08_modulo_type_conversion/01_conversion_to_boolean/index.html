@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion to Boolean</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../../07_modulo_switch/07_tarefa_find_calculatio_type/index.html">Modulo Anterior: Switch - Aula - Tarefa: Find Calculation Type</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Conversion to Boolean</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui teremos o seguinte codigo como exemplo:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo.png" alt="Exemplo">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Explicacao Codigo</h3>
+            <p>
+                Temos como exemplo nesse codigo uma <strong>condicional</strong> onde seja <strong>true (verdadeira)</strong>, sera verificado e imprimido a mensagem em nosso <strong>console</strong>. Como nesse caso declaramos a <strong>variavel como true</strong>,quando o <strong>condicional</strong> avalia nossa condicao, iremos ter a impressao passada em nosso console.
+            </p>
+            <p class="separado">
+                Caso mudemos para <strong>false</strong>, nao ira mais ser impresso em nosso <strong>console</strong>. Porem nao sao apenas os valores de <strong>true</strong> ou <strong>false</strong> que teremos como <strong>resultado</strong> de nosso <strong>codigo</strong>.
+            </p>
+            <p>
+                Podemos tambem ter uma condicao onde nosso valor <strong>0</strong>, por exemplo se passarmos o valor de nossa variavel para <strong>0</strong>, o valor tambem ainda nao sera imprimido em nosso <strong>console</strong>. Isso ocorre pois se o valor de <strong>0</strong> ira ser interpretado como <strong>false</strong>.
+            </p>
+            <p class="separado">
+                Isso tambem ocorrera para outras opcoes como: <strong>NaN, 0n</strong> e etc. Tem uma forma de podermos verificar rapidamente essa condicional, <strong>nao</strong> apenas ela, como as que precisarmos. Para isso podemos colocar uma <strong>negacao</strong> em nossa variavel para podermos fazer alguns testes. Ficando da seguinte forma:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/negacao.png" alt="negacao">
+                    <figcaption>
+                        Com isso conseguimos fazer com que nosso <strong>valor boolean</strong> se inverta. Como no caso o resultado estava sendo <strong>false</strong> agora passa para <strong>true</strong>
+                    </figcaption>
+                </picture>
+            </figure>
+
+            <h3 class="junto">Uma Negacao (!)</h3>
+            <p>
+                Com uma <strong>negacao (1)</strong>, conseguimos inverter o resultado de <strong>boolean</strong>.
+            </p>
+
+            <h3 class="junto">Duas Negacao</h3>
+            <p>
+                Com duas <strong>negacoes(!!)</strong>, invertemos novamente nosso valor. Ou seja se nosso resultado e <strong>true</strong> e fazemos uma <strong>negacao</strong> ele passa para <strong>false</strong> e se fizermos duas, ele volta para <strong>true</strong>.
+            </p>
+
+            <h3 class="separado">Importante Saber</h3>
+
+            <h3 class="junto">String Vazia</h3>
+            <p>
+                Se temos uma <strong>string</strong> vazia, ela tem como resultado <strong>false</strong>, mas a partir do momento que e passado algo, mesmo que seja um <strong>espaco</strong>, ela se torna <strong>true</strong>.
+            </p>
+            <h3 class="junto">Objeto Vazio {}</h3>
+            <p>
+                Um objeto vazio é <strong>true</strong>.
+            </p>
+
+            <h3 class="junto">Array Vazio []</h3>
+            <p>
+                O mesmo ocorre com um <strong>array vazio</strong>, ele tambem e <strong>true</strong>.
+            </p>
+
+            <h3 class="junto">Funcao Vazia - function () {}</h3>
+            <p>
+                Tambem tem como <strong>resultado true</strong>.
+            </p>
+
+            <figure class="separado">
+                <picture>
+                    <img src="assets/imgs/conc.png" alt="Conclusao">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+            
+            <!-- <h3 class="cont-title">Exemplo usado em nosso código:</h3> -->
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../02_conversion_to_number/index.html">Próxima Aula - Conversion to Number</a>
+    </div>
+
+</body>
+</html>
