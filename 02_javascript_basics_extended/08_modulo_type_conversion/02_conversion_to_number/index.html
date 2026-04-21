@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion to Number</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../01_conversion_to_boolean/index.html">Aula Anterior - Conversion to boolean</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Conversion to Number</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui teremos o seguinte codigo de <strong>exemplo</strong>:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo.png" alt="exemplo">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Explicacao</h3>
+            <p>
+                Iremos supor que tenhamos um <strong>formulario</strong> em nossa <strong>pagina web</strong>, quando recebemos o valor de um <strong>input</strong> de um usuario como um valor <strong>numerico</strong>, sempre iremos receber esse valor como uma <strong>string</strong>.
+            </p>
+            <p class="separado">
+                Com isso criamos uma <strong>variavel</strong> a qual atribuimos o valor de <strong>100</strong> porem, em forma de <strong>string '100'</strong>.
+            </p>
+
+            <p>
+                Com isso iremos verificar como tratar esse dado que precisamos para receber em forma de <strong>numero</strong> fazendo uma <strong>conversao</strong>.
+            </p>
+
+            <h3 class="junto">Number() ou +variavel</h3>
+            <p>
+                Tanto o Number(variavel) ou +variavel. Ambos tem basicamente o mesmo proposito, <strong>converter</strong> um valor de uma <strong>string com numero</strong>, para <strong>numero</strong>.
+            </p>
+            <p>
+                Legibilidade: O Number(valor) é muito mais claro para quem está lendo seu código. O +valor é mais "ninja", mas pode ser confundido com uma operação de soma se não houver cuidado.
+            </p>
+            <p>
+                Performance: O operador + tende a ser ligeiramente mais rápido em alguns motores de JavaScript (como o V8 do Chrome), mas a diferença é tão minúscula que quase nunca justifica escolher um por causa disso.
+            </p>
+
+            <h3 class="junto">parseFloat e parseInt</h3>
+            <p>
+                Basicamente consegue fazer o mesmo que <strong>Number() ou +</strong>, porem ele tambem consegue fazer algo como, <strong>ignorar</strong> no caso desse valor passado ter tambem <strong>string</strong> misturado com o numero.
+            </p>
+            <p>
+                Porem o <strong>parseFloat()</strong>, se tivermos um valor <strong>float (flutuante (valor com virgula))</strong>, ele ira aceitar esse valor.
+            </p>
+            <p>
+                <strong>parseInt()</strong> nao ira aceitar o valor com numero <strong>float</strong> ele ira passar o valor sem a separacao por <strong>virgula ou ponto</strong> ou seja, ele irá retornar apenas a parte inteira, descartando qualquer valor após o ponto decimal
+            </p>
+
+            <p>
+                <strong>parseInt()</strong> aceita <strong>dois parametros</strong> o segundo sendo <strong>opcional</strong>, o segundo valor passado e para converter o valor para por exemplo uma <strong>base 2 (binario)</strong>.
+            </p>
+
+
+            <h3 class="junto">Dicas</h3>
+            <p>
+                <strong>parseInt:</strong> ignora as casas decimais (retorna o inteiro).
+            </p>
+            <p>
+                <strong>parseFloat:</strong> mantém as casas decimais.
+            </p>
+
+        </article>
+
+        
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../03_types_of_comparison/index.html">Próxima Aula - Types of comparison ( == vs === ) </a>
+    </div>
+
+</body>
+</html>
