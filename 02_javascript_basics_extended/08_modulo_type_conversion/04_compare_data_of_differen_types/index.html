@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Data Of Different Types</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../03_types_of_comparison/index.html">Aula Anterior - Types of Comparison ( == vs === )</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Compare Data Of Different Types</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos ter os seguinte codigo de exemplo:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo.png" alt="exemplo">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Comparacoes</h3>
+            <p>
+                Aqui iremos fazer algumas comparacoes com <strong>tipos de dados</strong>, como podemos observar em nosso codigo acima. Estamos comparando incialemnte um <strong>valor numerico com uma string numerica</strong>, depois uma <strong>string numerica com valor numerico</strong>, e por ultimo temos <strong>ambos valores string com numeros</strong>.
+            </p>
+
+            <p>
+                Em nossas comparacoes, o <strong>JS</strong> converte o <strong>numero string</strong> para numero, com isso temos <strong>false</strong> para ambos os primeros resultados pois <strong>2 nao e maior que 18</strong>.
+            </p>
+            <p>
+                Porem em nosso ultimo caso <strong>'2' > '18'</strong> temos resultado como <strong>true</strong>,quando o <strong>JS</strong> tem um numero e compara com uma <strong>string</strong> ele tenta fazer uma conversao para numero e avaliar o resultado.
+            </p>
+            <p>
+                Porem quando temos <strong>duas strings</strong>, ele faz um pouco diferente, ele pega <strong>caractere por caractere</strong> de cada uma das strings, e compara cada um de seus <strong>valores</strong>. No caso ele pegao o primeiro valor sendo <strong>2</strong> e depois pega o <strong>primeiro valor</strong> de <strong>18</strong>, sendo <strong>1</strong>
+            </p>
+
+            <h3 class="junto">Mais Comparacoes</h3>
+            <p>
+                Agora teremos o seguinte codigo de <strong>exemplo:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo2.png" alt="exemplo 02">
+                </picture>
+            </figure>
+
+            <p>
+                Em nossa primeira <strong>exempressao</strong> temos como resultado, <strong>true</strong>. No caso dessa <strong>comparacao ampla (==)</strong>, o <strong>JS</strong> ira basicamente ignorar o <strong>\t (tab)</strong> e o <strong>\n</strong>, fazendo a comparacao levando em conta apenas o <strong>2</strong>.
+            </p>
+
+            <p>
+                <strong><code>console.log(1 == true);</code></strong> aqui tambem temos como resultado <strong>true</strong>. Nesse caso o <strong>JS</strong> tambem faz a conversao, convertendo o valor do <strong>boolean (true)</strong> em um numero, e com isso temos <strong>true</strong>.
+            </p>
+
+            <p>
+                <strong><code>console.log(0 == null);</code></strong> Aqui temos como resultado <strong>false</strong>. Na documentacao do <strong>JS</strong>, diz que o <strong>null</strong> e apenas igual a <strong>ele mesmo</strong> ou ao <strong>undefined</strong>.
+            </p>
+
+            <p>
+                <strong><code>console.log(null == undefined);</code></strong> Aqui temos como resultado <strong>true</strong>. Como mencionado o <strong>null</strong> e apenas igual a ele mesmo ou <strong>undefined</strong>.
+            </p>
+
+            <h3 class="junto">Igualdade Estrita (===)</h3>
+            <p>
+                Por isso e sempre importante o uso de <strong>igualdade estrita</strong>, para que evitemos resultado <strong>indesejados</strong>.
+            </p>
+
+        </article>
+
+        <article class="conc">
+            
+            <!-- <h3 class="cont-title">Exemplo usado em nosso código:</h3> -->
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../">Próxima Aula - </a>
+    </div>
+
+</body>
+</html>
