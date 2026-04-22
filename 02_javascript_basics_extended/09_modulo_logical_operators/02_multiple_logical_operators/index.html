@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Logical Operators</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../01_logical_operators_in_details/index.html">Aula Anterior - Logical Operators in Details</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Multiple Logical Operators</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui verificar <strong>multiplos operadores logicos</strong> para verificar sua saida.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo:</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo.png" alt="exemplo">
+                </picture>
+            </figure>
+
+            <p>
+                Nesse exemplo podemos observar que temos <strong>multiplas escolhas</strong> para nosso <strong>operador logico ou (||)</strong>. Como resultado dessa <strong>expressao</strong> é <strong>1</strong>, podemos lembrar da aula <strong>passada</strong> onde o operador logico <strong>||</strong> retornava a primeira avaliacao feita. Agora iremos entender poque isso nao ocorreu.
+            </p>
+
+            <p>
+                Como mencionado na aula <strong>anterior</strong> o operador <strong>||</strong> ira retornar o primeiro lado da <strong>expressao</strong> caso ele seja <strong>verdadeiro (true)</strong>, e como ja vimos o <strong>0</strong> tem como valor de <strong>coercao false (falsy)</strong>. Agora se apassemos o <strong>0</strong> e ele iria avaliar apenas o <strong>1</strong> e <strong>2</strong>, ira ser retornado o <strong>1</strong> tanto por ser <strong>coecao (true)</strong> quanto por estar ao lado da esquerda.
+            </p>
+
+            <p>
+                Mas se tivessemos comparando o <strong>3 || 1</strong>, seria retornado o <strong>3</strong>, pois sempre e verificado da esqueda para a direita.
+            </p>
+
+            <h3 class="junto">Multiplos &&</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/mult_and.png" alt="Multiplos &&">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                Aqui teremos como resultado <strong>0</strong>. Como mencionado tambem na <strong>aula passada</strong>, o <strong>operador logico and (&&)</strong>.
+            </p>
+            <p>
+                O primeiro lado da <strong>expressao</strong> é <strong>falsy</strong> ele é retornado. Sendo avaliado o <strong>0 e 1</strong>, e como o <strong>0 e um falsy value</strong>, ele e retornado.
+            </p>
+
+            <h3 class="junto">Misturando Operadores Logicos || &&</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/misturando_operadores.png" alt="misturando operadores">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                Nesse caso como resulado teremos o <strong>2</strong>.
+            </p>
+            <p>
+                Na <strong>operacao logica</strong>, temos uma questao similiar a <strong>operacao aritmetica</strong>, onde temos uma <strong>precedencia de operacoes</strong>.
+            </p>
+            <p>
+                Nesse caso quem tem a <strong>precedencia</strong> é o <strong>and (&&)</strong>. Entao oque sera avaliado primeira sera <strong>1 e(&&) 2</strong> e nessa operacao caso o primeiro operador logico seja <strong>true</strong> o <strong>segundo lado e retornado</strong>. Depois o proximo a ser avaliado sera <strong>0 ou(||) 2</strong> e como o <strong>0 e falsy</strong>, ele retorna o <strong>true (2)</strong>.
+            </p>
+
+        </article>
+
+        <article class="conc">
+            
+            <!-- <h3 class="cont-title">Exemplo usado em nosso código:</h3> -->
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../03_tarefa_can_they_book/index.html">Próxima Aula - Can They Book</a>
+    </div>
+
+</body>
+</html>
