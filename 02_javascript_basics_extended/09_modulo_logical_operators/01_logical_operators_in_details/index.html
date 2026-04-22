@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical Operators in Details</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../../08_modulo_type_conversion/06_get_winner/index.html">Modulo: Type Conversion - Aula Anterior - Tarefa: Get Winner</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Modulo: Logical Operators - Aula: Logical Operators in Details</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Agora iremos verificar uma seria de resultados logicos de uma serie de <strong>expressoes</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Código de Exemplo:</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo.png" alt="Exemplo de operadores lógicos">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Explicação dos consoles:</h3>
+            <p>
+                Em nossas comparações usando o operador lógico <strong>OU (||)</strong> no primeiro <strong>console</strong>, temos os seguintes resultados: 
+                <strong>true || true</strong>, <strong>true || false</strong> e <strong>false || true</strong> resultam em <strong>true</strong>. 
+                Por último, o resultado de <strong>false || false</strong> é <strong>false</strong>.
+            </p>
+            <p>
+                Com isso, observamos que o <strong>operador lógico ||</strong>, no <strong>JavaScript</strong>, retornará 
+                <strong>true</strong> caso pelo menos um dos lados da <strong>expressão</strong> avaliada seja <strong>true</strong>. 
+                Caso contrário, retornará <strong>false</strong>. Ou seja: se houver <strong>true</strong> em qualquer lado, o resultado é <strong>true</strong>.
+            </p>
+
+            <h3 class="junto">Explicação da Função:</h3>
+            <p>
+                Criamos uma <strong>função</strong> que retorna o resultado da comparação entre <strong>a || b</strong>. 
+                O comportamento é idêntico ao dos exemplos anteriores no <strong>console</strong>, gerando os mesmos resultados.
+            </p>
+
+            <h3 class="junto">Obtendo o mesmo resultado com If:</h3>
+            <p>
+                Agora, tentaremos obter os mesmos <strong>resultados</strong> utilizando a estrutura condicional <strong>if</strong>. 
+                O código ficaria da seguinte forma:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_function.png" alt="Exemplo de função com if">
+                </picture>
+            </figure>
+
+            <p>
+                Como sabemos, as <strong>condicionais</strong> avaliam a <strong>expressão dentro dos parênteses</strong> como um booleano. 
+                Caso a condição seja <strong>verdadeira (true)</strong>, a função retorna o valor definido no primeiro bloco; caso contrário, retorna o segundo. 
+                Com isso, alcançamos os mesmos resultados obtidos anteriormente.
+            </p>
+
+            <p class="separado">
+                Agora, mudaremos os valores para testar se o comportamento se mantém. Alteraremos 
+                <strong>true</strong> para <strong>1</strong> e <strong>false</strong> para <strong>0</strong>:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_function_0.png" alt="Exemplo com 0 e 1">
+                </picture>
+                <figcaption>
+                    O resultado será basicamente o mesmo, pois <strong>0 é Falsy</strong> e <strong>1 é Truthy</strong>.
+                </figcaption>
+            </figure>
+
+            <p class="junto">
+                No JavaScript, quando o motor da linguagem espera um booleano (dentro de um <strong>if</strong>, por exemplo), ele "força" a conversão de qualquer valor para true ou false. É aqui que entram o 0 e o 1:
+            </p>
+            <p>
+                <strong>Os Valores "Forçados" (Coerção):</strong>
+            </p>
+            <ul class="separado">
+                <li>
+                    <strong>0 é Falsy:</strong> Sempre que o JavaScript tenta converter o número 0 para booleano, ele se torna <strong>false</strong>.
+                </li>
+                <li>
+                    <strong>1 é Truthy:</strong> Quase todos os outros números (incluindo o 1) tornam-se <strong>true</strong>.
+                </li>
+            </ul>
+
+            <h3 class="separado">Alterando os Valores de 0 e 1:</h3>
+            <p>
+                Se alterarmos os valores para números diferentes de <strong>0 e 1</strong>, os resultados podem parecer diferentes à primeira vista, pois o 0 e o 1 estavam se comportando exatamente como <strong>false e true</strong>.
+            </p>
+
+            <h3>Exemplo:</h3>
+            <p>
+                Código alterado:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_alterando_values.png" alt="Exemplo alterando valores numéricos">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Resultando em:</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/resultado_alteracao.png" alt="Resultado da alteração de valores">
+                </picture>
+            </figure>
+            <p>
+                Observamos que o resultado mudou em comparação ao teste com <strong>0</strong> e <strong>1</strong>. 
+                Isso ocorre porque, anteriormente, os valores eram convertidos diretamente para os booleanos que representavam.
+            </p>
+            <p>
+                Agora, como o motor está avaliando valores onde ambos os lados são <strong>Truthy</strong> (como 10 ou 20), o operador <strong>||</strong> retorna o <strong>primeiro valor avaliado</strong> que satisfaça a condição de ser "verdadeiro".
+            </p>
+
+            <h3 class="separado">Operador Logico and (&&)</h3>
+
+            <h3 class="junto">Explicacao:</h3>
+            <p>
+                Iremos continuar com a mesma base de <strong>exemplo</strong>, porem iremos mudar apenas o <strong>operador ||</strong> para <strong>&&</strong>. Ficando da seguinte forma:
+            </p>
+
+            <figure class="separado">
+                <picture>
+                    <img src="assets/imgs/exemplo_&&.png" alt="exemplo &&">
+                </picture>
+            </figure>
+
+            <p>
+                Com isso teremos agora resultado diferentes. ficando da seguinte forma:
+            </p>
+
+            <figure class="separado">
+                <picture>
+                    <img src="assets/imgs/resultado_&&.png" alt="Resultado &&">
+                </picture>
+                <figcaption>
+                    Primeiro resultado && Segundo resultado ||
+                </figcaption>
+            </figure>
+
+            <h3 class="junto">||</h3>
+            <p>
+                Como ja dito, quando temos a <strong>logica</strong> do <strong>ou (||)</strong>, ele verifica se o primeiro lado da <strong>expressao</strong> e <strong>true</strong> e se sim, ja retorna esse primeiro valor.
+            </p>
+
+            <h3 class="junto">&&</h3>
+            <p>
+                Com o &&, é um pouco diferente ele faz o oposto, retornando o <strong>segundo valor</strong>.
+            </p>
+
+        </article>
+
+        <article class="conc">
+            
+            <!-- <h3 class="cont-title">Exemplo usado em nosso código:</h3> -->
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../02_multiple_logical_operators/index.html">Próxima Aula - Multiple Logical Operators</a>
+    </div>
+
+</body>
+</html>
