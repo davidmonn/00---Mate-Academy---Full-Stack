@@ -12,11 +12,9 @@ function canTheyBook(adultsCount = 0, childrenCount = 0, babiesCount = 0) {
     const total = adultsCount + childrenCount + babiesCount;
 
     if(adultsCount === 0 || adultsCount >= 9) return false;
-    if(babiesCount > adultsCount) return false;
     if(adultsCount + childrenCount >= 9) return false;
     if(childrenCount > (adultsCount * 2)) return false;
     if(adultsCount + childrenCount > 9) return false;
-    if(childrenCount + babiesCount > (adultsCount * 2)) return false;
     if(total > 9) return false;
     return true;
     
