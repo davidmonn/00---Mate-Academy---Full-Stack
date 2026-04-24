@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Check Property</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../03_object_properties/index.html">Aula Anterior - Object Properties</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Object Check Property</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                No <strong>JS</strong> quando estamos trabalhando com <strong>objetos</strong>, é importante as vezes fazermos uma <strong>checagem</strong> da <strong>propriedade</strong> que desejamos acessar.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo:</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo.png" alt="Exemplo">
+                </picture>
+            </figure>
+            <p>
+                Podemos observar que deixamos <strong>idade</strong> como comentario. Isso para similarmos que nao ha a propriedade que desejamos. Com isso sera retornado em nosso <strong>console: undefined</strong>.
+            </p>
+            <p>
+                Para evitarmos erros em nosso <strong>codigo</strong>, podemos estar verificando as <strong>propriedades de um objeto</strong>.
+            </p>
+
+            <h3 class="junto">Verificando Propriedade:</h3>
+            <p>
+                Uma das formas, podemos estar verificando atraves de <strong>expressao</strong>. Ficando da seguinte forma:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/verificando_com_expressao.png" alt="verificando com expressao">
+                </picture>
+                <figcaption>
+                    Com isso temos como resultado em nosso console:<strong>true</strong>.
+                </figcaption>
+            </figure>
+            <p>
+                Porem se nossa <strong>idade</strong> tiver como seu valor <strong>undefined</strong>.
+            </p>
+            <p>
+                <strong>Ex:</strong>
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_undefined.png" alt="exemplo undefined">
+                </picture>
+                <figcaption>
+                    Nesse caso sera retornado <strong>false</strong>. Isso mesmo que a <strong>propriedade exista</strong>.
+                </figcaption>
+            </figure>
+
+            <p class="separado">
+                Para isso temos outras maneiras de <strong>verificar</strong> se uma <strong>propriedade existe</strong>.
+            </p>
+
+            <h3>Chave Com String</h3>
+            <p>
+                Uma das formas que temos e passar a <strong>chave para string</strong> <code>in</code> e o nome do <strong>objeto</strong> que queremos checar. Ficando da seguinte forma:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/check_in.png" alt="Check in">
+                </picture>
+                <figcaption>
+                    Porem essa nao e a melhor maneira de verificarmos se uma <strong>propriedade existe</strong> em nosso <strong>objeto</strong>. Isso pois o <strong><code>'idade' in user</code></strong>. Nao procura apenas nas <strong>propriedades de nosso objeto</strong> mas tambem procura no <strong>prototype do objeto</strong>.
+                </figcaption>
+            </figure>
+
+            <h3 class="junto">Mais seguro Para Verificar</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/checagem_segura.png" alt="checagem segura">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Dica:</h3>
+            <p>
+                Definir o valor de uma <strong>propriedade</strong> como <strong>undefined</strong> nao e aconselhavel, se por algum motivo desejarmos passar um valor <strong>vazio</strong>, podemos estar utilizando o <strong>null</strong>.
+            </p>
+
+        </article>
+
+        <article class="conc">
+            
+            <!-- <h3 class="cont-title">Exemplo usado em nosso código:</h3> -->
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../05_object_key_is_a_string/index.html">Próxima Aula - Object Key is a String</a>
+    </div>
+
+</body>
+</html>
