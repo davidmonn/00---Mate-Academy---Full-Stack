@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Properties</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../02_object_literal/index.html">Aula Anterior - Object Literal</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Object Properties</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos continuar nos aprofundando em <strong>objetos</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo:</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/objeto_exemplo.png" alt="objeto exemplo">
+                </picture>
+            </figure>
+            <p>
+                Quando temos um <strong>objeto</strong>, em algum momento precisaremos acessar as <strong>propriedades</strong> desse <strong>objeto</strong>.
+            </p>
+            <p>
+                No <strong>JS</strong> temos <strong>duas menairas de acessar essas propriedades</strong>.
+            </p>
+
+            <ul class="separado">
+                <li>
+                    1) <strong>Notacao de Ponto:</strong> nome do objeto + ponto (.), depois nome da propriedade que queremos acessar.
+                    <ul>
+                        <li>
+                            Ex: <strong><code>user.nome</code></strong>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    2) <strong>Notacao de Colchete:</strong> usamos o nome do <strong>objeto</strong> + nome da propriedade que desejamos acessar dentro de <strong>colchetes como sring ('')</strong>.
+                    <ul>
+                        <li>
+                            Ex: <strong><code>user['sobrenome']</code></strong>.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3 class="junto">Diferencas</h3>
+            <p>
+                Uma diferenca entre ambas e que um <strong>objeto</strong> pode ter <strong>espacos</strong> para declarar sua <strong>propriedade</strong>. Um exemplo seria se dividissemos nossa <strong>chave do objeto</strong>. Ex:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_chave_string.png" alt="exemplo chave_ string">
+                </picture>
+            </figure>
+            <p>
+                Com <strong>chave sting e colchetes</strong> podemos fazer esse tipo de coisa.
+            </p>
+
+            <h3 class="junto">Modificando Valores Dentro do Objeto</h3>
+            <p>
+                Tambem podemos estar <strong>modificando valores dentro de nosso objeto</strong>. Ex:
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/alterando_valor01.png" alt="alterando valor01">
+                </picture>
+            </figure>
+
+            <p class="separado">
+                Tambem podemos modificar com <strong>colchetes</strong>. Ficando da seguinte forma:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/alterando_valor02.png" alt="alterando valor02">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Adicionar Propriedades</h3>
+            <p>
+                Outra coisa que podemos estar fazendo é adicionar <strong>propriedades</strong> que ainda nao existem. Para fazer isso podemos fazer da seguinte forma:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/adicionando_propriedades.png" alt="adicionando propriedades">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Outra forma de Impressao no Console</h3>
+            <p>
+                Temos uma outra forma de estarmos imprimindo em nosso <strong>console</strong> do <strong>navegador</strong> para podermos ter uma melhor <strong>legibilidade</strong>. Para isso podemos usar o <strong>console.table (sera mostrado em forma de tabela)</strong>.
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/console.table.png" alt="console table">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Apagar Propriedade</h3>
+            <p>
+                Podemos tambem estar <strong>apagando uma propriedade de nosso objeto</strong>. Podemos fazer da seguinte forma:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/deletando_propriedades.png" alt="deletando propriedades">
+                </picture>
+            </figure>
+            
+
+        </article>
+
+        <article class="conc">
+            
+            <!-- <h3 class="cont-title">Exemplo usado em nosso código:</h3> -->
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../04_object_check_property/index.html">Próxima Aula - Object check property</a>
+    </div>
+
+</body>
+</html>
