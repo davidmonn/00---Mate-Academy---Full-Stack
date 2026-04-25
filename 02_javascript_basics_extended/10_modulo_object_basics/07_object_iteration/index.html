@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Iteration</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../06_object_reading_props_with_brackets/index.html">Aula Anterior - Object Reading Props With Brackets</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Object Iteration</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos ver mais sobre <strong>objeto</strong> e com <strong>iteracao for</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_iteracao_objeto.png" alt="exemplo iteracao objeto">
+                </picture>
+            </figure>
+            <p>
+                Com isso, criamos um <strong>laco de repeticao 'in'</strong>, para que consigamos percorrer cada uma das <strong>propriedades de nosso objeto</strong>.
+            </p>
+            <p>
+                Com isso teremos o seguinte resultado em nosso <strong>console do navegador:</strong>
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/console.png" alt="console">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                Com isso se quisermos alem de <strong>imprimir</strong> no <strong>console</strong> de nosso <strong>navegador as chaves de nosso objeto</strong> e quisermos tambem imprimir seu <strong>valor</strong>.
+            </p>
+            <p>
+                Podemos fazer da seguinte forma:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/iteracao_object.png" alt="iteracao object">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Adicionando Novo Valor</h3>
+            <p>
+                Agora iremos supor que desejamos adicionar um novo <strong>valor</strong> em nosso <strong>objeto</strong>.
+            </p>
+            <p>
+                Podemos fazer da mesma forma que viemos anteriormente em uma das aulas passadas. Podemos fazer da seguinte forma: <strong><code>ponto.code = 123;</code></strong>, com isso ele seguira a linha de nosso codigo sendo acrescentado por ultimo como <strong>resultado</strong>.
+            </p>
+            <p>
+                Ficando da seguinte forma:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/adicionando_propriedade.png" alt="adicionando propriedade">
+                </picture>
+            </figure>
+
+            <h3>Restultado no console:</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/resultado_adicao_propriedade.png" alt="resultado adicao propriedade">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                Agora se fizermos algo como adicionarmos diretamente em nosso <strong>objeto</strong>, como por exemplo:
+            </p>
+
+            <h3>Adicionando Chave e Valor</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/adicionando_diretamente.png" alt="adicionando diretamente">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Resultado no Console</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/resultado_adicao_direta.png" alt="resultado adicao direta">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                Podemos observar que apesar de ter sido adicionada por <strong>ultimo</strong> em nosso <strong>objeto</strong>, ele acaba ficando em <strong>primerio</strong>.
+            </p>
+            <p>
+                O mesmo ocorreria se agora adicionarmos um <strong><code>0: 'z'</code></strong> com isso o <strong>0</strong> ficaria em primeiro e o <strong>2</strong> em segundo.
+            </p>
+            <p>
+                Com isso podemos concluir que quando temos <strong>chaves como numeros iteiros</strong>. Eles sempre seram colocado no <strong>topo de nosso objeto</strong>, seguido pelas <strong>chaves</strong> que vieram.
+            </p>
+            
+        </article>
+
+        <article class="conc">
+            
+            <!-- <h3 class="cont-title">Exemplo usado em nosso código:</h3> -->
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../08_object_keys_values_entries/index.html">Próxima Aula - Object.keys, values, entries</a>
+    </div>
+
+</body>
+</html>
