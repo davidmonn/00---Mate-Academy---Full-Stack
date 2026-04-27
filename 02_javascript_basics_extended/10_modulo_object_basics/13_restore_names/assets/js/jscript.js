@@ -8,6 +8,11 @@ const users = [
     lastName: 'Adams',
     fullName: 'Mike Adams',
   },
+  {
+    firstName: '',
+    lastName: 'Monteiro',
+    fullName: 'Alexia Monteiro Sampaio de Abreu'
+  }
 ];
 
 function restoreNames(users) {
