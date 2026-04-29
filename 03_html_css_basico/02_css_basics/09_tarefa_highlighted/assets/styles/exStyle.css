@@ -1,0 +1,21 @@
+body {
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+.description {
+  font-weight: 700;
+}
+
+.important {
+  font-weight: 700;
+  color: IndianRed;
+}
+
+.question {
+  font-style: italic;
+}
+
+.highlighted {
+  background-color: gold;
+}
