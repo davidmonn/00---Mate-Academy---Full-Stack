@@ -1,0 +1,28 @@
+html {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 14px;
+}
+
+body {
+    font-size: 18px;
+}
+
+.title {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.text {
+    text-align: justify;
+}
+
+.footer {
+    font-size: 1.2rem;
+    color: white;
+    line-height: 100px;
+    text-align: center;
+    background-color: rgb(25%, 25%, 25%);
+    filter: brightness(25%);
+}
