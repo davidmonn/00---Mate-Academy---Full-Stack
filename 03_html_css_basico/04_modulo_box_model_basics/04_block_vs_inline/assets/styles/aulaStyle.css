@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 1350px;
+    margin: auto;
+}
+
+h3 {
+    background-color: greenyellow;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 50px;
+    font-weight: bolder;
+    height: 50px;
+    width: 650px;
+    line-height: 50px;
+}
+
+.message {
+    text-align: center, justify;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    background-color: rgba(128, 128, 128, 0.727);
+}
+
+.inline {
+    display: inline;
+}
+
+.inline-block {
+    display: inline-block;
+    width: 750px;
+}

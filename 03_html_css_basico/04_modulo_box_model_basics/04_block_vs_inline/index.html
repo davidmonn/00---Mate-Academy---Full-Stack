@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block vs Inline</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../03_box_model_questions/index.html">Aula Anterior - Box Model Questions</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Block vs Inline</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos ver as diferencas de <strong>elementos inline</strong> e <strong>elementos block</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Exemplo</h3>
+            <p>
+                Para isso iremos criar dois elementos de <strong>diferentes tipos</strong>. Ira ficar da seguinte forma em nosso <strong>HTML e CSS</strong>:
+            </p>
+
+            <h3 class="junto">HTML:</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/html.png" alt="HTML" style="width: 1250px;">
+                </picture>
+            </figure>
+
+            <h3 class="junto">CSS:</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/css.png" alt="CSS">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Block</h3>
+            <p>
+                Quando estamos trabalhando com um <strong>elemento block</strong>, ele ocupa todo o espaço horizontal disponível da página. Ou seja, esse elemento sempre começa em uma nova linha e não permite que outros elementos fiquem ao seu lado.
+            </p>
+
+            <h3 class="junto">Inline</h3>
+            <p>
+                Ao contrário do <strong>block</strong>, o <strong>inline</strong> ocupa apenas o espaço necessário para o seu conteúdo. Ele não quebra a linha, permitindo que outros elementos fiquem ao seu lado, por isso é importante usar com cuidado para não bagunçar a organização do layout.
+            </p>
+
+            <h3 class="junto">Inline-block</h3>
+            <p>
+                O <strong>inline-block</strong> é uma mistura dos dois comportamentos. Ele ocupa apenas o espaço necessário, como o <strong>inline</strong>, mas permite definir largura, altura, margens e espaçamentos, como o <strong>block</strong>. Além disso, ele não quebra a linha, permitindo que outros elementos fiquem ao seu lado.
+            </p>
+
+        </article>
+
+        <article class="conc">
+            
+        <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">Conteudo da aula</a>
+
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../05_margin_collapse/index.html">Próxima Aula - Margin Collapse</a>
+    </div>
+
+</body>
+</html>
