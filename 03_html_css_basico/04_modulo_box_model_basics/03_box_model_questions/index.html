@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model Questions</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../">Aula Anterior - DevTools Elements Panel</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Box Model Questions</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos trabalhar com modelo de <strong>caixas em CSS</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Exemplo</h3>
+            <p>
+                Para esssa aula iremos ja criar um <strong>elemento</strong> com a <strong>class box</strong> e com algumas modificicacoes <strong>CSS</strong>, ficando da seguinte forma:
+            </p>
+
+            <p class="junto"><strong>CSS:</strong></p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemploBox.png" alt="Exemplo elemento box">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+            
+            <h3 class="junto">Inspecionar Navegador/f12</h3>
+            <p>
+                Para essa aula iremos estar utilizando o <strong>inspecionar</strong> para estar entendendo melhor a <strong>box</strong>.
+            </p>
+
+            <h3 class="junto">Entendendo Tamanho</h3>
+            <p>
+                Quando criamos um <strong>elemento</strong> qualquer valor aplicado nele e somado, como por exemplo no <strong>elemento Box criado</strong>, ele possui <strong>300px</strong> porem se adicionarmos um <strong>border: 5px solid black;</strong> e um <strong>padding: 10px;</strong> agora ele nao tera mais um <strong>height: 300;</strong> mas sim com a soma das mudancas passaria a ter no total <strong>330px</strong>
+            </p>
+
+            <h3 class="junto">Explicacao</h3>
+            <p>
+                Com isso por mais que as vezes queremos criar um <strong>elemento</strong> com um tamanho <strong>fixo</strong> temos que tomar cuidado ao acrescentar mais propriedades.
+            </p>
+
+            <h3 class="junto">box-sizing: content-box;</h3>
+            <p>
+                Por padrao o elemento que criamos tem um <strong>box-sizing: content-box;</strong>, se tivermos o objetivo de utilizar uma <strong>caixa</strong> que mantenha o tamanho original do tamanho que definimos, podemos mudar o <strong>box-sizing</strong> para <strong>border-sizing: border-box;</strong>
+            </p>
+
+        <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">Conteudo da aula</a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../04_block_vs_inline/index.html">Próxima Aula - Block vs Inline</a>
+    </div>
+
+</body>
+</html>
