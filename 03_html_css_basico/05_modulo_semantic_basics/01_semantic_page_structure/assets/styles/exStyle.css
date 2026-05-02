@@ -1,0 +1,33 @@
+.title {
+    text-align: center;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.nav {
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+.nav_link {
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.nav_link:hover {
+    color: aqua;
+    transition: 0.5s;
+}
+
+footer {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    line-height: 80px;
+}
