@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+}
+
+.nav_link {
+    padding: 10px;
+    display: block;
+    height: 60px;
+    /* 
+    line height do tamanho da altura da linha
+    para podermos centralizar
+    */
+    line-height: 60px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.logo_img {
+    display: block;
+    width: 90px;
+    height: 40px;
+}
+
+.nav_list {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+}

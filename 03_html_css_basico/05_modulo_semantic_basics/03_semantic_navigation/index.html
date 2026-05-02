@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic Navigation</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../02_align_elements_horizontally/index.html">Aula Anterior - Align Elements Horizontally</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Semantic Navigation</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Anteriormente vimos como adicionar uma imagem a nosso <strong>cabecalho</strong> e fazer alinhamento. Agora iremos ver um problema relacionado a <strong>acessibiliade</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Explicacao</h3>
+            <p>
+                Como cada um de nossos <strong>links do menu</strong> foram mapeados como <strong>links</strong> em nossa <strong>class</strong>. Quando um <strong>leitor de tela</strong> o identificasse, leria apenas as frases <strong>na_link</strong>, ja que usamos ela como padrao para todos os <strong>links do menu</strong>.
+            </p>
+
+            <p class="separado">
+                Nao seria possivel idenfifica-lo durante a leitura, para melhorarmos essa <strong>acessibildiade</strong> temos como usar um <strong>artificio</strong> colocando por exemplo uma <strong>lista numerada</strong>.
+            </p>
+
+            <h1>Atalho</h1>
+            <p>
+                Para isso usaremos novamente um atalho para agilizar nossa criacao da <strong>estrutura</strong>: <strong>ul.nav_list>li.nav_item*4</strong>
+            </p>
+            <p>
+                Apos feito isso e configurado nosso novo <strong>elemento</strong> o <strong>nav_list</strong> com <strong>display: flex;</strong> e <strong>flex-direction:row; (usamos para deitar a lista)</strong>.
+            </p>
+            <p>
+                Iremos ter que configurar melhorar nosso <strong>link</strong> pois precisariamos apertar certinho para poder abrir o <strong>link desejado</strong>. Para podermos aumentar o espaco de <strong>click do link</strong> para isso usamos o <strong>gap</strong> uma propriedade do <strong>flex</strong> e <strong>grid</strong>.
+            </p>
+
+            <h3 class="junto">Propriedade gap</h3>
+            <p>
+                O gap no flexbox é utilizado para definir o espaçamento entre os elementos filhos de um container com display: flex. Diferente de usar margin, o gap aplica esse espaçamento de forma automática e consistente, sem afetar as bordas externas do container. Ele funciona tanto na horizontal quanto na vertical, dependendo da direção do
+            </p>
+
+            <h3 class="junto">CSS usado:</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/css.png" alt="CSS Usado">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+            
+        <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">Conteudo da aula</a>
+
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../04_tarefa_navigation_semantic/index.html">Próxima Aula - Tarefa: Navigation Semantic</a>
+    </div>
+
+</body>
+</html>
