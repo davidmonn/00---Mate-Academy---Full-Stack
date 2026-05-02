@@ -133,3 +133,15 @@ ul {
 ul li {
     padding: 2px;
 }
+
+ol {
+    padding: 35px;   
+    border-radius: 15px;
+    text-decoration: none;
+    background-color: bisque;
+    max-width: 600px;
+}
+
+ol li {
+    padding: 2px;
+}
