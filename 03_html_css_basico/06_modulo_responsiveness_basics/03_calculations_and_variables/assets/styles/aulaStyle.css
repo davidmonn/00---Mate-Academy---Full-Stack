@@ -1,0 +1,25 @@
+HTML {
+    --footer-height: 120px;
+    --header-height: 60px;
+}
+
+body {
+    margin: 0;
+}
+
+.header {
+    height: var(--header-height);
+    background-color: blue;
+}
+
+.main {
+    box-sizing: border-box;
+    /* Com isso fizemos 100vh que tera nosso main - 60px (header) - 120px footer*/
+    min-height: calc(100vh - var(--footer-height) - var(--header-height));
+    padding: 10px 20px;
+}
+
+.footer {
+    height: var(--footer-height);
+    background-color: yellow;
+}
