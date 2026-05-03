@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viewport Width and Height</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../">Aula Anterior - Sizes in Percents</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Viewport Width and Height</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos ver como definir as <strong>dimensões</strong> de um <strong>elemento</strong> com base na <strong>viewport (tela do usuário)</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Exemplo</h3>
+            <p>
+                Neste exemplo, iremos configurar o <strong>body</strong> e um elemento <strong>inner</strong>.
+            </p>
+
+            <p>
+                <strong>body</strong> com <strong>margin: 0;</strong> e <strong>background-color: yellow;</strong>.
+            </p>
+
+            <p>
+                <strong>inner</strong> com <strong>height: 300px;</strong> e <strong>background-color: blue;</strong>.
+            </p>
+
+            <h3 class="junto">Alterações</h3>
+            <p>
+                Se tentarmos alterar o <strong>inner</strong> para <strong>height: 100%;</strong>, perceberemos que ele pode "sumir", mesmo aplicando o mesmo ao <strong>body</strong>.
+                Isso acontece porque o <strong>body</strong> não é o elemento raiz da página.
+            </p>
+
+            <p>
+                Se adicionarmos no <strong>CSS</strong>:
+                <strong>html { height: 100%; }</strong>,
+                então o <strong>inner</strong> passará a ocupar <strong>100% da altura da página</strong>.
+            </p>
+
+            <h3 class="junto">Hierarquia</h3>
+            <p>
+                Mesmo com isso funcionando, se o <strong>elemento</strong> estiver em um nível mais profundo da <strong>hierarquia</strong>, será necessário definir <strong>explicitamente a altura</strong> de todos os elementos pais.
+            </p>
+
+            <p>
+                Para evitar isso, podemos utilizar <strong>vh (viewport height)</strong>, que representa a <strong>altura da tela</strong>, e <strong>vw (viewport width)</strong>, que representa a <strong>largura da tela</strong>.
+            </p>
+
+            <p>
+                Dessa forma, mesmo sem definir a altura de <strong>html</strong> e <strong>body</strong>, o elemento continuará funcionando corretamente, pois depende apenas do <strong>tamanho da tela</strong>.
+            </p>
+
+            <p class="separado">
+                Esse é um ótimo recurso para <strong>responsividade</strong>, pois os elementos se adaptam automaticamente ao <strong>tamanho da viewport</strong>.
+            </p>
+
+        </article>
+
+        <article class="conc">
+            
+        <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">Conteudo da aula</a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+    </main>
+        
+    <div class="next">
+        <a class="next" href="../03_calculations_and_variables/index.html">Próxima Aula - Calculations and Variables</a>
+    </div>
+
+</body>
+</html>

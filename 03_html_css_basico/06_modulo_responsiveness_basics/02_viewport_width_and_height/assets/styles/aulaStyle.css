@@ -1,0 +1,15 @@
+/* HTML {
+    height: 100%;
+} */
+
+body {
+    /* height: 100%; */
+    margin: 0;
+    background-color: yellow;
+}
+
+.inner {
+    width: 50vw;
+    height: 50vh;
+    background-color: #0057b7;
+}
