@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Sizes in Percents</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,45 +12,91 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">Aula Anterior - </a>
+        <a class="back" href="../">Modulo Anterior: Semantic Basics - Aula: Tarefa: Navigation List</a>
     </div>
     
     <main>
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">Sizes in Percents</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Aqui iremos ver sobre os <strong>tamanhos relativos dos elementos</strong>.
             </p>
 
         </article>
 
         <article class="conteudo">
 
-            <h3 class="cont-title"></h3>
+            <h3 class="cont-title">Exemplo</h3>
             <p>
+                Para entendermos melhor, iremos adicionar duas <strong>"caixas"</strong> à nossa página.
+            </p>
+            <p>
+                Uma delas será a <strong>caixa externa</strong> e a outra a <strong>caixa interna</strong>.
+            </p>
+            <p class="junto">
+                Elas terão as seguintes <strong>modificações</strong>:
+            </p>
+            <p>
+                <strong>Externa:</strong> terá <strong>height: 200px;</strong> e <strong>background-color: yellow;</strong>.
+            </p>
+            <p>
+                <strong>Interna:</strong> terá <strong>height: 100px;</strong> e <strong>background-color: blue;</strong>.
+            </p>
 
+            <h3 class="separado">Mais Exemplos</h3>
+            <p>
+                Após isso, iremos adicionar mais <strong>modificações</strong>.
+            </p>
+            <p>
+                Se comentarmos a <strong>altura (height)</strong> do <strong>elemento externo (outer)</strong>, podemos observar que o <strong>elemento interno</strong> se ajusta ao conteúdo e pode ocupar o espaço disponível.
+            </p>
+            <p>
+                A questão é que, quando temos uma <strong>caixa dentro da outra</strong> e utilizamos <strong>porcentagem (%)</strong>, isso <strong>só funciona corretamente se o elemento pai tiver uma altura definida</strong>.
+            </p>
+            <p>
+                Caso removamos a <strong>altura do elemento externo</strong> e adicionemos conteúdo (como um lorem), mesmo com a cor <strong>blue</strong> na <strong>caixa interna</strong>, ela pode não aparecer como esperado.
+            </p>
+
+            <h3 class="junto">Exemplo</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemploHtml.png" alt="Exemplo HTML">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Exemplo CSS:</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemploCss.png" alt="Exemplo CSS">
+                </picture>
+            </figure>
+
+            <p class="separado">
+                Também veremos casos onde o <strong>conteúdo</strong> pode ultrapassar o tamanho do <strong>elemento</strong>. Isso acontece quando um elemento possui um valor <strong>fixo</strong>.
             </p>
 
         </article>
 
         <article class="conc">
             
-        <!-- <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">Conteudo da aula</a> -->
-
-            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
 
         </article>
         
          <!-- <h1>Testes JS se necessário</h1> -->
          <script src="assets/js/jscript.js"></script>
-        </main>
+    </main>
         
     <div class="next">
-        <a class="next" href="../">Próxima Aula - </a>
+        <a class="next" href="../02_viewport_width_and_height/index.html">
+            Próxima Aula - Viewport Width and Height
+        </a>
     </div>
 
 </body>

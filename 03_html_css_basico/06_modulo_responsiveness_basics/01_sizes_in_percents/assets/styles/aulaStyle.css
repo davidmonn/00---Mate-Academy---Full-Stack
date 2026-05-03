@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+}
+
+.outer {
+    height: 200px;
+    background-color: yellow;
+}
+
+.inner {
+    height: 50%;
+    width: 50%;
+    background-color: blue;
+}
