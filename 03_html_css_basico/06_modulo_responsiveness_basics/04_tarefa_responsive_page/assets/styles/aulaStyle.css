@@ -1,0 +1,49 @@
+body {
+    --header-height: 40px;
+    --footer-height: 60px;
+    margin: 0;
+    font-family: sans-serif;
+    min-height: 100vh;
+}
+
+.header {
+    height: var(--header-height);
+    background-color: #000;
+    color: #fff;
+    line-height: var(--header-height);
+    text-align: center;
+}
+
+.main {
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+.section {
+    padding: 20px;
+}
+
+.section-2, .section-4 {
+    background-color: gray;
+}
+
+.container {
+    text-align: center;
+    min-width: 500px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/*QUERY Container*/
+@media (max-width: 540px) {
+    .container {
+        min-width: 100%;
+    }
+}
+
+.footer {
+    height: var(--footer-height);
+    background-color: #444;
+    color: #fff;
+    line-height: var(--footer-height);
+    text-align: center;
+}
