@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-Elements</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../01_pseudo_classes/index.html">Aula Anterior - Pseudo-Classes</a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Pseudo-Elements</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos ver sobre <strong>estilizar</strong> uma parte especifica de nosso <strong>elemento</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/codigo_exemplo.png" alt="Codigo Exemplo">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Estilizando Parte Especifica</h3>
+            <p>
+                Com base em nosso codigo de exemplo, e poder estilizar uma parte <strong>especifica</strong>, podemos utilizar <strong>pseudo elementos</strong>. Para isso podemos fazer da seguinte forma:
+            </p>
+
+            <h3 class="junto">::first-letter</h3>
+            <p>
+                <strong><code>.box::first-letter{}</code></strong>: com ele temos como destaque em nossa <strong>primeira letra</strong>.
+            </p>
+
+            <p><strong>Exemplo:</strong></p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/first-latter.png" alt="first-latter">
+                </picture>
+            </figure>
+
+            <h3 class="junto">::first-line</h3>
+            <p>
+                Com isso selecionamos a <strong>primeira linha</strong>.
+            </p>
+            <p><strong>Exemplo:</strong></p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/first-line.png" alt="first-line">
+                </picture>
+            </figure>
+
+            <h3 class="junto">::selection</h3>
+            <p>
+                Com ele basciamente e feito o <strong>destaque</strong> por exemplo quando um usuario <strong>seleciona</strong> uma parte do texto.
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/selection.png" alt="selection">
+                </picture>
+            </figure>
+
+            <h3 class="junto">::before</h3>
+            <p>
+                Nesse caso nao temos nem uma <strong>selecao especifica</strong>, mas podemos usar por exemplo, criando um <strong>conteudo vazio</strong>, com isso sera "criado um novo elemento" antes do elemento <strong>selecionado</strong>.
+            </p>
+
+            <p><strong>Exemplo:</strong></p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/before.png" alt="before">
+                </picture>
+            </figure>
+
+            <p class="junto">Exemplo no Navegador:</p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/before_nevegador.png" alt="before nevegador">
+                </picture>
+            </figure>
+
+            <h3 class="junto">::after</h3>
+            <p>
+                Faz basicamente o mesmo que o <strong>before</strong>, porem depois do elemento como o nome diz.
+            </p>
+
+            <h3 class="junto">Dica after before</h3>
+            <p>
+                Com ele conseguimos fazer coisas como isso:
+            </p>
+
+            <figure class="separado">
+                <picture>
+                    <img src="assets/imgs/dica_after_before.png" alt="dica after before">
+                </picture>
+            </figure>
+
+            <p class="junto">No navegador:</p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/after_before_navegador.png" alt="after before navegador">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+            
+        <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+            Conteudo da aula
+        </a>
+
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../../09_modulo_specificity/01_what_is_specificity/index.html">Próximo Modulo: Specificity - Aula: What is Specificity</a>
+    </div>
+
+</body>
+</html>
