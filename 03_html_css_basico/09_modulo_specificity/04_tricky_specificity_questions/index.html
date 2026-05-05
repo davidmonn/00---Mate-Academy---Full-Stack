@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tricky Specificity Questions</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../03_advanced_specificity_questions/index.html">
+            Aula Anterior - Advanced Specificity Questions
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Tricky Specificity Questions</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Exemplo Codigo:</h3>
+            <p class="junto">
+                <strong>HTML:</strong>
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_html.png" alt="Exemplo HTML">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                <strong>CSS:</strong>
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_css.png" alt="Exemplo CSS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">Explicacao Codigo:</h3>
+            <p>
+                Baseado em nosso codigo, quando passarmos o <strong>mouse</strong> por cima de nosso <strong>elemento h1</strong>, ira para a cor do <strong>:hover</strong>.
+            </p>
+
+            <h3 class="junto">Alteracao</h3>
+            <p>
+                Se mudarmos nosso <strong>CSS .title</strong> para <strong>.title:first-child</strong> e deixar ele por ultimo, ele acabara removendo o efeito de nosso <strong>hover</strong>, por ter o mesmo peso. Por isso e importante quando estivermos utilizando o <strong>:hover</strong> que ele fique no <strong>final</strong> para nao haver esses tipos de problemas.
+            </p>
+
+            <h3 class="junto">id vs class:hover</h3>
+            <p>
+                Outro cuidado que tambem devemos ter pois nesse caso, se por exemplo desejarmos mudar a cor do <strong>background e o id tiver um</strong>, nosso <strong>hover com background</strong> acabara nao mudando, por conta do <strong>peso do id</strong>.
+            </p>
+
+            <p class="junto"><strong>Exemplo:</strong></p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/id_vs_hover.png" alt="Exemplo id vs hover">
+                </picture>
+                <figcaption>
+                    Nesse caso o unico valor que sera mudado sera nosso color, mas se nosso <strong>id</strong> tambem houvesse um color, o <strong>hover</strong> tambem nao seria alterado.
+                </figcaption>
+            </figure>
+            
+        <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+            Conteudo da aula
+        </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../05_built_in_styles_and_important/index.html">
+            Próxima Aula - Built in Styles and Important
+        </a>
+    </div>
+
+</body>
+</html>
