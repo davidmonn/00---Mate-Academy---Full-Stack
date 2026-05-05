@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Specificity Questions</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../01_what_is_specificity/index.html">
+            Aula Anterior - What is Specificity
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Simple Specificity Questions</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos ver a <strong>especificidade</strong> na pratica.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo</h3>
+            <p><strong>HTML:</strong></p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_html.png" alt="Exemplo HTML">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                <strong>CSS:</strong>
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_css.png" alt="Exemplo CSS">
+                </picture>
+            </figure>
+
+            <h3 class="separado">Exemplos:</h3>
+
+            <h3 class="junto">Tags Iguais</h3>
+            <p>
+                Com base em nosso código de exemplo, se criarmos outra <strong>modificação para o h1</strong>, mesmo já existindo uma anterior, a última poderá se <strong>sobrepor</strong>, caso ambas tenham a <strong>mesma especificidade</strong>.
+            </p>
+
+            <h3 class="junto">Tag vs Class</h3>
+            <p>
+                O resultado nesse caso e diferente, mesmo se a tag estiver por ultimo, o resultado ainda sera aquele que for modificado com a <strong>class</strong>.
+            </p>
+
+        </article>
+
+        <article class="conc">
+            
+        <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+            Conteudo da aula
+        </a>
+
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../03_advanced_specificity_questions/index.html">
+            Próxima Aula - Advanced Specificity Questions
+        </a>
+    </div>
+
+</body>
+</html>

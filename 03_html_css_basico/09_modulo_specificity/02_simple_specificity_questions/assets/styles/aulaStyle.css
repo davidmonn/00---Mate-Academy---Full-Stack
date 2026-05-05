@@ -1,0 +1,12 @@
+body {
+    box-sizing: border-box;
+    width: 920px;
+    margin: auto;
+    text-align: center;
+    font-size: 32px;
+    background-color: rgba(128, 128, 128, 0.317);
+}
+
+h1 {
+    background-color: green;
+}
