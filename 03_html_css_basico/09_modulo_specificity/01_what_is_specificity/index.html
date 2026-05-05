@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is Specificity</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../../08_modulo_pseudo_elements_and_pseudo_classes/02_pseudo_elements/index.html">
+            <strong>Modulo Anterior: Pseudo-Elements and Pseudo-Classes - Aula Anterior: Pseudo-Elements</strong>
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">What is Specificity</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Agora iremos ver um pouco sobre <strong>especificidade</strong>
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="junto">Codigo de Exemplo:</h3>
+            <p>
+                <strong>HTML:</strong>
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_html.png" alt="Exemplo HTML">
+                </picture>
+            </figure>
+
+            <p class="junto"><strong>CSS:</strong></p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_css.png" alt="Exemplo CSS">
+                </picture>
+            </figure>
+
+            <p class="separado">
+                Nesse caso como resultado obtivemos o resultado da <strong>class</strong> pois ele e mais especificico e tem uma hierarquia maior doque apenas selecionar pela <strong>tag p</strong>.
+            </p>
+
+            <h3 class="cont-title">Oque e especificidade</h3>
+            <p>
+                Especificidade é a regra que o CSS usa para decidir qual estilo vai ganhar quando vários seletores tentam estilizar o mesmo elemento.
+            </p>
+
+            <h3 class="junto">“hierarquia de força”:</h3>
+            <ul>
+                <li>
+                    Inline (mais forte)
+                </li>
+                <li>
+                    ID
+                </li>
+                <li>
+                    Classe / atributos / pseudo-classes
+                </li>
+                <li>
+                    Elementos (tags) (mais fraco)
+                </li>
+            </ul>
+
+            <p class="separado">Quanto mais específico for o seletor, mais prioridade ele tem.</p>
+            <p>Se dois tiverem a mesma força, vence o que foi declarado por último no CSS.</p>
+
+            <h3 class="junt">Resumo:</h3>
+            <p>
+                É o sistema que define quem manda no estilo quando há conflito.
+            </p>
+
+        </article>
+
+        <article class="conc">
+            
+        <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+            Conteudo da aula
+        </a>
+
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../02_simple_specificity_questions/index.html">
+            Próxima Aula - Simple Specificity Questions
+        </a>
+    </div>
+
+</body>
+</html>
