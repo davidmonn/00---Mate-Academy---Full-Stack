@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Built in Styles and Important</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../04_tricky_specificity_questions/index.html">
+            Aula Anterior - Tricky Specificity Questions
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Built in Styles and Important</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui teremos alguns exemplos onde a <strong>prioridade</strong> funciona de uma forma diferente.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo Exemplo:</h3>
+            <p class="junto">
+                <strong>HTML:</strong>
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_html.png" alt="Exemplo HTML">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                <strong>CSS:</strong>
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_css.png" alt="Exemplo CSS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="separado">Explicacao Codigo:</h3>
+            <p>
+                Como padrão no <strong>HTML</strong>, o <strong>background-color</strong> é <strong>transparent</strong> (ou valor padrão). 
+                Ao adicionarmos regras em <strong>CSS</strong>, elas serão aplicadas conforme a <strong>prioridade (especificidade)</strong>. 
+                No exemplo, quem possui maior <strong>peso</strong> é o <strong>#id</strong>.
+            </p>
+
+            <h3 class="separado">Exceções:</h3>
+            
+            <h3 class="junto">CSS Inline</h3>
+            <p>
+                Mesmo que o <strong>#id</strong> tenha um peso alto, existe uma <strong>exceção</strong>: o <strong>CSS inline</strong>, que possui prioridade maior.
+            </p>
+
+            <h3 class="junto">!important</h3>
+            <p>
+                Além do <strong>CSS inline</strong>, também temos outra exceção ao utilizar <strong>!important</strong>, que força a prioridade daquela regra.
+            </p>
+
+            <p class="separado">
+                <strong>Obs:</strong> usar <strong>!important</strong> não é recomendado na maioria dos casos.
+            </p>
+
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+        <script src="assets/js/jscript.js"></script>
+    </main>
+        
+    <div class="next">
+        <a class="next" href="../../10_links_and_urls/01_links_and_urls/index.html">
+            <strong>Próximo Modulo: Links and URLs - Aula: Links and URLs</strong>
+        </a>
+    </div>
+
+</body>
+</html>

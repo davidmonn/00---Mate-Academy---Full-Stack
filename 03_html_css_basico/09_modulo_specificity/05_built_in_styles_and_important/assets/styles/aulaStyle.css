@@ -1,0 +1,35 @@
+/* #region NORMALIZE */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: skyblue;
+
+    font-size: 32px;
+    text-align: center;
+}
+
+main {
+    width: 920px;
+    background-color: azure;
+    border-radius: 15px;
+    margin: 25px auto;
+    padding: 15px;
+}
+
+/* #endregion */
+
+#page-title {
+    background-color: green !important;
+}
+
+.title {
+    background-color: yellow;
+}
+
+h1 {
+    background-color: red;
+}
