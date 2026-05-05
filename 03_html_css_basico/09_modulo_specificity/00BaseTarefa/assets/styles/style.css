@@ -145,3 +145,12 @@ ol {
 ol li {
     padding: 2px;
 }
+
+pre {
+    margin: 25px auto;
+    border-radius: 15px;
+    display: inline-block;
+    background-color: aliceblue;
+    padding: 15px 40px 15px 15px;
+    font-size: 20px;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Specificity Questions</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../02_simple_specificity_questions/index.html">
+            Aula Anterior - Simple Specificity Questions
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Advanced Specificity Questions</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Agora iremos ver alguns casos mais <strong>avancados</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo Exemplo:</h3>
+            <p class="junto">
+                <strong>HTML:</strong>
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_html.png" alt="Exemplo HTML">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                <strong>CSS:</strong>
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_css.png" alt="Exemplo CSS">
+                </picture>
+            </figure>
+
+            <h3 class="separado">Explicacoes:</h3>
+
+            <h3 class="junto">Explicacao exemplo:</h3>
+            <p>
+                Nesse caso, como resultado o quem venceu foi a <strong>tag com pseudo-classe</strong>, como resultado obtendo o <strong>background-color: red;</strong>. Ambas tem o mesmo peso, porem como a com <strong>pseudo-classe</strong> veio depois, ela sobrepos a de cima.
+            </p>
+
+            <h3 class="junto">Pseudo classe com tag</h3>
+            <p>
+                Se ambas tiverem a mesma <strong>tag</strong> e como resultado tiver <strong>pseudo-classe</strong> de mesmo peso, assim como ja dito, o resultado sera a que vier depois. Um exemplo disso baseado em nosso codigo de exemplo seri:
+            </p>
+            <pre>
+                <code>
+                    <strong>
+    body h1 {
+        background-color: aliceblue;
+    }
+
+    body > :not(p) {
+        background-color: antiquewhite;
+    }
+                    </strong>
+                </code>
+            </pre>
+
+        </article>
+
+        <article class="conc">
+            
+        <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+            Conteudo da aula
+        </a>
+
+            
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../04_tricky_specificity_questions/index.html">
+            Próxima Aula - Tricky Specificity Questions
+        </a>
+    </div>
+
+</body>
+</html>
