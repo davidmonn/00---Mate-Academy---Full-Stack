@@ -25,36 +25,126 @@
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Aqui iremos aprender como <strong>estilizar elementos</strong> com base em seu <strong>estado ou posição</strong>.
             </p>
+
+            <p>
+                Como exemplo, teremos o seguinte código:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_codigo.png" alt="Exemplo Codigo">
+                </picture>
+            </figure>
 
         </article>
 
         <article class="conteudo">
 
-            <h3 class="cont-title"></h3>
+            <h3 class="cont-title">:first-child</h3>
             <p>
+                Se em nosso <strong>seletor</strong> usarmos como exemplo: <strong><code>.container :first-child</code></strong>, conseguimos <strong>selecionar</strong> o primeiro elemento dentro do nosso <strong>container</strong>.
+            </p>
+            
+            <p>
+                <strong>Exemplo:</strong>
+            </p>
 
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo_first_child.png" alt="Exemplo first-child">
+                </picture>
+                <figcaption>
+                    Se removermos o <strong>espaço</strong>, teremos outro resultado. Irá <strong>selecionar o próprio container</strong>.
+                </figcaption>
+            </figure>
+
+            <h3 class="junto">:last-child</h3>
+            <p>
+                Usando o mesmo <strong>exemplo</strong>, ao utilizar <strong>:last-child</strong> iremos selecionar o <strong>último elemento</strong> dentro do <strong>container</strong>.
+            </p>
+
+            <p>
+                Caso exista um elemento dentro de outro, ambos podem ser considerados <strong>últimos</strong>, pois cada um será o último dentro do seu próprio nível.
+            </p>
+
+            <p>
+                Se quisermos selecionar apenas o último elemento de um nível específico, podemos usar <strong><code>.container > :last-child</code></strong>.
+            </p>
+
+            <p>
+                <strong>Exemplo:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/last_child.png" alt="Exemplo last_child">
+                </picture>
+            </figure>
+
+            <h3 class="junto">:first-of-type</h3>
+            <p>
+                Com essa pseudo-classe, selecionamos o <strong>primeiro elemento de um tipo específico</strong>, como <strong>p</strong> ou <strong>div</strong>.
+            </p>
+
+            <p>
+                Também podemos <strong>especificar</strong>, por exemplo, selecionar apenas a primeira <strong>div</strong>.
+            </p>
+
+            <p>
+                <strong>Exemplo:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/first_of_type.png" alt="first of type">
+                </picture>
+                <figcaption>
+                    Poderíamos usar também uma <strong>classe</strong>, como: <code>.container .teste:first-of-type</code>. 
+                    <strong>Obs:</strong> só irá funcionar se for realmente o primeiro daquele tipo.
+                </figcaption>
+            </figure>
+
+            <h3 class="junto">nth-child()</h3>
+            <p>
+                Usado para selecionar elementos por posição. Precisamos informar um <strong>número</strong>, por exemplo: 
+                <code>.container :nth-child(3)</code>, que irá selecionar o <strong>terceiro elemento</strong>.
+            </p>
+
+            <p>
+                Também podemos usar expressões, como <strong>(5n + 2)</strong>: (5 × 0 + 2 = 2 → segundo elemento), (5 × 1 + 2 = 7) e assim por diante.
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/nth_child.png" alt="nth child">
+                </picture>
+                <figcaption>
+                    Como mencionado anteriormente, nesse caso usamos o <strong>1</strong>, mas foi selecionado o segundo elemento, pois a contagem considera a posição dentro da estrutura analisada.
+                </figcaption>
+            </figure>
+
+            <h3 class="junto">Estado :hover</h3>
+            <p>
+                Com <strong>:hover</strong>, quando passamos o <strong>mouse</strong> sobre um elemento, ele recebe um <strong>estilo diferente</strong>, criando um efeito de destaque.
             </p>
 
         </article>
 
         <article class="conc">
             
-        <!-- <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-            Conteudo da aula
-        </a> -->
-
-            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
 
         </article>
         
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
+        <script src="assets/js/jscript.js"></script>
+    </main>
         
     <div class="next">
-        <a class="next" href="../">Próxima Aula - </a>
+        <a class="next" href="../02_pseudo_elements/index.html">Próxima Aula - Pseudo-Elements</a>
     </div>
 
 </body>
