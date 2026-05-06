@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anchor Links</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../03_style_links/index.html">
+            Aula Anterior - Style Links
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Anchor Links</h1>
+
+            <h3 class="intro">Introdução</h3>
+            <p>
+                Aqui veremos como funciona a <strong>navegação dentro da própria página</strong> utilizando <strong>âncoras</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Código de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>HTML:</strong>
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/html.png" alt="Exemplo HTML">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                <strong>CSS:</strong>
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/css.png" alt="Exemplo CSS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">Explicação:</h3>
+            <p>
+                No código, temos um <strong>menu de navegação</strong> com <strong>4 seções</strong>, onde cada link leva para sua respectiva parte da página.
+            </p>
+
+            <p>
+                Ao clicar, por exemplo, em <strong>section 4</strong>, a página <strong>não é recarregada</strong>. Em vez disso, somos direcionados diretamente para o ponto onde essa seção está.
+            </p>
+
+            <p>
+                Por padrão, esse movimento acontece de forma <strong>instantânea</strong> (um salto). Porém, podemos <strong>suavizar essa navegação</strong> usando CSS.
+            </p>
+
+            <h3 class="junto">Propriedade - scroll-behavior: smooth;</h3>
+            <p>
+                Podemos adicionar essa propriedade no CSS, geralmente no <strong>html</strong>:
+                <br>
+                <strong>html { scroll-behavior: smooth; }</strong>
+                <br>
+                Isso faz com que a navegação entre as seções aconteça de forma <strong>suave</strong>.
+            </p>
+
+            <h3 class="junto">Voltando ao topo</h3>
+            <p>
+                Também podemos criar um link para voltar ao <strong>topo da página</strong>, utilizando o mesmo conceito de âncoras.
+            </p>
+
+            <p>
+                Para isso, basta adicionar um <strong>id</strong> no topo (por exemplo, no <strong>body</strong> ou no primeiro elemento) e referenciar esse id no <strong>href</strong>.
+            </p>
+
+            <figure class="separado">
+                <picture>
+                    <img src="assets/imgs/exemplo.png" alt="Exemplo de âncora">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Destacando seção atual</h3>
+            <p>
+                Também podemos alterar o estilo da seção atual utilizando a <strong>pseudo-classe :target</strong>.
+            </p>
+
+            <h3 class="junto">:target</h3>
+            <p>
+                Essa pseudo-classe é aplicada ao elemento cujo <strong>id corresponde ao fragmento da URL</strong> (o que vem após o #).
+                <br>
+                Com isso, conseguimos destacar visualmente a <strong>seção ativa</strong>.
+            </p>
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteúdo da aula
+            </a>
+
+        </article>
+        
+        <script src="assets/js/jscript.js"></script>
+    </main>
+        
+    <div class="next">
+        <a class="next" href="../05_tarefa_link_and_urls/index.html">
+            Próxima Aula - Tarefa: Link and URLs
+        </a>
+    </div>
+
+</body>
+</html>
