@@ -12,8 +12,8 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">
-            <strong>Modulo Anterior: Specificity - Aula Anterior: Built in Styles and Important</strong>
+        <a class="back" href="../../09_modulo_specificity/05_built_in_styles_and_important/index.html">
+            <strong>Módulo Anterior: Specificity - Aula Anterior: Built-in Styles and !important</strong>
         </a>
     </div>
     
@@ -23,39 +23,140 @@
 
             <h1 id="title">Links and URLs</h1>
 
-            <h3 class="intro">Intro</h3>
+            <h3 class="intro">Introdução</h3>
             <p>
-                
+                Aqui veremos como funcionam os <strong>links</strong> e como utilizá-los corretamente.
             </p>
 
         </article>
 
         <article class="conteudo">
 
-            <h3 class="cont-title"></h3>
+            <h3 class="cont-title">Código de Exemplo:</h3>
             <p>
-
+                <strong>HTML:</strong>
             </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/html.png" alt="Exemplo de código HTML">
+                </picture>
+            </figure>
 
         </article>
 
         <article class="conc">
-            
-        <!-- <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-            Conteudo da aula
-        </a> -->
 
-            
+            <h3 class="junto">Explicação:</h3>
+            <p>
+                Neste exemplo, temos um <strong>conjunto de links</strong> para entender como funciona um <strong>endereço completo (URL)</strong> e também os <strong>endereços relativos</strong>.
+            </p>
+
+            <h3 class="junto">Observações:</h3>
+            <ul>
+                <li><strong>http</strong>
+                    <ul>
+                        <li>É o <strong>protocolo</strong> utilizado para comunicação.</li>
+                    </ul>
+                </li>
+                <li><strong>//localhost</strong>
+                    <ul>
+                        <li>
+                            Representa o <strong>host</strong>, ou seja, o endereço onde a aplicação está rodando (como se fosse o endereço de uma casa).
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>5500</strong>
+                    <ul>
+                        <li>
+                            É a <strong>porta</strong>, que pode ser comparada à “porta da casa”.
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>index.html</strong>
+                    <ul>
+                        <li>
+                            Representa o <strong>caminho (path)</strong> até o recurso que queremos acessar.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3 class="separado">Explicação dos endereços do código</h3>
+
+            <h3>https://abc</h3>
+            <p>
+                Aqui temos o protocolo <strong>HTTPS</strong>, que é uma versão segura do HTTP, utilizada para proteger a comunicação entre cliente e servidor.
+            </p>
+
+            <h3 class="junto">//abc</h3>
+            <p>
+                É um endereço <strong>absoluto sem protocolo definido</strong>. Nesse caso, o navegador utiliza o mesmo protocolo da página atual (HTTP ou HTTPS).
+            </p>
+
+            <h3 class="junto">/abc</h3>
+            <p>
+                Indica um <strong>endereço relativo à raiz do projeto</strong>, ou seja, começa a busca a partir do diretório principal.
+            </p>
+
+            <h3 class="junto">abc ou ./abc</h3>
+            <p>
+                Ambos são <strong>endereços relativos ao diretório atual</strong>. Eles indicam que o arquivo ou pasta está no mesmo nível do arquivo atual.
+            </p>
+
+            <h3 class="junto">../abc</h3>
+            <p>
+                Indica que estamos <strong>subindo um nível</strong> no diretório. O <strong>..</strong> sempre representa o diretório anterior.
+            </p>
+
+            <h3 class="junto">../../abc</h3>
+            <p>
+                Aqui estamos <strong>subindo dois níveis</strong> na estrutura de diretórios.
+            </p>
+
+            <h3 class="junto">./../abc</h3>
+            <p>
+                Apesar da combinação, o resultado final é o mesmo que <strong>../abc</strong>, ou seja, subir um nível e acessar <strong>abc</strong>.
+            </p>
+
+            <h3 class="junto">../../../abc</h3>
+            <p>
+                Caso tentemos subir mais níveis do que existem, o navegador simplesmente para na raiz e continua a navegação a partir dela.
+            </p>
+
+            <h3 class="junto">?sortBy=price&page=2</h3>
+            <p>
+                São <strong>parâmetros de consulta (query parameters)</strong>. Neste caso:
+            </p>
+
+            <ul class="separado">
+                <li>
+                    <strong>sortBy=price</strong> define a ordenação por preço  
+                </li>
+                <li>
+                    <strong>page=2</strong> define a página atual
+                </li>
+                <li>
+                    O símbolo <strong>&</strong> é utilizado para separar múltiplos parâmetros.
+                </li>
+            </ul>
+
+            <h3 class="junto">#news</h3>
+            <p>
+                É um <strong>fragmento (âncora)</strong>, utilizado para navegar diretamente para uma seção específica da página.
+            </p>
+
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteúdo da aula
+            </a>
 
         </article>
         
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
+        <script src="assets/js/jscript.js"></script>
+    </main>
         
     <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+        <a class="next" href="../02_tarefa_broken_page/index.html">
+            Próxima Aula - Tarefa: Broken Page
         </a>
     </div>
 
