@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Links</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../02_tarefa_broken_page/index.html">
+            Aula Anterior - Tarefa: Broken Page
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Style Links</h1>
+
+            <h3 class="intro">Introdução</h3>
+            <p>
+                Aqui veremos como funciona a <strong>estilização de links</strong> utilizando <strong>CSS</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Código de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>HTML:</strong>
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/html.png" alt="Exemplo HTML">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                <strong>CSS:</strong>
+            </p>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/css.png" alt="Exemplo CSS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">Explicação do Código</h3>
+            <p>
+                Podemos observar que temos <strong>4 links</strong> dentro de um <strong>nav</strong>, juntamente com sua <strong>estilização em CSS</strong>.
+            </p>
+
+            <p>
+                Ao visualizar no navegador, percebemos que os <strong>links visitados</strong> possuem uma <strong>cor diferente</strong>. Isso é feito utilizando <strong>pseudo-classes</strong> no CSS.
+            </p>
+
+            <h3 class="junto">a:visited</h3>
+            <p>
+                Permite estilizar links que já foram <strong>visitados</strong>. Normalmente usamos para alterar a <strong>cor</strong>.
+            </p>
+            <p>
+                É importante tomar cuidado: dependendo da forma como definimos o estilo padrão dos links, pode acontecer de o estilo de <strong>visited</strong> não ser aplicado corretamente.
+            </p>
+
+            <h3 class="junto">a:link</h3>
+            <p>
+                Representa o estado padrão de um link <strong>ainda não visitado</strong>. Com essa pseudo-classe, conseguimos definir estilos sem interferir no comportamento do <strong>visited</strong>.
+            </p>
+
+            <h3 class="junto">a:active</h3>
+            <p>
+                É aplicado no momento do <strong>clique</strong>. Podemos usar para criar efeitos visuais enquanto o link está sendo pressionado.
+            </p>
+
+            <h3 class="junto">Exemplos Usados:</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/exemplo.png" alt="Exemplo de estilização">
+                </picture>
+            </figure>
+
+            <p>
+                Uma dica importante para não errar a <strong>ordem de precedência</strong> das pseudo-classes é lembrar de: <strong>LoVeHAte</strong>
+            </p>
+
+            <ul class="separado">
+                <li>
+                    <strong>Lo (L)</strong>
+                    <ul>
+                        <li>link</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Ve (V)</strong>
+                    <ul>
+                        <li>visited</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>H (H)</strong>
+                    <ul>
+                        <li>hover</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Ate (A)</strong>
+                    <ul>
+                        <li>active</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteúdo da aula
+            </a>
+
+        </article>
+        
+        <script src="assets/js/jscript.js"></script>
+    </main>
+        
+    <div class="next">
+        <a class="next" href="../04_anchor_links/index.html">
+            Próxima Aula - Anchor Links
+        </a>
+    </div>
+
+</body>
+</html>

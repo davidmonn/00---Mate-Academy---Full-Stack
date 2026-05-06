@@ -1,0 +1,48 @@
+/* #region NORMALIZE */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: skyblue;
+
+    font-size: 32px;
+    text-align: center;
+}
+
+main {
+    width: 920px;
+    background-color: azure;
+    border-radius: 15px;
+    margin: 25px auto;
+    padding: 15px;
+}
+
+/* #endregion */
+
+nav a {
+    display: block;
+    margin: 5px 10px;
+    text-decoration: none;
+    background-color: #ccc;
+    /* color: red; */
+}
+
+a:link {
+    color: green;
+}
+
+a:visited {
+    color: red;
+}
+
+a:hover {
+    background-color: #aaa;
+    color: blue;
+}
+
+a:active {
+    color: #ccc ;
+}
