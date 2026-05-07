@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Media Queries</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="back">
+        <a class="back" href="../../11_modulo_imagens/04_tarefa_image_position/index.html">
+            <strong>Modulo Anterior: Imagens - Tarefa: Image Position</strong>
+        </a>
+    </div>
+
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Media Queries</h1>
+
+            <h3 class="intro">Intro</h3>
+
+            <p>
+                Agora iremos aprender sobre <strong>design responsivo</strong> e como adaptar nosso site para diferentes tamanhos de tela utilizando <strong>media queries</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>HTML:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/html.png" alt="HTML">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                <strong>CSS:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/css.png" alt="CSS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">@media</h3>
+
+            <p>
+                O <strong>@media</strong> permite criar estilos diferentes dependendo do tamanho da tela, orientacao do dispositivo ou outros fatores.
+            </p>
+
+            <p>
+                Algo importante é lembrar da <strong>especificidade</strong>. Normalmente colocamos o <strong>@media</strong> no final do arquivo CSS para evitar conflitos com outros estilos.
+            </p>
+
+            <h3 class="junto">@media or</h3>
+
+            <p>
+                O <strong>or</strong> permite aplicar estilos quando uma das condicoes for verdadeira.
+            </p>
+
+            <p>
+                Exemplo:
+            </p>
+
+            <p>
+                <strong>
+                    @media screen and (max-width: 768px), screen and (orientation: portrait)
+                </strong>
+            </p>
+
+            <p>
+                Nesse caso, o CSS sera aplicado caso uma das condicoes seja verdadeira.
+            </p>
+
+            <h3 class="junto">@media and</h3>
+
+            <p>
+                O <strong>and</strong> exige que todas as condicoes sejam verdadeiras para que o CSS seja aplicado.
+            </p>
+
+            <p>
+                Exemplo:
+            </p>
+
+            <p>
+                <strong>
+                    @media screen and (min-width: 768px)
+                </strong>
+            </p>
+
+            <p>
+                Nesse caso, os estilos serao aplicados apenas quando a tela possuir no minimo 768px.
+            </p>
+
+            <h3 class="junto">@media orientation</h3>
+
+            <p>
+                A propriedade <strong>orientation</strong> verifica a orientacao da tela do dispositivo.
+            </p>
+
+            <ul>
+                <li><strong>portrait</strong> → tela vertical</li>
+                <li><strong>landscape</strong> → tela horizontal</li>
+            </ul>
+
+            <p>
+                Exemplo:
+            </p>
+
+            <p>
+                <strong>
+                    @media (orientation: landscape)
+                </strong>
+            </p>
+
+            <h3 class="junto">resolution: 100dpi</h3>
+
+            <p>
+                A propriedade <strong>resolution</strong> permite verificar a densidade de pixels da tela.
+            </p>
+
+            <p>
+                Exemplo:
+            </p>
+
+            <p>
+                <strong>
+                    @media (min-resolution: 100dpi)
+                </strong>
+            </p>
+
+            <p>
+                Ela pode ser utilizada para adaptar imagens e elementos para telas com maior qualidade.
+            </p>
+
+            <h3 class="junto">meta name="viewport"</h3>
+
+            <p>
+                A tag <strong>viewport</strong> ajuda o navegador a adaptar corretamente o tamanho da pagina em dispositivos moveis.
+            </p>
+
+            <p>
+                Principais valores:
+            </p>
+
+            <ul>
+                <li><strong>width=device-width</strong> → largura baseada no dispositivo</li>
+                <li><strong>initial-scale=1.0</strong> → zoom inicial da pagina</li>
+            </ul>
+            
+            <p class="separado">
+                <strong>viewport:</strong> Faz o navegador adaptar corretamente o tamanho da pagina em dispositivos menores.
+            </p>
+
+            <p class="separado">
+                <strong>width=device-width:</strong> Define a largura da pagina baseada no tamanho do dispositivo.
+            </p>
+
+            <p class="separado">
+                <strong>initial-scale=1.0:</strong> Define o zoom inicial da pagina.
+            </p>
+
+
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+
+        <!-- <h1>Testes JS se necessário</h1> -->
+        <script src="assets/js/jscript.js"></script>
+
+    </main>
+
+    <div class="next">
+        <a class="next" href="../02_responsive_images/index.html">
+            Próxima Aula - Responsive Images
+        </a>
+    </div>
+
+</body>
+</html>
