@@ -1,0 +1,10 @@
+.body {
+    margin: 0;
+    height: 100vh;
+    font-size: 24px;
+    font-family: sans-serif;
+    background-image: url("../imgs/tarefa.png");
+    background-repeat: repeat-x;
+
+  /* insert styles for background */
+}
