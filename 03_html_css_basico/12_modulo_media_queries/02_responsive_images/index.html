@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Responsive Images</title>
+
+    <link rel="stylesheet" href="assets/styles/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="back">
+        <a class="back" href="../01_media_queries/index.html">
+            Aula Anterior - Media Queries
+        </a>
+    </div>
+
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Responsive Images</h1>
+
+            <h3 class="intro">Intro</h3>
+
+            <p>
+                Aqui iremos aprender sobre <strong>otimizacao</strong> e 
+                <strong>responsividade de imagens</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>HTML:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/html.png" alt="HTML">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                <strong>CSS:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/css.png" alt="CSS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">Explicacao</h3>
+
+            <p>
+                Agora iremos fazer algumas configuracoes para entender como imagens podem se adaptar a diferentes tamanhos de tela.
+            </p>
+
+            <p>
+                Quando trabalhamos com <strong>responsividade</strong>, uma imagem muito grande pode funcionar bem em computadores, mas acabar sendo desnecessaria em dispositivos menores.
+            </p>
+
+            <p>
+                Por exemplo, uma imagem de <strong>1200x600</strong> pode ser adequada para desktop, mas em celulares o navegador ainda precisaria carregar essa imagem grande mesmo utilizando uma tela menor.
+            </p>
+
+            <p>
+                Para resolver isso, podemos utilizar imagens diferentes dependendo do tamanho da tela do dispositivo.
+            </p>
+
+            <h3 class="junto">Adaptando Imagem</h3>
+
+            <p>
+                Podemos colocar nossa <strong>tag img</strong> dentro de uma 
+                <strong>tag picture</strong>.
+            </p>
+
+            <p>
+                Depois utilizamos a <strong>tag source</strong> para definir imagens diferentes de acordo com o tamanho da tela.
+            </p>
+
+            <p class="junto">
+                Exemplo source:
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/source_media.png" alt="Source media">
+                </picture>
+            </figure>
+
+            <p>
+                Cada imagem sera carregada dependendo das regras definidas no 
+                <strong>media</strong>.
+            </p>
+
+            <p>
+                O navegador verifica os <strong>sources</strong> de cima para baixo e utiliza o primeiro que for valido para aquele tamanho de tela.
+            </p>
+
+            <p>
+                A tag <strong>img</strong> funciona como imagem principal e tambem como fallback caso nenhum <strong>source</strong> seja aplicado.
+            </p>
+
+            <p>
+                Importante lembrar que nao precisamos adicionar uma 
+                <strong>class</strong> diretamente no <strong>source</strong>, pois o 
+                <strong>img</strong> principal ja pode ser estilizado normalmente.
+            </p>
+
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+
+        <!-- <h1>Testes JS se necessário</h1> -->
+        <script src="assets/js/jscript.js"></script>
+
+    </main>
+
+    <div class="next">
+        <a class="next" href="../03_responsive_background/index.html">
+            Próxima Aula - Responsive Background
+        </a>
+    </div>
+
+</body>
+</html>
