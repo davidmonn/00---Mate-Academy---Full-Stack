@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Control Image Size and Ratio</title>
+
+    <link rel="stylesheet" href="assets/styles/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="back">
+        <a class="back" href="../01_raster_and_vector_graphics/index.html">
+            Aula Anterior - Raster and Vector Graphics
+        </a>
+    </div>
+
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Control Image Size and Ratio</h1>
+
+            <h3 class="intro">Intro</h3>
+
+            <p>
+                Aqui iremos aprender como controlar o <strong>tamanho</strong> e a 
+                <strong>proporcao</strong> das imagens utilizando propriedades do 
+                <strong>CSS</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>HTML:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/html.png" alt="HTML">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">Explicacao</h3>
+
+            <p>
+                Podemos observar que estamos trabalhando com uma 
+                <strong>imagem grande</strong>. Para conseguirmos ajustar a 
+                <strong>proporcao</strong> dessa imagem e fazer com que ela se adapte 
+                corretamente a diferentes tamanhos de tela, podemos utilizar algumas 
+                propriedades do <strong>CSS</strong>.
+            </p>
+
+            <p>
+                Uma das principais propriedades utilizadas para isso e a 
+                <strong>width</strong>, que permite controlar a largura da imagem.
+            </p>
+
+            <h3 class="junto">.photo</h3>
+
+            <p>
+                Podemos adicionar uma <strong>class</strong> para nossa imagem, como 
+                <strong>.photo</strong>, para facilitar futuras modificacoes e organizacao 
+                do codigo.
+            </p>
+
+            <p>
+                Por exemplo, ao utilizarmos:
+            </p>
+
+            <h3 class="junto">
+                <strong>width: 100%;</strong>
+            </h3>
+            <p>
+                A imagem tentara ocupar toda a largura disponivel do elemento pai.
+            </p>
+
+            <h3 class="junto">height</h3>
+            <p>
+                Tambem podemos utilizar a propriedade <strong>height</strong> para definir 
+                uma altura especifica. Porem, dependendo do valor utilizado, a imagem pode 
+                acabar ficando <strong>achatada</strong> ou distorcida.
+            </p>
+
+            <h3 class="junto">Resolvendo Imagem Achatada - object-fit: contain;</h3>
+            <p>
+                Essa propriedade faz com que a imagem mantenha sua proporcao original, 
+                encaixando completamente dentro do espaco disponivel.
+            </p>
+            <p>
+                Em alguns casos a imagem pode acabar ficando pequena em relacao ao espaco 
+                disponivel. Para isso podemos utilizar:
+            </p>
+            
+            <h3 class="junto">object-fit: cover;</h3>
+            <p>
+                Com ele, a imagem ocupa melhor o espaco disponivel, porem algumas partes 
+                podem acabar sendo cortadas.
+            </p>
+
+            <br>
+            <p>
+                Para controlar melhor a area visivel da imagem, podemos utilizar:
+            </p>
+
+            <h3 class="junto">object-position</h3>
+
+            <p>
+                Exemplo: <strong>object-position: center -50px;</strong>
+            </p>
+            <p>
+                Onde:
+            </p>
+            <ul>
+                <li><strong>center</strong> centraliza a imagem</li>
+                <li><strong>-50px</strong> ajusta o foco da imagem verticalmente</li>
+            </ul>
+
+            <h3 class="junto">Modificacoes no main</h3>
+
+            <p>
+                Tambem podemos utilizar imagens diretamente no 
+                <strong>background</strong> do elemento.
+            </p>
+
+            <br>
+            <p>
+                <strong>Exemplo:</strong>
+            </p>
+
+            <p>
+                <strong>background-image: url("imagem.png");</strong>
+            </p>
+
+            <p>
+                Em alguns casos podemos esconder a imagem original utilizando:
+            </p>
+
+            <p>
+                <strong>display: none;</strong>
+            </p>
+
+            <p>
+                Assim ficamos apenas com a imagem aplicada no 
+                <strong>background</strong>.
+            </p>
+
+            <p>
+                Algumas imagens podem acabar se repetindo automaticamente. Para impedir 
+                isso utilizamos:
+            </p>
+
+            <p>
+                <strong>background-repeat: no-repeat;</strong>
+            </p>
+
+            <p>
+                Para controlar o tamanho da imagem de fundo:
+            </p>
+
+            <p>
+                <strong>background-size: cover;</strong>
+            </p>
+
+            <p>
+                E para posicionar a imagem corretamente:
+            </p>
+
+            <p>
+                <strong>background-position: center;</strong>
+            </p>
+
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+
+        <!-- <h1>Testes JS se necessário</h1> -->
+        <script src="assets/js/jscript.js"></script>
+
+    </main>
+
+    <div class="next">
+        <a class="next" href="../03_tarefa_background_repeat/index.html">
+            Próxima Aula - Tarefa: Background Repeat
+        </a>
+    </div>
+
+</body>
+</html>
