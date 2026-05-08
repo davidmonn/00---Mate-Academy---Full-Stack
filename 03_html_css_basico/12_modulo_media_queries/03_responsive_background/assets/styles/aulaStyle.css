@@ -1,0 +1,34 @@
+/* #region NORMALIZE */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: skyblue;
+
+    font-size: 32px;
+    text-align: center;
+}
+
+main {
+    width: 920px;
+    background-color: azure;
+    border-radius: 15px;
+    margin: 25px auto;
+    padding: 15px;
+}
+
+/* #endregion */
+
+.picture {
+    height: 0;
+    /* Com isso ira se adaptar de acordo com o objeto 'picture' e nao a pagina */
+    padding-bottom: 50%;
+    border: 10px solid black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://placehold.co/300x150/ff0/00f");
+}
