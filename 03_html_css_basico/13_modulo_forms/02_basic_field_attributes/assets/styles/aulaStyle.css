@@ -1,0 +1,27 @@
+/* #region NORMALIZE */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: skyblue;
+
+    font-size: 32px;
+    text-align: center;
+}
+
+main {
+    width: 920px;
+    background-color: azure;
+    border-radius: 15px;
+    margin: 25px auto;
+    padding: 15px;
+}
+
+/* #endregion */
+
+.form-field {
+    margin-bottom: 10px;
+}
