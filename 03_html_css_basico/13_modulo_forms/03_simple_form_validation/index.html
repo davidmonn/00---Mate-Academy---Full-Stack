@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form Validation</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../03_simple_form_validation/index.html">
+            Aula Anterior - Basic Field Attributes
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Simple Form Validation</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos utilizar nosso <strong>formulario</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>HTML:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/html.png" alt="HTML">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">Explicacao</h3>
+            <p>
+                Aqui podemos observar uma falha em nosso <strong>formulario</strong>. Ao digitarmos uma <strong>senha</strong>, podemos perceber que ela ainda esta visivel, o que pode acabar comprometendo sua seguranca caso exista outra pessoa proxima.
+            </p>
+
+            <h3 class="junto">type="password"</h3>
+            <p>
+                Quando estivermos usando um campo de <strong>senha</strong>, podemos alterar seu <strong>type="text"</strong> para <strong>type="password"</strong>.
+            </p>
+
+            <h3 class="junto">method="GET"</h3>
+            <p>
+                Outro problema que podemos encontrar e a utilizacao do <strong>method="GET"</strong>. Com ele, os dados enviados pelo <strong>formulario</strong> ficam visiveis na <strong>url</strong>.
+            </p>
+
+            <h3 class="junto">Atributo required</h3>
+            <p>
+                Com ele tornamos o campo que possui esse <strong>atributo</strong> um campo <strong>obrigatorio</strong>. Caso o usuario tente enviar o formulario sem preencher o campo, o envio nao sera permitido.
+            </p>
+
+            <h3 class="junto">Atributos minlength/maxlength</h3>
+            <p>
+                Com eles podemos delimitar o <strong>tamanho minimo</strong> e <strong>maximo</strong> de caracteres que poderao ser utilizados no campo.
+            </p>
+
+            <h3 class="junto">type="email"</h3>
+            <p>
+                Com ele conseguimos fazer uma validacao basica de <strong>email</strong>, exigindo por exemplo o uso do caractere <strong>@</strong>.
+            </p>
+
+            <h3 class="junto">Expressao Regular</h3>
+            <p>
+                No campo de <strong>name="username"</strong>, podemos inserir uma <strong>Expressao Regular</strong> para definir um padrao ou impedir alguns caracteres.
+            </p>
+
+            <p>
+                Exemplo: <strong><code>pattern="\w+"</code></strong>. Com isso definimos que apenas caracteres considerados comuns serao aceitos, evitando alguns caracteres especiais.
+            </p>
+            
+            <h3 class="junto">Atributo novalidate</h3>
+            <p>
+                Precisamos utiliza-lo de maneira adequada, pois ele desativa as validacoes padroes do formulario.
+            </p>
+
+            <p>
+                Ele pode ser utilizado junto com <strong>JS</strong>, por exemplo para criarmos nossas proprias validacoes personalizadas.
+            </p>
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+        <!-- <h1>Testes JS se necessário</h1> -->
+        <script src="assets/js/jscript.js"></script>
+
+    </main>
+        
+    <div class="next">
+        <a class="next" href="../04_checkbox_and_label/index.html">
+            Próxima Aula - Checkbox and Label
+        </a>
+    </div>
+
+</body>
+</html>
