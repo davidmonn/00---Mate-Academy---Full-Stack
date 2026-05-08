@@ -7,9 +7,8 @@
 }
 body {
     background-color: skyblue;
-
-    font-size: 32px;
     text-align: center;
+    font-size: 1.5rem;
 }
 
 main {
@@ -19,6 +18,16 @@ main {
     margin: 25px auto;
     padding: 15px;
 }
+
+form input{
+    font-size: 1.5rem;
+}
+
+h1 {
+    font-size: 7rem;
+}
+
+
 
 /* #endregion */
 

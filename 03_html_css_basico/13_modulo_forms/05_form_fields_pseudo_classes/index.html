@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Fields Pseudo-Classes</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../04_checkbox_and_label/index.html">
+            Aula Anterior - Checkbox and Label
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Form Fields Pseudo-Classes</h1>
+
+            <h3 class="intro">Intro</h3>
+
+            <p>
+                Aqui iremos ver sobre a <strong>estilizacao dos campos</strong> com base em seu <strong>estado</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>HTML:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/html.png" alt="HTML">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                <strong>CSS:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/css.png" alt="CSS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">Explicacao</h3>
+
+            <p>
+                Podemos observar que ainda temos basicamente a mesma estrutura em nosso <strong>HTML</strong>, porem agora em nosso <strong>CSS</strong> houveram bastante mudancas.
+            </p>
+
+            <h3 class="junto">::placeholder</h3>
+
+            <p>
+                Aqui estamos selecionando o pseudo-elemento <strong>::placeholder</strong> para alterarmos a aparencia de nosso <strong>placeholder</strong>.
+            </p>
+
+            <p>
+                Com ele podemos modificar por exemplo a <strong>cor</strong>, <strong>fonte</strong> ou <strong>font-weight</strong> do texto.
+            </p>
+
+            <h3 class="junto">:focus</h3>
+
+            <p>
+                Aqui estamos selecionando o campo que esta em <strong>foco</strong>.
+            </p>
+
+            <p>
+                Ao clicarmos em algum <strong>campo de preenchimento</strong>, podemos observar alteracoes visuais nesse campo.
+            </p>
+
+            <p>
+                Como no exemplo, ao clicarmos em um campo sua cor sera alterada para <strong>yellow</strong>.
+            </p>
+
+            <h3 class="junto">:invalid</h3>
+
+            <p>
+                Quando temos um <strong>campo obrigatorio</strong> e ele nao e preenchido corretamente, podemos observar alteracoes visuais nesse campo.
+            </p>
+
+            <p>
+                Isso pode ser observado por exemplo em campos utilizando o atributo <strong>required</strong>.
+            </p>
+
+            <h3 class="junto">:checked</h3>
+
+            <p>
+                Essa pseudo-classe e utilizada em nosso <strong>checkbox</strong>.
+            </p>
+
+            <p>
+                Com essa alteracao, ao clicarmos em nosso <strong>checkbox</strong> e marca-lo, a cor de seu texto sera alterada.
+            </p>
+
+            <h3 class="junto">label:has(input:checked)</h3>
+
+            <p>
+                Aqui fizemos dessa forma pois nosso <strong>label</strong> esta encapsulando o <strong>input</strong>.
+            </p>
+
+            <p>
+                Ao clicarmos no <strong>checkbox</strong>, podemos observar a cor do texto sendo alterada para <strong>blue</strong>.
+            </p>
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+        <!-- <h1>Testes JS se necessário</h1> -->
+        <script src="assets/js/jscript.js"></script>
+
+    </main>
+        
+    <div class="next">
+        <a class="next" href="../06_buttons_vs_links/index.html">
+            Próxima Aula - Buttons vs Links
+        </a>
+    </div>
+
+</body>
+</html>

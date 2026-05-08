@@ -1,0 +1,70 @@
+/* #region NORMALIZE */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: skyblue;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+main {
+    width: 920px;
+    background-color: azure;
+    border-radius: 15px;
+    margin: 25px auto;
+    padding: 15px;
+}
+
+form input{
+    font-size: 1.5rem;
+}
+
+h1 {
+    font-size: 7rem;
+}
+
+/* #endregion */
+
+.form-field {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input::placeholder {
+    color: purple;
+    font-weight: bolder;
+}
+
+/* Mudanca ocorre ao clicarmos em um campo */
+:focus {
+    background-color: yellow;
+}
+
+/* :valid */
+input:invalid {
+    background-color: red;
+}
+
+input:checked + label{
+    color: green;
+}
+
+label:has(input:checked) {
+    color: blue;
+}
+
+button:hover {
+    color: blue;
+}
+
+button:active {
+    color: orange;
+}
+
+button:disabled {
+    color: #444;
+}
