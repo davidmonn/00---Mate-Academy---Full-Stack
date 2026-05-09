@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Field</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../10_textarea/index.html">
+            Aula Anterior - Textarea
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Hidden Field</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos ver sobre <strong>campos ocultos</strong> em formularios.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>HTML:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/html.png" alt="HTML">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">Explicacao</h3>
+            <p>
+                Os <strong>campos ocultos</strong> sao utilizados quando precisamos enviar determinadas informacoes para o <strong>servidor</strong>, mas nao queremos que o usuario visualize ou altere esses dados diretamente no formulario.
+            </p>
+
+            <p>
+                Um exemplo seria quando um usuario acessa uma pagina atraves de uma determinada <strong>URL</strong> e algumas informacoes ja foram identificadas automaticamente pelo sistema. Nesse caso, podemos utilizar um <strong>campo oculto</strong> para enviar esses dados junto ao formulario.
+            </p>
+
+            <h3 class="junto">Atributo type="hidden"</h3>
+            <p>
+                Utilizando o <strong>type="hidden"</strong>, conseguimos criar um campo invisivel para o usuario, mas que ainda sera enviado normalmente para o <strong>servidor</strong> quando o formulario for submetido.
+            </p>
+
+            <p>
+                Esse tipo de campo tambem pode ser utilizado em formularios com varias <strong>etapas</strong>, onde precisamos armazenar temporariamente algumas informacoes sem exibi-las ao usuario ate a finalizacao completa do processo.
+            </p>
+
+            <h3 class="junto">Importante</h3>
+            <p>
+                Apesar de o campo ser oculto visualmente, o usuario ainda pode visualizar ou alterar esses dados utilizando as ferramentas do navegador. Por isso, informacoes importantes ou sensiveis sempre devem ser validadas no <strong>servidor</strong>.
+            </p>
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+        <!-- <h1>Testes JS se necessário</h1> -->
+        <script src="assets/js/jscript.js"></script>
+
+    </main>
+        
+    <div class="next">
+        <a class="next" href="../12_other_input_types/index.html">
+            Próxima Aula - Other Input Types
+        </a>
+    </div>
+
+</body>
+</html>
