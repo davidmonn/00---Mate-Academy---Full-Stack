@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons vs Links</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../05_form_fields_pseudo_classes/index.html">
+            Aula Anterior - Form Fields Pseudo-Classes
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Buttons vs Links</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos ver mais sobre <strong>botoes</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>HTML:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/html.png" alt="HTML">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+            
+            <h3 class="junto">button</h3>
+            <p>
+                Quando usamos a <strong>tag button</strong>, podemos fazer uso de alguns <strong>atributos</strong> como:
+            </p>
+
+            <h3 class="junto">type="submit"</h3>
+            <p>
+                Com o <strong>type="submit"</strong>, o <strong>button</strong> tera a <strong>funcao</strong> de enviar um <strong>formulario</strong>. Essa e a opcao que vem por <strong>padrao</strong>, entao se nao definirmos nenhum valor para o atributo <strong>type</strong>, ele sera definido automaticamente como <strong>submit</strong>.
+            </p>
+
+            <h3 class="junto">type="reset"</h3>
+            <p>
+                Ele possui a <strong>funcao</strong> de limpar ou redefinir os valores de um <strong>formulario</strong>.
+            </p>
+
+            <h3 class="junto">type="button"</h3>
+            <p>
+                Esse e diferente dos dois mencionados anteriormente, pois nao executa automaticamente uma <strong>acao</strong> relacionada ao <strong>formulario</strong>. Normalmente ele e utilizado para criarmos uma <strong>acao personalizada</strong> utilizando <strong>JS</strong>.
+            </p>
+
+            <h3 class="junto">button</h3>
+            <p>
+                O <strong>button</strong> possui a vantagem de permitir o uso do <strong>atributo disabled</strong>, que serve para desabilitar o elemento. Isso pode ser util, por exemplo, quando um usuario ainda nao preencheu corretamente um <strong>formulario</strong>. Para controlar esse comportamento de forma mais eficiente, normalmente utilizamos <strong>JS</strong>.
+            </p>
+
+            <h3 class="junto">Links</h3>
+            <p>
+                Diferente do <strong>button</strong>, os <strong>links</strong> sao utilizados principalmente para navegacao entre paginas, arquivos ou secoes de um site. Geralmente usamos a <strong>tag a</strong> junto do atributo <strong>href</strong> para definir o destino do link.
+            </p>
+
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+        <!-- <h1>Testes JS se necessário</h1> -->
+        <script src="assets/js/jscript.js"></script>
+
+    </main>
+        
+    <div class="next">
+        <a class="next" href="../07_keyboard_navigation/index.html">
+            Próxima Aula - Keyboard Navigation
+        </a>
+    </div>
+
+</body>
+</html>
