@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Navigation</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../">
+            Aula Anterior - Buttons vs Links
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Keyboard Navigation</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos ver sobre a <strong>navegacao utilizando o teclado</strong> em uma pagina.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>HTML:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/html.png" alt="HTML">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">Explicacao</h3>
+            <p>
+                Um exemplo muito comum e quando fazemos uso da <strong>tecla Tab</strong> para percorrer os campos de preenchimento de um <strong>formulario</strong>.
+            </p>
+
+            <p>
+                Alem da navegacao padrao utilizando o <strong>Tab</strong>, tambem podemos definir qual sera o <strong>primeiro campo</strong> selecionado ou a ordem de navegacao entre os elementos da pagina utilizando alguns <strong>atributos</strong>.
+            </p>
+
+            <h3 class="junto">Atributo tabindex="1"</h3>
+            <p>
+                Com o <strong>tabindex</strong>, conseguimos definir a ordem de navegacao dos elementos ao utilizarmos a <strong>tecla Tab</strong>. Como no exemplo da imagem, ao pressionarmos o <strong>Tab</strong>, o foco pode ser direcionado primeiro para o campo de <strong>senha</strong>.
+            </p>
+
+            <p>
+                Tambem podemos utilizar o valor <strong>-1</strong>, fazendo com que aquele elemento nao seja acessado pela navegacao utilizando a <strong>tecla Tab</strong>.
+            </p>
+
+            <h3 class="junto">Importante</h3>
+            <p>
+                Apesar do <strong>tabindex</strong> permitir controlar a ordem de navegacao, normalmente e recomendado manter a ordem natural do <strong>HTML</strong>, pois isso melhora a <strong>acessibilidade</strong> e facilita a navegacao para os usuarios.
+            </p>
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+        <!-- <h1>Testes JS se necessário</h1> -->
+        <script src="assets/js/jscript.js"></script>
+
+    </main>
+        
+    <div class="next">
+        <a class="next" href="../08_radio_button/index.html">
+            Próxima Aula - Radio Button
+        </a>
+    </div>
+
+</body>
+</html>
