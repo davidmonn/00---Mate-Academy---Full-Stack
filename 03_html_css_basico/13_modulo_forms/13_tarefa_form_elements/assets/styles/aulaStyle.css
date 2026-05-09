@@ -1,0 +1,13 @@
+fieldset {
+    border: none;
+}
+
+.row {
+    margin-bottom: 15px;
+    display: block;
+}
+
+.fieldset {
+    display: block;
+    margin-bottom: 10px;
+}
