@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Relative</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../../13_modulo_forms/13_tarefa_form_elements/index.html">
+            <strong>Módulo Anterior: Forms - Tarefa: Form Elements</strong>
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Position Relative</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos aprender sobre o <strong>posicionamento dos elementos</strong> utilizando a propriedade <strong>position</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Código de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>HTML:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/html.png" alt="HTML">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                <strong>CSS:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/css.png" alt="CSS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">Explicação</h3>
+            <p>
+                Nesse código podemos observar que temos em nosso navegador dois retângulos: um <strong>azul</strong> e outro <strong>amarelo</strong>, da seguinte forma:
+            </p>
+
+            <figure class="separado">
+                <picture>
+                    <img src="assets/imgs/navegador.png" alt="Exemplo navegador">
+                </picture>
+            </figure>
+
+            <p>
+                Podemos observar que ambos os retângulos estão contidos dentro de um <strong>container</strong> e possuem dois <strong>textos</strong>.
+            </p>
+
+            <p>
+                Se precisarmos mover o <strong>retângulo azul</strong> para baixo em <strong>10px</strong>, poderíamos utilizar um <strong>padding-top: 10px;</strong>. Porém, iremos perceber que haverá uma movimentação de todo o <strong>conjunto (azul e amarelo)</strong>, criando um espaço vazio dentro do <strong>container</strong>.
+            </p>
+
+            <p>
+                Dessa forma, não estaríamos utilizando corretamente o nosso <strong>estilo</strong>. Para isso, iremos utilizar a propriedade <strong>position</strong>.
+            </p>
+
+            <p>
+                Ao utilizarmos um <strong>position</strong>, teremos liberdade para usar propriedades como: <strong>top</strong>, <strong>right</strong>, <strong>bottom</strong> e <strong>left</strong>.
+            </p>
+
+            <h3 class="junto">Propriedade position</h3>
+            <p>
+                Temos alguns <strong>valores</strong> importantes para a propriedade <strong>position</strong>, como: <strong>relative</strong>, <strong>absolute</strong>, <strong>fixed</strong> e <strong>static</strong>.
+            </p>
+
+            <ul class="separado">
+                <li>
+                    <strong>relative:</strong>
+                    <ul>
+                        <li>
+                            Permite mover o elemento utilizando <strong>top</strong>, <strong>right</strong>, <strong>bottom</strong> e <strong>left</strong>, mantendo o espaço original do elemento na página.
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>absolute:</strong>
+                    <ul>
+                        <li>
+                            Remove o elemento do fluxo normal da página e permite posicioná-lo livremente.
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>fixed:</strong>
+                    <ul>
+                        <li>
+                            Mantém o elemento fixo na tela, mesmo quando a página é rolada.
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>static:</strong>
+                    <ul>
+                        <li>
+                            É o valor padrão dos elementos HTML, sem posicionamento especial.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3 class="junto">Position Relative</h3>
+            <p>
+                O valor <strong>relative</strong> permite mover um elemento em relação à sua <strong>posição original</strong>.
+            </p>
+
+            <p>
+                Nesse caso, o elemento será movido <strong>10px para baixo</strong> a partir de sua posição original utilizando <strong>top: 10px;</strong>.
+            </p>
+
+            <p>
+                Mesmo sendo movido, o elemento continuará ocupando seu espaço original dentro do fluxo da página.
+            </p>
+
+            <h3 class="junto">Propriedade z-index</h3>
+            <p>
+                Com a propriedade <strong>z-index</strong> podemos definir qual elemento ficará acima ou abaixo de outro.
+            </p>
+
+            <p>
+                Quanto maior o valor do <strong>z-index</strong>, maior será a prioridade do elemento na sobreposição.
+            </p>
+
+            <h3 class="junto">Propriedade opacity</h3>
+            <p>
+                A propriedade <strong>opacity</strong> permite definir a transparência de um <strong>elemento</strong>.
+            </p>
+
+            <p>
+                O valor vai de <strong>0</strong> até <strong>1</strong>, onde:
+            </p>
+
+            <ul class="separado">
+                <li><strong>0</strong> = totalmente transparente.</li>
+                <li><strong>1</strong> = totalmente visível.</li>
+            </ul>
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteúdo da aula
+            </a>
+
+        </article>
+        
+        <!-- <h1>Testes JS se necessário</h1> -->
+        <script src="assets/js/jscript.js"></script>
+
+    </main>
+        
+    <div class="next">
+        <a class="next" href="../02_position_absolute/index.html">
+            Próxima Aula - Position Absolute
+        </a>
+    </div>
+
+</body>
+</html>
