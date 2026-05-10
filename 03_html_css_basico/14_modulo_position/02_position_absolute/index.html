@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Absolute</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../01_position_relative/index.html">
+            Aula Anterior - Position Relative
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Position Absolute</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos entender sobre os posicionamentos <strong>relative</strong> e <strong>absolute</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>HTML:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/html.png" alt="HTML">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                <strong>CSS:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/css.png" alt="CSS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">Explicacao</h3>
+            <p>
+                Aqui podemos observar que estamos usando basicamente o mesmo codigo da aula anterior.
+            </p>
+
+            <h3 class="junto">position: absolute;</h3>
+            <p>
+                Ao alterarmos o valor do <strong>position</strong> de <strong>relative</strong> para <strong>absolute</strong>, podemos observar algumas mudanças.
+            </p>
+
+            <p>
+                O elemento passa a poder se sobrepor aos outros elementos da página e deixa de ocupar seu espaço original dentro do fluxo normal do documento.
+            </p>
+
+            <p>
+                Além disso, o elemento com <strong>position: absolute;</strong> pode não respeitar o posicionamento do <strong>elemento pai</strong> caso ele não possua um posicionamento definido, podendo acabar vazando ou quebrando o layout da página.
+            </p>
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../03_fix_elements_on_the_page/index.html">
+            Próxima Aula - Fix Elements on the Page
+        </a>
+    </div>
+
+</body>
+</html>
