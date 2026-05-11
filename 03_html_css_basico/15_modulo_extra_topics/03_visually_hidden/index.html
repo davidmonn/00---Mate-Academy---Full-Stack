@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Visually Hidden</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,8 +12,8 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
+        <a class="back" href="../02_html_entities/index.html">
+            Aula Anterior - HTML Entities
         </a>
     </div>
     
@@ -21,11 +21,11 @@
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">Visually Hidden</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Agora iremos aprender sobre <strong>elementos</strong> que podem ser <strong>ocultados</strong> na tela.
             </p>
 
         </article>
@@ -58,7 +58,40 @@
 
         <article class="conc">
 
-            
+            <h3 class="junto">Explicacao</h3>
+            <p>
+                Com o exemplo que temos, agora iremos criar uma <strong>estrutura</strong> onde poderemos esconder o <strong>Link-2</strong>. Existem varias formas de fazermos essa <strong>ocultacao</strong>.
+            </p>
+
+            <h3 class="junto">display: none;</h3>
+            <p>
+                Usando o <strong>display: none;</strong>, nesse caso apareceriam apenas o <strong>Link-1</strong> e o <strong>Link-3</strong>. Dessa forma o <strong>Link-3</strong> ficaria logo abaixo do <strong>Link-1</strong>, como se o <strong>Link-2</strong> nao existisse.
+            </p>
+
+            <h3 class="junto">visibility: hidden;</h3>
+            <p>
+                Dessa forma o elemento ficara oculto, mas ainda teremos o <strong>espaco reservado</strong> do <strong>Link-2</strong>.
+            </p>
+
+            <h3 class="junto">opacity: 0;</h3>
+            <p>
+                Dessa forma o <strong>Link-2</strong> ficara totalmente transparente, o que tambem mantera seu <strong>espaco reservado</strong>.
+            </p>
+
+            <h3 class="junto">pointer-events: none;</h3>
+            <p>
+                Dessa forma, mesmo passando o mouse sobre um <strong>link</strong>, nao sera possivel interagir com ele. O elemento ira parecer apenas um texto comum.
+            </p>
+
+            <h3 class="junto">Atributo hidden</h3>
+            <p>
+                Nesse caso podemos usar qualquer <strong>tag</strong> e adicionar o <strong>atributo hidden</strong>. Com ele, nosso elemento tambem ficara oculto.
+            </p>
+
+            <h3 class="junto">Dica</h3>
+            <p>
+                Se quisermos que o <strong>elemento</strong> nao apareca nem mesmo na navegacao por teclado, como quando o usuario utiliza a tecla <strong>Tab</strong>, o mais indicado e usar o <strong>display: none;</strong>.
+            </p>
             
             <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
                 Conteudo da aula
@@ -71,8 +104,8 @@
         </main>
         
     <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+        <a class="next" href="../04_shadows/index.html">
+            Próxima Aula - Shadows
         </a>
     </div>
 

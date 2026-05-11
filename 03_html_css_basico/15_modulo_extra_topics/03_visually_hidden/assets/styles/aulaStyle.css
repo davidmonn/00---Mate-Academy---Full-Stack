@@ -31,3 +31,21 @@ h1 {
 
 /* #endregion */
 
+.link {
+    display: block;
+    margin: 8px 0;
+    padding: 8px;
+    border-radius: 8px;
+
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    background-color: tomato;
+}
+
+.link-2 {
+    /* display: none; */
+    /* visibility: hidden; */
+    opacity: 0;
+    pointer-events: none;
+}
