@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../../14_modulo_position/05_tarefa_sticky_header/index.html">
+            <strong>Modulo Anterior: Postion - Tarefa: Sticky Header</strong>
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Overflow</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos entender oque ocorre quando um <strong>conteudo excede</strong> o tamanho de nosso <strong>container</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>HTML:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/html.png" alt="HTML">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                <strong>CSS:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/css.png" alt="CSS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">Explicacao</h3>
+            <p>
+                Com esse codigo de exemplo, se no caso desejarmos adicionar mais conteudo em nosso <strong>texto</strong> podemos observar que ele ira ir se <strong>adaptando</strong>, porem se adicionarmos uma <strong>width e height</strong> fixas. E tambem deixarmos a <strong>tag filha</strong> maior que a <strong>width e height</strong> pai.
+            </p>
+            <p>
+                Poderemos observar um <strong>overflow</strong>.
+            </p>
+
+            <h3 class="junto">overflow</h3>
+            <p>
+                O overflow acontece quando o conteúdo de um elemento ultrapassa os limites do elemento pai.
+            </p>
+
+            <h3 class="junto">Propriedade overflow: hidden;</h3>
+            <p>
+                Com ele conseguimos <strong>ocultar</strong> a parte do <strong>conteudo</strong> que ultrapassou os limites do <strong>elemento pai</strong>. Porem ainda ocorrera um problema, onde o <strong>usuario</strong> nao conseguira visualizar o conteudo que estara oculto.
+            </p>
+
+            <h3 class="junto">Propriedade overflow: scroll;</h3>
+            <p>
+                Basicamente com ele conseguimos cortar a parte que ultrapassa os limites do <strong>elemento pai</strong>, porem ao inves de ocultar, conseguimos visualizar seu conteudo atraves do <strong>scroll</strong>.
+            </p>
+            <p>
+                Porem ainda teremos um problema, onde mesmo que o conteudo acabe sendo menor, pode acabar havendo <strong>barra de rolagem scroll</strong>.
+            </p>
+
+            <h3 class="junto">Propriedade overflow: auto;</h3>
+            <p>
+                Melhor opcao pois se adapta de acordo com a <strong>necessidade</strong> se conteudo ultrapassar os limites, havera uma <strong>barra de rolagem</strong>.
+            </p>
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../02_html_entities/index.html">
+            Próxima Aula - HTML Entities
+        </a>
+    </div>
+
+</body>
+</html>
