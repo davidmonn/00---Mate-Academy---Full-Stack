@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Discard Changes with Git</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../05_how_to_discard_changes_with_git/index.html">
+            Aula Anterior - How to revert the changes with Git
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">How to Discard Changes with Git</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos ver como <strong>recuperar</strong> um codigo <strong>revertido</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Inciando Recuperacao</h3>
+            <h3 class="junto">git log --oneline</h3>
+            <p>
+                Com isso iremos ver que foi feito um <strong>revert</strong>, com isso podemos <strong>copiar</strong> seu codigo <strong>hash</strong>.
+            </p>
+
+            <h3 class="junto">git reset --hard</h3>
+            <p>
+                Apos copiarmos o codigo hash, usamos o <strong>git reset --hard</strong> com o <strong>codigo hash</strong> que foi copiado.
+            </p>
+
+            <h3 class="junto">Removendo Algo que nao Queremos Enviar de Forma Sutil</h3>
+            <p>
+                Para isso podemos iniciar com o <strong>git add .</strong> com isso podemos usar o <strong>git status</strong> e iremos vereficar os arquivos modificados.
+            </p>
+            <p>
+                Se por exemplo tivermos dois arquivos um que precise ser enviado e o outro ainda esta sendo trabalhado. Podemos fazer um <strong>git commit -m"nome" </strong> e acabarmos enviando ambos. Podemos estar dando um <strong>git log --oneline</strong> novamente para pegar seu <strong>hash</strong> e fazemos o <strong>comando</strong> <strong><code>git reset --soft 72210de</code></strong>.
+            </p>
+            <p>
+                Apos darmos enteder podemos dar novamente um <strong>git status</strong> e copiamos o nome do arquivo que nao queremos enviar com o codigo <strong><code>git restore --staged exemplo.html</code></strong> com um arquivo foi enviado e restauramos o exemplo.html nao sendo enviado.
+            </p>
+
+            
+
+        </article>
+
+        <article class="conc" hidden>
+
+            
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../06_how_git_commit_works in_depth/index.html">
+            Próxima Aula - How git commit works in-depth
+        </a>
+    </div>
+
+</body>
+</html>
