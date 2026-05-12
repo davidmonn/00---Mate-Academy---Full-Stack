@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to navigate the history with Git</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../02_your_first_repository_and_commit/index.html">
+            Aula Anterior - Your First Repository and Commit
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">How to navigate the history with Git</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos ver como <strong>navegar</strong> no <strong>historico de commits</strong> que enviamos.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">git log</h3>
+            <p>
+                Primeira coisa que estaremos fazendo e utilizar o <strong>git log</strong>. Apos usarmos ele e darmos <strong>enter</strong>, podemos estar navegando por todos os <strong>commits</strong> realizados, podemos usar a seta cima e baixo para navegar e se precisarmos sair, basta digitarmos a letra <strong>q</strong>.
+            </p>
+
+            <h3 class="junto">git log --oneline</h3>
+            <p>
+                Tem mesma funcao do <strong>git log</strong> mas de forma mais resumida.
+            </p>
+
+            <h3 class="junto">git log --oneline --patch</h3>
+            <p>
+                Dessa forma conseguimos ver os detalhes de todas as <strong>alteracoes</strong> que foram realizadas em cada um dos <strong>commits</strong>.
+            </p>
+
+            <h3 class="junto">Entrando em um Commit ja feito</h3>
+            <p>
+                Ao usarmos o <strong>git log --oneline</strong>, veremos que temos alguns codigos, se o <strong>copiarmos</strong> podemos estar o usando com o comando <strong>git checkout</strong>.
+            </p>
+
+            <h3 class="junto">git chekout</h3>
+            <p>
+                Com ele podemos estar selecionando um arquivo ja comitado, para isso iremos precisar do codigo do <strong>commit</strong>, que podemos estar obtendo ao usar o <strong>git log --oneline</strong>
+            </p>
+
+            <h3 class="junto">git --oneline --all</h3>
+            <p>
+                Dessa forma conseguimos ver todos os <strong>commits</strong> que foram realizados e em que ponto estamos acessando nosso codigo.
+            </p>
+
+            <h3 class="junto">git checkout main</h3>
+            <p>
+                Com ele voltamos para nosso arquivo principal que estamos no momento.
+            </p>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../04_how_to_revert_the_changes_with_git/index.html">
+            Próxima Aula - How to revert the changes with Git
+        </a>
+    </div>
+
+</body>
+</html>
