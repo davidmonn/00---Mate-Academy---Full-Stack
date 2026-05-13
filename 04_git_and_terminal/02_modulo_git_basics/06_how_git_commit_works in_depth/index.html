@@ -32,11 +32,22 @@
 
         <article class="conteudo">
 
-            <h3 class="cont-title"></h3>
+            <h3 class="cont-title">Explicacao git add .</h3>
             <p>
                 Quando enviamos um arquivo por <strong>commit</strong> ele nao e enviado por inteiro, mas por <strong>parte</strong>. 
             </p>
-            
+            <p>
+                Se por exemplo fizermos uma <strong>alteracao</strong> e dermos um <strong>git add .</strong> e decidirmos mudar mais alguma coisa e depois dermos um <strong>git status</strong>.
+            </p>
+            <p>
+                Iremos observar que o <strong>git add .</strong> ja foi realizado para a primeira parte que escrevemos, mas temos uma mudanca em nosso <strong>codigo</strong> que foi a alteracao feita apos o <strong>git add .</strong> 
+            </p>
+            <p>
+                Se fizermos um <strong>commit</strong> da forma que esta agora, sera enviado apenas a primeira parte que temos o <strong>git add .</strong> e as modificacoes feitas apos isso, nao seram enviadas junto.
+            </p>
+            <p>
+                Se quisermos enviar tudo junto, iremos precisar novamente dar outro <strong>git add .</strong> e podemos verificar com um <strong>git status</strong> onde veremos que agora sim todos os arquivos seram enviado se dermos o <strong>git commit -m ""</strong>.
+            </p>
 
         </article>
 
