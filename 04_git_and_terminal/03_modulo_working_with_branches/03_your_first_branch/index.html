@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your first branch</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../02_what_is_branches_and_how_to_use_them/index.html">
+            Aula Anterior - What is Branches and How to use Them
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Your first branch</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos ver como criar <strong>branchs</strong> e alternar entre <strong>branchs</strong> no <strong>VSCode</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Verificar Branch</h3>
+            <p>
+                Primeira coisa que temos que fazer é verificar a <strong>branch</strong> em que estamos.
+            </p>
+            <p>
+                <strong>git log --oneline</strong>: iremos comecar dessa forma para nos localizar. Se estivermos vendo <strong>main</strong> significa que estamos na <strong>branch</strong> principal de nosso <strong>projeto</strong>
+            </p>
+
+            <h3 class="junto">Criacao de Branch</h3>
+            <p>
+                Primeiramente iremos usar o <strong>git branch feature/update-help-page</strong>, com essa funcionalidade <strong>(feature/update-help-page)</strong> iremos atualizar nossa pagina de ajuda.
+            </p>
+            <p>
+                Feito isso podemos novamente usar o <strong>git log --oneline</strong> e iremos ver que a <strong>branch</strong> foi criada:
+                <img src="assets/imgs/create.png" alt="Criaca branch">
+            </p>
+            
+            <p class="separado">
+                Para finalizar podemos usar o <strong>git status</strong> e veremos que no momento ainda estamos em nosso <strong>branch main</strong>. <br>
+                <img src="assets/imgs/git_status.png" alt="Git Status">
+            </p>
+
+            <p>
+                Com isso vimos que mesmo apos criarmos nosso <strong>branch</strong> ainda estamos no <strong>main</strong>
+            </p>
+
+            <h3 class="junto">git branch</h3>
+            <p>
+                Com isso iremos podemos observar as <strong>branchs</strong> disponiveis em nosso <strong>projeto</strong>. <br>
+                <img src="assets/imgs/git_branch.png" alt="git branch">
+            </p>
+
+            <h3 class="junto">Alternando Branch</h3>
+            <p>
+                Para podermos alterar para a <strong>branch</strong> precisamos do nome dela, iremos usar a nossa criada no exemplo.
+            </p>
+
+            <h3 class="junto">git checkout</h3>
+            <p>
+                Com ele iremos selecionar a <strong>branch</strong> em que iremos usar. Ex: <strong><code>git branch feature/update-help-page</code></strong> (nossa branch de exemplo). E com isso tera sido feito a mudanca. <br>
+                <img src="assets/imgs/git_checkout.png" alt="git checkout">
+            </p>
+            <p>
+                Se desejarmos confirmar, podemos usar novamente o <strong>git status</strong>.
+            </p>
+
+            
+
+            
+
+        </article>
+
+        <article class="conc" hidden>
+
+            
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../04_How_to_merge_branches/index.html">
+            Próxima Aula - How to merge branches
+        </a>
+    </div>
+
+</body>
+</html>
