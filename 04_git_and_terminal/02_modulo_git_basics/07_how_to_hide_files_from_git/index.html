@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to hide files from Git</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../">
+            Aula Anterior - How git commit works in-depth
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">How to hide files from Git</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Agora iremos ver como <strong>ocultar</strong> um <strong>arquivo</strong> que nao pode ser enviado para o <strong>repositorio</strong> mas que precisa fazer parte do <strong>projeto</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Ocultacao de Arquivo</h3>
+            <p>
+                A primeira coisa que iremos fazer e criar o arquivo que desejamos ocultar como <strong>.env</strong> .
+            </p>
+            <p>
+                Depois digitamos uma senha para exemplo onde nao podemos deixar essa senha disponivel em nosso <strong>repositorio</strong>. Feito isso podemos criar um <strong>aquivo</strong> que se chama <strong>arquivo. gitignore</strong> dentro desse arquivo digitamos o nome do arquivo que nao queremos enviar. Como por exemplo o <strong>arq.env</strong> que criamos de exemplo.
+            </p>
+            <p>
+                Com isso todos os <strong>arquivos/pastas</strong> que colocarmos dentro do <strong>.gitignore</strong> serao ignorado em nosso <strong>commit</strong>
+            </p>
+            <p>
+                Dessa forma iremos deixar disponivel apenas em nosso <strong>computador local</strong> e nao sera enviado para o <strong>repositorio</strong>
+            </p>
+
+            
+
+        </article>
+
+        <article class="conc" hidden>
+
+            
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../">
+            Próxima Aula - 
+        </a>
+    </div>
+
+</body>
+</html>
