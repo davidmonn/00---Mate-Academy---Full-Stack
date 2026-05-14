@@ -57,7 +57,7 @@
                 Um exemplo seria criarmos uma <strong>nova branch</strong> como por exemplo <strong>git branch feature/update-headers</strong> com esse exemplo, atualizariamos todos nossos <strong>headers (h2)</strong> e trocariamos para ela com o <strong>git checkout feature/update-headers</strong>
             </p>
             <p>
-                Com isso poderemos comecar a fazer as <strong>mudancas</strong> em nossa <strong>pagina</strong>, feito isso podemos fazer o padrao para enviar. <strong><code>git add . /  git commit m"" / git push</code></strong>
+                Com isso poderemos comecar a fazer as <strong>mudancas</strong> em nossa <strong>pagina</strong>, feito isso podemos fazer o padrao para enviar. <strong><code>git add . /  git commit -m"" / git push</code></strong>
             </p>
 
             <h3 class="junto">'Simulacao git rebase</h3>
@@ -78,7 +78,12 @@
                 Feito isso veremos que nossa pagina ainda nao esta atualizada, no caso ira ate aparecer um <strong>risco no nome</strong> isso pois fomos nos mesmo que criamos. Para que nao precisemos mandar um <strong>codigo</strong> incompleto para nossa <strong>branch principal</strong>, podemos fazer apenas o <strong>rebase</strong>.
             </p>
             <p class="separado">
-                Com ele iremos conseguir receber todas as <strong>atualizacoes</strong> de nosso <strong>codigo</strong>, para isso basta usarmos o <strong><code style="color: red;">git reabase main</code></strong>.
+                Com ele iremos conseguir receber todas as <strong>atualizacoes</strong> de nosso <strong>codigo</strong>, para isso basta usarmos o <strong><code style="color: red;">git rebase main</code></strong>.
+            </p>
+
+            <h3 class="junto">Conflito rebase</h3>
+            <p>
+                As vezes tambem pode acabar houvendo conflitos em nosso <strong>rebase</strong>, para isso podemos fazer igual anteriormente visto, escolhendo manter ambos os <strong>codigos</strong> e verificando se esta tudo correto.
             </p>
 
             
