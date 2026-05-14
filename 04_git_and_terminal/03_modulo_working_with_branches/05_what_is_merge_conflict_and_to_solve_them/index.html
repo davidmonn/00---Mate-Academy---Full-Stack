@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is merge conflict and to solve them</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../05_what_is_merge_conflict_and_to_solve_them/index.html">
+            Aula Anterior - How to merge branches
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">What is merge conflict and to solve them</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos aprender a como lidar com <strong>conflitos</strong> durante o <strong>merge</strong>.
+            </p>
+            
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Explicacao</h3>
+            <p>
+                Aqui iremos supor que duas pessoas estejam trabalhando em um mesmo <strong>arquivo</strong> do mesmo <strong>projeto</strong>. Dessa forma o <strong>git</strong> nao ira conseguir fazer o <strong>merge automaticamente</strong>, ele ira nos fazer tomar uma decissao, se desejamos fazer esse <strong>merge manualmente</strong> ou se iremos aceitar apenas uma das <strong>alteracoes</strong>.
+            </p>
+
+            <h1 class="separado">Na Pratica:</h1>
+            <p>
+                Para esse exemplo iremos criar uma nova <strong>branch</strong> iremos chamar de <strong>new/feature</strong>.
+            </p>
+            <p>
+                Para criar <strong>git branch new/feature</strong>. E entramos nela com <strong>git checkout new/feature</strong>.
+            </p>
+            <p>
+                Apos fazermos algumas alteracoes novamente em nosso <strong>codigo</strong> depois de entrado em nossa nova <strong>branch</strong> e salvar com o <strong>git add .</strong> e <strong>git commit -m"message"</strong>.
+            </p>
+
+            <p class="separado">
+                Apos isso voltaremos para nosso <strong>main</strong> e fazer algumas alteracoes em nosso <strong>main</strong>, iremos fazer isso para verificar o <strong>conflito</strong>. Feito isso iremos dar o <strong>git add .</strong> e <strong>git commit -m ""</strong>.
+            </p>
+
+            
+
+        </article>
+
+        <article class="conc" hidden>
+
+            
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../06_how_to_rebase_branches/index.html">
+            Próxima Aula - How to rebase branches
+        </a>
+    </div>
+
+</body>
+</html>
