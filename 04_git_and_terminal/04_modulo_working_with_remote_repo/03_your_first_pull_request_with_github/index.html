@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your first pull request with GitHub</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../02_your_first_remote_repository/index.html">
+            Aula Anterior - Your first remote repository
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Your first pull request with GitHub</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos ver como fazer alteracoes em nosso <strong>codigo do repositorio local</strong> para o <strong>repositorio remoto</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Relembrando Primeiros Passos</h3>
+
+            <h3 class="junto">git branch</h3>
+            <p>
+                Assim que entrarmos em um novo <strong>repositorio</strong> e formos trabalhar nele. Iremos criar uma <strong>branch</strong> para nao trabalhar diretamente com o <strong>main</strong>.
+            </p>
+
+            <h3 class="junto">git branch new/feature</h3>
+            <p>
+                Com isso iremos criar uma nova <strong>branh</strong> chamada <strong>new/feature</strong>.
+            </p>
+
+            <h3 class="junto">git checkout new/feature</h3>
+            <p>
+                Iremos usar para entrar na nova <strong>branch new/feature</strong>.
+            </p>
+
+            <h3 class="junto">git add .</h3>
+            <p>
+                Apos feito uma atualizacao importante/alteracao. Podemos estar enviando tudo com essa opcao.
+            </p>
+
+            <h3 class="junto">git commit -m "message"</h3>
+            <p>
+                Com ele iremos tanto enviar quanto adicionar uma mensagem de nossa <strong>atualizacao</strong>.
+            </p>
+
+            <h3 class="junto">git push</h3>
+            <p>
+                Com ele iremos enviar para nosso <strong>repositorio remoto</strong> as atualizacoes feitas.
+            </p>
+
+            <h3 class="junto">Parametro --set-upstream origin new/feature</h3>
+            <p>
+                Se for nossa primeira vez enviando esse commit para nosso <strong>repositorio remoto</strong> iremos precisar usa-lo. Tambem podemos abreviar esse comando com <strong><code>git push -u origin new/feature</code></strong> . <strong>origin</strong> e nosso repositorio remoto e o <strong>new/feature</strong> é o nome de nossa <strong>branch criada</strong>.
+            </p>
+
+            <h3 class="junto">Voltando ao main</h3>
+            <p>
+                Quando voltarmos para nosso <strong>main</strong> pode haver situacoes onde nosso arquivo ou codigo nao esta <strong>disponivel</strong> quando estamos trabalhando por outra <strong>branch</strong>. Para que ele fique disponivel em nosso <strong>repositorio local</strong> iremos precisar usar o comando <strong>git pull</strong>.
+            </p>
+
+            <h3 class="junto">git pull</h3>
+            <p>
+                Com ele iremos conseguir receber todas atualizacoes feitas em nosso projeto.
+            </p>
+
+            
+
+        </article>
+
+        <article class="conc" hidden>
+
+            
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../04_what_is_fork_and_how_to_do_it_with_github/index.html">
+            Próxima Aula - What is Fork and how to do it with GitHub
+        </a>
+    </div>
+
+</body>
+</html>
