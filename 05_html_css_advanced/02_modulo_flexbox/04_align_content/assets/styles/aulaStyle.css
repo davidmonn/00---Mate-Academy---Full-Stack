@@ -1,33 +1,29 @@
-/* #region NORMALIZE */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-body {
-    background-color: skyblue;
-    text-align: center;
-    font-size: 1.5rem;
-}
-
-main {
-    width: 920px;
-    background-color: azure;
-    border-radius: 15px;
-    margin: 25px auto;
-    padding: 15px;
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    /*strech deixa o tamanho (height) dos elemento alinhados*/
+    align-items: stretch;
+    height: 300px;
+    width: 500px;
+    border: 3px solid red;
 }
 
-form input{
-    font-size: 1.5rem;
+.box {
+    padding: 5px 10px;
+    border: 3px solid blue;
+    background-color: yellow;
 }
 
-h1 {
-    font-size: 7rem;
+.box-2 {
+    font-size: 30px;
 }
 
+.box-4 {
+    font-size: 40px;
+}
 
-
-/* #endregion */
-
+.box-5 {
+    font-size: 30px;
+}
