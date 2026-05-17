@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro to Flexbox</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"/>
+  </head>
+
+  <body>
+    <div class="back">
+      <a
+        class="back"
+    href="../../01_modulo_environment_setup/01_how_to_solve_layout_tasks_on_github/index.html"
+      >
+        <strong
+          >Modulo Anterior: Environment Setup - Aula: How to Solve Layout Tasks
+          on GitHub</strong
+        >
+      </a>
+    </div>
+
+    <main>
+      <article id="intro">
+        <h1 id="title">Intro to Flexbox</h1>
+
+        <h3 class="intro">Intro</h3>
+        <p>Aqui iremos falar sobre <strong>display: flex;</strong></p>
+      </article>
+
+      <article class="conteudo">
+        <h3 class="cont-title">Codigo de Exemplo:</h3>
+
+        <p class="junto">
+          <strong>HTML:</strong>
+        </p>
+
+        <figure>
+          <picture>
+            <img src="assets/imgs/html.png" alt="HTML" />
+          </picture>
+        </figure>
+
+        <p class="junto">
+          <strong>CSS:</strong>
+        </p>
+
+        <figure>
+          <picture>
+            <img src="assets/imgs/css.png" alt="CSS" />
+          </picture>
+        </figure>
+      </article>
+
+      <article class="conc">
+        <h3 class="junto">Flex</h3>
+        <p>
+          Agora iremos fazer algumas modificacoes em nosso <strong>codigo</strong> para estarmos testando o <strong>display: flex;</strong>
+        </p>
+        <p>
+          Ficando da seguinte forma noso <strong>CSS</strong>:
+        </p>
+        <figure>
+          <img src="assets/imgs/ex_flex.png" alt="Flex">
+        </figure>
+
+        <h3 class="junto">Explicacao</h3>
+        <p>
+          Ao fazermos isso agora nossas 5 <strong>divs</strong> ficaram uma ao lado da outra em formato de <strong>linha (row)</strong>, mesmo se desativarmos o <strong>display: inline-block;</strong> do <strong>.box</strong>
+        </p>
+
+        <h3 class="junto">flex-direction</h3>
+        <p>
+          Com ele podemos estar mudando a direcao de nosso <strong>flex</strong> por padrao vem como <strong>row</strong>, podemos mudar para <strong>column</strong> e funcionara como um <strong>display: block;</strong>. Nele temos 4 valores sendo eles <strong>row (default)</strong>, <strong>column</strong>, <strong>row-reverse (inverte em linha)</strong>, <strong>column-reverse (inverte em coluna)</strong>.
+        </p>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteudo da aula
+        </a>
+      </article>
+
+      <!-- <h1>Testes JS se necessário</h1> -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../02_order/index.html">
+         Próxima Aula - Order
+        </a>
+    </div>
+  </body>
+</html>
