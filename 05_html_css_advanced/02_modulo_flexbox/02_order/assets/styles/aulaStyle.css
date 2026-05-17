@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    border: 3px solid red;
+}
+
+.box {
+    height: 50px;
+    width: 60px;
+    border: 3px solid blue;
+    background-color: yellow;
+}
+
+.box-2 {
+    order: 5;
+}
+
+.box-4 {
+    order: -1;
+}
