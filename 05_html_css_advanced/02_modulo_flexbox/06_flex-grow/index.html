@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>flex-grow</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,27 +12,27 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
+        <a class="back" href="../06_flex-grow/index.html">
+            Aula Anterior - Content-centring
         </a>
     </div>
-    
+
     <main>
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">flex-grow</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Aqui iremos ver como gerenciar as <strong>dimensões dos elementos</strong> ao longo do <strong>eixo principal</strong> de um <strong>container flexível</strong>.
             </p>
 
         </article>
 
         <article class="conteudo">
 
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
+            <h3 class="cont-title">Código de Exemplo:</h3>
 
             <p class="junto">
                 <strong>HTML:</strong>
@@ -58,21 +58,79 @@
 
         <article class="conc">
 
-            
-            
+            <h3 class="junto">Explicação</h3>
+
+            <p>
+                Visto o código, se abrirmos em nosso <strong>navegador</strong>, usando o <strong>inspecionar (F12)</strong> e acessando a aba <strong>Computed</strong>, podemos ver o tamanho de cada <strong>elemento</strong>. Nesse caso, o <strong>box-1 terá 32px</strong> e o <strong>box-2 terá 48px</strong>.
+            </p>
+
+            <p class="separado">
+                Para o <strong>box-1</strong>, iremos definir <strong>width: 40px;</strong>.
+            </p>
+
+            <p>
+                Para o <strong>box-2</strong>, definiremos <strong>width: 60px;</strong>.
+            </p>
+
+            <p class="separado">
+                Com isso, definimos manualmente as <strong>dimensões</strong> dos <strong>elementos</strong>. Porém, podemos fazer com que eles aumentem automaticamente. Para isso, usamos a <strong>propriedade flex-grow</strong>.
+            </p>
+
+            <h3 class="junto">Propriedade: flex-grow: ;</h3>
+
+            <p>
+                Ao utilizarmos essa propriedade, o elemento que a receber poderá ocupar o <strong>espaço livre disponível</strong> no container. Seu valor padrão é <strong>0</strong>.
+            </p>
+
+            <p>
+                Se adicionarmos <strong>flex-grow: 1;</strong> em ambos os elementos (<strong>box-1</strong> e <strong>box-2</strong>), o espaço livre será dividido igualmente entre eles.
+            </p>
+
+            <figure class="separado">
+                <figcaption>Ficando da seguinte forma:</figcaption>
+                <img src="assets/imgs/flex_grow.png" alt="flex grow">
+            </figure>
+
+            <p>
+                Porém, o espaço não ficará perfeitamente igual entre os elementos, pois o cálculo leva em consideração o tamanho inicial de cada item. Como o <strong>box-1</strong> e o <strong>box-2</strong> já possuíam um <strong>width</strong> definido, o espaço livre é dividido e somado ao tamanho que cada um já tinha anteriormente.
+            </p>
+
+            <h3 class="junto">Propriedade: flex-basis: 40px;</h3>
+
+            <p>
+                A propriedade <strong>flex-basis</strong> funciona de forma parecida com o <strong>width</strong>. Porém, ela se adapta ao <strong>eixo principal</strong> do container flexível.
+            </p>
+
+            <p>
+                Por exemplo, se a direção do container mudar de <strong>horizontal</strong> para <strong>vertical</strong>, o <strong>flex-basis</strong> acompanhará essa mudança automaticamente. Diferente do <strong>width</strong>, que continua controlando apenas a largura.
+            </p>
+
+            <p>
+                Basicamente, o <strong>flex-basis</strong> funciona como um <strong>width</strong> ou <strong>height</strong>, dependendo da direção do <strong>eixo principal</strong>.
+            </p>
+
+            <p>
+                Também podemos adicionar <strong>restrições</strong>, utilizando propriedades como <strong>max-width</strong> ou <strong>max-height</strong>. Exemplo:
+            </p>
+
+            <p>
+                <strong>max-height: 110px;</strong>
+            </p>
+
             <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
+                Conteúdo da aula
             </a>
 
         </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
+
+        <!-- <h1>Testes JS se necessário</h1> -->
+        <script src="assets/js/jscript.js"></script>
+
+    </main>
+
     <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+        <a class="next" href="../07_flex_shrink/index.html">
+            Próxima Aula - Flex-shrink
         </a>
     </div>
 
