@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-shrink</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../06_flex-grow/index.html">
+            Aula Anterior - flex-grow
+        </a>
+    </div>
+
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Flex-shrink</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos ver o que acontece com os <strong>elementos flexíveis</strong> quando não há espaço suficiente dentro do <strong>container</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Código de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>HTML:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/html.png" alt="HTML">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                <strong>CSS:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/css.png" alt="CSS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">Explicação</h3>
+
+            <p>
+                Em nosso código de exemplo, podemos observar que cada elemento possui seu próprio tamanho. Porém, se começarmos a diminuir o tamanho do <strong>elemento pai</strong>, perceberemos que o último <strong>elemento (box-3)</strong> ficará cada vez menor, até desaparecer completamente.
+            </p>
+
+            <p>
+                Se continuarmos diminuindo o tamanho do container, por padrão, quando não há espaço suficiente disponível, os <strong>elementos flexíveis</strong> começam a encolher proporcionalmente ao seu tamanho base. No caso do <strong>box-3</strong>, ele desaparece porque não possui conteúdo interno ocupando espaço.
+            </p>
+
+            <p class="separado">
+                Porém, também podemos alterar a proporção com que cada elemento diminui. Por exemplo, se quisermos que o segundo <strong>elemento</strong> encolha mais rapidamente que o primeiro, podemos definir um valor maior para a <strong>propriedade flex-shrink</strong>, como:
+            </p>
+
+            <p>
+                <strong>flex-shrink: 2;</strong>
+            </p>
+
+            <figure>
+                <figcaption>Ficando da seguinte forma:</figcaption>
+                <img src="assets/imgs/flex-shrink.png" alt="flex shrink">
+            </figure>
+
+            <p class="separado">
+                Dessa forma, o segundo elemento perderá espaço mais rapidamente. Porém, o cálculo da redução é mais complexo, pois o tamanho base de cada item ainda é levado em consideração.
+            </p>
+
+            <p>
+                Caso utilizemos <strong>flex-shrink: 0;</strong>, o elemento não poderá ser reduzido.
+            </p>
+
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteúdo da aula
+            </a>
+
+        </article>
+
+        <!-- <h1>Testes JS se necessário</h1> -->
+        <script src="assets/js/jscript.js"></script>
+
+    </main>
+
+    <div class="next">
+        <a class="next" href="../08_how_to_use_figma/index.html">
+            Próxima Aula - How to use Figma
+        </a>
+    </div>
+
+</body>
+</html>

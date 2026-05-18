@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-shrink</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../06_flex-grow/index.html">
+            Aula Anterior - flex-grow
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Flex-shrink</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos ver oque acontece com os <strong>elementos flex</strong> quando nao ha espaco suficiente no <strong>container</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>HTML:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/html.png" alt="HTML">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                <strong>CSS:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/css.png" alt="CSS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">Explicacao</h3>
+            <p>
+                Em nosso codigo de exemplo, podemos observar que cada um tem seu tamanho, porem se comecar a diminuir o tamanho do <strong>elemento pai</strong>, podemos observar que nosso ultimo <strong>elemento (box-3)</strong> ira ficando cada vez menor, ate sumir completamente.
+            </p>
+            <p>
+                Se continuarmos diminuindo, por padrao quando nao ha espaco suficiente no container os <strong>elementos</strong> comecam a encolher proporcionalmente ao seu tamanho base, no caso de nosso <strong>elemento 3</strong> ele sumiu pois nao havia conteudo dentro.
+            </p>
+
+            <p class="separado">
+                Porem tambem podemos estar mudando a proporcao que diminui o elemento do seu tamanho base. Por exemplo, se quisermos que o segundo <strong>elemento</strong> encolha mais rapido que o primeiro, podemos definir um valor maior para a <strong>propriedade flex-shrink: 2;</strong>
+            </p>
+
+            <figure>
+                <figcaption>Ficando da seguinte forma:</figcaption>
+                <img src="assets/imgs/flex-shrink.png" alt="flex shrink">
+            </figure>
+
+            <p class="separado">
+                Dessa forma nosso segundo elemento ira perder espaco livre mais rapidamente, mas a proporcao é mais complexa. Isso ocorre pois o tamanho base ainda e levado em consideracao. Se o <strong>flex-shring: 0;</strong> ele nao sera reduzido.
+            </p>
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../">
+            Próxima Aula - 
+        </a>
+    </div>
+
+</body>
+</html>
