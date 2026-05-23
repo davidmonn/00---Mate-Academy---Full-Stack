@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main BEM rules</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../03_header_styles/index.html">
+            Aula Anterior - Header styles
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Main BEM rules</h1>
+
+            <h3 class="intro">Intro</h3>
+
+            <p>
+                Antes de prosseguirmos, iremos entender a <strong>metodologia BEM</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Código de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>HTML:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/html.png" alt="HTML">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                <strong>CSS:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/css.png" alt="CSS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">O que é metodologia?</h3>
+
+            <p>
+                <strong>Metodologia</strong> é um conjunto de <strong>regras</strong> e padrões usados para organizar melhor o código.
+            </p>
+
+            <p>
+                <strong>BEM</strong> é a abreviação de <strong>3 palavras</strong>: 
+                <strong>Block</strong> (Bloco), 
+                <strong>Element</strong> (Elemento) e 
+                <strong>Modifier</strong> (Modificador).
+            </p>
+
+            <p>
+                Essa metodologia ajuda a criar layouts mais organizados, reutilizáveis e fáceis de manter.
+            </p>
+
+            <ul>
+
+                <li>
+                    <strong>1)</strong>
+
+                    <ul>
+                        <li>
+                            A interface é dividida em partes <strong>independentes</strong>, chamadas de <strong>blocos</strong>. 
+                            Esses blocos podem ser reutilizados em outras páginas ou movidos para outros lugares da página sem alterar seu comportamento.
+                        </li>
+
+                        <li>
+                            Um bloco pode possuir <strong>elementos</strong>. 
+                            Os elementos dependem do bloco e normalmente recebem nomes relacionados a ele.
+                        </li>
+
+                        <li>
+                            Também podemos usar <strong>modificadores</strong>, que servem para alterar aparência ou comportamento de um bloco ou elemento.
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>2)</strong>
+
+                    <ul>
+                        <li>
+                            No BEM, evitamos aumentar a especificidade dos seletores sem necessidade. 
+                            Isso deixa o CSS mais limpo, organizado e fácil de reutilizar.
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+
+            <p class="separado">
+                O <strong>BEM</strong> proíbe aumentar a especificidade do <strong>seletor</strong>, a menos que seja realmente necessário.
+            </p>
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteúdo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+
+    </main>
+        
+    <div class="next">
+        <a class="next" href="../05_mix_block_with_parent_element/index.html">
+            Próxima Aula - Mix block with parent element
+        </a>
+    </div>
+
+</body>
+</html>
