@@ -1,0 +1,191 @@
+```html
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro to SCSS</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="back">
+      <a class="back" href="../01_why_we_need_preprocessor/index.html">
+        Aula Anterior - Why We Need Preprocessors
+      </a>
+    </div>
+
+    <main>
+      <article id="intro">
+        <h1 id="title">Intro to SCSS</h1>
+
+        <h3 class="intro">Intro</h3>
+        <p>
+          Aqui iremos continuar com a mesma estrutura de
+          <strong>"game"</strong> de nossa aula anterior, porém faremos algumas
+          modificações e aprenderemos a fazer a instalação do
+          <strong>pré-processador SCSS</strong>.
+        </p>
+      </article>
+
+      <article class="conc">
+        <h3 class="separado">Entendendo Melhor</h3>
+        <p>
+          Como já havíamos dito anteriormente, mesmo que nosso site funcione
+          corretamente com os <strong>calcs</strong> que usamos, isso acaba
+          gerando problemas devido aos cálculos estarem sendo feitos
+          constantemente no navegador do usuário, gerando mais processamento.
+        </p>
+
+        <p>
+          Para resolvermos esse problema temos que fazer esses cálculos
+          antecipadamente, e os pré-processadores nos ajudam com isso. Eles
+          convertem nosso código em uma sintaxe estendida, podendo ser
+          <strong>LESS, SASS ou SCSS</strong>. Existem muitos pré-processadores
+          diferentes.
+        </p>
+
+        <p>
+          O navegador entende apenas a sintaxe <strong>CSS</strong>. Os
+          pré-processadores, em comparação com o CSS puro, proporcionam recursos
+          e oportunidades adicionais.
+        </p>
+
+        <h3 class="separado">Instalação SCSS</h3>
+
+        <p>
+          Agora iremos começar a instalação de nosso <strong>SCSS</strong>. Para
+          isso podemos acessar esse
+          <a href="https://sass-lang.com/install/" target="_blank">link</a>.
+        </p>
+
+        <h3 class="junto">Iniciando</h3>
+
+        <p>
+          <strong>1)</strong> Primeiro iremos abrir nosso
+          <strong>terminal</strong> e digitar o seguinte comando:
+          <strong>npm install -g sass</strong>. Com isso faremos a instalação.
+        </p>
+
+        <p class="separado">
+          <strong>2)</strong> Após isso, iremos em nosso arquivo desejado
+          <strong>CSS</strong> e modificaremos seu nome de
+          <strong>.css</strong> para <strong>.scss</strong>.
+          <br />
+          <img src="assets/imgs/arq_scss.png" alt="Arquivo SCSS" />
+        </p>
+
+        <p>
+          <strong>3)</strong> Feito isso, nosso arquivo não será aceito
+          diretamente pelo navegador. Agora iremos convertê-lo para
+          <strong>CSS</strong>. Para isso iremos ao nosso
+          <strong>terminal</strong> novamente.
+        </p>
+
+        <p class="separado">
+          <strong>4)</strong> Escreveremos o comando:
+          <strong>sass aulaStyle.scss style.css</strong>.
+        </p>
+
+        <p>
+          <strong>4.5)</strong> Observações: primeiro precisamos estar na pasta
+          onde está o arquivo SCSS, usando o comando <strong>cd</strong>.
+          Depois, no comando <strong>sass aulaStyle.scss style.css</strong>, o
+          primeiro nome representa o arquivo SCSS que será lido, e o segundo
+          representa o arquivo CSS que será gerado após a conversão.
+        </p>
+
+        <h3 class="junto">Modificações SCSS</h3>
+
+        <p>
+          Feito tudo isso, agora iremos começar a utilizar os recursos do
+          <strong>SCSS</strong>.
+        </p>
+
+        <h3 class="junto">Variáveis</h3>
+
+        <p>
+          Iremos começar pelas variáveis que antes usávamos com
+          <strong>--variavel</strong>
+          e agora serão utilizadas com
+          <strong>$variavel</strong>.
+        </p>
+
+        <p class="separado">
+          Para isso iremos começar apertando
+          <strong>CTRL + F</strong>
+          para fazer uma correção rápida, selecionar várias opções e modificar
+          de forma mais prática.
+        </p>
+
+        <p>
+          Ao invés de já inserirmos o código corretamente, usamos o
+          <strong>#{variavel}</strong>. Assim conseguiremos identificar as
+          partes alteradas, conferindo se está tudo correto antes de apagar o
+          <strong>#{}</strong>.
+          <br />
+          <img src="assets/imgs/correcao_rapida.png" alt="Correção Rápida" />
+        </p>
+
+        <h3 class="junto">Importante:</h3>
+
+        <p>
+          Nosso caminho do <strong>CSS</strong> no HTML deve apontar para o
+          arquivo gerado pelo SCSS, no caso:
+          <strong>href="assets/scss/style.css"</strong>.
+        </p>
+
+        <h3 class="junto">Correções</h3>
+
+        <p>
+          Após corrigirmos o código, podemos excluir os
+          <strong>calc</strong>, isso porque o SCSS nos permite fazer cálculos
+          diretamente com variáveis.
+        </p>
+
+        <h3 class="junto">Arquivo .map</h3>
+
+        <p>
+          O arquivo <strong>.map</strong> é criado automaticamente pelo Sass e
+          serve para ajudar o navegador a identificar de qual linha do arquivo
+          <strong>SCSS</strong> o código CSS foi gerado.
+        </p>
+
+        <p>
+          Isso facilita bastante durante o desenvolvimento e depuração, pois
+          mesmo utilizando o CSS compilado, o navegador consegue mostrar as
+          referências do arquivo original <strong>.scss</strong>.
+        </p>
+
+        <p>Normalmente não modificamos esse arquivo manualmente.</p>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteúdo da aula
+        </a>
+      </article>
+
+      <!-- <h1>Testes JS se necessário</h1> -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../03_nesting_with_&/index.html">
+        Próxima Aula - Nesting with &
+      </a>
+    </div>
+  </body>
+</html>
+```
