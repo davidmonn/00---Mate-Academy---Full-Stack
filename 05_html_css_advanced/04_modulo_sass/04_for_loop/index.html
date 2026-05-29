@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@for_loop</title>
     <link rel="stylesheet" href="assets/styles/style.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <div class="back">
@@ -16,7 +20,7 @@
             Aula Anterior - Nesting with &
         </a>
     </div>
-    
+
     <main>
 
         <article id="intro">
@@ -24,136 +28,205 @@
             <h1 id="title">@for_loop</h1>
 
             <h3 class="intro">Intro</h3>
+
             <p>
-                Agora iremos ver em uma das melhores oportunidades que o SASS nos proporciona. Como resultado ainda iremos manter a mesma estrutura das aulas anteriores "game".
+                Agora iremos conhecer uma das funcionalidades mais úteis que o
+                <strong>SASS</strong> nos proporciona. Como exemplo, continuaremos
+                utilizando a mesma estrutura "game" das aulas anteriores.
             </p>
 
         </article>
 
         <article class="conc">
 
-            <h3 class="junto">cyclo</h3>
+            <h3 class="junto">Loop</h3>
+
             <p>
-                Se desejarmos adicionar mais linhas onde ira de 3 por 5
+                Suponha que desejemos aumentar nosso campo de jogo de
+                3 linhas para 5 linhas.
             </p>
 
             <figure class="separado">
                 <figcaption>
                     Exemplo em nosso navegador.
                 </figcaption>
+
                 <img src="assets/imgs/exemplo_nav.png" alt="Exemplo Navegador">
             </figure>
 
             <p>
-                Para adicionarmos mais linhas, iriamos precisar adicionar mais <strong>6 celulas</strong> em nosso HTML. Por mais que nosso campo aumentasse, nao teriamos <strong>modificadores</strong> para mover o <strong>elemento</strong> para <strong>quarta</strong> ou <strong>quinta</strong> linha. Poderiamos duplicar tambem os modificadores e editar, porem isso nos daria muito trabalho caso tenhamos muitas linhas de codigo.
-            </p>
-            <p>
-                Para isso podemos usar um <strong>cyclo</strong>.
+                Para adicionarmos mais linhas, precisaríamos criar mais
+                <strong>6 células</strong> em nosso HTML.
+
+                Embora o campo aumentasse de tamanho, ainda não teríamos
+                <strong>modificadores</strong> para posicionar os elementos
+                na quarta ou quinta linha.
+
+                Poderíamos duplicar os modificadores manualmente e editar cada um,
+                porém isso geraria muito trabalho, principalmente em projetos maiores.
             </p>
 
-            <h3 class="junto">Como usar cyclo</h3>
             <p>
-                Em nosso <strong>SCSS</strong> podemos usar o sinal @ ficara da seguinte forma:
+                Para resolver esse problema, podemos utilizar um
+                <strong>loop</strong>.
+            </p>
+
+            <h3 class="junto">Como usar o loop</h3>
+
+            <p>
+                Em nosso <strong>SCSS</strong>, podemos utilizar a diretiva
+                <strong>@for</strong> da seguinte forma:
             </p>
 
             <pre>
                 <strong>
-                    @for $row from 1 through 3 {
-                        &--y--#{row} {
-                            top: ($row - 1) * $cell-size + $shift;
-                        }
-                    }
+@for $row from 1 through 3 {
+    &--y--#{$row} {
+        top: ($row - 1) * $cell-size + $shift;
+    }
+}
                 </strong>
             </pre>
 
-            <h3 class="junto">Interpretacao do Codigo:</h3>
+            <h3 class="junto">Interpretação do código</h3>
+
             <ul>
+
                 <li>
                     <strong>@for</strong>
+
                     <ul>
                         <li>
-                            Usado para iniciar nosso cyclo
+                            Inicia o loop.
                         </li>
                     </ul>
                 </li>
+
                 <li>
                     <strong>$row</strong>
+
                     <ul>
                         <li>
-                            aqui sera o nome de nossa variavel no caso $row
+                            É a variável utilizada pelo loop.
                         </li>
                     </ul>
                 </li>
+
                 <li>
                     <strong>from</strong>
+
                     <ul>
                         <li>
-                            Aqui sera de onde iremos comecar.
+                            Define o valor inicial da iteração.
                         </li>
                     </ul>
                 </li>
+
                 <li>
                     <strong>1</strong>
+
                     <ul>
                         <li>
-                            Em nosso caso escolhemos 1 para inciar.
+                            O loop começará no valor 1.
                         </li>
                     </ul>
                 </li>
+
                 <li>
                     <strong>through</strong>
+
                     <ul>
                         <li>
-                            Ate onde sera iterado
+                            Define até qual valor o loop será executado,
+                            incluindo o valor final.
                         </li>
                     </ul>
                 </li>
+
                 <li>
                     <strong>3</strong>
+
                     <ul>
                         <li>
-                            Escolhemos iterar ate o valor 3
+                            O loop será executado até o valor 3.
                         </li>
                     </ul>
                 </li>
+
                 <li>
-                    <strong>{} dentro dos colchetes</strong>
+                    <strong>{ }</strong>
+
                     <ul>
                         <li>
-                            Adicionamos as resgras
+                            Dentro das chaves ficam as regras que serão
+                            repetidas a cada iteração.
                         </li>
                     </ul>
                 </li>
+
             </ul>
 
-            <h3 class="junto">Informacoes dentro dos colchetes:</h3>
+            <h3 class="junto">Informações dentro das chaves</h3>
+
             <p>
-                Em nosso codigo podemos lembrar que anteriormente tinhamos em nosso <strong>SCSS</strong> &--y--1 porem alteramos com uso de cyclo para &--y--#{row} e o motivo por tras disso e simples, da forma anterior, estamos fazendo com uma unidade e altaramos para uma <strong>variavel</strong>. Porem para poder usar a <strong>variavel</strong> usamos o <strong>#{aqui dentro a variavel}</strong>.
+                Em nosso código, anteriormente tínhamos algo como
+                <strong>&--y--1</strong>.
+
+                Agora passamos a utilizar
+                <strong>&--y--#{$row}</strong>.
+
+                Isso acontece porque estamos substituindo um valor fixo por
+                uma <strong>variável</strong>.
+
+                A sintaxe <strong>#{$row}</strong> é chamada de
+                <strong>interpolação</strong> e permite inserir o valor da
+                variável dentro do seletor.
             </p>
 
-            <h3 class="junto">Explicacao Codigo</h3>
+            <h3 class="junto">Explicação da fórmula</h3>
+
             <p>
-                Em nossa <strong>regra</strong> no caso dentro dos <strong>colchetes</strong> adicionamos uma <strong>celula</strong> a menos em nosso <strong>$shift</strong> para isso usamos uma <strong>formula</strong> no caso sendo <strong>($row - 1)</strong> e multiplicamos pelo <strong>$cell-size</strong> e adcionamos o <strong>shift</strong>.  Feito isso podemos deletar nosso y--2 e y--3 .Ficando da seguinte forma: <br>
+                Na propriedade <strong>top</strong>, utilizamos a expressão
+                <strong>($row - 1)</strong> para que a primeira linha comece
+                na posição correta.
+
+                Em seguida, multiplicamos esse valor por
+                <strong>$cell-size</strong> e somamos
+                <strong>$shift</strong>.
+
+                Dessa forma, cada nova linha recebe automaticamente a posição
+                correta sem precisarmos criar manualmente os modificadores
+                <strong>y--2</strong>, <strong>y--3</strong>,
+                <strong>y--4</strong> e assim por diante.
+
+                O resultado fica semelhante ao exemplo abaixo:
+                <br>
+
                 <img src="assets/imgs/@for.png" alt="Exemplo @for">
             </p>
 
-
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
+            <a
+                href="contAula.html"
+                style="display: inline-block; padding: 20px; font-weight: bolder; color: red;"
+            >
+                Conteúdo da aula
             </a>
 
         </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
+
+        <!-- <h1>Testes JS se necessário</h1> -->
+        <script src="assets/js/jscript.js"></script>
+
+    </main>
+
     <div class="next">
+
         <a class="next" href="../05_each_loop/index.html">
             Próxima Aula - @each_loop
         </a>
+
     </div>
 
 </body>
 </html>
+```
