@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@for_loop</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../03_nesting_with_ecomercial/index.html">
+            Aula Anterior - Nesting with &
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">@for_loop</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Agora iremos ver em uma das melhores oportunidades que o SASS nos proporciona. Como resultado ainda iremos manter a mesma estrutura das aulas anteriores "game".
+            </p>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">cyclo</h3>
+            <p>
+                Se desejarmos adicionar mais linhas onde ira de 3 por 5
+            </p>
+
+            <figure class="separado">
+                <figcaption>
+                    Exemplo em nosso navegador.
+                </figcaption>
+                <img src="assets/imgs/exemplo_nav.png" alt="Exemplo Navegador">
+            </figure>
+
+            <p>
+                Para adicionarmos mais linhas, iriamos precisar adicionar mais <strong>6 celulas</strong> em nosso HTML. Por mais que nosso campo aumentasse, nao teriamos <strong>modificadores</strong> para mover o <strong>elemento</strong> para <strong>quarta</strong> ou <strong>quinta</strong> linha. Poderiamos duplicar tambem os modificadores e editar, porem isso nos daria muito trabalho caso tenhamos muitas linhas de codigo.
+            </p>
+            <p>
+                Para isso podemos usar um <strong>cyclo</strong>.
+            </p>
+
+            <h3 class="junto">Como usar cyclo</h3>
+            <p>
+                Em nosso <strong>SCSS</strong> podemos usar o sinal @ ficara da seguinte forma:
+            </p>
+
+            <pre>
+                <strong>
+                    @for $row from 1 through 3 {
+                        &--y--#{row} {
+                            top: ($row - 1) * $cell-size + $shift;
+                        }
+                    }
+                </strong>
+            </pre>
+
+            <h3 class="junto">Interpretacao do Codigo:</h3>
+            <ul>
+                <li>
+                    <strong>@for</strong>
+                    <ul>
+                        <li>
+                            Usado para iniciar nosso cyclo
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>$row</strong>
+                    <ul>
+                        <li>
+                            aqui sera o nome de nossa variavel no caso $row
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>from</strong>
+                    <ul>
+                        <li>
+                            Aqui sera de onde iremos comecar.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>1</strong>
+                    <ul>
+                        <li>
+                            Em nosso caso escolhemos 1 para inciar.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>through</strong>
+                    <ul>
+                        <li>
+                            Ate onde sera iterado
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>3</strong>
+                    <ul>
+                        <li>
+                            Escolhemos iterar ate o valor 3
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>{} dentro dos colchetes</strong>
+                    <ul>
+                        <li>
+                            Adicionamos as resgras
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3 class="junto">Informacoes dentro dos colchetes:</h3>
+            <p>
+                Em nosso codigo podemos lembrar que anteriormente tinhamos em nosso <strong>SCSS</strong> &--y--1 porem alteramos com uso de cyclo para &--y--#{row} e o motivo por tras disso e simples, da forma anterior, estamos fazendo com uma unidade e altaramos para uma <strong>variavel</strong>. Porem para poder usar a <strong>variavel</strong> usamos o <strong>#{aqui dentro a variavel}</strong>.
+            </p>
+
+            <h3 class="junto">Explicacao Codigo</h3>
+            <p>
+                Em nossa <strong>regra</strong> no caso dentro dos <strong>colchetes</strong> adicionamos uma <strong>celula</strong> a menos em nosso <strong>$shift</strong> para isso usamos uma <strong>formula</strong> no caso sendo <strong>($row - 1)</strong> e multiplicamos pelo <strong>$cell-size</strong> e adcionamos o <strong>shift</strong>.  Feito isso podemos deletar nosso y--2 e y--3 .Ficando da seguinte forma: <br>
+                <img src="assets/imgs/@for.png" alt="Exemplo @for">
+            </p>
+
+
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../05_each_loop/index.html">
+            Próxima Aula - @each_loop
+        </a>
+    </div>
+
+</body>
+</html>
