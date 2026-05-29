@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>@function</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,8 +12,8 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
+        <a class="back" href="../05_each_loop/index.html">
+            Aula Anterior - @each_loop
         </a>
     </div>
     
@@ -21,44 +21,74 @@
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">@function</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Agora iremos ver outra vantagem que o <strong>SASS</strong> nos oferece para evitarmos a dupliacao de codigo. Para essa aula, continuaremos com o mesmo codigo das aulas anteriores "game".
             </p>
-
-        </article>
-
-        <article class="conteudo">
-
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
-
-            <p class="junto">
-                <strong>HTML:</strong>
-            </p>
-
-            <figure>
-                <picture>
-                    <img src="assets/imgs/html.png" alt="HTML">
-                </picture>
-            </figure>
-
-            <p class="junto">
-                <strong>CSS:</strong>
-            </p>
-
-            <figure>
-                <picture>
-                    <img src="assets/imgs/css.png" alt="CSS">
-                </picture>
-            </figure>
 
         </article>
 
         <article class="conc">
 
-            
+            <h3 class="junto">Exemplo:</h3>
+            <p>
+                Aqui iremos supor esse trecho de nosso codigo:
+                <img src="assets/imgs/for_ex.png" alt="Exemplo">
+            </p>
+
+            <p class="separado">
+                Podemos observar que temos dois <strong>loops</strong> que usam a mesma logica de calculo de deslocamento, (tamanho da celula * numero de linhas ou colunas - 1 e + shift).
+            </p>
+
+            <p>
+                Iremos supor que essa logica deva ser sempre a mesma, assim nao iremos precisar escreve-la duas vezes, e para evitarmos a repeticao dessa logica o <strong>SASS</strong> tem <strong>fucncoes</strong> como no <strong>JS</strong>.
+            </p>
+
+            <h3 class="junto">Funcao SASS</h3>
+            <p>
+                Para usa-lo iremos fazer da seguinte forma:
+            </p>
+
+            <pre>
+                <strong>
+<code>
+    @function currentShift($position, $size, $base-shift) {
+        @return ($position - 1) * $size + $base-shift
+    }
+</code>
+                </strong>
+            </pre>
+
+            <p class="separado">
+                Agora com essa funcao podemos utilizar ela no local das deslocacoes a chamando por la, iremos fazer seu chamado no local das regras apos o <strong>top:</strong>, ficando da seguinte forma:
+            </p>
+
+            <pre>
+                <strong>
+<code>
+    @for $row from 1 through $row-count {
+        &--y--#{$row} {
+            top: currentShift($row, $cell-size, $shift);
+        }
+    
+    }
+    
+    @for $column from 1 through $col-count {
+        &--x--#{$column} {
+            left: currentShift($column, $cell-size, $shift);
+        }
+    }
+</code>
+                </strong>
+            </pre>
+
+            <p class="separado">
+                Ficando agora da seguinte forma em nosso codigo: <br>
+                <img src="assets/imgs/function_sass.png" alt="Funcao em SASS">
+            </p>
+
             
             <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
                 Conteudo da aula
@@ -71,8 +101,8 @@
         </main>
         
     <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+        <a class="next" href="../07_use_parcel_for_building_project/index.html">
+            Próxima Aula - Use Parcel for building project
         </a>
     </div>
 
