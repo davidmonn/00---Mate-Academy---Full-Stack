@@ -1,0 +1,181 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nesting with &</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="back">
+        <a class="back" href="../02_intro_to_scss/index.html">
+            Aula Anterior - Intro to SCSS
+        </a>
+    </div>
+
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Nesting with &</h1>
+
+            <h3 class="intro">Intro</h3>
+
+            <p>
+                Outra coisa que o <strong>SASS</strong> nos proporciona são os
+                <strong>embeddings (aninhamentos)</strong>. Como exemplo,
+                iremos continuar utilizando o mesmo código da aula anterior.
+            </p>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">Embeddings</h3>
+
+            <p>
+                Quando repetimos muitas vezes um bloco em nosso
+                <strong>arquivo</strong>, caso desejemos alterá-lo,
+                teremos que modificar em vários locais.
+                Porém, isso pode ser evitado utilizando embeddings.
+            </p>
+
+            <p class="separado">
+                Com isso, podemos mover nossos blocos para dentro de outro bloco:
+            </p>
+
+            <h3 class="junto">Exemplo embedding</h3>
+
+            <figure>
+                <img src="assets/imgs/exemp_embedding.png" alt="Exemplo embedding">
+            </figure>
+
+            <h3 class="junto">Diferenças</h3>
+
+            <p>
+                Após fazermos essa alteração, se voltarmos ao nosso
+                <strong>style.css</strong>, ele estará da seguinte forma:
+                <br>
+
+                <img src="assets/imgs/game_game.png" alt="">
+            </p>
+
+            <p class="separado">
+                Porém, isso não é o que queremos, pois no método
+                <strong>BEM</strong> normalmente evitamos aumentar a
+                <strong>especificidade</strong> de um
+                <strong>elemento</strong>.
+            </p>
+
+            <p>
+                Ao invés de usarmos <strong>game__field</strong>,
+                iremos fazer algo um pouco diferente para o próximo
+                <strong>bloco (game__cell)</strong>.
+            </p>
+
+            <p>
+                Ficará da seguinte forma:
+            </p>
+
+            <img src="assets/imgs/exemplo_ecomercial.png" alt="Exemplo &">
+
+            <p class="separado">
+                Como podemos observar, em nosso
+                <strong>aulaStyle.scss</strong> utilizamos um
+                <strong>&</strong>.
+
+                Quando fazemos isso, evitamos que o SASS gere um
+                aninhamento tradicional, mantendo o elemento independente
+                e sem aumentar sua especificidade.
+            </p>
+
+            <p>
+                Dessa forma, ele continuará da mesma maneira em nosso
+                <strong>style.css</strong> mesmo após a alteração:
+                <br>
+
+                <img
+                    src="assets/imgs/usando_ecomercial.png"
+                    alt="Exemplo usando &"
+                    style="width: 1320px;"
+                >
+            </p>
+
+            <h3 class="junto">Resumindo</h3>
+
+            <p>
+                Se movermos um <strong>bloco</strong> para dentro de outro
+                sem utilizar o <strong>&</strong>, teremos um aninhamento.
+
+                Porém, ao utilizarmos o <strong>&</strong>, conseguimos
+                manter o elemento independente.
+            </p>
+
+            <h3 class="separado">
+                Ficando agora da seguinte forma em nosso SCSS:
+            </h3>
+
+            <div class="cont">
+
+                <figure>
+                    <figcaption>Part 01</figcaption>
+
+                    <img
+                        src="assets/imgs/css_1.png"
+                        alt="SCSS Part 1"
+                    >
+                </figure>
+
+                <figure>
+
+                    <figcaption>
+                        Part 02
+                    </figcaption>
+
+                    <img
+                        src="assets/imgs/css_2.png"
+                        alt="SCSS Part 2"
+                    >
+
+                </figure>
+
+            </div>
+
+            <a
+                href="contAula.html"
+                style="
+                    display: inline-block;
+                    padding: 20px;
+                    font-weight: bolder;
+                    color: red;
+                "
+            >
+                Conteúdo da aula
+            </a>
+
+        </article>
+
+        <!-- <h1>Testes JS se necessário</h1> -->
+        <script src="assets/js/jscript.js"></script>
+
+    </main>
+
+    <div class="next">
+
+        <a class="next" href="../04_for_loop/index.html">
+            Próxima Aula - @for_loop
+        </a>
+
+    </div>
+
+</body>
+</html>
+```
