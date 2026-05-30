@@ -1,0 +1,29 @@
+/* #region ICON */
+.icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    @include onTablet {
+        height: 32px;
+        width: 32px;
+    }
+    
+    &--phone {
+        background-image: url(../imgs/icon-phone.png);
+        background-repeat: no-repeat;
+    }
+
+    &--menu {
+        background-image: url(../imgs/icon-burg.png);
+        background-repeat: no-repeat;
+    }
+
+    &--close {
+        background-image: url(../imgs/icon-close.png);
+        background-repeat: no-repeat;
+    }
+}
+
+
+/* #endregion */
