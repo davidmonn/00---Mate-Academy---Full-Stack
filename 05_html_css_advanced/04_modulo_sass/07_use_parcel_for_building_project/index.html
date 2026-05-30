@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use Parcel for building project</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../06_function/index.html">
+            Aula Anterior - @function
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Use Parcel for building project</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos ver como fazer o <strong>SASS SCSS</strong> funcionar corretamente.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+        <article class="conc">
+
+            <h3 class="junto">Infos</h3>
+            <p>
+                Para podermos utilizar o <strong>SCSS</strong>, precisamos fazer a conversão, pois os navegadores não interpretam arquivos <strong>SCSS</strong>.
+            </p>
+
+            <h3 class="junto">Parcel</h3>
+            <p>
+                Parcel é uma ferramenta que automatiza várias tarefas do desenvolvimento front-end. Quando você usa SCSS, o navegador não entende arquivos .scss diretamente. O Parcel fica observando seus arquivos e:
+            </p>
+
+            <ul class="separado">
+                <li>
+                    Converte SCSS → CSS
+                </li>
+                <li>
+                    Atualiza a página automaticamente quando você salva um arquivo
+                </li>
+                <li>
+                    Junta e otimiza arquivos para produção
+                </li>
+                <li>
+                    Resolve importações de CSS, JS e imagens
+                </li>
+            </ul>
+
+            <h3 class="junto">Importância do Parcel</h3>
+            <p>
+                Sem o Parcel, você precisaria executar o Sass manualmente:
+            </p>
+
+            <p class="separado">
+                <strong><code>sass --watch style.scss style.css</code></strong>
+            </p>
+
+            <p>
+                <strong>parcel index.html</strong>
+            </p>
+
+            <h3 class="junto">Baixando o Parcel</h3>
+            <p>
+                Podemos fazer sua <a href="https://parceljs.org/getting-started/webapp/" target="_blank">instalação aqui</a>.
+            </p>
+
+            <p class="separado">
+                No momento, nosso projeto não está configurado para trabalhar com <strong>pacotes npm</strong>.
+            </p>
+
+            <p>
+                Para configurá-lo, iremos abrir nosso <strong>terminal</strong> e executar: <strong>npm init -y</strong>. Esse comando irá criar o arquivo <strong>package.json</strong> do projeto.
+            </p>
+
+            <p class="separado">
+                Feito isso, será criado um <strong>arquivo JSON</strong> contendo as configurações do projeto. Nele iremos adicionar os pacotes que forem necessários, como <strong>linters</strong>, ferramentas de teste e outras dependências.
+            </p>
+
+            <h3 class="junto">Arquivo JSON "package.json"</h3>
+
+            <p>
+                <strong>1)</strong> Na aula iremos excluir todo o conteúdo, exceto o campo <strong>name</strong>: <br>
+                <img src="assets/imgs/packageJson.png" alt="Pacote json">
+            </p>
+
+            <p class="separado">
+                <strong>2)</strong> Em seguida iremos instalar a <strong>biblioteca Parcel</strong>. Para isso, basta copiar o comando disponível na seção <strong>Install</strong> do site e executá-lo no terminal.
+            </p>
+
+            <p>
+                <strong>3)</strong> Para que funcione corretamente, nosso arquivo <strong>HTML</strong> deve estar dentro de uma pasta chamada <strong>src</strong>. Para isso, basta criarmos essa pasta e colocarmos dentro dela arquivos como <strong>index.html, estilos, imagens e demais recursos</strong>.
+            </p>
+
+            <p>
+                <strong>4)</strong> Após isso, podemos executar o comando <code>npx parcel src/index.html</code>.
+            </p>
+
+            <p>
+                <strong>5)</strong> Ainda no site, podemos copiar o código sugerido para adicionarmos ao arquivo <strong>package.json</strong>:
+            </p>
+
+            <div class="cont" style="margin-top: 10px;">
+                <figure>
+                    <figcaption>Site Parcel</figcaption>
+                    <img src="assets/imgs/siteJson.png" alt="Site Json">
+                </figure>
+
+                <figure>
+                    <figcaption>
+                        Alteração do arquivo JSON
+                    </figcaption>
+                    <img src="assets/imgs/arq_json.png" alt="Como ficara Json">
+                </figure>
+            </div>
+
+            <p class="separado">
+                Para iniciar o <strong>projeto</strong>, executamos o comando <strong>npm start</strong>. Com isso, o script configurado no arquivo <strong>package.json</strong> será executado.
+            </p>
+
+            <p>
+                Após executá-lo, veremos nosso processo de compilação em andamento.
+            </p>
+
+            <h3 class="junto">Importações SCSS e CSS</h3>
+
+            <p>
+                No <strong>SASS</strong>, as importações de arquivos <strong>SCSS</strong> são feitas de forma diferente das importações em <strong>CSS</strong>. Por exemplo:
+            </p>
+
+            <div class="cont" style="margin-top: 10px; position: relative; right: 15px;">
+                <figure>
+                    <figcaption>
+                        <strong>CSS</strong>: fazemos importações da seguinte forma:
+                    </figcaption>
+                    <img src="assets/imgs/import_css.png" alt="Importacao CSS">
+                </figure>
+
+                <figure>
+                    <figcaption>
+                        No <strong>SCSS</strong> é feito da seguinte forma:
+                    </figcaption>
+                    <img src="assets/imgs/import_scss.png" alt="Importacao SCSS">
+                </figure>
+            </div>
+
+            <h3 class="junto">Abrir Página Automaticamente após a Montagem</h3>
+
+            <p>
+                Se desejarmos que o navegador seja aberto automaticamente após iniciarmos o projeto, podemos adicionar a opção <strong>--open</strong> em nosso arquivo <strong>package.json</strong>, ficando da seguinte forma: <br>
+                <img src="assets/imgs/open_auto.png" alt="Abrir auto">
+            </p>
+
+            <h3 class="junto">npm run build</h3>
+
+            <p>
+                Quando executamos o comando <strong>build</strong>, o Parcel pega todos os arquivos do projeto e cria uma versão otimizada. Ele converte o SCSS para CSS, reduz o tamanho dos arquivos, organiza as dependências e prepara tudo para publicação. Essa versão pronta fica dentro da pasta <strong>dist</strong>.
+            </p>
+
+            <p>
+                O nome vem de <strong>distribution</strong> (distribuição), pois essa é a pasta que será distribuída aos usuários quando o site estiver publicado.
+            </p>
+
+            <ul class="separado">
+                <li>
+                    <strong>Portanto:</strong>
+                    <ul>
+                        <li>
+                            Durante o desenvolvimento, você trabalha nos arquivos originais.
+                        </li>
+                        <li>
+                            O comando build cria uma versão final e otimizada.
+                        </li>
+                        <li>
+                            A pasta dist guarda essa versão final.
+                        </li>
+                        <li>
+                            Quando for hospedar o site, normalmente é o conteúdo da pasta dist que será enviado para o servidor.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3 class="junto">Editando o arquivo JSON - código build</h3>
+
+            <figure>
+                <img src="assets/imgs/info_build.png" alt="Informacao sobre codigo build">
+            </figure>
+
+            <p>
+                O <code>--public-url=dist/</code> serve para informar ao Parcel onde os arquivos gerados pelo build estarão localizados quando o site for executado.
+            </p>
+
+            <p>
+                Quando o Parcel cria a pasta <strong>dist</strong>, ele precisa montar os caminhos para arquivos como CSS, JavaScript e imagens. O <strong>--public-url=dist/</strong> ajuda o Parcel a gerar esses caminhos corretamente.
+            </p>
+
+            <p class="separado">
+                Caso ocorra algum erro, podemos excluir a pasta <strong>dist</strong>, corrigir o problema e executar novamente o comando <strong>npm run build</strong>.
+            </p>
+
+            <h3 class="junto">Importante</h3>
+
+            <p>
+                Os caminhos das imagens do projeto devem ser definidos de forma relativa ao arquivo principal.
+            </p>
+
+            <h3 class="junto">Infos Importantes</h3>
+
+            <p>
+                Esse processo deve ser realizado após selecionar a pasta do projeto em que estamos trabalhando utilizando o comando <strong>cd</strong>. Caso esteja trabalhando com vários projetos, será necessário acessar a pasta correta antes de executar os comandos. O mesmo processo deve ser realizado separadamente para cada projeto.
+            </p>
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../08_mixin_and_media/index.html">
+            Próxima Aula - @mixin_and_@media
+        </a>
+    </div>
+
+</body>
+</html>
