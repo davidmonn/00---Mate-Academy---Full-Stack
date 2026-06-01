@@ -1,57 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Avoid code duplication with BEM block</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="back">
-        <a class="back" href="../06_finish_menu/index.html">
-            Aula Anterior - Mix block with parent element
-        </a>
+      <a class="back" href="../06_finish_menu/index.html">
+        Aula Anterior - Mix block with parent element
+      </a>
     </div>
-    
+
     <main>
+      <article id="intro">
+        <h1 id="title">Avoid code duplication with BEM block</h1>
 
-        <article id="intro">
+        <h3 class="intro">Intro</h3>
+        <p>
+          Aqui iremos redesenhar o topo de nosso <strong>menu</strong> e do
+          <strong>header</strong> para que sejam blocos idependentes, para que
+          possamos reutilizar em dois lugares.
+        </p>
+      </article>
 
-            <h1 id="title">Avoid code duplication with BEM block</h1>
+      <article class="conc">
+        <h3 class="junto">Dica Importante</h3>
+        <p>
+          Se algum codigo se repete ou deve sempre ser o mesmo. Ele deve ser
+          escrito uma vez e <strong>reutilizado</strong>, podemos fazer isso
+          simplesmente o levando para uma <strong>class</strong> separada e
+          usando essa <strong>class duas vezes</strong>.
+        </p>
 
-            <h3 class="intro">Intro</h3>
-            <p>
-                Aqui iremos redesenhar o topo de nosso <strong>menu</strong> e do <strong>header</strong> para que sejam blocos idependentes, para que possamos reutilizar em dois lugares.
-            </p>
-
-        </article>
-
-        <article class="conc">
-
-            <h3 class="junto">Dica Importante</h3>
-            <p>
-                Se algum codigo se repete ou deve sempre ser o mesmo. Ele deve ser escrito uma vez e <strong>reutilizado</strong>, podemos fazer isso simplesmente o levando para uma <strong>class</strong> separada e usando essa <strong>class duas vezes</strong>.
-            </p>
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
-
-        </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
-    <div class="next">
-        <a class="next" href="../08_final_code/index.html">
-            Próxima Aula - Final Code
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteudo da aula
         </a>
-    </div>
+      </article>
 
-</body>
+      <!-- <h1>Testes JS se necessário</h1> -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a
+        class="next"
+        href="../../04_modulo_sass/01_why_we_need_preprocessor/index.html"
+      >
+        Próximo Modulo: SASS - Why we need preprocessor
+      </a>
+    </div>
+  </body>
 </html>

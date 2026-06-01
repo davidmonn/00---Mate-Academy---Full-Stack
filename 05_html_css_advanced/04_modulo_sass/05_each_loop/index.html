@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@each_loop</title>
+
+    <link rel="stylesheet" href="assets/styles/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="back">
+        <a class="back" href="../05_each_loop/index.html">
+            Aula Anterior - @for_loop
+        </a>
+    </div>
+
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">@each_loop</h1>
+
+            <h3 class="intro">Intro</h3>
+
+            <p>
+                Agora iremos aprender como utilizar o
+                <strong>@each</strong>.
+                Continuaremos utilizando a mesma estrutura das aulas
+                anteriores para facilitar o entendimento.
+            </p>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">@each</h3>
+
+            <p>
+                Iremos utilizá-lo para criar modificadores de
+                <strong>cores</strong>.
+
+                Para isso, precisaremos de uma coleção de dados que pode
+                ser armazenada em uma <strong>variável</strong>.
+
+                Chamaremos essa variável de
+                <strong>$colors</strong>.
+            </p>
+
+            <p class="separado">
+                Em seguida, adicionaremos todas as cores que precisamos,
+                ficando da seguinte forma:
+                <br>
+
+                <img
+                    src="assets/imgs/var_colors.png"
+                    alt="Variável colors"
+                >
+            </p>
+
+            <p>
+                Agora iremos adicionar nosso
+                <strong>@each</strong>.
+
+                Assim como o <strong>@for</strong>, ele também possui
+                uma estrutura própria.
+
+                Nosso código ficará da seguinte forma:
+                <br>
+
+                <img
+                    src="assets/imgs/alt_colors.png"
+                    alt="Alterando Cores"
+                >
+            </p>
+
+            <p class="separado">
+                Para facilitar o entendimento, podemos compará-lo a um
+                loop que percorre uma lista de valores.
+            </p>
+
+            <ul>
+
+                <li>
+                    <strong>@each</strong>
+
+                    <ul>
+                        <li>
+                            Inicia o loop.
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>$color</strong>
+
+                    <ul>
+                        <li>
+                            Variável que receberá cada item da lista.
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>in</strong>
+
+                    <ul>
+                        <li>
+                            Indica que a variável irá percorrer os itens
+                            da coleção.
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>$colors</strong>
+
+                    <ul>
+                        <li>
+                            A coleção de dados que será percorrida.
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+
+            <p class="separado">
+                Em resumo, o <strong>@each</strong> percorre todos os
+                valores armazenados em uma coleção e executa as regras
+                definidas para cada item encontrado.
+            </p>
+
+            <h3 class="junto">Outra forma de uso</h3>
+
+            <p>
+                Agora vamos supor que, em vez de armazenar apenas o nome
+                da cor, desejamos armazenar também seu valor hexadecimal.
+
+                Nesse caso, nossa variável
+                <strong>$colors</strong>
+                ficará da seguinte forma:
+                <br>
+
+                <img
+                    src="assets/imgs/colors_hash.png"
+                    alt="Cores com Hash"
+                >
+            </p>
+
+            <p class="separado">
+                Agora cada item possui dois valores: um nome e um código
+                hexadecimal.
+
+                Por isso, precisaremos utilizar duas variáveis dentro do
+                <strong>@each</strong>, uma para cada valor.
+
+                O código ficará semelhante ao exemplo abaixo:
+                <br>
+
+                <img
+                    src="assets/imgs/for_hash.png"
+                    alt="Each com Hash"
+                >
+            </p>
+
+            <p>
+                Dessa forma, o Sass consegue acessar separadamente o nome
+                da cor e seu valor hexadecimal para gerar os estilos
+                automaticamente.
+            </p>
+
+            <a
+                href="contAula.html"
+                style="
+                    display: inline-block;
+                    padding: 20px;
+                    font-weight: bolder;
+                    color: red;
+                "
+            >
+                Conteúdo da aula
+            </a>
+
+        </article>
+
+        <!-- <h1>Testes JS se necessário</h1> -->
+        <script src="assets/js/jscript.js"></script>
+
+    </main>
+
+    <div class="next">
+
+        <a class="next" href="../06_function/index.html">
+            Próxima Aula - @function
+        </a>
+
+    </div>
+
+</body>
+</html>
