@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>When to use variables?</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <main>
+
+        <div class="back">
+        <a class="back" href="../../08_mixin_and_media/src/index.html">
+            Aula Anterior - @mixin_and_@media
+        </a>
+    </div>
+
+        <article id="intro">
+
+            <h1 id="title">When to use variables?</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Além de <strong>mixins</strong>, nosso arquivo <strong>utils</strong> geralmente inclui variáveis para que possamos configurar o <strong>layout</strong> de forma simples em um único lugar.
+            </p>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">Explicações/Exemplos</h3>
+            <p>
+                Para iniciar, iremos criar um arquivo <strong>SCSS</strong> para variáveis.
+                <br>
+                <img src="assets/imgs/ex_var.png" alt="Variáveis SCSS">
+            </p>
+
+            <p class="separado">
+                Feito isso, agora podemos ir em nosso arquivo onde estão os caminhos para os mixins e, lá, colocar o caminho de nossas <strong>variáveis</strong>. 
+                <br>
+                Obs: <strong>ele deve ser colocado em primeiro</strong>, pois em nosso <strong>mixins</strong> já estamos usando uma <strong>variável</strong>, fazendo com que a ordem de conexão importe.
+            </p>
+
+            <p class="separado">
+                Feito isso, uma dica importante é que ao fazer variáveis devemos tomar cuidado, pois às vezes uma <strong>propriedade</strong> pode ter o mesmo valor que outra, mas não ter relação entre si. Nesse caso, não devemos vinculá-las.
+            </p>
+
+            <figure>
+                <img src="assets/imgs/ex_caminho.png" alt="Caminho para conexão">
+            </figure>
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteúdo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+    </main>
+        
+    <div class="next">
+        <a class="next" href="../../../05_modulo_transformations_and_animations/01_transition/index.html">
+            Próximo Modulo: Transformations and Animations-  Aula: Transition
+        </a>
+    </div>
+
+</body>
+</html>
