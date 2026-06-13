@@ -1,12 +1,102 @@
-.product-card {
+.card {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 
-  width: 200px;
-  height: 408px;
+  width: $width-card;
+  padding: $padding-main;
 
-  background-color: #fff;
-
-  border: 1px solid #f3f3f3;
+  border: 1px solid $color-border;
   border-radius: 5px;
+
+  &__image-container {
+    width: 160px;
+    height: 134px;
+    padding-block: 16px;
+    align-self: center;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__title {
+    margin-top: $padding-second;
+  }
+
+  &__sub-title {
+    font-weight: 400;
+    font-size: 10px;
+
+    margin-top: 4px;
+
+    line-height: 14px;
+    color: $color-second;
+  }
+
+  &__reviews {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    font-weight: 400;
+    font-size: 10px;
+
+    line-height: 14px;
+    margin-top: $padding-main;
+  }
+
+  &__price-cont {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: $padding-second;
+  }
+
+  &__text-price {
+    font-weight: 400;
+    font-size: 12px;
+
+    line-height: 18px;
+
+    color: $color-second;
+  }
+
+  &__text-value {
+    font-weight: 700;
+    font-size: 16px;
+
+    line-height: 18px;
+  }
+
+  &__buy-btn {
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  &__cont-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 40px;
+
+    margin-top: $padding-main;
+
+    background-color: $color-btn;
+    border: 1px solid $color-btn;
+    border-radius: 5px;
+
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: white;
+    }
+
+    &:hover .card__buy-btn {
+      color: $color-btn;
+    }
+  }
 }
