@@ -1,0 +1,56 @@
+/* #region NORMALIZE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: skyblue;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+main {
+  box-sizing: border-box;
+  width: 920px;
+  background-color: azure;
+  border-radius: 15px;
+  margin: 25px auto;
+  padding: 50px;
+  min-height: 750px;
+}
+
+form input {
+  font-size: 1.5rem;
+}
+
+h1 {
+  font-size: 7rem;
+}
+
+/* #endregion */
+
+.links-cont {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+.links-cont .links {
+  box-sizing: border-box;
+  display: inline;
+  height: 100px;
+  padding: 20px;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: height, 1s ease-in 100ms;
+}
+.links-cont .links:hover {
+  background-color: #aaa;
+  height: 150px;
+}
+
+/*# sourceMappingURL=style.css.map */
