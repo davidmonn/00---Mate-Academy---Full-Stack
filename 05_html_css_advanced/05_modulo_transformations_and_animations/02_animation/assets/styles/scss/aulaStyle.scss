@@ -1,0 +1,106 @@
+/* #region NORMALIZE */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: skyblue;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+main {
+    width: 920px;
+    background-color: azure;
+    border-radius: 15px;
+    margin: 25px auto;
+    padding: 15px;
+}
+
+form input{
+    font-size: 1.5rem;
+}
+
+h1 {
+    font-size: 7rem;
+}
+
+
+
+/* #endregion */
+
+
+.cont-quadrado {
+    position: relative;
+    height: 100px;
+    width: 100px;
+
+    margin: 50px auto;
+
+    background-color: green;
+    // #region animation full
+
+    /*
+    // Usado para adicionar animacao
+    animation-name: round, move;
+    // Usado para controlar o tempo da animacao
+    animation-duration: 1s;
+    // Usado para suavizar
+    animation-timing-function: liner;
+    // Usado para definir quantidade de repeticoes
+    animation-iteration-count: infinite;
+    // Usado para controlar direcao
+    animation-direction: alternate;
+    // Usado para controlar o atraso da animacao
+    // animation-delay: -300ms;
+    // Usado para definir como o elemento fica antes da animação começar e depois que ela termina.
+    animation-fill-mode: both;
+    */
+    // #endregion
+    // regra: name, duration, delay, timing-function, iteration-count, direction
+    animation:
+     move 2s ease-in-out infinite alternate,
+     round 1000ms linear infinite alternate;
+}
+
+@keyframes move {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 300px;
+    }
+}
+
+@keyframes round {
+    0% {
+        border-radius: 10%;
+    }
+
+    50% {
+        border-radius: 25%;
+    }
+
+    100% {
+        border-radius: 50%;
+    }
+}
+
+
+// @keyframes move {
+
+//     0% {
+//         left: 300px;
+//     }
+
+//     100% {
+//         left: -300px;
+//     }
+// }
+
+// .cont-quadrado:hover {
+//     animation-play-state: paused;
+// }
