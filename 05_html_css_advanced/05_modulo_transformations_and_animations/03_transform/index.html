@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../02_animation/index.html">
+            Aula Anterior - Animation
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Transform</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Agora iremos ver sobre traducao e deformacao de elementos, para isso usamos a propriedade <strong>transform</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Iremos manter basicamente o mesmo codigo de exemplo:</h3>
+
+            <p class="junto">
+                <strong>HTML:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/html.png" alt="HTML">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                <strong>CSS:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/css.png" alt="CSS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">Propriedade: transform: translate();</h3>
+            <p>
+                Com a propriedade <strong>translate</strong> conseguimos deslocar o elemento desejado, em nosso caso como adicionamos ao <strong>:hover</strong> havera um deslocamento ao passarmos o mouse sobre o elemento.
+            </p>
+            <p>
+                Podemos estar usando junto tambem com a propriedade <strong>transition: transform 300ms</strong>, dessa forma teremos um delocamento mais suave.
+            </p>
+            <p>
+                Alem disso se colocarmos mais de um valor em nosso <strong>translate()</strong> como: <strong>translate(20px, 60px)</strong> dessa forma ele tambem se movera para baixo, oque criara um efeito de <strong>deslocamento na diagonal</strong>.
+            </p>
+
+            <h3 class="junto">transform: translateZ(100px);</h3>
+            <p>
+                Dessa forma conseguimos criar um efeito de ampliacao do elemento(zoom), mas para seu uso precisamos da propriedade <strong>perspective: 400px;</strong>(valor foi apenas por conta do exemplo). Com isso basicamente estamos dizendo que o container esta a 400px distante.
+            </p>
+            <p>
+                Podemos tambem fazer com valor negativo dessa forma parecera que o elemento se distanciou.
+            </p>
+            <p class="separado">
+                <strong>Resumindo:</strong> para que qualquer transform funcione em relacao ao <strong>eixo Z</strong>, o container deve conter uma <strong>perspective</strong> definida.
+            </p>
+
+            <h3 class="junto">transform: scale(2);</h3>
+            <p>
+                Com ele conseguimos aumentar e diminuir o elemento, com o valor de exemlo 2 o elemento sera dobrado. E se deixarmos por exemplo 0.8 ele ira diminuir em 20%.
+            </p>
+
+            <h3 class="junto">transform: roate(30deg);</h3>
+            <p>
+                Com ele conseguimos estar girando nosso elemento com o valor de 30deg ira rotacionar em <strong>30 graus</strong>. Por padrao ele gira em torno de seu centro, porem isso pode ser alterado usando a propriedade <strong>transform: origin;</strong>
+            </p>
+
+            <h3 class="junto">transform: rotateY()/rotateX();</h3>
+            <p>
+                Com o <strong>X e Y</strong>, conseguimos definir o eixo da rotacao.
+            </p>
+
+            <h3 class="junto">transform: origin;</h3>
+            <p>
+                Com ele conseguimos controlar onde ira iniciar o deslocamento, por padrao temos <strong>center</strong>.
+            </p>
+
+            <h3 class="junto">transition: transform 300ms;</h3>
+            <p>
+                Com ele conseguimos estar controlando a suavidade de deslocamento de nosso elemento.
+            </p>
+
+            <h3 class="junto">transform: skew()/skewX()/skewY();</h3>
+            <p>
+                Conseguimos fazer deformacoes horizontais ou verticais, especificamos em <strong>deg</strong>
+            </p>
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../../../projects_html_css_advanced/">
+            Próxima Aula - Tarefa Calendar
+        </a>
+    </div>
+
+</body>
+</html>
