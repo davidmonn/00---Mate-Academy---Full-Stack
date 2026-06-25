@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Area</title>
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="back">
+      <a class="back" href="../01_intro_to_grid/index.html">
+        Aula Anterior - Intro to Grid
+      </a>
+    </div>
+
+    <main>
+      <article id="intro">
+        <h1 id="title">Grid Area</h1>
+
+        <div class="conteudo">
+          <h3 class="intro">Introdução</h3>
+
+          <p>
+            Agora iremos entender melhor o <strong>Grid</strong>.
+            Utilizaremos a mesma estrutura da aula anterior.
+          </p>
+
+          <h3 class="cont-title">Código de exemplo:</h3>
+
+          <p class="junto">
+            <strong>HTML:</strong>
+          </p>
+
+          <figure>
+            <picture>
+              <img src="assets/imgs/html.png" alt="HTML" />
+            </picture>
+          </figure>
+
+          <p class="junto">
+            <strong>CSS:</strong>
+          </p>
+
+          <figure>
+            <picture>
+              <img src="assets/imgs/css.png" alt="CSS" />
+            </picture>
+          </figure>
+        </div>
+      </article>
+
+      <article class="conc">
+        <div class="conteudo">
+          <h3 class="junto">Alterações</h3>
+
+          <p>
+            Iremos começar fazendo algumas alterações em nosso
+            <strong>SCSS/CSS</strong>.
+          </p>
+
+          <p>
+            Primeiro iremos apagar todo o conteúdo relacionado a
+            <strong>grid-row</strong> e <strong>grid-column</strong>,
+            para entendermos melhor o funcionamento do
+            <strong>grid-template-areas</strong> e do
+            <strong>grid-area</strong>.
+          </p>
+        </div>
+
+        <div class="conteudo">
+          <h3 class="junto">grid-template-areas</h3>
+
+          <p>
+            Com ele conseguimos desenhar visualmente as áreas do layout
+            diretamente no <strong>CSS</strong>.
+          </p>
+
+          <p>
+            Ele normalmente é utilizado junto do
+            <strong>grid-area</strong>, que será responsável por dizer
+            qual elemento ocupará cada área criada.
+          </p>
+
+          <p>
+            <strong>Modo de uso:</strong><br />
+
+            <img
+              src="assets/imgs/grid_template_areas.png"
+              alt="grid-template-areas"
+            />
+          </p>
+
+          <p class="junto">
+            <strong>Mais detalhes:</strong>
+          </p>
+
+          <p>
+            <strong>Como funciona a ordem?</strong>
+          </p>
+
+          <ul>
+            <li>
+              Cada linha representa uma linha do Grid.
+            </li>
+
+            <li>
+              Cada nome dentro da linha representa uma coluna do Grid.
+            </li>
+          </ul>
+
+          <p>
+            Por exemplo, se a primeira linha possui 3 nomes,
+            então ela possui 3 colunas.
+            Se a segunda linha também possuir 3 nomes,
+            tudo continuará correto.
+          </p>
+
+          <p class="junto">
+            <strong>
+              Todas as linhas precisam ter a mesma quantidade de colunas?
+            </strong>
+
+            Sim.
+          </p>
+
+          <p>
+            Se a primeira linha possui 3 espaços e a segunda possui apenas 2,
+            o CSS considera isso inválido e o layout não funcionará corretamente.
+          </p>
+
+          <p>
+            Você pode pensar nisso como uma planilha do Excel:
+            todas as linhas precisam possuir a mesma quantidade de células.
+          </p>
+
+          <p class="junto">
+            <strong>Posso deixar espaços vazios?</strong>
+
+            Sim.
+          </p>
+
+          <p>
+            Para isso utiliza-se um ponto (.).
+            Isso significa literalmente:
+            "não existe nenhum elemento aqui".
+          </p>
+
+          <p>
+            Isso é útil quando você deseja criar espaços vazios no layout.
+          </p>
+        </div>
+
+        <div class="conteudo">
+          <h3 class="junto">grid-area</h3>
+
+          <p>
+            O <strong>grid-area</strong> é utilizado para informar qual
+            elemento ocupará cada área criada pelo
+            <strong>grid-template-areas</strong>.
+          </p>
+
+          <p>
+            Após criar o mapa do layout, basta associar cada elemento
+            ao nome da área correspondente.
+          </p>
+
+          <p>
+            <strong>Exemplo de uso:</strong><br />
+
+            <img
+              src="assets/imgs/grid_area.png"
+              alt="grid-area"
+            />
+          </p>
+        </div>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteúdo da aula
+        </a>
+      </article>
+
+      <!-- Testes JS, se necessário -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../03_regular_grid/index.html">
+        Próxima Aula - Regular Grid
+      </a>
+    </div>
+  </body>
+</html>
+```
