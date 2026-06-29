@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Regular Grid</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,27 +12,27 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
+        <a class="back" href="../02_grid_area/index.html">
+            Aula Anterior - Grid Area
         </a>
     </div>
-    
+
     <main>
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">Regular Grid</h1>
 
-            <h3 class="intro">Intro</h3>
+            <h3 class="intro">Introdução</h3>
             <p>
-                
+                Agora estaremos usando o <strong>grid</strong> para criar um bloco de cartões, como por exemplo produtos de uma loja online.
             </p>
 
         </article>
 
         <article class="conteudo">
 
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
+            <h3 class="cont-title">Código de Exemplo:</h3>
 
             <p class="junto">
                 <strong>HTML:</strong>
@@ -58,21 +58,131 @@
 
         <article class="conc">
 
-            
-            
+            <div class="conteudo">
+                <h3 class="junto">Como deverá ficar:</h3>
+                <p>
+                    Aqui iremos criar um bloco de cartões que pode ser gerado automaticamente ao adicionar novos cartões. Como estaremos trabalhando com <strong>grid</strong>, eles já ficarão organizados automaticamente.
+                </p>
+                <p>
+                    Nosso cartão irá se adaptar de forma responsiva à quantidade de colunas disponível. Em telas maiores poderá chegar a 4 colunas e, em telas menores, poderá ter apenas 1 coluna.
+                </p>
+            </div>
+
+            <div class="conteudo">
+
+                <h3 class="junto">Iniciando:</h3>
+                <p>
+                    Para começar, em nosso <strong>.container</strong> iremos adicionar o <strong>display: grid;</strong>.
+                </p>
+
+                <p class="separado">
+                    Após isso, iremos fazer o restante das configurações necessárias, ficando da seguinte forma: <br>
+                    <img src="assets/imgs/config_grid.png" alt="Configurações Grid">
+                </p>
+
+                <p class="separado">
+                    Feito isso, também iremos criar algumas regras utilizando <strong>@media</strong> para que cada tamanho de tela tenha uma quantidade diferente de colunas, ficando da seguinte forma: <br>
+                    <img src="assets/imgs/config_media.png" alt="Configurações @media">
+                </p>
+
+                <p class="separado">
+                    Podemos observar que existem muitas repetições em nosso código, sendo alterada apenas a quantidade de colunas em <strong>grid-template-columns</strong>. Para evitar isso, iremos criar uma variável. Ficará da seguinte forma: <br>
+                    <img src="assets/imgs/grid_var.png" alt="Criando variável para grid-template-columns">
+                </p>
+
+                <p class="separado">
+                    Podemos observar que, utilizando apenas uma variável, conseguimos alterar somente a quantidade de colunas dentro dos <strong>@media</strong>, ficando da seguinte forma: <br>
+                    <img src="assets/imgs/grid_var.png" alt="Variável para grid-template-columns">
+                </p>
+
+                <h3 class="junto">grid-template-columns: repeat(auto-fill, 100px);</h3>
+                <p>
+                    Dessa forma, o Grid cria automaticamente o máximo possível de colunas de <strong>100px</strong>. Mesmo que não existam elementos suficientes para ocupar todas elas, as colunas continuam existindo e o espaço permanece reservado.
+                </p>
+
+                <h3 class="junto">grid-template-columns: repeat(auto-fit, 100px);</h3>
+                <p>
+                    Funciona de forma parecida com o <strong>auto-fill</strong>, porém as colunas vazias são removidas. Assim, os elementos existentes podem ocupar melhor o espaço disponível.
+                </p>
+
+                <h3 class="junto">grid-template-columns: repeat(auto-fit, minmax(100px, 200px));</h3>
+                <p>
+                    Com ele conseguimos definir um tamanho mínimo e máximo para a largura dos cartões. Para isso, devemos remover o <strong>width: 100px;</strong> do elemento <strong>.card</strong>, evitando que ele tenha um tamanho fixo.
+                </p>
+
+                <p>
+                    Nesse exemplo, cada cartão terá no mínimo <strong>100px</strong> e poderá crescer até <strong>200px</strong>, dependendo do espaço disponível.
+                </p>
+
+                <p>
+                    Podendo ficar da seguinte forma: <br>
+                    <img src="assets/imgs/minmax_grid.png" alt="minmax no grid-template-columns">
+                    <img src="assets/imgs/auto_fit_grid.png" alt="auto-fit no grid-template-columns">
+                </p>
+
+            </div>
+
+            <div class="conteudo">
+
+                <h3 class="junto">grid-template-columns:</h3>
+                <p>
+                    Com essa propriedade podemos configurar o tamanho e a quantidade de colunas do nosso <strong>grid</strong>. Alguns exemplos são:
+                </p>
+
+                <ul>
+                    <li>
+                        <strong>grid-template-columns: repeat();</strong>
+                        <ul>
+                            <li>
+                                Permite repetir colunas sem precisar escrever os mesmos valores várias vezes. Exemplo: <strong>repeat(2, 100px)</strong> cria 2 colunas de 100px cada.
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>grid-template-columns: repeat(auto-fill, 100px);</strong>
+                        <ul>
+                            <li>
+                                Cria automaticamente o maior número possível de colunas de 100px, mesmo que algumas delas fiquem vazias.
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>grid-template-columns: repeat(auto-fit, 100px);</strong>
+                        <ul>
+                            <li>
+                                Também cria colunas automaticamente, porém remove as colunas vazias e distribui melhor os elementos existentes.
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>grid-template-columns: repeat(auto-fit, minmax(100px, 200px));</strong>
+                        <ul>
+                            <li>
+                                Permite definir um tamanho mínimo e máximo para as colunas, tornando o layout mais flexível e responsivo.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+
             <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
+                Conteúdo da aula
             </a>
 
         </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
+
+        <!-- <h1>Testes JS se necessário</h1> -->
+        <script src="assets/js/jscript.js"></script>
+
+    </main>
+
     <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+        <a class="next" href="../04_grid_items_alignment/index.html">
+            Próxima Aula - Grid Items Alignment
         </a>
     </div>
 
