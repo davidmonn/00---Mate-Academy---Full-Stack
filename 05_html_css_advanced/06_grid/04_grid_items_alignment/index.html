@@ -1,9 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Grid Items Alignment</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,8 +13,8 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
+        <a class="back" href="../03_regular_grid/index.html">
+            Aula Anterior - Regular Grid
         </a>
     </div>
     
@@ -21,18 +22,18 @@
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">Grid Items Alignment</h1>
 
-            <h3 class="intro">Intro</h3>
+            <h3 class="intro">Introdução</h3>
             <p>
-                
+                Agora iremos ver o comportamento dos <strong>grid items</strong> dentro de um <strong>grid container</strong>.
             </p>
 
         </article>
 
         <article class="conteudo">
 
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
+            <h3 class="cont-title">Código de Exemplo:</h3>
 
             <p class="junto">
                 <strong>HTML:</strong>
@@ -54,27 +55,96 @@
                 </picture>
             </figure>
 
+            <p class="junto">
+                <strong>Parte 2 do CSS:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/css_part2.png" alt="CSS Parte 2">
+                </picture>
+            </figure>
+
         </article>
 
         <article class="conc">
 
-            
+            <div class="conteudo">
+
+                <h3 class="junto">grid-template-rows: repeat(2, 180px);</h3>
+                <p>
+                    Usamos essa propriedade para definir a quantidade e o tamanho das linhas do <strong>grid</strong>.
+                </p>
+
+            </div>
+
+            <div class="conteudo">
+                <h3 class="junto">grid-auto-flow: row;</h3>
+                <p>
+                    Usamos para controlar em qual direção os novos itens serão posicionados automaticamente pelo Grid quando eles não possuírem uma posição definida manualmente.
+                </p>
+                <p>
+                    Com <strong>row</strong>, os itens são adicionados primeiro nas linhas e, quando não houver mais espaço, uma nova linha é criada.
+                </p>
+            </div>
+
+            <div class="conteudo">
+                <h3 class="junto">grid-auto-columns:; / grid-auto-rows:;</h3>
+                <p>
+                    Usamos essas propriedades para definir o tamanho das novas colunas ou linhas criadas automaticamente pelo Grid.
+                </p>
+                <p>
+                    Elas são utilizadas principalmente quando o Grid precisa criar colunas ou linhas extras além das definidas em <strong>grid-template-columns</strong> ou <strong>grid-template-rows</strong>.
+                </p>
+            </div>
+
+            <div class="conteudo">
+                <h3 class="junto">justify-items: stretch; / align-items: stretch;</h3>
+                <p>
+                    Essas propriedades controlam o alinhamento dos itens dentro de suas células do Grid.
+                </p>
+                <ul>
+                    <li>
+                        <strong>justify-items</strong> controla o alinhamento horizontal.
+                    </li>
+                    <li>
+                        <strong>align-items</strong> controla o alinhamento vertical.
+                    </li>
+                </ul>
+
+                <p>
+                    O valor padrão é <strong>stretch</strong>, fazendo com que os itens ocupem todo o espaço disponível dentro da célula.
+                </p>
+
+                <p>
+                    Outros valores comuns são:
+                </p>
+
+                <ul>
+                    <li><strong>start</strong> - alinha no início da célula.</li>
+                    <li><strong>center</strong> - centraliza o item.</li>
+                    <li><strong>end</strong> - alinha no final da célula.</li>
+                    <li><strong>stretch</strong> - estica o item para ocupar todo o espaço disponível.</li>
+                </ul>
+            </div>
             
             <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
+                Conteúdo da aula
             </a>
 
         </article>
         
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
+        <!-- <h1>Testes JS se necessário</h1> -->
+        <script src="assets/js/jscript.js"></script>
+
+    </main>
         
     <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+        <a class="next" href="../../07_landing_portfolio_project/01_recommended_products/index.html">
+            Proximo Modulo: Landing [Portfolio Project] - Aula: Recommended Products
         </a>
     </div>
 
 </body>
 </html>
+```
