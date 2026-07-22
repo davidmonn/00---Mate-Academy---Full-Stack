@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Dropdown</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../01_set_dark_theme/index.html">
+            Aula Anterior - Set Dark Theme
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Custom Dropdown</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui veremos como utilizar <strong>JavaScript</strong> para interagir com o elemento <strong>select</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>HTML:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/html.png" alt="HTML">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                <strong>CSS:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/css.png" alt="CSS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <div class="conteudo">
+
+                <h3 class="junto">Explicacao:</h3>
+                <p>
+                    A princípio, quando usamos o elemento <strong>select</strong>, vemos apenas a opção selecionada. Ao clicar nele e escolher outra opção, ela passa a ser a opção selecionada. É essa alteração que iremos utilizar com o <strong>JavaScript</strong>, executando uma ação sempre que a opção for alterada.
+                </p>
+
+            </div>  
+            
+            <div class="conteudo">
+
+                <h3 class="junto">Iniciando</h3>
+                <p>
+                    Iremos comecar criando um novo elemento com a class <strong>dropdown</strong> em seguida criaremos um <strong>button</strong> e o nomearemos de <strong>dropdown__trigger</strong> e como conteudo iremos colocar <strong>Value 1</strong>.
+                </p>
+                <p>
+                    Apos isso dentro de nosso <strong>elemento dropdown</strong> logo abaixo do <strong>dropdown__trigger</strong> iremos adicionar um novo elemento e iremos chama-lo de <strong>dropdown__content</strong> onde poderemos adicionar uma <strong>list com a class content</strong> e dentro dela podemos adicionar <strong>5 li</strong> cada um contendo um <strong>Value</strong>. Ficando da seguinte forma:
+                </p>
+
+                <img src="assets/imgs/element-dropdown.png" alt="Criacao do element dropdown">
+
+                <p>
+                    Feito isso podemos excluir nosso <strong>select</strong>.
+                </p>
+
+            </div>
+
+            <div class="conteudo">
+
+                <h3 class="junto">Estilizacao</h3>
+                <p>
+                    Agora que ja fizemos basicamente quase tudo em nosso <strong>HTML</strong>, podemos comecar nossa estilizacao.
+                </p>
+
+                <h3 class="junto">Primeiro</h3>
+                <p>
+                    Iremos fazer com que nosso <strong>trigger</strong> herde todos os estilos de texto. Para isso usamos a <strong>propriedade font: inherit</strong>.
+                </p>
+                <p>
+                    Iremos tambem afastar um pouco o conteudo do proprio botao, para isso iremos em nosso <strong>dropdown__content</strong> e podemos adicionar um <strong>margin-top: 10px;</strong> feito isso, agora nosso conteudo oculpa espaco na pagina. Para isso iremos ao nosso <strong>dropdown</strong>.
+                </p>
+                <p class="separado">
+                    Em nosso <strong>dropdown</strong> podemos usar um <strong>position: relative;</strong> e em nosso <strong>dropdown__content</strong> adicionamos um <strong>position: absolute;</strong>
+                </p>
+                <p>
+                    Ao fazermos isso nossa lista ira ficar acima do <strong>texto</strong>. Iremos esconde-lo usando um <strong>height: 0;</strong> e um <strong>overflow: hidden;</strong> em nosso <strong>dropdown__content</strong> com isso tudo que nao couber sera ocultado.
+                </p>
+
+                <p class="junto">
+                    Em nosso elemento <strong>dropdown</strong> iremos adicionar um <strong>modificador dropdown--active</strong>, para podermos personaliza-lo quando ele estiver ativo. Ficando da seguinte forma:
+                </p>
+
+                <img src="assets/imgs/class-active.png" alt="Class active">
+
+                <p>
+                    Quando nosso <strong>dropdown</strong> estivar em <strong>--active</strong> queremos que a lista seja exibida e talvez o <strong>trigger</strong> seja estilizado de uma forma diferente.
+                </p>
+                
+                <p class="junto">
+                    Agora iremos selecionar nosso <strong>.dropdown--active</strong> faremos com que o conteudo dentro dele no caso <strong>.dropdown__content</strong> deve ter sua altura padrao, ficando da seguinte forma toda nossa estilizacao:
+                </p>
+
+                <img src="assets/imgs/estilizacao-drop.png" alt="Estilizacao dropdown">
+
+                <p class="separado">
+                    Feito isso agora podemos remover a <strong>class --active</strong> de nosso <strong>HTML</strong> para que ela seja adicionado e removida por um <strong>evento</strong>, para isso iremos para nosso <strong>JS</strong>.
+                </p>
+
+            </div>
+
+            <div class="conteudo">
+
+                <h3 class="junto">Adicionando Evento JS</h3>
+                <img src="assets/imgs/js.png" alt="JS">
+
+                <h3 class="junto">const dropdown</h3>
+                <p>
+                    Criamos uma variavel const para que ela possa selecionar o elementoo que desejamos no caso ela ira selecionar nosso elemento <strong>.dropdown</strong>
+                </p>
+                <p>
+                    Em seguida criamos outra variavel a <strong>trigger</strong> que usara a variavel <strong>dropdown</strong> para selecionarmos o elemento <strong>.dropdown__trigger</strong>.
+                </p>
+
+                <h3 class="junto">Evento</h3>
+                <p>
+                    Criamos um evento utilizando nossa varivel <strong>trigger</strong> pois ela esta selecionando nosso elemento que desejamos fazer o evento. Para isso adicionamos o <strong>addEventListenner</strong>, e usamos o <strong>'contextmenu'</strong> e como parametro usamos o <strong>(event)</strong> que sera usado para removermos o menu que aparece quando clicamos com o botao direito.
+                </p>
+                <p>
+                    Em seguida seguimos para oque nosso codigo ira fazer com esse evento, no caso precisamos de uma condicional, ja que iremos adicionar um novo elemento se ele nao tiver e se tiver ira remover.
+                </p>
+
+                <p class="junto">
+                    Com o dropdown.classList.container('dropdown--active'); .Ira veriricar se temos a class <strong>dropdown--active</strong> em nosso elemento.
+                </p>
+                <p>
+                    dropdown.classList.remove('dropdown--active'); .Ira remover a class.
+                </p>
+                <p>
+                    dropdown.classList.add('dropdown--active'); .Ira adicionar a class.
+                </p>
+
+                <h3 class="junto">Abreviando nosso Codigo</h3>
+                <p>
+                    Podemos estar abreviando nosso codigo com o comando <strong>toggle</strong>
+                </p>
+
+            </div>
+
+            <div class="conteudo">
+
+                <h3 class="separado">Explicacao codigo JS</h3>
+
+                <h3 class="junto">document</h3>
+                <p>
+                    O <strong>document</strong> representa toda a página HTML e permite acessar seus elementos.
+                </p>
+
+                <h3 class="junto">querySelector</h3>
+                <p>
+                    O <strong>querySelector()</strong> seleciona o <strong>primeiro elemento</strong> que corresponde ao seletor informado.
+                </p>
+
+                <h3 class="junto">addEventListener</h3>
+                <p>
+                    O <strong>addEventListener()</strong> adiciona um <strong>evento</strong> a um elemento, executando uma função quando ele acontece.
+                </p>
+
+                <h3 class="junto">contextmenu</h3>
+                <p>
+                    O evento <strong>contextmenu</strong> é disparado ao clicar com o <strong>botão direito</strong> do mouse.
+                </p>
+
+                <h3 class="junto">event</h3>
+                <p>
+                    O <strong>event</strong> contém informações sobre o evento que ocorreu e permite controlá-lo.
+                </p>
+
+                <h3 class="junto">preventDefault</h3>
+                <p>
+                    O <strong>preventDefault()</strong> impede o <strong>comportamento padrão</strong> do navegador, como abrir o menu de contexto.
+                </p>
+
+                <h3 class="junto">classList</h3>
+                <p>
+                    O <strong>classList</strong> permite <strong>adicionar, remover e verificar</strong> classes CSS de um elemento.
+                </p>
+
+                <h3 class="junto">contains</h3>
+                <p>
+                    O <strong>contains()</strong> verifica se o elemento <strong>possui uma determinada classe</strong>, retornando <strong>true</strong> ou <strong>false</strong>.
+                </p>
+
+                <h3 class="junto">remove</h3>
+                <p>
+                    O <strong>remove()</strong> remove uma <strong>classe CSS</strong> do elemento.
+                </p>
+
+                <h3 class="junto">add</h3>
+                <p>
+                    O <strong>add()</strong> adiciona uma <strong>classe CSS</strong> ao elemento.
+                </p>
+
+                <h3 class="junto">toggle</h3>
+                <p>
+                    O <strong>toggle()</strong> adiciona ou remove uma <strong>classe CSS automaticamente</strong>. Se a classe existir, ela é removida; se não existir, ela é adicionada. Assim, ele substitui o uso conjunto de <strong>contains()</strong>, <strong>add()</strong> e <strong>remove()</strong> em situações simples.
+                </p>
+
+            </div>
+
+            <div class="conteudo">
+
+                <h3 class="junto">Estilizacoes Adicionais</h3>
+                <p>
+                    Em nosso <strong>.dropdown__content</strong> adicionamos um <strong>transition: height .3s;</strong> para dar uma suavizada, porem isso ainda nao ira funcionar pois em nosso <strong>.dropdown--active .dropdown__trigger</strong> temos um <strong>height: auto;</strong> e por nao ser um numero, nao funciona corretamente.
+                </p>
+                <p>
+                    Para descobrir a altura que iremos precisa de nosso <strong>dropdown--active .dropdown__trigger</strong> podemos estar utilizando o <strong>JS</strong>.
+                </p>
+                <p>
+                    Por enquanto iremos deixar nosso <strong>height: auto;</strong> e podemos inspecionar o elemento com <strong>f12</strong>, iremos selecionar todo nosso conteudo do <strong>dropdown</strong> e depois mudamos para nosso <strong>console</strong> e podemos usar uma variavel especial que ira se referir ao ultimo item selecionado, iremos usar <strong>$0</strong> e esse elemento tem uma propriedade clientHeight
+                </p>
+
+                <p class="junto">Podemos ver onde selecionamos o dropdown__content</p>
+                <img src="assets/imgs/elements-f12.png" alt="Inspecionando">
+
+                <p class="junto">Vamos em console e ficara da seguinte forma:</p>
+                <img src="assets/imgs/inspecionar-usados.png" alt="Inspecionar">
+
+                <h3 class="separado">Alteracoes JS</h3>
+                <p>
+                    Apos feito isso iremos voltar em nosso codigo <strong>JS</strong>, para que quando o elemento se fechar, definir a altura para 0. Iremos criar uma nova variavel, ficara da seguinte forma:
+                </p>
+
+                <img src="assets/imgs/estilizando-height-js.png" alt="Estilizando height js">
+
+                <p class="separado">
+                    Podemos comentar tudo novamente deixando apenas nosso <strong>toggle</strong>, e voltar para nosso <strong>CSS</strong> para fazer a animacao suave. Ficara da seguinte forma:
+                </p>
+                
+                <img src="assets/imgs/suavizando.png" alt="Suavizando animacao">
+
+            </div>
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../03_adding_and_removing_elements/index.html">
+            Próxima Aula - Adding And Removing Elements
+        </a>
+    </div>
+
+</body>
+</html>
