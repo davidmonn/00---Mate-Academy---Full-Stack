@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Adding And Removing Elements</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,8 +12,8 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
+        <a class="back" href="../02_custom_dropdown/index.html">
+            Aula Anterior - Custom Dropdown
         </a>
     </div>
     
@@ -21,11 +21,11 @@
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">Adding And Removing Elements</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Agora iremos ver como adicionar e remover elementos de paginas.
             </p>
 
         </article>
@@ -58,7 +58,189 @@
 
         <article class="conc">
 
-            
+            <div class="conteudo">
+                <h3 class="junto">Iniciando</h3>
+                <p>
+                    Para fazer isso iremos escrever uma pequena lista que pode ser editada.
+                </p>
+                <p>
+                    Iremos comecar criando um elemento com a <strong>class todo-app</strong>.
+                </p>
+                <p>
+                    Dentro dele um <strong>form todo-app__form</strong> onde dentro dele teremos um <strong>input</strong> e <strong>button</strong>.
+                </p>
+                <p>
+                    Dentro de nosso <strong>todo-app</strong> criaremos outro elemento um <strong>ul todo-app__list</strong> com <strong>3 li</strong>.
+                </p>
+            </div>
+
+            <div class="conteudo">
+                <h3 class="junto">Explicacao</h3>
+                <p>
+                    Feito isso apos digitar algo e dar enter, nossos dados escritos simplesmente somem, por padrao o <strong>formulario</strong> envia dados para o <strong>servidor</strong>, porem nao especificamos uma acao para o <strong>formluario</strong> entao os dados sao enviados diretamente para a pagina porem nosso <strong>input</strong> nao tem nome e nao conseguimos nem ver os dados adicionados ao endereco, para concertar isso iremos ao nosso <strong>JS</strong>.
+                </p>
+            </div>
+
+            <div class="conteudo">
+
+                h3 class="">JS</h3>
+                <p>
+                    Iniciaremos nosso <strong>JavaScript (JS)</strong> da seguinte forma:
+                </p>
+                <img src="assets/imgs/js.png" alt="Iniciando JS">
+
+                <p>
+                    Iniciamos criando **3 variáveis** para armazenar referências aos elementos da página. A primeira é <strong>const app = document.querySelector('.todo-app');</strong>.
+                </p>
+
+                <p>
+                    <strong>const app = document.querySelector('.todo-app');</strong> **seleciona o elemento** com a classe <strong>.todo-app</strong>. Assim, podemos **buscar os demais elementos apenas dentro dele**, deixando o código mais organizado.
+                </p>
+
+                <p>
+                    <strong>const list = app.querySelector('.todo-app__list');</strong> e <strong>const form = app.querySelector('.todo-app__form');</strong>
+                </p>
+
+                <p>
+                    Ambos utilizam <strong>app.querySelector()</strong>, pois a busca é feita **dentro do elemento armazenado na variável <strong>app</strong>**, em vez de pesquisar o documento inteiro.
+                </p>
+
+                <p class="junto">
+                    Para remover a acao padrao temos duas opcoes usar o <strong>event object</strong> no caso o <strong>parametro</strong> de nossa <strong>funcao</strong> ou no <strong>evento do formulario</strong>.
+                </p>
+
+                <p class="junto">
+                    Para remover a acao padrao temos duas opcoes usar o <strong>event object</strong> no caso o <strong>parametro</strong> de nossa <strong>funcao</strong> ou no <strong>evento do formulario</strong>.
+                </p>
+
+            </div>
+
+            <div class="conteudo">
+
+                <h3 class="junto">No Formulario</h3>
+                <p>
+                    No formulario podemos adicionar <strong>onsubmit="return false"</strong>.
+                </p>
+
+                <img src="assets/imgs/onsubmit.png" alt="Uso de onsubmit">
+
+                <p>
+                    Fazendo isso a pagina nao e recarregada e os dados nao sao enviados para nenhum lugar.
+                </p>
+
+                <h3 class="junto">Inpedir Acao Padrao do Navegador e Limpar Form</h3>
+                <p>
+                    Isso pode ser feito usando o <strong>metodo reset</strong> do <strong>formulario</strong>. Iremos fazer isso antes do <strong>return false</strong> dentro de nosso <strong>onsubmit</strong>. Ficando da seguinte forma:
+                </p>
+
+                <img src="assets/imgs/this-reset.png" alt="Ex: this reset">
+
+                <p class="junto">
+                    this.reset(); no caso o <strong>this</strong> e o elemento no qual adicionamos o <strong>manipulador</strong> entao nesse caso ele é o <strong>elemento</strong>. Com isso chamamos o metodo <strong>reset</strong> nele.
+                </p>
+                <p>
+                    Com isso agora nosso formulario sera limpo.
+                </p>
+                <p>
+                    Porem nao é a unica coisa que queremos fazer. Queremos adicionar um novo elemento a lista. Entao iremos voltar para nosso <strong>JS</strong>.
+                </p>
+
+            </div>
+
+            <div class="conteudo">
+
+                <h3 class="junto">Adicionando Elemento a Lista</h3>
+                <p>
+                    Dentro de nossa <strong>funcao</strong> iremos adicionar <strong>list.append();</strong>, dentro desse parametro temos que passar um elemento recem criado, para isso acima iremos adicionar uma <strong>variavel</strong> para criar um <strong>elemento</strong>. Ficando da seguinte forma:
+                </p>
+
+                <img src="assets/imgs/add-list.png" alt="Ex: Add element">
+
+                <p class="junto">
+                    Feito isso agora quando tamos 'enter', nosso texto ira sumir e a pagina nao ira recarregar isso por conta do <strong>onsubmit</strong> e com o <strong>JS</strong> adicionamos um novo <strong>li</strong> com o texto de <strong>New</strong>.
+                </p>
+                <p>
+                    Porem isso nao e muito conveniente quando temos codigo espalhado em diferentes lugares, entao iremos remover nosso <strong>manipulador onsubmit</strong>.
+                </p>
+
+                <h3 class="junto">Removendo Acao Padrao JS</h3>
+                <p>
+                    Para isso iremos usar o parametro de nossa <strong>funcao</strong> adicionando <strong>(event)</strong>. Feito isso iremos chama-lo com o <strong>metodo event.preventDefault();</strong> com isso nossa pagina nao ira recarregar.
+                </p>
+
+                <p class="junto">
+                    Limpando o texto do <strong>input</strong>.
+                </p>
+                <p>
+                    Para isso iremos usar nossa variavel form e chamar o metodo <strong>reset</strong>. Ficando da seguinte forma:
+                </p>
+
+                <img src="assets/imgs/reset-js.png" alt="Resetando caracteres">
+
+                <h3 class="junto">Exclusao</h3>
+                <p>
+                    Iremos supor que ao clicarmos duas vezes em um elemento o removemos da lista.
+                </p>
+                <p>
+                    Para fazer isso em itens novos é simples, podemos usar nossa variavel <strong>item</strong> e adicionar um manipulador de eventos: <strong>item.addEventListener('dblclick', () => {})</strong>. Ficara da seguinte forma:
+                </p>
+
+                <img src="assets/imgs/removendo-item.png" alt="Removendo item">
+                
+                <h3 class="junto">Adicionando item escrito pelo usuario</h3>
+                <p>
+                    Para podermos adicionar o texto que o usuario escreveu na lista e nao apenas <strong>'New'</strong>, podemos ir em nosso <strong>item.textContent = 'New'</strong> e altera-lo da seguinte forma:
+                </p>
+
+                <img src="assets/imgs/add-element.png" alt="Adicionando Elemento">
+                
+                <p class="junto">
+                    Para isso tambem precisamos voltar em nosso <strong>HTML</strong> e adicionar um <strong>name</strong>, para que possa ser localizado, usamos o <strong>name="todo"</strong>.
+                </p>
+
+                <img src="assets/imgs/input-name.png" alt="Ex name input">
+                
+
+                <p class="junto">
+                    Ate o moneto nosso codigo JS completo ficou da seguinte forma:
+                </p>
+                <img src="assets/imgs/js-ex.png" alt="Exemplo Js ate o momento">
+                
+            </div>
+
+            <div class="conteudo">
+
+                <h3 class="junto">Adicionando Botao de Acao</h3>
+                <p>
+                    Podemos tambem estar criando um botao para a acao desejada como remover item.
+                </p>
+
+                <p>
+                    Essa é uma abordagem bem semelheante que faremos em <strong>frameworks</strong> como <strong>React, Angular e etc</strong>.
+                </p>
+
+                <h3 class="junto">Alteracoes</h3>
+                <p>
+                    Iremos comecar alterando nosso <strong>metodo</strong> do <strong>list</strong> de <strong>prepend</strong> para <strong>insertAdjacentHTML</strong>, com isso conseguimos inserir um pedaco de <strong>HTML</strong>.
+                </p>
+
+                <h3 class="junto">insertAdjacentHTML</h3>
+                <p>
+                    Esse metodo possui dois parametros, o primeiro onde iremos inserir (<strong>beforeend</strong>), segundo parametro passamos a linha de <strong>HTML</strong> que sera inserida, iremos usar aspas invertidas pois podemos estar usando variaveis.
+                </p>
+                <p>
+                    beforeend: Insere antes da tag de fechamento.
+                </p>
+
+                <p class="junto">
+                    Ficando da seguinte forma:
+                </p>
+
+                <img src="assets/imgs/insertAdjacentHTML.png" alt="Ex insertAdjacentHTML">
+
+            </div>
+
+
             
             <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
                 Conteudo da aula
