@@ -25,7 +25,7 @@
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Aqui iremos entender mais sobre <strong>objetos</strong> no <strong>JS</strong>.
             </p>
 
         </article>
@@ -35,22 +35,12 @@
             <h3 class="cont-title">Codigo de Exemplo:</h3>
 
             <p class="junto">
-                <strong>HTML:</strong>
+                <strong>JS:</strong>
             </p>
 
             <figure>
                 <picture>
-                    <img src="assets/imgs/html.png" alt="HTML">
-                </picture>
-            </figure>
-
-            <p class="junto">
-                <strong>CSS:</strong>
-            </p>
-
-            <figure>
-                <picture>
-                    <img src="assets/imgs/css.png" alt="CSS">
+                    <img src="assets/imgs/js.png" alt="JS">
                 </picture>
             </figure>
 
@@ -58,7 +48,85 @@
 
         <article class="conc">
 
-            
+            <div class="conteudo">
+
+                <h3 class="junto">Armazenamento de Objetos</h3>
+                <p>
+                    Aqui iremos entender um pouco mais sobre como os dados são armazenados na memória do computador.
+                </p>
+
+                <p>
+                    Para isso, criamos uma variável <strong>const myName = 'David';</strong>, outra variável <strong>let myAge = 29;</strong> e um objeto <strong>let me = { name: 'David', age: 29 };</strong>.
+                </p>
+
+                <h3 class="junto">Explicação: Armazenamento de Variáveis</h3>
+
+                <p>
+                    Podemos imaginar uma <strong>variável</strong> como uma gaveta com uma etiqueta indicando o que está armazenado dentro dela.
+                </p>
+
+                <h3 class="junto">Explicação: Armazenamento de Objetos</h3>
+
+                <p>
+                    Um <strong>objeto</strong> é uma forma de agrupar vários valores. Podemos imaginá-lo como um armário que possui várias gavetas.
+                </p>
+
+                <p>
+                    Cada <strong>objeto</strong> possui um <strong>endereço</strong> único na memória. Quando salvamos um objeto em uma variável, ela guarda apenas esse <strong>endereço</strong>, e não o objeto inteiro. Isso ficará mais fácil de entender no exemplo de <strong>atribuição de valores</strong>.
+                </p>
+
+                <h3 class="junto">Exemplos com Variáveis</h3>
+
+                <p>
+                    Se tentarmos alterar o valor de <strong>const myName = 'David';</strong>, por exemplo fazendo <strong>myName = 123;</strong>, teremos um erro. Isso acontece porque uma variável declarada com <strong>const</strong> não pode receber outro valor após ser criada.
+                </p>
+
+                <p>
+                    Já uma variável criada com <strong>let</strong> pode ser alterada. Por isso, podemos fazer <strong>myAge = 123;</strong>.
+                </p>
+
+                <p>
+                    Quando alteramos uma variável, o <strong>JavaScript</strong> localiza esse valor na memória e o substitui pelo novo valor informado.
+                </p>
+
+                <p>
+                    Também podemos copiar o valor de outra variável, por exemplo: <strong>myAge = myName;</strong>. Nesse caso, o valor armazenado em <strong>myName</strong> é copiado para <strong>myAge</strong>, substituindo o valor anterior.
+                </p>
+
+                <h3 class="junto">Exemplo com Objetos</h3>
+
+                <p>
+                    Se fizermos <strong>let guest = me;</strong>, criaremos uma nova variável que receberá o mesmo <strong>endereço</strong> do objeto <strong>me</strong>. Isso significa que <strong>guest</strong> e <strong>me</strong> passam a apontar para o mesmo objeto na memória.
+                </p>
+
+                <h3 class="junto">console.log</h3>
+                <p>
+                    Para entendermos melhor iremos usar o <strong>console.log</strong>: <br>
+                    <img src="assets/imgs/ex-console.png" alt="Exemplo console log">
+                </p>
+                <p>
+                    Dessa forma, teremos como resultado no <strong>console</strong> o valor <strong>29</strong>, pois estamos acessando a propriedade <strong>age</strong> do objeto <strong>me</strong> utilizando a notação de ponto (<strong>.</strong>). Dessa forma, escrevemos: <strong>console.log(me.age)</strong>.
+                </p>
+                <p>
+                    Com isso se fizermos agora da seguinte forma: <strong>console.log(guest.me)</strong> iremos obter o mesmo resultado. <br>
+                    <img src="assets/imgs/ex-console2.png" alt="Exemplo 2">
+                </p>
+
+                <p class="separado">
+                    Se decidirmos alterar o valor de <strong>guest.age</strong> como: <strong>guest.age = 123;</strong> <br>
+                    <img src="assets/imgs/alterando-valor-var.png" alt="Valor guest.age alterado">
+                </p>
+
+                <p>
+                    Apos fazermos isso, ambos os valores recebidos anteriormente alterados, onde antes tinhamos 29, agora iremos receber o <strong>123</strong>.
+                </p>
+
+                <h3 class="junto">Entendendo Melhor</h3>
+                <p>
+                    A variável <strong>guest</strong> guarda o mesmo <strong>endereço</strong> do objeto <strong>me</strong>. Podemos imaginar que as duas possuem a chave do mesmo armário. Quando o <strong>JavaScript</strong> altera um valor dentro desse armário, tanto <strong>guest</strong> quanto <strong>me</strong> mostrarão a alteração, pois ambas acessam o mesmo objeto.
+                </p>
+
+            </div>
             
             <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
                 Conteudo da aula
@@ -71,8 +139,8 @@
         </main>
         
     <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+        <a class="next" href="../02_const_and_object/index.html">
+            Próxima Aula - Const and Object
         </a>
     </div>
 
