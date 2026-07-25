@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Const and Object</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../01_variables_values_and_objects/index.html">
+            Aula Anterior - Variables, Values and Objects
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Const and Object</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos analisar melhor o funcionamento de um objeto.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>JS:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/js.png" alt="JS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">Exemplo:</h3>
+
+            <p>
+                Podemos observar que temos uma <strong>variável myFriend</strong>, à qual atribuímos um <strong>objeto</strong> com seus respectivos valores.
+            </p>
+
+            <p>
+                Em seguida, criamos a variável <strong>guest</strong> e atribuímos a ela o valor de <strong>myFriend</strong>. Depois utilizamos <strong>guest.age++</strong> para aumentar o valor da propriedade <strong>age</strong> em <strong>1</strong>.
+            </p>
+
+            <p>
+                Por último, reatribuímos o valor da variável <strong>guest</strong> para <strong>null</strong>.
+            </p>
+
+            <p>
+                Feito isso, qual será o valor obtido?
+            </p>
+
+            <p>
+                Como resultado do <strong>console.log(myFriend);</strong>, teremos:
+                <br>
+                <img src="assets/imgs/result-myFriend.png" alt="Resultado">
+            </p>
+
+            <h3 class="junto">Entendimento do Resultado</h3>
+
+            <p>
+                Inicialmente, a variável <strong>myFriend</strong> aponta para um <strong>objeto</strong>, que podemos representar pelo endereço <strong>#1</strong>. Em seguida, a variável <strong>guest</strong> recebe esse mesmo endereço, ou seja, ambas apontam para o mesmo objeto.
+            </p>
+
+            <p>
+                Quando executamos <strong>guest.age++</strong>, o <strong>JavaScript</strong> acessa o objeto no endereço <strong>#1</strong> e altera o valor da propriedade <strong>age</strong>.
+            </p>
+
+            <p>
+                Depois fazemos <strong>guest = null;</strong>. Com isso, apenas a variável <strong>guest</strong> deixa de apontar para o objeto, ficando sem referência para ele.
+            </p>
+
+            <p>
+                Ao executar <strong>console.log(myFriend)</strong>, continuamos acessando o objeto do endereço <strong>#1</strong>, que já teve sua propriedade <strong>age</strong> alterada.
+            </p>
+
+            <p class="junto">
+                Como conseguimos alterar um objeto declarado com <strong>const</strong>?
+            </p>
+
+            <p>
+                A palavra-chave <strong>const</strong> impede que a variável <strong>myFriend</strong> receba outro valor, mas não impede a alteração dos valores que estão dentro do objeto. Como o endereço continua sendo o mesmo, podemos modificar suas propriedades normalmente.
+            </p>
+
+            <h3 class="junto">Método Imutável</h3>
+
+            <p>
+                No <strong>JavaScript</strong>, existe um método chamado <strong>Object.freeze()</strong>, que impede a alteração das propriedades de um objeto. Se não quisermos que seus valores sejam modificados, podemos utilizar:
+            </p>
+
+            <p>
+                <strong>Object.freeze(myFriend)</strong>. Ficando da seguinte forma:
+                <br>
+                <img src="assets/imgs/object_freeze.png" alt="Exemplo de Object.freeze">
+            </p>
+
+            <p class="junto">
+                Após isso, qualquer tentativa de alterar as propriedades do objeto não terá efeito (ou poderá gerar um erro, dependendo do modo de execução do JavaScript). Na prática, esse método é utilizado em situações específicas e não é tão comum no dia a dia.
+            </p>
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../03_null vs undefined/index.html">
+            Próxima Aula - null vs undefined
+        </a>
+    </div>
+
+</body>
+</html>
