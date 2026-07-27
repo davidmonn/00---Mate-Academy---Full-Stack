@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>null vs undefined</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../02_const_and_object/index.html">
+            Aula Anterior - Const and Object
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">null vs undefined</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Agora iremos ver a diferenca pratica entre <strong>null</strong> e <strong>undefined</strong>, e como podemos usa-los com <strong>objetos</strong>.
+            </p>
+
+        </article>
+
+        <article class="conc">
+
+            <div class="conteudo">
+
+                <h3 class="junto">Explicacao:</h3>
+                <p>
+                    Primeiro, vamos relembrar como interagir com uma pagina usando <strong>JavaScript (JS)</strong>.
+                </p>
+
+                <p>
+                    Em nosso <strong>HTML</strong>, criaremos um elemento <strong>&lt;div&gt;</strong>, que sera localizado pelo <strong>JavaScript</strong>: <br>
+                    <img src="assets/imgs/encontrando-tag.png" alt="Encontrando tag">
+                </p>
+
+                <p class="junto">
+                    Utilizando <strong>document.querySelector('div')</strong>, conseguimos localizar o <strong>primeiro elemento &lt;div&gt;</strong> da pagina.
+                </p>
+
+                <p>
+                    Agora iremos exibi-lo no <strong>console</strong> para visualizar o resultado:
+                </p>
+
+                <img src="assets/imgs/imprimindo-div.png" alt="Imprimindo div">
+
+                <p class="junto">
+                    Resultado em nosso <strong>console.log:</strong>
+                </p>
+
+                <img src="assets/imgs/result-console.png" alt="Resultado no console">
+
+                <p class="junto">
+                    Porem, se digitarmos um <strong>seletor invalido</strong> no <strong>querySelector</strong>, o resultado sera <strong>null</strong>, pois <strong>nenhum elemento foi encontrado</strong>.
+                </p>
+
+                <p>
+                    Cada elemento da pagina possui propriedades que permitem acessar o <strong>elemento anterior</strong> ou o <strong>proximo elemento</strong>.
+                </p>
+
+                <p>
+                    Para obter uma <strong>referencia ao elemento anterior</strong>, utilizamos <strong>previousElementSibling</strong>. Caso nao exista um elemento anterior, o resultado sera <strong>null</strong>. Ja se digitarmos a propriedade de forma incorreta, como <strong>prevElementSibling</strong>, o resultado sera <strong>undefined</strong>, pois essa propriedade <strong>nao existe</strong>.
+                </p>
+
+                <p>
+                    <strong>Resumo:</strong><br>
+                    • <strong>null</strong> = a propriedade <strong>existe</strong>, mas nao possui valor no momento.<br>
+                    • <strong>undefined</strong> = a propriedade <strong>nao existe</strong> ou nunca foi definida.
+                </p>
+
+                <p>
+                    Por isso, em nossos proprios <strong>objetos</strong>, podemos utilizar <strong>null</strong> como um valor temporariamente vazio.
+                </p>
+
+                <p class="separado">
+                    <strong>Exemplo:</strong>
+                </p>
+
+                <img src="assets/imgs/ex-objetct.png" alt="Exemplo Object" class="separado">
+
+                <p class="junto">
+                    Nesse caso, veremos que a propriedade existe, mas seu valor e <strong>null</strong>.
+                </p>
+
+                <p>
+                    Porem, se digitarmos o nome da propriedade errado, como <strong>"passaporte"</strong>, o resultado sera <strong>undefined</strong>, indicando que essa propriedade <strong>nao existe no objeto</strong>.
+                </p>
+
+                <p>
+                    O mesmo conceito tambem vale para <strong>arrays</strong>:
+                </p>
+
+                <img src="assets/imgs/ex-array.png" alt="Ex array" class="separado">
+
+                <p>
+                    Quando adicionarmos informacoes tanto em <strong>passport</strong> quanto no <strong>array</strong>, substituindo o valor <strong>null</strong>, os dados serao exibidos normalmente.
+                </p>
+
+                <p>
+                    Para cada propriedade de um <strong>objeto</strong>, podemos definir um <strong>valor padrao</strong>. Isso facilita o desenvolvimento, pois o <strong>autocompletar</strong> da IDE reconhece todas as propriedades existentes, mesmo que ainda estejam vazias.
+                </p>
+
+                <p>
+                    Por isso, e comum declarar todas as propriedades de um objeto (ou classe) logo na criacao, atribuindo valores como <strong>null</strong>, <strong>0</strong>, <strong>false</strong> ou <strong>""</strong>, dependendo do tipo esperado.
+                </p>
+
+                <p>
+                    <strong>Importante:</strong> mantenha o <strong>tipo do valor</strong>. Por exemplo, se <strong>age</strong> representa um numero, seu valor inicial pode ser <strong>0</strong>, e nao uma string ou outro tipo de dado.
+                </p>
+
+            </div>
+
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../04_tarefa_pair_robots/index.html">
+            Próxima Aula - Tarefa Pair Robots!
+        </a>
+    </div>
+
+</body>
+</html>
