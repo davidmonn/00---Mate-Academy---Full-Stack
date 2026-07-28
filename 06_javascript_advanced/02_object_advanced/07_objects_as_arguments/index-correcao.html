@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects as Arguments</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../06_how_to_compare_objects/index.html">
+            Aula Anterior - How to Compare Objects
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Objects as Arguments</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Agora iremos entender melhor como trabalhar com <strong>objetos</strong> ao passa-los como <strong>parametros</strong> dentro de uma <strong>funcao</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>JS:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/js.png" alt="JS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <div class="conteudo">
+
+                <h3 class="junto">Explicação:</h3>
+                <p>
+                    Podemos observar que, em nosso <strong>código</strong>, foram criados 3 <strong>objetos</strong>. Após isso, criamos uma <strong>função</strong> com <strong>2 parâmetros</strong>. Nessa função, estamos basicamente criando um par entre esses objetos.
+                </p>
+                <p class="separado">
+                    Em nossa função, pegamos o primeiro objeto pela propriedade <strong>.partner</strong> e fazemos com que ela receba o <strong>segundo objeto</strong>. Em seguida, fazemos o mesmo com o segundo objeto, fazendo sua propriedade <strong>.partner</strong> receber o primeiro objeto. Com isso, ambos passam a armazenar uma <strong>referência</strong> um ao outro e se tornam parceiros.
+                </p>
+                <p class="junto">
+                    Podemos verificar isso utilizando o <strong>console.log</strong> da seguinte forma:
+                </p>
+                <img src="assets/imgs/erro-null.png" alt="Exemplo erro">
+
+                <p class="junto">
+                    Se fizermos dessa forma, teremos um <strong>erro</strong> em nosso código. Isso acontece porque estamos acessando a propriedade <strong>partner.name</strong>, porém, inicialmente, <strong>partner</strong> possui o valor <strong>null</strong>. Para resolver isso, primeiro precisamos chamar a <strong>função</strong> e passar os objetos como parâmetros, da seguinte forma:
+                </p>
+                <img src="assets/imgs/chamando-function.png" alt="Chamando a funcao">
+
+                <p class="junto">
+                    Podemos ir além. Além de tornar os objetos parceiros, também podemos fazer com que <strong>'Alice'</strong> adote o <strong>sobrenome</strong> de <strong>Bob</strong>. Para isso, podemos fazer da seguinte forma:
+                </p>
+                <img src="assets/imgs/atribuindo-second-value.png" alt="Atribuindo novo valor">
+
+                <p class="junto">
+                    Com isso, agora podemos observar que, em nosso <strong>console.log</strong>, <strong>'Alice'</strong> terá o sobrenome <strong>Smith</strong> em vez de <strong>Black</strong>.
+                </p>
+
+                <p class="junto">
+                    <strong>Explicação:</strong>
+                </p>
+                <p>
+                    <strong>1)</strong> Criamos uma função com dois <strong>parâmetros</strong> e passamos dois <strong>objetos</strong> como argumentos. Esses objetos são recebidos pela função por meio de <strong>referências</strong>.
+                </p>
+                <p>
+                    <strong>2)</strong> Dentro da função, alteramos as propriedades desses objetos, criando a relação entre eles.
+                </p>
+                <p>
+                    <strong>3)</strong> Fora da função, basta chamá-la e passar os objetos como parâmetros para que essas alterações sejam aplicadas.
+                </p>
+                <p>
+                    <strong>4)</strong> Como Bob possui um parceiro em <strong>.partner</strong>, podemos alterar o sobrenome desse parceiro utilizando <strong>bob.partner.surname = bob.surname;</strong>.
+                </p>
+
+                <p class="junto">
+                    <strong>O que ocorreria se passássemos outro parceiro para Bob utilizando um objeto vazio?</strong>
+                </p>
+                <img src="assets/imgs/new-value-object.png" alt="Novo Parceiro Bob">
+                <p>
+                    Ao fazermos isso, <strong>Alice</strong> voltará a possuir o <strong>sobrenome 'Black'</strong>.
+                </p>
+                <p>
+                    Isso ocorre porque, no momento em que executamos <strong>bob.partner = {}</strong>, o parceiro de <strong>Bob</strong> passa a ser o <strong>objeto vazio ({})</strong> e deixa de ser <strong>'Alice'</strong>. Assim, quando alteramos <strong>bob.partner.surname</strong>, a alteração é feita no novo objeto, e não mais em Alice.
+                </p>
+
+                <p class="junto">
+                    Porém, se utilizarmos <strong>console.log(alice.partner);</strong>, veremos que <strong>'Alice'</strong> ainda continua vinculada a <strong>'Bob'</strong>. Isso acontece porque nossa função ainda não está completamente correta. Antes de criar uma nova parceria, devemos remover a referência dos parceiros anteriores.
+                </p>
+                <p>
+                    Para isso, podemos adicionar uma <strong>condicional</strong> em nossa função:
+                </p>
+                <img src="assets/imgs/condicional.png" alt="Condicional">
+
+                <p class="separado">
+                    Quando trabalhamos com objetos, é importante lembrar que as variáveis não armazenam o objeto em si, mas sim uma <strong>referência</strong> para ele. Isso significa que <strong>person1</strong> e <strong>person2</strong> são apenas referências para os <strong>objetos</strong> que foram passados. Por esse motivo, ao alterar um objeto por meio de uma dessas referências, todas as outras referências para esse mesmo objeto também enxergarão essa alteração.
+                </p>
+                
+                <a href="index.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                    Voltar
+                </a>
+
+            </div>
+
+        </article>
+        
+        <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+            Conteudo da aula
+        </a>
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../08_tarefa_register_robot/index.html">
+            Próxima Aula - Tarefa register robot
+        </a>
+    </div>
+
+</body>
+</html>
