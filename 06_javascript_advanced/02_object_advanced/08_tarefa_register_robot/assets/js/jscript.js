@@ -15,21 +15,22 @@
  * @param {Warehouse} warehouse
  */
 
-const robot = {
-    id: 0,
-    skill: null,
-    currentWorkPlace: null,
+const robo = {
+  id: 55,
+  skill: null,
+  currentWorkPlace: null,
 };
 
-const warehouse = {
-    aiStaff: [],
-    boxes: 0,
-    currentStatus: null,
+const save = {
+  aiStaff: [],
+  boxes: 0,
+  currentStatus: 'Active',
 };
 
 function registerRobot(robot, warehouse) {
-    if(robot.id)
-
-    warehouse.aiStaff = robot.id;
-    warehouse.currentWorkPlace = robot.currentStatus;
+  warehouse.aiStaff.push(robot.id);
+  robot.currentWorkPlace = warehouse;
 }
+
+registerRobot(robo, save);
+
