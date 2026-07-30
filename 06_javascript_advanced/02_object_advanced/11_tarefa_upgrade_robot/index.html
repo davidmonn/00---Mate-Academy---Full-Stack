@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Tarefa: upgrade robot</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,8 +12,8 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
+        <a class="back" href="../10_tarefa_copy_robot/index.html">
+            Aula Anterior - Tarefa: copy robot
         </a>
     </div>
     
@@ -21,12 +21,17 @@
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">Tarefa: upgrade robot</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Nosso robô Kobi participará da competição intergaláctica e outras fábricas de robôs decidiram nos ajudar a proteger a honra da galáxia! Elas nos fornecerão seus melhores detalhes. Vamos instalar novas peças em nosso robô Kobi?
             </p>
+            <p class="separado">
+                Crie uma função <strong>upgradeRobot</strong> que receba um objeto <strong>robot</strong> e um array de objetos com peças <strong>parts</strong>. Você deve atribuí-las ao robô usando o método <strong>Object.assign()</strong>.
+            </p>
+
+            <img src="assets/imgs/ex.png" alt="Exemplo">
 
         </article>
 
@@ -41,6 +46,13 @@
                 </picture>
             </figure>
 
+            <p>
+                <strong>Conclusão:</strong> Inicialmente, a linha <span>const robotModif = Object.assign(robot, ...parts);</span> foi escrita de forma incorreta, pois havia um pequeno detalhe: foi utilizado <strong>{}</strong> como primeiro argumento, ficando <span>const robotModif = Object.assign({}, robot, ...parts);</span>. Quando passamos um objeto vazio (<strong>{}</strong>) como primeiro argumento, o <code>Object.assign()</code> cria um novo objeto com as propriedades copiadas e aplica as modificações nele, preservando o objeto original. Neste exercício, porém, era necessário modificar o próprio objeto <code>robot</code>, por isso o primeiro argumento deve ser <code>robot</code>, e não <strong>{}</strong>. 
+            </p>
+            <p>
+                O operador <strong>spread</strong> (<code>...parts</code>) foi utilizado para espalhar os objetos contidos no array <code>parts</code>, fazendo com que cada objeto fosse passado individualmente como argumento para o <code>Object.assign()</code>. 
+            </p>
+
             <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
                 Conteudo da aula
             </a>
@@ -52,8 +64,8 @@
         </main>
         
     <div class="next">
-        <a class="next" href="../">
-            Próxima Tarefa: 
+        <a class="next" href="../12_inverse_robot_new/index.html">
+            Próxima Tarefa: Inverse Robot New
         </a>
     </div>
 
