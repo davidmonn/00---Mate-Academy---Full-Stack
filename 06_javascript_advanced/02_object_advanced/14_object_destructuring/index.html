@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Destructuring</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../13_generate_chart/index.html">
+            Aula Anterior - Tarefa: generate chart
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Object Destructuring</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Agora iremos dar um olhada na <strong>funcao</strong> de <strong>clonagem</strong> que vimos anteriormente.
+            </p>
+
+        </article>
+
+        <article class="conc">
+
+    <h3 class="junto">Explicacao</h3>
+
+    <p>
+        Em nossa <strong>função</strong>, iremos receber um <strong>objeto</strong> como <strong>parâmetro</strong>.
+        Podemos criar um novo objeto e copiar todas as <strong>propriedades</strong> do objeto recebido utilizando o
+        <strong>spread operator (...)</strong>.
+        Ex:
+    </p>
+
+    <pre>
+<strong>
+function clone(source) {
+    return {
+        ...source,
+        name: 'Bob',
+        surname: 'Smith',
+        partner: null,
+    }
+}
+</strong>
+    </pre>
+
+    <img src="assets/imgs/exemplo-01.png" alt="Exemplo 01">
+
+    <p class="junto">
+        Podemos adicionar novas propriedades tanto antes quanto depois das propriedades copiadas.
+    </p>
+
+    <p>
+        Também podemos inserir propriedades de outros objetos utilizando o spread operator:
+    </p>
+
+    <pre>
+<strong>
+function clone(source) {
+    return {
+        ...source,
+        name: 'Bob',
+        surname: 'Smith',
+        partner: null,
+        <span>
+        ...{ partner: 1, trabalha: 'Sim' }
+        </span>
+    }
+}
+</strong>
+    </pre>
+
+    <img src="assets/imgs/exemplo-02.png" alt="Exemplo 02">
+
+    <p class="junto">
+        Como a cópia é feita seguindo a ordem em que escrevemos as propriedades, valores adicionados depois podem
+        substituir valores anteriores com o mesmo nome.
+        Nesse caso, <strong>partner deixará de ser null e passará a ser 1</strong>.
+    </p>
+
+    <p class="junto">
+        Caso não precisemos copiar todas as <strong>propriedades</strong> do <strong>objeto</strong>, mas apenas algumas,
+        podemos selecionar manualmente quais queremos:
+    </p>
+
+    <pre>
+<strong>
+function clone(source) {
+    return {
+        name: source.name,
+        surname: source.surname,
+    }
+}
+</strong>
+    </pre>
+
+    <img src="assets/imgs/substituindo-propriedades.png" alt="Substituindo Propriedades">
+
+    <p class="junto">
+        Porém, dessa forma precisamos acessar cada propriedade manualmente.
+        Para facilitar esse processo, podemos utilizar a <strong>desestruturação (destructuring)</strong>.
+    </p>
+
+    <pre>
+<strong>
+function clone(source) {
+    const { name: firstName, surname, age = 10 } = source;
+
+    return {
+        name: firstName,
+        surname,
+        age,
+    };
+}
+</strong>
+    </pre>
+
+    <img src="assets/imgs/atribuindo.png" alt="Atribuindo">
+
+    <p>
+        A <strong>desestruturação</strong> permite extrair propriedades individuais de um <strong>objeto</strong>
+        e armazená-las em variáveis.
+        
+        Podemos manter o mesmo nome da propriedade (<span>surname</span>), renomear uma propriedade
+        (<span>name: firstName</span>) ou definir um valor padrão caso ela não exista ou seja <span>undefined</span>
+        (<span>age = 10</span>).
+    </p>
+
+    <p>
+        Também podemos utilizar a desestruturação diretamente nos parâmetros da função:
+    </p>
+
+    <pre>
+<strong>
+function clone({ name: firstName, surname, age = 10 }) {
+    return {
+        name: firstName,
+        surname,
+        age,
+    };
+}
+</strong>
+    </pre> <br>
+
+    <img src="assets/imgs/exemplo-3.png" alt="Exemplo 03"> <br>
+
+    <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+        Conteudo da aula
+    </a>
+
+</article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../15_function_is_an_object/index.html">
+            Próxima Aula - Function is an Object
+        </a>
+    </div>
+
+</body>
+</html>
