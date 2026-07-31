@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Tarefa: generate chart</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,7 @@
 
     <div class="back">
         <a class="back" href="../">
-            Aula Anterior - 
+            Aula Anterior - Tarefa: Inverse Robot New
         </a>
     </div>
     
@@ -21,12 +21,46 @@
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">Tarefa: generate chart</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                No escritório central da Fábrica de Robôs Mate, penduraram um plasma para transmitir a atuação da empresa. Para começar, decidimos imprimir ali um gráfico de pizza com a quantidade de robôs de vários tipos sendo vendidos.
             </p>
+
+            <p class="separado">
+                O programa que irá desenhar o diagrama recebe os dados na forma de um objeto, no qual a chave é uma fatia do diagrama e o valor é o seu tamanho em graus.
+            </p>
+
+            <p>
+                Crie uma função <strong>generateChart</strong>, que pega o objeto de estatísticas de venda de robôs (onde a chave é um tipo de robô e valor é uma quantidade de robôs vendidos) e retorna um objeto com as mesmas chaves, mas os valores são graus para um gráfico de pizza.
+            </p>
+
+            <p class="separado">
+                Arredonde os graus para o inteiro mais próximo.
+            </p>
+
+            <p>
+                <strong>Exemplo:</strong>
+            </p>
+
+            <ul>
+                <li>
+                    <span>
+                        generateChart({ cleaner: 2, driver: 8 }) === { cleaner: 72, driver: 288 }
+                    </span>
+                </li>
+                <li class="separado">
+                    <span>
+                        generateChart({ cleaner: 2, driver: 8, washer: 14 }) === { cleaner: 30, driver: 120, washer: 210 }
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        generateChart({ cleaner: 1 }) === { cleaner: 360 }
+                    </span>
+                </li>
+            </ul>
 
         </article>
 

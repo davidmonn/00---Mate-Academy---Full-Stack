@@ -64,7 +64,7 @@ console.log(testar);
 
 // #endregion
 
-
+/*
 const user = {
     David: 'name',
     Monteiro: 'sobrenome',
@@ -93,7 +93,7 @@ function invertUsers(users) {
 
 const testar = invertUsers(user);
 console.log(testar);
-
+*/
 
 
 // #region Teste
@@ -127,3 +127,35 @@ const newT = invertInfo(desktop);
 console.log(newT);
 */
 // #endregion
+
+// #region Teste
+const user = {
+    Cicera: 'nome',
+    Monteiro: 'sobrenome',
+    43: 'idade',
+};
+
+function invertKey(users) {
+    const clone = Object.assign({}, users);
+    const verif = [];
+    const newInfos = {};
+
+    for (const key in clone) {
+        const saveKey = String(clone[key]);
+
+        if (verif.includes(saveKey)) {
+            return null;
+        }
+
+        verif.push(saveKey);
+        newInfos[key] = saveKey;
+    }
+    return newInfos;
+}
+
+const newTest = invertKey(user);
+console.log(newTest);
+
+
+// #endregion Teste
+
