@@ -1,20 +1,3 @@
-'use strict';
-
-/**
- * @typedef {Object} Robot
- * @property {number} id
- * @property {string} skill
- * @property {Warehouse} currentWorkPlace
- *
- * @typedef {Object} Warehouse
- * @property {number[]} aiStaff
- * @property {number} boxes
- * @property {string} currentStatus
- *
- * @param {Robot} robot
- * @param {Warehouse} warehouse
- */
-
 const robo = {
   id: 55,
   skill: null,
@@ -32,5 +15,6 @@ function registerRobot(robot, warehouse) {
   robot.currentWorkPlace = warehouse;
 }
 
-registerRobot(robo, save);
-
+const result = registerRobot(robo, save);
+console.log(robo);
+console.log(save);
