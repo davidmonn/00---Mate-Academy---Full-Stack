@@ -170,9 +170,16 @@ pre {
 
 img {
     border-radius: 5px;
+    max-width: 100%;
 }
 
 span {
     font-weight: bolder;
     color: rgb(219, 0, 0);
+}
+
+.block {
+    display: block;
+    margin: 0;
+    width: fit-content;
 }
