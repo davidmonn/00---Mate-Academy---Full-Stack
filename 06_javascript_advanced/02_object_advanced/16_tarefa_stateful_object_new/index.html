@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefa: Stateful Object New</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../15_function_is_an_object/index.html">
+            Aula Anterior - Function is an Object
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Tarefa: Stateful Object New</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Implemente uma função <strong>transformState</strong> que aceite um objeto <strong>state</strong> e um array <strong>actions</strong> e modifique o <strong>state</strong> com base nas <strong>actions</strong> (você não precisa retornar nada).
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Resultado</h3>
+
+            <h3 class="junto">JS:</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/result.png" alt="Resultado">
+                </picture>
+            </figure>
+
+            <h3 class="junto">Importante</h3>
+            <p>
+                Quando temos um <strong>array</strong> de <strong>objetos</strong>, usamos o <strong>for...of</strong> para percorrer os valores do array. Como cada valor é um objeto, podemos acessar suas propriedades. Se usássemos <strong>for...in</strong> no array, obteríamos apenas os índices (<code>0</code>, <code>1</code>, <code>2</code>...), e não os objetos.
+            </p>
+
+            <h3 class="junto">Rascunho</h3>
+            <p>
+                eu achava que aqui estavamos criando o objeto: for (const action of actions) Porem aqui estamos passando basicamente fazendo uma forma mais simples para conseguir acessar os itens dentro do array
+            </p>
+
+            <p>
+                depois que conseguimos acessar esses valores de forma mais simples criamos um destruturing de action ou seja de cada valor pego do array ou acessado
+            </p>
+
+            <p class="separado">
+                <span>Resumindo:</span> primeiro acessamos os itens do array com for of depois com o destruturing podemos acessar seus valores de forma mais facil em forma de variavel.
+            </p>
+
+            <p>
+                <span>Resumo GPT:</span> Primeiro acessamos os objetos dentro do array usando for...of. Depois usamos o destructuring para extrair os valores dessas propriedades e trabalhar com eles através de variáveis mais simples.
+            </p>
+
+            <p class="separado">
+                O for...of e o destructuring são apenas ferramentas para chegar até os dados. A alteração acontece somente quando executamos algo que modifica o objeto, como Object.assign() ou delete.
+            </p>
+
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../">
+            Próxima Tarefa: 
+        </a>
+    </div>
+
+</body>
+</html>
