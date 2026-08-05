@@ -1,33 +1,32 @@
 /* #region NORMALIZE */
-
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
 body {
-    background-color: skyblue;
-    text-align: center;
-    font-size: 1.5rem;
+  background-color: skyblue;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 main {
-    width: 920px;
-    background-color: azure;
-    border-radius: 15px;
-    margin: 25px auto;
-    padding: 15px;
+  width: 920px;
+  background-color: azure;
+  border-radius: 15px;
+  margin: 25px auto;
+  padding: 15px;
 }
 
-form input{
-    font-size: 1.5rem;
+form input {
+  font-size: 1.5rem;
 }
 
 h1 {
-    font-size: 7rem;
+  font-size: 7rem;
 }
-
-
 
 /* #endregion */
 
+/*# sourceMappingURL=aulaStyle.css.map */

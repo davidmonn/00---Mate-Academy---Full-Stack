@@ -1,70 +1,225 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Methods</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
-        </a>
+      <a
+        class="back"
+        href="../../02_object_advanced/16_tarefa_stateful_object_new/index.html"
+      >
+        <strong
+          >Modulo Anterior: Object Advanced - Tarefa: Stateful Object
+          New</strong
+        >
+      </a>
     </div>
-    
+
     <main>
+      <article id="intro">
+        <h1 id="title">Object Methods</h1>
 
-        <article id="intro">
+        <h3 class="intro">Intro</h3>
+        <p>
+          Aqui iremos ver sobre <strong>metodos</strong> de
+          <strong>objetos</strong>.
+        </p>
+      </article>
 
-            <h1 id="title">Title</h1>
+      <article class="conteudo">
+        <h3 class="cont-title">Codigo de Exemplo:</h3>
 
-            <h3 class="intro">Intro</h3>
-            <p>
-                
-            </p>
+        <p class="junto">
+          <strong>JS:</strong>
+        </p>
 
-        </article>
+        <figure>
+          <picture>
+            <img src="assets/imgs/js.png" alt="JS" />
+          </picture>
+        </figure>
+      </article>
 
-        <article class="conteudo">
+      <article class="conc">
+        <div class="conteudo">
+          <h3 class="junto">Explicacao:</h3>
+          <p>
+            Atualmente em nosso <strong>código</strong>, podemos observar que
+            temos uma <strong>função</strong> que recebe um
+            <strong>objeto</strong> como parâmetro.
+          </p>
 
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
+          <img src="assets/imgs/explicacao.png" alt="Explicacao" />
 
-            <p class="junto">
-                <strong>JS:</strong>
-            </p>
+          <pre>
+                <span>
+const bob = {
+    firstName: 'Bob',
+    lastName: 'Smith',
+    age: 39,
+};
 
-            <figure>
-                <picture>
-                    <img src="assets/imgs/js.png" alt="JS">
-                </picture>
-            </figure>
+printInfo(bob);
 
-        </article>
+function printInfo(user) {
+    const {firstName, lastName, age = 0} = user;
+    const message = `!!!${firstName} ${lastName} is ${age}!!!`;
 
-        <article class="conc">
+    console.log(message);
+}
+                </span>
+            </pre>
 
-            
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
+          <p class="junto">
+            Porém, se quisermos, por exemplo, passar um
+            <strong>número</strong> como argumento, nosso código irá funcionar,
+            porém de forma incorreta, pois a função espera receber um
+            <strong>objeto</strong>.
+          </p>
 
-        </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
-    <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+          <p>
+            Isso é algo que podemos evitar adicionando a
+            <strong>função</strong> como um <strong>método</strong> do próprio
+            <strong>objeto</strong>.
+          </p>
+        </div>
+
+        <div class="conteudo">
+          <h3 class="junto">Adicionando um Método a um Objeto</h3>
+
+          <p>
+            Para adicionarmos uma <strong>função</strong> dentro de um
+            <strong>objeto</strong>, criamos uma nova
+            <strong>propriedade</strong> e atribuímos uma
+            <strong>função</strong> a ela. Quando uma função pertence a um
+            objeto, ela é chamada de <strong>método</strong>.
+          </p>
+
+          <p>
+            Dessa forma, ao invés de chamarmos uma função separadamente e
+            passarmos o objeto como <strong>argumento</strong>, podemos acessar
+            o método através do próprio <strong>objeto</strong>, utilizando o
+            nome da propriedade seguido de <strong>()</strong>.
+          </p>
+
+          <p>
+            Os valores necessários ainda precisam ser enviados caso o método
+            possua <strong>parâmetros</strong>. Caso um parâmetro esperado não
+            receba nenhum valor, ele terá o valor <strong>undefined</strong>.
+          </p>
+
+          <p class="junto">
+            Para acessarmos o próprio <strong>objeto</strong> dentro de um
+            método, podemos utilizar a <strong>palavra-chave</strong>
+            <span>this</span>. Dessa forma, conseguimos acessar suas
+            propriedades sem precisar receber o objeto como parâmetro.
+          </p>
+
+          <p class="junto">
+            Quando adicionamos <strong>métodos</strong> a um
+            <strong>objeto</strong>, estamos definindo quais
+            <strong>capacidades</strong> esse objeto possui. Quando escrevemos
+            uma <strong>função</strong> separadamente, ela não deixa claro quais
+            objetos podem utilizá-la.
+          </p>
+
+          <p>
+            Por outro lado, uma <strong>função</strong> separada pode ser mais
+            flexível, pois ao receber <strong>parâmetros</strong>, podemos
+            executar as mesmas ações com objetos diferentes.
+          </p>
+
+          <p>
+            Ambos os métodos podem existir: podemos utilizar uma função
+            separadamente ou adicioná-la como um <strong>método</strong> de um
+            objeto.
+          </p>
+
+          <h3 class="junto">Exemplo:</h3>
+
+          <p>
+            Se criarmos diferentes <strong>objetos</strong> com o mesmo método,
+            podemos ter resultados diferentes utilizando a mesma função, pois
+            cada objeto terá seus próprios valores.
+          </p>
+
+          <pre>
+                <span>
+const bob = {
+    firstName: 'Bob',
+    lastName: 'Smith',
+    age: 39,
+
+    print: printInfo,
+};
+
+const david = {
+    firstName: 'David',
+    lastName: 'Monteiro',
+    age: 29,
+
+    print: printInfo,
+};
+
+
+function printInfo() {
+    const {firstName, lastName, age = 0} = this;
+    const message = `!!!${firstName} ${lastName} is ${age}!!!`;
+    
+    console.log(message);
+}
+
+bob.print();
+david.print();
+                </span>
+            </pre>
+
+          <p class="junto">
+            <span>Resumo:</span> Podemos criar um <strong>método</strong> dentro
+            de um <strong>objeto</strong>, onde ele terá uma ação controlada
+            para realizar algo que desejamos. Essa mesma função pode ser
+            compartilhada entre diferentes objetos.
+          </p>
+          <p>
+            Ao invés de criar uma função separada que recebe um objeto como
+            <strong>parâmetro</strong>, podemos utilizar a palavra-chave
+            <span>this</span> dentro do método. Dessa forma, quando chamamos
+            esse método através de um objeto específico, o <span>this</span> irá
+            se referir ao objeto que está executando a ação, permitindo que o
+            mesmo método seja utilizado por diferentes objetos com seus próprios
+            valores.
+          </p>
+        </div>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteudo da aula
         </a>
-    </div>
+      </article>
 
-</body>
+      <!-- <h1>Testes JS se necessário</h1> -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../"> Próxima Aula - </a>
+    </div>
+  </body>
 </html>
