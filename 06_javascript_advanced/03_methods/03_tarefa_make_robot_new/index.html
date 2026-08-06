@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Tarefa: Make Robot New</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,8 +12,8 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
+        <a class="back" href="../02_computed_properties/index.html">
+            Aula Anterior - Computed Properties
         </a>
     </div>
     
@@ -21,12 +21,39 @@
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">Tarefa: Make Robot New</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                A Fábrica de Robôs Mate está convidando você para se juntar à sua equipe técnica para programar robôs juntos.
             </p>
+            <p class="separado">
+                Como tarefa de teste, crie uma função <strong>makeRobot</strong> que receba um <strong>name</strong> (string), <strong>wheels</strong> (número) e <strong>version</strong> (número), e retorna um objeto robô com os seguintes recursos:
+            </p>
+
+            <ul>
+                <li>
+                    Um getter <strong>info</strong> que retorna informações do robô no seguinte formato: <strong>'name: %name%, chip version: %version%, wheels: %wheels%'</strong>.
+                </li>
+                <li class="separado">
+                    As coordenadas devem ser armazenadas como <strong>x</strong> e <strong>y</strong> no objeto <strong>coords</strong>, com padrão de <strong>0</strong> para ambos.
+                </li>
+                <li>
+                    Um getter <strong>location</strong> que retorna uma string com o nome e coordenadas do robô: <strong>'%name%: x=14, y=21'</strong>.
+                </li>
+                <li class="separado">
+                    Métodos de movimento: <strong>goForward</strong> <strong>(y += 1)</strong>, <strong>goBack</strong>, <strong>goRight</strong> e <strong>goLeft</strong>.
+                </li>
+                <li>
+                    Cada método deve aceitar um parâmetro inteiro positivo <strong>step</strong> (padrão <strong>1</strong>).
+                </li>
+                <li class="separado">
+                    Os métodos de movimento devem ser encadeados como em <strong>robot.goForward().goLeft()</strong>. (Basta <strong>return this</strong>).
+                </li>
+                <li>
+                    O método <strong>evacuate</strong> deve mover o robô para <strong>x: 1400</strong>, <strong>y: 500</strong>.
+                </li>
+            </ul>
 
         </article>
 
@@ -52,8 +79,8 @@
         </main>
         
     <div class="next">
-        <a class="next" href="../">
-            Próxima Tarefa: 
+        <a class="next" href="../../04_array_methods/01_how-to_create_an_array/index.html">
+            <strong>Próximo Modulo: Array Methods - Aula: How to create an array</strong>
         </a>
     </div>
 
