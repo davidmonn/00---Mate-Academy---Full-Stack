@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computed Properties</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../01_object_methods/index.html">
+            Aula Anterior - Object Methods 
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Computed Properties</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Agora iremos ver as <strong>propriedades computadas de um objeto</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>JS:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/js.png" alt="JS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <div class="conteudo">
+
+                <h3 class="junto">Exemplo:</h3>
+
+                <p>
+                    Para iniciar, temos um <strong>objeto</strong> chamado <strong>admin</strong>. Nele existem algumas propriedades:
+                </p>
+
+                <img src="assets/imgs/exemplo-admin.png" alt="Exemplo admin">
+
+                <p class="junto">
+                    Além disso, também temos uma <strong>função congratulate()</strong>, que recebe um <strong>parâmetro</strong> e imprime uma saudação:
+                </p>
+
+                <img src="assets/imgs/exemplo-congratulate.png" alt="Exemplo congratulate">
+
+                <p class="junto">
+                    Podemos observar que chamamos nossa <strong>função</strong> passando o objeto <strong>admin</strong> como argumento. Assim, será exibida a mensagem definida na função.
+                </p>
+
+                <pre>
+                    <span>
+'use strict';
+
+const admin = {
+    fullName: 'David Monteiro',
+}
+
+congratulate(admin);
+
+admin.fullName = 'Suzana Santos';
+
+congratulate(admin);
+
+
+function congratulate(user) {
+    console.log(`Hi ${user.fullName}`);
+}
+                    </span>
+                </pre>
+
+                <p class="junto">
+                    Podemos observar que alteramos o valor da propriedade <span>fullName</span> do objeto.
+                </p>
+
+                <p>
+                    Quando chamamos novamente <strong>congratulate(admin)</strong>, a primeira chamada exibirá <strong>'David Monteiro'</strong>. Já a segunda exibirá <strong>'Suzana Santos'</strong>, pois a propriedade foi alterada antes da segunda chamada.
+                </p>
+
+                <p class="junto">
+                    Agora suponha que, em algum momento, desejamos obter apenas o primeiro nome ou o sobrenome separadamente. Para isso, adicionamos as propriedades <span>firstName</span> e <span>lastName</span>, ficando assim:
+                </p>
+
+                <pre>
+                    <span>
+const admin = {
+    fullName: 'David Monteiro',
+    firstName: 'David',
+    lastName: 'Monteiro',
+}
+                    </span>
+                </pre>
+
+                <p>
+                    Depois disso, ao alterarmos <strong>fullName</strong>, também precisamos atualizar <span>firstName</span> e <span>lastName</span>, caso contrário os valores ficarão diferentes.
+                </p>
+
+                <pre>
+                    <span>
+admin.fullName = 'Suzana Santos';
+admin.firstName = 'Suzana';
+admin.lastName = 'Santos';
+                    </span>
+                </pre>
+
+                <p>
+                    Para o código continuar consistente, sempre que alterarmos <strong>fullName</strong>, também precisaremos alterar <span>firstName</span> e <span>lastName</span>. Isso gera uma <strong>duplicação de dados</strong>.
+                </p>
+
+                <p>
+                    Como já conhecemos <strong>firstName</strong> e <strong>lastName</strong>, podemos montar o <strong>fullName</strong> a partir deles, evitando essa duplicação.
+                </p>
+
+            </div>
+
+            <div class="conteudo">
+
+                <h3 class="junto">Exemplo 01: Opção 1</h3>
+
+                <p>
+                    A primeira opção é substituir a propriedade <strong>fullName</strong> por um método chamado <strong>getFullName()</strong>.
+                </p>
+
+                <pre>
+                    <span>
+const admin = {
+    fullName: 'David Monteiro',
+    firstName: 'David',
+    lastName: 'Monteiro',
+
+    getFullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+                    </span>
+                </pre>
+
+                <p>
+                    Com isso, em vez de utilizar a propriedade <strong>fullName</strong>, passamos a utilizar o método <strong>getFullName()</strong>.
+                </p>
+
+                <img src="assets/imgs/exemplo-getFullName.png" alt="Exemplo getFullName">
+
+                <p class="junto">
+                    O problema é que esse objeto pode estar sendo utilizado em vários lugares do código. Alterar todas essas chamadas pode dar bastante trabalho.
+                </p>
+
+                <p>
+                    O ideal seria manter o código externo funcionando da mesma forma. Para isso, podemos utilizar um <strong>getter (get)</strong>, que é uma <strong>propriedade de acesso</strong>.
+                </p>
+
+                <p>
+                    Basta adicionar a palavra-chave <span>get</span> antes do nome da propriedade e criar um método que retorne o valor desejado.
+                </p>
+
+                <p>
+                    <span>Importante:</span> um <strong>getter</strong> não recebe parâmetros. Ele é executado sempre que acessamos a propriedade <strong>fullName</strong>.
+                </p>
+
+                <p class="separado">
+                    Agora o código fica assim:
+                </p>
+
+                <pre>
+            <strong>
+const admin = {
+                    <span>
+    get fullName() {
+        return `${this.firstName} ${this.lastName}`;
+    },
+                    </span>
+
+    firstName: 'David',
+    lastName: 'Monteiro',
+
+                    <span>
+    getFullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+                    </span>
+}
+
+congratulate(admin);
+
+// admin.fullName = 'Suzana Santos';
+admin.firstName = 'Suzana';
+admin.lastName = 'Santos';
+
+congratulate(admin);
+
+function congratulate(user) {
+    console.log(`Hi ${user.fullName}`);
+}
+
+console.log(admin.firstName);
+            </strong>
+                </pre>
+
+                <p class="junto">
+                    Mas como podemos voltar a utilizar uma atribuição como:
+                    <span>// admin.fullName = 'Suzana Santos';</span>?
+                </p>
+
+                <p>
+                    Para isso, criamos um <strong>setter (set)</strong> com o mesmo nome da propriedade. Diferente do <strong>get</strong>, ele recebe um parâmetro contendo o valor atribuído, neste caso <span>'Suzana Santos'</span>.
+                </p>
+
+                <pre>
+                    <span>
+const admin = {
+    get fullName() {
+        return `${this.firstName} ${this.lastName}`;
+    },
+
+    <span>
+    set fullName(value) {
+        const parts = value.split(' ');
+
+        // Separamos a string em um array usando o espaço.
+        this.firstName = parts[0];
+        this.lastName = parts[1];
+    },
+    </span>
+
+    firstName: 'David',
+    lastName: 'Monteiro',
+
+    getFullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+                    </span>
+                </pre>
+
+                <p>
+                    Quando um objeto possui um <strong>setter</strong>, uma atribuição como <span>admin.fullName = 'Suzana Santos'</span> não grava esse valor diretamente. Em vez disso, o <strong>set</strong> é executado e decide o que fazer com o valor recebido, como armazená-lo ou distribuí-lo entre outras propriedades.
+                </p>
+
+                <h3 class="junto">Resumo:</h3>
+                <p>
+                    Quando criamos um objeto, podemos utilizar métodos para obter ou alterar informações. Porém, se o código já utiliza propriedades (como <span>admin.fullName</span>) e não queremos alterar todo o restante do projeto, podemos utilizar get e set. Assim, mantemos a mesma forma de uso da propriedade, mas podemos controlar como o valor é obtido (<span>get</span>) e como ele é atualizado (<span>set</span>).
+                </p>
+
+            </div>
+
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteúdo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../03_tarefa_make_robot_new/index.html">
+            Próxima Aula - Tarefa: Make Robot New
+        </a>
+    </div>
+
+</body>
+</html>
