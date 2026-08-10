@@ -1,0 +1,20 @@
+@use './blocs/var.scss' as variables;
+@use './utils/mixins.scss';
+@use './blocs/header.scss';
+@use './blocs/main.scss';
+@use './blocs/nav.scss';
+@use './blocs/about.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.control {
+  width: 100%;
+  background-color: variables.$background-main;
+}

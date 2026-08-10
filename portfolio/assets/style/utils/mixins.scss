@@ -1,0 +1,17 @@
+@mixin mobile-response() {
+    @media (min-width: 320px) {
+        @content;
+    }
+}
+
+@mixin tablet-response() {
+    @media (min-width: 760px) {
+        @content;
+    }
+}
+
+@mixin desktop-response() {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}

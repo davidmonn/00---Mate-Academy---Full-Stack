@@ -1,0 +1,100 @@
+@use './var.scss' as variables;
+@use '../utils/mixins.scss' as mixins;
+
+.section--about {
+    
+
+    @include mixins.tablet-response {
+        padding: 15px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mixins.desktop-response {
+        
+    }
+}
+
+.section__image {
+    height: 320px;
+    margin: auto;
+    border-radius: 30%;
+
+    @include mixins.tablet-response {
+        padding: 10px;
+        width: 500px;
+    }
+
+    @include mixins.desktop-response {
+        height: 700px;
+        width: 700px;
+    }
+}
+
+.section__description {
+    padding-inline: variables.$padding-short;
+
+    @include mixins.tablet-response {
+        
+    }
+
+    @include mixins.tablet-response {
+        padding-inline: variables.$padding-inline-sec-intro;
+    }
+}
+
+.section__title-about {
+    padding-block: variables.$padding-short;
+}
+
+.section__subtitle-about {
+    color: variables.$titles-brow;
+    margin-bottom: variables.$margin-short;
+}
+
+
+
+
+
+
+.section__quality-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-top: 100px;
+    
+    // margin: 15px;
+
+    @include mixins.tablet-response {
+        gap: 25px;
+    }
+}
+
+.section__quality-item{
+    display: flex;
+    
+
+    @include mixins.tablet-response {
+        align-items: center;
+        font-size: 22px;
+        gap: 10px;
+        height: 60px;
+    }
+}
+
+.section__quality-icon {
+    width: 25px;
+    height: 25px;
+
+    @include mixins.tablet-response {
+        width: 60px;
+        height: 60px;
+    }
+
+    @include mixins.desktop-response {
+        width: 60px;
+        height: 60px;
+    }
+}

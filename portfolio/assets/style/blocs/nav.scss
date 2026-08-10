@@ -1,0 +1,193 @@
+@use './var.scss' as variables;
+@use '../utils/mixins.scss' as mixins;
+
+.header {
+
+    &__menu-icon {
+        display: flex;
+
+        width: variables.$padding-mobile-icon-width;
+
+        padding: variables.$padding-mobile-icon;
+        
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer;
+
+        background-color: variables.$ornament;
+        border-radius: 5px;
+        transform: scale(1);
+        transition: .3s linear;
+
+        &:hover {
+            transform: scale(1.10);
+        }
+
+        @include mixins.tablet-response {
+            width: 220px;
+
+            padding: variables.$padding-mobile-icon;
+        }
+
+        @include mixins.desktop-response {
+            display: none;
+        }
+
+    }
+
+    &__menu-close {
+        box-sizing: border-box;
+        display: none;
+
+        margin-top: 15px;
+
+        border-radius: 5px;
+
+        font-weight: bolder;
+        font-size: 16px;
+
+        align-items: center;
+        justify-content: center;
+
+        border: 0;
+
+        cursor: pointer;
+
+        transform: scale(1);
+        transition: .3s linear;
+
+        &:hover {
+            box-shadow: 3px 2px 2px;
+            transform: scale(1.15);
+            color: variables.$ornament;
+        }
+        
+    }
+
+    &__menu {
+        display: none;
+
+            @include mixins.desktop-response {
+            display: flex;
+        }
+
+    }
+
+    .header__logo-menu {
+        display: none;
+    }
+
+    &__menu--active {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background-color: #F7F1E8;
+        width: 100%;
+        height: 100%;
+
+        .header__logo--active {
+            display: block;
+            margin-top: variables.$padding-mobile;
+
+            width: variables.$logo-mobile-width;
+            height: variables.$logo-mobile-height;
+
+            background-image: url(../imgs/logo.png);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .header__menu-close {
+            display: flex;
+
+            width: variables.$padding-mobile-icon-width;
+            padding: variables.$padding-mobile-icon;
+            
+            margin-inline: auto;
+
+            height: 32px;
+
+            align-items: center;
+            justify-content: center;
+
+            color: #F7F1E8;
+            background-color: variables.$ornament;
+
+                @include mixins.tablet-response {
+                    width: 220px;
+                    margin-top: variables.$logo-mobile-height + variables.$gap-mobile + variables.$padding-mobile + variables.$padding-mobile;
+                    padding: variables.$padding-mobile-icon;
+                }
+        }
+    }
+
+    &__list {
+        display: flex;
+    
+        flex-direction: column;
+
+        align-items: center;
+        
+        margin-top: 30px;
+        gap: 15px;
+
+        list-style-type: none;
+
+            @include mixins.desktop-response() {
+                gap: 15px;
+                flex-direction: row;
+            }
+    }
+
+    &__item {
+        display: flex;
+    }
+
+    &__link {
+        display: block;
+        margin: 5px;
+
+        color: #000;
+
+        
+        
+        text-decoration: none;
+
+        font-weight: bolder;
+
+        transition: color .5s;
+
+            &:hover {
+                color: variables.$ornament;
+            }
+
+            &::after {
+                content: '';
+
+                display: block;
+
+                height: 5px;
+                border-bottom: 2px solid variables.$ornament;
+
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform .5s ease;
+
+                opacity: 0;
+            }
+
+            &:hover::after {
+                transform: scaleX(1);
+                opacity: 1;
+            }
+
+        @include mixins.desktop-response() {
+            padding: 10px;
+            margin-inline: 5px;
+        }
+
+    }
+
+}

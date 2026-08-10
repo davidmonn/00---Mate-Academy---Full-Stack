@@ -1,0 +1,128 @@
+@use './var.scss' as variables;
+@use '../utils/mixins.scss' as mixins;
+
+.main {
+    height: 100%;
+    width: 100%;
+    // background-color: variables.$background-main;
+    background-color: #f0e5db;
+}
+
+.section--intro {
+    padding-inline: variables.$padding-short;
+
+    @include mixins.tablet-response {
+        display: block;
+        background-image: url(../imgs/image.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+    }
+    
+    @include mixins.desktop-response {
+        min-height: 1380px;
+        padding-top: 60px;
+        padding-inline: variables.$padding-inline-sec-intro;
+    }
+}
+
+.section__image-mob {
+    display: block;
+    height: auto;
+    width: 320px;
+
+    @include mixins.tablet-response {
+        display: none;
+    }
+
+    @include mixins.tablet-response {
+        display: none;
+    }
+}
+
+.title {
+    color: variables.$ornament;
+}
+
+.section__title-intro {
+    font-size: 18px;
+    font-weight: normal;
+    margin-block: variables.$margin-short;
+
+    @include mixins.tablet-response {
+        margin-bottom: variables.$margin-short;
+
+        font-size: 22px;
+        color: variables.$ornament;
+    }
+
+}
+
+.section__subtitle-intro {
+    color: variables.$titles-brow;
+    margin-bottom: variables.$margin-short;
+
+    @include mixins.tablet-response {
+        
+    }
+    
+    @include mixins.desktop-response {
+        font-size: 32px;
+        font-weight: bolder;
+
+        width: variables.$width-main-intro-text;
+
+        margin-bottom: variables.$margin-short;
+    }
+}
+
+.section__text {
+
+    @include mixins.desktop-response {
+        width: variables.$width-main-intro-text;
+        font-size: 19px;
+        margin-bottom: 20px;
+    }
+}
+
+.section__button-container {
+    display: flex;
+    justify-content: center;
+
+    margin: variables.$margin-short auto;
+    width: 260px;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: green;
+
+    @include mixins.desktop-response {
+        width: variables.$width-main-intro-text;
+        margin: 0;
+    }
+    
+}
+
+.section__button-link {
+    display: flex;
+    gap: 15px;
+    
+    color: #fff;
+    line-height: 22px;
+
+    text-decoration: none;
+    font-weight: bolder;
+
+    @include mixins.desktop-response {
+
+        
+
+        
+    }
+}
+
+.section__button-icon {
+    display: flex;
+    height: 22px;
+    width: 22px;
+}
+
