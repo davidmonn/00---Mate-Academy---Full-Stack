@@ -2,14 +2,20 @@
 @use '../utils/mixins.scss' as mixins;
 
 .section--about {
+    padding-block: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     
 
     @include mixins.tablet-response {
-        padding: 15px;
         display: grid;
+        grid-template-columns: repeat(2, 1fr);
         justify-content: center;
         align-items: center;
-        grid-template-columns: repeat(2, 1fr);
+
+        padding: 15px;
     }
 
     @include mixins.desktop-response {
@@ -19,7 +25,6 @@
 
 .section__image {
     height: 320px;
-    margin: auto;
     border-radius: 30%;
 
     @include mixins.tablet-response {
@@ -41,17 +46,46 @@
     }
 
     @include mixins.tablet-response {
+        font-size: 22px;
         padding-inline: variables.$padding-inline-sec-intro;
     }
 }
 
 .section__title-about {
-    padding-block: variables.$padding-short;
+    margin-block: variables.$margin-short;
+    
+    @include mixins.tablet-response {
+        font-size: 26px;
+        font-weight: normal;
+        padding-block: variables.$padding-short;
+    }
 }
 
 .section__subtitle-about {
     color: variables.$titles-brow;
     margin-bottom: variables.$margin-short;
+
+    @include mixins.tablet-response {
+        margin-bottom: variables.$margin-short;
+        width: 460px;
+    }
+
+    @include mixins.desktop-response {
+        margin-bottom: variables.$margin-short;
+        font-size: 46px;
+        width: 830px;
+    }
+}
+
+.section__text {
+    
+    @include mixins.tablet-response {
+        
+    }
+
+    @include mixins.desktop-response {
+        width: 830px;
+    }
 }
 
 
@@ -61,32 +95,39 @@
 
 .section__quality-list {
     display: flex;
+    flex-direction: column;
     align-items: center;
     list-style: none;
-    margin-top: 100px;
-    
-    // margin: 15px;
+    margin-top: 30px;
+    gap: 15px;
 
     @include mixins.tablet-response {
+        flex-direction: row;
         gap: 25px;
     }
 }
 
 .section__quality-item{
     display: flex;
+    font-size: 16px;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 260px;
     
 
     @include mixins.tablet-response {
         align-items: center;
         font-size: 22px;
-        gap: 10px;
         height: 60px;
     }
 }
 
 .section__quality-icon {
-    width: 25px;
-    height: 25px;
+    display: flex;
+    width: 40px;
+    height: 40px;
 
     @include mixins.tablet-response {
         width: 60px;

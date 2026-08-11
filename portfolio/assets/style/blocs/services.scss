@@ -1,0 +1,64 @@
+@use './var.scss' as variables;
+@use './../utils/mixins.scss' as mixins;
+
+.section--services {
+    padding-inline: variables.$padding-short;
+    margin-block: variables.$margin-short;
+    
+    @include mixins.desktop-response {
+        display: grid;
+        gap: 20px;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, 500px);
+    }
+}
+
+.section__service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+
+    background-color: #f7efe9;
+    border-radius: 15px;
+
+    margin-block: variables.$margin-short;
+    // background-color: red;
+
+    @include mixins.tablet-response {
+        
+    }
+
+    @include mixins.desktop-response {
+        
+    }
+}
+
+.section__service-icon {
+    width: 80px;
+    height: 60px;
+}
+
+.section__service-title {
+    // margin-block: variables.$margin-short;
+}
+
+.section__service-text {
+    margin-block: variables.$margin-short;
+    color: #968c87;
+}
+
+.section__service-button {
+    background-color: transparent;
+    color: #cfb596;
+
+    width: 200px;
+    padding: 10px;
+
+    text-align: center;
+    text-decoration: none;
+
+    border-radius: 15px;
+    border: 1px solid #cfb596;
+}
