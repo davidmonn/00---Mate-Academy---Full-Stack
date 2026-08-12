@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>How to create an array</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,8 +12,8 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
+        <a class="back" href="../../03_methods/03_tarefa_make_robot_new/index.html">
+            Modulo Anterior: Methods - Tarefa: Make Robot New
         </a>
     </div>
     
@@ -21,11 +21,11 @@
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">How to create an array</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Aqui iremos ver sobre <strong>array</strong>. Antigamente trabalhavamos com valores individuais como <strong>strings</strong> ou <strong>numeros</strong>. Porem agora nao armazenamos apenas valores em uma <strong>variavel</strong> mas um conjunto inteiro, onde cada elemento tem seu proprio indice.
             </p>
 
         </article>
@@ -48,10 +48,70 @@
 
         <article class="conc">
 
-            
-            
+            <div class="conteudo">
+                <h3 class="junto">O que é array?</h3>
+                <p>
+                    Um array é uma coleção de valores armazenados em uma única variável.
+                </p>
+                <p>
+                    Um array pode ter valores em qualquer ordem e também pode ter valores repetidos. Ex:
+                </p>
+                <img src="assets/imgs/ex-order-array.png" alt="Exemplo de ordem de um array">
+                <p>
+                    Cada elemento possui seu próprio índice. Por isso, mesmo que os valores se repitam, cada um terá um índice diferente.
+                </p>
+
+                <h3 class="junto">Array vazio []</h3>
+                <p>
+                    Também podemos criar arrays vazios usando colchetes sem nenhum valor dentro. Ex: <span>const save = [];</span>
+                </p>
+                <p>
+                    Um array também pode conter diferentes tipos de valores. Ex:
+                </p>
+                <img src="assets/imgs/ex-types.png" alt="Exemplo de tipos diferentes em um array">
+                <p>
+                    Arrays com diferentes tipos de valores são permitidos em JavaScript e são bastante comuns.
+                </p>
+            </div>
+
+
+            <div class="conteudo">
+
+                <h3 class="junto">Obtendo valores individuais</h3>
+                <p>
+                    Temos algumas formas de obter valores individualmente dentro de um <strong>array</strong>:
+                </p>
+
+                <h3 class="junto">Método split('')</h3>
+                <p>
+                    Divide uma <strong>string</strong> em partes e retorna um <strong>array</strong>. Também podemos definir um separador. Ex: <span>userName.split('');</span>
+                </p>
+
+                <h3 class="junto">Operador ...</h3>
+                <p>
+                    Podemos criar um novo <strong>array</strong> usando <strong>colchetes []</strong> e o operador <span>...</span> seguido pelo nome da variável. Ex: <span>[...userName];</span>. Ele pode ser usado com uma <strong>string</strong> ou com outro <strong>array</strong>.
+                </p>
+
+                <h3 class="junto">Método Array.from()</h3>
+                <p>
+                    O <strong>Array.from()</strong> cria um novo <strong>array</strong> a partir de uma <strong>string</strong> ou de outro objeto iterável. Ex: <span>Array.from(userName);</span>.
+                </p>
+
+                <h3 class="junto">Iteração</h3>
+                <p>
+                    Assim como uma <strong>string</strong>, um <strong>array</strong> pode ser <strong>iterado</strong> usando um <strong>loop</strong>.
+                </p>
+
+                <h3 class="junto">for</h3>
+                <img src="assets/imgs/for.png" alt="Exemplo de for">
+
+                <h3 class="junto">for of</h3>
+                <img src="assets/imgs/for-of.png" alt="Exemplo de for of">
+
+            </div>
+
             <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
+                Conteúdo da aula
             </a>
 
         </article>
