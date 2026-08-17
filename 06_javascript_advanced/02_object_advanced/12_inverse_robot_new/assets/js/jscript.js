@@ -31,131 +31,36 @@ console.log(test);
 // #endregion
 
 
-// #region teste user
-/*
 const users = {
-    David: 'name',
-    Monteiro: 'sobrenome',
-    29: 'idade'
-};
-function invertUsers(user) {
-    const clone = Object.assign({}, user);
-    const verific = [];
-    const newObj = {};
-
-    for(const chave in clone) {
-        const salvar = String(clone[chave]);
-        // console.log(salvar);
-        
-
-        if(verific.includes(salvar)) {
-            return null;
-        }
-
-        verific.push(salvar);
-        newObj[salvar] = chave;
-    }
-    return newObj;
-}
-
-const testar = invertUsers(users);
-console.log(testar);
-*/
-
-// #endregion
-
-/*
-const user = {
-    David: 'name',
+    David: 'nome',
     Monteiro: 'sobrenome',
     29: 'idade',
-    'estudar, tocar violao, jogar': 'hobby'
 };
 
-function invertUsers(users) {
-    const copiar = Object.assign({}, users);
-    const verif = [];
-    const userInvertido = {};
 
-    for (const chave in copiar) {
-        const armazenado = String(copiar[chave]);
+// #region Testes
+function invertUser(user) {
+    const userCopy = Object.assign({}, user);
+    const armazenar = [];
+    const newUser = {};
 
-        if(verif.includes(armazenado)) {
+    for (const key in userCopy) {
+        const verificar = String(userCopy[key]);
+
+        if(armazenar.includes('verificar')){
             return null;
         }
 
-        verif.push(armazenado);
-        userInvertido[armazenado] = chave;
+        armazenar.push(verificar);
+        newUser[verificar] = key;
     }
 
-    return userInvertido;
+    return newUser;
 }
 
-const testar = invertUsers(user);
-console.log(testar);
-*/
+const t = invertUser(users);
+console.log(t);
 
 
-// #region Teste
-/*
-const desktop = {
-    'rx9060xt': 'placa-video',
-    '7800x3d': 'processador',
-    ddr5: 'modelRam'
-};
 
-function invertInfo(invert) {
-    const copia = Object.assign({}, invert);
-    const comparar = [];
-    const newPc = {};
-
-    for(const chave in copia) {
-        const valores = String(copia[chave]);
-
-        if(comparar.includes(valores)) {
-            return null;
-        }
-
-        comparar.push(valores);
-        newPc[valores] = chave;
-    }
-
-    return newPc;
-}
-
-const newT = invertInfo(desktop);
-console.log(newT);
-*/
-// #endregion
-
-// #region Teste
-const user = {
-    Cicera: 'nome',
-    Monteiro: 'sobrenome',
-    43: 'idade',
-};
-
-function invertKey(users) {
-    const clone = Object.assign({}, users);
-    const verif = [];
-    const newInfos = {};
-
-    for (const key in clone) {
-        const saveKey = String(clone[key]);
-
-        if (verif.includes(saveKey)) {
-            return null;
-        }
-
-        verif.push(saveKey);
-        newInfos[key] = saveKey;
-    }
-    return newInfos;
-}
-
-const newTest = invertKey(user);
-console.log(newTest);
-
-
-// #endregion Teste
-
+// #endregion Testes

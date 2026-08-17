@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>How to find an element in an array</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,7 @@
 
     <div class="back">
         <a class="back" href="../">
-            Aula Anterior - 
+            Aula Anterior - Tarefa: Shift method
         </a>
     </div>
     
@@ -21,11 +21,14 @@
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">How to find an element in an array</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Agora iremos vamos ver os metodos que nos permitem verificar a presenca de um elemento em um array.
+            </p>
+            <p>
+                Semelheante a cadeia de <strong>caracteres</strong> podemos usar um metodo <strong>includes</strong>.
             </p>
 
         </article>
@@ -48,7 +51,44 @@
 
         <article class="conc">
 
-            
+            <div class="conteudo">
+
+                <h3 class="junto">Metodo includes();</h3>
+                <p>
+                    Retorna verdadeiro se o elemento estiver presente no <strong>array</strong>. Podemos estar utilizando da seguinte forma:
+                </p>
+                <img src="assets/imgs/ex-includes.png" alt="Exemplo includes">
+
+                <p>
+                    Podemos observar que com <strong>includes</strong>, podemos estar verificando se uma <strong>palavra chave</strong>, possui dentro de nosso <strong>array</strong>, se existir nos retorna <strong>true</strong> se nao <strong>false</strong>, podemos passar <strong>2 parametros</strong>, a palavra desejada e a partir de onde ira comecar como por exemplo <strong>words.includes('and', 3)</strong>, ira buscar a palavra <strong>and</strong> a partir do <strong>indice 3</strong>.
+                </p>
+                <p>
+                    No <strong>includes(a)</strong>, por mais que tenhamos <strong>a</strong> em nosso array, ele nao é encontrado pois ele busca exclusivamente essa palavra separada das demais. <strong>includes</strong> verifica apenas a correspondencia exata do parametro passado.
+                </p>
+                
+            </div>
+
+            <div class="conteudo">
+
+                <h3 class="junto">Metodo indexOf();</h3>
+                <p>
+                    Funciona de forma semelheante ao <strong>includes</strong>, porem ele nos retorna ao inves de <strong>true</strong> ou <strong>false</strong>, o <strong>indice</strong> onde foi encontrado o <strong>parametro</strong> passado. Nele tambem podemos passar de onde iniciar a pesquisa. Formas de uso:
+                </p>
+
+                <img src="assets/imgs/ex-indexOf.png" alt="Exemplo indexOf">
+
+            </div>
+
+            <div class="conteudo">
+
+                <h3 class="junto">Metodo lastIndexOf();</h3>
+                <p>
+                    Identico ao <strong>indexOf()</strong>, porem inicia a busca do <strong>final</strong> para o <strong>incio</strong>. Ex:
+                </p>
+
+                <img src="assets/imgs/ex-lastIndexOf.png" alt="Exemplo lastIndexOf">
+
+            </div>
             
             <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
                 Conteudo da aula
@@ -61,8 +101,8 @@
         </main>
         
     <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+        <a class="next" href="../08_tarefa_indexOf_method/index.html">
+            Próxima Aula - Tarefa: IndexOf method
         </a>
     </div>
 
