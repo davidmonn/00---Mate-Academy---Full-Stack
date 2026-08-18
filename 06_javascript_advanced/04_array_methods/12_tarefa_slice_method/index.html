@@ -1,61 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarefa: Slice method</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
-        </a>
+      <a class="back" href="../11_split_join_and_slice_methods/index.html">
+        Aula Anterior - Split, join and slice methods
+      </a>
     </div>
-    
+
     <main>
+      <article id="intro">
+        <h1 id="title">Tarefa: Slice method</h1>
 
-        <article id="intro">
+        <h3 class="intro">Intro</h3>
+        <p>
+          Implemente o método <strong>slice</strong>, que repete a
+          funcionalidade do método original. Use <strong>this</strong> dentro do
+          método para acessar o array.
+        </p>
+        <p>
+          O uso de métodos de array está proibido nesta tarefa. Use loops,
+          acesso por índice e o comprimento do array, se necessário.
+        </p>
+      </article>
 
-            <h1 id="title">Title</h1>
+      <article class="conteudo">
+        <h3 class="cont-title">Resultado</h3>
 
-            <h3 class="intro">Intro</h3>
-            <p>
-                
-            </p>
+        <h3 class="junto">JS:</h3>
+        <figure>
+          <picture>
+            <img src="assets/imgs/result.png" alt="Resultado" />
+          </picture>
+        </figure>
 
-        </article>
+        <h3 class="junto">Explicacao do Resultado</h3>
+        <p>Usamos <strong>2</strong> parâmetros.</p>
 
-        <article class="conteudo">
+        <p>
+          <span>quant = 0</span>: define onde iremos iniciar. Caso não seja
+          informado, começaremos pelo índice <strong>0</strong>.
+        </p>
 
-            <h3 class="cont-title">Resultado</h3>
+        <p>
+          <span>end = this.length</span>: define onde iremos finalizar. Caso não
+          seja informado, iremos até o final do array.
+        </p>
 
-            <h3 class="junto">JS:</h3>
-            <figure>
-                <picture>
-                    <img src="assets/imgs/result.png" alt="Resultado">
-                </picture>
-            </figure>
+        <p class="junto">
+          <span>for (let value = start; value < last; value++)</span>:
+        </p>
 
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
+        <p class="junto">
+          <span>let value = start</span>: criamos a variável
+          <strong>value</strong>, que começa pelo valor de
+          <strong>start</strong>. Usamos <strong>start</strong> para podermos
+          modificar o valor inicial sem alterar diretamente o parâmetro
+          <strong>quant</strong>.
+        </p>
 
-        </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
-    <div class="next">
-        <a class="next" href="../">
-            Próxima Tarefa: 
+        <p class="junto">
+          <span>value < last</span>: enquanto <strong>value</strong> for menor
+          do que nosso <strong>last</strong> (variável também criada para não
+          mexermos diretamente no parâmetro). <strong>last</strong> também irá
+          definir até onde irá nosso <strong>loop</strong>. Ou seja, ele é o
+          finalizador do loop.
+        </p>
+
+        <p class="separado">
+          <span>copy[copy.length] = this[value];</span>
+        </p>
+
+        <p class="junto">
+          <span>copy[copy.length]</span>: aqui acessamos a próxima posição do
+          nosso <strong>copy</strong> usando seu comprimento.
+        </p>
+
+        <p class="junto">
+          <span>this[value]</span>: acessamos o valor do array original na
+          posição indicada por <strong>value</strong>.
+        </p>
+
+        <p class="junto">
+          Dessa forma, pegamos cada valor do array original e colocamos no novo
+          array <strong>copy</strong>.
+        </p>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteudo da aula
         </a>
-    </div>
+      </article>
 
-</body>
+      <!-- <h1>Testes JS se necessário</h1> -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../13_array_join/index.html">
+        Próxima Tarefa: Array Join
+      </a>
+    </div>
+  </body>
 </html>
