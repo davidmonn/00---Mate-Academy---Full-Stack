@@ -1,70 +1,200 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Split, join and slice methods</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
-        </a>
+      <a class="back" href="../10_tarefa_save_and_rescue/index.html">
+        Aula Anterior - Tarefa: Save and rescue
+      </a>
     </div>
-    
+
     <main>
+      <article id="intro">
+        <h1 id="title">Split, join and slice methods</h1>
 
-        <article id="intro">
+        <h3 class="intro">Intro</h3>
+        <p>
+          Agora iremos ver alguns <strong>metodos</strong> que nos ajudara a
+          trabalharmos melhor com <strong>array</strong>
+        </p>
+      </article>
 
-            <h1 id="title">Title</h1>
+      <article class="conteudo">
+        <h3 class="cont-title">Código de Exemplo:</h3>
 
-            <h3 class="intro">Intro</h3>
-            <p>
-                
-            </p>
+        <p class="junto">
+          <strong>JS:</strong>
+        </p>
 
-        </article>
+        <figure>
+          <picture>
+            <img src="assets/imgs/js.png" alt="JS" />
+          </picture>
+        </figure>
+      </article>
 
-        <article class="conteudo">
+      <article class="conc">
+        <div class="conteudo">
+          <h3 class="junto">Método split()</h3>
+          <p>
+            Com <span>split()</span> podemos pegar uma <strong>string</strong> e
+            convertê-la em um <strong>array</strong>. Podemos separar a string
+            por letras, palavras ou por qualquer outro delimitador. Ex:
+          </p>
 
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
+          <p>
+            <span>Por letras:</span>
+          </p>
 
-            <p class="junto">
-                <strong>JS:</strong>
-            </p>
+          <pre>
+<span>
+const phrase = 'My name is David';
+const letra = phrase.split('');
+console.log(letra);
+</span>
+        </pre>
 
-            <figure>
-                <picture>
-                    <img src="assets/imgs/js.png" alt="JS">
-                </picture>
-            </figure>
+          <figure>
+            <figcaption>
+              Dessa forma, usamos um delimitador vazio <span>('')</span>,
+              fazendo com que cada caractere seja separado em um elemento do
+              array.
+            </figcaption>
+            <img
+              src="assets/imgs/split-letra.png"
+              alt="Split letra por letra"
+            />
+          </figure>
 
-        </article>
+          <p class="junto">
+            <span>Por palavra:</span>
+          </p>
 
-        <article class="conc">
+          <pre>
+<span>
+const phrase = 'My name is David';
+const palavra = phrase.split(' ');
+console.log(palavra);
+</span>
+        </pre>
 
-            
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
+          <figure>
+            <figcaption>
+              Aqui usamos o <span>espaço</span> como delimitador, fazendo com
+              que a string seja separada palavra por palavra <span>(' ')</span>.
+            </figcaption>
+            <img src="assets/imgs/split-palavra.png" alt="Split por palavra" />
+          </figure>
 
-        </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
-    <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+          <p class="junto">
+            <span>Resumindo:</span> o <strong>split()</strong> permite dividir
+            uma <strong>string</strong> em partes usando um
+            <strong>delimitador</strong>. Também podemos passar um segundo
+            <strong>parâmetro</strong> para definir a quantidade máxima de
+            elementos. Ex: <span>split(' ', 3)</span> retorna no máximo os
+            <strong>3 primeiros</strong> elementos.
+          </p>
+        </div>
+
+        <div class="conteudo">
+          <h3 class="junto">Método join()</h3>
+          <p>
+            Usamos o <strong>join()</strong> para transformar os elementos de um
+            <strong>array</strong> em uma <strong>string</strong>. O delimitador
+            define como os elementos serão separados. Ex:
+          </p>
+
+          <pre>
+<span>
+const fullName = ['David', 'Monteiro'];
+const separar = fullName.join(' ');
+console.log(separar);
+</span>
+        </pre>
+
+          <figure>
+            <figcaption>
+              Dessa forma, usamos o <strong>espaço</strong> como delimitador,
+              retornando: <strong>David Monteiro</strong>. Se usássemos
+              <span>join('')</span>, ficaria <strong>DavidMonteiro</strong>.
+            </figcaption>
+            <img src="assets/imgs/join.png" alt="Exemplo do método join" />
+          </figure>
+        </div>
+
+        <div class="conteudo">
+          <h3 class="junto">Método slice()</h3>
+          <p>
+            O <strong>slice()</strong> funciona de forma semelhante quando usado
+            em strings. Ele permite
+            <strong>copiar uma parte de um array</strong> sem modificar o array
+            original. Ex:
+          </p>
+
+          <pre>
+<span>
+console.log(
+  // Cria uma cópia do array inteiro
+  fullName.slice(),
+
+  // Pega todos os elementos a partir do índice 1
+  fullName.slice(1),
+
+  // Pega os elementos a partir do índice 1 até antes do último
+  fullName.slice(1, -1),
+);
+</span>
+                </pre>
+
+          <p class="junto">
+            <span>Obs:</span> O método <strong>slice()</strong> pode ser usado
+            tanto em <strong>string</strong> quanto em <strong>array</strong>.
+          </p>
+
+          <ul>
+            <li>
+              <strong>Array:</strong>
+              <span>slice()</span> em array → retorna <strong>array</strong>
+            </li>
+            <li>
+              <strong>String:</strong>
+              <span>slice()</span> em string → retorna <strong>string</strong>
+            </li>
+          </ul>
+        </div>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteúdo da aula
         </a>
-    </div>
+      </article>
 
-</body>
+      <!-- <h1>Testes JS se necessário</h1> -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../12_tarefa_slice_method/index.html">
+        Próxima Aula - Tarefa: Slice method
+      </a>
+    </div>
+  </body>
 </html>
