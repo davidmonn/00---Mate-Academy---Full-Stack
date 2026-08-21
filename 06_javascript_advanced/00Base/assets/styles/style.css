@@ -183,3 +183,9 @@ span {
     margin: 0;
     width: fit-content;
 }
+
+.content {
+    display: grid;
+    margin-block: 20px;
+    grid-template-columns: repeat(2, auto);
+}

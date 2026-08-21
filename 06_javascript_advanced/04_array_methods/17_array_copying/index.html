@@ -1,70 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Copying</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
-        </a>
+      <a class="back" href="../16_mutating_and_non_mutating_methods/index.html">
+        Aula Anterior - Mutating and Non-mutating Methods
+      </a>
     </div>
-    
+
     <main>
+      <article id="intro">
+        <h1 id="title">Array Copying</h1>
 
-        <article id="intro">
+        <h3 class="intro">Intro</h3>
+        <p>
+          Agora iremos ver como <strong>copiar arrays</strong>. Isso é
+          importante porque, em frameworks modernos como
+          <strong>React</strong> e <strong>Angular</strong>, devemos evitar
+          <strong>mutações</strong> quando não queremos alterar o array
+          original.
+        </p>
+      </article>
 
-            <h1 id="title">Title</h1>
+      <article class="conteudo">
+        <h3 class="cont-title">Código de Exemplo:</h3>
 
-            <h3 class="intro">Intro</h3>
-            <p>
-                
-            </p>
+        <p class="junto">
+          <strong>JS:</strong>
+        </p>
 
-        </article>
+        <figure>
+          <picture>
+            <img src="assets/imgs/js.png" alt="JS" />
+          </picture>
+        </figure>
+      </article>
 
-        <article class="conteudo">
+      <article class="conc">
+        <div class="conteudo">
+          <h1>Como Copiar Array Usando Métodos</h1>
 
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
+          <h3 class="separado">Opções para copiar:</h3>
 
-            <p class="junto">
-                <strong>JS:</strong>
-            </p>
+          <h3 class="junto">slice();</h3>
+          <p>
+            Usando o <strong>slice()</strong> sem parâmetros, criamos uma
+            <strong>cópia</strong> de todo o array, do início ao fim.
+          </p>
 
-            <figure>
-                <picture>
-                    <img src="assets/imgs/js.png" alt="JS">
-                </picture>
-            </figure>
+          <h3 class="junto">concat();</h3>
+          <p>
+            Usando o <strong>concat()</strong> sem parâmetros, também criamos
+            uma <strong>cópia</strong> do array original.
+          </p>
 
-        </article>
+          <h3 class="junto">Array.from(numbers);</h3>
+          <p>
+            Cria um novo <strong>array</strong> a partir do array
+            <strong>numbers</strong>. Também pode ser usado para criar um array
+            a partir de uma <strong>string</strong>. Ex:
+            <span>result = Array.from('David')</span> resulta em
+            <strong>['D', 'a', 'v', 'i', 'd']</strong>.
+          </p>
 
-        <article class="conc">
+          <h3 class="junto">Maneira mais conveniente: [...numbers]</h3>
+          <p>
+            Uma das maneiras mais simples de copiar um array é usando o
+            <strong>spread operator (...)</strong>. Ele espalha os elementos do
+            array dentro de um novo array.
+          </p>
 
-            
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
+          <div class="content">
+            <pre>
+                        <span>
+const result = [
+    ...numbers.slice(0, 2),
+    100,
+    200,
+    300,
+    ...numbers.slice(2)
+];
+                        </span>
+                    </pre>
+            <img src="assets/imgs/ex-spreed.png" alt="Exemplo spread" />
+          </div>
 
-        </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
-    <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+          <p>
+            Na maioria dos casos, podemos usar o <strong>spread</strong> para
+            criar cópias. Também podemos usar o <strong>slice()</strong> quando
+            for mais conveniente. Depois de criar uma cópia, podemos aplicar
+            métodos que fazem <strong>mutação</strong> nela sem alterar o
+            <strong>array original</strong>.
+          </p>
+
+          <!-- <h3 class="junto">push();</h3>
+                <p>
+                    <strong>push(999)</strong> altera o array em que o método foi executado. Se estivermos trabalhando com uma cópia, apenas a cópia será alterada.
+                </p> -->
+        </div>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteúdo da aula
         </a>
-    </div>
+      </article>
 
-</body>
+      <!-- <h1>Testes JS se necessário</h1> -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../18_tarefa_reverse_method/index.html">
+        Próxima Aula - Tarefa: Reverse method
+      </a>
+    </div>
+  </body>
 </html>
