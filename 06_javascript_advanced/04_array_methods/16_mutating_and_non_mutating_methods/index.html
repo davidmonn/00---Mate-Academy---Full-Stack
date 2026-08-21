@@ -12,7 +12,7 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">
+        <a class="back" href="../15_tarefa_format_date/index.html">
             Aula Anterior - Tarefa: Format date
         </a>
     </div>
@@ -48,7 +48,102 @@
 
         <article class="conc">
 
-            
+            <div class="conteudo">
+                <h1 class="separado">Metodos de Mutacao -> Modifica o array Original</h1>
+                
+                <h3 class="junto">Temos Como Exemplo:</h3>
+                <p>
+                    push(), pop(), shift(), unshift(), splice(), sort(), reverse()
+                </p>
+
+                <h3 class="junto">push()</h3>
+                <p>
+                    Adiciona um ou mais valores ao final do array: Ex: <strong>result = numbers.push(100, 200, 300);</strong>
+                </p>
+
+                <h3 class="junto"><span>splice();</span></h3>
+                <p>
+                    Remove, adiciona ou substitui elementos do array original a partir de um índice. Se passado dois argumentos como (2, 5), começa no índice 2 e remove 5 elementos, retornando os elementos removidos. Se feito dessa forma (2, 5, 100, 200, 300), o primeiro parâmetro indica de onde começa, o segundo indica quantos elementos serão removidos e os demais parâmetros serão inseridos dentro do array.
+                </p>
+
+                <h3 class="junto"><span>fill('a', 2)</span></h3>
+                <p>
+                    Substitui os elementos do array original pelo valor passado, começando pelo índice indicado pelo segundo parâmetro. Se passarmos um terceiro parâmetro, ele indica o índice final (não incluso). Ex: ('a', 2, 5) começa no índice 2 e substitui até o índice anterior ao 5.
+                </p>
+
+                <h3 class="junto"><span>reverse();</span></h3>
+                <p>
+                    Inverte a ordem dos elementos do array original. É mutável, ou seja, modifica o array original.
+                </p>
+
+                <h3 class="junto"><span>sort();</span></h3>
+                <p>
+                    Ordena os elementos do array. Por padrão, compara os valores como strings, por isso não ordena números corretamente em ordem numérica. É mutável. Podemos passar uma função como parâmetro para definir como será a ordenação.
+                </p>
+
+                <h3 class="junto">unshift()</h3>
+                <p>
+                    Adiciona um ou mais elementos no inicio do array. Ex <strong>result = numbers.unshift();</strong>
+                </p>
+
+                <h3 class="junto">pop()</h3>
+                <p>
+                    Remove o ultimo elemento do <strong>array</strong>. Ex: <strong>result = numbers.pop();</strong>
+                </p>
+
+                <h3 class="junto">shift()</h3>
+                <p>
+                    Remove o primeiro elemento do array. Ex <strong>result = numbers.shift();</strong>
+                </p>
+                
+            </div>
+
+            <div class="conteudo">
+
+                <h1 class="separado">
+                    Métodos não mutadores → não modificam o array original; normalmente retornam um novo valor/array.
+                </h1>
+
+                <h3 class="junto">includes(3)</h3>
+                <p>
+                    Mais usado principalmente para verificar se um determinado valor existe em um array.
+                </p>
+
+                <h3 class="junto">indexOf(3)</h3>
+                <p>
+                    Procura um valor e retorna o índice onde ele aparece pela primeira vez.
+                </p>
+
+                <h3 class="junto">lastIndexOf(3)</h3>
+                <p>
+                    Procura um valor e retorna o índice onde ele aparece pela ultima vez.
+                </p>
+
+                <h3 class="junto">join('-');</h3>
+                <p>
+                    Converte os elementos de um array em uma única string, usando o separador desejado.
+                </p>
+
+                <h3 class="junto">slice(2, 5);</h3>
+                <p>
+                    Copia uma parte do array e retorna um novo array, sem modificar o original. Se usado como no Ex acima (2, 5), pega os valores do indice 2 ate o indice 5.
+                </p>
+
+                <h3 class="junto"><span>concat(100, ['x', 'y'], 200, 300);</span></h3>
+                <p>
+                    Cria um novo array, combinando os elementos do array original com os valores e elementos de outros arrays passados como parâmetros. Não modifica o array original.
+                </p>
+
+            </div>
+
+            <div class="conteudo">
+
+                <h3 class="junto">Obs:</h3>
+                <p>
+                    Só uma observação: nem todo método não mutador necessariamente retorna um novo array. includes() e indexOf(), por exemplo, retornam boolean e number.
+                </p>
+
+            </div>
             
             <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
                 Conteudo da aula
@@ -61,8 +156,8 @@
         </main>
         
     <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+        <a class="next" href="../17_array_copying/index.html">
+            Próxima Aula - Array Copying
         </a>
     </div>
 
