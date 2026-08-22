@@ -1,61 +1,118 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarefa: Library chaos</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
-        </a>
+      <a class="back" href="../18_tarefa_reverse_method/index.html">
+        Aula Anterior - Tarefa: Reverse method
+      </a>
     </div>
-    
+
     <main>
+      <article id="intro">
+        <h1 id="title">Tarefa: Library chaos</h1>
 
-        <article id="intro">
+        <h3 class="intro">Intro</h3>
+        <p>
+          A Biblioteca Mate está passando por um momento difícil. É muito caro
+          manter um bibliotecário, então nos últimos 5 anos, a biblioteca tem
+          funcionado sem ele. Os leitores vêm, pegam os livros e vão embora. Mas
+          eles não colocam os livros de volta no lugar certo. Nos bons e velhos
+          tempos, todos os livros na biblioteca eram organizados por ordem
+          alfabética. Agora as prateleiras estão um caos. Nossos robôs da
+          Fábrica de Robôs Mate vêm para o resgate. Vai ser divertido? Eu acho
+          que não. Vamos remover todos os livros das prateleiras e organizá-los.
+        </p>
 
-            <h1 id="title">Title</h1>
+        <p class="separado">
+          Escreva uma função sortBooks que irá receber um array de shelves
+          (arrays de livros) e retornar um array de livros ordenados
+          alfabeticamente.
+        </p>
 
-            <h3 class="intro">Intro</h3>
-            <p>
-                
-            </p>
+        img
+      </article>
 
-        </article>
+      <article class="conteudo">
+        <h3 class="cont-title">Resultado</h3>
 
-        <article class="conteudo">
+        <h3 class="junto">JS:</h3>
+        <figure>
+          <picture>
+            <img src="assets/imgs/result.png" alt="Resultado" />
+          </picture>
+        </figure>
 
-            <h3 class="cont-title">Resultado</h3>
+        <h3 class="separado">Explicacao Codigo:</h3>
+        <p><span>1)</span> Primeiro for: acessa cada prateleira.</p>
+        <p>
+          <span>2)</span> Segundo for: dentro de cada prateleira, acessa cada
+          livro e coloca todos em fullBook.
+        </p>
+        <p>
+          <span>3)</span> Terceiro for (repeat): faz a parte da ordenação se
+          repetir várias vezes, até chegar ao final das posições.
+        </p>
+        <p>
+          <span>4)</span> Quarto for (comp): percorre os livros comparando um
+          com o próximo e fazendo a troca quando necessário.
+        </p>
 
-            <h3 class="junto">JS:</h3>
-            <figure>
-                <picture>
-                    <img src="assets/imgs/result.png" alt="Resultado">
-                </picture>
-            </figure>
+        <h3 class="junto">Dica Importante</h3>
+        <p>
+          Acesso por índice com + e - Quando usamos + ou - dentro dos colchetes
+          de um array, o cálculo realmente acontece, mas podemos pensar nele
+          como um deslocamento a partir do índice atual:
+        </p>
 
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
+        <h3 class="junto">Exemplo</h3>
+        <pre>
+array[comp]       // posição atual
+array[comp + 1]   // uma posição à frente
+array[comp - 1]   // uma posição atrás            
+        </pre> <br>
 
-        </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
-    <div class="next">
-        <a class="next" href="../">
-            Próxima Tarefa: 
+        <pre>
+Índice:     0    1    2    3
+           [A]  [B]  [C]  [D]
+                     ↑
+                   comp = 2
+
+comp + 1 → índice 3 → [D]
+comp - 1 → índice 1 → [B]            
+        </pre> <br>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+          target="_blank"
+        >
+          Conteudo da aula
         </a>
-    </div>
+      </article>
 
-</body>
+      <!-- <h1>Testes JS se necessário</h1> -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../"> Próxima Tarefa: </a>
+    </div>
+  </body>
 </html>
