@@ -1,61 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarefa: Reverse method</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
-        </a>
+      <a class="back" href="../17_array_copying/index.html">
+        Aula Anterior - Array Copying
+      </a>
     </div>
-    
+
     <main>
+      <article id="intro">
+        <h1 id="title">Tarefa: Reverse method</h1>
 
-        <article id="intro">
+        <h3 class="intro">Intro</h3>
+        <p>
+          Implemente o método <strong>reverse</strong>, que repete a
+          funcionalidade do método original. Use <strong>this</strong> dentro do
+          método para acessar o array.
+        </p>
 
-            <h1 id="title">Title</h1>
+        <p class="separado">
+          O uso de métodos de array está proibido nesta tarefa. Use loops,
+          acesso por índice e o comprimento do array, se necessário.
+        </p>
 
-            <h3 class="intro">Intro</h3>
-            <p>
-                
-            </p>
+        <p>Lembre-se de que o método deve retornar o array invertido.</p>
 
-        </article>
+        <img src="assets/imgs/ex.png" alt="Exemplo" />
+      </article>
 
-        <article class="conteudo">
+      <article class="conteudo">
+        <h3 class="cont-title">Resultado</h3>
 
-            <h3 class="cont-title">Resultado</h3>
+        <h3 class="junto">JS:</h3>
+        <figure>
+          <picture>
+            <img src="assets/imgs/result.png" alt="Resultado" />
+          </picture>
+        </figure>
 
-            <h3 class="junto">JS:</h3>
-            <figure>
-                <picture>
-                    <img src="assets/imgs/result.png" alt="Resultado">
-                </picture>
-            </figure>
+        <h3 class="junto">Explicacao Resultado por Etapas</h3>
 
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
+        <p class="junto">
+          <span>for (let value = 0; value &lt; this.length / 2; value++)</span>
+        </p>
 
-        </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
-    <div class="next">
-        <a class="next" href="../">
-            Próxima Tarefa: 
+        <p>
+          <strong>let value = 0;</strong>: criamos uma variável para o
+          <strong>for</strong>, que terá como valor inicial o índice
+          <strong>0</strong>.
+        </p>
+
+        <p>
+          <strong>value &lt; this.length / 2</strong>: enquanto o valor de
+          <strong>value</strong> for menor que a metade do comprimento do array,
+          o <strong>loop</strong> continuará. Fazemos apenas metade das voltas,
+          pois a cada volta trocamos dois elementos.
+        </p>
+
+        <p class="separado">
+          <strong>const save = this[value];</strong>: criamos uma variável que
+          receberá temporariamente o valor de <strong>this[value]</strong>. Esse
+          valor será usado depois para completar a troca.
+        </p>
+
+        <p>
+          <strong>this[value] = this[this.length - 1 - value];</strong>:
+          <strong>this[value]</strong> acessa o elemento atual do array. Depois,
+          ele recebe o elemento da posição oposta, calculada por
+          <strong>this.length - 1 - value</strong>.
+        </p>
+
+        <p class="separado">
+          <strong>this[this.length - 1 - value] = save;</strong>: acessamos
+          novamente a posição oposta e colocamos nela o valor que havíamos
+          guardado temporariamente em <strong>save</strong>. Assim, os dois
+          elementos são trocados.
+        </p>
+
+        <p class="separado">
+            <strong>Ponto Principal:</strong> precisa acessar a posição oposta duas vezes porque ela participa dos dois lados da troca:
+        </p>
+
+        <pre>
+            <strong>
+this[value] = this[oposto]; // direita → esquerda
+
+this[oposto] = save;        // esquerda → direita                
+            </strong>
+        </pre> <br>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteudo da aula
         </a>
-    </div>
+      </article>
 
-</body>
+      <!-- <h1>Testes JS se necessário</h1> -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../19_tarefa_library_chaos/index.html">
+        Próxima Tarefa: Library chaos
+      </a>
+    </div>
+  </body>
 </html>
