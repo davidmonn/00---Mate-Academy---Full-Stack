@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarefa: Reverse Message</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="back">
+      <a class="back" href="../19_tarefa_library_chaos/index.html">
+        Aula Anterior - Tarefa: Library chaos</a
+      >
+    </div>
+
+    <main>
+      <article id="intro">
+        <h1 id="title">Tarefa: Reverse Message</h1>
+
+        <h3 class="intro">Intro</h3>
+        <p>
+          Arqueólogos fizeram uma nova descoberta. Rolos com registros
+          desconhecidos foram encontrados perto das ruínas de uma civilização
+          antiga que falava ao contrário. Parece que a língua dos seus vizinhos
+          era bastante similar, mas eles não falavam completamente ao contrário.
+          Eles soletravam apenas palavras ao contrário, não frases inteiras.
+          Descriptografar as mensagens deles é um trabalho bastante rotineiro,
+          concorda? Seria bom ter uma função <strong>reverseMessage</strong> que
+          pegasse a <strong>message</strong>, invertesse cada palavra e
+          retornasse a mensagem descriptografada.
+        </p>
+
+        <img src="assets/imgs/ex.png" alt="Exemplo" class="separado" />
+      </article>
+
+      <article class="conteudo">
+        <h3 class="cont-title">Resultado</h3>
+
+        <h3 class="junto">JS:</h3>
+        <figure>
+          <picture>
+            <img src="assets/imgs/result.png" alt="Resultado" />
+          </picture>
+        </figure>
+
+        <h3 class="separado">Explicacao Codigo:</h3>
+        <p>
+          <span>Variaveis: let saveChars = '';</span> e
+          <span>let msg = '';</span>
+        </p>
+
+        <p class="junto">
+          <strong>let saveChars = '';</strong> Criamos essa variavel vazia para
+          que ela possa ir recebendo os caracteres da palavra atual.
+        </p>
+
+        <p>
+          <strong>let msg = '';</strong> Criamos essa variavel para receber a
+          mensagem completa já corrigida.
+        </p>
+
+        <p class="junto">
+          <span>for (let char = 0; char < message.length; char++) {}</span>
+        </p>
+
+        <p>
+          Com esse loop começamos pelo <strong>indice 0 (char)</strong> e,
+          enquanto <strong>char</strong> for menor que o tamanho da mensagem,
+          <strong>char++</strong> avança de caractere em caractere até o final
+          da mensagem.
+        </p>
+
+        <p class="junto">
+          <span>if (message[char] !== ' ') {}</span>
+        </p>
+
+        <p>Verifica se o caractere atual <strong>não é um espaço</strong>.</p>
+
+        <p class="junto">
+          <span>saveChars = message[char] + saveChars;</span>
+        </p>
+
+        <p>
+          O caractere atual é colocado <strong>antes</strong> do conteúdo que já
+          existe em <strong>saveChars</strong>. Assim, a cada volta do loop, o
+          novo caractere entra na frente e a palavra é invertida.
+        </p>
+
+        <p class="junto">
+          <span>else</span>
+        </p>
+
+        <p>
+          Se não entrou no <strong>if</strong>, significa que encontramos um
+          espaço e a palavra terminou.
+        </p>
+
+        <p>
+          <strong>msg += saveChars + ' ';</strong> Adicionamos a palavra
+          invertida em <strong>msg</strong> junto com um espaço.
+        </p>
+
+        <p>
+          <strong>saveChars = '';</strong> Resetamos
+          <strong>saveChars</strong> para que ele possa começar a armazenar a
+          próxima palavra.
+        </p>
+
+        <p class="junto">
+          Por fim, temos <strong>msg += saveChars;</strong>. Isso adiciona a
+          última palavra, que não possui um espaço depois dela, e então fazemos
+          <strong>return msg;</strong>.
+        </p>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+          target="_blank"
+        >
+          Conteudo da aula
+        </a>
+      </article>
+
+      <!-- <h1>Testes JS se necessário</h1> -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../21_array_destructuring/index.html">
+        Próxima Aula: Array Destructuring
+      </a>
+    </div>
+  </body>
+</html>
