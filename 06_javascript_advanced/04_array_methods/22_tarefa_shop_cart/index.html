@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Title</title>
+    <title>Tarefa: Shop cart</title>
     <link rel="stylesheet" href="assets/styles/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,26 +14,103 @@
   </head>
   <body>
     <div class="back">
-      <a class="back" href="../"> Aula Anterior - </a>
+      <a class="back" href="../21_array_destructuring/index.html">
+        Aula Anterior - Array Destructuring</a
+      >
     </div>
 
     <main>
       <article id="intro">
-        <h1 id="title">Title</h1>
+        <h1 id="title">Tarefa: Shop cart</h1>
 
         <h3 class="intro">Intro</h3>
-        <p></p>
+        <p>
+          As compras online estão se tornando cada vez mais populares. É claro
+          que a Loja Mate está tentando ocupar seu nicho. Nossos robôs recebem
+          chamadas de pessoas do mundo todo, processam-nas e criam um pedido.
+          Somos fácil de usar e usuários autorizados agora podem simplesmente
+          enviar um SMS como uma string com o número e o tipo de produtos.
+          Nossos robôs estão treinados para ler e compreender esses SMS. Eles
+          precisam ser treinados... Vamos escrever a função
+          <strong>makeOrderList</strong>, que receberá a string
+          <strong>order</strong> e retornará um objeto no qual a chave é o
+          produto e o valor é a quantidade do produto pedido, do tipo número.
+          Cada elemento na <strong>order</strong> sempre começa com a quantidade
+          do produto.
+        </p>
+
+        <p class="separado">
+          Se o nome do produto consistir em mais de uma palavra, combine as
+          palavras no formato <strong>snake_case</strong>. Para uma string
+          vazia, a função deve retornar um objeto vazio.
+        </p>
+
+        <img src="assets/imgs/ex.png" alt="Exemplo" />
       </article>
 
       <article class="conteudo">
-        <h3 class="cont-title">Resultado</h3>
+  <h3 class="cont-title">Resultado</h3>
 
-        <h3 class="junto">JS:</h3>
-        <figure>
-          <picture>
-            <img src="assets/imgs/result.png" alt="Resultado" />
-          </picture>
-        </figure>
+  <h3 class="junto">JS:</h3>
+  <figure>
+    <picture>
+      <img src="assets/imgs/result.png" alt="Resultado" />
+    </picture>
+  </figure>
+
+  <h3 class="separado">Explicação do Código:</h3>
+
+  <p>
+    <span>const itens = order.split(',');</span>
+    Usamos o <strong>split</strong> para separar a string recebida em um
+    array, usando a vírgula (,) como separador.
+  </p>
+
+  <p class="separado">
+    <span>const list = {};</span>
+    Criamos um objeto vazio que será preenchido com os produtos e suas
+    respectivas quantidades.
+  </p>
+
+  <p>
+    <span>for (let item = 0; item &lt; itens.length; item++)</span>
+    Percorremos o array <strong>itens</strong> para processar cada pedido.
+  </p>
+
+  <p class="separado">
+    <span>const currentItem = itens[item].trim();</span>
+    Criamos uma variável para armazenar o item atual, removendo os espaços
+    desnecessários no início e no final com <strong>trim()</strong>.
+  </p>
+
+  <p>
+    <span>const position = currentItem.indexOf(' ');</span>
+    Criamos uma variável para armazenar a posição do primeiro espaço
+    encontrado na string usando <strong>indexOf()</strong>.
+  </p>
+
+  <p class="separado">
+    <span>const quant = Number(currentItem.slice(0, position));</span>
+    Usamos <strong>slice()</strong> para pegar a parte da string que contém
+    a quantidade, começando no índice 0 e terminando antes da posição
+    armazenada em <strong>position</strong>. Depois, usamos
+    <strong>Number()</strong> para converter essa string em número.
+  </p>
+
+  <p>
+    <span>const product = currentItem.slice(position + 1).split(' ').join('_');</span>
+    Usamos <strong>slice()</strong> para pegar o nome do produto a partir
+    da posição seguinte ao espaço. Depois, <strong>split()</strong> separa
+    as palavras em um array e <strong>join('_')</strong> junta essas
+    palavras novamente, substituindo os espaços por <strong>_</strong>.
+  </p>
+
+  <p class="separado">
+    <span>list[product] = quant;</span>
+    Por fim, adicionamos ao objeto <strong>list</strong> o produto como
+    chave e sua quantidade como valor.
+  </p>
+</article>
 
         <a
           href="contAula.html"
@@ -55,7 +132,7 @@
 
     <div class="next">
       <a class="next" href="../20_tarefa_reverse_message/index.html">
-        Próxima Tarefa: Reverse message
+        <strong>Próxima Modulo: Callbacks - Aula: Callbacks</strong>
       </a>
     </div>
   </body>
