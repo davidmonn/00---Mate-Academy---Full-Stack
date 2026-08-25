@@ -1,70 +1,283 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Destructuring</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
-        </a>
+      <a class="back" href="../"> Aula Anterior - Tarefa: Reverse Message </a>
     </div>
-    
+
     <main>
+      <article id="intro">
+        <h1 id="title">Array Destructuring</h1>
 
-        <article id="intro">
+        <h3 class="intro">Introdução</h3>
+        <p>
+          Aqui iremos ver como funciona a <strong>desestruturação</strong> de
+          <strong>arrays</strong>.
+        </p>
+      </article>
 
-            <h1 id="title">Title</h1>
+      <article class="conteudo">
+        <h3 class="cont-title">Código de Exemplo:</h3>
 
-            <h3 class="intro">Intro</h3>
-            <p>
-                
-            </p>
+        <p class="junto">
+          <strong>JS:</strong>
+        </p>
 
-        </article>
+        <figure>
+          <picture>
+            <img src="assets/imgs/js.png" alt="JS" />
+          </picture>
+        </figure>
+      </article>
 
-        <article class="conteudo">
+      <article class="conc">
+        <div class="conteudo">
+          <h3 class="junto">Lembrando a Desestruturação de Objetos:</h3>
 
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
+          <p>
+            Um exemplo pode ser: se tivermos um <strong>objeto</strong> e
+            desejarmos obter informações específicas dele, podemos fazer da
+            seguinte forma:
+          </p>
 
-            <p class="junto">
-                <strong>JS:</strong>
-            </p>
+          <div class="content">
+            <pre>
+ 
 
-            <figure>
-                <picture>
-                    <img src="assets/imgs/js.png" alt="JS">
-                </picture>
-            </figure>
+<span>
+const bob = {
+    name: 'bob',
+    surname: 'Smith',
+    age: 33,
+    isMarried: true,
+};
 
-        </article>
+function printObject(user) {
+const { name, age } = user;
 
-        <article class="conc">
 
-            
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
+console.log(name, age);
 
-        </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
-    <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+
+}
+
+printObject(bob); 
+</span> 
+            </pre>
+
+            <img
+              src="assets/imgs/object-dest.png"
+              alt="Exemplo de desestruturação de objeto"
+            />
+          </div>
+
+          <p>
+            Também podemos dar outro nome à variável que recebe uma propriedade.
+            Por exemplo:
+          </p>
+
+          <pre>
+
+
+<strong>
+function printObject(user) {
+    const { name, age: x, y = 10 } = user;
+
+
+console.log(name, x);
+
+
+} 
+</strong> 
+          </pre>
+
+          <p>
+            Dessa forma, estamos fazendo duas coisas: a propriedade
+            <strong>age</strong> continua sendo chamada <strong>age</strong> no
+            objeto, mas seu valor será armazenado na variável
+            <strong>x</strong>.
+          </p>
+
+          <p>
+            Já <strong>y = 10</strong> define um <strong>valor padrão</strong>.
+            Caso o objeto não possua a propriedade <strong>y</strong>, a
+            variável <strong>y</strong> receberá o valor <strong>10</strong>.
+          </p>
+
+          <p>
+            Essa é uma forma de utilizar a
+            <strong>desestruturação de objetos</strong>.
+          </p>
+
+          <p>
+            Caso desejemos obter todas as demais propriedades, podemos utilizar
+            o operador <strong>rest</strong> (<strong>...</strong>) da seguinte
+            forma:
+          </p>
+
+          <pre>
+<span>
+function printObject(user) {
+  const { name, age, ...props } = user;
+
+console.log(props);
+} </span> 
+          </pre>
+
+          <p>
+            Dessa forma, <strong>props</strong> receberá um novo objeto contendo
+            as demais propriedades, <strong>exceto</strong>
+            <strong>name</strong> e <strong>age</strong>.
+          </p>
+        </div>
+
+        <div class="conteudo">
+          <h3>Arrays</h3>
+
+          <p>
+            Também podemos fazer a <strong>desestruturação</strong> de um
+            <strong>array</strong>. A sintaxe é parecida com a utilizada nos
+            objetos, mas nos arrays os valores são obtidos de acordo com suas
+            <strong>posições</strong>.
+          </p>
+
+          <div class="content">
+            <pre>
+<span>
+const song = 'one two three four five';
+
+function printArray(words) {
+const [x, , y = 10] = words;
+
+
+console.log(x, y);
+
+
+}
+
+printArray(song.split(' ')); 
+</span> 
+            </pre>
+
+            <img
+              src="assets/imgs/array-dest.png"
+              alt="Exemplo de desestruturação de array"
+            />
+          </div>
+
+          <p>
+            Dessa forma, teremos como resultado <strong>one three</strong>. A
+            primeira posição do array é atribuída a <strong>x</strong>. A
+            segunda posição é ignorada por causa da vírgula. A terceira posição
+            é atribuída a <strong>y</strong>.
+          </p>
+
+          <p>
+            O <strong>y = 10</strong> define um valor padrão. Se a terceira
+            posição não possuir um valor, <strong>y</strong> receberá
+            <strong>10</strong>.
+          </p>
+
+          <p class="junto">
+            Assim como utilizamos o operador <strong>rest</strong>
+            (<strong>...</strong>) com objetos, também podemos utilizá-lo com
+            <strong>arrays</strong>.
+          </p>
+
+          <div class="content">
+            <pre>
+<span>
+function printArray(words) {
+  const [x, , y = 10, ...otherWords] = words;
+
+console.log(otherWords);
+} </span> 
+            </pre>
+
+            <img
+              src="assets/imgs/array-dest-exTwo.png"
+              alt="Desestruturação de array com rest"
+            />
+          </div>
+
+          <p>
+            Dessa forma, <strong>otherWords</strong> receberá todos os elementos
+            restantes do array depois das posições utilizadas por
+            <strong>x</strong>, pela posição ignorada e por <strong>y</strong>.
+          </p>
+
+          <p>
+            A desestruturação também pode ser feita diretamente no parâmetro da
+            função. Por exemplo:
+          </p>
+
+          <pre>
+<span>
+function printArray([x, , y, ...otherWords]) {
+  console.log(otherWords);
+}
+
+printArray(song.split(' ')); </span> 
+          </pre>
+
+          <p>
+            Nesse caso, o parâmetro da função já recebe o array e realiza a
+            desestruturação diretamente.
+          </p>
+
+          <p>
+            Também podemos adicionar outros parâmetros normalmente. Por exemplo:
+          </p>
+
+          <pre>
+<strong>
+function printArray(a, [x, , y, ...otherWords]) {
+  console.log(a);
+  console.log(otherWords);
+}
+
+printArray(123, song.split(' ')); </strong> 
+          </pre>
+
+          <p>
+            Nesse exemplo, <strong>a</strong> recebe o valor
+            <strong>123</strong>, enquanto o segundo argumento é desestruturado
+            diretamente no parâmetro da função.
+          </p>
+        </div>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteúdo da aula
         </a>
-    </div>
+      </article>
 
-</body>
+      <!-- <h1>Testes JS, se necessário</h1> -->
+
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../22_tarefa_shop_cart/index.html"> Próxima Tarefa: Shop cart</a>
+    </div>
+  </body>
 </html>

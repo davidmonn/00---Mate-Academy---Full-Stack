@@ -1,7 +1,6 @@
 :root {
     --bdColor: rgba(128, 0, 128, 0.813);
     --mnColor: aqua;
-    --bd-conteudo: rgba(128, 0, 128, 0.064);
 }
 
 /* Inter normal */
@@ -159,13 +158,10 @@ pre {
     background-color: aliceblue;
     padding: 15px 40px 15px 15px;
     font-size: 20px;
-
-    max-width: 100%;
-    overflow-x: auto;
 }
 
-.conteudo {
-    border: 3px solid var(--bd-conteudo);
+.container {
+    border: 3px solid var(--bdColor);
     border-radius: 15px;
     padding: 15px;
     margin: 5px;
@@ -191,37 +187,4 @@ span {
     display: grid;
     margin-block: 20px;
     grid-template-columns: repeat(2, auto);
-    align-items: center;
-}
-
-@media (min-width: 320px) and (max-width: 759px) {
-    .content {
-        grid-template-columns: repeat(1, auto);
-    }
-
-    img {
-        min-width: 320px;
-        max-width: 100%;
-    }
-
-    pre {
-        max-width: 100%;
-        overflow-x: auto;
-    }
-}
-
-@media (min-width: 760px) {
-    .content {
-        grid-template-columns: repeat(2, auto);
-    }
-
-    img {
-        min-width: 320px;
-        max-width: 100%;
-    }
-
-    pre {
-        max-width: 100%;
-        overflow-x: auto;
-    }
 }
