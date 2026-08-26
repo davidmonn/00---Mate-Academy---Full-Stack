@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../../04_array_methods/22_tarefa_shop_cart/index.html">
+            <strong>Modulo Anterior: Array Methods - Aula: Tarefa Shop Cart</strong>
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Callbacks</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Iremos nos aprofundar mais em <strong>funcoes</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>JS:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/js.png" alt="JS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <div class="conteudo">
+
+                <h3 class="junto">Explicacao:</h3>
+                <p>
+                    Criamos uma funcao chamada <strong>calculate</strong>, para realizar <strong>adicao</strong> e <strong>subtracao</strong>, para isso passamos o operador desejado em forma de string e dois valores. Ficando da seguinte forma:
+                </p>
+
+                <div class="content">
+
+                    <pre>
+                        <strong>
+function calculate(operation, a, b) {
+    swicth (operation) {
+        case 'add':
+            return (a + b);
+        
+        case 'subtract':
+            return (a - b);
+
+        case 'multiply':
+            return (a * b);
+    }
+}
+
+function add(a, b) {
+    return a + b;
+}
+
+function subtract(a, b) {
+    return a - b;
+}
+
+function multiply(a, b) {
+    return a * b;
+}
+
+console.log(
+    calculate('add', 6, 3),
+    calculate('subtract', 6, 3),
+    calculate('multiply', 6, 3),
+)
+                        </strong>
+                    </pre>
+
+                    <img src="assets/imgs/ex.png" alt="Exemplo">
+
+                </div>
+
+                <p>
+                    Dessa forma fizemos uma calculadora, porem ela não é muito flexivel, toda vez que desejamos adicionar um operador novo, temos que adicionar uma nova <strong>funcao</strong> e <strong>switch</strong>.
+                </p>
+
+                <p class="junto">
+                    Uma opcao que podemos estar executando, é remover nosso parametro de <strong>string</strong> e adicionar a propria funcao para ser executada, ficando da seguinte forma:
+                </p>
+
+                <div class="content">
+                    <pre>
+                        <strong>
+function calculate(opertion, a, b) {
+    return operation(a, b);
+}
+
+function add(a, b) {
+    return a + b;
+}
+
+function subtract(a, b) {
+    return a - b;
+}
+
+function multiply(a, b) {
+    return a * b;
+}
+
+console.log(
+  calculate(<span>add</span>, 6, 3),
+  calculate(<span>subtract</span>, 6, 3),
+  calculate(<span>multiply</span>, 6, 3)
+);
+                        </strong>
+                    </pre>
+
+                    <img src="assets/imgs/ex-2.png" alt="Exemplo 2">
+
+                </div>
+
+                <p>
+                    Fazendo dessa forma, nao precisos do <strong>switch</strong>, o <strong>operation</strong> funciona como se fosse uma referencia. Quando desejamos o resulto ja nao usamos strings mas a propria funcao. O mais importante é seguir a ordem dos parametros.
+                </p>
+
+                <p>
+                    Dessa forma fica de forma mais flexivel, se desejamor usar um novo operador, basta criarmos apenas a nova funcao. Podendo ate mesmo passar uma arrow function:
+                </p>
+
+                <pre>
+                    <span>
+console.log (
+    calculate(<span>add</span>, 6, 3),
+    calculate(<span>subtract</span>, 6, 3),
+    calculate(<span>multiply</span>, 6, 3),
+    calculate((a, b) => a / b),
+)                        
+                    </span>
+                </pre>
+
+            </div>
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../02_simple_calculator/index.html">
+            Próxima Aula - Tarefa: Simple calculator
+        </a>
+    </div>
+
+</body>
+</html>
