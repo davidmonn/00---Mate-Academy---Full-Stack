@@ -1,5 +1,5 @@
 // const order = '1 coca cola, 5 chicken nuggets, 20 egg';
-const order = '';
+const order = '10 ovos, 2 coca cola';
 
 function makeOrderList(order) {
   const itens = order.split(',');
