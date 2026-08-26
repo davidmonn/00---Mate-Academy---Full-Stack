@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Title</title>
+    <title>Tarefa: Simple calculator</title>
     <link rel="stylesheet" href="assets/styles/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,15 +14,24 @@
   </head>
   <body>
     <div class="back">
-      <a class="back" href="../"> Aula Anterior - </a>
+      <a class="back" href="../01_callbacks/index.html">
+        Aula Anterior - Callbacks
+      </a>
     </div>
 
     <main>
       <article id="intro">
-        <h1 id="title">Title</h1>
+        <h1 id="title">Tarefa: Simple calculator</h1>
 
         <h3 class="intro">Intro</h3>
-        <p></p>
+        <p>
+          Escreva a função <strong>calculate</strong>, que recebe um array
+          <strong>operands</strong> com 2 números e uma função de retorno de
+          chamada <strong>operation</strong> que trabalha com 2 números.
+          <strong>calculate</strong> deve retornar o resultado da chamada da
+          <strong>operation</strong> com os números de
+          <strong>operands</strong>.
+        </p>
       </article>
 
       <article class="conteudo">
@@ -34,6 +43,81 @@
             <img src="assets/imgs/result.png" alt="Resultado" />
           </picture>
         </figure>
+
+        <h3 class="separado">Explicacao Resultado:</h3>
+
+        <p>
+          <span>1)</span> Criamos a funcao <strong>calculate</strong> recebendo
+          dois parametros: o primeiro para o array e o segundo para a operacao.
+        </p>
+
+        <p>
+          <span>2)</span> Em seguida, fazemos uma desestruturacao do nosso array
+          para separar os dois valores e podermos realizar a operacao com eles.
+        </p>
+
+        <p>
+          <span>3)</span> Por ultimo, retornamos a chamada da funcao
+          <strong>operation</strong>, passando <strong>a</strong> e
+          <strong>b</strong>
+          como argumentos.
+        </p>
+
+        <pre>
+<strong>
+function calculate(operands, operation) {
+  const [a, b] = operands;
+
+  return operation(a, b);
+}
+</strong>
+</pre>
+
+        <br />
+
+        <p>
+          <span>1)</span> Criamos uma nova funcao com dois parametros para
+          receber os dois valores enviados pela funcao
+          <strong>calculate</strong>.
+        </p>
+
+        <p>
+          Fazemos um retorno com a operacao entre <strong>a</strong> e
+          <strong>b</strong>.
+        </p>
+
+        <pre><strong>
+function sum(a, b) {
+  return a + b;
+}
+</strong></pre>
+
+        <br />
+
+        <p>
+          Por fim, chamamos a funcao <strong>calculate</strong>, passando o
+          array <strong>test</strong> e a funcao <strong>sum</strong>.
+        </p>
+
+        <pre>
+<strong>
+let teste = calculate(<span>test, sum</span>);
+</strong>
+</pre>
+
+        <p>
+          Tambem podemos utilizar uma arrow function para criar uma nova
+          operacao diretamente dentro da chamada, sem precisar criar uma funcao
+          separada.
+        </p>
+
+        <pre>
+<strong>
+let testee = calculate(<span>test, (a, b) =&gt; a - b</span>);
+</strong>
+</pre>
+
+        <br />
 
         <a
           href="contAula.html"
@@ -54,8 +138,8 @@
     </main>
 
     <div class="next">
-      <a class="next" href="../20_tarefa_reverse_message/index.html">
-        Próxima Tarefa: Reverse message
+      <a class="next" href="../03_tarefa_test_pilots/index.html">
+        Próxima Tarefa: Test pilots
       </a>
     </div>
   </body>
