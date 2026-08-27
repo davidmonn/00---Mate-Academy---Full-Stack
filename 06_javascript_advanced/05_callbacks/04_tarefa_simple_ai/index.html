@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Title</title>
+    <title>Tarefa: Simple AI</title>
     <link rel="stylesheet" href="assets/styles/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,19 +14,40 @@
   </head>
   <body>
     <div class="back">
-      <a class="back" href="../">
-        Aula Anterior - 
+      <a class="back" href="../03_tarefa_test_pilots/index.html">
+        Aula Anterior - Tarefa: Test pilots
       </a>
     </div>
 
     <main>
       <article id="intro">
-        <h1 id="title">Title</h1>
+        <h1 id="title">Tarefa: Simple AI</h1>
 
         <h3 class="intro">Intro</h3>
         <p>
-          
+          No processo do Mate Grand Hotel, após a construção do 5º prédio, houve muita rotina. Decidiu-se construir uma inteligência artificial simples que, com base nos dados primários sobre o cliente, decidiria o que oferecer a ele.
         </p>
+
+        <p class="junto">
+          Crie uma função offerRoom que receba 3 callbacks:
+        </p>
+
+        <ul>
+          <li>
+            getClientStatus
+          </li>
+          <li>
+            offerStandardRoom
+          </li>
+          <li>
+            offerLuxuriousRoom
+          </li>
+        </ul>
+
+        <p>
+          Se <strong>getClientStatus</strong> retornar a string <strong>vip</strong> - retorne a chamada para <strong>offerLuxuriousRoom</strong>, caso contrário, recomende um quarto simples (chame <strong>offerStandardRoom</strong>).
+        </p>
+
       </article>
 
       <article class="conteudo">
@@ -58,8 +79,8 @@
     </main>
 
     <div class="next">
-      <a class="next" href="../">
-        Próxima Tarefa: 
+      <a class="next" href="../05_callback_in_a_loop/index.html">
+        Próxima Aula: Callback in a Loop
       </a>
     </div>
   </body>
