@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Title</title>
+    <title>Tarefa: Format message</title>
     <link rel="stylesheet" href="assets/styles/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,19 +14,25 @@
   </head>
   <body>
     <div class="back">
-      <a class="back" href="../">
-        Aula Anterior - 
+      <a class="back" href="../05_callback_in_a_loop/index.html">
+        Aula Anterior - Callback in a Loop
       </a>
     </div>
 
     <main>
       <article id="intro">
-        <h1 id="title">Title</h1>
+        <h1 id="title">Tarefa: Format message</h1>
 
         <h3 class="intro">Intro</h3>
         <p>
-          
+          Crie uma função <strong>formatMessage</strong> que receba uma string
+          <strong>message</strong> e uma função <strong>callback</strong>. Chame
+          o <strong>callback</strong> para cada palavra na
+          <strong>message</strong>, junte os resultados em uma nova string e
+          retorne-a.
         </p>
+
+        <img src="assets/imgs/ex.png" alt="Exemplo" class="separado" />
       </article>
 
       <article class="conteudo">
@@ -38,6 +44,59 @@
             <img src="assets/imgs/result.png" alt="Resultado" />
           </picture>
         </figure>
+
+        <div class="conteudo">
+          <h3 class="junto">Explicação formatMessage</h3>
+
+          <p>
+            Criamos uma função <strong>formatMessage()</strong> que recebe dois
+            parâmetros: <strong>message</strong>, que contém a string, e
+            <strong>callback</strong>, que recebe uma função.
+          </p>
+
+          <p class="separado">
+            Como nossa variável é uma string, primeiro a convertemos em um array
+            para podermos percorrer cada palavra com o <strong>loop</strong>.
+            Fazemos isso com <span>save = message.split(' ')</span>, separando
+            as palavras pelos espaços. Dessa forma, temos
+            <strong>save = ['Teste', 'de', 'words']</strong>.
+          </p>
+
+          <p>
+            Em seguida, criamos <strong>armz = []</strong> para armazenar os
+            resultados. Dentro do loop, usamos
+            <strong>callback(save[i])</strong>, que executa a função recebida
+            como callback passando a palavra atual como argumento. O resultado
+            retornado pelo callback é então armazenado em <strong>armz</strong>.
+          </p>
+
+          <p>
+            Por fim, usamos <strong>return armz.join(' ')</strong> para juntar
+            os elementos do array novamente em uma string, separados por
+            espaços.
+          </p>
+        </div>
+
+        <div class="conteudo">
+          <h3 class="junto">Explicação capitalize</h3>
+
+          <p>
+            Criamos essa função para ser utilizada como
+            <strong>callback</strong> e retornar a palavra com a primeira letra
+            maiúscula.
+          </p>
+
+          <p>
+            Nela usamos <strong>word[0]</strong> para pegar a primeira letra da
+            palavra e <strong>.toUpperCase()</strong> para convertê-la em
+            maiúscula.
+          </p>
+
+          <p>
+            Em seguida, usamos <strong>+ word.slice(1)</strong> para concatenar
+            o restante da palavra, começando pelo índice 1.
+          </p>
+        </div>
 
         <a
           href="contAula.html"
@@ -58,8 +117,8 @@
     </main>
 
     <div class="next">
-      <a class="next" href="../">
-        Próxima Tarefa: 
+      <a class="next" href="../07_tarefa_face_control/index.html">
+        Próxima Tarefa: Face control
       </a>
     </div>
   </body>
