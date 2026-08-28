@@ -1,7 +1,6 @@
 :root {
     --bdColor: rgba(128, 0, 128, 0.813);
     --mnColor: aqua;
-    --bd-conteudo: rgba(128, 0, 128, 0.064);
 }
 
 /* Inter normal */
@@ -161,8 +160,8 @@ pre {
     font-size: 20px;
 }
 
-.conteudo {
-    border: 3px solid var(--bd-conteudo);
+.container {
+    border: 3px solid var(--bdColor);
     border-radius: 15px;
     padding: 15px;
     margin: 5px;
@@ -188,6 +187,4 @@ span {
     display: grid;
     margin-block: 20px;
     grid-template-columns: repeat(2, auto);
-    align-items: center;
-    justify-content: space-around;
 }

@@ -1,70 +1,197 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callback in a Loop</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - Tarefa: Simple AI
-        </a>
+      <a class="back" href="../04_tarefa_simple_ai/index.html">
+        Aula Anterior - Tarefa: Simple AI
+      </a>
     </div>
-    
+
     <main>
+      <article id="intro">
+        <h1 id="title">Callback in a Loop</h1>
 
-        <article id="intro">
+        <h3 class="intro">Intro</h3>
+        <p>
+          Agora veremos o funcionamento de uma
+          <strong>callback</strong> junto de um <strong>loop</strong>.
+        </p>
+      </article>
 
-            <h1 id="title">Title</h1>
+      <article class="conteudo">
+        <h3 class="cont-title">Código de Exemplo:</h3>
 
-            <h3 class="intro">Intro</h3>
-            <p>
-                
-            </p>
+        <p class="junto">
+          <strong>JS:</strong>
+        </p>
 
-        </article>
+        <figure>
+          <picture>
+            <img src="assets/imgs/js.png" alt="JS" />
+          </picture>
+        </figure>
+      </article>
 
-        <article class="conteudo">
+      <article class="conc">
+        <div class="conteudo">
+          <h3 class="junto">Código de Exemplo e Explicação</h3>
 
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
+          <p>
+            Se desejarmos criar uma função que percorra um array utilizando um
+            <strong>loop</strong>, podemos fazer da seguinte forma:
+          </p>
 
-            <p class="junto">
-                <strong>JS:</strong>
-            </p>
+          <div class="content">
+            <span>
+              <pre>
+const numbs = [1, 2, 3, 4];
 
-            <figure>
-                <picture>
-                    <img src="assets/imgs/js.png" alt="JS">
-                </picture>
-            </figure>
+function printValues(values) {
+console.log('--------');
 
-        </article>
+for (let i = 0; i < values.length; i++) {
+    const message = `Values is ${values[i]}`;
 
-        <article class="conc">
+    console.log(message);
+    }
+}
 
-            
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
+const test = printValues(numbs);
+printValues([10, 20, 30, 40]); </pre
+              >
+            </span>
 
-        </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
-    <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+            <img src="assets/imgs/exemplo01.png" alt="Exemplo" />
+          </div>
+
+          <p>Dessa forma, teremos como resultado:</p>
+
+          <img src="assets/imgs/resultEx01.png" alt="Resultado ex 01" />
+
+          <h3 class="junto">Formatos Diferentes:</h3>
+
+          <p>
+            Agora, se desejarmos utilizar formatos diferentes, podemos alterar a
+            forma como o valor é exibido:
+          </p>
+
+          <strong>
+            <pre>
+function printValues(values) {
+console.log('---------');
+
+for (let i = 0; i < values.length; i++) {
+    //const message = `Values is ${values[i]}`;
+    const message = `<span>${i}: ${values[i]}</span>`;
+    console.log(message);
+    }
+} </pre>
+          </strong>
+
+          <p>
+            Dessa forma, teremos o índice junto do valor correspondente no
+            array. Porém, se quisermos deixar essa função mais flexível, podemos
+            utilizar uma <strong>callback</strong> para definir diferentes
+            formatos.
+          </p>
+        </div>
+
+        <div class="conteudo">
+          <h3 class="junto">Callback com for:</h3>
+
+          <p>
+            Podemos modificar nossa <strong>function</strong> para receber dois
+            parâmetros. O primeiro será o array que iremos percorrer e o segundo
+            será uma <strong>callback</strong> responsável por definir como cada
+            valor será formatado.
+          </p>
+
+          <p>
+            Também podemos definir um valor padrão para a callback. Assim, caso
+            nenhum segundo parâmetro seja informado, será utilizada a função
+            definida no <strong>default</strong>:
+          </p>
+
+          <strong>
+            <pre>
+function printValues(
+values, <span>format = (value) => `Value is ${value}`</span>
+) {
+    console.log('---------');
+
+    for (let i = 0; i < values.length; i++) {
+        const message = <span>format(values[i], i)</span>;
+        console.log(message);
+    }
+}
+
+const test = printValues(numbs);
+
+printValues(
+[10, 20, 30], <span>(value, index) => `${index}: ${value}`</span>
+); </pre>
+          </strong>
+
+          <p>
+            No <strong>for</strong>, usamos <strong>values[i]</strong> para
+            obter o valor atual do array e passamos esse valor para a
+            <strong>callback</strong>.
+          </p>
+
+          <p>
+            Na chamada <strong>format(values[i], i)</strong>, passamos dois
+            valores para a callback: primeiro o valor atual do array e depois o
+            seu índice. A callback recebe esses valores pelos parâmetros
+            <strong>value</strong> e <strong>index</strong>.
+          </p>
+
+          <p>
+            Quando chamamos a função passando
+            <strong>(value, index) => `${index}: ${value}`</strong>, estamos
+            definindo um novo formato para cada item. O
+            <strong>for</strong> executará essa callback a cada repetição,
+            permitindo que cada valor seja formatado de uma maneira diferente
+            sem precisar alterar a função <strong>printValues</strong>.
+          </p>
+
+          <p class="separado">
+            <span>Resumo:</span> Basicamente, criamos uma única função que pode utilizar diferentes callbacks de acordo com o parâmetro recebido. A callback é opcional, pois definimos uma função como valor padrão (default). Dessa forma, se nenhuma callback for passada, a função utilizará o comportamento padrão. Caso uma callback seja informada, ela será utilizada para definir um comportamento diferente.
+          </p>
+        </div>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteúdo da aula
         </a>
-    </div>
+      </article>
 
-</body>
+      <!-- <h1>Testes JS se necessário</h1> -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../06_tarefa_format_message/index.html">
+        Próxima Aula - Tarefa: Format message
+      </a>
+    </div>
+  </body>
 </html>
