@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarefa: Bad robot! Bad!</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="back">
+      <a class="back" href="../07_tarefa_face_control/index.html">
+        Aula Anterior - Tarefa: Face control
+      </a>
+    </div>
+
+    <main>
+      <article id="intro">
+        <h1 id="title">Tarefa: Bad robot! Bad!</h1>
+
+        <h3 class="intro">Intro</h3>
+        <p>
+          Recentemente descobrimos que a versão mais recente do software possui
+          um erro. Precisamos encontrar quando esse problema ocorreu o mais
+          rápido possível.
+        </p>
+
+        <p class="separado">
+          Temos um número <strong>currentVersion</strong> e uma função
+          <strong>checkVersion</strong>, que recebe um número de versão e
+          retorna <strong>true</strong> se essa versão tiver um erro (<strong
+            >false</strong
+          >
+          caso contrário).
+        </p>
+
+        <p>
+          Escreva uma função <strong>getFirstBadVersion</strong> que aceite um
+          callback <strong>checkVersion</strong> e um número
+          <strong>currentVersion</strong> e retorne a primeira versão com um
+          erro.
+        </p>
+
+        <ul class="separado">
+          <li>As versões são números inteiros positivos a partir do 1.</li>
+          <li>
+            A função <strong>checkVersion</strong> já está implementada (você
+            pode usá-la).
+          </li>
+        </ul>
+
+        <img src="assets/imgs/ex.png" alt="Exemplo" />
+      </article>
+
+      <article class="conteudo">
+        <h3 class="cont-title">Resultado</h3>
+
+        <h3 class="junto">JS:</h3>
+        <figure>
+          <picture>
+            <img src="assets/imgs/result.png" alt="Resultado" />
+          </picture>
+        </figure>
+
+        <div class="conteudo separado">
+          <h3>Explicacao Resultado</h3>
+
+          <p>
+            Criamos uma função com dois parâmetros: checkVersion (callback) e
+            currentVersion (versão atual).
+          </p>
+
+          <p>
+            Criamos um for para percorrer as versões do 1 até a versão atual.
+            Com isso, em nossa condicional, usamos checkVersion(i) para executar
+            a função e verificar cada valor de i.
+          </p>
+
+          <p class="junto">
+            function checkVersion(version) irá retornar true para qualquer
+            versão acima de 134, indicando que essa versão possui um erro.
+          </p>
+        </div>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+          target="_blank"
+        >
+          Conteudo da aula
+        </a>
+      </article>
+
+      <!-- <h1>Testes JS se necessário</h1> -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../09_callback_questions/index.html">
+        Próxima Aula: Callback Questions
+      </a>
+    </div>
+  </body>
+</html>
