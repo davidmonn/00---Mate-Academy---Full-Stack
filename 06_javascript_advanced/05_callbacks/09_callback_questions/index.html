@@ -1,70 +1,166 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callback Questions</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
-        </a>
+      <a class="back" href="../08_tarefa_bad_robot_bad/index.html">
+        Aula Anterior - Tarefa: Bad robot! Bad!
+      </a>
     </div>
-    
+
     <main>
+      <article id="intro">
+        <h1 id="title">Callback Questions</h1>
 
-        <article id="intro">
+        <h3 class="intro">Intro</h3>
+        <p>
+          Entendendo melhor <strong>callback</strong> e seu
+          <strong>funcionamento</strong>.
+        </p>
+      </article>
 
-            <h1 id="title">Title</h1>
+      <article class="conteudo">
+        <h3>Para entendermos melhor, teremos 2 exemplos:</h3>
 
-            <h3 class="intro">Intro</h3>
-            <p>
-                
-            </p>
+        <h3 class="junto">Callback com retorno</h3>
 
-        </article>
+        <p>
+          Dessa forma, criamos uma função que recebe um
+          <strong>callback</strong> e um valor <strong>x</strong>. O callback
+          será executado utilizando o valor recebido em <strong>x</strong>.
+        </p>
 
-        <article class="conteudo">
+        <div class="content">
+          <strong>
+            <pre>
 
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
+function f(callback, x) {
+const result = callback(x);
 
-            <p class="junto">
-                <strong>JS:</strong>
-            </p>
+console.log(result);
 
-            <figure>
-                <picture>
-                    <img src="assets/imgs/js.png" alt="JS">
-                </picture>
-            </figure>
+} </pre
+            >
+          </strong>
+          <img src="assets/imgs/callback-retorno.png" alt="callback retorno" />
+        </div>
 
-        </article>
+        <p>
+          Para descobrirmos o resultado do callback, podemos passar uma arrow
+          function ou uma function tradicional:
+        </p>
 
-        <article class="conc">
+        <div class="content">
+          <strong>
+            <pre>f(a => a * 2, 10); </pre>
+          </strong>
+          <strong>
+            <pre>
+function c(valor) {
+return 2 * valor;
+}
 
-            
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
+f(c, 10); </pre
+            >
+          </strong>
+        </div>
 
-        </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
-    <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+        <p>
+          <span>Arrow function:</span> "a" recebe o valor 10 através de
+          <strong>callback(x)</strong>. O outro 2 é o valor pelo qual iremos
+          multiplicar "a". Resultado: 10 * 2 = 20.
+        </p>
+
+        <p class="separado">
+          <span>function c(valor)</span>: temos a mesma lógica. A função recebe
+          o valor através do parâmetro <strong>valor</strong>. Quando executamos
+          <span>f(c, 10)</span>, a função <strong>f</strong> passa o valor 10
+          para o callback, fazendo com que <strong>valor</strong> receba 10.
+        </p>
+      </article>
+
+      <div class="conteudo">
+        <h3 class="junto">Callback fixo</h3>
+
+        <p>
+          Neste exemplo, o callback sempre receberá o valor <strong>2</strong>,
+          independentemente do valor passado para <strong>x</strong>.
+        </p>
+
+        <div class="content">
+          <strong>
+            <pre>
+function fixo(callback, x) {
+const result = callback<span>(2)</span>;
+console.log(result);
+} </pre
+            >
+          </strong>
+          <img src="assets/imgs/callback-fixo.png" alt="Retorno do callback" />
+        </div>
+
+        <p>
+          Ao fazermos <strong>callback(2)</strong>, estamos passando diretamente
+          o valor <strong>2</strong> para o callback. Por isso, o valor recebido
+          em <strong>x</strong>
+          não é utilizado.
+        </p>
+
+        <div class="content">
+          <strong>
+            <pre>fixo(a => a * 2, 10); </pre>
+          </strong>
+          <strong>
+            <pre>
+function cFixo(a) {
+return a * 2;
+}
+
+fixo(cFixo, 10); </pre
+            >
+          </strong>
+        </div>
+
+        <p>
+          Nesse caso, o <span>10</span> é ignorado, pois a função
+          <strong>fixo</strong> não passa <strong>x</strong> para o callback.
+          Ela passa diretamente o valor <strong>2</strong>.
+        </p>
+      </div>
+
+      <article class="conc">
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteudo da aula
         </a>
-    </div>
+      </article>
 
-</body>
+      <!-- <h1>Testes JS se necessário</h1> -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../10_timers_and_event_handlers/index.html">
+        Próxima Aula - Timers and Event Handlers
+      </a>
+    </div>
+  </body>
 </html>
