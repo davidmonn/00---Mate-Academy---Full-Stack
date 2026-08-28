@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Title</title>
+    <title>Tarefa: Face control</title>
     <link rel="stylesheet" href="assets/styles/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,19 +14,33 @@
   </head>
   <body>
     <div class="back">
-      <a class="back" href="../">
-        Aula Anterior - 
+      <a class="back" href="../06_tarefa_format_message/index.html">
+        Aula Anterior - Tarefa: Format message
       </a>
     </div>
 
     <main>
       <article id="intro">
-        <h1 id="title">Title</h1>
+        <h1 id="title">Tarefa: Face control</h1>
 
         <h3 class="intro">Intro</h3>
         <p>
-          
+          Robô, robô, robô, cachorro, robô... Pare. Cachorro? Quem deixou o
+          cachorro entrar aqui? Como você pode ver, a proteção da Fábrica de
+          Robôs Mate funciona com muito esforço. Mas esses processos precisam
+          ser automatizados.
         </p>
+
+        <p class="separado">
+          Vamos escrever uma função <strong>processArray</strong> que aceita um
+          array <strong>items</strong> e uma função <strong>callback</strong>.
+          Execute o <strong>callback</strong> para cada elemento de
+          <strong>items</strong> e substitua o elemento pelo resultado do
+          <strong>callback</strong>. Você não precisa retornar nada, apenas
+          alterar o array <strong>items</strong>.
+        </p>
+
+        <img src="assets/imgs/ex.png" alt="Exemplo" />
       </article>
 
       <article class="conteudo">
@@ -38,6 +52,43 @@
             <img src="assets/imgs/result.png" alt="Resultado" />
           </picture>
         </figure>
+
+        <div class="conteudo">
+          <h3 class="junto">Explicacao processArray</h3>
+          <p>
+            Começamos com uma função que recebe dois parâmetros:
+            <strong>items</strong>, que é o array de objetos, e
+            <strong>callback</strong>, que é a função que será executada para
+            cada elemento.
+          </p>
+
+          <p>
+            Fazemos a iteração de <strong>items</strong> com um loop
+            <strong>for</strong>. A cada repetição, acessamos
+            <strong>items[i]</strong> para pegar o objeto atual e passá-lo para
+            o <strong>callback</strong>.
+          </p>
+
+          <p>
+            O resultado retornado pelo <strong>callback</strong> substitui o
+            elemento atual do array através de
+            <strong>items[i] = callback(items[i])</strong>.
+          </p>
+
+          <h3 class="junto">Explicacao isRobot()</h3>
+          <p>
+            Essa função recebe um objeto como parâmetro para fazer uma
+            verificação com a condicional <strong>if</strong>. Usamos
+            <strong>robot.type</strong> para acessar o valor da propriedade
+            <strong>type</strong> e verificar se ele é igual a
+            <strong>'robot'</strong>.
+          </p>
+
+          <p>
+            Se for igual, retornamos <strong>true</strong>. Caso contrário,
+            retornamos <strong>false</strong>.
+          </p>
+        </div>
 
         <a
           href="contAula.html"
@@ -58,8 +109,8 @@
     </main>
 
     <div class="next">
-      <a class="next" href="../">
-        Próxima Tarefa: 
+      <a class="next" href="../08_bad_robot_bad/index.html">
+        Próxima Tarefa: Bad robot! Bad!
       </a>
     </div>
   </body>
