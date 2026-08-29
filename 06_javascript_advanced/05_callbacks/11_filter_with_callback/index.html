@@ -1,70 +1,178 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Filter with Callback</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="back">
-        <a class="back" href="../10_timers_and_event_handlers/index.html">
-            Aula Anterior - Timers and Event Handlers
-        </a>
+      <a class="back" href="../10_timers_and_event_handlers/index.html">
+        Aula Anterior - Timers and Event Handlers
+      </a>
     </div>
-    
+
     <main>
+      <article id="intro">
+        <h1 id="title">Filter with Callback</h1>
 
-        <article id="intro">
+        <h3 class="intro">Intro</h3>
+        <p>
+          Agora iremos continuar nossa familiarização com callbacks e seu uso
+          prático.
+        </p>
+      </article>
 
-            <h1 id="title">Filter with Callback</h1>
+      <article class="conteudo">
+        <h3 class="cont-title">Código de Exemplo:</h3>
 
-            <h3 class="intro">Intro</h3>
-            <p>
-                
-            </p>
+        <p class="junto">
+          <strong>JS:</strong>
+        </p>
 
-        </article>
+        <figure>
+          <picture>
+            <img src="assets/imgs/js.png" alt="JS" />
+          </picture>
+        </figure>
+      </article>
 
-        <article class="conteudo">
+      <article class="conc">
+        <div class="conteudo">
+          <h3 class="junto">Iremos começar criando o seguinte código:</h3>
+          <img src="assets/imgs/code-ex.png" alt="Código Exemplo" />
 
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
+          <p>
+            Podemos observar que temos dois arrays com nomes de doces. Feito
+            isso, iremos criar uma função de
+            <strong>filtro</strong>, para podermos filtrar os doces. Para isso,
+            temos duas funções que serão utilizadas como callbacks.
+          </p>
 
-            <p class="junto">
-                <strong>JS:</strong>
-            </p>
+          <p class="junto">
+            <span>const contains0 = candy => candy.includes('o');</span>
+          </p>
+          <p>
+            Essa primeira função irá verificar se o nome do doce possui a letra
+            <strong>'o'</strong>. Caso possua, ela retornará
+            <strong>true</strong>. Caso contrário, retornará
+            <strong>false</strong>.
+          </p>
 
-            <figure>
-                <picture>
-                    <img src="assets/imgs/js.png" alt="JS">
-                </picture>
-            </figure>
+          <p class="junto">
+            <span>const isLessThan5 = candy => candy.length < 5;</span>
+          </p>
+          <p>
+            Essa segunda função irá verificar se a quantidade de caracteres do
+            nome do doce é inferior a
+            <strong>5</strong>. Caso seja, ela retornará <strong>true</strong>.
+            Caso contrário, retornará <strong>false</strong>.
+          </p>
 
-        </article>
+          <p class="junto">
+            <span>function filter():</span> ficará encarregada de 3 coisas:
+          </p>
 
-        <article class="conc">
+          <p>Primeiro, fazer a iteração de nossa lista de doces.</p>
 
-            
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
+          <p>
+            Segundo, verificar, através da callback, se a condição foi atendida.
+          </p>
 
-        </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
-    <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+          <p>Terceiro, retornar os doces que passaram na verificação.</p>
+
+          <h3 class="junto">Código function filter()</h3>
+
+          <strong>
+            <pre>
+function filter(candies, isGoodEnough) {
+const result = [];
+
+for (const candy of candies) {
+    if (isGoodEnough(candy)) {
+        result.push(candy);
+    }
+}
+
+return result;
+} </pre
+            >
+          </strong>
+
+          <h3 class="separado">Explicação Código function filter()</h3>
+
+          <p>
+            Iniciamos criando nossa <strong>function filter</strong>. Nela
+            teremos dois parâmetros: <span>candies (recebe o array)</span> e
+            <span>isGoodEnough (recebe a callback)</span>.
+          </p>
+
+          <p class="separado">
+            Iniciamos criando uma variável vazia para podermos armazenar os
+            valores que desejamos, nesse caso, os doces que passarem na
+            verificação. Criamos essa variável porque nossa função precisa
+            retornar apenas os doces que atenderem à condição definida pela
+            callback.
+          </p>
+
+          <p>
+            <span>for (const candy of candies)</span> aqui iremos fazer um loop
+            <strong>for of</strong>, porque não precisamos acessar os índices do
+            array. Precisamos apenas passar pelos valores de
+            <span>candies</span>. A cada repetição, o valor atual será
+            armazenado em <span>candy</span>.
+          </p>
+
+          <p class="separado">
+            <span>if (isGoodEnough(candy))</span>, nessa parte estamos
+            executando nossa callback e passando o doce atual como argumento.
+            Caso a callback retorne <strong>true</strong>, o código dentro do
+            <strong>if</strong> será executado.
+          </p>
+
+          <p>
+            <span>result.push(candy);</span> caso a callback retorne
+            <strong>true</strong>, adicionamos o doce atual ao array
+            <span>result</span>. Usamos o <strong>.push()</strong> porque
+            estamos trabalhando com um <strong>array</strong> e queremos
+            adicionar um novo valor ao final dele.
+          </p>
+
+          <p class="separado">
+            <span>return result;</span> por fim, retornamos o array
+            <span>result</span>, que contém apenas os doces que passaram na
+            verificação da callback.
+          </p>
+        </div>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteúdo da aula
         </a>
-    </div>
+      </article>
 
-</body>
+      <!-- <h1>Testes JS se necessário</h1> -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../12_filter_factory/index.html">
+        Próxima Aula - Filter Factory
+      </a>
+    </div>
+  </body>
 </html>
