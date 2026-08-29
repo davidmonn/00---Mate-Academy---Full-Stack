@@ -1,70 +1,205 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timers and Event Handlers</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
-        </a>
+      <a class="back" href="../09_callback_questions/index.html">
+        Aula Anterior - Callback Questions
+      </a>
     </div>
-    
+
     <main>
+      <article id="intro">
+        <h1 id="title">Timers and Event Handlers</h1>
 
-        <article id="intro">
+        <h3 class="intro">Intro</h3>
+        <p>
+          Aqui iremos ver dois usos típicos de <strong>callback</strong> em
+          <strong>JS</strong>.
+        </p>
+      </article>
 
-            <h1 id="title">Title</h1>
+      <article class="conteudo">
+        <h3 class="cont-title">Código de Exemplo:</h3>
 
-            <h3 class="intro">Intro</h3>
-            <p>
-                
-            </p>
+        <p class="junto">
+          <strong>JS:</strong>
+        </p>
 
-        </article>
+        <figure>
+          <picture>
+            <img src="assets/imgs/js.png" alt="JS" />
+          </picture>
+        </figure>
+      </article>
 
-        <article class="conteudo">
+      <article class="conc">
+        <div class="conteudo">
+          <h3 class="junto">Primeiro</h3>
 
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
+          <p>Interação com a página, exemplo:</p>
 
-            <p class="junto">
-                <strong>JS:</strong>
-            </p>
+          <p>
+            Se pegarmos nosso <strong>objeto document</strong> e depois
+            adicionarmos um manipulador de evento
+            (<span>addEventListener</span>) para o evento de
+            <strong>click</strong>:
+          </p>
 
-            <figure>
-                <picture>
-                    <img src="assets/imgs/js.png" alt="JS">
-                </picture>
-            </figure>
+          <span>
+            <pre>
+document.addEventListener('click', () => {
+  document.body.textContent = '123';
+});
+        </pre
+            >
+          </span>
 
-        </article>
+          <p>
+            Resumindo, passamos uma função como segundo parâmetro do
+            <strong>addEventListener</strong>. Essa função será executada quando
+            o evento de <strong>click</strong> acontecer. Nesse caso, ela é uma
+            <strong>callback</strong>.
+          </p>
+        </div>
 
-        <article class="conc">
+        <div class="conteudo">
+          <h3 class="junto">Segundo uso de callback</h3>
 
-            
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
+          <p>
+            Outro uso muito comum de callback é na execução retardada de código.
+            Isso pode ser feito usando a função <strong>setTimeout</strong>.
+          </p>
 
-        </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
-    <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+          <p>
+            <span>setTimeout:</span> dentro dessa função, o primeiro parâmetro é
+            a função de <strong>callback</strong> e o segundo é o atraso em
+            <strong>milissegundos</strong>:
+            <span>setTimeout(() => {}, 2000)</span>
+          </p>
+
+          <img src="assets/imgs/setTimeout.png" alt="setTimeout" />
+
+          <p class="junto">
+            <span>setInterval()</span>: possui uma estrutura parecida com o
+            <strong>setTimeout</strong>, porém o resultado é diferente. O
+            <strong>setInterval</strong> executa a callback repetidamente em um
+            determinado intervalo de tempo.
+          </p>
+
+          <div class="content">
+            <strong>
+              <pre>
+document.addEventListener('click', () => {
+  document.body.textContent = '123';
+
+  setInterval(() => {
+    document.body.textContent = Date.now();
+  }, 1000);
+});
+          </pre
+              >
+            </strong>
+
+            <img src="assets/imgs/setInterval.png" alt="setInterval" />
+          </div>
+
+          <p>
+            Se desejarmos cancelar essa chamada, que está sendo feita a cada
+            segundo, temos uma função chamada <span>clearInterval</span>. Para
+            podermos cancelar o <strong>intervalo</strong>, é necessário
+            armazenar seu identificador.
+          </p>
+
+          <p>
+            Podemos salvar o <strong>setInterval</strong> em uma
+            <strong>variável</strong>, ficando da seguinte forma:
+          </p>
+
+          <div class="content">
+            <strong>
+              <pre>
+<span>const timerId</span> = setInterval(() => {
+  document.body.textContent = Date.now();
+}, 1000);
+
+<span>clearInterval(timerId);</span>
+          </pre>
+            </strong>
+
+            <img src="assets/imgs/clearInterval.png" alt="clearInterval" />
+          </div>
+
+          <p>
+            Podemos observar que agora, para nosso
+            <strong>clearInterval</strong>, passamos a variável que está
+            armazenando o identificador do <strong>setInterval</strong>.
+          </p>
+
+          <p>
+            Porém, se deixarmos dessa forma, nosso intervalo será interrompido
+            imediatamente. Podemos fazer uma alteração para que essa ação ocorra
+            quando clicarmos com o botão direito do mouse:
+          </p>
+
+          <div class="content">
+            <strong>
+              <pre>
+document.addEventListener('click', () => {
+  document.body.textContent = '123';
+
+  const timerId = setInterval(() => {
+    document.body.textContent = Date.now();
+  }, 1000);
+
+  <span>
+    document.addEventListener('contextmenu', () => {
+      clearInterval(timerId);
+    });
+  </span>
+});
+          </pre>
+            </strong>
+
+            <img
+              src="assets/imgs/clearInterval-contextmenu.png"
+              alt="Exemplo de clearInterval"
+            />
+          </div>
+        </div>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteúdo da aula
         </a>
-    </div>
+      </article>
 
-</body>
+      <!-- <h1>Testes JS se necessário</h1> -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../11_filter_with_callback/index.html">
+        Próxima Aula - Filter with Callback
+      </a>
+    </div>
+  </body>
 </html>
