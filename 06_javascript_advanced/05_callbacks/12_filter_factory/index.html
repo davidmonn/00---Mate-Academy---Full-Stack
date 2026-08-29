@@ -1,70 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter Factory</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
-        </a>
+      <a class="back" href="../11_filter_with_callback/index.html">
+        Aula Anterior - Filter with Callback
+      </a>
     </div>
-    
+
     <main>
+      <article id="intro">
+        <h1 id="title">Filter Factory</h1>
 
-        <article id="intro">
+        <h3 class="intro">Intro</h3>
+        <p>
+          Aqui iremos continuar basicamente com o mesmo codigo de nossa aula
+          anterior, porem iremos dar mais um passo.
+        </p>
+      </article>
 
-            <h1 id="title">Title</h1>
+      <article class="conteudo">
+        <h3 class="cont-title">Codigo de Exemplo:</h3>
 
-            <h3 class="intro">Intro</h3>
+        <p class="junto">
+          <strong>JS:</strong>
+        </p>
+
+        <figure>
+          <picture>
+            <img src="assets/imgs/js.png" alt="JS" />
+          </picture>
+        </figure>
+      </article>
+
+      <article class="conc">
+        <div class="conteudo">
+          <h3 class="junto">Tarefa:</h3>
+          <p>
+            Agora nossa tarefa é criar uma nova função chamada
+            <strong>createSizeFilter(size)</strong>, onde iremos receber o
+            tamanho desejado para o filtro e retornar uma função que irá
+            verificar se o doce possui essa quantidade de caracteres.
+          </p>
+
+          <p>
+            Basicamente, iremos continuar trabalhando com a mesma função
+            <strong>filter</strong> criada na aula anterior. Porém, agora iremos
+            adicionar uma nova função para podermos definir de forma mais fácil
+            a quantidade de caracteres que desejamos filtrar.
+          </p>
+
+          <h3 class="junto">Resultado:</h3>
+          <img src="assets/imgs/result.png" alt="Resultado">
+          
+        </div>
+
+        <div class="conteudo">
+
+            <h3 class="junto">Explicacao Codigo:</h3>
+            <p class="separado">
+                Basicamente, com nossa função atual precisamos trabalhar com dois valores: <strong>size</strong> e <strong>candy</strong>. Porém, não podemos simplesmente passar os dois parâmetros para nossa <strong>createSizeFilter</strong>, pois isso não funcionaria da forma que desejamos com o <strong>filter</strong>.
+            </p>
             <p>
-                
+                Para contornar esse problema, criamos uma nova função dentro de <strong>createSizeFilter</strong> para servir como intermediária. Dessa forma, com o <strong>return function(candy)</strong>, conseguimos trabalhar com os dois valores que precisamos: o <strong>size</strong>, recebido pela função externa, e o <strong>candy</strong>, recebido pela função interna.
+            </p>
+            <p class="separado">
+                Quando fazemos isso, a <strong>createSizeFilter</strong> retorna a função que recebe <strong>candy</strong>. Essa função retornada será utilizada diretamente pelo <strong>filter</strong> como callback, permitindo que o <strong>filter</strong> passe cada <strong>candy</strong> para ela.
             </p>
 
-        </article>
+        </div>
 
-        <article class="conteudo">
-
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
-
-            <p class="junto">
-                <strong>JS:</strong>
-            </p>
-
-            <figure>
-                <picture>
-                    <img src="assets/imgs/js.png" alt="JS">
-                </picture>
-            </figure>
-
-        </article>
-
-        <article class="conc">
-
-            
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
-
-        </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
-    <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteudo da aula
         </a>
-    </div>
+      </article>
 
-</body>
+      <!-- <h1>Testes JS se necessário</h1> -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a
+        class="next"
+        href="../../06_metodos_de_iteração_de_array/01_array_foreach/index.html"
+      >
+        <strong>Próximo Modulo: Métodos de Iteração de Array - Aula: Array forEach</strong>
+      </a>
+    </div>
+  </body>
 </html>
