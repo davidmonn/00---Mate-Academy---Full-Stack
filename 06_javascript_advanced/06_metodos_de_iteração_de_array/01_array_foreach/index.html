@@ -1,70 +1,485 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array foreach</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
-        </a>
+      <a class="back" href="../../05_callbacks/12_filter_factory/index.html">
+        <strong>Modulo Anterior: callbacks - Aula: Filter Factory</strong>
+      </a>
     </div>
-    
+
     <main>
+      <article id="intro">
+        <h1 id="title">Array forEach</h1>
 
-        <article id="intro">
+        <h3 class="intro">Intro</h3>
 
-            <h1 id="title">Title</h1>
+        <p>
+          Aqui iremos entender o método <strong>forEach()</strong> e como ele
+          trabalha com <strong>callbacks</strong>.
+        </p>
 
-            <h3 class="intro">Intro</h3>
-            <p>
-                
-            </p>
+        <p>
+          Também iremos criar nosso próprio método chamado
+          <strong>runForEach()</strong>, utilizando um <strong>for</strong> no
+          lugar do <strong>forEach()</strong>.
+        </p>
+      </article>
 
-        </article>
+      <article class="conteudo">
 
-        <article class="conteudo">
+        <h3 class="cont-title">Código de exemplo</h3>
 
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
+        <p>Primeiro temos um array:</p>
 
-            <p class="junto">
-                <strong>JS:</strong>
-            </p>
+        <pre>
+const words = ['one', 'two', 'three', 'four', 'five', 'six'];
+        </pre>
 
-            <figure>
-                <picture>
-                    <img src="assets/imgs/js.png" alt="JS">
-                </picture>
-            </figure>
+        <p>Normalmente poderíamos utilizar o <strong>forEach()</strong>:</p>
 
-        </article>
+        <pre>
+words.forEach((item, index, items) => {
+    console.log(item, index, items);
+});
+        </pre>
 
-        <article class="conc">
+        <p>
+          O <strong>forEach()</strong> percorre cada elemento do array e executa
+          o <strong>callback</strong> uma vez para cada elemento.
+        </p>
+      </article>
 
-            
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
+      <article class="conc">
+        <div class="conteudo">
+          <h3 class="junto">1. Criando nosso próprio método</h3>
 
-        </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
-    <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+          <p>
+            Para entender melhor o funcionamento, iremos criar um método chamado
+            <strong>runForEach()</strong>.
+          </p>
+
+          <pre>
+words.runForEach();
+            </pre
+          >
+
+          <p>Esse método ainda não existe. Então precisamos criá-lo:</p>
+
+          <pre>
+words.runForEach = function(callback) {
+
+};
+            </pre
+          >
+
+          <p>
+            Estamos adicionando uma função chamada
+            <strong>runForEach</strong> ao nosso array.
+          </p>
+
+          <p>
+            Essa função recebe um parâmetro chamado
+            <strong>callback</strong>.
+          </p>
+
+          <p>Quando fizermos:</p>
+
+          <pre>
+words.runForEach((item) => {
+    console.log(item);
+});
+            </pre
+          >
+
+          <p>
+            A função que está sendo passada para
+            <strong>runForEach()</strong> será recebida pelo parâmetro
+            <strong>callback</strong>.
+          </p>
+
+          <h3 class="junto">2. Por que usamos uma função regular?</h3>
+
+          <p>
+            Nosso método será criado utilizando uma
+            <strong>função regular</strong>:
+          </p>
+
+          <pre>
+words.runForEach = function(callback) {
+
+};
+            </pre
+          >
+
+          <p>
+            Isso é importante porque iremos utilizar a palavra-chave
+            <strong>this</strong>.
+          </p>
+
+          <p>Quando fazemos:</p>
+
+          <pre>
+words.runForEach();
+            </pre
+          >
+
+          <p>
+            O <strong>this</strong>, dentro dessa função, representa o objeto
+            que chamou o método.
+          </p>
+
+          <pre>
+this === words
+            </pre
+          >
+
+          <p>Portanto, dentro do nosso método, podemos utilizar:</p>
+
+          <pre>
+this.length
+this[i]
+            </pre
+          >
+
+          <p>
+            Como <strong>this</strong> representa nosso array
+            <strong>words</strong>, <strong>this.length</strong> representa o
+            tamanho do array e <strong>this[i]</strong> acessa um elemento
+            através do seu índice.
+          </p>
+
+          <h3 class="junto">3. Percorrendo o array</h3>
+
+          <p>
+            Agora precisamos fazer nosso método percorrer todos os elementos do
+            array.
+          </p>
+
+          <p>Para isso utilizaremos um <strong>for</strong>:</p>
+
+          <pre>
+for (let i = 0; i &lt; this.length; i++) {
+
+}
+            </pre
+          >
+
+          <p>
+            Como <strong>this</strong> representa <strong>words</strong>, o
+            <strong>for</strong> irá percorrer os índices do array.
+          </p>
+
+          <pre>
+i = 0 → this[0] → 'one'
+i = 1 → this[1] → 'two'
+i = 2 → this[2] → 'three'
+i = 3 → this[3] → 'four'
+i = 4 → this[4] → 'five'
+i = 5 → this[5] → 'six'
+            </pre
+          >
+
+          <p>
+            Até aqui, nosso <strong>for</strong> simplesmente está percorrendo o
+            array.
+          </p>
+
+          <h3 class="junto">4. Executando o callback</h3>
+
+          <p>
+            Agora precisamos fazer algo em cada volta do
+            <strong>for</strong>.
+          </p>
+
+          <p>
+            O nosso callback está armazenado na variável
+            <strong>callback</strong>.
+          </p>
+
+          <p>
+            Para executar uma função armazenada em uma variável, podemos
+            utilizar:
+          </p>
+
+          <pre>
+callback();
+            </pre
+          >
+
+          <p>
+            Porém, queremos enviar o elemento atual para o callback. O elemento
+            atual está em:
+          </p>
+
+          <pre>
+this[i]
+            </pre
+          >
+
+          <p>Então fazemos:</p>
+
+          <pre>
+callback(this[i]);
+            </pre
+          >
+
+          <p>
+            Agora, a cada volta do <strong>for</strong>, o elemento atual será
+            enviado para o callback.
+          </p>
+
+          <pre>
+i = 0
+this[i] → 'one'
+callback('one')
+
+i = 1
+this[i] → 'two'
+callback('two')
+
+i = 2
+this[i] → 'three'
+callback('three')
+            </pre
+          >
+
+          <h3 class="junto">5. Passando item, index e array</h3>
+
+          <p>
+            O <strong>forEach()</strong> pode passar três informações para o
+            callback:
+          </p>
+
+          <pre>
+item
+index
+array
+            </pre
+          >
+
+          <p>Podemos fazer a mesma coisa no nosso método:</p>
+
+          <pre>
+callback(this[i], i, this);
+            </pre
+          >
+
+          <p>Cada informação possui uma função:</p>
+
+          <pre>
+this[i] → elemento atual
+i       → índice atual
+this    → array completo
+            </pre
+          >
+
+          <p>Portanto:</p>
+
+          <pre>
+callback(this[i], i, this);
+            </pre
+          >
+
+          <p>será recebido pelo callback desta forma:</p>
+
+          <pre>
+(item, index, items)
+            </pre
+          >
+
+          <p>Por exemplo, quando <strong>i</strong> for <strong>2</strong>:</p>
+
+          <pre>
+this[i] → 'three'
+i       → 2
+this    → ['one', 'two', 'three', 'four', 'five', 'six']
+            </pre
+          >
+
+          <p>Então será equivalente a:</p>
+
+          <pre>
+callback(
+    'three',
+    2,
+    words
+);
+            </pre
+          >
+
+          <h3>6. Nosso método completo</h3>
+
+          <p>Agora podemos juntar todas as partes:</p>
+
+          <pre>
+words.runForEach = function(callback) {
+
+    for (let i = 0; i &lt; this.length; i++) {
+
+        callback(this[i], i, this);
+
+    }
+
+};
+            </pre
+          >
+
+          <h3>7. Utilizando nosso método</h3>
+
+          <p>Agora podemos utilizar o método que criamos:</p>
+
+          <pre>
+words.runForEach((item, index, items) => {
+
+    console.log(item, index, items);
+
+});
+            </pre
+          >
+
+          <p>O funcionamento será:</p>
+
+          <pre>
+runForEach()
+      ↓
+recebe o callback
+      ↓
+inicia o for
+      ↓
+pega o elemento atual
+      ↓
+executa o callback
+      ↓
+passa para o próximo elemento
+      ↓
+executa o callback novamente
+      ↓
+continua até o final do array
+            </pre
+          >
+
+          <h3>8. A ideia principal</h3>
+
+          <p>Podemos resumir nosso método em três partes:</p>
+
+          <pre>
+for
+↓
+percorre o array
+
+
+callback
+↓
+executa uma função para cada elemento
+
+
+this[i]
+↓
+pega o elemento atual
+            </pre
+          >
+
+          <p>
+            Portanto, a lógica principal do
+            <strong>forEach()</strong> pode ser entendida como:
+          </p>
+
+          <pre>
+percorrer o array
+        +
+executar o callback
+        +
+entregar o elemento atual
+            </pre
+          >
+
+          <h3>9. Código completo</h3>
+
+          <pre>
+'use strict';
+
+const words = ['one', 'two', 'three', 'four', 'five', 'six'];
+
+words.runForEach = function(callback) {
+
+    for (let i = 0; i &lt; this.length; i++) {
+
+        callback(this[i], i, this);
+
+    }
+
+};
+
+words.runForEach((item, index, items) => {
+
+    console.log(item, index, items);
+
+});
+            </pre
+          >
+
+          <h3>10. Observação sobre o retorno</h3>
+
+          <p>
+            O <strong>forEach()</strong> não cria um novo array e não retorna o
+            resultado do callback.
+          </p>
+
+          <p>Por isso, quando fazemos:</p>
+
+          <pre>
+const result = words.forEach(...);
+
+console.log(result);
+            </pre
+          >
+
+          <p>O resultado será:</p>
+
+          <pre>
+undefined
+            </pre
+          >
+
+          <p>
+            Isso acontece porque a função apenas percorre o array e executa o
+            callback.
+          </p>
+        </div>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteudo da aula
         </a>
-    </div>
 
-</body>
+      </article>
+
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../02_iteration_methods/index.html">
+        Próxima Aula - Iteration Methods
+      </a>
+    </div>
+  </body>
 </html>
