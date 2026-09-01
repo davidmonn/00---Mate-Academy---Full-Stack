@@ -1,70 +1,259 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iteration Methods</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
-        </a>
+      <a class="back" href="../01_array_foreach/index.html">
+        Aula Anterior - Array foreach
+      </a>
     </div>
-    
+
     <main>
+      <article id="intro">
+        <h1 id="title">Iteration Methods</h1>
 
-        <article id="intro">
+        <h3 class="intro">Intro</h3>
+        <p>
+          Anteriormente vimos sobre o <strong>metodo forEach</strong> que recebe
+          um <strong>callback</strong> itera sobre o array e para cada elemento
+          chama o <strong>callback</strong>, passando o elemento, indice e
+          referencia ao array inteiro.
+        </p>
+      </article>
 
-            <h1 id="title">Title</h1>
+      <article class="conc">
+        <div class="conteudo">
+          <h3 class="junto">Codigo de Exemplo:</h3>
 
-            <h3 class="intro">Intro</h3>
-            <p>
-                
-            </p>
+          <p class="junto">
+            Aqui iremos continuar basicamente com nosso mesmo codigo da aula
+            anterior, fazendo algumas modificacoes para poder compreender
+            melhor:
+          </p>
 
-        </article>
+          <strong>
+            <pre>
+const words = ['one', 'two', 'three', 'four', 'five', 'six'];
 
-        <article class="conteudo">
+function forEach(callback) {
+  for (let i = 0; i < this.length; i++) {
+    <span>callback</span>(this[i], i, this);
+  }
+}
 
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
+const result = words<span>.forEach</span>((item, index) => {
+  console.log(word, index);
 
-            <p class="junto">
-                <strong>JS:</strong>
-            </p>
+  // Para cada palavra retorna comprimento
+  return word.length;
+})
 
-            <figure>
-                <picture>
-                    <img src="assets/imgs/js.png" alt="JS">
-                </picture>
-            </figure>
+console.log(result);
+                </pre
+            >
+          </strong>
+        </div>
 
-        </article>
+        <div class="conteudo">
+          <h3 class="junto">
+            Metodo <span>map(function(parametro) => {condicao})</span>
+          </h3>
+          <p>
+            Com map, podemos transformar cada elemento de um array e guardar os
+            resultados em um novo array, mantendo o array original intacto.
+            Porém, se os elementos forem objetos, precisamos tomar cuidado, pois
+            o map não cria automaticamente uma cópia dos objetos.
+          </p>
 
-        <article class="conc">
+          <div class="content">
+            <strong>
+              <pre>
+const result = words.<span>map</span>((word, index) => {
+    console.log(word, index);
 
-            
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
+    return word.length;
+})
+             </pre
+              >
+            </strong>
 
-        </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
-    <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+            <pre>
+                <strong>
+const result = words<span>.map</span>((word, index) => <span>word.length + index</span>);
+                </strong> 
+            </pre>
+          </div>
+
+          <p>
+            Unica mudanca que temos no codigo acima é que temos o mesmo
+            resultado porem de forma que a sintaxe ficou abreviada (arrow
+            function).
+          </p>
+        </div>
+
+        <div class="conteudo">
+          <h3 class="junto">
+            Metodo <span>filter(function(parametro) => {condicao})</span>
+          </h3>
+          <p>
+            Retorna um novo array, contendo apenas os elementos dos quais a
+            funcao retornou algo equivalente a verdadeiro. Ex:
+          </p>
+
+          <strong>
+            <pre>
+words<span>.filter</span>((word, index, items) => word.length > 3);
+                </pre
+            >
+          </strong>
+
+          <p>Ou</p>
+
+          <strong>
+            <pre>
+const result = words<span>.filter</span>((word, index, items) => {
+  return word.length > 3;
+});
+                </pre
+            >
+          </strong>
+
+          <p>Ambos sao a mesma coisa, mudando apenas sintaxe.</p>
+        </div>
+
+        <div class="conteudo">
+          <h3 class="junto">
+            Método <span>find(function(parametro) {condição})</span>
+          </h3>
+          <p>
+            Ele retorna o primeiro elemento do array cujo callback retorna algo
+            equivalente a verdadeiro. Se nenhum elemento atender à condição,
+            retorna <code>undefined</code>. Também temos o
+            <span>findIndex()</span>, que funciona de forma semelhante, mas
+            retorna o índice do primeiro elemento encontrado. Por padrão,
+            retorna <code>-1</code> caso nenhum elemento atenda ao nosso
+            critério.
+          </p>
+
+          <strong>
+            <pre>
+const result = words.<span>find</span>((word, index, item) => word.length > 3);
+
+<span>Ou</span>
+
+const result = words.<span>findIndex</span>((word, index, items) => {
+   console.log(word);
+  
+  
+   return word.length > 3
+ })
+                </pre
+            >
+          </strong>
+        </div>
+
+        <div class="conteudo">
+          <h3 class="junto">Método <span>some(() => {})</span></h3>
+          <p>
+            Retorna <strong>true</strong> se pelo menos um elemento do array
+            atender à condição definida no callback. Caso nenhum elemento atenda
+            à condição, retorna <strong>false</strong>. Se o array estiver
+            vazio, o método <strong>some</strong> também sempre retornará
+            <strong>false</strong>, pois não existe nenhum elemento que possa
+            atender à condição.
+          </p>
+
+          <strong>
+            <pre>
+const result = words.<span>some</span>((word, index, items) => {
+  console.log(word);
+  
+  return word.length >= 5
+});
+
+Ou
+
+const result = words.<span>some</span>((word, index, items) => word.length >= 5);
+            </pre>
+          </strong>
+        </div>
+
+        <div class="conteudo">
+          <h3 class="junto">Método <span>every(() => {})</span></h3>
+          <p>
+            Retorna <strong>true</strong> somente se todos os elementos do array
+            atenderem à condição definida no callback. Se pelo menos um elemento
+            não atender à condição, retorna <strong>false</strong>. Caso o array
+            esteja vazio, o método <strong>every</strong> retorna
+            <strong>true</strong>.
+          </p>
+
+          <strong>
+            <pre>
+const result = words.<span>every</span>((word, index, items) => word.length > 2);
+
+<span>Ou</span>
+
+const result = words.<span>every</span>((word, index, items) => {
+    return word.length > 2;
+})
+            </pre>
+          </strong>
+
+
+          <h3 class="junto">Analogia de Exemplo Basico</h3>
+          <p>
+            <span>every →</span> como uma senha que precisa passar por todas as verificações. Se uma falhar → false.
+          </p>
+          <p>
+            <span>some →</span> como um filtro de busca: basta uma opção atender ao critério → true.
+          </p>
+
+          <h3 class="junto">Explicando algumas partes nao usadas do Codigo</h3>
+          <p>
+            <span>word →</span> elemento atual
+          </p>
+          <p>
+            <span>index →</span> índice do elemento
+          </p>
+          <p>
+            <span>items →</span> array original
+          </p>
+
+        </div>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteudo da aula
         </a>
-    </div>
+      </article>
 
-</body>
+      <!-- <h1>Testes JS se necessário</h1> -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../03_tarefa_filter_method/index.html">
+        Próxima Aula - Tarefa: Filter method
+      </a>
+    </div>
+  </body>
 </html>
