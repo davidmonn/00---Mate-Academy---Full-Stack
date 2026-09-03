@@ -1,70 +1,468 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reduce</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
-        </a>
+      <a class="back" href="../09_method_chaining/index.html">
+        Aula Anterior - Method Chaining
+      </a>
     </div>
-    
+
     <main>
+      <article id="intro">
+        <h1 id="title">Reduce</h1>
 
-        <article id="intro">
+        <h3 class="intro">Introdução</h3>
+        <p>
+          Agora iremos conhecer outro <strong>método</strong> de
+          <strong>iteração</strong>, que possui um funcionamento diferente dos
+          métodos que vimos anteriormente.
+        </p>
+      </article>
 
-            <h1 id="title">Title</h1>
+      <div class="conteudo">
+        <h3 class="cont-title">Código de Exemplo:</h3>
 
-            <h3 class="intro">Intro</h3>
-            <p>
-                
-            </p>
+        <p class="junto">
+          <strong>JS:</strong>
+        </p>
 
-        </article>
+        <figure>
+          <picture>
+            <img src="assets/imgs/js.png" alt="JS" />
+          </picture>
+        </figure>
+      </div>
 
-        <article class="conteudo">
+      <article class="conteudo">
+        <div class="conteudo">
+          <h3 class="junto">Explicação</h3>
 
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
+          <p>Para começar, teremos o seguinte código de exemplo:</p>
 
-            <p class="junto">
-                <strong>JS:</strong>
-            </p>
+          <strong>
+            <pre>
+const words = ['one', 'two', 'three', 'four', 'five', 'six'];
 
-            <figure>
-                <picture>
-                    <img src="assets/imgs/js.png" alt="JS">
-                </picture>
-            </figure>
+const result = words.map((word, index) => ({ name: word, index })); </pre
+            >
+          </strong>
 
-        </article>
+          <p>
+            Feito isso, transformamos nosso <strong>array</strong> em um
+            <strong>array de objetos</strong>:
+          </p>
 
-        <article class="conc">
+          <img src="assets/imgs/log-map.png" alt="Resultado map log" />
 
-            
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
+          <p>
+            Podemos observar que cada objeto possui um <strong>nome</strong> e
+            um <strong>índice</strong>.
+          </p>
 
-        </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
-    <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+          <p>
+            Agora, suponha que queremos criar um <strong>objeto</strong> onde a
+            <strong>chave</strong> será a palavra e o
+            <strong>valor</strong> será o comprimento dessa palavra. Nesse caso,
+            nosso resultado final não será um array, mas sim um objeto contendo
+            todos os elementos.
+          </p>
+
+          <p>
+            Para situações em que precisamos realizar uma
+            <strong>agregação</strong>, como somar valores, calcular uma média,
+            concatenar strings ou construir um objeto, podemos utilizar o método
+            <strong>reduce</strong>.
+          </p>
+        </div>
+
+        <div class="conteudo">
+          <h3 class="junto">Método reduce</h3>
+
+          <p>
+            O método <strong>reduce</strong> recebe uma
+            <strong>função callback</strong> como parâmetro. Seus argumentos são
+            um pouco diferentes dos métodos que vimos anteriormente.
+          </p>
+
+          <p>
+            Para entendermos melhor, podemos escrever o callback separadamente:
+          </p>
+
+          <p>
+            O primeiro parâmetro representa o <strong>acumulador</strong>, ou
+            seja, o resultado produzido pelas iterações anteriores.
+          </p>
+
+          <p>
+            O segundo parâmetro representa o <strong>elemento atual</strong>
+            do array.
+          </p>
+
+          <p>
+            O terceiro parâmetro representa o <strong>índice</strong> do
+            elemento atual e o quarto representa o
+            <strong>próprio array</strong>.
+          </p>
+
+          <strong>
+            <pre>
+const result = words
+.reduce((prev, item, index, items) => {}) </pre
+            >
+          </strong>
+
+          <p>
+            O <span>prev</span> representa o valor acumulado até aquele momento.
+            Também podemos definir um <strong>valor inicial</strong>
+            para o acumulador passando um segundo argumento para o
+            <strong>reduce</strong>.
+          </p>
+
+          <strong>
+            <pre>
+const result = words
+.reduce((prev, item, index, items) => {}, <span>''</span>) </pre
+            >
+          </strong>
+
+          <p>
+            Nesse caso, passamos uma <strong>string vazia</strong> como valor
+            inicial do acumulador.
+          </p>
+
+          <p class="junto">
+            Agora podemos utilizar o <strong>return</strong> para informar qual
+            será o novo valor do acumulador:
+          </p>
+
+          <strong>
+            <pre>
+const result = words
+.reduce((prev, item, index, items) => { <span>return prev + item;</span>
+}, <span>''</span>) </pre>
+          </strong>
+
+          <p>Como resultado final, teremos:</p>
+
+          <img src="assets/imgs/log-reduce.png" alt="Resultado log reduce" />
+
+          <p>
+            Teremos como resultado a <strong>concatenação</strong> de todas as
+            palavras.
+          </p>
+
+          <h3 class="junto">Explicando o reduce</h3>
+
+          <p>
+            Para analisarmos melhor o funcionamento, podemos utilizar
+            <strong>console.log</strong> para observar os valores durante cada
+            iteração:
+          </p>
+
+          <div class="content">
+            <strong>
+              <pre>
+const result = words
+.reduce((prev, item, index) => {
+console.log(prev, item, index);
+
+    return prev + item;
+}, '')
+                </pre
+              >
+            </strong>
+
+            <img
+              src="assets/imgs/log-reduce-full.png"
+              alt="Explicação reduce"
+            />
+          </div>
+
+          <p>
+            No início, o valor de <span>prev</span> é a
+            <strong>string vazia</strong>, pois definimos <strong>''</strong>
+            como valor inicial.
+          </p>
+
+          <p>
+            Na primeira iteração, temos:
+            <strong>prev = ''</strong> e <strong>item = 'one'</strong>. Então o
+            <strong>return</strong> faz: <strong>'' + 'one'</strong>.
+          </p>
+
+          <p>
+            O resultado dessa operação passa a ser o novo valor de
+            <strong>prev</strong> na próxima iteração.
+          </p>
+
+          <p>
+            Na próxima iteração teremos:
+            <strong>prev = 'one'</strong> e <strong>item = 'two'</strong>. O
+            resultado será <strong>'onetwo'</strong>.
+          </p>
+
+          <p>
+            Esse processo continua até que todos os elementos do array tenham
+            sido percorridos.
+          </p>
+
+          <p>
+            Portanto, o método <strong>reduce</strong> permite realizar uma
+            <strong>agregação</strong>. No nosso exemplo, estamos fazendo uma
+            <strong>concatenação</strong>.
+          </p>
+
+          <p>
+            Como não precisamos do <strong>índice</strong> nem do
+            <strong>array original</strong>, podemos utilizar somente
+            <strong>prev</strong> e <strong>item</strong>:
+          </p>
+
+          <p class="junto">
+            Podemos também deixar o código mais curto utilizando o
+            <strong>retorno implícito</strong>:
+          </p>
+
+          <strong>
+            <pre>
+const result = words
+.reduce((prev, item) => prev + item, '') </pre
+            >
+          </strong>
+
+          <h3 class="junto">Concatenando índices</h3>
+
+          <p>
+            Dessa vez, em vez dos elementos, iremos concatenar os
+            <strong>índices</strong>.
+          </p>
+
+          <strong>
+            <pre>
+const result = words
+.reduce((prev, item, index) => prev + index, '') </pre
+            >
+          </strong>
+
+          <p>
+            Dessa forma, teremos a concatenação dos índices. O resultado será
+            uma string contendo os índices
+            <strong>012345</strong>.
+          </p>
+
+          <p class="junto">
+            Se tivéssemos, em vez de uma string vazia, um valor inicial igual a
+            <strong>0</strong>, poderíamos utilizar o
+            <strong>reduce</strong> para realizar uma soma:
+          </p>
+
+          <strong>
+            <pre>
+const result = words
+.reduce((prev, item, index) => prev + index, <span>0</span>) </pre
+            >
+          </strong>
+
+          <p>
+            Nesse caso, começamos com <strong>0</strong> e adicionamos cada
+            índice ao acumulador.
+          </p>
+        </div>
+
+        <div class="conteudo">
+          <h3 class="junto">Método reduce com objeto</h3>
+
+          <p>
+            Agora iremos utilizar o <strong>reduce</strong> para construir um
+            <strong>objeto</strong>.
+          </p>
+
+          <p>
+            A cada iteração, iremos manter todas as propriedades que já existem
+            no objeto <strong><span>prev</span></strong> e adicionar uma nova
+            propriedade. A <strong>chave</strong> será o valor de
+            <strong><span>item</span></strong> e o valor dessa chave será o
+            <strong>índice</strong>.
+          </p>
+
+          <p>
+            Para isso, podemos utilizar o
+            <strong>spread operator (...)</strong> para copiar as propriedades
+            existentes em <strong><span>prev</span></strong
+            >. Depois, utilizamos <strong>[item]</strong> para criar uma
+            propriedade cujo nome será definido dinamicamente:
+          </p>
+
+          <strong>
+            <pre>
+const result = words
+    .reduce((prev, item, i) => {
+        return { ...prev, [item]: i };
+    }, {});
+    </pre
+            >
+          </strong>
+
+          <p>
+            O <strong>{...prev}</strong> copia todas as propriedades que já
+            foram adicionadas ao objeto acumulador.
+          </p>
+
+          <p>
+            Já o <strong>[item]</strong> indica que estamos utilizando o valor
+            de <strong>item</strong> como o nome da propriedade.
+          </p>
+
+          <p>Por exemplo, na primeira iteração, temos:</p>
+
+          <strong>
+            <pre>
+item = 'one'
+i = 0
+    </pre
+            >
+          </strong>
+
+          <p>Então será criado:</p>
+
+          <strong>
+            <pre>
+{ one: 0 }
+    </pre
+            >
+          </strong>
+
+          <p>
+            Na próxima iteração, <strong>item</strong> será
+            <strong>'two'</strong> e o índice será <strong>1</strong>. O objeto
+            anterior será mantido e uma nova propriedade será adicionada:
+          </p>
+
+          <strong>
+            <pre>
+{ one: 0, two: 1 }
+    </pre
+            >
+          </strong>
+
+          <p>
+            Esse processo continua até que todos os elementos do array tenham
+            sido percorridos.
+          </p>
+
+          <p>Dessa forma, o resultado final será:</p>
+
+          <strong>
+            <pre>
+{
+    one: 0,
+    two: 1,
+    three: 2,
+    four: 3,
+    five: 4,
+    six: 5
+}
+    </pre
+            >
+          </strong>
+
+          <p>
+            <strong>Importante:</strong> como estamos acumulando um
+            <strong>objeto</strong>, o valor inicial do
+            <strong>reduce</strong> deve ser um objeto vazio
+            <strong>{}</strong>, e não uma string vazia <strong>''</strong>.
+          </p>
+        </div>
+
+        <div class="conteudo">
+          <h3 class="junto">Resumo do reduce</h3>
+
+          <p>
+            Uma maneira simples de entender o <strong>reduce</strong> é pensar
+            nele como uma variável que vai
+            <strong>acumulando um resultado</strong> a cada volta do loop.
+          </p>
+
+          <strong>
+            <pre>
+valor inicial
+↓
+reduce
+↓
+acumulador + elemento
+↓
+novo acumulador
+↓
+acumulador + próximo elemento
+↓
+resultado final </pre
+            >
+          </strong>
+
+          <p>
+            Diferentemente do <strong>map</strong> e do <strong>filter</strong>,
+            que normalmente retornam um <strong>novo array</strong>, o
+            <strong>reduce</strong> pode retornar praticamente qualquer tipo de
+            valor: <strong>número, string, objeto, array, boolean</strong> etc.
+          </p>
+
+          <p>
+            O tipo do resultado depende do <strong>valor inicial</strong>
+            e do que retornamos dentro do callback.
+          </p>
+
+          <p>
+            <strong>Exemplo:</strong> se começarmos com <strong>0</strong>,
+            podemos acumular números. Se começarmos com <strong>''</strong>,
+            podemos concatenar strings. Se começarmos com <strong>{}</strong>,
+            podemos construir um objeto.
+          </p>
+
+          <p>
+            Portanto, a ideia principal é:
+            <strong
+              >reduce pega vários valores e os reduz a um único resultado
+              acumulado.</strong
+            >
+          </p>
+        </div>
+      </article>
+
+      <article class="conc">
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteúdo da aula
         </a>
-    </div>
+      </article>
 
-</body>
+      <!-- <h1>Testes JS se necessário</h1> -->
+
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../11_array_reduce_method/index.html">
+        Próxima Aula - Tarefa: Array Reduce Method
+      </a>
+    </div>
+  </body>
 </html>
