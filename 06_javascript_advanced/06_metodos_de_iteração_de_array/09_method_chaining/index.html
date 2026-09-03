@@ -1,70 +1,346 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Method Chaining</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
-        </a>
+      <a class="back" href="../08_tarefa_every_method/index.html">
+        Aula Anterior - Tarefa: Every method
+      </a>
     </div>
-    
+
     <main>
+      <article id="intro">
+        <h1 id="title">Method Chaining</h1>
 
-        <article id="intro">
+        <h3 class="intro">Introdução</h3>
+        <p>
+          Agora iremos aprender sobre
+          <strong>métodos iterativos encadeados</strong>, que podem ser
+          utilizados em conjunto para realizar tarefas específicas.
+        </p>
+      </article>
 
-            <h1 id="title">Title</h1>
+      <article class="conteudo">
+        <h3 class="cont-title">Código de Exemplo:</h3>
 
-            <h3 class="intro">Intro</h3>
+        <p class="junto">
+          <strong>JS:</strong>
+        </p>
+
+        <figure>
+          <picture>
+            <img src="assets/imgs/js.png" alt="JS" />
+          </picture>
+        </figure>
+      </article>
+
+      <article class="conc">
+        <div class="conteudo">
+          <h3 class="junto">Exemplo:</h3>
+
+          <p>
+            Um exemplo seria, a partir de nosso
+            <strong>array de entrada</strong>:
+          </p>
+
+          <strong>
+            <pre>
+const intro = ['one', 'two', 'three', 'four', 'five', 'six']; </pre
+            >
+          </strong>
+          <br />
+
+          <p>
+            Iremos querer criar um array de <strong>objetos</strong>, onde cada
+            elemento terá um <strong>nome</strong> e um <strong>índice</strong>.
+          </p>
+
+          <p>
+            Para fazermos isso, iremos começar com o
+            <strong>método <span>map</span></strong
+            >. O callback do <strong>map</strong> pode receber três parâmetros:
+            o <strong>elemento atual</strong>, o <strong>índice</strong> e o
+            <strong>array original</strong>.
+          </p>
+
+          <p>
+            Neste exemplo, iremos utilizar apenas os dois primeiros:
+            <strong>elemento</strong> e <strong>índice</strong>.
+          </p>
+
+          <p>
+            Feito isso, iremos querer retornar um novo <strong>objeto</strong>.
+            Podemos fazer da seguinte forma:
+          </p>
+
+          <strong>
+            <pre>
+const result = intro.map((intro, indice) => {
+    return {
+    nome: intro,
+    indice,
+    };
+}); </pre
+            >
+          </strong>
+          <p>
+            Também podemos escrever de uma forma mais curta utilizando o
+            <strong>retorno implícito</strong> das arrow functions:
+          </p>
+
+          <strong>
+            <pre>
+const result = intro.map((intro, indice) => ({ nome: intro, indice })); </pre
+            >
+          </strong>
+          <p>
+            Quando usamos uma arrow function com apenas uma expressão, podemos
+            omitir o <strong>return</strong>. Porém, como estamos retornando um
+            <strong>objeto</strong> diretamente, precisamos colocá-lo entre
+            <strong>parênteses</strong>.
+          </p>
+
+          <div class="conteudo">
+            <h3 class="junto">Adicionando outro método</h3>
+
             <p>
-                
+              Agora iremos supor que desejamos manter em nosso array apenas os
+              objetos nos quais o tamanho do <strong>nome</strong> seja maior
+              que o seu <strong>índice</strong>.
             </p>
 
-        </article>
+            <strong>
+              <pre>
+const result = intro 
+    <span>.map</span>((intro, indice) => ({ nome: intro, indice })) <span>
+    .filter</span>(({ nome, indice }) => nome.length > indice); </pre>
+            </strong>
+            <p>
+              Podemos observar que apenas adicionamos outro
+              <strong>método</strong> ao código. Para melhorar a legibilidade,
+              colocamos cada método em uma nova linha.
+            </p>
 
-        <article class="conteudo">
+            <p>
+              Isso é chamado de <strong>Method Chaining</strong> ou
+              <strong>encadeamento de métodos</strong>. O resultado de um método
+              é utilizado como entrada para o próximo método.
+            </p>
+          </div>
 
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
+          <div class="conteudo">
+            <h3 class="junto">Método some</h3>
 
             <p class="junto">
-                <strong>JS:</strong>
+              Agora, se precisarmos descobrir se existe pelo menos um elemento
+              em nosso array cujo caractere na posição indicada seja
+              <strong>'o'</strong>, podemos utilizar o
+              <strong>método <span>some</span></strong
+              >.
             </p>
 
-            <figure>
-                <picture>
-                    <img src="assets/imgs/js.png" alt="JS">
-                </picture>
-            </figure>
+            <p>
+              O método <strong>some</strong> verifica se
+              <strong>pelo menos um elemento</strong> atende à condição definida
+              no callback. Se encontrar um, retorna <strong>true</strong>. Caso
+              nenhum atenda à condição, retorna <strong>false</strong>.
+            </p>
 
-        </article>
+            <strong>
+              <pre>
+const result = intro
+.map((intro, indice) => ({ nome: intro, indice }))
+.filter(({ nome, indice }) => nome.length > indice)
+.some(({ nome, indice }) => nome[indice] === 'o'); </pre
+              >
+            </strong>
+            <p>
+              Nesse caso, o resultado será <strong>true</strong>, pois existe
+              pelo menos um elemento que atende à condição.
+            </p>
 
-        <article class="conc">
+            <p>
+              Se quisermos retornar o próprio objeto que atende à condição,
+              podemos remover o <strong>some</strong> e utilizar o
+              <strong>find</strong>.
+            </p>
+          </div>
 
-            
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
+          <div class="conteudo">
+            <h3 class="junto">Método find</h3>
 
-        </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
-    <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+            <p>
+              O método <strong>find</strong> procura o
+              <strong>primeiro elemento</strong> que atende à condição definida
+              no callback.
+            </p>
+
+            <p>
+              Diferentemente do <strong>some</strong>, que retorna apenas
+              <strong>true</strong> ou <strong>false</strong>, o
+              <strong>find</strong> retorna o próprio elemento encontrado.
+            </p>
+
+            <strong>
+              <pre>
+const result = intro
+.map((intro, indice) => ({ nome: intro, indice }))
+.filter(({ nome, indice }) => nome.length > indice)
+.find(({ nome, indice }) => nome[indice] === 'o'); </pre
+              >
+            </strong>
+            <p>
+              Neste exemplo, o <strong>find</strong> irá retornar o primeiro
+              objeto que possui a letra <strong>'o'</strong> na posição
+              correspondente ao seu índice.
+            </p>
+
+            <p>
+              É importante entender que o <strong>find</strong> não impede que
+              outros métodos sejam utilizados. Porém, como ele retorna um
+              elemento, e não mais um array, não podemos simplesmente continuar
+              utilizando métodos de array sobre esse resultado.
+            </p>
+          </div>
+
+          <div class="conteudo">
+            <h3 class="junto">Desestruturação no callback</h3>
+
+            <p>
+              Também é importante lembrar que estamos utilizando
+              <strong>{}</strong> nos parâmetros do callback para
+              <strong>desestruturar o objeto</strong>.
+            </p>
+
+            <p>Por exemplo:</p>
+
+            <strong>
+              <pre>.some(({ nome, indice }) => nome[indice] === 'o') </pre>
+            </strong>
+            <p>
+              Sem a desestruturação, teríamos que receber o objeto inteiro e
+              acessar suas propriedades:
+            </p>
+
+            <strong>
+              <pre>.some((objeto) => objeto.nome[objeto.indice] === 'o') </pre>
+            </strong>
+            <p>
+              As duas formas funcionam. A primeira apenas deixa o código mais
+              simples de ler.
+            </p>
+          </div>
+
+          <div class="conteudo">
+            <h3 class="junto">Como entender o Method Chaining</h3>
+
+            <p>
+              Uma forma simples de visualizar o encadeamento é pensar que cada
+              método entrega seu resultado para o próximo:
+            </p>
+
+            <strong>
+              <pre>
+array
+.map()       → transforma os elementos
+.filter()    → mantém apenas alguns elementos
+.some()      → verifica se algum atende à condição </pre
+              >
+            </strong>
+            <p>
+              Por exemplo, o <strong>map</strong> começa com um array e devolve
+              <strong>outro array</strong>. Esse novo array é recebido pelo
+              <strong>filter</strong>. Depois, o resultado do filter é recebido
+              pelo <strong>some</strong>.
+            </p>
+
+            <p>
+              Portanto, podemos pensar no encadeamento como uma sequência:
+              <strong>entrada → transformação → filtragem → verificação</strong
+              >.
+            </p>
+
+            <p>
+              <strong>Importante:</strong> nem todos os métodos retornam o mesmo
+              tipo de valor. Métodos como <strong>map</strong> e
+              <strong>filter</strong> retornam um array, enquanto
+              <strong>some</strong> retorna um booleano e
+              <strong>find</strong> retorna um elemento.
+            </p>
+
+            <p>
+              Por isso, devemos sempre prestar atenção ao
+              <strong>retorno de cada método</strong> antes de encadear outro
+              método depois dele.
+            </p>
+          </div>
+
+          <p>
+            <strong>Resumo:</strong>
+          </p>
+
+          <ul>
+            <li>
+              <strong>map()</strong> → transforma os elementos e retorna um novo
+              array.
+            </li>
+            <li>
+              <strong>filter()</strong> → filtra os elementos e retorna um novo
+              array.
+            </li>
+            <li>
+              <strong>some()</strong> → verifica se pelo menos um elemento
+              atende à condição.
+            </li>
+            <li>
+              <strong>find()</strong> → retorna o primeiro elemento que atende à
+              condição.
+            </li>
+            <li>
+              <strong>Method Chaining</strong> → permite encadear métodos,
+              utilizando o resultado de um método como entrada para o próximo.
+            </li>
+          </ul>
+
+          <p>
+            <strong>Importante:</strong> ao utilizar
+            <strong>{ nome, indice }</strong> no parâmetro do callback, estamos
+            utilizando <strong>desestruturação</strong> para acessar diretamente
+            as propriedades do objeto.
+          </p>
+        </div>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteúdo da aula
         </a>
-    </div>
+      </article>
 
-</body>
+      <!-- <h1>Testes JS se necessário</h1> -->
+
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../10_reduce/index.html"> Próxima Aula - Reduce </a>
+    </div>
+  </body>
 </html>
