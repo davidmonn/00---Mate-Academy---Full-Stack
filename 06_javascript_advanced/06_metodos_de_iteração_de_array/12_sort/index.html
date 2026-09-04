@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Sort</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,57 +12,383 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
+        <a class="back" href="../11_array_reduce_method/index.html">
+            Aula Anterior - Tarefa: Array Reduce Method
         </a>
     </div>
     
     <main>
 
-        <article id="intro">
+<article id="intro">
 
-            <h1 id="title">Title</h1>
+    <h1 id="title">Sort</h1>
 
-            <h3 class="intro">Intro</h3>
-            <p>
-                
-            </p>
+    <h3 class="intro">Intro</h3>
+    <p>
+        Agora iremos aprender sobre o uso do método <span>sort</span> com
+        <strong>callback</strong>.
+    </p>
 
-        </article>
+</article>
 
-        <article class="conteudo">
+<article class="conteudo">
 
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
+    <h3 class="cont-title">Código de Exemplo:</h3>
 
-            <p class="junto">
-                <strong>JS:</strong>
-            </p>
+    <p class="junto">
+        <strong>JS:</strong>
+    </p>
 
-            <figure>
-                <picture>
-                    <img src="assets/imgs/js.png" alt="JS">
-                </picture>
-            </figure>
+    <figure>
+        <picture>
+            <img src="assets/imgs/js.png" alt="JS">
+        </picture>
+    </figure>
 
-        </article>
+</article>
 
-        <article class="conc">
+<article class="conc">
 
-            
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
+    <div class="conteudo">
 
-        </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
+        <h3 class="separado">Explicação:</h3>
+
+        <p>
+            Iremos iniciar nosso código criando um <strong>array</strong>
+            com múltiplos <strong>objetos</strong>, ficando da seguinte forma:
+        </p>
+
+        <pre><strong>const rooms = [
+  {name: 'David', square: 18},
+  {name: 'Tita', square: 12},
+  {name: 'Suzana', square: 25},
+  {name: 'Toninha', square: 16},
+  {name: 'Alexia', square: 20},
+  {name: 'Adao', square: 6},
+];</strong></pre>
+
+        <p>
+            Podemos observar que cada <strong>cômodo</strong> possui um
+            <strong>nome</strong> e uma <strong>área</strong>, representada
+            pela propriedade <span>square</span>.
+        </p>
+
+        <p>
+            Podemos, por exemplo, querer ordenar esses objetos pelo
+            <strong>name (nome)</strong>.
+        </p>
+
+        <h3 class="junto">Ordenando:</h3>
+
+        <p>
+            Quando queremos ordenar um <strong>array</strong>, podemos
+            utilizar o método <span>sort()</span>.
+        </p>
+
+        <p>
+            Porém, se fizermos apenas:
+        </p>
+
+        <span>
+            <pre>rooms.sort();</pre>
+        </span>
+
+        <p>
+            O resultado não será o que esperamos. Isso acontece porque,
+            por padrão, o método <span>sort()</span> converte os elementos
+            para <strong>strings</strong> e faz a comparação entre elas.
+        </p>
+
+        <p>
+            Quando um objeto é convertido para uma string de forma padrão,
+            seu resultado é <span>[object Object]</span>.
+            Como todos os objetos do nosso array acabam sendo representados
+            dessa mesma forma, não conseguimos ordenar os objetos pelo
+            <span>name</span> ou pelo <span>square</span> dessa maneira.
+        </p>
+
+    </div>
+
+    <div class="conteudo">
+
+        <h3 class="junto">Ordenando Objeto por <span>name</span></h3>
+
+        <p>
+            Para resolver esse problema, podemos passar uma
+            <strong>callback</strong> para o <span>sort()</span>.
+            Dessa forma, podemos definir como os elementos deverão ser
+            comparados.
+        </p>
+
+        <p>
+            A callback recebe dois elementos do array para serem comparados.
+            Podemos representá-los, por exemplo, como
+            <span>rom1</span> e <span>rom2</span>.
+        </p>
+
+        <p class="junto">
+            <strong>Primeiro:</strong> um elemento do array.
+        </p>
+
+        <p>
+            <strong>Segundo:</strong> outro elemento do array que será
+            comparado com o primeiro.
+        </p>
+
+        <p class="junto">
+            Ficando da seguinte forma:
+        </p>
+
+        <strong>
+            <pre>
+const result = rooms.sort((rom1, rom2) => {
+return rom1.name > rom2.name ? 1 : -1;
+});</pre> </strong>
+
+        <p>
+            O valor retornado pela callback informa ao
+            <span>sort()</span> como os dois elementos devem ser
+            posicionados.
+        </p>
+
+        <p>
+            De forma simplificada:
+        </p>
+
+        <p class="junto">
+            <strong>Valor negativo:</strong> <span>rom1</span> vem antes
+            de <span>rom2</span>.
+        </p>
+
+        <p class="junto">
+            <strong>Valor positivo:</strong> <span>rom1</span> vem depois
+            de <span>rom2</span>.
+        </p>
+
+        <p>
+            <strong>Zero:</strong> os dois elementos são considerados
+            equivalentes para aquela comparação.
+        </p>
+
+        <p class="junto">
+            <strong>Importante:</strong> comparações simples entre strings
+            utilizam os valores dos caracteres. Por isso, dependendo dos
+            caracteres utilizados, podemos não obter exatamente a ordenação
+            esperada.
+        </p>
+
+        <p>
+            Para comparar strings de maneira mais apropriada, podemos
+            utilizar <span>localeCompare()</span>, ficando da seguinte forma:
+        </p>
+
+        <strong>
+            <pre>
+const result = rooms.sort((rom1, rom2) => {
+return rom1.name<span>.localeCompare</span>(rom2.name);
+});</pre> </strong>
+
+        <p>
+            O método <span>localeCompare()</span> compara duas strings e
+            retorna um valor negativo, positivo ou zero, exatamente no
+            formato que o <span>sort()</span> precisa para decidir a ordem.
+        </p>
+
+        <p>
+            Para inverter a ordem, podemos colocar um sinal de
+            <span>-</span> antes do resultado:
+        </p>
+
+        <strong>
+            <pre>
+const result = rooms.sort((rom1, rom2) => {
+return <span>-</span>rom1.name.localeCompare(rom2.name);
+});</pre> </strong>
+
+        <p>
+            Dessa forma, uma comparação que indicaria que
+            <span>rom1</span> deveria vir antes passa a indicar o contrário,
+            invertendo a ordenação.
+        </p>
+
+    </div>
+
+    <div class="conteudo">
+
+        <h3 class="separado">Ordenando Objeto por <span>square</span></h3>
+
+        <p>
+            Basicamente, faremos a mesma coisa que fizemos anteriormente.
+            Porém, dessa vez iremos selecionar a propriedade
+            <span>square</span>.
+        </p>
+
+        <strong>
+            <pre>
+const result = rooms.sort((rom1, rom2) => {
+return <span>rom1.square - rom2.square</span>;
+});</pre> </strong>
+
+        <p>
+            Aqui utilizamos uma subtração para descobrir qual número deve
+            ficar primeiro.
+        </p>
+
+        <p>
+            Se <span>rom1.square</span> for menor que
+            <span>rom2.square</span>, o resultado será negativo e
+            <span>rom1</span> ficará antes.
+        </p>
+
+        <p>
+            Se quisermos inverter a ordem, podemos inverter os valores
+            da subtração:
+        </p>
+
+        <strong>
+            <pre>
+const result = rooms.sort((rom1, rom2) => {
+return <span style="color: rgb(253, 128, 128);">-</span>;
+});</pre> </strong>
+
+        <p>
+            Assim, os maiores valores de <span>square</span> ficarão
+            primeiro.
+        </p>
+
+    </div>
+
+    <div class="conteudo">
+
+        <p class="separado">
+            <strong>Importante:</strong> o método <span>sort()</span>
+            modifica o array original.
+        </p>
+
+        <h3 class="junto">Evitando Alterar o Array</h3>
+
+        <p>
+            Se desejarmos que nosso array original não seja alterado,
+            podemos criar uma cópia antes de utilizar o
+            <span>sort()</span>.
+        </p>
+
+        <strong>
+            <pre>
+const result = <span>[...rooms]</span>.sort((rom1, rom2) => {
+return rom2.square - rom1.square;
+});</pre> </strong>
+
+        <p>
+            Quando utilizamos <span>[...rooms]</span>, estamos utilizando
+            a <strong>spread syntax</strong>. Ela cria um novo array e
+            copia para ele os elementos de <span>rooms</span>.
+        </p>
+
+        <p>
+            Depois disso, o <span>sort()</span> é aplicado ao novo array,
+            deixando o array original <span>rooms</span> sem a alteração
+            da ordenação.
+        </p>
+
+        <p>
+            <strong>Importante:</strong> isso é uma cópia do array, mas não
+            uma cópia profunda dos objetos. Os objetos dentro dos dois arrays
+            continuam sendo as mesmas referências.
+        </p>
+
+    </div>
+
+    <div class="conteudo">
+
+        <h3 class="separado">Entendendo o <span>sort()</span> de forma simples</h3>
+
+        <p>
+            Podemos pensar no <span>sort()</span> como alguém que precisa
+            organizar duas pessoas por vez e pergunta:
+        </p>
+
+        <pre>
+"Quem deve ficar primeiro: rom1 ou rom2?"</pre>
+
+        <p>
+            A callback responde através de um número:
+        </p>
+
+        <p class="junto">
+            <strong>Negativo:</strong> rom1 vem primeiro.
+        </p>
+
+        <p class="junto">
+            <strong>Positivo:</strong> rom2 vem primeiro.
+        </p>
+
+        <p class="junto">
+            <strong>Zero:</strong> não há diferença na comparação.
+        </p>
+
+        <p>
+            Por isso, essas duas formas são muito comuns:
+        </p>
+
+        <strong>
+            <pre>
+<span>// Crescente</span>
+rom1.square - rom2.square
+
+<span>// Decrescente</span>
+rom2.square - rom1.square</pre> </strong>
+
+        <p>
+            Para strings, podemos utilizar:
+        </p>
+
+        <strong>
+            <pre>
+<span>// A → Z</span>
+rom1.name.localeCompare(rom2.name)
+
+<span>// Z → A</span>
+
+* rom1.name.localeCompare(rom2.name)</pre> </strong>
+
+    </div>
+
+    <div class="conteudo">
+        <h3 class="separado">Entendendo Melhor metodo localCompare();</h3>
+        <p>
+            podemos observar que o nosso
+            <span>localeCompare</span> ficará no lugar do <span>&gt;</span>, ou seja,
+            podemos considerá-lo, a grosso modo, como um operador, apenas para ficar
+            mais claro o local em que ele se encaixa na sintaxe. Porém, tecnicamente,
+            <span>localeCompare()</span> é um método que retorna um valor usado pelo
+            <span>sort()</span> para definir a ordem dos elementos.
+        </p>
+
+<p>
+    Se quisermos fazer a ordenação inversa, podemos apenas adicionar um sinal
+    de <span>-</span> antes do resultado, ficando da seguinte forma:
+</p>
+
+    </div>
+
+    <a href="contAula.html"
+        style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+        Conteúdo da aula
+    </a>
+
+    </article>
+
+    <!-- <h1>Testes JS se necessário</h1> -->
+
+    <script src="assets/js/jscript.js"></script>
+
+</main>
+
         
     <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+        <a class="next" href="../../07_methods_iteration_array/01_tarefa_a_century/index.html">
+            <strong>Próximo Modulo: Uso de Métodos de Iteração de Array - Aula: Tarefa: A century</strong>
         </a>
     </div>
 
