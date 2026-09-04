@@ -1,70 +1,199 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarefa: Array Reduce Method</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
-        </a>
+      <a class="back" href="../10_reduce/index.html">
+        Aula Anterior - Reduce
+      </a>
     </div>
-    
+
     <main>
+      <article id="intro">
+        <h1 id="title">Tarefa: Array Reduce Method</h1>
 
-        <article id="intro">
+        <h3 class="intro">Intro</h3>
+        <p>
+          Implemente o método <strong>reduce</strong>, que repete a
+          funcionalidade do método original. Use o método interno
+          <strong>this</strong> para acessar o array.
+        </p>
 
-            <h1 id="title">Title</h1>
+        <p class="separado">
+          O uso de métodos Array é proibido nesta tarefa. Use loops, acesso ao
+          índice e comprimento do array, se necessário.
+        </p>
 
-            <h3 class="intro">Intro</h3>
+        <img src="assets/imgs/ex.png" alt="Exemplo" />
+      </article>
+
+      <article class="conteudo">
+        <h3 class="cont-title">Resultado:</h3>
+
+        <p class="junto">
+          <strong>JS:</strong>
+        </p>
+
+        <figure>
+          <picture>
+            <img src="assets/imgs/js.png" alt="JS" />
+          </picture>
+        </figure>
+
+        <h3 class="separado">Explicação Código:</h3>
+
+        <div class="conteudo">
+          <div class="conteudo">
             <p>
-                
+              Primeiro, iniciamos criando nossa function com dois parâmetros:
             </p>
 
-        </article>
+            <p>
+              <span>numbers.reduce = function(callback, inf){}</span>
+            </p>
 
-        <article class="conteudo">
+            <p>
+              O <span>callback</span> é a
+              <strong>função que será executada em cada elemento</strong>,
+              enquanto <span>inf</span> representa o
+              <strong>valor inicial do acumulador</strong>.
+            </p>
+          </div>
 
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
+          <div class="conteudo">
+            <p class="junto">
+              Após isso, criamos duas variáveis:
+              <span>let start = inf;</span> e <span>let startIndex = 0;</span>.
+            </p>
+
+            <p>O motivo para criarmos as duas é:</p>
+
+            <p class="separado">
+              <span>let start = inf;</span> serve para termos uma variável
+              própria para armazenar e atualizar o <strong>acumulador</strong>,
+              sem alterar diretamente o parâmetro <span>inf</span>.
+            </p>
+
+            <p>
+              <span>let startIndex = 0;</span> serve para controlarmos
+              <strong
+                >em qual índice o nosso <span>for</span> deve começar</strong
+              >. Isso será importante quando não for passado um valor inicial.
+            </p>
+          </div>
+
+          <div class="conteudo">
+            <span>
+              <pre>
+if (inf === undefined) {
+start = this[0];
+startIndex = 1;
+} </pre
+              >
+            </span>
+
+            <p>
+              Essa condicional verifica se o valor de <span>inf</span> é
+              <strong>undefined</strong>.
+            </p>
+
+            <p>
+              Se for <strong>undefined</strong>, usamos o primeiro elemento do
+              array como nosso acumulador inicial. Por isso fazemos:
+              <span>start = this[0]</span>.
+            </p>
+
+            <p>
+              Como o primeiro elemento já foi usado como acumulador, precisamos
+              começar a iteração pelo índice <strong>1</strong>. Por isso
+              fazemos: <span>startIndex = 1</span>.
+            </p>
+
+            <p>
+              Dessa forma, evitamos processar o primeiro elemento novamente.
+            </p>
+          </div>
+
+          <div class="conteudo">
+            <p>
+              <span>for (let i = startIndex; i &lt; this.length; i++) {}</span>
+            </p>
 
             <p class="junto">
-                <strong>JS:</strong>
+              Fazemos com que <span>i = startIndex</span> para que o início da
+              nossa iteração dependa da situação.
             </p>
 
-            <figure>
-                <picture>
-                    <img src="assets/imgs/js.png" alt="JS">
-                </picture>
-            </figure>
+            <p>
+              Se foi passado um valor inicial, <span>startIndex</span> continua
+              sendo <strong>0</strong>, então percorremos todos os elementos.
+            </p>
 
-        </article>
+            <p>
+              Se não foi passado um valor inicial, <span>startIndex</span> passa
+              a ser <strong>1</strong>, pois o primeiro elemento já foi usado
+              como acumulador.
+            </p>
+          </div>
 
-        <article class="conc">
+          <div class="conteudo">
+            <p>
+              <span>start = callback(start, this[i], i, this);</span>
+            </p>
 
-            
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
+            <p>Aqui executamos o <span>callback</span> passando:</p>
 
-        </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
-    <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+            <ul>
+              <li><span>start</span> → acumulador atual;</li>
+              <li><span>this[i]</span> → elemento atual;</li>
+              <li><span>i</span> → índice atual;</li>
+              <li><span>this</span> → o array inteiro.</li>
+            </ul>
+
+            <p>
+              O resultado retornado pelo <span>callback</span> passa a ser o
+              novo valor de <span>start</span>.
+            </p>
+
+            <p>
+              Dessa forma, o resultado de uma iteração é usado como acumulador
+              na próxima, até chegarmos ao resultado final.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="conc">
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteudo da aula
         </a>
-    </div>
+      </article>
 
-</body>
+      <!-- <h1>Testes JS se necessário</h1> -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../12_sort/index.html"> Próxima Aula - Sort </a>
+    </div>
+  </body>
 </html>
