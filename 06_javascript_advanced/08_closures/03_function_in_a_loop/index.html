@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Function in a Loop</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,8 +12,8 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
+        <a class="back" href="../02_closure/index.html">
+            Aula Anterior - Closure
         </a>
     </div>
     
@@ -21,11 +21,11 @@
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">Function in a Loop</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Uso de funcoes em um <strong>loop</strong>.
             </p>
 
         </article>
@@ -48,7 +48,175 @@
 
         <article class="conc">
 
-            
+            <div class="conteudo">
+
+            <h3 class="junto">Exemplo:</h3>
+            <strong>
+                <pre>
+let team = [];
+let currentNumber = 0;
+
+while (team.length < 3) {
+    <span>const</span> player = function() {
+        console.log(currentNumber);
+    }
+
+    currentNumber++;
+
+    team.push(player);
+}
+
+team[0]();
+team[1]();
+team[2](); </pre> </strong>
+            <p>
+                Com esse código, podemos observar como uma <strong>closure</strong> mantém acesso à variável externa <span>currentNumber</span>.
+            </p>
+
+            <p>
+                <span>let team = []</span>: começamos com um array vazio para armazenar as funções <span>player</span>.
+            </p>
+
+            <p>
+                <span>let currentNumber = 0</span>: criamos um contador que começa com o valor <span>0</span>.
+            </p>
+
+            <p>
+                <span>while (team.length < 3) {}</span>: criamos um loop que continuará executando enquanto o tamanho do array <span>team</span> for menor que <span>3</span>.
+            </p>
+
+            <p>
+                <span>const player = function() { console.log(currentNumber); }</span>: criamos uma função e armazenamos essa função na variável <span>player</span>.
+            </p>
+
+            <p>
+                A função não é executada nesse momento. Ela apenas é criada e guarda uma referência à variável externa <span>currentNumber</span>.
+            </p>
+
+            <p>
+                <span>currentNumber++;</span>: aumentamos o valor do contador em <span>1</span> a cada repetição do <span>while</span>.
+            </p>
+
+            <p>
+                <span>team.push(player)</span>: adicionamos a função armazenada em <span>player</span> ao array <span>team</span>.
+            </p>
+
+            <p class="separado">
+                Depois que o <span>while</span> termina, temos três funções armazenadas no array.
+            </p>
+
+            <p>
+                Quando fazemos <span>team[0]();</span>, <span>team[1]();</span> e <span>team[2]();</span>, estamos finalmente executando essas funções.
+            </p>
+
+            <p>
+                O resultado será:
+            </p>
+
+            <strong>
+                <pre>
+3
+3
+3</pre> </strong>
+
+            <p>
+                Isso acontece porque as três funções possuem acesso à mesma variável externa <span>currentNumber</span>.
+            </p>
+
+            <p>
+                O <span>while</span> termina somente depois que <span>currentNumber</span> chega a <span>3</span>. As funções são executadas somente depois disso.
+            </p>
+
+            <p>
+                Portanto, quando cada função é executada, ela encontra <span>currentNumber</span> com o valor <span>3</span>.
+            </p>
+
+            <p class="separado">
+                Esse é um exemplo importante de <strong>closure</strong>: a função foi criada dentro de um escopo onde <span>currentNumber</span> existia e continua tendo acesso a essa variável quando é executada posteriormente.
+            </p>
+
+        </div>
+
+        <div class="conteudo">
+            <h3>Maneira Correta:</h3>
+            <strong>
+                <pre>
+let team = [];
+<span>let firstFreeNumber = 0;</span>
+
+while (team.length < 3) { <span>let currentNumber = firstFreeNumber;</span>
+  const player = function() {
+    console.log(currentNumber);
+  }
+
+  <span>firstFreeNumber++;</span>
+
+  team.push(player);
+} </pre> </strong>
+        <p>
+            Nesse exemplo, criamos <span>firstFreeNumber</span> para controlar o próximo número disponível.
+        </p>
+
+        <p>
+            A cada repetição do <span>while</span>, criamos uma nova variável <span>currentNumber</span>.
+        </p>
+
+        <p>
+            Como usamos <span>let</span> dentro do bloco do <span>while</span>, cada repetição possui uma nova variável <span>currentNumber</span>.
+        </p>
+
+        <p>
+            A função <span>player</span> é criada dentro desse mesmo bloco e forma uma <strong>closure</strong> com o seu respectivo <span>currentNumber</span>.
+        </p>
+
+        <p>
+            Na primeira repetição, <span>currentNumber</span> recebe <span>0</span>. Na segunda, recebe <span>1</span>. Na terceira, recebe <span>2</span>.
+        </p>
+
+        <p>
+            Por isso, cada função armazenada no array consegue acessar seu próprio valor:
+        </p>
+
+        <strong>
+            <pre>
+team[0](); // 0
+team[1](); // 1
+team[2](); // 2</pre> </strong>
+        <p class="separado">
+            <span>firstFreeNumber++</span> aumenta o valor que será usado na próxima repetição.
+        </p>
+
+        <p>
+            Dessa forma, cada função fica ligada a uma variável <span>currentNumber</span> diferente.
+        </p>
+
+        <p>
+            <strong>Ou</strong>
+        </p>
+
+        <strong>
+            <pre>
+<span>for (let currentNumber = 0; team.length < 3; currentNumber++)</span> {
+  const player = function() {
+    console.log(currentNumber);
+  }
+
+  team.push(player);
+} </pre> </strong>
+
+        <p>
+            O <span>for</span> também funciona porque o <span>let</span> usado na declaração do <span>for</span> cria uma ligação diferente de <span>currentNumber</span> para cada iteração.
+        </p>
+
+        <p>
+            Assim, as três funções também terão acesso aos seus respectivos valores: <span>0</span>, <span>1</span> e <span>2</span>.
+        </p>
+
+        <p class="separado">
+            <strong>Resumo:</strong> o problema anterior acontecia porque todas as funções acessavam a mesma variável <span>currentNumber</span>. Aqui, cada função possui acesso à sua própria variável por meio da <strong>closure</strong>.
+        </p>
+
+    </div>
             
             <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
                 Conteudo da aula
@@ -61,8 +229,8 @@
         </main>
         
     <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+        <a class="next" href="../03_function_returning_a_function/index.html">
+            Próxima Aula - Function Returning a Function
         </a>
     </div>
 
