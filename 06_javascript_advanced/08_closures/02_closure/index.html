@@ -1,70 +1,307 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
-        </a>
+      <a class="back" href="../01_scope_and_lexical_environment/index.html">
+        Aula Anterior - Scope and Lexical Environment
+      </a>
     </div>
-    
+
     <main>
+      <article id="intro">
+        <h1 id="title">Closure</h1>
 
-        <article id="intro">
+        <h3 class="intro">Intro</h3>
+        <p>
+          Iremos considerar o uso de uma variável dentro de uma função e como
+          essa função consegue acessar variáveis do escopo onde foi criada.
+        </p>
+      </article>
 
-            <h1 id="title">Title</h1>
+      <article class="conteudo">
+        <h3 class="cont-title">Código de Exemplo:</h3>
 
-            <h3 class="intro">Intro</h3>
-            <p>
-                
-            </p>
+        <p class="junto">
+          <strong>JS:</strong>
+        </p>
 
-        </article>
+        <figure>
+          <picture>
+            <img src="assets/imgs/js.png" alt="JS" />
+          </picture>
+        </figure>
+      </article>
 
-        <article class="conteudo">
+      <article class="conc">
+        <div class="conteudo">
+          <h3 class="junto">Exemplo:</h3>
+          <span>
+            <pre>
+let x = 1;
+let f;
 
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
+if (true) {
+    x = 10;
 
-            <p class="junto">
-                <strong>JS:</strong>
-            </p>
+f = function() {
+    console.log(x);
+}
 
-            <figure>
-                <picture>
-                    <img src="assets/imgs/js.png" alt="JS">
-                </picture>
-            </figure>
+}
 
-        </article>
+if (true) {
+    let x = 100;
 
-        <article class="conc">
+// f();
+}</pre
+            >
+          </span>
+          <p>
+            No momento temos uma variável <span>x = 1</span> e uma variável
+            <span>f</span> sem nenhum valor atribuído.
+          </p>
+          <p>Em seguida, temos dois blocos com <span>if (true)</span>.</p>
+          <p>
+            No primeiro bloco, alteramos o valor da variável <span>x</span> para
+            <span>10</span> e atribuímos uma função à variável <span>f</span>.
+          </p>
+          <p>
+            A função criada dentro de <span>f</span> utiliza a variável
+            <span>x</span>.
+          </p>
+          <p>
+            No segundo bloco, criamos outra variável chamada <span>x</span> com
+            o valor <span>100</span>.
+          </p>
+          <p class="separado">
+            Ainda no segundo bloco, podemos chamar a função <span>f();</span>.
+            No momento ela não foi chamada porque a deixamos como comentário.
+          </p>
+          <p>A questão é: qual valor irá aparecer quando chamarmos a função?</p>
+          <ul>
+            <li><strong>1)</strong> <span>x = 1</span> (escopo global)</li>
+            <li>
+              <strong>2)</strong> <span>x = 10</span> (valor da variável global
+              após o primeiro bloco)
+            </li>
+            <li>
+              <strong>3)</strong> <span>x = 100</span> (variável criada no
+              segundo bloco)
+            </li>
+          </ul>
+          <p class="separado">Teremos como resultado <span>x = 10</span>.</p>
+          <p>
+            Isso acontece porque a função utiliza o
+            <strong>escopo léxico</strong>. Ou seja, quando precisamos encontrar
+            uma variável, o JavaScript procura primeiro no local onde a função
+            foi criada e depois sobe pelos escopos externos.
+          </p>
+          <p>
+            Nesse caso, não existe uma variável <span>x</span> criada dentro da
+            função. Então o JavaScript procura no escopo externo e encontra a
+            variável global <span>x</span>, que possui o valor <span>10</span>.
+          </p>
+          <p>
+            A variável <span>x = 100</span> do segundo bloco não é utilizada
+            porque ela pertence a outro escopo e apenas possui o mesmo nome da
+            variável externa.
+          </p>
+          <p>
+            Esse comportamento está relacionado ao conceito de
+            <strong>Closure</strong>.
+          </p>
+        </div>
+        <div class="conteudo">
+          <h3 class="junto">Closure:</h3>
+          <p>
+            <span>Closure</span> acontece quando uma função consegue acessar e
+            manter uma referência às variáveis do escopo onde foi criada, mesmo
+            quando a função é executada em outro local.
+          </p>
 
-            
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
+          <p class="separado">
+            <span>Por que closures são tão importantes?</span>
+          </p>
 
-        </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
-    <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+          <p>
+            Closures são importantes porque permitem que uma função tenha acesso
+            a informações de um escopo externo. Isso também pode ser usado para
+            criar dados que não podem ser acessados diretamente de fora.
+          </p>
+
+          <p>
+            Porém, no exemplo anterior, a variável <span>x</span>
+            <strong>não é privada da função</strong>. Ela é uma variável global.
+          </p>
+
+          <p>Por isso, se alterarmos seu valor:</p>
+
+          <strong>
+            <pre>
+let x = 1;
+let f;
+
+if (true) {
+    x = 10;
+
+    f = function() {
+        console.log(x);
+    }
+
+}
+
+if (true) {
+    let x = 100;
+
+    f();
+}
+
+x = 1000;
+
+f();</pre
+            >
+          </strong>
+          <p>
+            A primeira chamada de <span>f()</span> exibirá <strong>10</strong>.
+          </p>
+
+          <p>
+            Depois de executarmos <span>x = 1000</span>, a variável global foi
+            alterada. Portanto, a segunda chamada de <span>f()</span> exibirá
+            <strong>1000</strong>.
+          </p>
+
+          <p>
+            Isso mostra que
+            <strong>closure não significa que a variável fica congelada</strong
+            >. A função mantém acesso à variável externa e, se essa variável
+            puder ser alterada, a função verá seu novo valor.
+          </p>
+        </div>
+
+        <div class="conteudo">
+          <h3 class="junto">Closure e variável privada:</h3>
+
+          <p>
+            Um exemplo mais comum de closure acontece quando uma função interna
+            consegue acessar uma variável criada dentro de outra função.
+          </p>
+
+          <strong>
+            <pre>
+function contador() {
+    let numero = 0;
+
+    return function() {
+        numero++;
+
+        return numero;
+    }
+}
+
+const contar = contador();
+
+console.log(contar()); // 1
+console.log(contar()); // 2
+console.log(contar()); // 3</pre
+            >
+          </strong>
+          <p>
+            A variável <span>numero</span> foi criada dentro de
+            <span>contador()</span>.
+          </p>
+
+          <p>
+            A função interna consegue acessar <span>numero</span> porque foi
+            criada dentro desse escopo.
+          </p>
+
+          <p>
+            Mesmo depois que <span>contador()</span> termina sua execução, a
+            função retornada continua tendo acesso à variável
+            <span>numero</span>.
+          </p>
+
+          <p>
+            Cada vez que chamamos <span>contar()</span>, o valor de
+            <span>numero</span> é mantido e incrementado.
+          </p>
+
+          <p class="separado">
+            O código externo não consegue acessar
+            <span>numero</span> diretamente:
+          </p>
+
+          <strong>
+            <pre>console.log(numero); // erro</pre>
+          </strong>
+          <p>
+            Esse é um dos principais usos de <strong>closure</strong>: manter
+            dados acessíveis para uma função, mas protegidos do acesso direto
+            pelo código externo.
+          </p>
+
+          <p>Uma forma simples de lembrar é:</p>
+
+          <ul>
+            <li>
+              <strong>Função:</strong> consegue acessar seu próprio escopo e os
+              escopos externos.
+            </li>
+            <li>
+              <strong>Escopo léxico:</strong> depende de onde a função foi
+              criada, não de onde ela foi chamada.
+            </li>
+            <li>
+              <strong>Closure:</strong> a função mantém acesso às variáveis
+              externas que fazem parte do seu ambiente léxico.
+            </li>
+            <li>
+              <strong>Variável privada:</strong> uma aplicação comum de closure,
+              quando uma variável fica acessível apenas através de funções que
+              estão dentro daquele escopo.
+            </li>
+          </ul>
+
+          <p class="separado">
+            <strong>Resumo:</strong> closure é como se a função carregasse
+            consigo o acesso ao ambiente onde foi criada.
+          </p>
+        </div>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteúdo da aula
         </a>
-    </div>
+      </article>
 
-</body>
+      <!-- <h1>Testes JS se necessário</h1> -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../03_function_in_a_loop/index.html">
+        Próxima Aula - Function in a Loop
+      </a>
+    </div>
+  </body>
 </html>
