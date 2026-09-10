@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Scope and Lexical Environment</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,8 +12,8 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
+        <a class="back" href="../../07_use_methods_iteration_array/08_tarefa_average_value/index.html">
+            Modulo Anterior: Use Methods Iteration Array - Tarefa: Average Value
         </a>
     </div>
     
@@ -21,11 +21,11 @@
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">Scope and Lexical Environment</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Agora iremos ver com mais detalhes o uso de <strong>variaveis</strong>, especificamente, onde elas podem ser usadas, e onde nao podem ser usadas, sobre <strong>escopo</strong> e <strong>clousers</strong>
             </p>
 
         </article>
@@ -48,7 +48,200 @@
 
         <article class="conc">
 
-            
+            <div class="conteudo">
+
+                <h3 class="junto">Exemplo:</h3>
+                <p>
+                    Para entendermos melhor, teremos o seguinte codigo:
+                </p>
+
+                <img src="assets/imgs/ex01.png" alt="Exemplo 01">
+
+                <h3 class="junto">Entendendo Melhor</h3>
+                <p>
+                    Primeiro comecamos criando a variavel <strong>a</strong>.
+                </p>
+
+                <span>
+                    <pre>
+let a = 1;</pre>
+                </span>
+
+                <p>
+                    Em seguida temos um <strong>bloco</strong> no qual entramos constantemente pois a condicao esta sempre ali.
+                </p>
+
+                <span>
+                    <pre>
+if (true) {
+
+}</pre>
+                </span>
+
+                <p>
+                    Dentro do bloco de claramos a <strong>variavel <span>b</span></strong> e outra <strong>condicao</strong>.
+                </p>
+
+                <span>
+                    <pre>
+if (true) {
+    let b = 2;
+
+    if (true) {
+
+    }
+}</pre>
+                </span>
+
+                <p>
+                    Dentro de nosso bloco <strong>interno</strong> declaramos a variavel <span>c</span>.
+                </p>
+
+                <span>
+                    <pre>
+if (true) {
+    let b = 2;
+
+    if (true) {
+        let c = 3;
+    }
+}</pre>
+                </span>
+
+                <p>
+                    Feito isso dentro de nosso <strong>if interno</strong> imprimimos todas as variaveis, e todas funcionam.
+                </p>
+
+                <span>
+                    <pre>
+if (true) {
+    let b = 2;
+
+    if (true) {
+        let c = 3;
+
+        console.log(a);
+        console.log(b);
+        console.log(c);
+    }
+}</pre>
+                </span>
+
+                <p class="separado">
+                    Se movermos nosso <span>console.log</span> para nosso if (bloco) intermediario, teremos outro resultado.
+                </p>
+
+                <span>
+                    <pre>
+if (true) {
+    let b = 2;
+
+    if (true) {
+        let c = 3;
+    }
+
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}</pre>
+                </span>
+
+            <p class="junto">
+                Iremos observar que a variavel <span>c</span>, nao existe nesse <strong>bloco</strong>.
+            </p>
+            <p>
+                Para entendermos melhor em nosso <strong>console.log (devTools ou f12)</strong>, podemos ir em <strong>sources</strong> e selecionarmos onde desejamos que nosso codigo pare para verificarmos oque ha de errado, se clicarmos em nossa primeira variavel e recarregar a pagina, poderemos ver que teremos apenas ate onde selecionamos, ao precionar f12, ele passa para a proxima etapa de nosso codigo.
+            </p>
+
+            <p class="junto">
+                Quando temos uma variavel em um <strong>bloco</strong>, essas variaveis sao armazenadas separadamente das variaveis globais <span>(let a)</span>
+            </p>
+
+            </div>
+
+            <div class="conteudo">
+
+                <h3 class="junto">Variaveis</h3>
+                <p>
+                    Em <strong>JS</strong>, uma estrutura onde temos uma <strong>chave</strong> e <strong>valor</strong>, é um <strong>objeto</strong>, e oque acontece é que para cada bloco, as variaveis que declaramos neles sao armazenados em algum tipo de objeto. E esse objeto é chamado de <span>ambiente Lexico</span>.
+                </p>
+
+                <p class="separado">
+                    <span>Exemplo:</span>
+                </p>
+
+                <p>
+                    Em nosso objeto interno, temos um objeto especial, onde podemos observa-lo da seguinte forma:
+                </p>
+
+                <span>
+                    <pre>
+// #Script = { a: 1 }
+let a = 1;
+
+if (true) {
+  // #LE_1 = { b: 2 }
+  let b = 2;
+
+  if (true) {
+    // #LE_2 = { c: 3}
+    let c = 3;
+  };
+
+  console.log(a);
+  console.log(b);
+  console.log(c);
+};</pre>
+                </span>
+
+                <p>
+                    Quando executamos nosso codigo, todas as variaveis que seriam do <strong>bloco <span>c</span></strong> nao existem, ou seja, as variaveis criadas dentro de um <strong>bloco</strong>, nao sao disponiveis <strong>fora dele</strong>.
+                </p>
+                <p class="separado">
+                    Com isso podemos observar que no <strong>JS</strong>, o escopo de uma varaivel é limitado ao bloco no qual a variavel foi declarada. O mesmo vale para <strong>funcoes</strong>. Se declararmos uma variavel dentro de uma funcao, essa variavel nao ficara disponivel fora dessa funcao.
+                </p>
+
+                <p>
+                    No entando, variaveis criadas fora de um escopo, podem ser acessadas.
+                </p>
+                <p>
+                    Se criarmos uma variavel a palavra chave <strong>var (atualmente obsoleta)</strong>, essa variavel acabara no objeto <span>window</span>.
+                </p>
+                <p>
+                    Da mesma forma uma funcao, se criarmos uma funcao fora de qualquer bloco, ela tambem acabara no objeto <span>window</span>.
+                </p>
+
+                <p class="separado">
+                    Agora se recortarmos nossa variavel var e function e a levarmos a nosso bloco <span>c</span>:
+                </p>
+
+                <span>
+                    <pre>
+let a = 1;
+
+if (true) {
+  // #LE_1 = { b: 2 }
+  let b = 2;
+
+  if (true) {
+    // #LE_2 = { c: 3}
+    let c = 3;
+
+    var aa = 1;
+    function aaa() {};
+  };
+
+  console.log(a);
+  console.log(b);
+  console.log(c);
+};</pre>
+                </span>
+
+                <p>
+                    A variavel declarada com <span>var</span> acabou no <span>global</span> ela nao é confinada ao bloco e isso confunde, por isso nao é mais utilizada
+                </p>
+
+            </div>
             
             <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
                 Conteudo da aula
@@ -61,8 +254,8 @@
         </main>
         
     <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+        <a class="next" href="../02_closure/index.html">
+            Próxima Aula - Closure
         </a>
     </div>
 
