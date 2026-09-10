@@ -53,22 +53,22 @@ const test = `
 
 function convertToObject(sourceString) {
   const convert = sourceString.split(';');
-  const save = {};
-  
-  convert.forEach((val) => {
-    if (val.trim() === '') {
-      return val;
+  const stylesObject = {};
+
+  convert.forEach((line) => {
+    if (line.trim() === '') {
+      return;
     }
 
-    const sep = val.split(':');
+    const parts = line.split(':');
 
-    save[sep[0].trim()] = sep[1].trim();
+    stylesObject[parts[0].trim()] = parts[1].trim();
   });
 
-  return save;
+  return stylesObject;
 }
 
 const result = convertToObject(test);
 
-console.log(test);
+// console.log(test);
 console.log(result);
