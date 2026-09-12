@@ -1,70 +1,347 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function Returning a Function</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
-        </a>
+      <a class="back" href="../03_function_in_a_loop/index.html">
+        Aula Anterior - Function in a Loop
+      </a>
     </div>
-    
+
     <main>
+      <article id="intro">
+        <h1 id="title">Function Returning a Function</h1>
 
-        <article id="intro">
+        <h3 class="intro">Introdução</h3>
+        <p>
+          Agora iremos continuar explorando mais alguns exemplos de
+          <strong>closure</strong>.
+        </p>
+      </article>
 
-            <h1 id="title">Title</h1>
+      <article class="conteudo">
+        <h3 class="cont-title">Código de Exemplo:</h3>
 
-            <h3 class="intro">Intro</h3>
-            <p>
-                
-            </p>
+        <p class="junto">
+          <strong>JS:</strong>
+        </p>
 
-        </article>
+        <figure>
+          <picture>
+            <img src="assets/imgs/js.png" alt="JS" />
+          </picture>
+        </figure>
+      </article>
 
-        <article class="conteudo">
+      <article class="conc">
+        <div class="conteudo">
+          <h1 class="separado">Usos Comuns de Closure</h1>
+          <h3 class="junto">Função que Retorna uma Função</h3>
 
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
+          <p>
+            Uma analogia que podemos usar é a de uma fábrica que produz
+            dispositivos. Cada dispositivo terá seu próprio nome e funcionamento
+            independente.
+          </p>
 
-            <p class="junto">
-                <strong>JS:</strong>
-            </p>
+          <p>
+            Para isso, iremos criar uma função chamada
+            <span>createRecorder(name)</span>, recebendo <span>name</span> como
+            <strong>parâmetro</strong>.
+          </p>
 
-            <figure>
-                <picture>
-                    <img src="assets/imgs/js.png" alt="JS">
-                </picture>
-            </figure>
+          <pre>
+function createRecorder(name) {
 
-        </article>
+}</pre
+          >
 
-        <article class="conc">
+          <p>
+            Feito isso, iremos criar dois gravadores: um para nós,
+            <span>myRecorder = createRecorder('Coach');</span>, e outro para um
+            estudante, <span>yourRecorder = createRecorder('Student');</span>.
+            Cada gravador deverá guardar suas próprias palavras.
+          </p>
 
-            
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
+          <p>Podemos chamar os gravadores da seguinte forma:</p>
 
-        </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
-    <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+          <pre>
+myRecorder('live');
+myRecorder('long');
+myRecorder('and');
+myRecorder('prosper');
+
+yourRecorder('Hi');
+yourRecorder('I');
+yourRecorder('am');
+yourRecorder('a');
+yourRecorder('student');</pre
+          >
+
+          <p>
+            No momento, nossa função ainda não faz nada, pois precisamos criar a
+            função que será retornada por
+            <span>createRecorder(name)</span>.
+          </p>
+
+          <p class="junto">
+            Iremos começar criando uma <strong>arrow function</strong>
+            como retorno:
+          </p>
+
+          <pre>
+function createRecorder(name) {
+    return () => {
+        console.log(name);
+    };
+}</pre
+          >
+
+          <p>
+            Agora, quando chamamos o gravador, ele imprime o nome recebido pela
+            função. Isso acontece porque a função retornada mantém acesso ao
+            parâmetro <span>name</span>, mesmo depois que
+            <span>createRecorder</span> termina sua execução.
+          </p>
+
+          <img src="assets/imgs/log-basic.png" alt="Resultado no console" />
+
+          <p>
+            Podemos alterar esse comportamento usando o
+            <strong>rest parameter</strong> (<span>...args</span>). Ele permite
+            receber vários argumentos e armazená-los em um array chamado
+            <span>args</span>.
+          </p>
+
+          <pre>
+function createRecorder(name) {
+    return (...args) => {
+        if (args.length === 0) {
+            console.log(name);
+        }
+    };
+}</pre
+          >
+
+          <p>
+            A condicional <span>args.length === 0</span> verifica se nenhum
+            argumento foi passado. Se isso acontecer, iremos imprimir o nome do
+            gravador.
+          </p>
+
+          <p>
+            Caso algum argumento seja passado, iremos armazenar a palavra em um
+            array. Para isso, criaremos
+            <span>const words = [];</span>.
+          </p>
+
+          <div class="content">
+            <pre>
+const words = [];
+
+function createRecorder(name) {
+    return (...args) => {
+        if (args.length === 0) {
+            console.log(name);
+        } else {
+            words.push(args[0]);
+        }
+    };
+}</pre
+            >
+
+            <img src="assets/imgs/exemplo01.png" alt="Exemplo 01" />
+          </div>
+
+          <p>
+            Ainda não teremos o resultado final. Agora queremos que, ao chamar o
+            gravador sem argumentos, todas as palavras sejam impressas juntas,
+            separadas por um espaço.
+          </p>
+
+          <p>
+            Para isso, usaremos o método <strong>join</strong>, que transforma
+            os elementos de um array em uma string, utilizando o separador
+            informado.
+          </p>
+
+          <pre>
+function createRecorder(name) {
+    return (...args) => {
+        if (args.length === 0) {
+            console.log(name, words.join(' '));
+        } else {
+            words.push(args[0]);
+        }
+    };
+}</pre
+          >
+
+          <p>
+            Agora, ao chamar o gravador sem argumentos, veremos todas as
+            palavras armazenadas em uma única string.
+          </p>
+
+          <img src="assets/imgs/log-result.png" alt="Resultado no console" />
+
+          <p>
+            <span>Como isso foi possível?</span>
+          </p>
+
+          <p>
+            Até o momento, temos uma variável compartilhada no escopo global,
+            sendo ela <span>words = [];</span>.
+          </p>
+
+          <p>
+            Isso significa que todos os gravadores utilizam o mesmo array.
+            Portanto, as palavras de <span>myRecorder</span> e
+            <span>yourRecorder</span> ficam misturadas.
+          </p>
+
+          <p>
+            Para resolver esse problema, iremos mover o array
+            <span>words</span> para dentro da função
+            <strong>createRecorder</strong>. Dessa forma, cada chamada criará
+            seu próprio array, que será mantido pelo closure.
+          </p>
+
+          <p>
+            Assim, cada gravador terá suas próprias palavras e funcionará de
+            forma independente.
+          </p>
+
+          <p>
+            Também podemos adicionar a funcionalidade de limpar o gravador. Para
+            isso, iremos criar um método chamado
+            <span>clear()</span>, que será utilizado assim:
+          </p>
+
+          <pre>myRecorder.clear();</pre>
+
+          <p>
+            No momento, isso ainda não funcionará, pois uma função não possui
+            automaticamente um método chamado <span>clear</span>. Precisamos
+            adicioná-lo.
+          </p>
+
+          <p class="separado">
+            <span>Adicionando a Funcionalidade Clear</span>
+          </p>
+
+          <p>
+            Para adicionar o método, iremos armazenar a função retornada em uma
+            variável chamada <span>recorder</span>. Depois, poderemos adicionar
+            propriedades ou métodos a essa função, pois funções em JavaScript
+            também são objetos.
+          </p>
+
+          <pre>
+function createRecorder(name) {
+    const words = [];
+
+    const recorder = (...args) => {
+        if (args.length === 0) {
+            console.log(name, words.join(' '));
+        } else {
+            words.push(args[0]);
+        }
+    };
+
+    return recorder;
+}</pre
+          >
+
+          <p>
+            Agora podemos adicionar o método
+            <span>recorder.clear()</span>. Ele deverá limpar o array
+            <span>words</span>.
+          </p>
+
+          <pre>
+recorder.clear = () => {
+    words.length = 0;
+};</pre
+          >
+
+          <p>
+            Usamos <span>words.length = 0</span> para remover todos os elementos
+            do array. Não podemos fazer <span>words = []</span>, pois
+            <span>words</span> foi declarada com <strong>const</strong> e não
+            pode receber outra referência.
+          </p>
+
+          <p>
+            Por fim, precisamos retornar a função <span>recorder</span> depois
+            de adicionar o método <span>clear</span>.
+          </p>
+
+          <pre>
+function createRecorder(name) {
+    <span>let words = [];</span>
+
+    const recorder = (...args) => {
+        if (args.length === 0) {
+            console.log(name, words.join(' '));
+        } else {
+            words.push(args[0]);
+        }
+    };
+
+    <span>
+        recorder.clear = () => {
+            words.length = 0;
+        };
+        return recorder;
+    </span>
+}</pre>
+
+          <p>
+            Agora cada gravador possui seu próprio array de palavras, mantém
+            acesso ao seu nome e também possui o método
+            <span>clear()</span> para limpar suas palavras.
+          </p>
+
+          <p>
+            O <strong>closure</strong> permite que a função
+            <span>recorder</span> continue acessando as variáveis
+            <span>name</span> e <span>words</span>, mesmo depois que
+            <span>createRecorder</span> termina sua execução.
+          </p>
+        </div>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteúdo da aula
         </a>
-    </div>
+      </article>
 
-</body>
+      <!-- <h1>Testes JS se necessário</h1> -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../04_run_function_with_multiple_parens/index.html">
+        Próxima Aula - Run Function with Multiple Parens
+      </a>
+    </div>
+  </body>
 </html>

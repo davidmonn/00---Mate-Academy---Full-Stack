@@ -187,6 +187,5 @@ span {
 .content {
     display: grid;
     margin-block: 20px;
-    align-items: center;
     grid-template-columns: repeat(2, auto);
 }
