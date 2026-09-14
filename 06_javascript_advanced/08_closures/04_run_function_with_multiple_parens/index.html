@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Run Function with Multiple Parens</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,8 +12,8 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
+        <a class="back" href="../03_function_returning_a_function/index.html">
+            Aula Anterior - Function Returning a Function
         </a>
     </div>
     
@@ -21,11 +21,11 @@
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">Run Function with Multiple Parens</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Agora iremos ver outra construcao um pouco confusa.
             </p>
 
         </article>
@@ -48,7 +48,124 @@
 
         <article class="conc">
 
+            <div class="conteudo">
+                <h3 class="junto">Entendendo Melhor</h3>
+            <p>
+                Iremos comecar criando uma <strong>function</strong> chamada de <span>sun</span> feito isso, agora iremos criar uma const para receber nossa funcao e passar os parametos e imprimir, tudo ficando da seguinte forma:
+            </p>
+
+            <div class="content">
+                <span>
+                <pre>
+function sum() {
+
+}
+
+const result = sum(3)(5);
+
+console.log(result);</pre>
+            </span>
+
+
+                <img src="assets/imgs/const-exemp.png" alt="Exemplo">
+            </div>
+
+            <p>
+                Feito isso iremos receber o seguinte erro em nosso devTools: <strong>jscript.js:7 Uncaught TypeError: <span>sum(...) is not a function</span> at jscript.js:7:22</strong>
+            </p>
+
+            <p>
+                Em <strong>"<span>sum(...) is not a function</span>"</strong>, esta nos dizendo que <span>sum(...)</span> nao é uma funcao. Deveria ser uma funcao pois depois dela escrevemos outro par de parenteses, ela poderia ser escrita da seguinte maneira:
+            </p>
+
+            <strong>
+                <pre>
+function sum() {
+
+}
+
+<span>
+    const f = sum(3);
+    const result = f(5);
+</span>
+// const result = sum(3)(5);
+
+console.log(result);
+                </pre>
+            </strong>
+
+            <p>
+                Dessa forma ira ficar mais claro, agora tambem nos retornando outro erro: <span>"Uncaught TypeError: f is not a function at jscript.js:8:16"</span>
+            </p>
+
+            <p class="separado">
+                Oque queremos fazer com essa funcao é basicamente a soma entre <strong>3</strong> e <strong>5</strong>.
+            </p>
+            <p>
+                Dito isso iremos agora vamos ajustar nossa <strong>function sum()</strong>, iremos comecar basicamente observando que queremos adicionar um argumento onde em nosso caso no momento tem como valor <span>3</span>, entao iremos adicionar um parametro <span>a</span>, feito isso iremos precisar <strong>retornar (return)</strong>, alguma funcao para evitar um erro.
+            </p>
+            <p>
+                Dentro agora de nosso retorno, iremos adicionar um novo parametro e oque desejamos que no caso é <strong>somar</strong>. Ficando da seguinte forma:
+            </p>
+
+            <div class="content">
+
+                <strong>
+                    <pre>
+function sum(<span>a</span>) {
+  <span>return (b) => a + b;</span>
+}
+
+const f = sum(3);
+const result = f(5);
+// const result = sum(3)(5);
+
+console.log(result);</pre>
+                </strong>
+
+                <img src="assets/imgs/exemp-part02.png" alt="Exemplo part 2">
+
+            </div>
+
+            <p>
+                Dessa forma agora teremos nosso resultado sendo <strong>8</strong>, e se usarmos o <span>const result = sum(3)(5)</span> ira funcionar da mesma forma.
+            </p>
+
+            <p>
+                Em teoria uma funcao pode retornar uma referencia a si mesma.
+            </p>
+
+            <p class="separado">Exemplo:</p>
             
+            <div class="content">
+
+                <strong>
+                    <pre>
+function sum(a) {
+  <span>return sum;</span>
+}
+
+// const f = sum(3);
+// const result = f(5);
+<span>const result = sum(3)(5)()();</span></pre>
+                </strong>
+
+                <figure>
+                    <figcaption>DevTools</figcaption>
+                    <img src="assets/imgs/result-tool.png" alt="Resultado retorno funcao">
+                </figure>
+
+                <p>
+                    Dessa forma podemos observar que não há nenhum erro em nosso codigo e se distuinguirmos entre chamdas com parametros e sem parametros, poderemos implementar qualquer numero de parenteses.
+                </p>
+
+                <p class="separado">
+                    Em casos reais, nao é muito comum chamar uma funcao de dois parenteses, porem alguns programadores gostam de abreviar e escrevem uma linha ao inves de duas.
+                </p>
+
+            </div>
+
+            </div>
             
             <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
                 Conteudo da aula
@@ -61,8 +178,8 @@
         </main>
         
     <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+        <a class="next" href="../05_tarefa_connections_limit/index.html">
+            Próxima Aula - Tarefa Connections limit
         </a>
     </div>
 

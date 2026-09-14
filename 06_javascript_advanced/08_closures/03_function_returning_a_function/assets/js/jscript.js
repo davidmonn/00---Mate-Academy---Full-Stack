@@ -1,6 +1,5 @@
 'use strict';
 
-
 function createRecorder(name) {
   let words = [];
 
