@@ -17,22 +17,26 @@
         </a>
     </div>
     
-    <main>
+    
+<main>
 
         <article id="intro">
 
             <h1 id="title">Run Function with Multiple Parens</h1>
 
-            <h3 class="intro">Intro</h3>
+            <h3 class="intro">Introdução</h3>
             <p>
-                Agora iremos ver outra construcao um pouco confusa.
+                Agora iremos conhecer outra construção de funções que pode parecer um pouco confusa no início: chamar uma função usando vários pares de parênteses.
+            </p>
+            <p>
+                Para entender como isso funciona, precisamos saber que uma função pode retornar outra função. Assim, podemos chamar a função retornada usando um novo par de parênteses.
             </p>
 
         </article>
 
         <article class="conteudo">
 
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
+            <h3 class="cont-title">Código de Exemplo:</h3>
 
             <p class="junto">
                 <strong>JS:</strong>
@@ -40,7 +44,7 @@
 
             <figure>
                 <picture>
-                    <img src="assets/imgs/js.png" alt="JS">
+                    <img src="assets/imgs/js.png" alt="Código JavaScript">
                 </picture>
             </figure>
 
@@ -50,12 +54,13 @@
 
             <div class="conteudo">
                 <h3 class="junto">Entendendo Melhor</h3>
+
             <p>
-                Iremos comecar criando uma <strong>function</strong> chamada de <span>sun</span> feito isso, agora iremos criar uma const para receber nossa funcao e passar os parametos e imprimir, tudo ficando da seguinte forma:
+                Iremos começar criando uma função chamada <strong>sum</strong>. Em seguida, criaremos uma constante chamada <strong>result</strong> para receber o resultado de duas chamadas de função, passando os valores <strong>3</strong> e <strong>5</strong>.
             </p>
 
             <div class="content">
-                <span>
+                <strong>
                 <pre>
 function sum() {
 
@@ -64,18 +69,26 @@ function sum() {
 const result = sum(3)(5);
 
 console.log(result);</pre>
-            </span>
+                </strong>
 
+                <img src="assets/imgs/const-exemp.png" alt="Exemplo de chamadas de função">
 
-                <img src="assets/imgs/const-exemp.png" alt="Exemplo">
             </div>
 
             <p>
-                Feito isso iremos receber o seguinte erro em nosso devTools: <strong>jscript.js:7 Uncaught TypeError: <span>sum(...) is not a function</span> at jscript.js:7:22</strong>
+                Ao executar esse código, receberemos um erro no DevTools:
             </p>
 
             <p>
-                Em <strong>"<span>sum(...) is not a function</span>"</strong>, esta nos dizendo que <span>sum(...)</span> nao é uma funcao. Deveria ser uma funcao pois depois dela escrevemos outro par de parenteses, ela poderia ser escrita da seguinte maneira:
+                <strong>Uncaught TypeError: sum(...) is not a function</strong>
+            </p>
+
+            <p>
+                A mensagem <strong>sum(...) is not a function</strong> significa que o resultado de <strong>sum(3)</strong> não é uma função. Como a função <strong>sum</strong> está vazia, ela retorna <strong>undefined</strong> por padrão.
+            </p>
+
+            <p>
+                Para entender melhor, podemos separar as duas chamadas em duas linhas:
             </p>
 
             <strong>
@@ -84,10 +97,9 @@ function sum() {
 
 }
 
-<span>
-    const f = sum(3);
-    const result = f(5);
-</span>
+const f = sum(3);
+const result = f(5);
+
 // const result = sum(3)(5);
 
 console.log(result);
@@ -95,17 +107,31 @@ console.log(result);
             </strong>
 
             <p>
-                Dessa forma ira ficar mais claro, agora tambem nos retornando outro erro: <span>"Uncaught TypeError: f is not a function at jscript.js:8:16"</span>
+                A primeira chamada, <strong>sum(3)</strong>, é executada e seu resultado é armazenado na constante <strong>f</strong>. Como a função não possui um <strong>return</strong>, o valor de <strong>f</strong> será <strong>undefined</strong>.
+            </p>
+
+            <p>
+                Ao tentar executar <strong>f(5)</strong>, receberemos outro erro:
+            </p>
+
+            <p>
+                <strong>Uncaught TypeError: f is not a function</strong>
             </p>
 
             <p class="separado">
-                Oque queremos fazer com essa funcao é basicamente a soma entre <strong>3</strong> e <strong>5</strong>.
+                O que queremos fazer com essa função é basicamente somar os valores <strong>3</strong> e <strong>5</strong>.
             </p>
+
             <p>
-                Dito isso iremos agora vamos ajustar nossa <strong>function sum()</strong>, iremos comecar basicamente observando que queremos adicionar um argumento onde em nosso caso no momento tem como valor <span>3</span>, entao iremos adicionar um parametro <span>a</span>, feito isso iremos precisar <strong>retornar (return)</strong>, alguma funcao para evitar um erro.
+                Para isso, precisamos ajustar a função <strong>sum</strong>. Primeiro, adicionaremos um parâmetro chamado <strong>a</strong>, que receberá o valor <strong>3</strong> quando a função for chamada.
             </p>
+
             <p>
-                Dentro agora de nosso retorno, iremos adicionar um novo parametro e oque desejamos que no caso é <strong>somar</strong>. Ficando da seguinte forma:
+                Depois, precisamos retornar uma nova função. Essa função receberá o segundo valor, que será armazenado no parâmetro <strong>b</strong>, e realizará a soma entre <strong>a</strong> e <strong>b</strong>.
+            </p>
+
+            <p>
+                O código ficará da seguinte forma:
             </p>
 
             <div class="content">
@@ -118,25 +144,41 @@ function sum(<span>a</span>) {
 
 const f = sum(3);
 const result = f(5);
+
 // const result = sum(3)(5);
 
 console.log(result);</pre>
                 </strong>
 
-                <img src="assets/imgs/exemp-part02.png" alt="Exemplo part 2">
+                <img src="assets/imgs/exemp-part02.png" alt="Exemplo de função retornando outra função">
 
             </div>
 
             <p>
-                Dessa forma agora teremos nosso resultado sendo <strong>8</strong>, e se usarmos o <span>const result = sum(3)(5)</span> ira funcionar da mesma forma.
+                Agora o resultado será <strong>8</strong>. Isso acontece porque a primeira chamada, <strong>sum(3)</strong>, retorna uma função que guarda o valor de <strong>a</strong> como <strong>3</strong>. Quando chamamos essa função com <strong>f(5)</strong>, o valor de <strong>b</strong> será <strong>5</strong>.
             </p>
 
             <p>
-                Em teoria uma funcao pode retornar uma referencia a si mesma.
+                A expressão <strong>a + b</strong> será executada como <strong>3 + 5</strong>, retornando <strong>8</strong>.
+            </p>
+
+            <p>
+                Também podemos escrever as duas chamadas na mesma linha:
+            </p>
+
+            <pre>
+const result = sum(3)(5);</pre>
+
+            <p>
+                O resultado será o mesmo, pois as chamadas são executadas na mesma ordem: primeiro <strong>sum(3)</strong> e depois a função retornada recebe o valor <strong>5</strong>.
+            </p>
+
+            <p>
+                Em JavaScript, uma função pode retornar uma referência para si mesma. Isso permite chamar a mesma função novamente usando outro par de parênteses.
             </p>
 
             <p class="separado">Exemplo:</p>
-            
+
             <div class="content">
 
                 <strong>
@@ -147,32 +189,45 @@ function sum(a) {
 
 // const f = sum(3);
 // const result = f(5);
+
 <span>const result = sum(3)(5)()();</span></pre>
                 </strong>
 
                 <figure>
                     <figcaption>DevTools</figcaption>
-                    <img src="assets/imgs/result-tool.png" alt="Resultado retorno funcao">
+                    <img src="assets/imgs/result-tool.png" alt="Resultado da função no DevTools">
                 </figure>
 
+            </div>
+
                 <p>
-                    Dessa forma podemos observar que não há nenhum erro em nosso codigo e se distuinguirmos entre chamdas com parametros e sem parametros, poderemos implementar qualquer numero de parenteses.
+                    Nesse exemplo, a função <strong>sum</strong> retorna a própria função, ou seja, a referência para <strong>sum</strong>. Por isso, podemos chamá-la novamente.
+                </p>
+
+                <p>
+                    A chamada <strong>sum(3)(5)()()</strong> executa a função várias vezes. Como a função retorna a si mesma em todas as chamadas, cada novo par de parênteses funciona.
+                </p>
+
+                <p>
+                    É importante distinguir chamadas com parâmetros de chamadas sem parâmetros. Uma chamada como <strong>sum(3)</strong> passa o valor <strong>3</strong> para a função. Já <strong>()</strong> executa a função sem passar argumentos.
+                </p>
+
+                <p>
+                    Uma função pode retornar outra função ou retornar a si mesma. O que determina se podemos usar outro par de parênteses é o valor retornado pela chamada anterior: ele precisa ser uma função.
                 </p>
 
                 <p class="separado">
-                    Em casos reais, nao é muito comum chamar uma funcao de dois parenteses, porem alguns programadores gostam de abreviar e escrevem uma linha ao inves de duas.
+                    Em situações reais, não é muito comum usar vários pares de parênteses dessa maneira. Porém, essa construção pode ser útil para criar funções que recebem argumentos em etapas. Alguns programadores também a utilizam para escrever chamadas encadeadas de forma mais compacta.
                 </p>
 
             </div>
 
-            </div>
-            
             <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
+                Conteúdo da aula
             </a>
 
         </article>
-        
+
          <!-- <h1>Testes JS se necessário</h1> -->
          <script src="assets/js/jscript.js"></script>
         </main>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Title</title>
+    <title>Tarefa Connections limit</title>
     <link rel="stylesheet" href="assets/styles/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,18 +15,24 @@
   <body>
     <div class="back">
       <a class="back" href="../">
-        Aula Anterior - 
+        Aula Anterior - Run Function with Multiple Parens
       </a>
     </div>
 
     <main>
       <article id="intro">
-        <h1 id="title">Title</h1>
+        <h1 id="title">Tarefa Connections limit</h1>
 
         <h3 class="intro">Intro</h3>
         <p>
-          
+          O plano tarifário do provedor de serviços de internet local não contabiliza seu tráfego, mas limita o número de sessões. O usuário tem um <strong>connectionsLimit</strong> - o número de vezes que ele pode entrar na internet. Se o limite for atingido, o acesso é bloqueado.
         </p>
+
+        <p class="separado">
+          Crie uma função <strong>makePackage</strong> que receba um número <strong>connectionsLimit</strong> e retorne uma função <strong>connect</strong>. Cada chamada <strong>connect</strong> deve retornar uma string com as informações sobre o número de sessões restantes. Se o limite for atingido, connect deve retornar a string <strong>You reached the connections limit!</strong>.
+        </p>
+
+        <img src="assets/imgs/ex.png" alt="Exemplo">
       </article>
 
       <article class="conteudo">
@@ -38,6 +44,58 @@
             <img src="assets/imgs/result.png" alt="Resultado" />
           </picture>
         </figure>
+
+        <h3 class="junto">Explicando Resultado:</h3>
+<p>
+  O que foi feito basicamente é: criamos uma <strong>function</strong> que recebe um parâmetro e, dentro dela, criamos uma nova <strong>function</strong> sem parâmetros. Essa função interna será retornada e poderá ser executada posteriormente para obtermos o resultado desejado. Nesse caso, nossa função principal recebe como parâmetro o limite de conexões.
+</p>
+<p>
+  A função interna mantém acesso às variáveis da função principal, mesmo depois que a função principal termina sua execução. Isso é o que chamamos de <strong>closure</strong>.
+</p>
+
+<div class="conteudo">
+
+  <strong>
+  <pre>
+function makePackage(connectionsLimit) {
+  let cont = 0;
+
+  return () => {
+    const text = 'connections left';
+    if (cont >= connectionsLimit) {
+      return 'You reached the connections limit!';
+    }
+  cont++;
+
+  return `${connectionsLimit - cont} ${text}`;
+
+  };
+}</pre> </strong>
+
+  <p>
+    <span>function makePackage(connectionsLimit){}</span>, aqui temos nossa função principal, responsável por receber o parâmetro que será passado como argumento.
+  </p>
+
+  <p class="separado">
+    <span>let cont = 0;</span>, criamos um contador para controlar quantas conexões já foram utilizadas. Esse contador será mantido pela função interna por meio do <strong>closure</strong>.
+  </p>
+
+  <p>
+    <span>return () => {}</span>, aqui criamos e retornamos uma função sem parâmetros. Essa função será armazenada em <span>connect</span> e poderá ser chamada posteriormente.
+  </p>
+
+  <p>
+    <span>if (cont >= connectionsLimit)</span>, verificamos se o contador já atingiu ou ultrapassou o limite de conexões. Se isso acontecer, a função retorna a mensagem informando que o limite foi atingido.
+  </p>
+
+  <p>
+    <span>cont++;</span>, se o limite ainda não foi atingido, aumentamos o contador em <strong>1</strong>. Isso acontece a cada chamada da função, permitindo controlar quantas conexões já foram utilizadas.
+  </p>
+</div>
+
+
+        </div>
+        
 
         <a
           href="contAula.html"
@@ -58,8 +116,8 @@
     </main>
 
     <div class="next">
-      <a class="next" href="../">
-        Próxima Tarefa: 
+      <a class="next" href="../06_tarefa_dismantling_of_details/index.html">
+        Próxima Tarefa: Tarefa: Dismantling of details
       </a>
     </div>
   </body>
