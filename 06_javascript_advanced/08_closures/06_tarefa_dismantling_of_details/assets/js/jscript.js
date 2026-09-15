@@ -1,0 +1,32 @@
+const kobi = {
+  wheels: 10,
+  chipVersion: 11,
+  serialNumber: 100
+};
+
+function makeTool(part) {
+  return (robot) => {
+    const copy = {...robot};
+
+    delete copy[part];
+
+    return copy;
+  };
+};
+
+const removeWheels = makeTool('wheels');
+const removeChip = makeTool('chipVersion');
+
+const robotWithoutWheels = removeWheels(kobi);
+console.log(robotWithoutWheels);
+
+// { serialNumber: 100, chipVersion: 11 }
+
+const robotWithoutChip = removeChip(kobi);
+console.log(robotWithoutChip);
+
+// { serialNumber: 100, wheels: 10 }
+
+const robotWithoutDetails = removeWheels(robotWithoutChip);
+console.log(robotWithoutDetails);
+// { serialNumber: 100 }
