@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Title</title>
+    <title>Tarefa: Spy listener</title>
     <link rel="stylesheet" href="assets/styles/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,19 +14,37 @@
   </head>
   <body>
     <div class="back">
-      <a class="back" href="../">
-        Aula Anterior - 
+      <a class="back" href="../09_tarefa_si_seven_robots/index.html">
+        Aula Anterior - Tarefa: SI:7 Robots
       </a>
     </div>
 
     <main>
       <article id="intro">
-        <h1 id="title">Title</h1>
+        <h1 id="title">Tarefa: Spy listener</h1>
 
         <h3 class="intro">Intro</h3>
         <p>
-          
+          A agência de inteligência SI:7 recebeu os primeiros robôs militares da Fábrica de Robôs Mate. Devido ao sigilo total, eles não possuem o software necessário. Estes robôs vão se tornar espiões e irão ouvir e gravar tudo o que for escutado e, em caso de perigo, enviarão os dados armazenados para a sede e apagarão o disco.
         </p>
+
+        <p class="separado">
+          Escreva uma função <strong>makeSpyListener</strong> que cria e retorna uma função <strong>listener</strong>. O <strong>listener</strong> deve funcionar da seguinte maneira:
+        </p>
+
+        <ul>
+          <li>
+            Se chamarmos o <strong>listener</strong> e passarmos uma string, salve-a na memória do robô
+          </li>
+          <li>
+            Se chamarmos sem nenhum parâmetro, retornaremos um array de todos os dados do gravador
+          </li>
+          <li>
+            Se chamarmos um método <strong>listener.clear()</strong>, limpe todos os dados e retorne uma string <strong>Transferring data... Deleting data... Clear!</strong>.
+          </li>
+        </ul>
+
+        <img src="assets/imgs/ex.png" alt="Exemplo" class="separado">
       </article>
 
       <article class="conteudo">
@@ -58,8 +76,8 @@
     </main>
 
     <div class="next">
-      <a class="next" href="../">
-        Próxima Tarefa: 
+      <a class="next" href="../11_tarefa_top_secret/index.html">
+        Próxima Tarefa: Top Secret
       </a>
     </div>
   </body>
