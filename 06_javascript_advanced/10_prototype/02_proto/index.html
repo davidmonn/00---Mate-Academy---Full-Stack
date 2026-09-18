@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>__proto__</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,8 +12,8 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
+        <a class="back" href="../01_prototypal_inheritance/index.html">
+            Aula Anterior - Prototypal Inheritance
         </a>
     </div>
     
@@ -21,11 +21,11 @@
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">__proto__</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Anteriormente vimos sobre <strong>heranca de prototipo</strong> em <strong>JS</strong>, para configura-la usamos o metodo <span>Object.setPrototypeOf();</span>
             </p>
 
         </article>
@@ -48,7 +48,22 @@
 
         <article class="conc">
 
-            
+            <div class="conteudo">
+
+                <h3 class="separado">__proto__</h3>
+                <p>
+                    Esse metodo é basicamente o mesmo que utilizarmos: <span>Object.setPrototypeOf(child, father);</span> porem com ele fazemos da seguinte forma: <span>child.__proto__ = father;</span>
+                </p>
+
+                <p>
+                    Quando usamos o <span>__proto__</span>, estamos utilizando algo que esta dentro de nosso <strong>prototype</strong>
+                </p>
+
+                <p class="separado">
+                    Em codigo real nao usamos mais o <span>__proto__</span> isso pois essa propriedade esta desatualizada e nao funciona de forma confiavel.
+                </p>
+
+            </div>
             
             <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
                 Conteudo da aula
@@ -61,8 +76,8 @@
         </main>
         
     <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+        <a class="next" href="../03_this_in_the_inherited_method/index.html">
+            Próxima Aula - This in the Inherited Method
         </a>
     </div>
 
