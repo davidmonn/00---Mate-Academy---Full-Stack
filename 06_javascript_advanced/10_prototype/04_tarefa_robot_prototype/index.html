@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Tarefa: Robot prototype</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,8 +12,8 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
+        <a class="back" href="../03_this_in_the_inherited_method/index.html">
+            Aula Anterior - This in the Inherited Method
         </a>
     </div>
     
@@ -21,18 +21,75 @@
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">Tarefa: Robot prototype</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                A complexidade na fabricação de nossos robôs está crescendo e a cada dia eles contam com novos tipos de membros, novos módulos e capacidades complexas. Fica difícil fazer tudo isso em uma só fábrica. Portanto, decidimos dividir nossa fábrica em várias fábricas separadas. Agora cada fábrica será responsável pela entrega de peças diferentes. Isto deve acelerar o desenvolvimento e a criação de novos robôs.
             </p>
+
+            <p class="separado">
+                Nesta fase, podemos identificar esquematicamente 4 componentes dos nossos robôs - o núcleo principal, núcleo de navegação, núcleo de movimento e o corpo do robô, no qual os módulos serão instalados.
+            </p>
+
+            <p class="separado">
+                Sua tarefa é criar os seguintes módulos de objeto:
+            </p>
+
+            <ul>
+                <li>
+                    O <strong>mainCore</strong> com os seguintes métodos:
+                    <ul>
+                        <li>
+                            <strong>getMainInfo</strong> retorna uma string <strong>Robot "%name%", cpu version %cpuVersion%</strong>
+                        </li>
+                        <li>
+                            <strong>getAdditionalInfo</strong> retorna uma string <strong>Update version: %softwareVersion%</strong>
+                        </li>
+                        <li>
+                            <strong>updateRobot</strong> pega o parâmetro <strong>updateVersion</strong>, modifica o robô <strong>softwareVersion</strong> e retorna uma string <strong>%name% updated to %updateVersion%</strong>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="separado">
+                <li>
+                    O <strong>navigationCore</strong> com métodos:
+                    <ul>
+                        <li>
+                            <strong>getCoords</strong> retorna a string de coordenadas do robô <strong>x=%coords.x% y=%coords.y%</strong>
+                        </li>
+                        <li>
+                            <strong>setTargetCoords</strong> pega as coordenadas <strong>x</strong> e <strong>y</strong> do destino e os atribui aos campos corretos do robô
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>
+                O <strong>movementCore</strong> com <strong>moveForward</strong>, <strong>moveBack</strong>, <strong>moveLeft</strong> e métodos moveRight, aceitando um número <strong>step</strong> (o padrão é 1) e alterando o coordenada apropriada por <strong>step</strong>.
+            </p>
+
+            <p class="separado">
+                O corpo do primeiro protótipo <strong>kerbin</strong> deve corresponder a este esquema:
+            </p>
+
+            <p>
+                O <strong>cpuVersion</strong> mais recente é <strong>145.4</strong>, o <strong>softwareVersion</strong> mais recente é <strong>23.45</strong>, todas as coordenadas são 0 por padrão.
+            </p>
+            
+            <p class="separado">
+                Combine o corpo do robô e todos os módulos necessários usando uma cadeia de protótipos. Todos os métodos de todos os módulos devem estar acessíveis ao robô para funcionamento correto.
+            </p>
+
+            <img src="assets/imgs/ex.png" alt="Exemplo">
 
         </article>
 
         <article class="conteudo">
 
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
+            <h3 class="cont-title">Resultado:</h3>
 
             <p class="junto">
                 <strong>JS:</strong>
@@ -61,8 +118,8 @@
         </main>
         
     <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+        <a class="next" href="../../11_constructors/01_what_is_constructor/index.html">
+            <strong>Próxima Modulo: Constructors - Aula: What is Constructor</strong>
         </a>
     </div>
 
