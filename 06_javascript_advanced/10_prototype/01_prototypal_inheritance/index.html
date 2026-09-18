@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Prototypal Inheritance</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,57 +12,240 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
+        <a class="back" href="../../09_pratica_js/04_tarefa_make_storage/index.html">
+            <strong>Aula Anterior - Pratica Js</strong>
         </a>
     </div>
     
     <main>
-
-        <article id="intro">
-
-            <h1 id="title">Title</h1>
-
-            <h3 class="intro">Intro</h3>
-            <p>
-                
-            </p>
-
-        </article>
-
-        <article class="conteudo">
-
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
-
-            <p class="junto">
-                <strong>JS:</strong>
-            </p>
-
-            <figure>
-                <picture>
-                    <img src="assets/imgs/js.png" alt="JS">
-                </picture>
-            </figure>
-
-        </article>
-
-        <article class="conc">
-
-            
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
-
-        </article>
         
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
+    <article id="intro">
+
+        <h1 id="title">Prototypal Inheritance</h1>
+
+        <h3 class="intro">Intro</h3>
+        <p>
+            Agora iremos começar a explorar a <strong>herança</strong> em <strong>JS</strong>.
+        </p>
+
+    </article>
+
+    <article class="conteudo">
+
+        <h3 class="cont-title">Código de Exemplo:</h3>
+
+        <p class="junto">
+            <strong>JS:</strong>
+        </p>
+
+        <figure>
+            <picture>
+                <img src="assets/imgs/js.png" alt="JS">
+            </picture>
+        </figure>
+
+    </article>
+
+    <article class="conc">
+
+        <div class="conteudo">
+
+            <h3 class="junto">Entendendo Melhor</h3>
+
+            <p>
+                Iremos começar criando dois <strong>objetos</strong>, sendo eles: <strong>father</strong> e <strong>child</strong>:
+            </p>
+
+            <span>
+                <pre>
+const father = {
+name: 'Father',
+surname: 'Surname',
+}
+
+const child = {
+name: 'Child',
+}</pre> </span>
+
+            <p>
+                Podemos observar que nosso <span>child</span> não possui a propriedade <span>surname</span>.
+            </p>
+
+            <p>
+                Se tentarmos acessar o <strong>surname</strong> de <span>child</span>:
+                <span>console.log(child.surname)</span>
+            </p>
+
+            <p>
+                Teremos como resultado <strong>undefined</strong>. Porém, podemos estabelecer uma relação de
+                <strong>herança</strong> entre objetos. Para isso, podemos usar o método
+                <span>Object.setPrototypeOf()</span>.
+            </p>
+
+        </div>
+
+        <div class="conteudo">
+
+            <h3 class="separado">Object.setPrototypeOf(child, father)</h3>
+
+            <p>
+                Usamos esse método para definir o <strong>protótipo</strong> de um objeto.
+                O primeiro parâmetro é o objeto que irá receber o protótipo e o segundo é o objeto que será
+                utilizado como seu protótipo.
+            </p>
+
+            <p>
+                A herança por protótipos funciona principalmente quando tentamos <strong>ler</strong> uma
+                propriedade de um objeto e ela não está presente nele.
+                Nesse caso, o JavaScript procura essa propriedade no seu protótipo.
+            </p>
+
+            <p>
+                A herança também pode ser encadeada, fazendo com que um objeto herde de outro que, por sua vez,
+                herda de um terceiro. Exemplo:
+            </p>
+
+            <div class="content">
+                <strong>
+                <pre>
+const grandFather = {
+name: 'GrandFather',
+surname: 'Surname',
+}
+
+const father = {
+name: 'Father',
+}
+
+const child = {
+name: 'Child',
+}
+
+<span>
+    Object.setPrototypeOf(father, grandFather);
+    Object.setPrototypeOf(child, father);
+</span>
+
+console.log(child.surname);</pre> </strong>
+
+                <img src="assets/imgs/ex01.png" alt="Exemplo">
+            </div>
+
+            <p class="separado">
+                Dessa forma, quando procuramos uma propriedade, o JavaScript pode seguir a
+                <strong>cadeia de protótipos</strong>:
+                <span>child → father → grandFather → Object.prototype → null</span>.
+            </p>
+
+        </div>
+
+        <div class="conteudo">
+
+            <h3 class="separado">Object.getPrototypeOf()</h3>
+
+            <p>
+                Usamos esse método para descobrir qual é o <strong>protótipo</strong> atual de um objeto. Exemplo:
+            </p>
+
+            <span>
+                <pre>
+console.log(Object.getPrototypeOf(father));</pre> </span>
+
+            <p>
+                Nesse exemplo, o resultado será o objeto <span>grandFather</span>, pois definimos
+                <span>grandFather</span> como protótipo de <span>father</span>.
+            </p>
+
+            <img src="assets/imgs/getPrototype.png" alt="getPrototype">
+
+        </div>
+
+        <div class="conteudo">
+
+            <h3 class="separado">Características dos Protótipos</h3>
+
+            <p>
+                Uma característica importante dos <span>protótipos</span> é que eles são utilizados na
+                <strong>busca de propriedades</strong>.
+            </p>
+
+            <p>
+                Quando tentamos <strong>ler</strong> uma propriedade que não existe diretamente no objeto,
+                o JavaScript procura essa propriedade na cadeia de protótipos.
+            </p>
+
+            <p>
+                Porém, quando atribuímos uma nova propriedade, ela normalmente é criada no
+                <strong>próprio objeto</strong>. Por exemplo:
+            </p>
+
+            <strong>
+                <pre>
+child.surname = 'Smith';</pre> </strong>
+
+            <p>
+                Nesse caso, <span>surname</span> será criada diretamente em <span>child</span>.
+                Ela não altera a propriedade <span>surname</span> existente no protótipo.
+            </p>
+
+            <p>
+                Se excluirmos essa propriedade:
+            </p>
+
+            <strong>
+                <pre>
+delete child.surname;</pre> </strong>
+
+            <p>
+                A propriedade será removida de <span>child</span>. Porém, se existir uma propriedade
+                <span>surname</span> em seu protótipo, ela continuará sendo encontrada através da
+                <strong>cadeia de protótipos</strong>.
+            </p>
+
+        </div>
+
+        <div class="conteudo">
+
+            <h3 class="separado">Cancelando a Herança</h3>
+
+            <p>
+                Também podemos remover o protótipo de um objeto usando
+                <span>Object.setPrototypeOf(child, null)</span>.
+            </p>
+
+            <p>
+                Ao fazer isso, <span>child</span> não terá mais um protótipo. Portanto, ele também não terá
+                acesso às propriedades e métodos que seriam encontrados através dessa cadeia.
+            </p>
+
+            <p>
+                Por exemplo, métodos como <strong>hasOwnProperty()</strong> normalmente são encontrados através
+                de <span>Object.prototype</span>. Se definirmos o protótipo como <span>null</span>, esse método
+                não estará mais disponível diretamente em <span>child</span>.
+            </p>
+
+            <p>
+                Isso acontece porque cortamos a cadeia de protótipos. Arrays, strings e outros objetos também
+                utilizam protótipos para obter diversos de seus métodos.
+            </p>
+
+        </div>
+        
+        <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+            Conteúdo da aula
+        </a>
+
+    </article>
+    
+    <!-- <h1>Testes JS se necessário</h1> -->
+    <script src="assets/js/jscript.js"></script>
+
+</main>
+
         
     <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+        <a class="next" href="../02_proto/index.html">
+            Próxima Aula - __proto__
         </a>
     </div>
 
