@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Constructor Questions</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,57 +12,455 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
+        <a class="back" href="../02_constructor_questions/index.html">
+            Aula Anterior - What is Constructor
         </a>
     </div>
     
     <main>
 
-        <article id="intro">
+    <article id="intro">
 
-            <h1 id="title">Title</h1>
+        <h1 id="title">Constructor Questions</h1>
 
-            <h3 class="intro">Intro</h3>
+        <h3 class="intro">Intro</h3>
+        <p>
+            Agora vamos entender melhor como os construtores e a propriedade
+            <strong>prototype</strong> funcionam juntos.
+        </p>
+
+    </article>
+
+    <article class="conteudo">
+
+        <h3 class="cont-title">Código de Exemplo:</h3>
+
+        <p class="junto">
+            <strong>JS:</strong>
+        </p>
+
+        <figure>
+            <picture>
+                <img src="assets/imgs/js.png" alt="JS">
+            </picture>
+        </figure>
+
+    </article>
+
+    <article class="conc">
+
+        <div class="conteudo">
+
+            <h3 class="separado">Entendendo Melhor</h3>
+
             <p>
-                
+                Começaremos pelo seguinte código:
+            </p>
+            
+            <div class="content">
+
+                <strong>
+                    <pre>
+'use strict';
+
+function User(name) {
+    this.name = name;
+}
+
+User.prototype = {
+    test() {
+      console.log(111);
+    },
+};
+
+const admin = new User('John');
+
+admin.test();</pre> </strong>
+                <img src="assets/imgs/intro-code.png" alt="Código de Exemplo">
+
+            </div>
+
+            <p>
+                Primeiro temos uma <strong>função construtora</strong> chamada
+                <strong>User</strong>. Ela recebe um <strong>name</strong> e
+                coloca esse valor no novo objeto através do
+                <strong>this</strong>.
             </p>
 
-        </article>
-
-        <article class="conteudo">
-
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
-
-            <p class="junto">
-                <strong>JS:</strong>
+            <p class="separado">
+                Depois colocamos o método <strong>test()</strong> no
+                <strong>prototype</strong> de <strong>User</strong>.
+                Esse método poderá ser encontrado pelos objetos criados
+                através de <strong>new User()</strong>.
             </p>
 
-            <figure>
-                <picture>
-                    <img src="assets/imgs/js.png" alt="JS">
-                </picture>
-            </figure>
+            <p>
+                Em seguida criamos o objeto <strong>admin</strong>:
+            </p>
 
-        </article>
+            <strong>
+                <pre>
+const admin = new User('John');</pre> </strong>
+            <p>
+                Nesse momento, o JavaScript cria um novo objeto e faz com que
+                o <strong>prototype</strong> desse novo objeto seja o objeto
+                que estava em <strong>User.prototype</strong> naquele momento.
+            </p>
 
-        <article class="conc">
+            <p>
+                Podemos imaginar a estrutura assim:
+            </p>
 
-            
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
+            <strong>
+                <pre>
+admin
+↓
+User.prototype
+↓
+test()</pre> </strong>
+            <p>
+                O objeto <strong>admin</strong> possui diretamente a propriedade
+                <strong>name</strong>, mas não possui diretamente o método
+                <strong>test()</strong>.
+            </p>
 
-        </article>
+            <p>
+                Quando fazemos:
+            </p>
+
+            <strong>
+                <pre>admin.test();</pre>
+            </strong>
+
+            <p>
+                O JavaScript procura <strong>test()</strong> primeiro dentro
+                de <strong>admin</strong>. Como não encontra, procura no
+                <strong>prototype</strong> de <strong>admin</strong>.
+            </p>
+
+            <p>
+                Encontra o método no objeto que estava em
+                <strong>User.prototype</strong> e executa:
+                <strong>console.log(111)</strong>.
+            </p>
+
+            <h3 class="separado">E se trocarmos o Prototype?</h3>
+
+            <p>
+                Agora vamos modificar o código:
+            </p>
+
+            <strong>
+                <pre>
+function User(name) {
+  this.name = name;
+}
+
+// #1
+User.prototype = {
+  test() {
+    console.log(111);
+  },
+};
+
+const admin = new User('John');
+
+// #2
+User.prototype = {
+  test() {
+    console.log(222);
+  },
+};
+
+admin.test();</pre> </strong>
+            <p>
+                Mesmo depois de trocarmos <strong>User.prototype</strong> para
+                o objeto <strong>#2</strong>, o resultado continuará sendo
+                <strong>111</strong>.
+            </p>
+
+            <p>
+                Isso acontece porque <strong>admin</strong> foi criado quando
+                <strong>User.prototype</strong> apontava para o objeto
+                <strong>#1</strong>.
+            </p>
+
+            <p>
+                Quando fazemos:
+            </p>
+
+            <strong>
+                <pre>
+const admin = new User('John');</pre> </strong>
+            <p>
+                o objeto <strong>admin</strong> fica ligado ao
+                <strong>#1</strong>.
+            </p>
+
+            <strong>
+                <pre>
+admin
+↓
+#1
+↓
+test() → 111</pre> </strong>
+            <p>
+                Depois fazemos:
+            </p>
+
+            <strong>
+                <pre>
+User.prototype = #2;</pre> </strong>
+            <p>
+                Agora <strong>User.prototype</strong> aponta para
+                <strong>#2</strong>, mas isso não muda a ligação que
+                <strong>admin</strong> já possui com <strong>#1</strong>.
+            </p>
+
+            <strong>
+                <pre>
+admin
+↓
+#1 → test() → 111
+
+User.prototype
+↓
+#2 → test() → 222</pre> </strong>
+            <p class="separado">
+                Portanto, <strong>substituir User.prototype</strong> não altera
+                o prototype dos objetos que já foram criados.
+            </p>
+
+            <p>
+                Os objetos já criados continuam ligados ao objeto que estava
+                em <strong>User.prototype</strong> no momento da criação.
+            </p>
+
+            <h3 class="separado">Uma forma simples de imaginar</h3>
+
+            <p>
+                Imagine que <strong>User.prototype</strong> seja um
+                <strong>modelo</strong>.
+            </p>
+
+            <p>
+                Quando fazemos <strong>new User()</strong>, o novo objeto
+                recebe uma ligação com o modelo que estava definido naquele
+                momento.
+            </p>
+
+            <p>
+                Primeiro temos o modelo <strong>#1</strong>:
+            </p>
+
+            <strong>
+                <pre>
+User.prototype → #1</pre> </strong>
+            <p>
+                Criamos <strong>admin</strong>:
+            </p>
+
+            <strong>
+                <pre>
+admin → #1</pre> </strong>
+            <p>
+                Depois trocamos o modelo:
+            </p>
+
+            <strong>
+                <pre>
+User.prototype → #2</pre> </strong>
+            <p>
+                O <strong>admin</strong> continua ligado ao <strong>#1</strong>.
+                Ele não passa automaticamente para o <strong>#2</strong>.
+            </p>
+
+            <p>
+                Portanto:
+            </p>
+
+            <strong>
+                <pre>
+admin → #1
+
+Novos objetos → #2</pre> </strong>
+            <p>
+                É por isso que substituir o objeto inteiro de
+                <strong>prototype</strong> depois da criação dos objetos
+                normalmente não é uma boa prática.
+            </p>
+
+        </div>
+
+        <div class="conteudo">
+
+            <h3 class="separado">Alterando o Objeto Prototype</h3>
+
+            <p>
+                Agora existe uma diferença importante.
+                Em vez de substituir o objeto inteiro de
+                <strong>User.prototype</strong>, podemos alterar uma
+                propriedade do objeto que já existe.
+            </p>
+
+            <p>
+                Por exemplo:
+            </p>
+
+            <span>
+                <pre>
+User.prototype.test = function() {
+  console.log(111);
+};</pre> </span>
+            <p>
+                Agora criamos o objeto:
+            </p>
+
+            <span>
+                <pre>
+const admin = new User('John');</pre> </span>
+            <p>
+                Depois alteramos o próprio método que já existe no mesmo
+                objeto <strong>prototype</strong>:
+            </p>
+
+            <span>
+                <pre>
+User.prototype.test = function() {
+  console.log(222);
+};</pre> </span>
+            <p>
+                Dessa vez, quando fazemos:
+            </p>
+
+            <span>
+                <pre>
+admin.test();</pre> </span>
+            <p>
+                o resultado será <strong>222</strong>.
+            </p>
+
+            <p>
+                Isso acontece porque não criamos um novo objeto para
+                <strong>User.prototype</strong>. Apenas alteramos o método
+                dentro do mesmo objeto.
+            </p>
+
+            <p>
+                O <strong>admin</strong> continua ligado ao mesmo objeto
+                <strong>prototype</strong>, mas agora esse objeto possui uma
+                nova versão do método <strong>test()</strong>.
+            </p>
+
+            <strong>
+                <pre>
+admin
+↓
+User.prototype
+↓
+test() → 222</pre> </strong>
+            <p class="separado">
+                Essa é a diferença mais importante desta aula:
+            </p>
+
+            <p>
+                <strong>Substituir o prototype:</strong>
+                criamos outro objeto. Objetos antigos continuam ligados ao
+                objeto antigo.
+            </p>
+
+            <p>
+                <strong>Alterar o prototype:</strong>
+                continuamos usando o mesmo objeto, apenas modificando suas
+                propriedades. Os objetos que já estão ligados a ele enxergam
+                essa alteração.
+            </p>
+
+            <h3 class="separado">Como normalmente fazemos</h3>
+
+            <p>
+                Na prática, normalmente definimos primeiro a função
+                construtora:
+            </p>
+
+            <strong>
+                <pre>
+function User(name) {
+  this.name = name;
+}</pre> </strong>
+            <p>
+                Depois adicionamos os métodos ao seu
+                <strong>prototype</strong>:
+            </p>
+
+            <strong>
+                <pre>
+User.prototype.test = function() {
+  console.log(111);
+};</pre> </strong>
+            <p>
+                E somente depois criamos e utilizamos os objetos:
+            </p>
+
+            <strong>
+                <pre>
+const admin = new User('John');
+
+admin.test();</pre> </strong>
+            <p>
+                Dessa forma, o <strong>prototype</strong> já está preparado
+                antes da criação dos objetos.
+            </p>
+
+            <p class="separado">
+                <strong>Resumo:</strong>
+            </p>
+
+            <p>
+                <strong>1.</strong> A função construtora possui uma propriedade
+                chamada <strong>prototype</strong>.
+            </p>
+
+            <p>
+                <strong>2.</strong> Quando usamos <strong>new User()</strong>,
+                o novo objeto fica ligado ao objeto que estava em
+                <strong>User.prototype</strong> naquele momento.
+            </p>
+
+            <p>
+                <strong>3.</strong> Se depois substituirmos
+                <strong>User.prototype</strong> por outro objeto, os objetos
+                antigos não mudam de prototype.
+            </p>
+
+            <p>
+                <strong>4.</strong> Se alterarmos o objeto prototype existente,
+                os objetos ligados a ele conseguem enxergar essa alteração.
+            </p>
+
+            <p>
+                <strong>5.</strong> O objeto criado por <strong>new</strong>
+                não herda da função <strong>User</strong>. Ele fica ligado ao
+                objeto que está em <strong>User.prototype</strong>.
+            </p>
+
+        </div>
         
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
+        <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+            Conteúdo da aula
+        </a>
+
+    </article>
+    
+    <!-- <h1>Testes JS se necessário</h1> -->
+    <script src="assets/js/jscript.js"></script>
+
+</main>
+
         
     <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+        <a class="next" href="../03_tarefa_robot_constructor/index.html">
+            Próxima Aula - Tarefa: Robot constructor
         </a>
     </div>
 
