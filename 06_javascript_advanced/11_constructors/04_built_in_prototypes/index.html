@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Built in Prototypes</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,57 +12,498 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
+        <a class="back" href="../03_tarefa_robot_constructor/index.html">
+            Aula Anterior - Tarefa: Robot constructor
         </a>
     </div>
     
     <main>
 
-        <article id="intro">
+<article id="intro">
 
-            <h1 id="title">Title</h1>
+    <h1 id="title">Built-in Prototypes</h1>
 
-            <h3 class="intro">Intro</h3>
+    <h3 class="intro">Intro</h3>
+    <p>
+        Aqui veremos de onde vêm os métodos que usamos em <strong>arrays</strong>,
+        objetos, strings e funções.
+    </p>
+
+</article>
+
+<article class="conteudo">
+
+    <h3 class="cont-title">Código de Exemplo:</h3>
+
+    <p class="junto">
+        <strong>JS:</strong>
+    </p>
+
+    <figure>
+        <picture>
+            <img src="assets/imgs/js.png" alt="JS">
+        </picture>
+    </figure>
+
+</article>
+
+<article class="conc">
+
+    <div class="conteudo">
+
+        <h3 class="separado">Entendendo Melhor:</h3>
+
+        <p>
+            Para entendermos melhor, vamos começar com o seguinte código:
+        </p>
+
+        <strong>
+            <pre>
+const numbers = [1, 6, 3, 0, 5, 2, 4];
+
+numbers.sort();
+console.log(numbers);</pre> </strong>
+
+        <p>
+            Aqui usamos o <span>método sort()</span> para ordenar o
+            <strong>array</strong>.
+        </p>
+
+        <p>
+            Mas de onde veio o método <span>sort()</span>?
+        </p>
+
+        <img src="assets/imgs/ex-prototipo.png" alt="Exemplo protótipo">
+
+        <p class="separado">
+            <span>O que é um Prototype?</span>
+        </p>
+
+        <p>
+            <strong>Prototype</strong> é um objeto que pode ser usado como
+            fonte de propriedades e métodos para outros objetos.
+        </p>
+
+        <p>
+            Quando criamos um <strong>array</strong>, ele possui uma ligação
+            com <span>Array.prototype</span>. É nesse objeto que ficam
+            vários métodos que podemos usar nos arrays.
+        </p>
+
+        <p>
+            Por isso conseguimos fazer:
+        </p>
+
+        <strong>
+            <pre>
+numbers.sort();</pre> </strong>
+
+        <p>
+            O método <span>sort()</span> não precisa estar escrito dentro do
+            objeto <span>numbers</span>. O JavaScript procura o método no
+            prototype que o array herdou.
+        </p>
+
+        <p>
+            A criação de um array também pode ser feita usando o
+            <span>constructor Array</span>:
+        </p>
+
+        <strong>
+            <pre>
+const numbers = new Array(1, 6, 3, 0, 5, 2, 4);
+
+numbers.sort();
+console.log(numbers);</pre> </strong>
+
+        <p>
+            Nesse caso usamos <span>new Array()</span> para criar um novo
+            array através da função construtora <strong>Array</strong>.
+        </p>
+
+        <p>
+            A forma com colchetes:
+        </p>
+
+        <strong>
+            <pre>
+const numbers = [1, 6, 3, 0, 5, 2, 4];</pre> </strong>
+
+        <p>
+            é a forma mais comum e prática de criar um array.
+        </p>
+
+        <p>
+            A função construtora <span>Array</span> possui uma propriedade
+            chamada <span>prototype</span>.
+        </p>
+
+        <p class="junto">
+            Podemos visualizar esse prototype com:
+        </p>
+
+        <span>
+            <pre>
+console.log(Array.prototype);</pre> </span>
+
+        <p>
+            No console veremos um objeto que contém vários métodos
+            disponíveis para os arrays.
+        </p>
+
+        <p>
+            Por isso, quando criamos um array, ele consegue utilizar métodos
+            como <span>sort()</span>, <span>push()</span>,
+            <span>pop()</span>, <span>map()</span>,
+            <span>filter()</span> e vários outros.
+        </p>
+
+        <p class="separado">
+            <strong>Ideia principal:</strong>
+        </p>
+
+        <p>
+            Quando um objeto é criado por uma função construtora, ele pode
+            herdar propriedades e métodos do <span>prototype</span> dessa
+            função.
+        </p>
+
+    </div>
+
+
+    <div class="conteudo">
+
+        <h3 class="separado">Acessando o Prototype de um Objeto:</h3>
+
+        <p>
+            Podemos verificar de qual prototype um objeto está herdando
+            usando <span>__proto__</span>.
+        </p>
+
+        <p>
+            Por exemplo:
+        </p>
+
+        <span>
+            <pre>
+console.log(numbers.**proto** === Array.prototype);</pre> </span>
+
+        <p>
+            O resultado será:
+        </p>
+
+        <strong>
+            <pre>
+true</pre> </strong>
+
+        <p>
+            Isso significa que o prototype de <span>numbers</span> é
+            <span>Array.prototype</span>.
+        </p>
+
+        <div class="conteudo">
+
+            <p class="separado">
+                <span>__proto__</span>
+            </p>
+
             <p>
-                
+                <span>__proto__</span> permite acessar o prototype que está
+                ligado ao objeto.
             </p>
 
-        </article>
-
-        <article class="conteudo">
-
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
-
-            <p class="junto">
-                <strong>JS:</strong>
+            <p>
+                No nosso exemplo:
             </p>
 
-            <figure>
-                <picture>
-                    <img src="assets/imgs/js.png" alt="JS">
-                </picture>
-            </figure>
+            <strong>
+                <pre>
+numbers.**proto** === Array.prototype</pre> </strong>
 
-        </article>
+            <p>
+                significa que <span>numbers</span> herda de
+                <span>Array.prototype</span>.
+            </p>
 
-        <article class="conc">
+            <p>
+                <span>.prototype</span>, por outro lado, é uma propriedade
+                encontrada nas funções construtoras, como
+                <span>Array</span>, <span>Object</span> e
+                <span>Function</span>.
+            </p>
 
-            
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
+            <p>
+                Ela representa o objeto que será usado como prototype dos
+                objetos criados por aquela função construtora através de
+                <span>new</span>.
+            </p>
 
-        </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
+            <p class="separado">
+                <span>Exemplo:</span>
+            </p>
+
+            <p>
+                Todos os arrays possuem uma ligação com
+                <span>Array.prototype</span>.
+            </p>
+
+            <p>
+                Um objeto comum criado com <span>{}</span> possui uma
+                ligação com <span>Object.prototype</span>.
+            </p>
+
+            <span>
+                <pre>
+console.log({}.**proto** === Array.prototype); // false
+console.log({}.**proto** === Object.prototype); // true</pre> </span>
+
+            <p>
+                A criação de um objeto comum também pode ser feita através
+                do constructor <span>Object</span>:
+            </p>
+
+            <span>
+                <pre>
+const person = new Object();</pre> </span>
+
+            <p>
+                Porém, normalmente usamos apenas <span>{}</span>, pois é
+                mais simples.
+            </p>
+
+        </div>
+
+
+        <div class="conteudo">
+
+            <h3 class="separado">Funções</h3>
+
+            <p>
+                As funções também possuem um prototype próprio.
+            </p>
+
+            <p>
+                Podemos verificar isso com:
+            </p>
+
+            <span>
+                <pre>
+console.log((() => {}).**proto** === Function.prototype);</pre> </span>
+
+            <p>
+                O resultado será:
+            </p>
+
+            <strong>
+                <pre>
+true</pre> </strong>
+
+            <p>
+                Isso acontece porque uma função é um objeto especial que
+                possui uma ligação com <span>Function.prototype</span>.
+            </p>
+
+            <h3 class="separado">Herança:</h3>
+
+            <span>
+                <pre>
+// Array
+// [] -> Array.prototype -> Object.prototype
+
+// Função
+// () => {} -> Function.prototype -> Object.prototype</pre> </span>
+
+            <p>
+                O símbolo <span>-></span> representa a sequência de herança.
+            </p>
+
+            <p>
+                Portanto, se o JavaScript não encontrar uma propriedade ou
+                método no próprio objeto, ele procura no seu prototype.
+            </p>
+
+            <p>
+                Se também não encontrar lá, ele continua procurando no
+                próximo prototype da cadeia.
+            </p>
+
+            <p>
+                Essa sequência é chamada de <strong>prototype chain</strong>
+                ou <strong>cadeia de protótipos</strong>.
+            </p>
+
+            <p class="separado">
+                <span>Como os métodos funcionam com strings?</span>
+            </p>
+
+            <p>
+                Podemos chamar métodos diretamente em uma string:
+            </p>
+
+            <strong>
+                <pre>
+console.log('qwerty'.includes('a'));</pre> </strong>
+
+            <p>
+                Mesmo sendo uma string primitiva, o JavaScript permite que
+                usemos métodos nela.
+            </p>
+
+            <p>
+                Isso acontece porque, quando precisamos acessar uma
+                propriedade ou método da string, o JavaScript cria
+                temporariamente um objeto wrapper para permitir esse acesso.
+            </p>
+
+            <p>
+                Conceitualmente, podemos imaginar algo parecido com:
+            </p>
+
+            <strong>
+                <pre>
+new String('qwerty')</pre> </strong>
+
+            <p>
+                Esse objeto possui uma ligação com
+                <span>String.prototype</span>, onde estão métodos como
+                <span>includes()</span>, <span>toUpperCase()</span>,
+                <span>slice()</span> e vários outros.
+            </p>
+
+            <p>
+                Por exemplo:
+            </p>
+
+            <strong>
+                <pre>
+console.log('qwerty'.includes('a'));</pre> </strong>
+
+            <p>
+                Podemos entender de forma simplificada:
+            </p>
+
+            <strong>
+                <pre>
+'qwerty'
+↓
+objeto temporário de String
+↓
+String.prototype
+↓
+Object.prototype</pre> </strong>
+
+            <p>
+                Depois que o acesso ao método termina, esse objeto
+                temporário não fica armazenado na string.
+            </p>
+            <p>
+                A string continua sendo primitiva, mas o JavaScript permite que ela acesse temporariamente os métodos disponíveis em String.prototype.
+            </p>
+
+        </div>
+
+
+        <div class="conteudo">
+
+            <h3 class="separado">Resumo das Heranças:</h3>
+
+            <p class="separado">
+                <strong>Array:</strong>
+                <span>[] -> Array.prototype -> Object.prototype</span>
+            </p>
+
+            <p>
+                Um array criado com <span>[]</span> possui uma ligação com
+                <span>Array.prototype</span>.
+            </p>
+
+            <p>
+                É por isso que podemos usar:
+            </p>
+
+            <strong>
+                <pre>
+numbers.push(10);
+numbers.sort();
+numbers.includes(5);</pre> </strong>
+            <p>
+                Esses métodos são encontrados em
+                <span>Array.prototype</span>.
+            </p>
+
+            <p class="separado">
+                <strong>String:</strong>
+                <span>String.prototype -> Object.prototype</span>
+            </p>
+
+            <p>
+                Quando usamos um método em uma string, como:
+            </p>
+
+            <strong>
+                <pre>
+'qwerty'.includes('q');</pre> </strong>
+            <p>
+                o JavaScript permite esse acesso através de um objeto
+                temporário associado ao <span>String.prototype</span>.
+            </p>
+
+            <p class="separado">
+                <strong>Object:</strong>
+                <span>{} -> Object.prototype</span>
+            </p>
+
+            <p class="separado">
+                <strong>Function:</strong>
+                <span>() => {} -> Function.prototype -> Object.prototype</span>
+            </p>
+
+            <p class="separado">
+                <strong>O mais importante:</strong>
+            </p>
+
+            <p>
+                Quando usamos um método, ele não precisa estar escrito
+                diretamente dentro do objeto.
+            </p>
+
+            <p>
+                O JavaScript procura o método no objeto e, caso não
+                encontre, procura no seu <strong>prototype</strong>.
+            </p>
+
+            <p>
+                Se ainda não encontrar, continua procurando na cadeia de
+                protótipos.
+            </p>
+
+            <p>
+                É assim que conseguimos usar métodos como
+                <span>sort()</span>, <span>push()</span>,
+                <span>includes()</span> e muitos outros sem precisarmos
+                criar esses métodos em cada objeto individualmente.
+            </p>
+
+        </div>
+
+    </div>
+
+    <a href="contAula.html"
+        style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+        Conteúdo da aula
+    </a>
+
+</article>
+
+<!-- <h1>Testes JS se necessário</h1> -->
+
+<script src="assets/js/jscript.js"></script>
+</main>
+
         
     <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+        <a class="next" href="../05_this_in_details/index.html">
+            Próxima Aula - This in details
         </a>
     </div>
 
