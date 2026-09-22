@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>This in details</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,8 +12,8 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
+        <a class="back" href="../04_built_in_prototypes/index.html">
+            Aula Anterior - Built in Prototypes
         </a>
     </div>
     
@@ -21,11 +21,11 @@
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">This in details</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Agora veremos mais sobre a palavra chave <span>this</span> e seu uso em metodos de objetos.
             </p>
 
         </article>
@@ -48,7 +48,246 @@
 
         <article class="conc">
 
-            
+            <div class="conteudo">
+
+                <h3 class="separado">Entendendo Melhor:</h3>
+
+                <p class="junto">
+                    Para entendermos melhor, iremos iniciar criando o código da seguinte forma:
+                </p>
+
+                <strong>
+                <pre>
+function User(name, age = 0) {
+    this.name = name;
+    this.age = age;
+}
+
+User.prototype.celebrateBirthday = function() {
+    this.age++;
+
+    console.log(`${this.name} is now ${this.age}`);
+}
+
+const james = new User('James', 39);
+james.celebrateBirthday(); </pre> </strong>
+
+                <p>
+                    Primeiro, criamos o <span>constructor User</span> com os parâmetros <strong>(name, age = 0)</strong>. Ele funciona como um molde para criar objetos <span>User</span>.
+                </p>
+
+                <p class="separado">
+                    Em seguida, acessamos o <strong>User.prototype</strong> e adicionamos o método <span>.celebrateBirthday</span>. Dessa forma, todos os objetos criados a partir do <span>User</span> poderão acessar esse método.
+                </p>
+
+                <p>
+                    Nosso <strong>metodo</strong> <span>.celebrateBrithday()</span> tem como funcao incrementar a idade e imprimir a mensagem passada.
+                </p>
+                <p>
+                    Esse metodo é armazenado na propriedade do <span>prototype</span> do <span>constructor</span>, entao <span>james</span> que herda esse objeto pode usar o metodo <span>celebrateBirthday()</span>.
+                </p>
+
+            </div>
+
+            <div class="conteudo">
+
+                <h3 class="separado">Simplificando a Sintaxe</h3>
+                <p>
+                    Em vez da palavra <span>function</span> iremos usar um <span>arrow function</span> se fizermos apenas isso ira quebrar nosso codigo, ex:
+                </p>
+
+                <div class="content">
+
+                    <strong>
+<pre>
+User.prototype.celebrateBirthday = <span>() =></span> {
+  this.age++;
+
+  console.log(`${this.name} is now ${this.age}`);
+}
+</pre>
+                    </strong>
+
+                    <figure>
+                        <figcaption>Resultado no DevTools:</figcaption>
+                        <img src="assets/imgs/result-devTools.png" alt="Resultado DevTools">
+                    </figure>
+
+                </div>
+
+                <p>
+                    Quando tinhamos uma funcao regular com <strong>function() {}</strong>, <span>this</span> era o objeto antes do <span>ponto(.)</span> ou seja, o objeto que chamou o <strong>metodo</strong>
+                </p>
+                <p>
+                    Mas as <strong>arrow function</strong>, funcionam de forma um pouco diferente, elas nao recebem <span>this</span> quando chamadas. Em vez disso usam o valor de <span>this</span> do fechamento.
+                </p>
+                <p>
+                    Nesse caso para essa funcao ele sera imediatamente o <span>this global</span>. Nesse caso ele sera nosso objeto <span>Window</span>, podemos observar isso em nosso <span>devTools</span> se imprimirmos <strong>this</strong>:
+                </p>
+
+                <div class="content">
+                    
+                    <strong>
+<pre>
+function User(name, age = 0) {
+  this.name = name;
+  this.age = age;
+}
+
+<span>console.log(this);</span>
+
+User.prototype.celebrateBirthday = () => {
+  this.age++;
+
+  console.log(`${this.name} is now ${this.age}`);
+}
+
+const james = new User('James', 39);
+james.celebrateBirthday();
+</pre>
+                    </strong>
+
+                    <figure>
+                        <figcaption>Resultado no DevTools:</figcaption>
+                        <img src="assets/imgs/devTools-window.png" alt="Resultado DevTools">
+                    </figure>
+                </div>
+
+                <p>
+                    Acontece que em nossa funcao o <strong>this</strong> se tornou o <strong>objeto global Window</strong>, ele nao tinha uma propriedade de idade, entao quando executamos ele é visto como indefinido. E se adicionarmos 1 em indefinido como <strong>(this.age++)</strong>, ele se torna <span>NaN</span>.
+                </p>
+
+                <p class="separado">
+                    Em outras palavras, nao podemos usar uma <span>arrow function comum</span> isso pois ela nao tera o <span>this</span> correto. Por isso usamos uma <span>function regular</span>
+                </p>
+
+            </div>
+
+            <div class="conteudo">
+
+                <h3 class="separado">Explicando this</h3>
+
+                <span>
+<pre>
+Browser Global    this === window
+() => {}          this === extraido do closure
+f()               this === undefined
+obj.method()      this === obj before
+new f()           this === undefined
+
+f.call(obj)       this === obj
+f.apply(obj)      this === obj
+f.bind(obj)()     this === obj
+</pre>
+                </span>
+
+                <p>
+                    <span>Browser Global -> this === window</span>: se usarmos <span>this</span> fora de qualquer funcao, tera como resultado <span>window</span>.
+                </p>
+                <p class="separado">
+                    <span>() => {} -> this === extraido do closure</span>: se usarmos <span>arrow functon</span> nao possui seu proprio <span>this</span>, mas pega o do <span>closure</span>, sendo ele da funcao mais proxima ou do <span>this global</span>.
+                </p>
+
+                <p>
+                    <span>f() -> this === undefined</span>: se usarmos dessa forma, normalmente seu <span>this</span>, sera indefinido, ja que nao há um objeto antes do ponto. Mas esse comportamento muda se removermos o <span>'use strict'</span> anteriormente, tais funcoes nao eram chamadas como metodos, mas desse jeito: <span>this</span> era o objeto global window. Mas isso mudou, agora é sempre indefinido
+                </p>
+
+                <p class="separado">
+                    <span>obj.method() -> this === obj before</span>: se usarmos dessa forma o <span>this</span> se torna o objeto antes do <strong>ponto(.)</strong>
+                </p>
+
+                <p>
+                    <span>new f() -> this === undefined</span>: quando usamos a palavra <strong>chave <span>new</span></strong> ela altera o comportamento da <strong>funcao</strong> entao <span>this</span> nessa funcao sera o objeto recem criado, herdado do <strong>f.prototype</strong>
+                </p>
+
+                <p class="separado">
+                    Tambem podemos especificar que o <span>this</span> deve ser dentro da funcao, para fazermos isso usamos os metodos de servico <span>call, apply</span> e <span>bind</span>
+                </p>
+
+                <p>
+                    Os <strong>metodos</strong> <span>call</span> e <span>apply</span> executam nossa funcao, e o primeiro <strong>parametro</strong> torna-se <span>this</span>, se precisarmos adicionar mais parametros teremos que adiciona-lo ex: <span>call(obj, 1, 2)</span> podemos fazer o mesmo tanto para <span>apply</span> quanto para <span>bind</span>
+                </p>
+
+                <p class="separado">
+                    A diferenca é que, para <span>apply</span>, temos que escrever os argumentos como um <strong>array</strong> ex: <span>f.apply(obj, [1, 2])</span>, ou seja, passamos <span>this obj</span> e em seguida, um <strong>array</strong> de <strong>argumentos</strong>.
+                </p>
+
+                <p>
+                    O <strong>metodo</strong> <span>bind</span> nao chama nossa funcao, ele retorna outra. E esta funcao adicional, quando a chamamos, executara nossa funcao original com este <span>this</span> e esses <strong>argumentos</strong> iniciais.
+                </p>
+
+                <p class="separado">
+                    Os metodos <span>call, apply</span> e <span>bind</span> sao raramente utilizados.
+                </p>
+
+            </div>
+
+            <div class="conteudo">
+
+                <h1>Minhas Conclusoes</h1>
+
+                <h3 class="junto">Entendendo Melhor o Basico:</h3>
+
+                <p>
+                    <span>Basico:</span>
+                </p>
+
+                <p>
+                    <strong>Basicamente:</strong> quando usamos o <span>prototype</span>, podemos imaginar da seguinte forma: acessamos o objeto <span>prototype</span> através do ponto (.) e armazenamos nele uma função que poderá ser compartilhada pelos objetos criados pelo constructor.
+                </p>
+
+                <ul class="separado">
+                    <li>
+                        <span>Constructor:</span> define como o objeto será inicializado.
+                    </li>
+                    <li>
+                        <span>new:</span> cria um novo objeto seguindo esse constructor.
+                    </li>
+                    <li>
+                        <span>this:</span> representa o objeto que está sendo criado.
+                    </li>
+                    <li>
+                        <span>prototype:</span> guarda métodos que podem ser compartilhados pelos objetos criados.
+                    </li>
+                </ul>
+
+                <img src="assets/imgs/basic.png" alt="Basico">
+
+                <p class="separado">
+                    Cada constructor possui seu próprio prototype. Os objetos criados por aquele constructor acessam os métodos disponíveis nesse prototype.
+                </p>
+
+                <p>
+                    <span>Ex:</span>
+                </p>
+
+                <p>
+                    Se tivermos dois constructors:
+                </p>
+
+                <strong>
+<pre>
+function <span>Car</span>(modelo, placa) {
+    this.modelo = modelo;
+    this.placa = placa;
+}
+
+function <span>User</span>(nome, sobrenome) {
+    this.nome = nome;
+    this.sobrenome = sobrenome;
+}
+
+<span>User</span>.prototype.<span>sayHello</span> = function() {
+    console.log(`Olá ${this.nome} ${this.sobrenome}`);
+};
+</pre>
+                </strong>
+
+                <p>
+                    O unico que tera acesso a esse <strong>metodo</strong> sera o <span>User</span>
+                </p>
+
+            </div>
             
             <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
                 Conteudo da aula
@@ -61,8 +300,8 @@
         </main>
         
     <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+        <a class="next" href="../06_tarefa_omit_method/index.html">
+            Próxima Aula - Tarefa: Omit method
         </a>
     </div>
 
