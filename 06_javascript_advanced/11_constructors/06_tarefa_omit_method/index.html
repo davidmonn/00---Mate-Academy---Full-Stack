@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Title</title>
+    <title>Tarefa: Omit method</title>
     <link rel="stylesheet" href="assets/styles/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,19 +14,29 @@
   </head>
   <body>
     <div class="back">
-      <a class="back" href="../">
-        Aula Anterior - 
+      <a class="back" href="../05_this_in_details/index.html">
+        Aula Anterior - This in details
       </a>
     </div>
 
     <main>
       <article id="intro">
-        <h1 id="title">Title</h1>
+        <h1 id="title">Tarefa: Omit method</h1>
 
         <h3 class="intro">Intro</h3>
         <p>
-          
+          Esta seção será dedicada à extensão de protótipos padrão com métodos que podem ser úteis para você no futuro e para a criação de seus próprios construtores.
         </p>
+
+        <p class="separado">
+          É uma situação comum que o objeto com o qual estamos trabalhando contenha informações redundantes. Precisamos obter uma cópia dele, mas sem chaves extras.
+        </p>
+
+        <p>
+          Adicione o método omit ao protótipo dos objetos, que pega um array de chaves e retorna um novo objeto sem as chaves especificadas.
+        </p>
+
+        <img src="assets/imgs/ex.png" alt="Exemplo" class="separado">
       </article>
 
       <article class="conteudo">
@@ -38,6 +48,77 @@
             <img src="assets/imgs/result.png" alt="Resultado" />
           </picture>
         </figure>
+
+        <div class="conteudo">
+
+      <h3 class="separado">Explicação da Tarefa:</h3>
+      <p>
+        Basicamente, o que foi pedido é criar um novo objeto usando o método <strong>omit</strong>, ignorando as propriedades que forem passadas no array de chaves.
+      </p>
+
+      <p class="separado">
+        <span>Detalhes do código:</span>
+      </p>
+
+      <p>
+        <strong>1)</strong> Aqui estamos acessando o <strong>prototype</strong> de <strong>Object</strong> e adicionando uma nova propriedade chamada <strong>omit</strong>. O valor dessa propriedade é uma <strong>função</strong>.
+      </p>
+
+      <strong>
+<pre>
+1) <span>Object.prototype.omit = function omit(keys)</span>
+</pre>
+      </strong>
+
+      <p class="junto">
+        <strong>2)</strong> Aqui iremos armazenar o novo objeto que será retornado pelo método.
+      </p>
+      
+      <strong>
+<pre>
+2) <span>const newInfs = {};</span>
+</pre>
+      </strong>
+
+      <p class="junto">
+        <strong>3)</strong> Estamos usando o <strong>for...in</strong> para percorrer as propriedades de <strong>this</strong>. O <strong>this</strong> representa o objeto que chamou o método <strong>omit</strong>.
+      </p>
+
+      <strong>
+<pre>
+3) <span>for (const value in this)</span>
+</pre>
+      </strong>
+
+      <p class="junto">
+        <strong>4)</strong> Aqui estamos adicionando uma condição. Usamos o <span>Object.hasOwn()</span>, pois como estamos lendo as propriedades com o <span>for...in</span>, a <strong>função omit</strong> também poderá ser encontrada. Isso acontece porque, ao fazer <span>Object.prototype.omit = function</span>, adicionamos <strong>omit</strong> como uma propriedade do <strong>Object.prototype</strong>.
+      </p>
+
+      <p>
+        Se não usarmos o <span>hasOwn()</span>, essa propriedade herdada do <strong>prototype</strong> também será iterada pelo <span>for...in</span>. O <span>hasOwn()</span> serve para verificarmos se a propriedade pertence diretamente ao objeto que estamos percorrendo, e não ao seu <strong>prototype</strong>.
+      </p>
+
+      <p>
+        Por fim, nosso <span>!keys.includes(value)</span> verifica se a propriedade atual <strong>não está</strong> entre as propriedades que queremos ignorar.
+      </p>
+
+      <strong>
+<pre>
+4) <span>if (Object.hasOwn(this, value) && !keys.includes(value))</span>
+</pre>
+      </strong>
+
+      <p class="junto">
+        <strong>5)</strong> Aqui copiamos a propriedade para o novo objeto. <span>value</span> representa o nome da propriedade e <span>this[value]</span> representa o valor dessa propriedade.
+      </p>
+
+      <strong>
+<pre>
+5) <span>newInfs[value] = this[value];</span>
+</pre>
+      </strong>
+
+    </div>
 
         <a
           href="contAula.html"
