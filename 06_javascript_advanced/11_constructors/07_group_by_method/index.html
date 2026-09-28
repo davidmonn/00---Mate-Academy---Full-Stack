@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarefa: Group by method</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="back">
+      <a class="back" href="../06_tarefa_omit_method/index.html">
+        Aula Anterior - Tarefa: Omit method
+      </a>
+    </div>
+
+    <main>
+      <article id="intro">
+        <h1 id="title">Tarefa: Group by method</h1>
+
+        <h3 class="intro">Intro</h3>
+        <p>
+          Crie um novo método de array <strong>groupBy</strong> que receba um <strong>callback</strong> e o execute para cada elemento e retorne um objeto com resultados de <strong>callback</strong> como chaves e array de elementos que fornecem este resultado como valores.
+        </p>
+
+        <p class="separado">
+          Se <strong>callback</strong> não for passado, use <strong>x => x</strong>
+        </p>
+
+        <img src="assets/imgs/ex.png" alt="Exemplo">
+      </article>
+
+      <article class="conteudo">
+        <h3 class="cont-title">Resultado</h3>
+
+        <h3 class="junto">JS:</h3>
+        <figure>
+          <picture>
+            <img src="assets/imgs/result.png" alt="Resultado" />
+          </picture>
+        </figure>
+
+        <div class="conteudo">
+
+          <h3 class="separado">Explicação do Código:</h3>
+
+          <p>
+            <span>1)</span> Podemos observar que temos 3 objetos. Criamos também o último (<strong>const robots</strong>), que utiliza as <strong>referências</strong> dos outros 3 objetos para podermos percorrê-los através do nosso método criado.
+          </p>
+
+          <p class="separado">
+            <span>2)</span> Criamos a função <strong>groupByMethod()</strong>. Ela não possui parâmetros, pois sua função é ser executada quando for chamada para criar o nosso método <strong>groupBy</strong>.
+          </p>
+
+          <p>
+            <span>3)</span> <strong>Array.prototype.groupBy = function(callback = x => x)</strong>. Essa parte é muito importante. Primeiro, acessamos o <strong>Array</strong>, depois acessamos seu <strong>prototype</strong>. Dentro dele, estamos criando o método <strong>groupBy</strong>, que recebe uma função como parâmetro chamada <strong>callback</strong>. Caso nenhum callback seja passado, será utilizada por padrão a função <strong>x => x</strong>.
+          </p>
+
+          <p class="separado">
+            <span>4)</span> Criamos uma variável chamada <strong>result</strong> e iniciamos ela com um objeto vazio para podermos armazenar os grupos que serão criados.
+          </p>
+
+          <p>
+            <span>5)</span> Usamos o <strong>for...of</strong>, pois queremos acessar cada elemento do array. A variável <strong>value</strong> receberá cada elemento durante a iteração, enquanto <strong>this</strong> representa o array que chamou o método <strong>groupBy</strong>.
+          </p>
+
+          <p class="separado">
+            <span>6)</span> <strong>const save = callback(value);</strong> Aqui criamos uma variável chamada <strong>save</strong> para receber o resultado que o nosso <strong>callback</strong> retorna para cada elemento da iteração.
+          </p>
+
+          <p>
+            <span>7)</span> Outra parte importante: <strong>if (!result[save])</strong>. Primeiro verificamos se já existe uma propriedade em <strong>result</strong> com o nome que está dentro de <strong>save</strong>. Caso não exista, <strong>result[save]</strong> terá o valor <strong>undefined</strong>, que é considerado <strong>falsy</strong>. O <strong>!</strong> inverte esse valor, fazendo com que <strong>!undefined</strong> seja <strong>true</strong>, permitindo que entremos na condicional.
+          </p>
+
+          <p class="separado">
+            <span>8)</span> <strong>result[save] = [];</strong> Aqui estamos criando uma propriedade dentro de <strong>result</strong> usando o valor de <strong>save</strong> como nome da propriedade, e atribuindo a ela um array vazio.
+          </p>
+
+          <p>
+            <span>9)</span> <strong>result[save].push(value);</strong> Aqui estamos acessando o array que foi criado dentro de <strong>result[save]</strong> e usando o <strong>.push()</strong> para adicionar o elemento atual (<strong>value</strong>) a esse grupo.
+          </p>
+
+
+        </div>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+          target="_blank"
+        >
+          Conteudo da aula
+        </a>
+      </article>
+
+      <!-- <h1>Testes JS se necessário</h1> -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../../12_classes/01_class_syntax/index.html">
+        Próxima Modulo: Classes - Aula: Class Syntax
+      </a>
+    </div>
+  </body>
+</html>
