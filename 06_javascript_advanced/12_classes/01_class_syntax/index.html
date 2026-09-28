@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Class Syntax</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,8 +12,8 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
+        <a class="back" href="../../11_constructors/07_group_by_method/index.html">
+            <strong>Modulo Anterior: Constructors - Aula: Tarefa: Group by method</strong>
         </a>
     </div>
     
@@ -21,11 +21,11 @@
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">Class Syntax</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Aqui iremos continuar aprendendo sobre funcoes <span>construtoras</span> e <span>prototype</span>. Porem, agora faremos isso de uma forma mais moderna, utilizando de uma sintaxe mais simples e compreensivel de <span>classes</span>.
             </p>
 
         </article>
@@ -48,21 +48,127 @@
 
         <article class="conc">
 
-            
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
+        <div class="conteudo">
+            <h3 class="separado">Entendendo Melhor</h3>
 
-        </article>
+            <p>
+                Para entendermos melhor, teremos o seguinte código de exemplo:
+            </p>
+
+            <div class="content">
+
+                <figure>
+                    <figcaption><span>Sintaxe Antiga:</span></figcaption>
+                    <img src="assets/imgs/ex-const-old.png" alt="Constructor com sintaxe antiga">
+                </figure>
+
+                <figure>
+                    <figcaption><span>Sintaxe Nova:</span></figcaption>
+                    <img src="assets/imgs/ex-const-new.png" alt="Constructor com sintaxe nova">
+                </figure>
+
+            </div>
+
+            <p>
+                Na nova sintaxe, usamos a palavra <span>class</span> para criar uma classe.
+                Dentro das chaves <span>{}</span>, colocamos as propriedades e os métodos que farão parte dessa classe.
+            </p>
+
+            <p class="separado">
+                Primeiro podemos adicionar um método chamado <span>constructor</span>.
+                <strong>constructor</strong> é um nome reservado dentro de uma classe e é executado automaticamente quando criamos um novo objeto usando <span>new</span>.
+            </p>
+
+            <p>
+                Dentro do <span>constructor</span>, colocamos as propriedades que precisam ser criadas para cada objeto.
+                Também podemos receber <strong>parâmetros</strong> para definir valores diferentes para cada objeto.
+            </p>
+
+            <p>
+                Os métodos também podem ser criados diretamente dentro da classe, mas eles ficam disponíveis através do <span>prototype</span>.
+                Por isso, não precisamos escrevê-los dentro do <span>constructor</span>.
+            </p>
+
+            <h3 class="separado">Diferenças:</h3>
+
+            <p>
+                Uma das diferenças é que uma <span>class</span> não pode ser executada diretamente como uma função.
+                Por exemplo, não podemos fazer <span>Human()</span>.
+                Para criar um objeto a partir de uma classe, precisamos usar <span>new</span>.
+            </p>
+
+            <p>
+                Por exemplo:
+            </p>
+
+<pre>
+class Human {
+    constructor(name) {
+        this.name = name;
+    }
+}
+
+const david = new Human('David');
+</pre>
+
+            <p>
+                Nesse exemplo, <span>new Human('David')</span> cria um novo objeto.
+                O <span>constructor</span> recebe <span>'David'</span> e cria a propriedade <span>name</span> nesse objeto.
+            </p>
+
+            <p>
+                Também podemos criar propriedades diretamente dentro da classe, fora do <span>constructor</span>.
+                Porém, essas propriedades continuam pertencendo a <strong>cada objeto</strong>.
+                Elas <strong>não são adicionadas ao prototype</strong>.
+            </p>
+
+            <img src="assets/imgs/ex.png" alt="Exemplo" class="separado">
+
+            <p>
+                Essa forma é útil quando a propriedade possui um valor inicial que não depende dos parâmetros recebidos pelo <span>constructor</span>.
+            </p>
+
+            <p class="separado">
+                Também podemos criar propriedades cujo valor depende de um cálculo ou de outra propriedade.
+            </p>
+
+            <img src="assets/imgs/add-new-propriedade.png" alt="Adicionando nova propriedade">
+
+            <p class="separado">
+                É importante lembrar que propriedades criadas diretamente na classe são criadas em cada objeto.
+                Já os métodos criados diretamente no corpo da classe ficam disponíveis no <span>prototype</span>.
+            </p>
+
+            <p>
+                Portanto, a <span>class</span> é uma forma mais moderna e organizada de criar objetos usando <span>constructors</span>.
+                Ela também possui recursos próprios, como <span>get</span>, <span>set</span> e uma forma mais simples de trabalhar com <strong>herança</strong>.
+            </p>
+
+            <h3 class="separado">Diferenca entre <span>function</span> e <span>constructor</span>:</h3>
+
+            <p class="separado">
+                <span>function</span> Human() {} → podemos usar uma função construtora para criar objetos.
+            </p>
+
+            <p>
+                <span>class</span> Human { constructor() {} } → usamos uma classe, e o constructor é a parte responsável por configurar o objeto que está sendo criado.
+            </p>
+
+        </div>
+
+        <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+            Conteúdo da aula
+        </a>
+
+    </article>
         
          <!-- <h1>Testes JS se necessário</h1> -->
          <script src="assets/js/jscript.js"></script>
         </main>
         
     <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+        <a class="next" href="../02_tarefa_bank_account/index.html">
+            Próxima Aula - Tarefa: Bank account
         </a>
     </div>
 
