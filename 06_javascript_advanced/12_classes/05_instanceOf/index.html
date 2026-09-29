@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>instanceOf</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,8 +12,8 @@
 <body>
 
     <div class="back">
-        <a class="back" href="../">
-            Aula Anterior - 
+        <a class="back" href="../04_class_inheritance/index.html">
+            Aula Anterior - Static Fields and Methods
         </a>
     </div>
     
@@ -21,11 +21,11 @@
 
         <article id="intro">
 
-            <h1 id="title">Title</h1>
+            <h1 id="title">instanceOf</h1>
 
             <h3 class="intro">Intro</h3>
             <p>
-                
+                Agora que entendemos um pouco mais sobre <span>herancas</span>, iremos descobrir como verificar se um determinado objeto herda um determinado <span>prototype</span>. Ou se um objeto pertence a uma determinada <span>class</span>.
             </p>
 
         </article>
@@ -48,7 +48,91 @@
 
         <article class="conc">
 
-            
+            <div class="conteudo">
+
+                <h3 class="separado">Entendendo Melhor</h3>
+
+                <p>
+                    Para iniciar iremos criar dois <span>constructors</span> sendo eles: <span>Human</span> e <span>User</span>, ficando da seguinte forma:
+                </p>
+
+                <div class="content">
+
+<pre>
+class Human {
+  age = 0;
+
+  constructor(name) {
+    this.name = name;
+  }
+
+  celebrateBirthday() {
+    this.age++;
+
+    return console.log(`${this.name} is now ${this.age}`);
+  }
+
+  printInfo() {
+    const { age, name } = this;
+
+    console.log(`${name} is ${age}`);
+  }
+}
+
+class User <span>extends</span> Human {
+  friends = [];
+
+  constructor(name, role = 'User') {
+    super(name);
+    this.role = role;
+  }
+
+  get fullName() {
+    return `${this.role} ${this.name}`;
+  }
+
+  printInfo() {
+    const { friends, fullName } = this;
+    super.printInfo();
+
+    console.log(`${fullName} has ${friends.length} friends.`);
+  }
+}
+</pre>
+
+                </div>
+
+                <p>
+                    Como exemplo, na realidade <span>Bob</span> nao é apenas um <span>User</span>, mas tambem um <span>Human</span>, para fazermos isso, usamos o operador especial <span>instanceOf()</span>. Ficando da seguinte forma:
+                </p>
+
+                <div class="content">
+
+                    <span>
+<pre>
+console.log(bob instanceof User) // True
+</pre>
+                    </span>
+
+                </div>
+
+                <p>
+                    Como resultado teremos <span>true</span>, quando fazemos isso, estamos verificando se <span>bob</span> herda da propriedade <span>User.prototype</span>, tambem podemos verificar se <span>bob</span> herda de <span>Human.prototype</span>e mais algumas opcoes:
+                </p>
+
+                <div class="content">
+
+                    <span>
+<pre>
+console.log(bob instanceof Human) // True
+console.log(bob instanceof Array) // False
+console.log(bob instanceof Object) // True
+</pre>
+                    </span>
+
+                </div>
+
+            </div>
             
             <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
                 Conteudo da aula
@@ -61,8 +145,8 @@
         </main>
         
     <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+        <a class="next" href="../06_tarefa_robot_factory_new/index.html">
+_           Próxima Aula - Tarefa: Robot Factory New
         </a>
     </div>
 
