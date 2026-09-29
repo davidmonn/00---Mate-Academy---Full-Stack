@@ -127,7 +127,7 @@ p {
 }
 
 ul {
-    padding: 15px;   
+    padding: 30px;   
     border-radius: 15px;
     text-decoration: none;
     background-color: bisque;
@@ -136,7 +136,9 @@ ul {
 }
 
 ul li {
-    padding: 2px;
+    padding: 5px;
+    font-size: 20px;
+    list-style-type: disc;
 }
 
 ol {
