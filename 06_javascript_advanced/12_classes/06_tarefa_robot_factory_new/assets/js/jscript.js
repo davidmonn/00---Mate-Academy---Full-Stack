@@ -88,4 +88,3 @@ david.getInfo()
 console.log(
   test.coords
 );
-
