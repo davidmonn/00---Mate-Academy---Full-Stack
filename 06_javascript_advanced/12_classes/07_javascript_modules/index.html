@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Modules</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="back">
+      <a class="back" href="../06_tarefa_robot_factory_new/index.html">
+        Aula Anterior - Tarefa: Robot Factory New
+      </a>
+    </div>
+
+    <main>
+      <article id="intro">
+        <h1 id="title">Javascript Modules</h1>
+
+        <h3 class="intro">Intro</h3>
+        <p>
+          Aqui iremos entender como podemos dividir nosso código
+          <span>JS</span> em diferentes arquivos.
+        </p>
+      </article>
+
+      <article class="conteudo">
+        <h3 class="cont-title">Código de Exemplo:</h3>
+
+        <p class="junto">
+          <strong>JS:</strong>
+        </p>
+
+        <figure>
+          <picture>
+            <figcaption>
+              <span>Arquivo Human.js → exporta Human para User</span>
+            </figcaption>
+            <img src="assets/imgs/js.png" alt="Arquivo Human.js" />
+          </picture>
+        </figure>
+
+        <figure class="separado">
+          <picture>
+            <figcaption>
+              <span>Arquivo User.js → importa Human e exporta User</span>
+            </figcaption>
+            <img
+              src="assets/imgs/arq_user_complete.png"
+              alt="Arquivo User.js"
+            />
+          </picture>
+        </figure>
+
+        <figure>
+          <picture>
+            <figcaption>
+              <span>Arquivo principal .js → importa User</span>
+            </figcaption>
+            <img
+              src="assets/imgs/arq_princ_complete.png"
+              alt="Arquivo principal JavaScript"
+            />
+          </picture>
+        </figure>
+      </article>
+
+      <article>
+        <div class="conteudo">
+          <h3 class="separado">Entendendo Melhor:</h3>
+
+          <p>
+            Anteriormente escrevíamos nosso código <span>JS</span> em um único
+            arquivo. Porém, conforme o código cresce, esse arquivo pode ficar
+            muito grande e difícil de organizar.
+          </p>
+
+          <p>
+            Por isso, podemos dividir nosso código em vários
+            <strong>arquivos</strong>. Cada arquivo pode ficar responsável por
+            uma parte do código.
+          </p>
+
+          <p>
+            Por exemplo, podemos colocar uma <span>classe</span> em um arquivo
+            separado.
+          </p>
+
+          <p class="separado">
+            Poderíamos adicionar todos esses arquivos diretamente no
+            <span>HTML</span> usando várias tags <span>&lt;script&gt;</span>.
+            Porém, existe uma maneira melhor de organizar isso usando
+            <strong>módulos</strong>.
+          </p>
+
+          <p>
+            Com os módulos, podemos fazer um arquivo
+            <strong>importar</strong> código de outro arquivo.
+          </p>
+        </div>
+
+        <div class="conteudo">
+          <h1 class="separado">Conectando Arquivos na Prática:</h1>
+
+          <p>
+            Primeiro iremos criar um novo arquivo dentro da nossa pasta
+            <span>JS</span>. Quando criamos um arquivo para uma
+            <span>classe</span>, podemos usar o mesmo nome da classe. Por
+            exemplo: <span>Human.js</span>.
+          </p>
+
+          <figure style="margin-block: 10px">
+            <figcaption>Ficando dessa forma:</figcaption>
+            <img
+              src="assets/imgs/criando_arq_class.png"
+              alt="Criando arquivos JS separados"
+            />
+          </figure>
+
+          <p>
+            Agora iremos criar outro arquivo da mesma forma, mas com o nome
+            <span>User.js</span>.
+          </p>
+
+          <h3 class="separado">Movendo o Código:</h3>
+
+          <p>
+            Agora iremos voltar ao nosso <span>código completo</span>. Podemos
+            recortar a classe <span>Human</span> e colocá-la no arquivo
+            <span>Human.js</span>.
+          </p>
+
+          <p>
+            Depois fazemos a mesma coisa com a classe <span>User</span>,
+            colocando-a no arquivo <span>User.js</span>.
+          </p>
+
+          <p>
+            Feito isso, a única coisa que ficará no nosso
+            <span>JS</span> principal será o código que utiliza a classe
+            <span>User</span>.
+          </p>
+
+          <div class="content">
+            <strong>
+              <pre>
+const bob = new User('Bob');
+
+bob.celebrateBirthday();
+</pre
+              >
+            </strong>
+
+            <img src="assets/imgs/arq_js.png" alt="Arquivo JS principal" />
+          </div>
+
+          <h3 class="separado">Exportando uma Classe:</h3>
+
+          <p>
+            Agora temos um problema. Nosso arquivo principal precisa usar
+            <span>User</span>, e o arquivo <span>User.js</span> precisa usar
+            <span>Human</span>.
+          </p>
+
+          <p>
+            Para permitir que uma classe, função ou variável seja usada por
+            outro arquivo, usamos a palavra <span>export</span>.
+          </p>
+
+          <p>
+            Portanto, no nosso arquivo <span>Human.js</span>, adicionamos
+            <span>export</span> antes da classe:
+          </p>
+
+          <pre>
+export class Human {
+  age = 0;
+
+  constructor(name) {
+    this.name = name;
+  }
+
+  celebrateBirthday() {
+    this.age++;
+
+    return console.log(`${this.name} is now ${this.age}`);
+  }
+
+  printInfo() {
+    const { age, name } = this;
+
+    return console.log(`${name} ${age}`);
+  }
+}
+</pre
+          >
+
+          <p>
+            O <span>export</span> basicamente diz:
+            <strong>"outros arquivos podem importar essa classe".</strong>
+          </p>
+
+          <h3 class="separado">Importando uma Classe:</h3>
+
+          <p>
+            Agora precisamos pegar a classe <span>Human</span> dentro do arquivo
+            <span>User.js</span>.
+          </p>
+
+          <p>Para isso usamos <span>import</span>:</p>
+
+          <pre>
+import { Human } from './Human.js';
+</pre
+          >
+
+          <p>
+            Aqui estamos dizendo que queremos importar a classe
+            <span>Human</span> que está dentro do arquivo <span>Human.js</span>.
+          </p>
+
+          <p>
+            O <span>./</span> significa que o arquivo está na mesma pasta do
+            arquivo atual.
+          </p>
+
+          <p>
+            Agora podemos usar <span>Human</span> normalmente dentro do
+            <span>User.js</span>:
+          </p>
+
+          <pre>
+import { Human } from './Human.js';
+
+export class User extends Human {
+  friends = [];
+
+  constructor(name, role = 'User') {
+    super(name);
+
+    this.role = role;
+  }
+
+  get fullName() {
+    const { name, role } = this;
+
+    return `${role} ${name}`;
+  }
+
+  printInfo() {
+    const { friends, fullName } = this;
+
+    console.log(`${fullName} has ${friends.length} friends.`);
+
+    super.printInfo();
+  }
+}
+</pre
+          >
+
+          <p>Observe que agora temos duas coisas:</p>
+
+          <p>
+            <span>import</span> → pega algo que foi exportado de outro arquivo.
+          </p>
+
+          <p>
+            <span>export</span> → permite que algo do arquivo seja usado por
+            outro arquivo.
+          </p>
+
+          <p>
+            Como <span>User</span> também será usado pelo nosso arquivo
+            principal, também precisamos colocar <span>export</span> na classe
+            <span>User</span>.
+          </p>
+
+          <h3 class="separado">Importando no Arquivo Principal:</h3>
+
+          <p>
+            Agora iremos para nosso arquivo principal
+            <span>jscript.js</span>.
+          </p>
+
+          <p>
+            Como ele precisa usar a classe <span>User</span>, também precisamos
+            importá-la:
+          </p>
+
+          <pre>
+import { User } from './User.js';
+
+const bob = new User('Bob');
+
+bob.celebrateBirthday();
+</pre
+          >
+
+          <p>Dessa forma, temos uma sequência:</p>
+
+          <pre>
+jscript.js
+    ↓
+importa User
+    ↓
+User.js
+    ↓
+importa Human
+    ↓
+Human.js
+</pre
+          >
+
+          <p>
+            Assim, os arquivos conseguem utilizar código uns dos outros sem
+            precisarmos colocar tudo em um único arquivo.
+          </p>
+
+          <h3 class="separado">Ativando os Módulos no HTML:</h3>
+
+          <p>Existe mais uma coisa que precisamos fazer.</p>
+
+          <p>
+            O navegador precisa saber que nosso arquivo
+            <span>jscript.js</span> está usando <strong>módulos</strong>.
+          </p>
+
+          <p>
+            Para isso, adicionamos o atributo
+            <span>type="module"</span> na tag <span>&lt;script&gt;</span>.
+          </p>
+
+          <pre>
+&lt;script src="assets/js/jscript.js" type="module"&gt;&lt;/script&gt;
+</pre
+          >
+
+          <p>
+            Sem o <span>type="module"</span>, o navegador não tratará esse
+            arquivo como um módulo e o uso de <span>import</span> e
+            <span>export</span> não funcionará normalmente.
+          </p>
+        </div>
+
+        <div class="conteudo">
+          <h1 class="separado">Resumindo o Funcionamento:</h1>
+
+          <p>
+            Depois de separar nossos arquivos, podemos entender o funcionamento
+            em quatro passos:
+          </p>
+
+          <p class="junto">
+            <span>1)</span> Criamos arquivos separados para organizar nosso
+            código.
+          </p>
+
+          <p>Por exemplo:</p>
+
+          <pre>
+Human.js
+User.js
+jscript.js
+</pre
+          >
+
+          <p class="junto">
+            <span>2)</span> No arquivo que queremos disponibilizar para outros
+            arquivos, usamos <span>export</span>.
+          </p>
+
+          <pre>
+export class Human {
+  // código da classe
+}
+</pre
+          >
+
+          <p>
+            Nesse caso, estamos permitindo que outros arquivos importem a classe
+            <span>Human</span>.
+          </p>
+
+          <p class="separado">
+            <span>3)</span> No arquivo que precisa usar essa classe, usamos
+            <span>import</span>.
+          </p>
+
+          <pre>
+import { Human } from './Human.js';
+</pre
+          >
+
+          <p>
+            Nesse caso, estamos pegando a classe
+            <span>Human</span> que foi exportada pelo arquivo
+            <span>Human.js</span>.
+          </p>
+
+          <p class="separado">
+            <span>4)</span> No <span>HTML</span>, adicionamos
+            <span>type="module"</span> ao nosso arquivo JavaScript principal.
+          </p>
+
+          <pre>
+&lt;script src="assets/js/jscript.js" type="module"&gt;&lt;/script&gt;
+</pre
+          >
+
+          <img src="assets/imgs/atribute_type.png" alt="Atributo type module" />
+
+          <p>
+            Dessa forma, o navegador entende que o arquivo
+            <span>jscript.js</span> é um módulo e pode utilizar
+            <span>import</span> e <span>export</span>.
+          </p>
+
+          <h3 class="separado">A ideia principal:</h3>
+
+          <p>
+            <strong>export</strong> → disponibiliza algo para outro arquivo.
+          </p>
+
+          <p>
+            <strong>import</strong> → pega algo disponibilizado por outro
+            arquivo.
+          </p>
+
+          <p>
+            <strong>type="module"</strong> → informa ao navegador que o
+            JavaScript está usando módulos.
+          </p>
+
+          <p>Portanto, podemos pensar assim:</p>
+
+          <pre>
+Human.js
+  ↓
+export Human
+
+User.js
+  ↓
+import Human
+  ↓
+export User
+
+jscript.js
+  ↓
+import User
+</pre
+          >
+
+          <p>
+            O objetivo dos módulos é simplesmente
+            <strong
+              >separar nosso código em arquivos menores e permitir que esses
+              arquivos se comuniquem através de import e export.</strong
+            >
+          </p>
+        </div>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteúdo da aula
+        </a>
+      </article>
+
+      <!-- <h1>Testes JS se necessário</h1> -->
+
+      <script src="assets/js/jscript.js" type="module"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../08_date/index.html"> Próxima Aula - Date </a>
+    </div>
+  </body>
+</html>
