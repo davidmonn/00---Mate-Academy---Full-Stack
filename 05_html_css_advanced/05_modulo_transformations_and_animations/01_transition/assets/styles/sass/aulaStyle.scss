@@ -1,0 +1,72 @@
+/* #region NORMALIZE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: skyblue;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+main {
+  box-sizing: border-box;
+  width: 920px;
+  background-color: azure;
+  border-radius: 15px;
+  margin: 25px auto;
+  padding: 50px;
+  min-height: 750px;
+}
+
+form input {
+  font-size: 1.5rem;
+}
+
+h1 {
+  font-size: 7rem;
+}
+
+/* #endregion */
+
+
+/*# sourceMappingURL=aulaStyle.scss.map */
+
+.links-cont {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+
+    gap: 8px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+
+    .links {
+        box-sizing: border-box;
+        display: inline;
+        height: 100px;
+
+        padding: 20px;
+        background-color: #ccc;
+        cursor: pointer;
+
+        // 1s para o height e 2s para bck-color
+        // transition-duration: 1s;
+        // Conseguimos controlar quais propriedades transicionaram suavemente
+        // transition-property: height;
+        // adiciona uma pausa a transition
+        // transition-delay: 500ms;
+        // Com ele as transicoes ocorrem de forma linear
+        // transition-timing-function: ease-in;
+        // abreviacao: transition-property, transition-duration, transition-timing-function, transition-delay
+        transition: height, 1s ease-in 100ms;
+
+        &:hover {
+            background-color: #aaa;
+            height: 150px;
+        }
+    }
+}
+

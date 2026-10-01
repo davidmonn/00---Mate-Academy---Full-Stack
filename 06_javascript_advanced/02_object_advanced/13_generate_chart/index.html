@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefa: generate chart</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../12_inverse_robot_new/index.html">
+            Aula Anterior - Tarefa: Inverse Robot New
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Tarefa: generate chart</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                No escritório central da Fábrica de Robôs Mate, penduraram um plasma para transmitir a atuação da empresa. Para começar, decidimos imprimir ali um gráfico de pizza com a quantidade de robôs de vários tipos sendo vendidos.
+            </p>
+
+            <p class="separado">
+                O programa que irá desenhar o diagrama recebe os dados na forma de um objeto, no qual a chave é uma fatia do diagrama e o valor é o seu tamanho em graus.
+            </p>
+
+            <p>
+                Crie uma função <strong>generateChart</strong>, que pega o objeto de estatísticas de venda de robôs (onde a chave é um tipo de robô e valor é uma quantidade de robôs vendidos) e retorna um objeto com as mesmas chaves, mas os valores são graus para um gráfico de pizza.
+            </p>
+
+            <p class="separado">
+                Arredonde os graus para o inteiro mais próximo.
+            </p>
+
+            <p>
+                <strong>Exemplo:</strong>
+            </p>
+
+            <ul>
+                <li>
+                    <span>
+                        generateChart({ cleaner: 2, driver: 8 }) === { cleaner: 72, driver: 288 }
+                    </span>
+                </li>
+                <li class="separado">
+                    <span>
+                        generateChart({ cleaner: 2, driver: 8, washer: 14 }) === { cleaner: 30, driver: 120, washer: 210 }
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        generateChart({ cleaner: 1 }) === { cleaner: 360 }
+                    </span>
+                </li>
+            </ul>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Resultado</h3>
+
+            <h3 class="junto">JS:</h3>
+            <figure>
+                <picture>
+                    <img src="assets/imgs/result.png" alt="Resultado">
+                </picture>
+            </figure>
+
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../14_object_destructuring/index.html">
+            Próxima Aula: Object Destructuring
+        </a>
+    </div>
+
+</body>
+</html>

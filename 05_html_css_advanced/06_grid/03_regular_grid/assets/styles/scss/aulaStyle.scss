@@ -1,0 +1,75 @@
+/* #region NORMALIZE */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: skyblue;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+main {
+    width: 920px;
+    background-color: azure;
+    border-radius: 15px;
+    margin: 25px auto;
+    padding: 15px;
+}
+
+form input{
+    font-size: 1.5rem;
+}
+
+h1 {
+    font-size: 7rem;
+}
+
+
+
+/* #endregion */
+
+.container {
+    --column-count: 1;
+
+    border: 3px solid #000;
+    padding: 10px 20px;
+
+    display: grid;
+    // Aqui estaremos adicionando quantidade de coluna e tamanho
+    grid-template-columns: repeat(var(--column-count), minmax(100px, 1fr));
+    // Distancia entre as linhas
+    row-gap: 20px;
+    // Distancia entre as colunas
+    column-gap: 10px;
+
+    justify-content: center;
+}
+
+@media (min-width: 300px) {
+    .container {
+        --column-count: 2;
+    }
+}
+
+@media (min-width: 400px) {
+    .container {
+        --column-count: 3;
+    }
+}
+
+@media (min-width: 500px) {
+    .container {
+        --column-count: auto-fit;
+    }
+}
+
+.card {
+    // width: 100px;
+    height: 150px;
+
+    border: 2px solid #00f;
+    background-color: yellowgreen;
+}

@@ -1,0 +1,53 @@
+/* #region HEADER */
+.header {
+    box-sizing: border-box;
+    height: 100vh;
+    background-image: url(../imgs/header-bg-mobile.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__waves {
+    height: 57px;
+    width: 48px;
+    margin-bottom: 16px;
+    background-image: url(../imgs/sound-waves.png);
+
+        @include onTablet {
+            width: 64px;
+            height: 76px;
+            margin-bottom: 40px; //NEW
+            background-repeat: no-repeat; //OBS
+        }
+    }
+
+    &__title {
+        margin: 0;
+        font-style: italic;
+        font-size: 32px;
+        font-weight: 800;
+        line-height: 100%;
+        letter-spacing: -1.5px;
+
+        @include onTablet {
+            font-size: 40px; //NEW
+        }
+
+    }
+
+    &__bottom {
+        padding-bottom: 40px;
+        @include constentPaddingInline();
+
+            @include onTablet {
+                padding-bottom: 64px; //NEW
+            }
+
+    }
+}
+
+/* #endregion */

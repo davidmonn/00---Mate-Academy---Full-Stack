@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone Object</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../08_tarefa_register_robot/index.html">
+            Aula Anterior - Tarefa register robot
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Clone Object</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Agora iremos ver como podemos estar clonando <strong>objetos</strong>. Como criar um novo objeto com as mesmas <strong>propriedades</strong> do anterior mas novo.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>JS:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/js.png" alt="JS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <div class="conteudo">
+                <h3 class="junto">Explicacao</h3>
+                <p>
+                    Primeiro comecamos criando uma <strong>funcao</strong> iremos chama-la de <strong>clone</strong>.
+                </p>
+                <img src="assets/imgs/exemplo-copy.png" alt="Exemplo function copy">
+                <p class="junto">
+                    Ao fazermos dessa forma nada ira mudar, pois <strong>copy</strong> é uma referencia de um objeto passado, estaremos apenas retornando a mesma referencia.
+                </p>
+                <p>
+                    Ao inves de fazer uma <strong>atribuicao</strong>, precisamos criar um novo <strong>objeto</strong>, podemos fazer isso utilizando <strong>chaves {}</strong>.
+                </p>
+                <p>
+                    Porem isso nos rotornara um <strong>false</strong> precisamos que o novo <strong>objeto</strong> nos retorne as mesmas <strong>propriedades</strong> se fizermos por exemplo da seguinte forma:
+                </p>
+                <img src="assets/imgs/name-undefined.png" alt="Ex">
+                <p class="junto">
+                    Podemos observar que em nosso <strong>DevTools</strong> nosso bobCopy.name nos retorna <strong>undefined</strong>. Isso pois dentro é apenas um <strong>objeto vazio</strong>.
+                </p>
+            </div>
+
+            <div class="conteudo">
+
+                <h3 class="junto">Clonando Objeto</h3>
+                <p>
+                    Para podermos fazer isso, podemos estar utilizando um <strong>loop</strong>, iremos usar o <strong>for</strong>:
+                </p>
+                <img src="assets/imgs/clone-for.png" alt="Ex clone">
+
+                <p class="junto">
+                    Agora podemos observar que todas as <strong>propriedades</strong> foram copiadas. Com isso foi criado um funcao que copia completamente nosso <strong>objeto</strong>.
+                </p>
+                <p>
+                    Porem ela é um pouco volumosa e essa <strong>iteracao</strong> percorre nao apenas as <strong>chaves</strong> proprias do objeto mas tambem as herdadas, fazendo a nao ser muito confiavel.
+                </p>
+
+            </div>
+
+            <div class="conteudo">
+
+                <h3 class="junto">Operador spread -> { ...source}</h3>
+                <p>
+                    Com esse operador conseguimos a mesma coisa de uma maneira menos volumosa e mais segura. Com isso teremos dois objetos diferentes porem suas propriedades serao as mesmas:
+                </p>
+                <img src="assets/imgs/clonando.png" alt="Clonando">
+
+                <p class="junto">
+                    Se quisermos podemos encurtar ainda mais da seguinte forma:
+                </p>
+                <img src="assets/imgs/resumindo-clone.png" alt="Encurtando">
+
+                <p class="junto">
+                    Serve para espalhar os elementos de um array ou as propriedades de um objeto.
+                </p>
+                <p>
+                    <strong>Principais usos:</strong>
+                </p>
+
+                <ul>
+                    <li>
+                        Copiar arrays e objetos.
+                    </li>
+                    <li>
+                        Juntar arrays e objetos.
+                    </li>
+                    <li>
+                        Passar os elementos de um array como argumentos de uma função.
+                    </li>
+                </ul>
+                <p class="separado">
+                    <strong>Resumo:</strong> O Spread Operator (...) espalha os valores de um array ou objeto para facilitar cópias, junções e o envio de argumentos para funções.
+                </p>
+
+            </div>
+
+            <div class="conteudo">
+
+                <h3 class="junto">Object.assign()</h3>
+                <p>
+                    O <strong>Object.assign()</strong> é um método usado para copiar ou juntar propriedades de objetos.
+                </p>
+
+                <p>
+                    Ele copia as propriedades de um ou mais <strong>objetos</strong> para um <strong>objeto de destino</strong>.
+                </p>
+
+                <p class="junto">
+                    Para copiar um objeto, passamos um objeto vazio como destino:
+                    <strong>Object.assign({}, source)</strong>.
+                </p>
+                <img src="assets/imgs/object-assign.png" alt="Object.assign">
+
+                <p>
+                    Dessa forma, é criada uma <strong>cópia</strong> do objeto.
+                </p>
+
+                <p class="junto">
+                    Também podemos adicionar novas propriedades durante a cópia:
+                    <strong>Object.assign({}, source, { x: 123 })</strong>.
+                </p>
+                <img src="assets/imgs/object-assign-add-propriedade.png" alt="Adicionando propriedade">
+
+                <p class="junto">
+                    Se o objeto de destino já existir, suas propriedades serão atualizadas com os valores dos objetos passados em seguida.
+                </p>
+
+                <p class="junto">
+                    Tambem podemos modificar o <strong>objeto original</strong> da seguinte forma: <strong>Object.assign(source, { x: 123 }) → <span>atribui a propriedade x ao objeto source (modifica o original).</span></strong>
+                </p>
+                <img src="assets/imgs/atribuindo-atualizando.png" alt="Atribui objeto com novo valor">
+
+                <h3 class="separado">Resumundo:</h3>
+
+                <p>
+                    <strong>Copiar um objeto:</strong>
+                </p>
+                <p>
+                    <strong><span>Object.assign({}, source);</span></strong>
+                </p>
+
+                <p class="junto">
+                    <strong>Juntar (copiar) varios objetos em um so:</strong>
+                </p>
+                <p>
+                    <strong><span>Object.assign({}, obj1, obj2, obj3);</span></strong>
+                </p>
+
+                <p class="junto">
+                    <strong>Modificar um objeto existente, adicionando ou atualizando propriedades:</strong>
+                </p>
+                <p>
+                    <strong><span>Object.assign({}, obj1, obj2, obj3);</span></strong>
+                </p>
+
+
+            </div>
+
+            <div class="conteudo">
+
+                <h3 class="separado">Diferenca spread & Object.assign()</h3>
+                <p>
+                    <strong>spread (...):</strong>
+                </p>
+                <ul>
+                    <li>
+                        Espalha os valores de um array ou as propriedades de um objeto.
+                    </li>
+                    <li>
+                        É a forma mais moderna e mais usada.
+                    </li>
+                    <li>
+                        Funciona com arrays e objetos.
+                    </li>
+                </ul>
+
+                <p class="junto">
+                    <strong>Object.assign():</strong>
+                </p>
+                <ul>
+                    <li>
+                        Copia ou junta propriedades de objetos em outro objeto.
+                    </li>
+                    <li>
+                        Funciona apenas com objetos.
+                    </li>
+                    <li>
+                        Hoje é menos usado, pois o Spread faz o mesmo de forma mais simples.
+                    </li>
+                </ul>
+
+                <p class="separado">
+                    <strong>Regra prática:</strong> se for criar uma cópia ou juntar objetos, prefira Spread (...). Se encontrar Object.assign(), saiba que ele faz praticamente a mesma coisa, mas só para objetos.
+                </p>
+
+            </div>
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteudo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../10_tarefa_copy_robot/index.html">
+            Próxima Aula - Tarefa: copy robot
+        </a>
+    </div>
+
+</body>
+</html>

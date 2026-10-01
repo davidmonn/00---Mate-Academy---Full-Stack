@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This in the Inherited Method</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../02_proto/index.html">
+            Aula Anterior - __proto__
+        </a>
+    </div>
+    
+    <main>
+        
+    <article id="intro">
+
+        <h1 id="title">This in the Inherited Method</h1>
+
+        <h3 class="intro">Intro</h3>
+        <p>
+            Agora iremos ver como funcionam os <span>métodos herdados por meio de protótipos</span>.
+        </p>
+
+    </article>
+
+    <article class="conteudo">
+
+        <h3 class="cont-title">Código de Exemplo:</h3>
+
+        <p class="junto">
+            <strong>JS:</strong>
+        </p>
+
+        <figure>
+            <picture>
+                <img src="assets/imgs/js.png" alt="JS">
+            </picture>
+        </figure>
+
+    </article>
+
+    <article class="conc">
+
+        <h3 class="separado">Entendendo Melhor:</h3>
+
+        <p>
+            Para iniciarmos, teremos três objetos: <span>grandFather</span>, <span>father</span> e <span>child</span>. Eles ficarão relacionados por meio de <span>protótipos</span>:
+        </p>
+
+        <div class="content">
+
+            <strong>
+                <pre>
+const grandFather = {
+name: 'GrandFather',
+surname: 'Surname',
+}
+
+const father = {
+name: 'Father',
+
+  <span>
+  sayHi() {
+    console.log(`Hi, I am ${this.name} ${this.surname}`);
+  },
+  </span>
+}
+
+Object.setPrototypeOf(father, grandFather);
+
+const child = {
+name: 'Child',
+}
+
+Object.setPrototypeOf(child, father);</pre> </strong>
+
+            <img src="assets/imgs/explication.png" alt="Explicação">
+
+        </div>
+
+        <p>
+            Podemos observar que o objeto <span>father</span> possui um método chamado <span>sayHi</span>. Por isso, podemos chamá-lo usando <span>father.sayHi();</span>.
+        </p>
+
+        <h3 class="junto">Como Funciona o Método Herdado</h3>
+
+        <p>
+            Quando chamamos <span>father.sayHi();</span>, o método é encontrado diretamente no objeto <span>father</span>. Como ele foi chamado usando o ponto, o <span>this</span> dentro do método será o objeto que está antes do ponto. Nesse caso, <span>this é father</span>.
+        </p>
+
+        <p>
+            Dentro do método temos <span>this.name</span> e <span>this.surname</span>. O <span>name</span> é encontrado diretamente em <span>father</span>. Já o <span>surname</span> não existe em <span>father</span>, então o JavaScript procura essa propriedade no <span>protótipo</span>, que é o objeto <span>grandFather</span>.
+        </p>
+
+        <p>
+            O mesmo acontece quando usamos <span>child.sayHi();</span>. O objeto <span>child</span> não possui o método <span>sayHi</span>, então o JavaScript procura em seu protótipo, que é <span>father</span>. Como <span>father</span> possui esse método, ele é encontrado e executado.
+        </p>
+
+        <p>
+            Nesse caso, o <span>this</span> continua sendo <span>child</span>, pois o método foi chamado como <span>child.sayHi();</span>. Quando o método procura <span>this.surname</span>, primeiro verifica <span>child</span>, depois seu protótipo <span>father</span> e, por fim, o protótipo de <span>father</span>, que é <span>grandFather</span>. Assim, encontra <span>surname</span>.
+        </p>
+
+        <p>
+            Porém, se tentarmos chamar <span>grandFather.sayHi();</span>, não irá funcionar. O objeto <span>grandFather</span> não possui esse método e também não o encontra em seu próprio protótipo.
+        </p>
+
+        <h3 class="junto">Resumo</h3>
+
+        <p>
+            <strong>O método pode ser herdado, mas o valor de <span>this</span> depende de quem chamou o método.</strong>
+        </p>
+
+        <p>
+            Se fizermos <span>father.sayHi();</span>, o <span>this</span> será <span>father</span>.
+        </p>
+
+        <p>
+            Se fizermos <span>child.sayHi();</span>, o método será encontrado em <span>father</span>, mas o <span>this</span> será <span>child</span>.
+        </p>
+
+        <p>
+            A busca por propriedades e métodos acontece primeiro no próprio objeto e, caso não sejam encontrados, continua pela <span>cadeia de protótipos</span>.
+        </p>
+        
+        <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+            Conteúdo da aula
+        </a>
+
+    </article>
+    
+     <!-- <h1>Testes JS se necessário</h1> -->
+     <script src="assets/js/jscript.js"></script>
+
+</main>
+
+        
+    <div class="next">
+        <a class="next" href="../04_tarefa_robot_prototype/index.html">
+            Próxima Aula - Tarefa: Robot prototype
+        </a>
+    </div>
+
+</body>
+</html>

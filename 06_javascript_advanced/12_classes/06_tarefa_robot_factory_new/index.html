@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarefa: Robot Factory New</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="back">
+      <a class="back" href="../05_instanceOf/index.html">
+        Aula Anterior - instanceOf
+      </a>
+    </div>
+
+    <main>
+      <article id="intro">
+        <h1 id="title">Tarefa: Robot Factory New</h1>
+
+        <h3 class="intro">Intro</h3>
+        <p>
+          Implemente 3 classes com herança.
+        </p>
+
+        <p class="separado">
+          <span>BaseRobot</span>
+        </p>
+
+        <ul>
+          <li>
+            O construtor pega name, weight, coords, chipVersion e os salva em um objeto.
+          </li>
+          <li>
+            Se as coordenadas não forem fornecidas, defina-as como 0.
+          </li>
+          <li>
+            Os métodos goForward, goBack, goRight e goLeft dão um step (padrão 1) e movem o robô em step na direção correspondente.
+          </li>
+          <li>
+            O método getInfo retorna uma string no formato Robot: %name%, Chip version: %chipVersion%, Weight: %weight%.
+          </li>
+        </ul>
+
+        <p class="separado">
+          <span>FlyingRobot</span>
+        </p>
+
+        <ul>
+          <li>
+            Herda de BaseRobot.
+          </li>
+          <li>
+            O construtor pega os mesmos argumentos de BaseRobot e os passa para o construtor pai.
+          </li>
+          <li>
+              Pode trabalhar com a coordenada z usando os métodos goUp e goDown.
+          </li>
+        </ul>
+
+        <p class="separado">
+          <span>DeliveryDrone</span>
+        </p>
+
+        <ul>
+          <li>
+            Herda de FlyingRobot.
+          </li>
+          <li>
+            O construtor adicionalmente pega maxLoadWeight e currentLoad (padrão como null) e os salva.
+          </li>
+          <li>
+            Possui um método hookLoad que pega um objeto cargo e o salva na propriedade currentLoad se ele estiver vazio e o cargo.weight não exceder o maxLoadWeight do drone.
+          </li>
+          <li>
+            Se o drone já possui um currentLoad, não o altere.
+          </li>
+          <li>
+            Possui um método unhookLoad que define null para a propriedade currentLoad.
+          </li>
+        </ul>
+
+        <h3 class="junto">Exemplo:</h3>
+        <img src="assets/imgs/ex.png" alt="Exemplo">
+      </article>
+
+      <article class="conteudo">
+        <h3 class="cont-title">Resultado</h3>
+
+        <h3 class="junto">JS:</h3>
+        <figure>
+          <picture>
+            <img src="assets/imgs/result.png" alt="Resultado" />
+          </picture>
+        </figure>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+          target="_blank"
+        >
+          Conteudo da aula
+        </a>
+      </article>
+
+      <!-- <h1>Testes JS se necessário</h1> -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="../">
+        Próxima Tarefa: 
+      </a>
+    </div>
+  </body>
+</html>

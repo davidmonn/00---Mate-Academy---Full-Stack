@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function is an Object</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../14_object_destructuring/index.html">
+            Aula Anterior - Object Destructuring
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Function is an Object</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Agora iremos ver oque diferencia <strong>objetos</strong> de <strong>funcoes</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>JS:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/js.png" alt="JS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">Exemplo:</h3>
+            <p>
+                Com o código acima, podemos observar que fizemos um <strong>destructuring</strong> do nosso <strong>objeto</strong> diretamente no <strong>parâmetro</strong> da <strong>função</strong>. Com isso, extraímos as propriedades do objeto recebido e também definimos valores padrão para elas. Caso uma propriedade não exista no <strong>objeto</strong>, será utilizado o valor padrão informado no <strong>parâmetro</strong>. Ao final, a <strong>função</strong> imprime os valores utilizando o próprio destructuring.
+            </p>
+
+            <p>
+                Podemos também fazer uma mudança em nosso <strong>const user</strong> e deixá-lo da seguinte forma:
+            </p>
+
+<pre class="block">
+<span>
+const user = () => {};
+</span>
+</pre>
+
+            <p>
+                Dessa forma, ao chamar a <strong>função</strong>, ela também irá funcionar normalmente.
+            </p>
+
+            <p>
+                A única diferença dessa sintaxe é que não conseguimos adicionar uma <strong>propriedade</strong> diretamente na criação da <strong>função</strong>. Caso seja necessário, devemos adicioná-la separadamente. Ex:
+            </p>
+
+            <p class="separado">
+                Se não passarmos um <strong>user.age = 29</strong>, como temos <span>age = 0</span> definido no <strong>parâmetro</strong>, será utilizado esse valor padrão. Ou seja, o valor de <strong>age</strong> será <strong>0</strong>, pois nenhuma propriedade <strong>age</strong> foi encontrada.
+            </p>
+
+            <img src="assets/imgs/exemplo.png" alt="Exemplo">
+
+            <h3 class="separado">Diferença entre função e objeto</h3>
+
+            <p>
+                A principal diferença entre uma <strong>função</strong> e um <strong>objeto</strong> é que uma <strong>função</strong> pode ser chamada (executada), enquanto um <strong>objeto</strong> comum não.
+            </p>
+
+            <p class="junto">
+                <span>Exemplo de objeto:</span> não podemos chamá-lo diretamente. Exemplo:
+            </p>
+
+<pre>
+<span>
+const user = {};
+
+Ao chamar: user(); // dará erro.
+</span>
+</pre>
+
+            <p class="junto">
+                <span>Exemplo de função:</span> se fizermos <span>const user = () => {}</span>, ela poderá ser chamada normalmente. Também podemos adicionar código dentro de suas chaves <span>{}</span>. Exemplo:
+            </p>
+
+<pre>
+<span>
+const user = () => {
+    console.log(123);
+};
+
+user();
+</span>
+</pre>
+
+            <p>
+                Quando chamamos a <strong>função</strong>, todo o código dentro dela é executado normalmente.
+            </p>
+
+            <p class="junto">
+                O mesmo também acontece com um <strong>array []</strong>: ele é um <strong>objeto</strong>, portanto não pode ser chamado como uma <strong>função</strong>.
+            </p>
+
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteúdo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../16_tarefa_stateful_object_new/index.html">
+            Próxima Aula - Tarefa: Stateful Object New
+        </a>
+    </div>
+
+</body>
+</html>

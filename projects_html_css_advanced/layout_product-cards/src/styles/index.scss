@@ -1,8 +1,13 @@
 @import './utils/var';
-@import './blocs/card__image';
-@import './blocs/card_info';
-@import './blocs/body';
 @import './blocs/card';
 @import './blocs/stars';
-@import './blocs/card__price';
-@import './blocs/button';
+
+html {
+  color: $color-main;
+
+  font-family: $font-default;
+  font-weight: 500;
+  font-size: 12px;
+
+  line-height: 18px;
+}

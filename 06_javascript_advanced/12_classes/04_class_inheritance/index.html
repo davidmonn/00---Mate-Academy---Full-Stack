@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Inheritance</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../04_class_inheritance/index.html">
+            Aula Anterior - Static Fields and Methods
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Class Inheritance</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Aqui iremos ver sobre <span>herança</span> de <span>class</span>. Para fazermos isso, iremos entender o que é e por que ela pode ser necessária.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Código de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>JS:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/js.png" alt="JS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <div class="conteudo">
+
+                <h3 class="separado">Entendendo Melhor:</h3>
+
+                <p>
+                    Iremos criar uma <span>class User</span> onde ela terá as propriedades: <span>friends</span>, <span>age</span>, <span>name</span> e <span>role</span>. Em seguida, criamos um <strong>método</strong> <span>printInfo()</span> que imprime informações sobre esse <span>User</span> e o chamamos. Ficando da seguinte forma:
+                </p>
+
+                <div class="content">
+
+                    <strong>
+<pre>
+class User {
+  friends = [];
+  age = 0;
+
+  constructor(name, role = 'User') {
+    this.name = name;
+    this.role = role;
+  }
+
+  get fullName() {
+    return `${this.role} ${this.name}`;
+  }
+
+  printInfo() {
+    const { friends, fullName } = this;
+
+    console.log(`${fullName} has ${friends.length} friends.`);
+  }
+}
+
+const bob = new User('Bob');
+
+bob.printInfo();
+</pre>
+                    </strong>
+
+                </div>
+
+                <p>
+                    Agora iremos dar um exemplo onde temos outra classe chamada <span>Human</span>. Nela teremos <span>age</span> e <span>name</span> para cada pessoa. Também teremos um <strong>método <span>celebrateBirthday()</span></strong>, que aumenta a idade em <span>+ 1</span> e retorna o nome e a nova idade. Ficando da seguinte forma:
+                </p>
+
+                <div class="content">
+                    <strong>
+<pre>
+class Human {
+  age = 0;
+
+  constructor(name) {
+    this.name = name;
+  }
+
+  celebrateBirthday() {
+    this.age++;
+
+    return console.log(`${this.name} is now ${this.age}`);
+  }
+}
+</pre>
+                    </strong>
+                </div>
+
+                <p class="separado">
+                    Sabemos que <span>User</span> é uma pessoa, o que significa que também poderíamos usar os métodos de <span>Human</span>. Porém, não queremos duplicar em nosso <span>User</span> o que já existe em <span>Human</span>, como <span>age</span> e <span>name</span>. Com isso, seria interessante podermos reutilizar as <strong>propriedades</strong> e <strong>métodos</strong> que temos na classe <span>Human</span>.
+                </p>
+
+                <p>
+                    Podemos fazer isso de uma forma muito simples. Iremos remover <span>age</span> e <span>name</span> de nosso <span>User</span> e usar a palavra-chave <span>extends</span> logo após <span>User</span>, seguida do nome da classe da qual queremos herdar, que é <span>Human</span>. Ficando da seguinte forma:
+                </p>
+
+                <div class="content">
+
+                    <strong>
+<pre>
+class User <span>extends Human</span> {
+  friends = [];
+
+  constructor(name, role = 'User') {
+    this.role = role;
+  }
+
+  get fullName() {
+    return `${this.role} ${this.name}`;
+  }
+
+  printInfo() {
+    const { friends, fullName } = this;
+
+    console.log(`${fullName} has ${friends.length} friends.`);
+  }
+}
+</pre>
+                    </strong>
+
+                </div>
+
+                <p>
+                    Feito isso, teremos um erro, pois quando uma classe possui um <span>constructor</span> próprio, precisamos chamar o <span>constructor</span> da <strong>classe pai</strong> antes de podermos usar o <span>this</span>. Para chamar o <span>constructor</span> da classe pai, usamos a palavra-chave <span>super()</span>. Ficando da seguinte forma:
+                </p>
+
+                <div class="content">
+
+                    <strong>
+<pre>
+class User extends Human {
+  friends = [];
+
+  constructor(name, role = 'User') {
+    <span>super();</span>
+    this.role = role;
+  }
+
+  get fullName() {
+    return `${this.role} ${this.name}`;
+  }
+
+  printInfo() {
+    const { friends, fullName } = this;
+
+    console.log(`${fullName} has ${friends.length} friends.`);
+  }
+}
+</pre>
+                    </strong>
+
+                </div>
+
+                <p>
+                    Isso significa que chamamos o <span>constructor</span> da classe pai usando <span>super()</span>. Nesse caso, como não passamos nenhum argumento, o <span>name</span> do <span>Human</span> continuará como <span>undefined</span>.
+                </p>
+
+                <p class="separado">
+                    As propriedades <span>age</span> e <span>name</span> de <span>Human</span> são definidas durante a execução do <span>super()</span>. Depois disso, o restante do <span>constructor</span> de <span>User</span> pode continuar sendo executado.
+                </p>
+
+                <p>
+                    Atualmente nosso <span>User</span> está com <strong>name</strong> <span>undefined</span>. Para corrigirmos isso, iremos passar o parâmetro recebido <span>name</span> para o <span>constructor</span> da classe pai através do <span>super()</span>.
+                </p>
+
+                <div class="content">
+
+                    <strong>
+<pre>
+class User extends Human {
+  friends = [];
+
+  constructor(name, role = 'User') {
+    <span>super(name);</span>
+    this.role = role;
+  }
+
+  get fullName() {
+    return `${this.role} ${this.name}`;
+  }
+
+  printInfo() {
+    const { friends, fullName } = this;
+
+    console.log(`${fullName} has ${friends.length} friends.`);
+  }
+}
+</pre>
+                    </strong>
+
+                </div>
+
+                <p class="separado">
+                    A herança nos permite reutilizar a lógica do <span>constructor</span>, <strong>propriedades</strong> e <strong>métodos</strong> da classe base.
+                </p>
+                
+            </div>
+
+            <div class="conteudo">
+
+                <h3 class="separado">Sintaxe</h3>
+
+                <h3 class="junto">Palavra-Chave <span>extends</span>:</h3>
+                <p>
+                    Para fazermos uma classe herdar de outra, usamos a palavra <span>extends</span> e escrevemos o nome da classe pai. Quando a classe filha possui seu próprio <span>constructor</span>, precisamos chamar o <span>constructor</span> da classe pai usando <span>super()</span> e passar os parâmetros necessários. Assim, quando chamarmos métodos como, por exemplo:
+                </p>
+
+                <div class="content">
+
+                    <strong>
+<pre>
+bob.printInfo();
+bob.celebrateBirthday();
+</pre>
+                    </strong>
+
+                </div>
+
+                <p>
+                    O objeto <span>bob</span> poderá acessar tanto os métodos definidos em <span>User</span> quanto os métodos herdados de <span>Human</span>. A cadeia de prototypes será semelhante a:
+                </p>
+
+                <div class="content">
+
+                    <strong>
+<pre>
+bob
+  ↓
+User.prototype
+  ↓
+Human.prototype
+  ↓
+Object.prototype
+</pre>
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="conteudo">
+
+                <h3 class="separado">Testando Métodos Padrão</h3>
+
+                <p>
+                    Aqui iremos realizar alguns testes com métodos <span>padrão</span>, ou seja, métodos que já estão disponíveis por meio do <span>prototype</span>.
+                </p>
+
+                <h3 class="separado">hasOwnProperty('name')</h3>
+                <p>
+                    Aqui iremos testar o <span>hasOwnProperty('name')</span>. Estamos especificando o nome da propriedade, nesse caso <span>name</span>, e verificando se o próprio objeto possui uma propriedade com esse nome:
+                </p>
+
+                <div class="content">
+                    
+                    <span>
+<pre>
+console.log(
+    bob.hasOwnProperty('name')
+);
+</pre>
+                    </span>
+
+                </div>
+
+                <p>
+                    Teremos como resultado <span>true</span>, pois <span>name</span> é uma propriedade que existe diretamente no objeto <span>bob</span>.
+                </p>
+
+                <h3 class="separado">Chamando Métodos da Classe Pai</h3>
+                <p>
+                    Além do <span>constructor</span> da classe pai, podemos usar <span>super</span> para chamar métodos da classe pai. Por exemplo: iremos chamar o <strong>método <span>celebrateBirthday()</span></strong> além do <span>printInfo()</span>. Para isso, podemos ir em nosso método <span>printInfo()</span> da classe <span>User</span> e adicionar a chamada do <span>celebrateBirthday()</span>, ficando da seguinte forma:
+                </p>
+
+                <div class="content">
+
+                    <strong>
+<pre>
+class User extends Human {
+  friends = [];
+
+  constructor(name, role = 'User') {
+    super(name);
+    this.role = role;
+  }
+
+  get fullName() {
+    return `${this.role} ${this.name}`;
+  }
+
+  printInfo() {
+    const { friends, fullName } = this;
+
+    console.log(`${fullName} has ${friends.length} friends.`);
+    <span>this.celebrateBirthday();</span>
+  }
+}
+</pre>
+                    </strong>
+
+                </div>
+
+                <p>
+                    Agora iremos supor que nossa classe pai também tenha um método <span>printInfo()</span>, mas que funcione de forma um pouco diferente:
+                </p>
+
+                <div class="content">
+
+                    <strong>
+<pre>
+class Human {
+  age = 0;
+
+  constructor(name) {
+    this.name = name;
+  }
+
+  celebrateBirthday() {
+    this.age++;
+
+    return console.log(`${this.name} is now ${this.age}`);
+  }
+
+  <span>
+    printInfo() {
+        const { age, name } = this;
+        console.log(`${name} is ${age}`);
+    }
+  </span>
+}
+</pre>
+                    </strong>
+
+                </div>
+
+                <p>
+                    Se quisermos agora usar esse novo método na classe filha, voltamos novamente ao <strong>printInfo()</strong> de nosso <span>User</span>. Se usarmos <span>this.printInfo()</span>, estaremos chamando o próprio método <span>printInfo()</span> de <span>User</span> novamente, causando uma <span>recursão</span>, pois o método chamará a si mesmo.
+                </p>
+
+                <p>
+                    Nesse caso, queremos chamar o método <span>printInfo()</span> da classe pai. Para isso, também usamos a palavra-chave <span>super</span>, ficando <span>super.printInfo();</span>. Dessa forma, estamos chamando o método <span>printInfo()</span> da classe pai. Ficará da seguinte forma em nosso código:
+                </p>
+
+                <div class="content">
+
+                    <strong>
+<pre>
+class User extends Human {
+  friends = [];
+
+  constructor(name, role = 'User') {
+    super(name);
+    this.role = role;
+  }
+
+  get fullName() {
+    return `${this.role} ${this.name}`;
+  }
+
+  printInfo() {
+    const { friends, fullName } = this;
+    <span>super.printInfo();</span>
+
+    console.log(`${fullName} has ${friends.length} friends.`);
+  }
+}
+</pre>
+                    </strong>
+
+                </div>
+
+                <p>
+                    Nesse caso, primeiro será chamado nosso <span>printInfo()</span> da classe pai. Depois, será executado o <span>console.log()</span> da classe filha. Também podemos alterar a ordem. Para isso, basta colocarmos o <span>super.printInfo()</span> abaixo de nosso <span>console.log()</span>.
+                </p>
+
+                
+            </div>
+            
+            <div class="conteudo">
+
+                <h3 class="separado">Entendimentos:</h3>
+                <p>
+                    Se apagarmos nossos logs e deixarmos apenas:
+                </p>
+                
+                <div class="content">
+                    <strong>
+<pre>
+console.log(bob);
+</pre>
+                    </strong>
+
+                    <figure>
+                        <figcaption>Veremos em nosso <span>devTools</span>:</figcaption>
+                        <img src="assets/imgs/devTools-bob.png" alt="resultado de log bob">
+                    </figure>
+                </div>
+
+                <p>
+                    Podemos ver um objeto possuindo <span>age, name, friends e role</span>. Não aparecem apenas as propriedades que adicionamos diretamente na classe <span>User</span>, mas também as propriedades adicionadas ao objeto durante a execução do <span>constructor</span> da classe base <span>Human</span>. Isso acontece porque o <span>super(name)</span> executa o <span>constructor</span> de <span>Human</span>, que adiciona <span>name</span> ao objeto.
+                </p>
+
+                <p>
+                    Em seguida, também podemos observar a cadeia de <span>prototype</span>, que permite que o objeto encontre métodos que não estão diretamente dentro dele.
+                </p>
+
+                <img src="assets/imgs/bob-prototype.png" alt="Bob devTools prototype">
+
+                <p>
+                    Podemos ver que temos o método <span>printInfo()</span> e o <span>getter fullName</span> disponíveis por meio do <span>prototype</span> da classe <span>User</span>.
+                </p>
+
+                <p>
+                    Também podemos ver outro <span>prototype</span>, relacionado à classe <span>Human</span>. Isso acontece porque <span>User</span> herda de <span>Human</span>. Dessa forma, caso um método não seja encontrado no <span>User.prototype</span>, a busca continua no <span>Human.prototype</span> e depois no <span>Object.prototype</span>.
+                </p>
+
+            </div>
+
+            <div class="conteudo">
+
+                <h3 class="separado">Observando como a Herança é Implementada no Navegador</h3>
+
+                <p>
+                    Primeiro iremos limpar tudo em nosso <span>devTools</span>. Para isso, basta clicarmos onde está sendo indicado:
+                </p>
+
+                <img src="assets/imgs/clear-devTools.png" alt="clear devTools">
+
+                <p>
+                    Após isso, iremos digitar em nosso <span>devTools</span>: <strong>document.body</strong>. Dessa forma, o navegador irá mostrar o elemento. Porém, queremos visualizar esse elemento como um <span>objeto</span>. Então iremos escrever <span>console.dir(document.body)</span>.
+                </p>
+
+                <p>
+                    Agora veremos o elemento como um <span>objeto</span> e poderemos observar sua cadeia de <span>prototype</span>.
+                </p>
+
+                <img src="assets/imgs/constructor-html.png" alt="Constructor HTML">
+
+                <p>
+                    Podemos observar seu constructor sendo <span>HTMLBodyElement</span>. Se expandirmos, veremos diversas propriedades e métodos. Ao descermos mais, poderemos observar que <span>HTMLBodyElement</span> possui um prototype relacionado a <span>HTMLElement</span>.
+                </p>
+
+                <p>
+                    Descendo ainda mais, veremos outro <span>prototype</span>, relacionado a <span>Element</span>. <span>Element</span> representa elementos do DOM e fornece propriedades e métodos que podem ser utilizados por diferentes tipos de elementos, incluindo elementos HTML e SVG.
+                </p>
+
+                <p>
+                    Descendo ainda mais, veremos que <span>Element</span> está relacionado a <span>Node</span>. <span>Node</span> é uma base mais geral do DOM e pode representar diferentes tipos de nós, como elementos, textos e comentários.
+                </p>
+
+                <p>
+                    E essa cadeia continua até chegar a <span>Object.prototype</span>.
+                </p>
+
+            </div>
+
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteúdo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../05_instanceOf/index.html">
+            Próxima Aula - instanceOf
+        </a>
+    </div>
+
+</body>
+</html>

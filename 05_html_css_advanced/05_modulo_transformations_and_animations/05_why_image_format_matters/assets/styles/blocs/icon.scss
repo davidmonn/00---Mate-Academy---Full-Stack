@@ -1,0 +1,41 @@
+/* #region ICON */
+.icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-size: cover;
+    background-position: center;
+
+        @include hover (transform, scale(1.2));
+
+    @include onTablet {
+        height: 32px;
+        width: 32px;
+    }
+    
+    &--phone {
+        background-image: url(../imgs/icon-phone.png);
+        background-repeat: no-repeat;
+    }
+
+    &--menu {
+        background-image: url(../imgs/icon-burg.png);
+        background-repeat: no-repeat;
+        transition: transform 0.5s;
+        transition-timing-function: linear;
+
+            // NEW
+            &:hover {
+                background-image: url(../imgs/sound-waves.png); //OBS: NAO E ESSA IMAGEM CORRETA POREM NAO ENCONTREI A CORRETA
+            }
+
+    }
+
+    &--close {
+        background-image: url(../imgs/icon-close.png);
+        background-repeat: no-repeat;
+    }
+}
+
+
+/* #endregion */

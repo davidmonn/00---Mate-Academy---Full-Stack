@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Fields and Methods</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../03_static_fields_and_methods/index.html">
+            Aula Anterior - Tarefa:Bank account
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Static Fields and Methods</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Agora iremos ver sobre <strong>metodos</strong> e <strong>propriedades <span>estaticos</span></strong>
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Codigo de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>JS:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/js.png" alt="JS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+        <div class="conteudo">
+
+            <h3 class="separado">Entendendo Melhor:</h3>
+
+            <p>
+                Para entendermos <strong>static</strong>, vamos começar com o seguinte código:
+            </p>
+
+            <div class="content">
+
+                <strong>
+<pre>
+class User {
+  friends = [];
+  age = 0;
+
+  constructor(name, role = User) {
+    this.name = name;
+    this.role = role;
+  }
+
+  getInfo() {
+    const { role, name, friends } = this;
+
+    return `${role} ${name} has ${friends.length} friends.`;
+  }
+}
+
+const bob = new User('Bob', 'Admin');
+console.log(bob.getInfo());
+</pre>
+                </strong>
+
+            </div>
+
+            <p>
+                Temos uma classe chamada <span>User</span>. Dentro dela temos algumas propriedades, como <span>friends</span> e <span>age</span>, além do método <span>getInfo()</span>.
+            </p>
+
+            <p class="separado">
+                Depois criamos um objeto chamado <span>bob</span> usando <span>new User()</span>. Esse objeto recebe o nome <span>Bob</span> e a função <span>Admin</span> como seu <strong>role</strong>.
+            </p>
+
+            <p>
+                O problema é que podemos passar qualquer valor como <span>role</span>. Por exemplo, poderíamos escrever uma string que nem sequer representa uma função válida:
+            </p>
+
+            <div class="content">
+
+                <strong>
+<pre>
+const bob = new User('Bob', 'QualquerCoisa');
+</pre>
+                </strong>
+
+            </div>
+
+            <p>
+                O JavaScript não vai impedir isso. O valor será simplesmente armazenado em <span>role</span>.
+            </p>
+
+            <p class="separado">
+                Então, como podemos deixar disponíveis alguns valores que pertencem à própria classe, como <span>User</span> e <span>Admin</span>?
+            </p>
+
+            <p>
+                Para isso podemos usar propriedades <strong>estáticas</strong>.
+            </p>
+
+            <p class="separado">
+                Uma propriedade criada com <span>static</span> pertence à <strong>classe</strong>, e não aos objetos criados por ela.
+            </p>
+
+            <div class="content">
+
+                <strong>
+<pre>
+class User {
+  static ROLE_USER = 'User';
+  static ROLE_ADMIN = 'Admin';
+
+  friends = [];
+  age = 0;
+
+  constructor(name, role = User.ROLE_USER) {
+    this.name = name;
+    this.role = role;
+  }
+
+  getInfo() {
+    const { role, name, friends } = this;
+
+    return `${role} ${name} has ${friends.length} friends.`;
+  }
+}
+
+const bob = new User('Bob', User.ROLE_ADMIN);
+
+console.log(bob.getInfo());
+</pre>
+                </strong>
+
+            </div>
+
+            <p>
+                Agora temos duas propriedades estáticas: <span>ROLE_USER</span> e <span>ROLE_ADMIN</span>.
+            </p>
+
+            <p class="separado">
+                Como elas pertencem à classe <span>User</span>, acessamos essas propriedades usando o próprio nome da classe:
+            </p>
+
+            <div class="content">
+
+                <strong>
+<pre>
+User.ROLE_USER;
+User.ROLE_ADMIN;
+</pre>
+                </strong>
+
+            </div>
+
+            <p>
+                Dessa forma, ao criar o objeto <span>bob</span>, podemos passar <span>User.ROLE_ADMIN</span> em vez de escrever diretamente a string <span>'Admin'</span>.
+            </p>
+
+            <p class="separado">
+                Isso também deixa o código mais fácil de entender, pois sabemos que <span>ROLE_ADMIN</span> é um valor definido pela própria classe <span>User</span>.
+            </p>
+
+            <p>
+                É importante entender uma diferença:
+            </p>
+
+            <div class="content">
+
+                <strong>
+<pre>
+User.ROLE_ADMIN; // funciona
+
+bob.ROLE_ADMIN; // undefined
+</pre>
+                </strong>
+
+            </div>
+
+            <p>
+                Isso acontece porque <span>ROLE_ADMIN</span> pertence à classe <span>User</span>, e não ao objeto <span>bob</span>.
+            </p>
+
+            <p class="separado">
+                Portanto, podemos pensar da seguinte maneira: propriedades normais pertencem aos <strong>objetos</strong> criados pela classe, enquanto propriedades <strong>static</strong> pertencem à própria classe.
+            </p>
+
+            <p>
+                Métodos também podem ser estáticos.
+            </p>
+
+            <p class="separado">
+                Usamos um método <span>static</span> quando queremos criar uma funcionalidade relacionada à classe, mas que não depende de um objeto específico.
+            </p>
+
+            <p>
+                Por exemplo, podemos criar um método para calcular a idade média de vários usuários.
+            </p>
+
+            <div class="content">
+
+                <strong>
+<pre>
+class User {
+  static ROLE_USER = 'User';
+  static ROLE_ADMIN = 'Admin';
+
+  static getAverageAge(users) {
+
+  }
+
+  friends = [];
+  age = 0;
+
+  constructor(name, role = User.ROLE_USER) {
+    this.name = name;
+    this.role = role;
+  }
+
+  getInfo() {
+    const { role, name, friends } = this;
+
+    return `${role} ${name} has ${friends.length} friends.`;
+  }
+}
+</pre>
+                </strong>
+
+            </div>
+
+            <p>
+                O método <span>getAverageAge()</span> recebe um array de usuários através do parâmetro <span>users</span>.
+            </p>
+
+            <p class="separado">
+                Depois podemos usar <span>reduce()</span> para somar a idade de todos os usuários.
+            </p>
+
+            <div class="content">
+
+                <strong>
+<pre>
+static getAverageAge(users) {
+  const sum = users.reduce((total, user) => total + user.age, 0);
+
+  return sum / users.length;
+}
+</pre>
+                </strong>
+
+            </div>
+
+            <p>
+                O <span>reduce()</span> começa com <span>0</span>. A cada usuário, pegamos sua idade através de <span>user.age</span> e adicionamos ao <span>total</span>.
+            </p>
+
+            <p class="separado">
+                Depois que todas as idades forem somadas, dividimos o resultado pela quantidade de usuários usando <span>users.length</span>.
+            </p>
+
+            <p>
+                Por exemplo, se tivermos um usuário com 18 anos:
+            </p>
+
+            <div class="content">
+
+                <strong>
+<pre>
+'use strict';
+
+class User {
+  static ROLE_USER = 'User';
+  static ROLE_ADMIN = 'Admin';
+
+  static getAverageAge(users) {
+    const sum = users.reduce((total, user) => total + user.age, 0);
+
+    return sum / users.length;
+  }
+
+  friends = [];
+  age = 18;
+
+  constructor(name, role = User.ROLE_USER) {
+    this.name = name;
+    this.role = role;
+  }
+
+  getInfo() {
+    const { role, name, friends } = this;
+
+    return `${role} ${name} has ${friends.length} friends.`;
+  }
+}
+
+const bob = new User('Bob', User.ROLE_ADMIN);
+
+console.log(User.getAverageAge([bob]));
+</pre>
+                </strong>
+
+            </div>
+
+            <p>
+                O resultado será <span>18</span>, porque temos apenas um usuário e ele possui 18 anos.
+            </p>
+
+            <p class="separado">
+                Perceba que chamamos o método usando <span>User.getAverageAge()</span>, e não <span>bob.getAverageAge()</span>.
+            </p>
+
+            <p>
+                Isso acontece porque <span>getAverageAge()</span> é um método <strong>static</strong>. Ele pertence à classe <span>User</span>, e não aos objetos criados por ela.
+            </p>
+
+            <p class="separado">
+                Podemos resumir assim:
+            </p>
+
+            <div class="content">
+
+                <strong>
+<pre>
+class User {
+  static metodo() {
+    // pertence à classe
+  }
+
+  outroMetodo() {
+    // pertence aos objetos
+  }
+}
+
+User.metodo();
+
+const bob = new User();
+
+bob.outroMetodo();
+</pre>
+                </strong>
+
+            </div>
+
+            <p>
+                Métodos e propriedades estáticas também existem em classes que já fazem parte do JavaScript.
+            </p>
+
+            <p>
+                Por exemplo, temos <span>Array.isArray()</span>. Ele verifica se determinado valor é um array:
+            </p>
+
+            <div class="content">
+
+                <strong>
+<pre>
+Array.isArray([]);
+</pre>
+                </strong>
+
+            </div>
+
+            <p>
+                Nesse caso, usamos <span>Array</span>, que é o construtor, e acessamos o método estático <span>isArray()</span>.
+            </p>
+
+            <p>
+                Também existe <span>String.fromCodePoint()</span>, que é um método estático de <span>String</span>.
+            </p>
+
+            <p>
+                Para objetos, temos métodos estáticos como <span>Object.hasOwn()</span>, que verifica se um objeto possui determinada propriedade.
+            </p>
+
+            <div class="content">
+
+                <strong>
+<pre>
+Object.hasOwn(objeto, 'nome');
+</pre>
+                </strong>
+
+            </div>
+
+            <p>
+                Também existem propriedades estáticas, como <span>Number.MAX_SAFE_INTEGER</span> e <span>Number.MAX_VALUE</span>.
+            </p>
+
+            <p>
+                Elas pertencem a <span>Number</span>, e não a cada número individual.
+            </p>
+
+            <p class="separado">
+                Portanto, a ideia principal desta aula é:
+            </p>
+
+            <p>
+                <strong>static</strong> cria uma propriedade ou método que pertence à <strong>classe</strong>, e não aos objetos criados por ela.
+            </p>
+
+        </div>
+
+        <div class="conteudo">
+
+            <h3 class="separado">Static</h3>
+
+            <p>
+                <strong>Static</strong> é usado quando queremos algo relacionado à classe como um todo, e não a um objeto específico.
+            </p>
+
+            <p>
+                Podemos acessar uma propriedade ou método estático usando o nome da classe:
+            </p>
+
+            <div class="content">
+
+                <strong>
+<pre>
+User.ROLE_ADMIN;
+User.getAverageAge(users);
+</pre>
+                </strong>
+
+            </div>
+
+            <p>
+                Já propriedades e métodos normais são acessados através dos objetos criados pela classe:
+            </p>
+
+            <div class="content">
+
+                <strong>
+<pre>
+bob.name;
+bob.getInfo();
+</pre>
+                </strong>
+
+            </div>
+
+            <h3 class="separado">Conclusao</h3>
+
+            <p class="separado">
+                Podemos imaginar que os métodos e propriedades <span>static</span> são como pequenas funcionalidades específicas dentro da nossa classe principal. No nosso exemplo, <span>User</span> é a classe principal e seus métodos ou propriedades <span>static</span> ficam diretamente ligados a ela.
+            </p>
+
+            <p>
+                Essa é apenas uma forma de imaginar para facilitar o entendimento. Tecnicamente, eles não são <strong>subclasses</strong>; são propriedades e métodos <strong>estáticos da classe</strong>.
+            </p>
+
+            <p class="separado">
+                Podemos imaginar o <span>static</span> como uma <strong>ramificação da classe principal</strong>, onde criamos funcionalidades específicas para ela. Tecnicamente, não são subclasses, mas sim <strong>propriedades e métodos estáticos</strong> que pertencem à própria classe, e não aos objetos criados por ela.
+            </p>
+
+
+
+        </div>
+        
+        <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+            Conteúdo da aula
+        </a>
+
+    </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../04_class_inheritance/index.html">
+            Próxima Aula - Class Inheritance
+        </a>
+    </div>
+
+</body>
+</html>

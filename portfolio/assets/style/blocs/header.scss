@@ -1,0 +1,55 @@
+@use './var.scss' as variables;
+@use '../utils/mixins.scss' as mixins;
+
+header {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: variables.$background-header;
+
+  gap: variables.$gap-mobile;
+  padding: variables.$padding-mobile;
+
+    &::after {
+      content: '';
+      height: 10px;
+      width: 100%;
+      
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-bottom: 1px solid variables.$ornament;
+    }
+
+  @include mixins.tablet-response() {
+    padding: 20px 40px;
+
+      &::after {
+        border-bottom: 2px solid variables.$ornament;
+    }
+  }
+
+  @include mixins.desktop-response() {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: variables.$padding-tablet-header;
+  }
+
+  .header__logo {
+    width: variables.$logo-mobile-width;
+    height: variables.$logo-mobile-height;
+    background-image: url(../imgs/logo.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include mixins.desktop-response() {
+      width: 450px;
+      background-size: auto;
+
+    }
+  }
+}
+

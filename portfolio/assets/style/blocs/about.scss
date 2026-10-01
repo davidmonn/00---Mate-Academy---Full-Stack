@@ -1,0 +1,141 @@
+@use './var.scss' as variables;
+@use '../utils/mixins.scss' as mixins;
+
+.section--about {
+    padding-block: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+
+    @include mixins.tablet-response {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+
+        padding: 15px;
+    }
+
+    @include mixins.desktop-response {
+        
+    }
+}
+
+.section__image {
+    height: 320px;
+    border-radius: 30%;
+
+    @include mixins.tablet-response {
+        padding: 10px;
+        width: 500px;
+    }
+
+    @include mixins.desktop-response {
+        height: 700px;
+        width: 700px;
+    }
+}
+
+.section__description {
+    padding-inline: variables.$padding-short;
+
+    @include mixins.tablet-response {
+        
+    }
+
+    @include mixins.tablet-response {
+        font-size: 22px;
+        padding-inline: variables.$padding-inline-sec-intro;
+    }
+}
+
+.section__title-about {
+    margin-block: variables.$margin-short;
+    
+    @include mixins.tablet-response {
+        font-size: 26px;
+        font-weight: normal;
+        padding-block: variables.$padding-short;
+    }
+}
+
+.section__subtitle-about {
+    color: variables.$titles-brow;
+    margin-bottom: variables.$margin-short;
+
+    @include mixins.tablet-response {
+        margin-bottom: variables.$margin-short;
+        width: 460px;
+    }
+
+    @include mixins.desktop-response {
+        margin-bottom: variables.$margin-short;
+        font-size: 46px;
+        width: 830px;
+    }
+}
+
+.section__text {
+    
+    @include mixins.tablet-response {
+        
+    }
+
+    @include mixins.desktop-response {
+        width: 830px;
+    }
+}
+
+
+
+
+
+
+.section__quality-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    margin-top: 30px;
+    gap: 15px;
+
+    @include mixins.tablet-response {
+        flex-direction: row;
+        gap: 25px;
+    }
+}
+
+.section__quality-item{
+    display: flex;
+    font-size: 16px;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 260px;
+    
+
+    @include mixins.tablet-response {
+        align-items: center;
+        font-size: 22px;
+        height: 60px;
+    }
+}
+
+.section__quality-icon {
+    display: flex;
+    width: 40px;
+    height: 40px;
+
+    @include mixins.tablet-response {
+        width: 60px;
+        height: 60px;
+    }
+
+    @include mixins.desktop-response {
+        width: 60px;
+        height: 60px;
+    }
+}

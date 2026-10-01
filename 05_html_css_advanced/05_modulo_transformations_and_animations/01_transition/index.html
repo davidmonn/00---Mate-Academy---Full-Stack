@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../../04_modulo_sass/09_when_to_use_variables/src/index.html">
+            <strong>Módulo Anterior: SASS - Aula: When to Use Variables</strong>
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Transition</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+               Aqui iremos ver sobre animações e mudanças suaves de estilos e sua importância.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Código de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>HTML:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/html.png" alt="HTML">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                <strong>CSS:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/css.png" alt="CSS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">Propriedade: transition-duration</h3>
+            <p>
+                Controla apenas o tempo da animação. Pode ser usada junto com outras propriedades de transition.
+                Exemplo 01: <code><strong>transition-duration: 1, 2s;</strong></code><br>
+                Exemplo 02: <code><strong>transition-duration: 1s;</strong></code>
+            </p>
+
+            <h3 class="junto">Propriedade: transition-property</h3>
+            <p>
+                Define quais propriedades terão a transição aplicada.
+            </p>
+
+            <p>
+                Valores possíveis: <strong>opacity, height, background-color, transform, visibility</strong>.
+            </p>
+
+            <p>
+                Exemplo: <code><strong>transition-property: height, background-color;</strong></code>
+            </p>
+
+            <p>
+                A propriedade <strong>opacity</strong> é a mais usada para efeitos de aparecer/desaparecer.
+                A propriedade <strong>visibility</strong> pode ser combinada com opacity, mas não possui transição suave sozinha.
+            </p>
+
+            <h3 class="junto">Propriedade: transition-delay</h3>
+            <p>
+                Permite adicionar um atraso antes da animação começar após o evento (como hover).
+            </p>
+
+            <h3 class="junto">Propriedade: transition-timing-function</h3>
+            <p>
+                Define a velocidade da animação ao longo do tempo (curva de aceleração).
+                Exemplo: <strong><code>transition-timing-function: linear;</code></strong>
+            </p>
+
+            <p>
+                Outros valores incluem: <strong>ease, ease-in, ease-out, ease-in-out, steps()</strong>.
+            </p>
+
+            <h3 class="junto">Propriedade: transition</h3>
+            <p>
+                Propriedade abreviada que reúne todas as anteriores em uma única linha.
+                A ordem correta é: <strong>property, duration, timing-function, delay</strong>.
+            </p>
+
+            <p>
+                Exemplo correto:
+                <code><strong>transition: height 1s ease-in 100ms;</strong></code>
+            </p>
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteúdo da aula
+            </a>
+
+        </article>
+        
+         <!-- <h1>Testes JS se necessário</h1> -->
+         <script src="assets/js/jscript.js"></script>
+        </main>
+        
+    <div class="next">
+        <a class="next" href="../02_animation/index.html">
+            Próxima Aula - Animation
+        </a>
+    </div>
+
+</body>
+</html>

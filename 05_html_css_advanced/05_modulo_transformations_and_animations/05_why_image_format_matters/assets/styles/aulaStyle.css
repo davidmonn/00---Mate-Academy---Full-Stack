@@ -1,0 +1,250 @@
+/* #region HEADER */
+.header {
+  box-sizing: border-box;
+  height: 100vh;
+  background-image: url(../imgs/header-bg-mobile.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.header__waves {
+  height: 57px;
+  width: 48px;
+  margin-bottom: 16px;
+  background-image: url(../imgs/sound-waves.png);
+}
+@media (min-width: 572px) {
+  .header__waves {
+    width: 64px;
+    height: 76px;
+    margin-bottom: 40px;
+    background-repeat: no-repeat;
+  }
+}
+.header__title {
+  margin: 0;
+  font-style: italic;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 100%;
+  letter-spacing: -1.5px;
+}
+@media (min-width: 572px) {
+  .header__title {
+    font-size: 40px;
+  }
+}
+.header__bottom {
+  padding-bottom: 40px;
+  padding-inline: 20px;
+}
+@media (min-width: 572px) {
+  .header__bottom {
+    padding-inline: 72px;
+  }
+}
+@media (min-width: 572px) {
+  .header__bottom {
+    padding-bottom: 64px;
+  }
+}
+
+/* #endregion */
+/* #region ICON */
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s;
+}
+.icon:hover {
+  transform: scale(1.2);
+}
+@media (min-width: 572px) {
+  .icon {
+    height: 32px;
+    width: 32px;
+  }
+}
+.icon--phone {
+  background-image: url(../imgs/icon-phone.png);
+  background-repeat: no-repeat;
+}
+.icon--menu {
+  background-image: url(../imgs/icon-burg.png);
+  background-repeat: no-repeat;
+  transition: transform 0.5s;
+  transition-timing-function: linear;
+}
+.icon--menu:hover {
+  background-image: url(../imgs/sound-waves.png);
+}
+.icon--close {
+  background-image: url(../imgs/icon-close.png);
+  background-repeat: no-repeat;
+}
+
+/* #endregion */
+/* #region MENU */
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: #E5E5E5;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.menu__top {
+  margin-bottom: 32px;
+}
+@media (min-width: 572px) {
+  .menu__top {
+    margin-bottom: 0;
+  }
+}
+.menu__content {
+  position: relative;
+}
+.menu__content {
+  padding-inline: 20px;
+}
+@media (min-width: 572px) {
+  .menu__content {
+    padding-inline: 72px;
+  }
+}
+.menu__nav {
+  margin-bottom: 40px;
+}
+.menu__phone-number {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 27px;
+  color: inherit;
+  text-decoration: none;
+}
+.menu__call-to-order {
+  display: block;
+  /* 
+  fit content ira fazer com que so se estenta a 
+  linha ate o tamanho max do elemento 
+  */
+  width: fit-content;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #292929;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 2px;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* #endregion */
+/* #region NAV */
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.nav__link {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+  font-size: 22px;
+  line-height: 22px;
+  letter-spacing: 2px;
+}
+.nav__link::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: #292929;
+  transform-origin: left;
+  transition: transform 0.3s;
+  transform: scale(0);
+}
+.nav__link:hover::after {
+  transform: scale(1);
+}
+
+/* #endregion */
+/* #region PAGE */
+.page {
+  font-family: "Inter", sans-serif;
+  color: #292929;
+  font-size: 16px;
+  line-height: 140%;
+  scroll-behavior: smooth;
+}
+.page__body {
+  margin: 0;
+  min-width: 320px;
+}
+.page__menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 0.3s linear;
+  pointer-events: none;
+}
+.page__menu:target {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: all;
+}
+
+/* #endregion */
+.top-bar {
+  padding-block: 24px;
+  padding-inline: 20px;
+}
+@media (min-width: 572px) {
+  .top-bar {
+    padding-inline: 72px;
+  }
+}
+.top-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+@media (min-width: 572px) {
+  .top-bar {
+    padding-block: 64px;
+  }
+}
+.top-bar__icons {
+  display: flex;
+  gap: 24px;
+}
+.top-bar__logo-link {
+  display: flex;
+  transition: transform 0.3s;
+}
+.top-bar__logo-link:hover {
+  transform: scale(1.2);
+}
+.top-bar__logo {
+  height: 16px;
+}
+@media (min-width: 572px) {
+  .top-bar__logo {
+    height: 24px;
+  }
+}
+
+/*# sourceMappingURL=aulaStyle.css.map */

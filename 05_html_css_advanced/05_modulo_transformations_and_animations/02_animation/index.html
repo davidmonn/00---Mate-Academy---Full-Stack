@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="back">
+        <a class="back" href="../01_transition/index.html">
+            Aula Anterior - Transition
+        </a>
+    </div>
+    
+    <main>
+
+        <article id="intro">
+
+            <h1 id="title">Animation</h1>
+
+            <h3 class="intro">Intro</h3>
+            <p>
+                Na aula anterior vimos sobre <strong>transition</strong>, que nos permite fazer a transição suave do estado de um elemento.
+            </p>
+            <p>
+                Porém, se o estado do elemento não mudar e desejarmos adicionar alguns efeitos, isso pode ser feito usando a propriedade <strong>animation</strong>.
+            </p>
+
+        </article>
+
+        <article class="conteudo">
+
+            <h3 class="cont-title">Código de Exemplo:</h3>
+
+            <p class="junto">
+                <strong>HTML:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/html.png" alt="HTML">
+                </picture>
+            </figure>
+
+            <p class="junto">
+                <strong>CSS:</strong>
+            </p>
+
+            <figure>
+                <picture>
+                    <img src="assets/imgs/css.png" alt="CSS">
+                </picture>
+            </figure>
+
+        </article>
+
+        <article class="conc">
+
+            <h3 class="junto">animation</h3>
+            <p>
+                Ela não é vinculada à transição de estado do elemento. Com isso, pode ser executada sem ações do usuário ou mudanças realizadas pelo JavaScript.
+            </p>
+            <p>
+                Para começar a usar animações, primeiro criamos um conjunto de quadros usando a regra <strong>@keyframes</strong>.
+            </p>
+            <p>
+                Caso a animação altere propriedades como <strong>left</strong>, <strong>right</strong>, <strong>top</strong> ou <strong>bottom</strong>, normalmente precisamos adicionar <strong>position: relative;</strong> ao elemento.
+            </p>
+
+<pre>
+<strong>
+@keyframes move {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 300px;
+    }
+}
+</strong>
+</pre>
+
+            <p>
+                Feito isso, ainda não ocorrerá nenhuma mudança, pois precisamos vincular a animação ao elemento.
+            </p>
+
+            <p>
+                Para isso utilizamos a propriedade <strong><code>animation-name</code></strong> e passamos o nome da animação criada, que neste caso é <strong>move</strong>.
+            </p>
+
+            <p>
+                Também precisamos definir uma duração usando a propriedade <strong>animation-duration</strong>.
+            </p>
+
+            <h3 class="junto">animation-fill-mode</h3>
+
+            <p>
+                Define como o elemento ficará antes do início e após o término da animação.
+            </p>
+
+            <p>
+                O valor <strong>forwards</strong> faz com que o elemento permaneça no estado final da animação após ela terminar.
+            </p>
+
+            <h3 class="junto">animation-iteration-count</h3>
+
+            <p>
+                Controla a quantidade de vezes que a animação será executada.
+            </p>
+
+            <p>
+                Se desejarmos que a animação aconteça continuamente, podemos utilizar o valor <strong>infinite</strong>.
+            </p>
+
+            <h3 class="junto">animation-direction</h3>
+
+            <p>
+                Controla a direção da animação.
+            </p>
+
+            <p>
+                O valor <strong>reverse</strong> executa a animação ao contrário, enquanto <strong>alternate</strong> alterna entre o sentido normal e o inverso.
+            </p>
+
+            <h3 class="junto">animation-play-state</h3>
+
+            <p>
+                Permite controlar se a animação está sendo executada ou pausada.
+            </p>
+
+            <p>
+                Podemos utilizá-la em conjunto com o pseudo-seletor <strong>:hover</strong> para pausar a animação quando o mouse estiver sobre o elemento.
+            </p>
+
+            <h3 class="junto">animation-timing-function</h3>
+
+            <p>
+                Controla a velocidade da animação ao longo da sua execução, deixando-a mais suave ou mais acelerada em determinados momentos.
+            </p>
+
+            <h3 class="junto">animation-delay</h3>
+
+            <p>
+                Define um atraso antes do início da animação.
+            </p>
+
+            <h3 class="junto">animation</h3>
+
+            <p>
+                É a forma resumida de declarar várias propriedades de animação em uma única linha. é importante seguir a ordem sendo ela: name duration timing-function delay iteration-count direction
+            </p>
+
+            <p>
+                Exemplo:
+            </p>
+
+<pre>
+<strong>
+animation: move 2s ease 1s infinite alternate forwards;
+</strong>
+</pre>
+
+            <h3 class="junto">2 Animações</h3>
+
+            <p>
+                Também podemos adicionar mais de uma animação ao mesmo elemento.
+            </p>
+
+            <p>
+                Para isso, separamos cada animação utilizando vírgulas.
+            </p>
+
+            <h3 class="junto">Exemplo: 2 animações em 1 elemento</h3>
+
+            <img src="./assets/imgs/exemplo.png" alt="Exemplo">
+            
+            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
+                Conteúdo da aula
+            </a>
+
+        </article>
+        
+        <!-- <h1>Testes JS se necessário</h1> -->
+        <script src="assets/js/jscript.js"></script>
+
+    </main>
+        
+    <div class="next">
+        <a class="next" href="../03_transform/index.html">
+            Próxima Aula - Transform
+        </a>
+    </div>
+
+</body>
+</html>

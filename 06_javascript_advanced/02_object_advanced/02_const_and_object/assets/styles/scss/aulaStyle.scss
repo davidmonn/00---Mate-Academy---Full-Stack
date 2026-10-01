@@ -1,0 +1,37 @@
+/* #region NORMALIZE */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100vw;
+    background-color: skyblue;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+main {
+    width: inherit;
+    max-width: 1020px;
+    background-color: azure;
+    border-radius: 15px;
+    margin: 25px auto;
+    padding: 15px;
+}
+
+form input{
+    font-size: 1.5rem;
+}
+
+h1 {
+    width: 100vw;
+    max-width: 1020px;
+    font-size: 7rem;
+}
+
+
+
+/* #endregion */
+

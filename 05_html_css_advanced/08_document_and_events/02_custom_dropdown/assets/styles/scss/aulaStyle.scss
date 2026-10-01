@@ -1,0 +1,47 @@
+/* #region content */
+html {
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    line-height: 140%;
+    background-color: beige;
+}
+
+.content {
+    padding: 20px 40px;
+}
+
+/* #endregion */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown__trigger {
+    font: inherit;
+}
+
+.dropdown__content {
+    position: absolute;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+
+    overflow: hidden;
+
+    transform-origin: top center;
+    opacity: 0;
+    // Usamos pois dependendo de onde clicasse poderia pegar no elemento e nao abria
+    pointer-events: none;
+    transform: translateY(-20px);
+    transition:
+     opacity .3s,
+     transform .3s
+     ;
+}
+
+.dropdown--active .dropdown__content {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}

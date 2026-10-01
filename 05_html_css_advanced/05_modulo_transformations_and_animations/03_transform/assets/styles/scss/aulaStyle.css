@@ -1,0 +1,60 @@
+/* #region NORMALIZE */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: skyblue;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+main {
+    width: 920px;
+    background-color: azure;
+    border-radius: 15px;
+    margin: 25px auto;
+    padding: 15px;
+}
+
+form input{
+    font-size: 1.5rem;
+}
+
+h1 {
+    font-size: 7rem;
+}
+
+
+
+/* #endregion */
+
+.cont-quadrado {
+  margin: 100px auto;
+  height: 100px;
+  width: 100px;
+  border: 2px solid #000;
+
+  perspective: 400px;
+}
+
+.box {
+  height: 100%;
+  background-color: green;
+  transition: transform 1s;
+  transition-timing-function: linear;
+
+    &:hover {
+        /* transform: translate(20px, 60px); */
+        /* transform: translateZ(-100px); */
+        /* transform: scale(0.9); */
+        transform: rotateY(30deg);
+        /* Tambem podemos passar os valores em pxs */
+        transform-origin: top right;
+        /* Tambem podemos fazer apenas com skew ou dois valores como no ex abaixo. */
+        transform: skew(30deg, 15deg) translate(20px, 60px);
+    }
+}
+
