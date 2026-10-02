@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Board of fame</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="assets/js/jscript.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <article id="intro">
+        <h1 id="title">Board of fame</h1>
+
+        <p>
+          Todos os anos, a Fábrica de Robôs Mate conduz batalhas de robôs na
+          arena. Várias modificações de robôs competem pela superioridade e os
+          campeões entram no quadro da fama. Existem robôs militares, de limpeza
+          e de carregamento - como você pode ver, existem vários modelos de
+          robôs.
+        </p>
+
+        <p class="separado">
+          Vamos ser justos e criar um quadro de fama para esta competição
+          (classe <strong>BoardOfFame</strong>).
+        </p>
+
+        <p>
+          Por padrão, haverá apenas 3 lugares no quadro da fama. No caso de
+          torneios internacionais, onde poderiam haver mais vagas de campeão, o
+          construtor da classe <strong>BoardOfFame</strong> poderá aceitar
+          qualquer outro número de vagas.
+        </p>
+
+        <p class="separado">
+          Crie um método <strong>addRecord</strong> para todas as instâncias da
+          classe <strong>BoardOfFame</strong> que receberão o objeto
+          <strong>robot</strong> e adicione uma nova entrada ao quadro da fama.
+          Se o novo robô tiver mais pontos que os demais, ele ocupará seu lugar
+          no topo, movendo os outros robôs para baixo.
+        </p>
+
+        <p>
+          Crie também um getter <strong>list</strong> para instâncias que
+          listará os campeões no formato do exemplo. A lista deve ser uma
+          string. Getter deve retornar
+          <strong
+            class="dif"
+            style="
+              background-color: #ccc;
+              padding-inline: 9px;
+              border-radius: 5px;
+              font-weight: bolder;
+            "
+            >...</strong
+          >
+          para elementos não existentes (se você precisar dos primeiros 5, mas
+          no array apenas 3 robôs).
+        </p>
+
+        <p class="separado">
+          De acordo com as regras do torneio, todas as inscrições devem ter
+          nomes exclusivos. Se o novo robô tiver o mesmo nome de um dos robôs da
+          lista, basta atualizar o valor de <strong>score</strong> existente.
+        </p>
+
+        <img src="assets/imgs/ex.png" alt="Exemplo" />
+
+        <p class="separado">Dicas:</p>
+
+        <ul
+          style="
+            list-style: disc;
+            padding-inline: 30px;
+            font-size: 20px;
+            min-width: 800px;
+            margin-block: 15px;
+          "
+        >
+          <li>
+            adicione a variável <strong>this.numberOfPlaces</strong> dentro do
+            construtor e salve a contagem de lugares no quadro da fama
+          </li>
+
+          <li>
+            além disso, crie o array <strong>this.robots </strong>dentro do
+            construtor e coloque lá todos os objetos <strong>robot</strong> no
+            método <strong>addRecord</strong>
+          </li>
+
+          <li>
+            classifique <strong>this.robots</strong> dentro do método
+            <strong>addRecord</strong>
+          </li>
+
+          <li>
+            use o getter <strong>list</strong> para transformar um array de
+            objetos <strong>this.robots</strong> em string formatada
+          </li>
+        </ul>
+
+        <h1 class="separado">Resultado:</h1>
+        <img src="assets/imgs/js.png" alt="Resultado">
+
+      </article>
+
+      <!-- <h1>Testes JS se necessário</h1> -->
+    </main>
+  </body>
+</html>
