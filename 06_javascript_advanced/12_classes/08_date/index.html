@@ -1,70 +1,235 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Date</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="back">
-        <a class="back" href="../07_javascript_modules/index.html">
-            Aula Anterior - Javascript Modules
-        </a>
+      <a class="back" href="../07_javascript_modules/index.html">
+        Aula Anterior - Javascript Modules
+      </a>
     </div>
-    
+
     <main>
+      <article id="intro">
+        <h1 id="title">Date</h1>
 
-        <article id="intro">
+        <h3 class="intro">Intro</h3>
+        <p>
+          Agora iremos dar uma olhada em algumas classes de objetos
+          incorporadas.
+        </p>
+      </article>
 
-            <h1 id="title">Date</h1>
+      <article class="conteudo">
+        <h3 class="cont-title">Codigo de Exemplo:</h3>
 
-            <h3 class="intro">Intro</h3>
-            <p>
-                
-            </p>
+        <p class="junto">
+          <strong>JS:</strong>
+        </p>
 
-        </article>
+        <figure>
+          <picture>
+            <img src="./imgs/js.png" alt="JS" />
+          </picture>
+        </figure>
+      </article>
 
-        <article class="conteudo">
+      <article class="conc">
+        <div class="conteudo">
+          <h3 class="separado">Entendendo Melhor</h3>
 
-            <h3 class="cont-title">Codigo de Exemplo:</h3>
+          <p>
+            Em <span>JavaScript</span>, podemos trabalhar com datas usando a
+            classe <span>Date</span>. Para obter a data e a hora atuais, usamos
+            <span>new Date()</span>.
+          </p>
 
-            <p class="junto">
-                <strong>JS:</strong>
-            </p>
+          <div class="content">
+            <strong>
+              <pre>
+const today = new Date();
 
-            <figure>
-                <picture>
-                    <img src="assets/imgs/js.png" alt="JS">
-                </picture>
-            </figure>
+console.log(
+    today
+);
+</pre
+              >
+            </strong>
 
-        </article>
+            <img src="imgs/log_today.png" alt="Exemplo de new Date()" />
+          </div>
 
-        <article class="conc">
+          <p>
+            Ao executar esse código, o <span>DevTools</span> mostrará a data e a
+            hora atuais, incluindo o fuso horário.
+          </p>
 
-            
-            
-            <a href="contAula.html" style="display: inline-block; padding: 20px; font-weight: bolder; color: red;">
-                Conteudo da aula
-            </a>
+          <p>
+            A variável <span>today</span> guarda um objeto de data. Esse objeto
+            possui métodos que permitem consultar e modificar informações como
+            ano, mês, dia e hora.
+          </p>
 
-        </article>
-        
-         <!-- <h1>Testes JS se necessário</h1> -->
-         <script src="assets/js/jscript.js"></script>
-        </main>
-        
-    <div class="next">
-        <a class="next" href="../">
-            Próxima Aula - 
+          <p class="separado">
+            <span>Exemplo:</span>
+          </p>
+
+          <pre>
+<sp class="comment">// getFullYear() -> Retorna o ano da data</sp>
+
+console.log(
+    today.getFullYear()
+);
+</pre>
+
+          <p>
+            Além do ano, podemos consultar o mês, o dia, o dia da semana e os
+            horários usando outros métodos, como
+            <span>getMonth()</span>, <span>getDate()</span>,
+            <span>getDay()</span> e <span>getHours()</span>.
+          </p>
+
+          <p>
+            Também podemos modificar uma data usando métodos que começam com
+            <span>set</span>. Por exemplo, <span>setFullYear()</span>
+            altera o ano da data armazenada no objeto.
+          </p>
+
+          <pre>
+<sp class="comment">// Altera o ano para 2025</sp>
+
+today.setFullYear(2025);
+
+console.log(
+    today.getFullYear()
+);
+</pre>
+
+          <br />
+
+          <pre>
+<sp class="comment">// Adiciona 15 dias à data armazenada em today</sp>
+
+today.setDate(today.getDate() + 15);
+
+console.log(
+    today
+);
+</pre>
+
+          <p>
+            No segundo exemplo, primeiro usamos
+            <span>getDate()</span> para obter o dia atual. Depois, somamos 15 e
+            usamos <span>setDate()</span>
+            para atualizar a data.
+          </p>
+
+          <p>
+            Se o resultado ultrapassar o último dia do mês, o
+            <span>JavaScript</span> ajustará automaticamente o mês e, se
+            necessário, o ano. Por isso, não precisamos calcular essas mudanças
+            manualmente.
+          </p>
+
+          <p>
+            Podemos consultar o mês atualizado usando
+            <span>today.getMonth()</span>. Porém, precisamos lembrar que os
+            meses começam em <span>0</span> no JavaScript: janeiro é 0,
+            fevereiro é 1 e dezembro é 11.
+          </p>
+
+          <p class="separado">
+            Além dos métodos usados em objetos de data, a classe
+            <span>Date</span> também possui métodos estáticos. Eles são chamados
+            diretamente pela classe, sem precisar criar um objeto. Um exemplo é
+            <span>Date.now()</span>.
+          </p>
+
+          <pre>
+<sp class="comment">// Retorna os milissegundos desde 1º de janeiro de 1970</sp>
+
+console.log(
+    Date.now()
+);
+</pre>
+
+          <p>
+            Esse valor representa o tempo passado desde 1º de janeiro de 1970,
+            às 00:00:00 UTC, em milissegundos. Ele não é uma data formatada para
+            leitura humana.
+          </p>
+
+          <p>
+            Para transformar esse valor em um objeto de data, podemos usar
+            <span>new Date()</span>.
+          </p>
+
+          <pre>
+<sp class="comment">// Converte os milissegundos em um objeto de data</sp>
+
+console.log(
+    new Date(Date.now())
+);
+</pre>
+
+          <p>
+            Outro método estático é <span>Date.parse()</span>. Ele recebe um
+            texto que representa uma data reconhecida e retorna o tempo
+            correspondente em milissegundos desde 1º de janeiro de 1970.
+          </p>
+
+          <pre>
+<sp class="comment">// Converte uma data em texto para milissegundos</sp>
+
+console.log(
+    Date.parse('2026-10-02')
+);
+
+<sp class="comment">// Cria um objeto de data a partir do mesmo texto</sp>
+
+console.log(
+    new Date('2026-10-02')
+);
+</pre>
+
+          <p>
+            A diferença é que <span>Date.parse()</span> retorna um número,
+            enquanto <span>new Date()</span> cria um objeto de data. Assim,
+            podemos escolher o método de acordo com o que precisamos fazer.
+          </p>
+        </div>
+
+        <a
+          href="contAula.html"
+          style="
+            display: inline-block;
+            padding: 20px;
+            font-weight: bolder;
+            color: red;
+          "
+        >
+          Conteúdo da aula
         </a>
-    </div>
+      </article>
 
-</body>
+      <!-- <h1>Testes JS se necessário</h1> -->
+      <script src="assets/js/jscript.js"></script>
+    </main>
+
+    <div class="next">
+      <a class="next" href="#" style="text-decoration: none">
+        Fim Modulo - Proximo Modulo: <span style="color: #ccc">React</span>
+      </a>
+    </div>
+  </body>
 </html>

@@ -156,9 +156,11 @@ pre {
     margin: 25px auto;
     border-radius: 15px;
     display: inline-block;
-    background-color: aliceblue;
+    background-color: black;
     padding: 15px 40px 15px 15px;
     font-size: 20px;
+    color: white;
+    font-weight: bolder;
 }
 
 .conteudo {
@@ -184,8 +186,14 @@ span {
     width: fit-content;
 }
 
+.comment {
+    color: yellow;
+}
+
 .content {
     display: grid;
     margin-block: 20px;
     grid-template-columns: repeat(2, auto);
+    justify-content: space-around;
+    align-items: center;
 }
