@@ -1,74 +1,20 @@
-const test = `
-  background-color:      #fff;
--webkit-border-radius: 5px;
-  border-radius     : 5px;
-  border: 1px solid #e8e8e8;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  clear   : both       ;
-  cursor: pointer;
-  float: left;
-  font-family: inherit;
-      font-size: 14px;
-  font-weight: 400;
-  height: 42px;
-  line-height:    40px;
-  outline: 0;
-  padding-left    : 18px;
-  padding-right: 30px;
-  ;
+const carolus =  { name: 'Carolus Haverbeke', sex: 'm', born: 1832, died: 1905 };
+const emma = { name: 'Emma de Milliano', sex: 'f', born: 1876, died: 1956 };
+const maria = { name: 'Maria de Rycke', sex: 'f', born: 1683, died: 1724 };
+const carel = { name: 'Carel Haverbeke', sex: 'm', born: 1796, died: 1837 };
 
-  ;
-  position: relative;
+const people = [carolus, emma, maria, carel];
 
-
-  text-align: left !important;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-
-
-  white-space: nowrap;
-  width: auto;
-`;
-
-// function convertToObject(sourceString) {
-//   let convert = sourceString.split(';');
-//   let save = {};
-
-//   convert.map((val) => {
-//     if (val.trim() === '') {
-//       return val;
-//     }
-
-//     let sep = val.split(':');
-
-//     save[sep[0].trim()] = sep[1].trim();
-//   })
-
-//   return save;
-// }
-
-function convertToObject(sourceString) {
-  const convert = sourceString.split(';');
-  const stylesObject = {};
-
-  convert.forEach((line) => {
-    if (line.trim() === '') {
-      return;
+function createSorterBy(field) {
+  return (a, b) => {
+    if (a[field] < b[field]) {
+      return -1;
     }
 
-    const parts = line.split(':');
+    if (a[field] > b[field]) {
+      return 1;
+    }
 
-    stylesObject[parts[0].trim()] = parts[1].trim();
-  });
-
-  return stylesObject;
+    return 0;
+  };
 }
-
-const result = convertToObject(test);
-
-// console.log(test);
-console.log(result);
