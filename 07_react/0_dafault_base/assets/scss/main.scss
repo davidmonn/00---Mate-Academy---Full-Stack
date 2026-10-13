@@ -1,0 +1,110 @@
+@use './var.scss' as var;
+@use './mixins.scss' as mix;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: var.$color-default;
+  display: grid;
+  justify-content: center;
+}
+
+article,
+.content,
+.conteudo {
+  width: 100%;
+}
+
+main {
+  background-color: var.$gray-dark;
+  padding: 15px;
+  box-sizing: border-box;
+  align-items: center;
+
+  @include mix.response-default-main-header();
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background-color: #fff;
+  margin-block: 15px;
+  padding: 20px;
+  box-sizing: border-box;
+
+  @include mix.response-default-main-header {
+    @include mix.desk {
+        max-width: 1021px;
+        width: 100%;
+      }
+    }
+}
+
+article {
+  background-color: #fff;
+  padding: var.$space-default;
+  width: 100%;
+  text-indent: 15px;
+
+  @include mix.response-defaults-elem;
+}
+
+h1 {
+  font-weight: bolder;
+}
+
+main,
+header,
+article,
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  border: 2px solid var.$gray-light;
+}
+
+.conteudo {
+  background-color: #fff;
+  margin-block: 20px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 2fr;
+  align-items: center;
+
+  @include mix.response-defaults-elem();
+}
+
+.junto {
+  margin: 0;
+  padding: 0;
+}
+
+.separado {
+  padding: var.$space-default;
+  margin:var.$space-default;
+}
+
+.prev {
+  justify-content: left;
+}
+
+.next {
+  justify-content: right;
+}
+
+.next,
+.prev {
+  display: flex;
+  color: var.$gray-dark;
+  font-weight: bolder;
+  padding: var.$space-default;
+}
