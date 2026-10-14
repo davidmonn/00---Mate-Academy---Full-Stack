@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/scss/main.css">
+  <title>Simple Component</title>
+</head>
+<body>
+  <div >
+    <a class="prev" href="../01_intro_to_react/index.html">Aula Anterior: Intro to React</a>
+  </div>
+
+  <header>
+    <h1 class="title-princ">Simple Component</h1>
+  </header>
+
+  <main>
+
+    <article>
+      <h3>Intro:</h3>
+
+      <p>
+        Agora iremos ver sobre <span>componentes</span>, essencialmente serao os mesmos <strong>blocos BEM</strong> que usamos <span>CSS</span>, apenas com adicao de funcionalidade <span>JavaScrpit</span>.
+      </p>
+
+    </article>
+
+    <div class="conteudo">
+      <h3 class="separado">Criando <span>componente React:</span></h3>
+
+      <p class="separado">
+        <span>Iremos fazer essas configuracoes em nosso react-app</span>
+      </p>
+
+      <p>
+        Para criarmos um <span>componente React</span>, usamos uma funcao que deve <strong>retornar</strong> <span>JSX</span>.
+      </p>
+
+      <p>
+        Entao iremos criar uma <strong>function</strong>, feito isso iremos nomea-la de <span>App</span> que é um nome <strong>tipico</strong> para <strong>componente principal</strong>. Ficando da seguinte forma:
+      </p>
+      
+<pre>
+import { createRoot } from 'react-dom/client';
+
+// Seletor por id
+const element = document.querySelector("#root")
+
+<code>
+  function App() {
+  
+  }
+</code>
+
+createRoot(element).render(
+< h1 >New text< /h1 >
+);
+</pre>
+
+    <p>
+      Agora essa funcao deve retornar <span>JSX</span>, se houver apenas uma linha em nosso <span>createRoot</span>, por exemplo igual temos com o <span>h1</span>, podemos escrever diretamente apos o <strong>return</strong>. Porem geralmente temos mais de uma linha, e mesmo que seja apenas uma linha agora, pode haver mais depois.
+    </p>
+    <p>
+      Portanto o <span>JSX</span> é escrito geralmente entre <strong>parenteses</strong> e em uma nova linha, ficando da seguinte forma:
+    </p>
+
+<pre>
+import { createRoot } from 'react-dom/client';
+
+// Seletor por id
+const element = document.querySelector("#root")
+
+function App() {
+  <code>
+  return (
+    < h1 >New text< /h1 >
+  )
+  </code>
+}
+
+createRoot(element).render(
+< h1 >New text< /h1 >
+);
+
+</pre>
+
+    <p>
+      Agora temos um <strong>componente</strong> que <strong>retorna</strong> esse <strong>layout</strong>.
+    </p>
+
+    <h3 class="separado">Como usa-lo ?</h3>
+    <p>
+      Podemos substituir a <strong>tag "h1"</strong> pela <strong>tag <span>"App"</span></strong>, ficando da seguinte forma:
+    </p>
+
+<pre>
+import { createRoot } from 'react-dom/client';
+
+// Seletor por id
+const element = document.querySelector("#root")
+
+function App() {
+  return (
+    < h1 >New text< /h1 >
+  )
+}
+
+createRoot(element).render(
+  <code>< App /></code>
+);
+
+</pre>
+
+    <p>
+      Como este <strong>componente</strong> nao tem uma <strong>tag</strong> de fechamento, no <span>React</span>, é escrito como uma <strong>tag</strong> <span>auto-fechante</span>
+    </p>
+
+    <p>
+      No <span>React</span> é crucial que os componentes tenham um nome com uma letra <span>maiuscúla</span>. Pois se agora mudarmos esse nome para uma letra <strong>minúscula</strong>, o <span>React</span> pensara que é uma <strong>tag HTML regular</strong>, e nada ira funcionar. Portanto o <span>React</span> determina se é um elemento regular ou um <strong>componente</strong> com base na primeira letra da <strong>tag</strong> e depois o procura entre as funcoes.
+    </p>
+
+    <p class="junto">
+      A sintaxe que temos acima, pode ser um pouco simplificada, se tivermos uma <strong>funcao</strong> que <strong>imediatamente retorne</strong> um valor, podemos usar uma <strong>arrow function</strong>.
+    </p>
+    <p>
+      Para isso podemos ao inves de usarmos uma <strong>function</strong> diretamente, podemos passar uma <span>const</span>, ficando da seguinte forma:
+    </p>
+
+<pre>
+import { createRoot } from 'react-dom/client';
+
+// Seletor por id
+const element = document.querySelector("#root")
+
+<code>
+const App = () => (
+  < h1 >New text< /h1 >
+);
+</code>
+
+createRoot(element).render(
+  <App />
+);
+
+</pre>
+
+    <p>
+      Se houvessem outros comandos nessa funcao, teriamos que usar chaves '<span>{}</span>', escrever a palavra <span>return</span> e retornar o <span>JSX</span> sendo no caso nosso <span>< h1 >New text< /h1 ></span>
+    </p>
+
+    </div>
+
+    <div class="conteudo">
+
+      <h3 class="separado">Movendo <span>componente</span></h3>
+      <p>
+        Agora nosso proximo passo é mover um componente para um <strong>arquivo</strong> separado.
+      </p>
+      <p>
+        Como nossa aplicacao pode ser grande, cada <strong>componente</strong> deve estar sempre em um arquivo separado.
+      </p>
+      <p>
+        Para fazermos isso iremos abrir nossos <strong>arquivos</strong> dentro de nosso <strong>diretorio</strong> <span>src</span>, iremos criar um <strong>arquivo</strong> para o <span>componente principal</span>, sendo em nosso caso o <span>App</span>. Iremos nomea-lo da mesma forma, ficando <span>App.jsx</span>.
+      </p>
+
+      <img src="assets/imgs/arquvi-App.png" alt="Criando Arquivo" class="img-space">
+
+      <p>
+        Todos os <strong>arquivos</strong> com sintaxe <span>JSX</span> devem ter uma extencao assim para um melhor autocompletar.
+      </p>
+      <p>
+        Poderia ser apenas ex: <span>App.js</span>, ja que o <span>React</span> o entende, mas no <span>VS Code</span> o <strong>autocompletar</strong> para <span>HTML</span> nao ira funcionar bem para esses <strong>arquivos</strong>. Por isso o nomeamos com <span>.jsx</span>.
+      </p>
+      <p>
+        Apos criarmos iremos acessar nosso arquivo <span>App.jsx</span>, feito isso iremos mover nossa <strong>funcao</strong> <span>const App</span> de um arquivo para outro
+      </p>
+
+      <p class="junto">
+        Apos move-lo, para o usarmos em nosso arquivo <strong>principal</strong> precisamos importa-lo. Existem duas maneiras para podermos <span>importar</span>:
+      </p>
+
+      <p>
+        Alem da funcao <span>createRoot</span> que importamos pelo nome, queremos importar algo de nosso <strong>arquivo</strong> <span>"App.jsx"</span>. Para isso podemos usar a <strong>palavra-chave</strong> <span>export</span> antes da palavra chave <strong>const App</strong>, feito isso agora podemos importa-lo pelo <span>nome</span> ficando da seguinte forma:
+      </p>
+
+      <div class="content">
+
+<pre class="idem">
+<code>ARQUIVO INDEX.JSX</code>
+import { createRoot } from 'react-dom/client';
+<code>
+// Iremos passar o nome da variavel que esta sendo importada dentro da chaves
+// E dentro das aspas adicionamos o caminhho
+import { App } from './App'
+</code>
+
+// Seletor por id
+const element = document.querySelector("#root")
+
+createRoot(element).render(
+  < App />
+);
+</pre>
+
+<pre class="idem">
+<code>ARQUIVO APP.JSX</code>
+<code>export</code> const App = () => (
+  < h1 >New text< /h1 >
+);
+</pre>
+
+      </div>
+
+      <p>
+        Em nosso arquivo que estamos importando o <span>index.jsx</span>, temos opcao tambem de estarmos utilizando o <span>as</span> apos passarmos o <span>import</span>, exemplo:
+      </p>
+<pre>
+import { createRoot } from 'react-dom/client';
+
+// Usamos o as
+import { App <code>as Root</code> } from './App'
+
+// Seletor por id
+const element = document.querySelector("#root")
+
+createRoot(element).render(
+  <code>< Root /></code>
+);
+
+</pre>
+
+      <p>
+        Com isso estamos basicamente alterando apenas a forma como iremos chamar esse componente, onde antes chamavamos <span>App</span>, chamamos o <span>Root</span>, usamos mais para podermos simplificar sua chamada, caso seja um nome complicado.
+      </p>
+
+      <p>
+        Se importarmos mais de uma <strong>variavel</strong> poderiamos adicionar uma virgula e escrever a proxima variavel, e como renome-la.
+      </p>
+
+      <p>
+        Podemos <span>exportar</span> tambem um <span>valor</span> como padrao e em seguida, um valor é <strong>exportado</strong>, ex:
+      </p>
+
+<pre>
+<code>// App.jsx</code>
+export const App = () => (
+  < h1 >New text< /h1>
+);
+
+<code>export default App;</code>
+</pre>
+
+<pre>
+<code>// index.jsx</code>
+import { createRoot } from 'react-dom/client';
+
+<code>// Essa forma nao é muito usada, ja que tb nao temos nem autopreencher</code>
+import <code>Valor</code> from './App';
+
+// Seletor por id
+const element = document.querySelector("#root")
+
+createRoot(element).render(
+
+  < <code>Valor</code> />
+    
+);
+</pre>
+      
+      <p>
+        Agora iremos criar outro <span>componente</span>, como ja mencionado, normalmente quando criamos <span>componentes</span>, criamos em <strong>diretorios</strong> separados. <span>App</span> é o <span>componente</span> principal, entao ele permanece na <strong>raiz</strong>, entao para os demais iremos criar um novo <strong>diretorio (arquivo)</strong> e chama-lo de <span>components</span> dentro de nosso <span>src</span>.
+      </p>
+      <p>
+        Dentro de nosso <strong>diretorio</strong> <span>components</span>, iremos criar outros <strong>componentes</strong>, iremos criar um chamado de <span>Header.jsx</span>, ele sera o <strong>header</strong> de nosso <span>site</span>. Iremos comecar <span>exportando</span> uma <span>const</span>, ficando da seguinte forma:
+      </p>
+      
+<pre>
+<code>// Header.jsx</code>
+
+<code>export const</code> Header = () => (
+  < header> Page Header < /header>
+);
+</pre>
+
+      <p>
+        Como ela é uma <span>tag</span> iremos escreve-la em minusculas, pois em <span>maiusculas</span> é um <span>componente React</span> e <span>minusculas</span> é uma <strong>tag</strong> <span>HTML regular</span>. Em seguida para usarmos este <span>componente</span> em nossa aplicacao, temos que importa-lo.
+      </p>
+
+      <p class="junto">
+        Para isso iremos voltar em nosso <span>"App.jsx"</span> e usar <span>import</span>, ficando da seguinte forma:
+      </p>
+
+<pre>
+<code>// App.jsx</code>
+<code>import { Header } from './components/Header';</code>
+
+export const App = () => (
+  < h1>New text< /h1>
+);
+</pre>
+      
+      <p>
+        Iremos supor que nossa aplicacao se constituida de uma <strong>div</strong>, onde dentro da qual havera alguns <strong>elementos</strong>, ficara da seguinte forma:
+      </p>
+
+      <div class="content">
+        
+<pre>
+<code>//Header.jsx</code>
+export const Header = () => (
+  < header>Page Header< /header>
+);
+</pre>
+
+<pre>
+<code>// App.jsx</code>
+<code>import { Header } from './components/Header';</code>
+
+export const App = () => (
+  <div>
+    < h1>My Page< /h1>
+
+    <code>
+      //Podemos observar que sua primeira letra é maiuscula ou seja,
+      //estamos importando a variavel.
+    </code>
+    < Header />
+  </div>
+);
+
+</pre>
+
+      </div>
+
+      <p>
+        Em nossa pagina <span>react-app (site)</span>, teremos o seguinte resultado:
+      </p>
+      <img src="assets/imgs/result-new-component.png" alt="component Header" class="img-space">
+
+      <p class="junto">
+        Dessa forma aprendemos a criar <span>componentes</span>, <span>componentes</span> sao <strong>funcoes</strong> que <strong>retornam</strong> <span>JSX</span>, para cada <strong>componente</strong> criamos seu proprio <strong>arquivo</strong>. O <span>componente</span> principal <span>App.jsx</span> estara em nosso <span>Root</span>, colocaremos todos os outros na <strong>pasta/diretorio</strong> <span>components</span>. Os <span>components</span> devem ter a primeira letra <span>maiuscula</span>, e os <strong>exportaremos</strong> como uma exportacao <span>nomeada</span>: <span>"export const "</span> seguida por seu nome.
+      </p>
+
+      <p>
+        Dentro do arquivo onde usamos o componente em nosso caso o <span>App.jsx</span>, fazemos uma <span>importacao</span> e em seguida pelo <span>nome</span>, importamos nosso componente do arquivo correspondente e o adiciono como uma <strong>tag</strong>
+      </p>
+
+    </div>
+
+    <div class="link-aula">
+      <a href="./tests.html" class="conteudo-aula">Conteudo Aula</a>
+    </div>
+
+  </main>
+
+  <div class="content-link">
+    <a class="next" href="../03_add_component_styles/index.html">
+      Proxima Aula: Add Component Styles
+    </a>
+  </div>
+</body>
+</html>
