@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/scss/main.css">
-  <title>Document</title>
+  <title>Intro to React</title>
 </head>
 <body>
   <div >
@@ -12,18 +12,276 @@
   </div>
 
   <header>
-    <h1>Document</h1>
+    <h1>Intro to React</h1>
   </header>
 
   <main>
 
     <article>
       <h3>Intro:</h3>
+      <p class="junto">
+        Agora iremos comecar nossa introducao ao <span>React</span>.
+      </p>
+      
     </article>
 
-    <div class="conteudo">
-      <h3 class="separado">Entendendo Melhor:</h3>
-    </div>
+<div class="conteudo">
+  <h3 class="separado">Entendendo Melhor:</h3>
+
+  <p>
+    <span>React</span> é uma biblioteca <strong>JavaScript</strong> que facilita a criação de interfaces para sites e aplicações web. Também existe o <span>React Native</span>, que permite criar aplicativos para dispositivos móveis. Além disso, o React pode ser usado com frameworks como o <span>Next.js</span>.
+  </p>
+
+  <p class="separado">
+    O <span>React</span> trabalha com <strong>componentes</strong>. Um componente é uma função que retorna elementos que serão exibidos na página, geralmente escritos usando <strong>JSX</strong>.
+  </p>
+
+  <p>
+    <span>JSX</span> é uma sintaxe que permite escrever estruturas parecidas com <strong>HTML</strong> dentro do <strong>JavaScript</strong>. Porém, o JSX não é HTML puro: ele precisa ser transformado para que o navegador consiga executar o código.
+  </p>
+
+  <p>
+    Podemos criar vários componentes e utilizá-los dentro de outros componentes. Isso permite dividir a interface em partes menores e reutilizáveis.
+  </p>
+
+  <p class="separado">
+    Para que o navegador consiga executar nosso código JSX, precisamos de uma ferramenta de <strong>build</strong>. Ela transforma o código que escrevemos em arquivos que o navegador consegue executar. O <span>Vite</span> é uma das ferramentas que podemos utilizar.
+  </p>
+
+  <p>
+    Antigamente, era comum iniciar projetos React usando o <span>Create React App</span>. Atualmente, essa ferramenta está obsoleta para novos projetos. Por isso, vamos conhecer seu funcionamento e depois utilizar o <span>Vite</span>, uma alternativa moderna.
+  </p>
+
+  <h3 class="separado">Create React App</h3>
+
+  <p>
+    Para criar um projeto usando essa ferramenta, podemos executar os comandos abaixo no terminal. Entretanto, esse método é apresentado apenas para entendermos o funcionamento da ferramenta antiga.
+  </p>
+
+<pre>
+npx create-react-app my-app
+cd my-app
+npm start
+</pre>
+
+  <p>
+    O primeiro comando cria o projeto chamado <span>my-app</span>. O segundo entra na pasta criada. O terceiro inicia o servidor de desenvolvimento e permite abrir a aplicação no navegador.
+  </p>
+
+  <h3 class="separado">Vite</h3>
+
+  <p>
+    O <span>Vite</span> é uma ferramenta que prepara nosso projeto para utilizar tecnologias como <strong>JavaScript, JSX e React</strong>. Também inicia um servidor de desenvolvimento para visualizarmos as alterações no navegador.
+  </p>
+
+  <p>
+    Para criar um projeto com Vite, podemos executar:
+  </p>
+
+<pre>
+npm create vite@latest
+</pre>
+
+  <p>
+    Durante a criação, o terminal solicitará algumas informações. Escolha um nome para o projeto e selecione <span>React</span> como framework. Depois, escolha a opção de JavaScript, caso queira estudar React com JavaScript puro.
+  </p>
+
+  <p>
+    Após a criação, entre na pasta do projeto e execute os comandos:
+  </p>
+
+<pre>
+cd nome-do-projeto
+npm install
+npm run dev
+</pre>
+
+  <p>
+    Substitua <span>nome-do-projeto</span> pelo nome escolhido. O comando <span>npm install</span> instala as dependências necessárias, e <span>npm run dev</span> inicia o servidor de desenvolvimento. O terminal mostrará o endereço que devemos abrir no navegador.
+  </p>
+
+  <h3 class="separado">Voltando à instalação do React</h3>
+
+  <p>
+    Agora vamos entender a estrutura do projeto criado pelo <span>Create React App</span>. Após a instalação, entramos na pasta do projeto e iniciamos a aplicação:
+  </p>
+
+<pre>
+cd my-app
+npm start
+</pre>
+
+  <p>
+    A aplicação será aberta no navegador, geralmente no endereço <span>localhost:3000</span>. Para abrir a pasta do projeto no <span>Visual Studio Code</span>, podemos executar o comando <span>code .</span> no terminal.
+  </p>
+
+  <figure class="separado">
+    <figcaption>Arquivos:</figcaption>
+    <img src="assets/imgs/arq-react-app.png" alt="Arquivos criados na instalação" style="width: auto; padding-inline: 30px; border-radius: 8%;">
+  </figure>
+
+  <p>
+    Entre os arquivos e pastas do projeto, temos:
+  </p>
+
+  <p>
+    <strong>package.json:</strong> contém informações sobre o projeto, suas dependências e seus comandos.
+  </p>
+
+  <p>
+    <strong>package-lock.json:</strong> registra as versões específicas das dependências instaladas.
+  </p>
+
+  <p>
+    <strong>README.md:</strong> contém informações e instruções sobre o projeto.
+  </p>
+
+  <p>
+    <strong>.gitignore:</strong> informa ao Git quais arquivos e pastas devem ser ignorados.
+  </p>
+
+  <p>
+    <strong>src:</strong> é a pasta em que normalmente ficam os componentes e os arquivos JavaScript da aplicação.
+  </p>
+
+  <p>
+    <strong>public:</strong> guarda arquivos públicos, como imagens e ícones, que podem ser utilizados pela aplicação.
+  </p>
+
+  <p class="separado">
+    <strong>Public:</strong> o professor sugere remover alguns arquivos desnecessários para o exemplo. Porém, não precisamos apagar tudo indiscriminadamente. O ideal é manter os arquivos necessários para o projeto funcionar e remover apenas o que sabemos que não será utilizado.
+  </p>
+
+  <figure>
+    <figcaption>Exemplo do arquivo <span>index.html</span> da pasta public:</figcaption>
+    <img src="assets/imgs/react-public-index.png" alt="Alterações no index.html público" class="img-space">
+  </figure>
+
+  <p class="junto">
+    Para conectar o React à página HTML, precisamos de um elemento que servirá como ponto de entrada da aplicação. Geralmente, utilizamos uma <span>div</span> com o atributo <strong>id="root"</strong>.
+  </p>
+
+<div class="content">
+  <pre>
+  < div id="root">< /div >
+  </pre>
+  
+    <img src="assets/imgs/react-id_root.png" alt="Criando o elemento root para o React" class="img-space" style="width: 820px; margin-block: 15px;">
+</div>
+
+  <p>
+    O elemento <span>root</span> funciona como um espaço reservado dentro do HTML. O React utiliza esse elemento para exibir e atualizar os componentes da aplicação.
+  </p>
+
+  <p>
+    Por exemplo, se criarmos um título usando React, ele será exibido dentro desse elemento. Os arquivos JavaScript responsáveis pela aplicação ficam normalmente na pasta <strong>src</strong>.
+  </p>
+
+  <p class="junto">
+    No exemplo do professor, ele sugere apagar os arquivos da pasta <span>src</span> e criar um arquivo chamado <span>index.jsx</span>. A extensão <span>.jsx</span> indica que o arquivo utiliza a sintaxe JSX.
+  </p>
+
+  <p>
+    Essa remoção é apenas uma simplificação do exercício. Em um projeto real, não devemos apagar arquivos sem antes verificar para que servem.
+  </p>
+
+  <p>
+    O <span>Create React App</span> já configura as ferramentas necessárias para trabalhar com JSX e módulos JavaScript. Por isso, podemos importar recursos de bibliotecas usando <strong>import</strong>.
+  </p>
+
+  <div class="content">
+<pre>
+import { createRoot } from 'react-dom/client';
+
+const element = document.querySelector('#root');
+const root = createRoot(element);
+
+root.render(
+  < h1 >Novo texto< /h1 >
+);
+</pre>
+
+    <img src="assets/imgs/aplicacao-react.png" alt="Aplicação React">
+  </div>
+
+  <p>
+    Vamos entender as partes principais desse código:
+  </p>
+
+  <p>
+    <strong>import:</strong> importa um recurso que foi criado e disponibilizado por outro arquivo ou biblioteca.
+  </p>
+
+  <p>
+    <strong>react-dom/client:</strong> fornece recursos para conectar o React aos elementos HTML da página.
+  </p>
+
+  <p>
+    <strong>createRoot:</strong> cria o ponto de entrada que o React utilizará para controlar uma parte da página.
+  </p>
+
+  <p>
+    <strong>document.querySelector('#root'):</strong> procura no HTML o elemento que possui <span>id="root"</span> e guarda esse elemento na variável <span>element</span>.
+  </p>
+
+  <p>
+    <strong>createRoot(element):</strong> prepara o elemento encontrado para receber a aplicação React.
+  </p>
+
+  <p>
+    <strong>root.render(...):</strong> exibe na página o conteúdo que passamos para o método <span>render</span>. Nesse exemplo, será exibido um título com o texto "Novo texto".
+  </p>
+
+  <p>
+    A diferença entre as bibliotecas é simples: <span>react</span> contém os recursos principais do React, enquanto <span>react-dom</span> fornece os recursos necessários para utilizar o React no navegador.
+  </p>
+
+  <p>
+    Podemos importar diretamente de <span>react-dom/client</span> porque o recurso <span>createRoot</span> está disponível nesse caminho. Não precisamos escrever o caminho completo até a pasta <span>node_modules</span>, pois o sistema de módulos resolve a importação.
+  </p>
+
+  <p class="separado">
+    <strong>Simplificando o código:</strong> como a variável <span>root</span> não será utilizada novamente nesse exemplo, podemos chamar <span>render</span> diretamente após <span>createRoot(element)</span>.
+  </p>
+
+  <div class="content">
+<pre>
+import { createRoot } from 'react-dom/client';
+
+const element = document.querySelector('#root');
+
+createRoot(element).render(
+  < h1 >Novo texto< / h1 >
+);
+</pre>
+
+    <img src="assets/imgs/simplificando-aplicacao-react.png" alt="Aplicação React simplificada">
+  </div>
+
+  <p>
+    O resultado é o mesmo. A diferença está apenas na forma de escrever o código. A primeira versão guarda o resultado de <span>createRoot</span> em uma variável; a segunda utiliza esse resultado diretamente.
+  </p>
+
+  <h3 class="separado">Voltando ao Vite</h3>
+
+  <p>
+    Agora vamos observar a estrutura de um projeto criado com <span>Vite</span>. Ele também possui arquivos como <span>package.json</span>, uma pasta <span>src</span> e um arquivo <span>index.html</span>.
+  </p>
+
+  <p>
+    No Vite, o arquivo <span>index.html</span> normalmente fica na raiz do projeto. Ele contém a estrutura inicial da página e indica qual arquivo JavaScript deve ser executado.
+  </p>
+
+  <p>
+    Para isso, o HTML utiliza uma tag <strong>script</strong> com o atributo <span>type="module"</span>. Esse atributo permite utilizar recursos de módulos JavaScript, como <span>import</span> e <span>export</span>.
+  </p>
+
+  <img src="assets/imgs/intro-vite.png" alt="Introdução ao Vite" class="img-space" style="max-width: 1021px;">
+
+  <p class="separado">
+    Na pasta <span>src</span>, o Vite cria arquivos que fazem parte da aplicação. O arquivo principal costuma ser chamado de <span>main.jsx</span>. Em vez de apagar todos os arquivos, primeiro devemos entender quais são utilizados pelo projeto.
+  </p>
+</div>
 
     <div class="link-aula">
       <a href="./tests.html" class="conteudo-aula">Conteudo Aula</a>

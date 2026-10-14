@@ -95,6 +95,7 @@ article,
 
 .prev {
   justify-content: left;
+  align-items: end;
 }
 
 .next {
@@ -104,7 +105,69 @@ article,
 .next,
 .prev {
   display: flex;
+  box-sizing: border-box;
   color: var.$gray-dark;
   font-weight: bolder;
   padding: var.$space-default;
+  width: fit-content;
+  border-radius: 10px;
+  border: 1px solid transparent;
+
+  transition: background-color 0.5s, color .7s;
+}
+
+.link-content-right {
+  display: flex;
+  justify-content: right;
+}
+
+.link-aula {
+  display: flex;
+  width: 100%;
+}
+
+.conteudo-aula {
+  display: flex;
+  padding: 10px;
+  font-weight: bolder;
+  border: 1px solid var.$gray-light;
+  background-color: var.$gray-light;
+  border-radius: 10px;
+  color: blue;
+  
+  transition: 0.4s, color 0.7s;
+}
+
+// #region Hovers
+
+.conteudo-aula:hover {
+  color: #fff;
+  background-color: transparent;
+}
+
+.next:hover,
+.prev:hover {
+  box-sizing: border-box;
+  color: red;
+  border: 1px solid black;
+}
+
+// #endregion Hovers
+
+.pag-test {
+  @include mix.response-defaults-elem;
+  margin-top: 50px;
+  height: 500px;
+}
+
+.title-test {
+  margin: 50px;
+  font-size: 62px;
+  color: #fff;
+}
+
+.p-test {
+  color: #fff;
+  font-size: 26px;
+  margin-bottom: 230px;
 }
