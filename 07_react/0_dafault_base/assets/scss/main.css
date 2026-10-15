@@ -41,7 +41,7 @@ header {
 
 article {
   background-color: #fff;
-  padding: 15px;
+  padding: 35px;
   width: 100%;
   text-indent: 15px;
 }
@@ -172,7 +172,7 @@ article,
 
 .content {
   display: grid;
-  margin-block: 15px;
+  margin-block: 35px;
   grid-template-columns: repeat(auto-fit, minmax(300px, auto));
   align-items: center;
   justify-content: space-around;
@@ -197,19 +197,23 @@ article,
   }
 }
 
+.content img {
+  height: auto;
+  max-width: 100%;
+}
+
 .t-junto {
   padding: 0;
   margin: 0;
 }
 
 .junto {
-  padding-top: 15px;
+  padding-top: 35px;
   margin-bottom: 0;
 }
 
 .separado {
-  padding-block: 15px;
-  margin-block: 15px;
+  margin-block: 35px;
 }
 
 .prev {
@@ -228,7 +232,7 @@ article,
   box-sizing: border-box;
   color: #888;
   font-weight: bolder;
-  padding: 15px;
+  padding: 35px;
   width: fit-content;
   border-radius: 10px;
   border: 1px solid transparent;

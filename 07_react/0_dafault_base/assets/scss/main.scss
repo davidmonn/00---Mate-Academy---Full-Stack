@@ -153,6 +153,11 @@ article,
   @include mix.response-defaults-elem();
 }
 
+.content img {
+  height: auto;
+  max-width: 100%;
+}
+
 .t-junto {
   padding: 0;
   margin: 0;
@@ -164,7 +169,6 @@ article,
 }
 
 .separado {
-  padding-block: var.$space-default;
   margin-block:var.$space-default;
 }
 
