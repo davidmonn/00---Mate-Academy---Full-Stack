@@ -20,6 +20,15 @@
 
 // #endregion
 
+// #region Header
+
+@mixin header-response {
+  @content;
+  width: fit-content;
+}
+
+// #endregion Header
+
 // #region Response Defaults
 
 @mixin response-default-main-header {

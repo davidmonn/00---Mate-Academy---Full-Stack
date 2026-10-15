@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/scss/main.css">
+  <title>Add Component Styles</title>
+</head>
+<body>
+  <div >
+    <!-- <a class="prev" href="#">Aula Anterior: </a> -->
+  </div>
+
+  <header>
+    <h1 class="title-princ">Add Component Styles</h1>
+  </header>
+
+<main>
+
+  <article>
+    <h3>Intro:</h3>
+
+    <p>
+      Agora iremos discutir sobre como <strong>conectar</strong> estilos aos <span>componentes React</span>.
+    </p>
+
+    <p>
+      Geralmente, como um componente é uma peça independente da interface, seus estilos podem ficar localizados ao lado dele, facilitando a organização do projeto.
+    </p>
+
+  </article>
+
+  <div class="conteudo">
+    <h3 class="separado">Entendendo Melhor:</h3>
+
+    <p>
+      Para iniciar, iremos continuar em nosso <span>projeto "react-app"</span>.
+    </p>
+
+    <p>
+      Dentro dele, iremos acessar nosso arquivo <span>App.jsx</span> e criar um <strong>arquivo</strong> chamado <span>App.css</span>.
+    </p>
+
+    <p class="junto">
+      Dentro do diretório <span>src</span>, iremos criar um arquivo chamado <span>App.css</span>.
+    </p>
+
+    <img src="assets/imgs/create-css-app.png" alt="Criação do arquivo CSS do App" class="img-space" style="width: 450px;">
+
+    <p class="junto">
+      Feito isso, poderemos escrever nossos estilos, que serão aplicados assim que importarmos o arquivo. Por enquanto, iremos definir a <strong>fonte</strong> da <strong>página inteira</strong> e aplicar um efeito para teste, como no exemplo:
+    </p>
+
+    <img src="assets/imgs/application-basic-css.png" alt="Aplicando CSS básico" class="img-space">
+
+    <p class="junto">
+      Precisamos voltar ao nosso <strong>arquivo</strong> <span>JSX</span> e importar o arquivo CSS. Então, iremos voltar para nosso <span>App.jsx</span>, que ficará da seguinte forma:
+    </p>
+
+    <img src="assets/imgs/aplicando-css-basic.png" alt="Importando o CSS" class="img-space">
+
+    <p>
+      Para conectarmos um <strong>arquivo</strong> <span>CSS</span> ao arquivo do <strong>componente</strong>, usamos <span>import</span> seguido do caminho para esse arquivo.
+    </p>
+
+    <p>
+      Obs.: nesse caso, incluímos a extensão do arquivo no caminho da importação.
+    </p>
+
+  </div>
+
+  <div class="conteudo">
+
+    <h3 class="separado">Importando SCSS</h3>
+
+    <p>
+      Agora que sabemos como importar <span>CSS</span>, iremos ver como podemos importar <span>SCSS</span>.
+    </p>
+
+    <p class="junto">
+      Iremos começar modificando a <strong>extensão</strong> do nosso <strong>arquivo</strong> <span>CSS</span> para <span>.scss</span>, ficando da seguinte forma:
+    </p>
+
+    <img src="assets/imgs/criando-app-scss.png" alt="Alterando CSS para SCSS" class="img-space" style="width: 450px;">
+
+    <p class="separado">
+      Feito isso, nossos estilos não irão funcionar imediatamente, pois o <span>Create React App</span> precisa do pacote <strong>Sass</strong> para processar arquivos <span>SCSS</span>. Portanto, iremos precisar instalar um <strong>pacote adicional</strong>.
+    </p>
+
+    <p>
+      Para isso, podemos abrir um novo terminal, usar o comando <span>cd</span> com o caminho da pasta do projeto em que desejamos fazer a instalação do <strong>pacote</strong> e executar o comando <span>npm i sass</span>.
+    </p>
+
+    <p>
+      <strong>Obs.:</strong> o Sass deve ser instalado na pasta do projeto em que você pretende utilizá-lo.
+    </p>
+
+    <p class="junto">
+      Então, fizemos da seguinte forma:
+    </p>
+
+    <p>
+      <span>C:\Users\david\Documents\00---Mate-Academy---Full-Stack\07_react\react-app&gt; npm i sass</span>
+    </p>
+
+    <p>
+      Acessamos a pasta do projeto em que queremos utilizar o Sass e, por fim, executamos o comando <span>npm i sass</span>.
+    </p>
+
+    <h3 class="junto">Após a Instalação:</h3>
+
+    <p>
+      Após a instalação ser finalizada, precisamos reiniciar a execução do projeto para que ele reconheça o pacote recém-instalado.
+    </p>
+
+    <p>
+      Para fazer isso, basta irmos ao terminal em que executamos o comando <span>npm start</span> do projeto <span>react-app</span>, pressionar <strong>CTRL + C</strong> para interromper a execução e, em seguida, executar <span>npm start</span> novamente.
+    </p>
+
+    <p>
+      Feito isso, poderemos utilizar arquivos <span>SCSS</span> em nosso projeto, assim como já utilizávamos arquivos <span>CSS</span>.
+    </p>
+
+  </div>
+
+  <div class="conteudo">
+
+    <h3 class="separado">Adicionando o Atributo Class</h3>
+
+    <p>
+      Para podermos adicionar uma <strong>classe</strong>, podemos acessar nosso <strong>arquivo</strong> <span>App.jsx</span>. Nele, temos uma <strong>div</strong> que havíamos criado na aula anterior. Basta adicionarmos o atributo <strong>className</strong>, como fazemos com o atributo <strong>class</strong> no <strong>HTML</strong>, ficando da seguinte forma:
+    </p>
+
+<pre>
+import { Header } from './components/Header';
+import './App.scss'
+
+export const App = () => (
+  < div <code>className="App"</code>>
+    < h1>My Page< /h1>
+
+    < Header />
+  < /div>
+);
+</pre>
+
+    <p>
+      No <span>JSX</span>, usamos <strong>className</strong> em vez de <strong>class</strong> para definir uma classe CSS. Isso acontece porque o JSX utiliza propriedades próprias para representar os atributos HTML. O mesmo ocorre com o atributo <strong>for</strong> da tag <span>label</span>, que usamos como <span>htmlFor</span> no JSX.
+    </p>
+
+    <p>
+      <span>Exemplo:</span>
+    </p>
+
+    <div class="content">
+<pre>
+export const App = () => (
+  < div <code>className="App"</code>>
+    < label <code>htmlFor=""</code>>< /label>
+    < h1>My Page< /h1>
+
+    < Header />
+  < /div>
+);
+</pre>
+
+      <img src="assets/imgs/explicacao-palavra-chave.png" alt="Exemplo de atributos no JSX">
+
+    </div>
+
+    <p>
+      Podemos lembrar que a tag <strong>label</strong> possui o atributo <span>for</span> no HTML, usado para associar o rótulo a um campo de formulário. No JSX, usamos <span>htmlFor</span> para fazer essa associação. Dentro das aspas, precisamos informar o <strong>id</strong> do campo correspondente. Portanto, é importante lembrar:
+    </p>
+
+    <p class="junto">
+      <strong>class =&gt;</strong> <span>className</span>
+    </p>
+
+    <p>
+      <strong>for =&gt;</strong> <span>htmlFor</span>
+    </p>
+
+    <p class="junto">
+      Outra observação importante é sobre a <strong>estrutura de pastas</strong>. Como o <span>App.jsx</span> é o componente principal da nossa aplicação, podemos importar nele os estilos gerais da aplicação. Já os estilos de <strong>componentes individuais</strong> podem ficar ao lado de seus respectivos componentes, facilitando a organização. Geralmente, cada componente é colocado em um diretório com seu nome, junto de seus arquivos relacionados.
+    </p>
+
+    <p>
+      Ou seja, dentro do diretório <span>components</span>, podemos criar um novo diretório chamado <span>Header</span>. Dentro dele, colocaremos o arquivo do componente <span>Header.jsx</span> e seus arquivos de estilo. Dessa forma, conseguimos manter cada componente organizado em seu devido local. Ex.:
+    </p>
+
+    <img src="assets/imgs/organizacao-components-scss.png" alt="Organizando componentes e estilos" class="img-space">
+
+    <p class="junto">
+      Dessa forma, podemos observar que agora temos, dentro do diretório <strong>components</strong>, uma pasta exclusiva para o <strong>Header</strong>, onde ficarão o componente e seus estilos. Após organizarmos os arquivos, o caminho da importação no <span>App.jsx</span> poderá ser atualizado automaticamente pelo VS Code, dependendo da configuração utilizada. Nesse caso, ficará da seguinte forma:
+    </p>
+
+<pre>
+import { Header } from './components/Header/Header';
+</pre>
+
+    <p>
+      Agora, dentro do diretório <span>Header</span>, iremos criar um novo arquivo para adicionar os estilos, que chamaremos de <span>Header.scss</span>.
+    </p>
+
+    <p>
+      Antes de especificarmos os estilos, precisamos conectá-los ao componente. Para isso, iremos ao arquivo <span>Header.jsx</span> e usaremos <span>import</span>, ficando da seguinte forma:
+    </p>
+
+<pre>
+<code>import './Header.scss'</code>
+
+export const Header = () => (
+  < header> Page Header < /header>
+);
+</pre>
+
+    <p class="junto">
+      Agora podemos voltar ao arquivo <span>Header.scss</span> e testar uma modificação selecionando a <strong>tag</strong> <span>header</span>, ficando da seguinte forma:
+    </p>
+
+    <div class="content">
+
+<pre>
+<code>header</code> {
+  padding: 15px;
+  width: fit-content;
+  background-color: #ff0;
+}
+</pre>
+
+      <img src="assets/imgs/modificando-header-scss.png" alt="Adicionando estilos ao Header com SCSS">
+
+    </div>
+
+  </div>
+
+  <div class="link-aula">
+    <!-- <a href="./tests.html" class="conteudo-aula">Conteúdo da Aula</a> -->
+  </div>
+
+</main>
+
+  <div class="content-link">
+    <a class="next" href="../../02_props/01_props/index.html">
+      Proximo Modulo: Props - Aula: Props
+    </a>
+  </div>
+</body>
+</html>

@@ -1,13 +1,11 @@
-import { Header } from './components/Header';
+import { Header } from './components/Header/Header';
+import './App.scss'
 
 export const App = () => (
-  <div>
+  <div className="App">
+    <label htmlFor=""></label>
     <h1>My Page</h1>
 
     <Header />
   </div>
 );
-
-// export default App;
-
-  // const App = ()  => {<App />}
