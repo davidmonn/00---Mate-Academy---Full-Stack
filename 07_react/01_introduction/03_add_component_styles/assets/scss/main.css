@@ -265,6 +265,12 @@ article,
   background-color: transparent;
 }
 
+.next,
+.prev {
+  padding: 10px;
+  margin: 5px;
+}
+
 .next:hover,
 .prev:hover {
   box-sizing: border-box;

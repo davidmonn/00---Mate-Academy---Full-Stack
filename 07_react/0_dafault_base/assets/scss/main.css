@@ -230,9 +230,10 @@ article,
 .prev {
   display: flex;
   box-sizing: border-box;
+  padding: 10px;
+  margin: 5px;
   color: #888;
   font-weight: bolder;
-  padding: 35px;
   width: fit-content;
   border-radius: 10px;
   border: 1px solid transparent;
