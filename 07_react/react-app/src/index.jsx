@@ -7,6 +7,7 @@ import { App } from './App';
 
 // Seletor por id
 const element = document.querySelector("#root")
+// import { Products } from './components/products/Products'
 
 createRoot(element).render(
 

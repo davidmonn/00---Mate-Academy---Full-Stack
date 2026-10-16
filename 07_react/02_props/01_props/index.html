@@ -1,46 +1,387 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/scss/main.css">
-  <title>Document</title>
-</head>
-<body>
-  <div >
-    <!-- <a class="prev" href="#">Aula Anterior: </a> -->
-  </div>
-
-  <header>
-    <h1 class="title-princ">Document</h1>
-  </header>
-
-  <main>
-
-    <article>
-      <h3>Intro:</h3>
-      <p>
-
-      </p>
-    </article>
-
-    <div class="conteudo">
-      <h3 class="separado">Entendendo Melhor:</h3>
-      <p>
-        
-      </p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/scss/main.css" />
+    <title>Props</title>
+  </head>
+  <body>
+    <div>
+      <a
+        class="next"
+        href="../../01_introduction/03_add_component_styles/index.html"
+      >
+        Modulo Anterior: Introdution - Aula: Add Component Styles
+      </a>
     </div>
 
-    <div class="link-aula">
-      <a href="./tests.html" class="conteudo-aula">Conteudo Aula</a>
+    <header>
+      <h1 class="title-princ">Props</h1>
+    </header>
+
+    <main>
+  <article>
+    <h3>Intro:</h3>
+    <p>
+      Agora iremos nos aprofundar mais nos <strong>componentes</strong> do
+      <span>React</span> e do <span>JSX</span>.
+    </p>
+  </article>
+
+  <div class="conteudo">
+    <h3 class="separado">Entendendo Melhor:</h3>
+    <p class="separado">
+      Para entendermos melhor, iremos criar um "aplicativo", onde teremos 3
+      produtos e um título. Iremos fazer isso em nosso projeto
+      <span>react-app</span>.
+    </p>
+  </div>
+
+  <div class="conteudo">
+    <h3 class="separado">Iniciando</h3>
+    <p>
+      Iremos começar acessando nosso arquivo <span>App.jsx</span> e criando
+      o seguinte código:
+    </p>
+
+    <div class="content">
+      <pre>
+export const App = () => (
+  &lt;div className="App"&gt;
+    &lt;h1&gt;My Shop&lt;/h1&gt;
+
+    &lt;div className="Product"&gt;
+      &lt;h2 className="Product__title"&gt;
+        Pepperoni Pizza
+      &lt;/h2&gt;
+
+      &lt;div className="Product__price"&gt;
+        Price: 100
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div className="Product"&gt;
+      &lt;h2 className="Product__title"&gt;
+        Chocolate Cake
+      &lt;/h2&gt;
+
+      &lt;div className="Product__price"&gt;
+        Price: 30
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div className="Product"&gt;
+      &lt;h2 className="Product__title"&gt;
+        Water
+      &lt;/h2&gt;
+
+      &lt;div className="Product__price"&gt;
+        Price: 0
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+);
+</pre>
+
+      <img
+        src="assets/imgs/iniciando-react-product.png"
+        alt="Resumo do código"
+      />
     </div>
 
-  </main>
+    <p class="separado">
+      Agora que fizemos isso, iremos mover nosso <strong>componente</strong>
+      para um arquivo separado.
+    </p>
 
-  <div class="content-link">
-    <a class="next" href="../">
-      Proxima Aula: 
-    </a>
+    <p>
+      Iremos criar uma nova pasta em <strong>src/components</strong> chamada
+      <span>Product</span>. Dentro dela, criaremos dois arquivos:
+      <span>Product.jsx</span> e <span>Product.scss</span>.
+    </p>
+
+    <p>
+      Dentro do arquivo <span>Product.jsx</span>, iremos criar nosso
+      componente da seguinte forma:
+    </p>
+
+    <div class="content">
+      <pre>
+<code>export const Product = () =&gt; (</code>
+  &lt;div className="Product"&gt;
+    &lt;h2 className="Product__title"&gt;
+      Pepperoni Pizza
+    &lt;/h2&gt;
+
+    &lt;div className="Product__price"&gt;
+      Price: 100
+    &lt;/div&gt;
+  &lt;/div&gt;
+<code>);</code>
+</pre>
+
+      <img
+        src="assets/imgs/create-func-product.png"
+        alt="Criando o componente Product"
+      />
+    </div>
+
+    <p class="junto">
+      Para um melhor entendimento, iremos observar os arquivos
+      <span>App.jsx</span> e <span>Product.jsx</span> lado a lado:
+    </p>
+
+    <img
+      src="assets/imgs/product-and-app.png"
+      alt="App e Product"
+      class="img-space"
+      style="max-width: 90%; margin: 10px"
+    />
+
+    <p>
+      Feito isso, podemos observar que temos basicamente 3 estruturas iguais
+      de produtos no <span>App.jsx</span>. Então, em vez de repetirmos todo
+      esse código, podemos reutilizar o componente <span>Product</span>
+      usando a tag <span>&lt;Product /&gt;</span>, importando-o para o arquivo
+      <span>App.jsx</span> e utilizando-o três vezes.
+    </p>
+
+    <div class="content">
+      <pre>
+<code>import { Product } from './components/Product/Product';</code>
+
+export const App = () =&gt; (
+  &lt;div className="App"&gt;
+    &lt;h1&gt;My Shop&lt;/h1&gt;
+
+    <code>&lt;Product /&gt;
+    &lt;Product /&gt;
+    &lt;Product /&gt;</code>
+  &lt;/div&gt;
+);
+</pre>
+
+      <figure>
+        <figcaption><span>App.jsx</span></figcaption>
+        <img
+          src="assets/imgs/explicacao-product.png"
+          alt="Explicação sobre o componente Product"
+        />
+      </figure>
+    </div>
+
+    <p>
+      Após fazermos isso, estaremos exibindo o mesmo produto três vezes.
+      Porém, queremos produtos diferentes. Ou seja, precisamos reutilizar
+      a mesma estrutura com dados diferentes.
+    </p>
+
+    <p>
+      Para isso, utilizamos <strong>propriedades (props)</strong>, que
+      permitem passar dados para um componente. Ficará da seguinte forma:
+    </p>
+
+    <div class="content">
+      <pre>
+<code>import { Product } from './components/Product/Product';</code>
+
+export const App = () =&gt; (
+  &lt;div className="App"&gt;
+    &lt;h1&gt;My Shop&lt;/h1&gt;
+
+    <code>&lt;Product
+      title="Pepperoni Pizza"
+      price={100}
+    /&gt;
+    &lt;Product
+      title="Chocolate Cake"
+      price={30}
+    /&gt;
+    &lt;Product
+      title="Water"
+      price={0}
+    /&gt;</code>
+  &lt;/div&gt;
+);
+</pre>
+
+      <img
+        src="assets/imgs/adicionando-title-price.png"
+        alt="Adicionando title e price"
+      />
+    </div>
+
+    <p>
+      Feito isso, ainda precisamos modificar nosso componente no arquivo
+      <span>Product.jsx</span> para que ele receba e utilize essas
+      propriedades. Para isso, iremos receber um objeto como parâmetro
+      e extrair dele as propriedades <span>title</span> e <span>price</span>,
+      ficando da seguinte forma:
+    </p>
+
+    <div class="content">
+      <pre>
+export const Product = (<code>{ title, price }</code>) =&gt; (
+  &lt;div className="Product"&gt;
+    &lt;h2 className="Product__title"&gt;
+      <code>{title}</code>
+    &lt;/h2&gt;
+
+    &lt;div className="Product__price"&gt;
+      <code>Price: {price}</code>
+    &lt;/div&gt;
+  &lt;/div&gt;
+);
+</pre>
+
+      <img
+        src="assets/imgs/adicionando-prop-product.png"
+        alt="Adicionando props ao componente Product"
+      />
+    </div>
+
+    <p>
+      Resumindo, quando queremos reutilizar um componente com dados diferentes,
+      podemos passar <strong>propriedades (props)</strong> para ele.
+      Nesse exemplo, passamos as propriedades <span>title</span> e
+      <span>price</span>. Dentro do componente, usamos essas propriedades
+      para exibir os valores recebidos.
+    </p>
+
+    <p class="separado">
+      Quando passamos valores para nosso componente <span>Product</span>
+      dentro do arquivo <span>App.jsx</span>, esses valores podem ser de
+      diferentes tipos. Por exemplo:
+    </p>
+
+    <pre>
+<code>// App.jsx</code>
+
+import { Product } from './components/Product/Product';
+
+export const App = () =&gt; (
+  &lt;div className="App"&gt;
+    &lt;h1&gt;My Shop&lt;/h1&gt;
+
+    &lt;Product
+      title="Pepperoni Pizza"
+      price={100}
+    /&gt;
+
+    &lt;Product
+      title="Chocolate Cake"
+      <code>// Não é possível exibir um objeto diretamente no JSX
+      price={{ x: 1 }}</code>
+    /&gt;
+
+    &lt;Product
+      title="Water"
+      <code>// O array será exibido sem separadores automáticos
+      price={[0, 1, 2, 3]}</code>
+    /&gt;
+  &lt;/div&gt;
+);
+</pre>
+
+    <p>
+      Lembrando que, quando exibimos um <strong>array</strong> de valores
+      primitivos, seus elementos são renderizados sem separadores automáticos.
+      Já um <strong>objeto</strong> comum não pode ser exibido diretamente
+      como conteúdo do JSX, pois isso gera um erro.
+    </p>
+
+    <p>
+      Porém, podemos acessar uma propriedade específica do objeto. Como o
+      produto <span>Chocolate Cake</span> recebe um objeto em
+      <span>price</span>, podemos acessar sua propriedade <span>x</span>
+      da seguinte forma:
+    </p>
+
+    <pre>
+<code>// Product.jsx</code>
+
+export const Product = ({ title, price }) =&gt; (
+  &lt;div className="Product"&gt;
+    &lt;h2 className="Product__title"&gt;
+      {title}
+    &lt;/h2&gt;
+
+    &lt;div className="Product__price"&gt;
+      <code>Price: {price.x}</code>
+    &lt;/div&gt;
+  &lt;/div&gt;
+);
+</pre>
+
+    <p>
+      Porém, os outros produtos recebem números e um array, e não possuem
+      a propriedade <strong>x</strong>. Por isso, o resultado de
+      <span>price.x</span> será <span>undefined</span> nesses casos.
+      Para evitar esse problema, precisamos tratar cada tipo de dado
+      adequadamente.
+    </p>
+
+    <h3 class="separado">Resumindo:</h3>
+
+    <p>
+      Para passar valores de diferentes tipos como propriedades, usamos
+      chaves <span>{ }</span> quando precisamos de uma expressão JavaScript.
+      Exemplo: <span>price={0}</span>.
+    </p>
+
+    <p class="separado">
+      Para passar uma <strong>string</strong>, podemos usar aspas duplas
+      diretamente. Exemplo: <span>title="Pepperoni Pizza"</span>.
+      Também podemos usar chaves: <span>title={'Pepperoni Pizza'}</span>.
+    </p>
+
+    <p>
+      Para exibir valores no JSX, usamos chaves <span>{ }</span>.
+      Podemos exibir strings, números e outros valores compatíveis,
+      além de arrays que contenham elementos renderizáveis.
+      Porém, não podemos exibir diretamente um objeto comum ou uma função
+      como conteúdo.
+    </p>
+
+    <p class="separado">
+      Também podemos passar <strong>valores padrão</strong> para nossas
+      propriedades. Por exemplo, no arquivo <span>Product.jsx</span>:
+    </p>
+
+    <pre>
+export const Product = ({
+  <code>title = 'Produto',
+  price = 0,</code>
+}) =&gt; (
+  &lt;div className="Product"&gt;
+    &lt;h2 className="Product__title"&gt;
+      {title}
+    &lt;/h2&gt;
+
+    &lt;div className="Product__price"&gt;
+      Price: {price}
+    &lt;/div&gt;
+  &lt;/div&gt;
+);
+</pre>
+
+    <p>
+      Nesse exemplo, se <span>title</span> ou <span>price</span> não forem
+      informados ou receberem <span>undefined</span>, serão utilizados os
+      valores padrão definidos no componente.
+    </p>
   </div>
-</body>
+
+  <div class="link-aula">
+    <!-- <a href="./tests.html" class="conteudo-aula">Conteúdo Aula</a> -->
+  </div>
+</main>
+
+    <div class="content-link">
+      <a class="next" href="../02_conditional_rendering/index.html">
+         Proxima Aula: Conditional Rendering
+      </a>
+    </div>
+  </body>
 </html>
