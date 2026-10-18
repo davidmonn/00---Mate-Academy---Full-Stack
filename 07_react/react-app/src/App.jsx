@@ -1,4 +1,5 @@
 import { Product } from './components/Product/Product';
+import './App.scss';
 
 export const App = () => (
   <div className="App">
@@ -11,12 +12,12 @@ export const App = () => (
 
     <Product
       title="Chocklate"
-      price={0}
+      price={30}
     />
 
     <Product
       title="Water"
-      price={[0, 1, 2, 3]}
+      price={0}
     />
 
   </div>

@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/scss/main.css">
-  <title>Document</title>
+  <title>Conditional Rendering</title>
 </head>
 <body>
   <div >
-    <a class="prev" href="../">Aula Anterior: </a>
+    <a class="prev" href="../01_props/index.html">Aula Anterior: Props</a>
   </div>
 
   <header>
-    <h1 class="title-princ">Document</h1>
+    <h1 class="title-princ">Conditional Rendering</h1>
   </header>
 
   <main>
@@ -20,26 +20,299 @@
     <article>
       <h3>Intro:</h3>
       <p>
-
+        Agora iremos ver como fazer marcacoes diferentes o <span>JSX</span> <strong>dependendo</strong> de <strong>condicoes</strong>.
       </p>
     </article>
 
     <div class="conteudo">
       <h3 class="separado">Entendendo Melhor:</h3>
       <p>
-        
+        Iremos continuar em nossa pagina <span>react-app</span> continuando codigo da aula anterior em nossa pagina <span>Product.jsx</span>.
       </p>
+
+      <h3 class="separado">Inciando Alteracoes:</h3>
+      <p>
+        Ja em nosso arquivo <span>Product.jsx</span>, iremos imprimir um <span>span</span> adicional com uma estrela para itens gratuitos. Ficando da seguinte forma:
+      </p>
+
+      <div class="content">
+
+<pre>
+export const Product = ({ title, price }) => (
+  < div className="Product">
+    < h2 className="Product__title">
+      {title}
+    < /h2>
+
+     div className="Product__price">
+      Price: {price} <code>< span>*< /span></code>
+    < /div>
+  < /div>
+);
+</pre>
+
+        <img src="assets/imgs/add-span.png" alt="Adicionando span">
+
+      </div>
+
+      <p>
+        Apos feito isso, ira aparecer em todos nossos price, porem queremos que seja adicionado apenas em certas condicoes, ficando da seguinte forma em nosso site do projeto:
+      </p>
+
+      <img src="assets/imgs/img-add-span.png" alt="Imagem site com span" class="img-space">
+
+      <h3 class="separado">Adicionando Espacamento:</h3>
+
+      <p>
+        Se tudo estiver escrito em uma linha, como fizemos, sera incoveniente formata-lo, no <span>React</span>, geralmente dividimos cada parte em uma linha separada. Onde como exemplo o <strong>texto</strong> ficara na <strong>primeira linha</strong>e passamos nosso <span>span</span> para a segunda, quando fazemos uma quebra de linha, nao ficara mas espaco, pois quebra de linha nao é interpretada, entao para mantermos espaco, uma das opcoes que temos é quebrar outra linha entre as duas, e adicionamos <span>chaves {}</span> e entre elas <span>aspas</span> com espaco <span>{' '}</span>, ficando da seguinte forma:
+      </p>
+
+      <div class="content">
+
+<pre>
+export const Product = ({ title, price }) => (
+  < div className="Product">
+    < h2 className="Product__title">
+      {title}
+    < /h2>
+
+     div className="Product__price">
+      Price: {price}
+      <code>{' '}</code>
+      <code>< span>*< /span></code>
+    < /div>
+  < /div>
+);
+</pre>
+
+        <img src="assets/imgs/add-espacamento.png" alt="Adicionando espaco">
+
+      </div>
+
+      <p>
+        Porem essa sintaxe nao é muito utilizada, ao inves disso é mais conveniente, usarmos a <span>interpolacao</span> de <span>JavaScript regulas</span>. Entao iremos fazer da seguinte forma:
+      </p>
+
+      <div class="content">
+
+<pre>
+export const Product = ({ title, price }) => (
+  < div className="Product">
+    < h2 className="Product__title">
+      {title}
+    < /h2>
+
+     div className="Product__price">
+    <code>{`Price: ${price} `}</code>
+      < span>*< /span>
+    < /div>
+  < /div>
+);
+</pre>
+
+        <img src="assets/imgs/add-espaco-certo.png" alt="Adicionando espaco de forma correta">
+
+      </div>
+
+      <h3 class="separado">Adicionando Condicoes</h3>
+      <p>
+        Com a mesma abordagem que usamos na <span>interpolacao</span> podemos realizar algum calculo usando <span>chaves {}</span> e com operador <span>ternario</span>. Ficara da seguinte forma:
+      </p>
+
+      <div class="content">
+
+<pre>
+export const Product = ({ title, price }) => (
+  < div className="Product">
+    < h2 className="Product__title">
+      {title}
+    < /h2>
+
+     div className="Product__price">
+    <code>
+    {`Price: ${price} `}
+    {price === 0 ? < span>*< /span> : ''}
+    </code>
+    < /div>
+  < /div>
+);
+</pre>
+
+        <img src="assets/imgs/add-condicao.png" alt="Adicionando espaco de forma correta">
+
+      </div>
+
+      <p>
+        Quando usamos um <span>operador ternario</span>, é sugerido formatar cada parte em uma linha, quando fazemos isso, nossa sintaxe tambem acaba mudando um pouco:
+      </p>
+
+      <div class="content">
+
+<pre>
+export const Product = ({ title, price }) => (
+  < div className="Product">
+    < h2 className="Product__title">
+      {title}
+    < /h2>
+
+     div className="Product__price">
+    {`Price: ${price} `}
+    {price === 0 ? <code>(</code>
+      < span>*< /span>
+      <code>) : (</code>
+        ''
+      <code>)}</code>
+    < /div>
+  < /div>
+);
+</pre>
+
+        <img src="assets/imgs/alteracoes-sintaxe-span.png" alt="Alteracoes na sintaxe">
+
+      </div>
+
+      <p>
+        Outra opcao que tambem temos quando nao precisamos de um segundo valor, sendo passado, podemos usar o <span>&&</span>, Ex: <span>{price === 0 &&}</span>
+      </p>
+
+<pre>
+export const Product = ({ title, price }) => (
+  < div className="Product">
+    < h2 className="Product__title">
+      {title}
+    < /h2>
+
+     div className="Product__price">
+    {`Price: ${price} `}
+    <code>
+    {price === 0 && (
+      < span>*< /span>
+    )}
+    </code>
+    < /div>
+  < /div>
+);
+</pre>
+
+      <p>
+
+      </p>
+
+    </div>
+
+    <div class="conteudo">
+
+      <h3 class="separado">Imrpimindo Mais Tag</h3>
+      <p>
+        O <span>React</span> nao permite adicionar mais de uma <strong>tag</strong> por padrao na sintaxe <span>JSX</span> e isso tambem se aplica a nosso <span>component</span>. Ex:
+      </p>
+
+      <div class="content">
+
+<pre>
+<span>Forma Errada</span>
+
+import './Product.scss';
+
+export const Product = ({ title, price }) => (
+  < div className="Product">
+    < h2 className="Product__title">
+      {title}
+    < /h2>
+
+    < div className="Product__price">
+      {`Price: ${price} `}
+      {price === 0 && (
+        <code>
+        < span>*< /span>
+        < span>*< /span>
+        </code>
+      )}
+    < /div>
+  < /div>
+);
+</pre>
+        
+        <figure>
+          <figcaption><span>Forma Errada:</span></figcaption>
+          <img src="assets/imgs/erro-rep-tag.png" alt="Forma errada">
+        </figure>
+
+      </div>
+
+      <p>
+        O <span>JSX</span> sempre deve retornar uma <strong>tag</strong>, se nao desejarmos que haja algum <span>involucro, div ou qualquer outra tag</span>, podemos usar uma <strong>tag</strong> especial sendo ela: <span>react.fragment</span>, para isso iremos <strong>importar</strong> da <span>biblioteca React</span>. Ficando da seguinte forma:
+      </p>
+
+      <div class="content">
+
+<pre>
+<code>import React from 'react'</code>
+import './Product.scss';
+
+export const Product = ({ title, price }) => (
+  < div className="Product">
+    < h2 className="Product__title">
+      {title}
+    < /h2>
+
+    < div className="Product__price">
+      {`Price: ${price} `}
+      {price === 0 && (
+        <code>
+        < React.Fragment>
+          < span>*< /span>
+          < span>*< /span>
+        < /React.Fragment>
+        </code>
+      )}
+    < /div>
+  < /div>
+);
+</pre>
+        
+        <img src="assets/imgs/react-fragment.png" alt="Forma errada">
+
+      </div>
+
+      <p>
+        Sempre que desejarmos usar o <span>React.Fragment</span> podemos usar no lugar apenas <span><>< /></span>. Exemplo:
+      </p>
+
+      <pre>
+<code>import React from 'react'</code>
+import './Product.scss';
+
+export const Product = ({ title, price }) => (
+  < div className="Product">
+    < h2 className="Product__title">
+      {title}
+    < /h2>
+
+    < div className="Product__price">
+      {`Price: ${price} `}
+      {price === 0 && (
+        <code><></code>
+          < span>*< /span>
+          < span>*< /span>
+        <code>< /></code>
+      )}
+    < /div>
+  < /div>
+);
+</pre>
+
     </div>
 
     <div class="link-aula">
-      <a href="./tests.html" class="conteudo-aula">Conteudo Aula</a>
+      <!-- <a href="./tests.html" class="conteudo-aula">Conteudo Aula</a> -->
     </div>
 
   </main>
 
   <div class="content-link">
-    <a class="next" href="../">
-      Proxima Aula: 
+    <a class="next" href="../03_conditional_styling/index.html">
+      Proxima Aula: Conditional Styling
     </a>
   </div>
 </body>
