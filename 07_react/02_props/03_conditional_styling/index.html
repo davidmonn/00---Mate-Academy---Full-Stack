@@ -1,46 +1,340 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/scss/main.css">
-  <title>Conditional Styling</title>
-</head>
-<body>
-  <div >
-    <a class="prev" href="../">Aula Anterior: </a>
-  </div>
-
-  <header>
-    <h1 class="title-princ">Conditional Styling</h1>
-  </header>
-
-  <main>
-
-    <article>
-      <h3>Intro:</h3>
-      <p>
-
-      </p>
-    </article>
-
-    <div class="conteudo">
-      <h3 class="separado">Entendendo Melhor:</h3>
-      <p>
-        
-      </p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/scss/main.css" />
+    <title>Conditional Styling</title>
+  </head>
+  <body>
+    <div>
+      <a class="prev" href="../02_conditional_rendering/index.html">
+        Aula Anterior: Conditional Rendering
+      </a>
     </div>
 
-    <div class="link-aula">
-      <a href="./tests.html" class="conteudo-aula">Conteudo Aula</a>
+    <header>
+      <h1 class="title-princ">Conditional Styling</h1>
+    </header>
+
+     <main>
+  <article>
+    <h3>Intro:</h3>
+    <p>
+      Agora iremos ver como adicionar <strong>estilos</strong>
+      <span>condicionalmente</span>.
+    </p>
+  </article>
+
+  <div class="conteudo">
+    <h3 class="separado">Iniciando:</h3>
+    <p>
+      Iremos começar abrindo nosso arquivo
+      <span>react-app -> src -> components</span> e acessando nosso
+      <span>Products/Products.jsx</span>.
+    </p>
+
+    <p>
+      Agora iremos ao nosso <span>componente</span>. Para produtos que são
+      <strong>gratuitos</strong>, queremos adicionar o
+      <strong>modificador</strong> <span>Product--free</span>. Ficará da
+      seguinte forma:
+    </p>
+
+    <div class="content">
+      <pre>
+import React from 'react';
+import './Product.scss';
+
+export const Product = ({ title, price }) => (
+  &lt;div <code>className="Product Product--free"</code>&gt;
+    &lt;h2 className="Product__title"&gt;
+      {title}
+    &lt;/h2&gt;
+
+    &lt;div className="Product__price"&gt;
+      {`Price: ${price} `}
+
+      {price === 0 &amp;&amp; (
+        &lt;React.Fragment&gt;
+          &lt;span&gt;*&lt;/span&gt;
+          &lt;span&gt;*&lt;/span&gt;
+        &lt;/React.Fragment&gt;
+      )}
+    &lt;/div&gt;
+  &lt;/div&gt;
+);
+</pre>
+
+      <img src="assets/imgs/add-class-free.png" alt="Adicionando classe" />
     </div>
 
-  </main>
+    <p>
+      Agora iremos ao nosso <span>Product.scss</span> para adicionarmos
+      esse <strong>modificador</strong>. Após fazermos isso, veremos que
+      todos os produtos que utilizarem essa classe receberão a modificação.
+      Porém, o que queremos é adicioná-la apenas a produtos específicos.
+    </p>
 
-  <div class="content-link">
-    <a class="next" href="../">
-      Proxima Aula: 
-    </a>
+    <p>
+      Para isso, iremos precisar fazer uma verificação. Se quisermos
+      calcular o valor de um <strong>atributo</strong> no JSX, precisamos
+      usar <strong>chaves {}</strong>. Então, iremos voltar ao nosso
+      <span>Product.jsx</span> e, no lugar da <strong>className</strong>,
+      iremos adicionar chaves <strong>{}</strong> e escrever a expressão
+      dentro de <span>backticks</span>. Exemplo:
+      <span>className={`Product ${price === 0 ? 'Product--free' : ''}`}</span>.
+      Dentro delas, podemos realizar o cálculo usando uma expressão
+      JavaScript com <strong>${'expressão'}</strong>, neste caso, com um
+      <strong>operador ternário</strong>. Ficará da seguinte forma:
+    </p>
+
+    <div class="content">
+      <pre>
+import React from 'react';
+import './Product.scss';
+
+export const Product = ({ title, price }) => (
+  &lt;div className={<code>{`Product ${price === 0 ? 'Product--free' : ''}`}</code>}&gt;
+    &lt;h2 className="Product__title"&gt;
+      {title}
+    &lt;/h2&gt;
+
+    &lt;div className="Product__price"&gt;
+      {`Price: ${price} `}
+
+      {price === 0 &amp;&amp; (
+        &lt;React.Fragment&gt;
+          &lt;span&gt;*&lt;/span&gt;
+          &lt;span&gt;*&lt;/span&gt;
+        &lt;/React.Fragment&gt;
+      )}
+    &lt;/div&gt;
+  &lt;/div&gt;
+);
+</pre>
+
+      <img
+        src="assets/imgs/add-class-condicao.png"
+        alt="Adicionando classe por condição"
+      />
+    </div>
+
+    <p>
+      Podemos observar que essa sintaxe pode ficar um pouco complexa.
+      Seria mais conveniente se pudéssemos especificar quais classes
+      queremos adicionar de acordo com cada condição. Para fazer isso,
+      podemos <strong>instalar</strong> a
+      <span>biblioteca classnames</span>.
+    </p>
   </div>
-</body>
+
+  <div class="conteudo">
+    <h3 class="separado">Instalando a biblioteca classnames</h3>
+
+    <p>
+      Para instalarmos essa biblioteca, iremos selecionar nosso projeto
+      pelo terminal usando o comando <span>cd</span>. Após confirmarmos
+      que estamos no projeto correto, podemos fazer a instalação.
+    </p>
+
+    <p class="separado">
+      Iremos usar o comando <span>npm i classnames</span> e pressionar Enter.
+    </p>
+
+    <p>
+      Após a <strong>instalação</strong>, para usarmos a biblioteca,
+      precisamos fazer um <span>import</span>. Podemos escolher o nome
+      que desejamos usar no código. Ficará da seguinte forma:
+    </p>
+
+    <div class="content">
+      <pre>
+import React from 'react';
+<code>import cn from 'classnames';</code>
+import './Product.scss';
+
+export const Product = ({ title, price }) => (
+  &lt;div className={`Product ${price === 0 ? 'Product--free' : ''}`}&gt;
+    &lt;h2 className="Product__title"&gt;
+      {title}
+    &lt;/h2&gt;
+
+    &lt;div className="Product__price"&gt;
+      {`Price: ${price} `}
+
+      {price === 0 &amp;&amp; (
+        &lt;React.Fragment&gt;
+          &lt;span&gt;*&lt;/span&gt;
+          &lt;span&gt;*&lt;/span&gt;
+        &lt;/React.Fragment&gt;
+      )}
+    &lt;/div&gt;
+  &lt;/div&gt;
+);
+</pre>
+
+      <img
+        src="assets/imgs/import-classNames.png"
+        alt="Importando classnames"
+      />
+    </div>
+
+    <p>
+      Após isso, se necessário, reiniciamos nosso servidor de
+      desenvolvimento. Para isso, basta cancelarmos o
+      <span>npm start</span> com <span>Ctrl + C</span> e iniciá-lo
+      novamente com o comando utilizado pelo projeto.
+    </p>
+  </div>
+
+  <div class="conteudo">
+    <h3 class="separado">Usando classnames</h3>
+
+    <p>
+      Após fazermos a instalação do <span>classnames</span>, podemos
+      duplicar nossa linha que utiliza a classe condicional para
+      compararmos as duas formas. Depois, podemos comentar a primeira
+      linha para testar a segunda.
+    </p>
+
+    <p>
+      Agora, dentro do <strong>atributo</strong>, chamamos a função
+      <span>cn()</span>. Em seguida, podemos passar uma ou várias strings
+      com as classes que sempre estarão presentes. Também podemos passar
+      um <span>objeto</span> com as classes condicionais.
+      Exemplo:
+      <span>className={cn('Product', { 'Product--free': price === 0 })}</span>.
+
+      Nesse objeto, as <strong>chaves</strong> serão os nomes das classes
+      e os <strong>valores</strong> determinarão se elas serão adicionadas
+      ou não. Ficará da seguinte forma:
+    </p>
+
+    <pre>
+<span>// Antes</span>
+
+&lt;div className={<code>{`Product ${price === 0 ? 'Product--free' : 'Product--default'}`}</code>}&gt;
+&lt;/div&gt;
+</pre>
+
+    <pre>
+<span>// Depois</span>
+
+&lt;div className={<code>cn('Product', { 'Product--free': price === 0 })</code>}&gt;
+&lt;/div&gt;
+</pre>
+
+    <p>
+      Para termos uma melhor legibilidade e podermos adicionar outras
+      classes, podemos fazer da seguinte forma:
+    </p>
+
+    <pre>
+&lt;div className={<code>cn('Product', {
+  'Product--free': price === 0,
+  'Product--default': price &gt; 0,
+  'Product--expensive': price &gt;= 100
+})</code>}&gt;
+&lt;/div&gt;
+</pre>
+
+    <p>
+      À esquerda temos o nome da <span>classe</span> e, à direita,
+      a <span>condição</span> para que ela seja adicionada.
+    </p>
+
+    <p class="junto">
+      Além das classes, também podemos alterar estilos diretamente no
+      elemento. Por exemplo, podemos mudar a cor do nosso
+      <span>title</span> dependendo de o produto ser gratuito ou não.
+      Para isso, podemos usar o <strong>atributo</strong>
+      <span>style</span>, aplicando o estilo diretamente no elemento,
+      o que chamamos de <span>CSS inline</span>. Ficará da seguinte forma:
+    </p>
+
+    <div class="content">
+      <pre>
+import React from 'react';
+
+<code>// Adiciona a biblioteca classnames</code>
+<code>import cn from 'classnames';</code>
+
+import './Product.scss';
+
+export const Product = ({ title, price }) =&gt; (
+  &lt;div className={<code>cn('Product', {
+    'Product--free': price === 0,
+    'Product--default': price &gt; 0
+  })</code>}&gt;
+    &lt;h2
+      className="Product__title"
+      <code>style={{
+        color: price === 0 ? 'blue' : 'red',
+        backgroundColor: price === 0 ? 'yellow' : '',
+        padding: price === 0 ? '10px' : '',
+        borderRadius: price === 0 ? '10px' : ''
+      }}</code>
+    &gt;
+      {title}
+    &lt;/h2&gt;
+
+    &lt;div className="Product__price"&gt;
+      {`Price: ${price} `}
+
+      {price === 0 &amp;&amp; (
+        &lt;&gt;
+          &lt;span&gt;*&lt;/span&gt;
+          &lt;span&gt;*&lt;/span&gt;
+        &lt;/&gt;
+      )}
+    &lt;/div&gt;
+  &lt;/div&gt;
+);
+</pre>
+
+      <img
+        src="assets/imgs/add-css-inline.png"
+        alt="Adicionando estilos com CSS inline"
+      />
+    </div>
+
+    <p>
+      Feito isso, tudo funcionará normalmente. Dessa forma, para
+      adicionarmos classes condicionalmente, podemos usar a
+      <strong>biblioteca</strong> <span>classnames</span>.
+    </p>
+
+    <p>
+      As classes que estarão sempre presentes (fixas) serão escritas
+      diretamente como strings. Já as <strong>classes</strong> que serão
+      adicionadas <span>condicionalmente</span> serão escritas como
+      chaves de um <span>objeto</span>, com suas respectivas condições.
+    </p>
+
+    <p>
+      Para adicionarmos <span>estilos inline</span>, usamos o
+      <strong>atributo</strong> <span>style</span> e nele usamos
+      <span>chaves duplas {<span style="color: blue; font-weight: bold;">{}</span>}</span>.
+      As <strong>chaves externas</strong> fazem a transição do
+      <span>JSX</span> para uma expressão <span>JavaScript</span>,
+      enquanto as internas representam um objeto JavaScript.
+    </p>
+
+    <p>
+      Nesse objeto, a <strong>chave</strong> é o nome da propriedade
+      CSS em <span>camelCase</span>, como <span>backgroundColor</span>,
+      e o valor pode ser calculado ou escrito explicitamente.
+    </p>
+  </div>
+
+  <div class="link-aula">
+    <a href="./tests.html" class="conteudo-aula">Conteúdo da Aula</a>
+  </div>
+</main>
+
+    <div class="content-link">
+      <a class="next" href="../../03_renderizacao_de_listas/01_render_list_from_an_array/index.html"> Próximo Modulo: Renderizacao de Listas - Aula: Render List From an Array</a>
+    </div>
+  </body>
 </html>

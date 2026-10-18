@@ -5,6 +5,14 @@
   border-radius: 10px;
   width: fit-content;
 
+  &--free {
+    background-color: lightgreen;
+  }
+
+  &--default {
+    background-color: lightblue;
+  }
+
   &__title {
     margin: 0 0 .5em;
     text-decoration: underline;
