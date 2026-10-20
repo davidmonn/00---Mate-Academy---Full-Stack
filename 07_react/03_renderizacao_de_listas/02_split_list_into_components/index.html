@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/scss/main.css">
+  <title>Document</title>
+</head>
+<body>
+  <div >
+    <a class="prev" href="../01_render_list_from_an_array/index.html">
+      Aula Anterior: Render List from an Array
+    </a>
+  </div>
+
+  <header>
+    <h1 class="title-princ">Document</h1>
+  </header>
+
+  <main>
+
+    <article>
+      <h3>Intro:</h3>
+      <p>
+        Anteriormente, usamos um <strong>array</strong> de dados para imprimir uma lista de produtos na pagina. Porem em nosso uso <strong>cotidiano</strong>, esse cartao pode ser muito maior.  Podendo haver muitas <strong>tags</strong>, alguma <strong>logica adicional</strong> e assim por diante. Entao geralmente faz sentido o extrairmos para um <strong>componente separado</strong>.
+      </p>
+    </article>
+
+    <div class="conteudo">
+
+      <h3 class="separado">Entendendo Melhor:</h3>
+      <p>
+        Para entendermos melhor, continuaremos em nosso projeto <span>react-app</span> e continuaremos com o mesmo conteudo (codigo) da aula anterior. Sendo as alteracoes no <span>App.jsx</span> e nossa criacao do <span>goods.json</span>.
+      </p>
+
+    </div>
+
+    <div class="conteudo">
+
+      <h3 class="separado">Separando Componentes</h3>
+
+      <p>
+        Para iniciar iremos inicialmente ja criando uma nova variavel em nosso <span>App.jsx</span> e nomea-la igual a <span>class</span>, e ela sera um <strong>componente</strong> que retorna <span>JSX</span>, ficando da seguinte forma:
+      </p>
+
+      <div class="content">
+
+<pre>
+import './App.scss';
+import goods from './goods.json';
+<code>
+const GoodCard = () => (
+  < div
+    key={good.id}
+    className="GoodCard" style={{ color: good.color }}
+  >
+    {`${good.name} ${good.id}`}
+  < /div>
+);
+</code>
+export const App = () => (
+  < div className="App">
+
+    < h1>Goods List</ h1>
+
+    < div className="GoodList">
+
+      {goods.map(good => (
+        < GoodCard />        
+      ))}
+
+    < /div>
+
+  < /div>
+);
+</pre>
+
+        <img src="assets/imgs/add-component-goodcard.png" alt="Adicionando Componente GoodCard">
+
+      </div>
+
+      <p>
+        Feito isso ele ainda nao esta completo, pois nosso <span>componente GoodCard</span>, ele nao sabe oque é <span>good</span>. Temos que passar isso atraves de <span>props</span>.
+      </p>
+      <p>
+        Iremos comecar passando o parametro <span>goods</span> que é igual ao nosso <span>objeto (good)</span> e parametro da iteracao. Ficara da seguinte forma:
+      </p>
+
+      <div class="content">
+
+      <pre>
+import './App.scss';
+import goods from './goods.json';
+
+const GoodCard = (<code>{ good }</code>) => (
+  < div
+    key={good.id}
+    className="GoodCard" style={{ color: good.color }}
+  >
+    {`${good.name} ${good.id}`}
+  < /div>
+);
+
+export const App = () => (
+  < div className="App">
+
+    < h1>Goods List</ h1>
+
+    < div className="GoodList">
+
+      {goods.map(good => (
+        < GoodCard <code>good={good}</code> />        
+      ))}
+
+    < /div>
+
+  < /div>
+);
+</pre>
+
+        <img src="assets/imgs/add-parametro-atributo.png" alt="Adicionando Parametro e Atributo">
+
+      </div>
+
+      <p>
+        Feito isso agora ira funcionar. Porem ao verificarmos na <span>devTools</span> veremos um erro:
+      </p>
+      <img src="assets/imgs/erro-devTools-each-child.png" alt="Erro devTools each child" class="img-space">
+
+      <p class="junto">
+        O problema é que separamos o <strong>atributo</strong> <span>key</span> da <strong>iteracao real</strong>. E na verdade nao é mais necessario em nosso elemento onde se encontra, ele sera necessario na <strong>tag</strong> que fica dentro da <strong>iteracao</strong> apos o <span>map</span>. Entao iremos remover o <span>key</span> de onde ele esta no momento e iremos passar ele para dentro de nossa <strong>tag</strong> com a <strong>iteracao</strong>. Ficando da seguinte forma:
+      </p>
+
+      <div class="content">
+
+      <pre>
+import './App.scss';
+import goods from './goods.json';
+
+const GoodCard = (<code>{ good }</code>) => (
+  < div
+    className="GoodCard" style={{ color: good.color }}
+  >
+    {`${good.name} ${good.id}`}
+  < /div>
+);
+
+export const App = () => (
+  < div className="App">
+
+    < h1>Goods List</ h1>
+
+    < div className="GoodList">
+
+      {goods.map(good => (
+        < GoodCard <code>good={good} key={good.id} </code> />        
+      ))}
+
+    < /div>
+
+  < /div>
+);
+</pre>
+
+        <img src="assets/imgs/add-key.png" alt="Adicionando Key">
+
+      </div>
+
+      <p>
+        Feito isso nosso erro sumira. Movemos nosso <span>component goodCard</span>, o mesmo pode ser feito agora com o <span>goodList</span>.
+      </p>
+
+      <p class="junto">
+        Para isso tambem iremos fazer o mesmo, criar uma nova variavel com o mesmo nome que retornara <span>JSX</span>:
+      </p>
+      <p>
+        Apos criarmos a funcao de retorno do <span>JSX</span>, iremos recortar nossa <strong>tag</strong> <span>goodList</span> e cola-la em nossa nova funcao.
+      </p>
+      <p>
+        Em seguida podemos a inseri-la da mesma forma como <span>< GoodCard /></span>. Ficando tudo da seguinte forma
+      </p>
+
+      <div class="content">
+
+      <pre>
+import './App.scss';
+import goods from './goods.json';
+
+const GoodCard = ({ good }) => (
+  < div
+    className="GoodCard" style={{ color: good.color }}
+  >
+    {`${good.name} ${good.id}`}
+  < /div>
+);
+
+<code>
+const GoodList = () => (
+  < div className="GoodList">
+
+    {goods.map(good => (
+      < GoodCard good={good} key={good.id} />        
+    ))}
+
+  < /div>
+);
+</code>
+
+export const App = () => (
+  < div className="App">
+
+    < h1>Goods List< /h1>
+
+    <code>
+    < GoodList />
+    </code>
+
+  < /div>
+);
+</pre>
+
+        <img src="assets/imgs/add-comp-goodList.png" alt="Adicionando component GoodList">
+
+      </div>
+
+      <p>
+        Claro que cada <strong>componente</strong> deve estar em seu proprio <strong>arquivo</strong>. Alem disso como cada um deles tem seus proprios estilos, pode haver alguns outros <strong>arquivos</strong>, dito isso iremos criar alguns <strong>diretorios/arquivos</strong> para cada um deles.
+      </p>
+
+    </div>
+
+    <div class="conteudo">
+
+      <h3 class="separado">Separando Arquivos</h3>
+
+      <p>
+        Dentro de nosso <span>src</span> iremos criar dois diretorios sendo eles <span>GoodList</span> e <span>GoodCard</span> onde cada um teles tera dois arquivos com seus respectivos nomes um em <span>JSX</span> e outro em <span>SCSS</span>, ficando da seguinte forma:
+      </p>
+
+      <img src="assets/imgs/separacao-arquivos.png" alt="Separacao de arquivos" class="img-space">
+
+      <p class="junto">
+        Apos isso comecaremos com a separacao.
+      </p>
+      <p>
+        Iremos comecar recortando nosso <span>const GoodCard</span> e o colando em nosso <strong>arquivo</strong> <span>GoodCard</span> e faremos o mesmo com <span>GoodList</span>. Alem disso tambem precisamos usar o <span>export</span> e o <span>import</span>.
+      </p>
+
+      <p class="junto">
+        Em nosso <span>GoodCard</span> iremos fazer seu <span>export</span> antes de <span>const</span> e fazer <span>import</span> de seu <span>SCSS</span>.
+      </p>
+
+      <p>
+        Em nosso <span>GoodList</span> sera um pouco diferente, temos que passar parametros para ele por conta do <span>goods</span>, entao agora ele recebera o parametro <span>goods</span> e sera nossa <strong>array</strong>. Em seguida dentro de nosso <span>GoodList</span>, precisa aceita-lo.
+      </p>
+
+      <p>
+        Tudo ficara da seguinte forma:
+      </p>
+
+      <div class="conteudo">
+
+        <div class="content">
+        
+<pre>
+import './App.scss';
+<code>
+import { GoodList } from './components/GoodList/GoodList';
+import goods from './goods.json';
+</code>
+
+export const App = () => (
+  < div className="App">
+
+    < h1>Goods List< /h1>
+
+    < GoodList <code>goods={goods}</code> />
+
+  < /div>
+);
+</pre>
+
+          <figure>
+            <figcaption>Arquivo App.jsx</figcaption>
+            <img src="assets/imgs/full-app.png" alt="App.jsx">
+          </figure>
+        </div>
+
+        <p>
+          Alteracoes feitas, podemos observar que alem de recortarmos nosso codigo de <span>GoodList</span> e <span>GoodCard</span>, foi preciso mais algumas alteracoes. Como:
+        </p>
+        <p class="junto">
+          Importacao do <span>GoodList</span>
+        </p>
+        <p>
+          Passar o <strong>atributo</strong> com mesmo nome de parametro de nosso <span>GoodList</span>, sendo ele <span>"goods"</span>.
+        </p>
+      </div>
+
+      <div class="conteudo">
+        
+        <div class="content">
+        
+<pre>
+<code>import './GoodCard.scss';</code>
+
+<code>export</code> const GoodCard = ({ good }) => (
+  < div
+    className="GoodCard" style={{ color: good.color }}
+  >
+    {`${good.name} ${good.id}`}
+  < /div>
+);
+</pre>
+
+          <figure>
+            <figcaption>Arquivo GoodCard.jsx</figcaption>
+            <img src="assets/imgs/full-GoodCard.png" alt="GoodCard">
+          </figure>
+        </div>
+
+        <p>
+          Nele podemos observar que quase nao houve alteracoes, apenas em seu <span>export</span> e <span>import SCSS</span>.
+        </p>
+        
+      </div>
+
+      <div class="conteudo">
+
+        <div class="content">
+        
+<pre>
+<code>
+import { GoodCard } from '../GoodCard/GoodCard';
+import './GoodList.scss';
+</code>
+
+<code>export</code> const GoodList = ({ <code>goods</code> }) => (
+  < div className="GoodList">
+
+    {goods.map(good => (
+      < GoodCard good={good} key={good.id} />        
+    ))}
+
+  < /div>
+);
+</pre>
+
+          <figure>
+            <figcaption>Arquivo GoodList.jsx</figcaption>
+            <img src="assets/imgs/full-GoodList.png" alt="GoodList">
+          </figure>
+        </div>
+
+      <p>
+        Em nosso <span>GoodList</span>, podemos obsevar mais mudancas como:
+      </p>
+
+      <p>
+        <span>Import</span> de nosso <span>GoodCard</span> e <span>SCSS</span> <span>export</span> e precisamos tambem adicionar o parametro <span>goods</span> para fazer a <span>desestruturacao</span>.
+      </p>
+        
+      </div>
+
+      </div>
+      
+    </div>
+
+    <div class="conteudo">
+
+      <h3 class="separado">Opcoes</h3>
+      <p>
+        Opcionalmente podemos tambem, nao passar todos os <span>elementos</span>, por exemplo passando apenas os <strong>5 primeiros</strong>, para isso em nosso <span>App.jsx</span> em nossa <strong>tag < GoodList /></strong> em seu atributo podemos passar um metedo <span>slice</span>. Exemplo:
+      </p>
+
+<pre>
+import './App.scss';
+import { GoodList } from './components/GoodList/GoodList';
+import goods from './goods.json';
+
+export const App = () => (
+  < div className="App">
+
+    < h1>Goods List< /h1>
+
+    < GoodList goods={goods<code>.slice(0, 5)</code>} />
+
+  < /div>
+);
+</pre>
+
+      <p class="junto">
+        Em nosso <span>GoodList.jsx</span>, iteramos sobre o <span>goods</span> recebidos e imprimimos o <strong>cartao (tag/card)</strong> para cada produto. É importante que apos o <span>map</span> adicionarmos o <span>key</span>. Essa <span>key</span> deve ser unica e vinculada ao <strong>elemento</strong> de array.
+      </p>
+      <p>
+        O <strong>componente</strong> <span>GoodCard</span> ja contem o <strong>layout</strong> necessario para cada cartao.
+      </p>
+      <p>
+        Uma das coisas que podemos melhorar é a forma como <span>importamos</span> o <strong>arquivo</strong>. Pois em nosso <span>App.jsx</span> em nosso <span>import</span>, temos que escrever o <span>GoodList</span> duas vezes:
+      </p>
+
+      <p class="junto">
+        <strong>App.jsx</strong>
+      </p>
+      <p>
+        <span>import { GoodList } from './components/GoodList/GoodList';</span>
+      </p>
+
+      <p class="junto">
+        Isso pode ser evitado se criarmos um <strong>arquivo</strong> de <strong>indice</strong>, entao em nosso <span>diretorio GoodList</span> iremos criar um novo arquivo e chama-lo de <span>index.js</span>, iremos querer exportar tudo desse arquivo, e para fazermos isso em nosso <span>index.js</span> ficara da seguinte forma:
+      </p>
+
+      <div class="content">
+
+<pre>
+<code>export * from './GoodList';</code>
+</pre>
+
+        <img src="assets/imgs/index-js.png" alt="Index js">
+
+      </div>
+
+      <p>
+        Usamos o asterisco <span>*</span>, para exportar tudo dentro de nosso <span>'./GoodList';</span>. Agora para conectarmos esse <strong>arquivo</strong> <span>index.js</span>, iremos precisar especificar o caminho para o <strong>diretorio</strong> e por padrao a importacao procurara o arquivo <span>index</span>.
+      </p>
+      <p>
+        Com isso agora em nosso <span>App.jsx</span> podemos fazer da seguinte forma:
+      </p>
+
+<pre>
+import './App.scss';
+<code>import { GoodList } from './components/GoodList';</code>
+import goods from './goods.json';
+
+export const App = () => (
+  < div className="App">
+
+    < h1>Goods List</h1>
+
+    < GoodList goods={goods.slice(0, 5)} />
+
+  < /div>
+);
+
+</pre>
+
+      <p>
+        Com isso agora usamos apenas uma vez o <span>GoodList</span> no <strong>import</strong>.
+      </p>
+      <p>
+        Podemos fazer o mesmo com <span>GoodCard</span>.
+      </p>
+
+    </div>
+
+
+    <div class="conteudo">
+
+      <h3 class="separado">Porque nao escrever tudo diretamente no index.js ?</h3>
+      <p>
+        O problema é que nossos arquivos entao terao todos o nome <span>indexIndex</span> e isso nao seria conveniente, pois nem sempre entenderemos pelo <strong>nome</strong> qual <strong>componente</strong> é.
+      </p>
+
+    </div>
+
+    <div class="link-aula">
+      <a href="./tests.html" class="conteudo-aula">Correcoes ChatGPT</a>
+    </div>
+
+  </main>
+
+  <div class="content-link">
+    <a class="next" href="../03_how_to_use_test_in_react Tasks/index.html">
+      Proxima Aula: How to Use Test in React Tasks
+    </a>
+  </div>
+</body>
+</html>
