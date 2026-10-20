@@ -1,6 +1,6 @@
-import React from 'react'
-import cn from 'classnames';
-import './Product.scss';
+// import React from 'react'
+// import cn from 'classnames';
+// import './Product.scss';
 
 export const Product = ({ title, price }) => (
   // <div className={`Product ${price === 0 ? 'Product--free' : 'Product--default'}`}>

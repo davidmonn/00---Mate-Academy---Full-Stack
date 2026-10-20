@@ -1,46 +1,324 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/scss/main.css">
-  <title>Document</title>
-</head>
-<body>
-  <div >
-    <a class="prev" href="../">Aula Anterior: </a>
-  </div>
-
-  <header>
-    <h1 class="title-princ">Document</h1>
-  </header>
-
-  <main>
-
-    <article>
-      <h3>Intro:</h3>
-      <p>
-
-      </p>
-    </article>
-
-    <div class="conteudo">
-      <h3 class="separado">Entendendo Melhor:</h3>
-      <p>
-        
-      </p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/scss/main.css" />
+    <title>Render List from an Array</title>
+  </head>
+  <body>
+    <div>
+      <a class="prev" href="../../02_props/03_conditional_styling/index.html">
+        Aula Modulo Anterior: Props - Aula: Conditional Styling
+      </a>
     </div>
 
-    <div class="link-aula">
-      <a href="./tests.html" class="conteudo-aula">Conteudo Aula</a>
+    <header>
+      <h1 class="title-princ">Render List from an Array</h1>
+    </header>
+
+    <main>
+      <article>
+        <h3>Intro:</h3>
+        <p>
+          Agora iremos ver como gerar <strong>listas de elementos</strong>
+          <span>React</span> a partir de um <span>array de dados</span>.
+        </p>
+      </article>
+
+      <div class="conteudo">
+        <h3 class="separado">Iniciando:</h3>
+        <p>
+          Iremos iniciar abrindo nosso <strong>projeto</strong>
+          <span>react-app</span> e criaremos um
+          <strong>layout simples</strong> em nosso <span>App.jsx</span> e tambem
+          um <span>array</span>, onde ela estara armazenada no
+          <strong>arquivo</strong> <span>goods.json</span>, este é um formato de
+          dados especial, semelheante a
+          <span>objetos e arrays JavaScript</span>, mas com restricoes
+          adicionais.
+        </p>
+        <p>
+          Exemplo: em <span>JSON</span>, todas as <strong>strings</strong> devem
+          estar entre <strong>aspas duplas ""</strong>.
+          <strong>Aspas simples</strong> ou <strong>acentos</strong> nao sao
+          permitidos. Alem de <strong>strings</strong> podemos usar
+          <strong>numeros, valores true e false, e null</strong>,
+          <strong>undefined</strong> nao é permitido.
+          <strong>Objetos e arrays</strong> tambem sao permitidos, e qualquer
+          outra coisa nao é permitido.
+        </p>
+
+        <p class="separado">
+          Escolhemos o formato <span>JSON</span> pois é um formato de
+          <span>compartilhamento de dados</span> mais popular entre
+          <strong>cliente</strong> e <strong>servidor</strong>.
+        </p>
+
+        <div class="content">
+          <figure>
+            <figcaption>Arquivo <span>App.jsx</span></figcaption>
+            <img src="assets/imgs/App-jsx.png" alt="Codigo Inicial App" />
+          </figure>
+
+          <figure>
+            <figcaption>Arquivo <span>goods.json</span></figcaption>
+            <img
+              src="assets/imgs/goods-json.png"
+              alt="Array Incial com json"
+              style="height: 500px"
+            />
+          </figure>
+        </div>
+
+        <p>
+          Feito isso iremos querer ter nao apenas 3 cartoes de produtos em nossa
+          pagina, mas um cartao para cada elemento na <strong>array</strong>.
+          Para fazermos isso, precisamos importar a <strong>array</strong> de
+          dados. Como criamos nosso <span>goods.json</span> ao lado de nosso
+          <span>App.jsx</span>, podemos apenas importa-lo da seguinte forma:
+        </p>
+
+        <img
+          src="assets/imgs/import-json.png"
+          alt="Importando json"
+          class="img-space"
+        />
+
+        <p class="junto">
+          Apos fazermos nossa <strong>importacao</strong>, iremos querer remover
+          uma parte de nosso codigo, para podermos inseri-la de forma correta.
+          Usar <strong>loops ou outros builds</strong> que nao sejam
+          <strong>expressoes</strong>, ou seja, nao retornam valores, nao é
+          permitido no <span>jsx</span>.
+        </p>
+        <p>
+          Em vez disso iremos usar um <strong>metodo</strong> que gerara um
+          <strong>array</strong> de elementos <span>JSX</span>. Exemplo: para
+          cada <strong>elemento em nossa array</strong> de
+          <span>goods.json</span>, iremos querer retornar uma
+          <strong>tag</strong> como a que montamos com
+          <strong>GoodCards</strong> e no <span>React</span> isso é feito usando
+          o <strong>metodo</strong> <span>Map</span>.
+        </p>
+      </div>
+
+      <div class="conteudo">
+        <h3 class="separado">Inserindo Json</h3>
+        <p>
+          Iremos comecar retornando uma parte de nossa <span>tag</span> sendo
+          ela:
+        </p>
+
+        <pre>
+< div className="GoodCard">
+    Potato
+< /div>
+</pre
+        >
+
+        <p>
+          Feito isso podemos apagar as outras tags deixando a
+          <span>GoodList</span> onde dentro dela iremos inserir
+          <span>chves {}</span>, ou seja, de <span>JSX</span> passamos para
+          <span>JavaScript</span>. Em seguida iremos usar a
+          <span>array goods</span> e chamamos o <strong>metodo</strong>
+          <span>map</span> nela, ficando da seguinte forma:
+        </p>
+
+        <div class="content">
+          <pre>
+import './App.scss';
+import goods from './goods.json';
+
+export const App = () => (
+  < div className="App">
+
+    < h1>Goods List< /h1>
+
+    < div className="GoodList">
+
+      <code>
+      {goods.map(good => (
+        < div className="GoodCard">
+          Potato
+        < /div>
+      ))}
+      </code>
+
+    < /div>
+
+  < /div>
+);
+</pre>
+
+          <img src="assets/imgs/inserindo-map.png" alt="Inserindo map" />
+        </div>
+
+        <p>
+          Dessa forma ainda nao estara concluido, com isso estaremos apenas
+          imprimindo <strong>"Potato"</strong> na mesma quantidade de array que
+          temos.
+        </p>
+        <p>
+          Mas temos um <span>objeto good (map)</span>, onde temos propriedades
+          <strong>id, name</strong> e <strong>color</strong>. Entao dentro de
+          nossa <strong>tag</strong> de <span>map</span>, ao inves de
+          imprimirmos <strong>potato</strong> apagaremos o
+          <strong>potato</strong> e colocaremos <span>chaves {}</span> em
+          seguida pelo <strong>objeto good</strong>. Ex:
+          <span>{good.name}</span> ou se desejarmos passar mais de uma
+          informacao podemos fazer <span>`${good.id} ${good.name}`</span>.
+          Ficando da seguinte forma:
+        </p>
+
+        <pre>
+import './App.scss';
+import goods from './goods.json';
+
+export const App = () => (
+  < div className="App">
+
+    < h1>Goods List< /h1>
+
+    < div className="GoodList">
+      {goods.map(good => (
+        < div className="GoodCard">
+          <code>{`${good.id} ${good.name}`}</code>
+        < /div>
+      ))}
+
+    < /div>
+
+  < /div>
+);
+</pre>
+      </div>
+
+      <div class="conteudo">
+        <h3 class="separado">Alterando Cores do Texto</h3>
+        <p>
+          Outra coisa que podemos estar fazendo é alterando a cor do texto,
+          utilizando da <strong>prorpiedade color</strong> que demos. Ficando da
+          seguinte forma:
+        </p>
+
+        <pre>
+import './App.scss';
+import goods from './goods.json';
+
+export const App = () => (
+  < div className="App">
+
+    < h1>Goods List< /h1>
+
+    < div className="GoodList">
+
+      {goods.map(good => (
+        <code>
+        < div
+          className="GoodCard" style={{ color: good.color }}
+        >
+        </code>
+          {`${good.name} ${good.id}`}
+        < /div>
+      ))}
+
+    < /div>
+
+  < /div>
+);
+</pre>
+
+        <p>
+          Assim dessa forma teremos os resultados de nossa
+          <strong>callbacks</strong> de forma certa como os
+          <span>nomes, ids</span> e <strong>estilizacao</strong>.
+        </p>
+        <p>
+          Porem ainda temos um pequeno problema, onde se abrirmos nosso
+          <span>devTools</span> veremos um erro em nosso
+          <strong>console</strong>. Onde cada <span>child</span> deve ter uma
+          <strong>chave unica</strong>. Oque é e para e porque precisamos,
+          veremos mais tarde quando vermos sobre
+          <span>otimizacao de componentes React</span>. Por enquanto apenas
+          iremos adicionar um valor unico a cada <strong>tag</strong>.
+        </p>
+      </div>
+
+      <div class="conteudo">
+        <h3 class="separado">Adicionando Valores Unicos as Tags</h3>
+
+        <p>
+          Temos uma <strong>iteracao de array</strong> sendo ele nosso
+          <span>{good.map(good => ())}</span>, nele temos nosso
+          <strong>metodo</strong> <span>map</span>, com isso em nossa primeira
+          <strong>tag</strong> dentro do <strong>metodo</strong>
+          <span>map</span>, precisamos adicionar o
+          <strong>atributo key</strong>.
+        </p>
+
+        <p>
+          Dentro desse <strong>atributo</strong> deve haver um valor
+          <strong>unico</strong> é muito importante que esse valor esteja
+          vinculado de alguma forma ao nosso <strong>array</strong>. Para
+          fazermos isso iremos usar o <strong>atributo key</strong> acessaremos
+          o produto e sua propriedade <strong>id</strong>, ficando da seguinte
+          forma:
+        </p>
+
+        <div class="content">
+          <pre>
+import './App.scss';
+import goods from './goods.json';
+
+export const App = () => (
+  < div className="App">
+
+    < h1>Goods List< /h1>
+
+    < div className="GoodList">
+
+      {goods.map(good => (
+        < div
+          <code>key={good.id}</code>
+          className="GoodCard" style={{ color: good.color }}
+        >
+          {`${good.name} ${good.id}`}
+        < /div>
+      ))}
+
+    < /div>
+
+  < /div>
+);
+</pre
+          >
+
+          <img src="assets/imgs/add-id.png" alt="Adicionando id" />
+        </div>
+
+        <p>
+          Feito isso estara corrigido nosso <strong>problema</strong>. Com o
+          <strong>atributo key</strong>, o <span>React</span> sabera qual dado
+          da <strong>array</strong> esta associada a cada elemento da pagina.
+          Como temos um <strong>layout</strong> e muitos elementos sao criados,
+          é necessario entender como cada <strong>div</strong> na pagina
+          vinculada a algum objeto com dados ou algo mais, entao a
+          <strong>key</strong> é uma vinculacao e é importante para a
+          <strong>otimizacao</strong>.
+        </p>
+      </div>
+
+      <div class="link-aula">
+        <!-- <a href="./tests.html" class="conteudo-aula">Conteudo Aula</a> -->
+      </div>
+    </main>
+
+    <div class="content-link">
+      <a class="next" href="../02_split_list_into_components/index.html">
+        Proxima Aula: Split List into Components
+      </a>
     </div>
-
-  </main>
-
-  <div class="content-link">
-    <a class="next" href="../">
-      Proxima Aula: 
-    </a>
-  </div>
-</body>
+  </body>
 </html>
