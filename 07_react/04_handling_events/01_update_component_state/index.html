@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/scss/main.css">
+  <title>Update Component State</title>
+</head>
+<body>
+  <div >
+    <a class="prev" href="../../03_renderizacao_de_listas/03_how_to_use_test_in_react_tasks/index.html">
+      <strong>Modulo Anterior: - Aula: How to use test in React Tasks</strong>
+    </a>
+  </div>
+
+  <header>
+    <h1 class="title-princ">Update Component State</h1>
+  </header>
+
+  <main>
+
+    <article>
+      <h3>Introdução:</h3>
+      <p>
+        Agora iremos ver sobre o <strong>estado</strong> de um <strong>componente</strong> <span>React</span>.
+      </p>
+    </article>
+
+    <div class="conteudo">
+      <h3 class="separado">Entendendo Melhor:</h3>
+      <p>
+        Para entendermos isso, iremos continuar em nosso <strong>projeto</strong> <span>react-app</span>, onde criaremos um <strong>layout</strong> simples, que ficará da seguinte forma:
+      </p>
+
+      <div class="content">
+
+<pre>
+import './App.scss';
+
+export const App = () => (
+  < div className="App">
+
+    < h1>Value is 0< /h1>
+
+    < button>1</ button>
+    < button>2</ button>
+    < button>3</ button>
+
+  < /div>
+);
+
+</pre>
+
+        <img src="assets/imgs/inicial-layout.png" alt="Layout Inicial">
+
+      </div>
+
+      <p>
+        Feito isso, queremos que o valor mude após clicarmos em algum desses <strong>botões</strong>. Iremos começar lidando com o evento de clique (<span>click</span>).
+      </p>
+
+    </div>
+
+    <div class="conteudo">
+
+      <h3 class="separado">Evento de clique:</h3>
+
+      <p>
+        Em <span>React</span>, usamos um <strong>atributo</strong> chamado <span>onClick</span> para tratar cliques. O nome começa com <span>on</span> e, em seguida, vem o evento com a primeira letra maiúscula. Seu valor deve ser uma <strong>referência</strong> para uma <strong>função</strong>; também podemos escrever uma função diretamente, como uma <strong>arrow function</strong>. Ficando da seguinte forma:
+      </p>
+
+      <div class="content">
+
+<pre>
+import './App.scss';
+
+export const App = () => (
+  < div className="App">
+
+    < h1>Value is 0< /h1>
+
+    < button <code>onClick={() => {}}</code> > 1 < /button>
+    < button>2</ button>
+    < button>3</ button>
+
+  < /div>
+);
+</pre>
+
+        <img src="assets/imgs/onClick-start.png" alt="Iniciando onClick">
+
+      </div>
+
+      <p>
+        Agora podemos iniciar fazendo um <strong>teste</strong>, no qual podemos imprimir o valor 1 no console, da seguinte forma:
+      </p>
+
+      <div class="content">
+
+<pre>
+import './App.scss';
+
+export const App = () => (
+  < div className="App">
+
+    < h1>Value is 0< /h1>
+
+    < button <code>onClick={() => {
+      console.log(1);
+    }}</code> > 1 < /button>
+    < button>2</ button>
+    < button>3</ button>
+
+  < /div>
+);
+</pre>
+
+        <img src="assets/imgs/onClick-create-test.png" alt="Criando teste onClick">
+
+      </div>
+
+      <p>
+        Para verificarmos, podemos abrir nosso <span>DevTools (F12/Inspecionar)</span>. Após fazermos o teste, iremos deixar nosso código da seguinte forma:
+      </p>
+
+      <div class="content">
+
+<pre>
+import './App.scss';
+
+export const App = () => (
+  < div className="App">
+
+    < h1>Value is 0< /h1>
+
+    < button <code>onClick={() => console.log(1)}</code> > 1 < /button>
+    < button <code>onClick={() => console.log(2)}</code> > 2 < /button>
+    < button <code>onClick={() => console.log(3)}</code> > 3 < /button>
+
+  < /div>
+);
+</pre>
+
+        <img src="assets/imgs/onCLick-alteracao-pos-test.png" alt="Criando teste onClick">
+
+      </div>
+
+      <p>
+        Agora queremos mudar o valor <span>0</span> exibido em <strong>Value is 0</strong>. Para isso, podemos tentar usar uma variável e refazer algumas partes, ficando da seguinte forma:
+      </p>
+
+      <div class="content">
+
+<pre>
+import './App.scss';
+
+export const App = () => {
+  let value = 0;
+
+  return (
+    < div className="App">
+      < h1>Value is 0< /h1>
+      < button onClick={() => <code>{value = 1; console.log(1);}</code> } > 1 < /button>
+      < button onClick={() => <code>{value = 2; console.log(2);}</code> } > 2 < /button>
+      < button onClick={() => <code>{value = 3; console.log(3);}</code> } > 3 < /button>
+    < /div>
+  )
+}
+</pre>
+
+        <img src="assets/imgs/onCLick-add-var.png" alt="Criando teste onClick">
+
+      </div>
+
+      <p>
+        <span>Obs:</span> nosso código ainda não terá o resultado que desejamos. Embora a atribuição seja válida em JavaScript, alterar uma variável comum não faz o React renderizar o componente novamente. Colocamos <strong>console.log(1)</strong> para testar o clique. A função também pode ser escrita de forma curta, como neste exemplo:
+      </p>
+
+<pre>
+< button onClick={() => <code>value = 1</code> } > 1 < /button>
+</pre>
+
+      <p>
+        Ou seja, usamos chaves para escrever várias instruções dentro da função. Nesse caso, não há um retorno explícito.
+      </p>
+
+      <p class="junto">
+        Para entendermos isso, iremos precisar descobrir quem realmente chama essa <strong>função</strong>. Para isso, iremos abrir nosso <strong>arquivo</strong> <span>index.jsx</span>.
+      </p>
+      <p>
+        Em nosso <span>index.jsx</span>, teremos as seguintes informações:
+      </p>
+      
+      <div class="content">
+
+<pre>
+import { createRoot } from 'react-dom/client';
+import { App } from './App';
+import './index.scss';
+
+const element = document.querySelector("#root")
+
+createRoot(element).render(
+
+  < App />
+    
+);
+</pre>
+
+        <img src="assets/imgs/index-jsx.png" alt="index.jsx">
+
+      </div>
+
+      <p>
+        Em nosso <span>index.jsx</span>, podemos ver a <strong>tag < App /></strong>. Ao renderizá-la, o <span>React</span> chama a função do componente <strong>App</strong>, que retorna o <strong>layout</strong> a ser exibido.
+      </p>
+
+      <p>
+        Esse <strong>layout</strong> é exibido na página pela raiz criada com <span>createRoot()</span>. O <span>React</span> chama a função do componente na renderização inicial e pode chamá-la novamente quando o estado muda.
+      </p>
+
+      <p>
+        Portanto, para obter o <strong>layout</strong> inicial, o <span>React</span> executa a função do componente, declarada em <span>export const App</span>. Para atualizar a interface após uma interação, precisamos atualizar o estado usando os recursos do React.
+      </p>
+
+      <p class="junto">
+        Em nosso componente <span>App</span>, uma <strong>variável</strong> comum como <span>let value = 0;</span> não é suficiente para controlar o estado, pois sua alteração não faz o componente renderizar novamente. Em <span>React</span>, usamos um Hook chamado <span>useState</span>, importado da biblioteca <strong>React</strong>.
+      </p>
+
+      <p>
+        Essa função é chamada de <span>Hook</span>. O <span>useState</span> permite guardar um valor entre renderizações. Chamamos essa função passando o valor inicial, que neste caso será <strong>0</strong>. O exemplo ficará assim:
+      </p>
+
+      <div class="content">
+
+<pre>
+<code>import { useState } from 'react';</code>
+import './App.scss';
+
+export const App = () => {
+  let value = <code>useState(0)</code>;
+
+  return (
+    < div className="App">
+      < h1>Value is 0< /h1>
+      < button onClick={() => <code>{value = 1; console.log(1);}</code> } > 1 < /button>
+      < button onClick={() => <code>{value = 2; console.log(2);}</code> } > 2 < /button>
+      < button onClick={() => <code>{value = 3; console.log(3);}</code> } > 3 < /button>
+    < /div>
+  )
+}
+</pre>
+
+        <img src="assets/imgs/add-useState.png" alt="Adicionando useState">
+
+      </div>
+
+      <p>
+        A função <strong>useState</strong> retorna um array com dois elementos. Por isso, usamos a desestruturação para obter o valor atual e a função que permite atualizá-lo. Ficará da seguinte forma:
+      </p>
+
+      <div class="content">
+
+<pre>
+<code>import { useState } from 'react';</code>
+import './App.scss';
+
+export const App = () => {
+  let <code>[value, setValue]</code> = useState(0);
+
+  return (
+    < div className="App">
+      < h1>Value is 0< /h1>
+      < button onClick={() => <code>{value = 1; console.log(1);}</code> } > 1 < /button>
+      < button onClick={() => <code>{value = 2; console.log(2);}</code> } > 2 < /button>
+      < button onClick={() => <code>{value = 3; console.log(3);}</code> } > 3 < /button>
+    < /div>
+  )
+}
+</pre>
+
+        <img src="assets/imgs/useState-destruturing.png" alt="Desestruturando useState">
+
+      </div>
+
+      <p>
+        O primeiro elemento, <span>value</span>, contém o valor atual do estado. O segundo, <span>setValue</span>, é a função usada para definir um novo valor, que será refletido na próxima <strong>renderização</strong>. Esse nome é uma convenção: usamos <span>set</span> seguido do nome do estado.
+      </p>
+
+      <p class="separado">
+        <strong>Explicação</strong> de <span>[value, setValue]</span>
+      </p>
+
+      <p>
+        <span>value</span> será o valor atual do estado.
+      </p>
+
+      <p>
+        <span>setValue</span> será a função usada para definir um novo valor para a próxima <strong>renderização</strong>.
+      </p>
+
+      <p class="junto">
+        Agora, em vez de atribuir um valor diretamente com <strong>value = 1</strong>, iremos chamar a função <span>setValue</span> e passar <strong>1</strong> para ela. Assim, o React será informado da atualização do estado.
+      </p>
+
+      <p class="separado">
+        Agora funcionará normalmente, ficando da seguinte forma:
+      </p>
+
+      <div class="content">
+
+<pre>
+<code>import { useState } from 'react';</code>
+import './App.scss';
+
+export const App = () => {
+  const <code>[value, setValue]</code> = useState(0);
+
+  return (
+    < div className="App">
+      < h1>Value is {value}< /h1>
+      < button onClick={() => <code>{setValue(1)}</code> } > 1 < /button>
+      < button onClick={() => <code>{setValue(2)}</code> } > 2 < /button>
+      < button onClick={() => <code>{setValue(3)}</code> } > 3 < /button>
+    < /div>
+  )
+}
+</pre>
+
+        <img src="assets/imgs/useState-addFuncao.png" alt="Adicionando a função useState">
+
+      </div>
+
+    </div>
+
+    <div class="conteudo">
+
+      <h3 class="separado">Adicionando 2 useState</h3>
+
+      <p>
+        Também podemos adicionar dois estados usando <span>useState</span>, da seguinte forma:
+      </p>
+
+      <div class="content">
+
+<pre>
+import './App.scss';
+import { useState } from 'react';
+
+export const App = () => {
+  const [value, setValue] = useState(0);
+  <code>const [message, setMessage] = useState('');</code>
+
+  return (
+    < div className="App">
+
+      < h1>Value is {value}< /h1>
+      < p>
+        {message}
+      < /p>
+
+      < button 
+        onClick={() => {
+          setValue(1);
+          <code>
+          setMessage(message + 1);
+          console.log(value);
+          </code>
+        }}
+      >
+        1
+      < /button>
+
+      < button 
+        onClick={() => {
+          setValue(2);
+          <code>
+          setMessage(message + 2);
+          console.log(value);
+          </code>
+        }}
+      >
+        2
+      < /button>
+      
+      < button 
+        onClick={() => {
+          setValue(3);
+          <code>
+          setMessage(message + 3);
+          console.log(value);
+          </code>
+        }}
+      >
+        3
+      < /button>
+
+    < /div>
+  )
+};
+</pre>
+
+        <img src="assets/imgs/fullCode.png" alt="Código completo">
+
+      </div>
+
+      <p>
+        Podemos observar que o <strong>message</strong> acumula os números dos botões clicados, formando um histórico simples das interações. Também usamos dois Hooks <span>useState</span>. Mesmo que um clique atualize os dois estados, o <span>React</span> normalmente agrupa essas atualizações e faz uma única nova renderização ao final do evento.
+      </p>
+
+      <p class="junto">
+        Como a marcação dos botões é praticamente a mesma, podemos substituir os três botões por uma iteração com <span>map()</span>. Ficando da seguinte forma:
+      </p>
+
+      <div class="content">
+
+<pre>
+import './App.scss';
+import { useState } from 'react';
+
+export const App = () => {
+  const [value, setValue] = useState(0);
+  const [message, setMessage] = useState('');
+
+  return (
+    < div className="App">
+
+      < h1>Value is {value}< /h1>
+      < p>
+        {message}
+      < /p>
+      <code>
+      {[1, 2, 3, 4, 5].map(x => (
+          < button
+          key={x}
+          onClick={() => {
+            setValue(x);
+            setMessage(message + x);
+            console.log(value);
+          }}
+          >
+            {x}
+          < /button>
+      ))}
+      </code>
+    < /div>
+  )
+};
+</pre>
+
+        <img src="assets/imgs/useState-iteration.png" alt="Usando iteração no useState">
+
+      </div>
+
+    </div>
+
+    <div class="conteudo">
+
+      <h3 class="separado">Observações Finais:</h3>
+
+        <p class="separado">
+          <span>useState</span>: usamos para informar ao <span>React</span> que determinado valor faz parte do estado do componente e que, ao atualizá-lo usando sua função de atualização, o componente poderá ser renderizado novamente.
+        </p>
+
+        <p>
+          Ao importarmos <span>useState</span> do <span>React</span>, o correto é:
+        </p>
+
+        <p>
+          <span>import { useState } from 'react'</span>, e não <span>from './react'</span>.
+        </p>
+
+    </div>
+
+    <div class="link-aula">
+      <!-- <a href="./tests.html" class="conteudo-aula">Conteúdo da aula</a> -->
+    </div>
+
+  </main>
+
+  <div class="content-link">
+    <a class="next" href="../../05_manipulacao_de_listas/01_how_to_sort_a_list/index.html">
+      <strong>Proximo Modulo: Manipulação de Listas - Aula: How to Sort a List</strong>
+    </a>
+  </div>
+</body>
+</html>
