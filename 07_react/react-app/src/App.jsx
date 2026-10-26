@@ -1,28 +1,47 @@
-import './App.scss';
 import { useState } from 'react';
+import cn from 'classnames';
+import './App.scss';
+import goodsFromServer from './goods.json';
+import { GoodList } from './components/GoodList/GoodList';
+
+const SORT_FIELD_ID = 'id';
 
 export const App = () => {
-  const [value, setValue] = useState(0);
-  const [message, setMessage] = useState('');
+  const [visibleGoods, setVisibleGoods] = useState(goodsFromServer);
+  const [sortField, setSortField] = useState('');
+
+  const reset = () => {
+    setVisibleGoods(goodsFromServer);
+    setSortField('');
+  }
+
+  const sortById = () => {
+    setVisibleGoods(
+      [...visibleGoods].sort((good1, good2) => good1.id - good2.id)
+    );
+    setSortField(SORT_FIELD_ID);
+  };
 
   return (
     <div className="App">
 
-      <h1>Value is {value}</h1>
-      <p>
-        {message}
-      </p>
+      <header>
+        <button onClick={reset} >Reset</button>
 
-      {[1, 2, 3, 4, 5].map(x => (
-        <button 
-          onClick={() => {
-              setValue(x);
-              setMessage(message + x);
-            }}
+        <div>
+          Sort by:
+          <button
+            onClick={sortById}
+            className={cn({ active: sortField === SORT_FIELD_ID } )} 
           >
-            {x}
-        </button>
-      ))}
+            id
+          </button>
+          <button>name</button>
+          <button>color</button>
+        </div>
+      </header>
+
+      <GoodList goods={visibleGoods} />
 
     </div>
   )

@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/scss/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <a
+        class="prev"
+        href="../../04_handling_events/01_update_component_state/index.html"
+      >
+        <strong
+          >Modulo Anterior: Handling Events - Aula: Update Component
+          State</strong
+        >
+      </a>
+    </div>
+
+    <header>
+      <h1 class="title-princ">Document</h1>
+    </header>
+
+    <main>
+      <article>
+        <h3>Intro:</h3>
+        <p>
+          Agora iremos ver com mais detalhes como controlar a
+          <strong>exibicao de um array</strong> usando o <span>React</span>.
+        </p>
+      </article>
+
+      <div class="conteudo">
+        <h3 class="separado">Entendendo Melhor:</h3>
+        <p>
+          Para entendermos melhor continuaremos em nosso
+          <strong>projeto</strong> <span>react-app</span>, nele iremos criar um
+          em nosso <strong>componente</strong> <span>app</span>, nele teremos um
+          <strong>header</strong> com varios <strong>buttons</strong>, ficando
+          da seguinte forma:
+        </p>
+
+        <div class="content">
+          <pre>
+import './App.scss';
+import goodsFromServer from './goods.json';
+import { GoodList } from './components/GoodList/GoodList';
+
+export const App = () => {
+
+  return (
+    < div className="App">
+
+      < header>
+        < button>Reset< /button>
+
+        < div>
+          Sort by:
+          < button>id< /button>
+          < button>name< /button>
+          < button>color< /button>
+        < /div>
+      < /header>
+
+      < GoodList goods={goodsFromServer} />
+
+    < /div>
+  )
+};
+</pre
+          >
+
+          <img src="assets/imgs/start-code.png" alt="Codigo Inicial" />
+        </div>
+
+        <p>
+          Podemos observar que estamos fazendo uso o <span>GoodList</span>, que
+          criamos anteriormente.
+        </p>
+      </div>
+
+      <div class="conteudo">
+        <h3 class="separado">Organizando Lista</h3>
+        <p>
+          Queremos que ao precionarmos em alguma opcao dos botoes criados, seja
+          feito uma organizacao. Nada ira funcionar no momento pois nao
+          adicionamos nenhuma logica.
+        </p>
+
+        <p>
+          Para corrigirmos isso podemos inicialmente comecar em nosso
+          <span>button</span> adicionar um
+          <strong>manipulador de click</strong>, ira ficar da seguinte forma:
+        </p>
+
+        <div class="content">
+          <pre>
+import './App.scss';
+import goodsFromServer from './goods.json';
+import { GoodList } from './components/GoodList/GoodList';
+
+export const App = () => {
+  <code>
+  const sortById = () => {
+    goodsFromServer.sort((good1, good2) => good1.id - good2.id)
+  };
+  </code>
+
+  return (
+    < div className="App">
+
+      < header>
+        < button>Reset< /button>
+
+        < div>
+          Sort by:
+          < button 
+            onCLick={<code>sortById</code>}
+          >
+            id
+          < /button>
+          < button>name< /button>
+          < button>color< /button>
+        < /div>
+      < /header>
+
+      < GoodList goods={goodsFromServer} />
+
+    < /div>
+  )
+};
+</pre>
+
+          <img src="assets/imgs/add-logic.png" alt="Add sort id" />
+        </div>
+
+        <p>
+          Feito isso, mesmo apos clicarmos, ainda nao teremos resultado, isso
+          ocorre pois o <span>React</span>, nao sabe que algo mudou, nao o
+          <strong>informamos</strong>, e nao temos nenhum
+          <strong>estado</strong> para chamar a <strong>funcao</strong>
+          <span>set</span>. Entao precisamos armazenar nossa
+          <strong>matrix</strong> no <strong>estado</strong>.
+        </p>
+
+        <p class="junto">
+          Para isso iremos criar uma nova variavel, iremos chama-la de
+          <span
+            >[visibleGoods, setVisibleGoods] = useState('goodsFromServer(valor
+            inicial)')</span
+          >.
+        </p>
+        <p>
+          Feito isso passamos nossas novas variaveis sobre o
+          <strong>estado de mudanca</strong> dentro de nosso codigo ficando da
+          seguinte forma:
+        </p>
+
+        <div class="content">
+          <pre>
+import './App.scss';
+import goodsFromServer from './goods.json';
+import { GoodList } from './components/GoodList/GoodList';
+<code>
+import { useState } from 'react';
+</code>
+
+export const App = () => {
+  <code>
+  const [visibleGoods, setVisibleGoods = useState(goodsFromServer);
+  </code>
+
+  const sortById = () => {
+    <code>
+    setVisibleGoods(
+      visibleGoods.sort((good1, good2) => good1.id - good2.id)
+    )
+  </code>
+  };
+
+  return (
+    < div className="App">
+
+      < header>
+        < button>Reset< /button>
+
+        < div>
+          Sort by:
+          < button 
+            onCLick={<code>sortById</code>}
+          >
+            id
+          < /button>
+          < button>name< /button>
+          < button>color< /button>
+        < /div>
+      < /header>
+
+      < GoodList goods={visibleGoods} />
+
+    < /div>
+  )
+};
+</pre>
+
+          <img src="assets/imgs/add-useState.png" alt="Add useState" />
+        </div>
+
+        <p>
+          Feito isso ainda nao estara completo, pois quando fazemos um
+          <span>retorno</span> com referencia a mesma <strong>matrix</strong> o
+          <span>react</span> acaba nao mudando o <strong>estado</strong> pois
+          passamos a mesma <strong>referencia</strong>, para evitarmos esse
+          problema podemos fazer uma <span>copia e desestruturing</span>,
+          ficando da seguinte forma:
+        </p>
+
+        <div class="content">
+          <pre>
+import './App.scss';
+import goodsFromServer from './goods.json';
+import { GoodList } from './components/GoodList/GoodList';
+import { useState } from 'react';
+
+export const App = () => {
+  const [visibleGoods, setVisibleGoods = useState(goodsFromServer);
+
+  const sortById = () => {
+    setVisibleGoods(
+      <code>[...visibleGoods]</code>.sort((good1, good2) => good1.id - good2.id)
+    )
+  };
+
+  return (
+    < div className="App">
+
+      < header>
+        < button>Reset< /button>
+
+        < div>
+          Sort by:
+          < button 
+            onClick={sortById}
+          >
+            id
+          < /button>
+          < button>name< /button>
+          < button>color< /button>
+        < /div>
+      < /header>
+
+      < GoodList goods={visibleGoods} />
+
+    < /div>
+  )
+};
+</pre
+          >
+
+          <img src="assets/imgs/add-order-id.png" alt="Add order id" />
+        </div>
+
+        <p>
+          Resumindo, para o <span>React</span> saber sobre as mudancas, em vez
+          de <strong>mutar</strong> o objeto existente
+          (<span>visibleGoods</span>), temos que criar uma <span>copia</span> e
+          passar outra <strong>matrix</strong> que sera renderizada, por isso
+          fizemos <span>[...visibleGoods]</span>
+        </p>
+
+        <h3 class="separado">Destacando Botao Apos Selecionado</h3>
+        <p>
+          Agora iremos ver por exemplo como podemos destacar o botao quando a
+          <strong>ordenacao</strong> é feita pela <strong>id</strong>.
+        </p>
+        <p>
+          Para isso temos uma classe <strong>especial</strong> chamada
+          <span>Active</span>, entao iremos adiciona-la agora ao nosso
+          <strong>botao</strong>.
+        </p>
+
+        <div class="content">
+          <pre>
+import './App.scss';
+import goodsFromServer from './goods.json';
+import { GoodList } from './components/GoodList/GoodList';
+import { useState } from 'react';
+
+export const App = () => {
+  const [visibleGoods, setVisibleGoods = useState(goodsFromServer);
+
+  const sortById = () => {
+    setVisibleGoods(
+      [...visibleGoods].sort((good1, good2) => good1.id - good2.id)
+    )
+  };
+
+  return (
+    < div className="App">
+
+      < header>
+        < button>Reset< /button>
+
+        < div>
+          Sort by:
+          < button onClick={sortById} <code>className="active"</code>>id< /button>
+          < button>name< /button>
+          < button>color< /button>
+        < /div>
+      < /header>
+
+      < GoodList goods={visibleGoods} />
+
+    < /div>
+  )
+};
+</pre
+          >
+
+          <img src="assets/imgs/add-class-active.png" alt="Add useState" />
+        </div>
+
+        <p>
+          Mas temos um <strong>porem</strong>, queremos que so apareca essa
+          <strong>modificacao</strong> apenas quando tudo estiver ordenado e
+          seja clicada em sua determinada opcao.
+        </p>
+
+        <p class="junto">
+          Iremos comecar deixando nosso <span>import { useState }</span> no
+          inicio, para que todas as bibliotecas venham primeiro nas importacoes.
+        </p>
+        <p>
+          Em seguidas iremos duplicas nossa <span>import { useState }</span> e
+          mudaremos para <span>import cn from 'classnames';</span>.
+        </p>
+        <p class="junto">
+          Agora ao inves de usarmos constantemente a
+          <strong>class active</strong>, a removemos e faremos da seguinte
+          forma:
+        </p>
+
+        <div class="content">
+          <pre>
+import { useState } from 'react';
+import cn from 'classnames';
+import './App.scss';
+import goodsFromServer from './goods.json';
+import { GoodList } from './components/GoodList/GoodList';
+
+export const App = () => {
+  const [visibleGoods, setVisibleGoods = useState(goodsFromServer);
+
+  const sortById = () => {
+    setVisibleGoods(
+      [...visibleGoods].sort((good1, good2) => good1.id - good2.id)
+    )
+  };
+
+  return (
+    < div className="App">
+
+      < header>
+        < button>Reset< /button>
+
+        < div>
+          Sort by:
+          < button onClick={sortById} <code>className={cn('active')}</code>>id< /button>
+          < button>name< /button>
+          < button>color< /button>
+        < /div>
+      < /header>
+
+      < GoodList goods={visibleGoods} />
+
+    < /div>
+  )
+};
+</pre
+          >
+
+          <img src="assets/imgs/add-classnames.png" alt="Add classnames" />
+        </div>
+
+        <p>
+          Feito isso para uma melhor legibilidade ja que queremos que nosso
+          modificador apareca em determinada condicao, iremos primeiro organizar
+          nosso codigo e criar uma nova variavel.
+        </p>
+        <p>
+          Essa nova variavel ira servir para que nos ajude a entender que a
+          ordenacao esta acontecendo especificamente por <strong>id</strong>.
+        </p>
+        <p>
+          Essa nossa nova variavel iremos chama-la de
+          <span
+            >const [sortField, setSortField] = useState('') por padrao a
+            deixaremos vazia</span
+          >. Apos isso iremos em nosso <strong>button classNames</strong> e
+          adicionamos a condicao que desejamos, ficando da seguinte forma:
+        </p>
+
+        <div class="content">
+          <pre>
+import { useState } from 'react';
+import cn from 'classnames';
+import './App.scss';
+import goodsFromServer from './goods.json';
+import { GoodList } from './components/GoodList/GoodList';
+
+export const App = () => {
+  const [visibleGoods, setVisibleGoods = useState(goodsFromServer);
+  <code>const [sortField, setSortField] = useState('');</code>
+
+  const sortById = () => {
+    setVisibleGoods(
+      [...visibleGoods].sort((good1, good2) => good1.id - good2.id)
+    );
+    <code>setSortField('id')</code>
+  };
+
+  return (
+    < div className="App">
+
+      < header>
+        < button>Reset< /button>
+
+        < div>
+          Sort by:
+          < button
+            onClick={sortById}
+            <code>className={cn({ active: sortField === 'id' })}</code>
+          >
+            id
+          < /button>
+          < button>name< /button>
+          < button>color< /button>
+        < /div>
+      < /header>
+
+      < GoodList goods={visibleGoods} />
+
+    < /div>
+  )
+};
+</pre>
+
+          <img
+            src="assets/imgs/add-logic-sortField.png"
+            alt="Add logica sortField"
+          />
+        </div>
+
+        <p>
+          Porem aqui ainda temos um problema pois estamos usando um
+          <span>literario</span> quando passamos em nosso
+          <strong
+            >className={cn({ ative: sortField === <span>'id'</span> })}</strong
+          >, seria facil acabarmos tendo um erro de digitacao dessa forma.
+          Portanto em vez de usarmos um <strong>literal</strong>, precisamos
+          criar uma <strong>constante</strong> e usa-la em dois lugares, podemos
+          fazer isso acima de nosso <strong>componente</strong>. Iremos fazer da
+          seguinte forma:
+        </p>
+
+        <div class="content">
+          <pre>
+import { useState } from 'react';
+import cn from 'classnames';
+import './App.scss';
+import goodsFromServer from './goods.json';
+import { GoodList } from './components/GoodList/GoodList';
+
+<code>const SORT_FIELD_ID = 'id';</code>
+
+export const App = () => {
+  const [visibleGoods, setVisibleGoods = useState(goodsFromServer);
+  <code>const [sortField, setSortField] = useState('');</code>
+
+  const sortById = () => {
+    setVisibleGoods(
+      [...visibleGoods].sort((good1, good2) => good1.id - good2.id)
+    );
+    <code>setSortField(SORT_FIELD_ID);</code>
+  };
+
+  return (
+    < div className="App">
+
+      < header>
+        < button>Reset< /button>
+
+        < div>
+          Sort by:
+          < button
+            onClick={sortById}
+            <code>className={cn({ active: sortField === SORT_FIELD_ID })}</code>
+          >
+            id
+          < /button>
+          < button>name< /button>
+          < button>color< /button>
+        < /div>
+      < /header>
+
+      < GoodList goods={visibleGoods} />
+
+    < /div>
+  )
+};
+</pre>
+
+          <img
+            src="assets/imgs/add-const-remove-literal.png"
+            alt="Add const para remover literal"
+          />
+        </div>
+      </div>
+
+      <div class="conteudo">
+        <h3 class="separado">Implementando reset</h3>
+        <p>
+          Iremos comecar <strong>adicionando</strong> um <span>onClick</span> em
+          nosso <strong>button reset</strong>.
+        </p>
+        <p>
+          Nele precisamos redefinir tanto o <strong>array</strong> quanto o
+          <strong>sortField</strong> para seu estado inicial.
+        </p>
+        <p>
+          Para isso iremos criar uma <strong>funcao</strong> que realizara o
+          <span>reset</span>, para isso iremos inicialmente criar uma nova
+          <strong>const</strong> e chamaremos ela de <span>reset</span>, ela ira
+          redefinir tudo para os valores padrao. Ira ficar da seguinte forma:
+        </p>
+
+        <div class="content">
+          <pre>
+import { useState } from 'react';
+import cn from 'classnames';
+import './App.scss';
+import goodsFromServer from './goods.json';
+import { GoodList } from './components/GoodList/GoodList';
+
+const SORT_FIELD_ID = 'id';
+
+export const App = () => {
+  const [visibleGoods, setVisibleGoods = useState(goodsFromServer);
+  const [sortField, setSortField] = useState('');
+
+  <code>const reset = () => {
+    setVisibleGoods(goodsFromServer);
+    setSortField('');
+  } </code>
+
+  const sortById = () => {
+    setVisibleGoods(
+      [...visibleGoods].sort((good1, good2) => good1.id - good2.id)
+    );
+    setSortField(SORT_FIELD_ID);
+  };
+
+  return (
+    < div className="App">
+
+      < header>
+        < button>Reset< /button>
+
+        < div>
+          Sort by:
+          < button
+            onClick={sortById}
+            className={cn({ active: sortField === SORT_FIELD_ID })}
+          >
+            id
+          < /button>
+          < button>name< /button>
+          < button>color< /button>
+        < /div>
+      < /header>
+
+      < GoodList goods={visibleGoods} />
+
+    < /div>
+  )
+};
+</pre>
+
+          <img
+            src="assets/imgs/add-reset.png"
+            alt="Add const para remover literal"
+          />
+        </div>
+      </div>
+
+      <div class="link-aula">
+        <!-- <a href="./tests.html" class="conteudo-aula">Conteudo Aula</a> -->
+      </div>
+    </main>
+
+    <div class="content-link">
+      <a class="next" href="../02_avoid_saving_duplicated_data/index.html">
+        Proxima Aula: Avoid Saving Duplicated Data
+      </a>
+    </div>
+  </body>
+</html>

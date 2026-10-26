@@ -5,7 +5,20 @@ html {
   font-size: 20px;
 }
 
+header {
+  display: flex;
+  width: fit-content;
+  margin-block: 15px;
+  border-bottom: 1px solid black;
+}
+
 button {
+  padding-block: 5px;
+  margin: 10px;
   font-size: 22px;
   border-radius: 5px;
+}
+
+.active {
+  background-color: #888;
 }
