@@ -45,6 +45,17 @@ header {
   };
 }
 
+ul {
+  font-weight: bolder;
+  font-size: 18px;
+  margin-inline: var.$space-default;
+  background-color: var.$color-default;
+  border-radius: 15px;
+  list-style: none;
+  padding: 15px;
+  width: fit-content;
+}
+
 article {
   background-color: #fff;
   padding: var.$space-default;

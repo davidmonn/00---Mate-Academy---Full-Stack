@@ -44,14 +44,14 @@
       <div class="conteudo">
         <h3 class="separado">Entendendo Melhor:</h3>
         <p>
-          Para fazermos isso iremos continuar de onde paramos da aula anterior
+          Para fazermos isso, iremos continuar de onde paramos na aula anterior,
           em nosso <strong>projeto</strong> <span>react-app</span>.
         </p>
         <p>
-          Iremos comecar criando uma <strong>const</strong> nao no
-          <span>estado</span>, mas simplesmente copiar a primeira
-          <strong>array</strong>. Ou seja, iremos escrever que
-          <strong>visibleGoods</strong> sera uma copia da array de produtos
+          Iremos começar criando uma <strong>const</strong> que não faz parte do
+          <span>estado</span>, mas que simplesmente copia a primeira
+          <strong>array</strong>. Ou seja, iremos definir que
+          <strong>visibleGoods</strong> será uma cópia da array de produtos
           iniciais. Ficando da seguinte forma:
         </p>
 
@@ -109,14 +109,15 @@ export const App = () => {
 
           <img
             src="assets/imgs/alteracao-const-visibleGoods.png"
-            alt="Alteracao const visibleGoods"
+            alt="Alteração da const visibleGoods"
           />
         </div>
 
         <p>
-          Feito isso agora nao chamaremos mais o
-          <span>setVisibleGoods</span> entao podemos apaga-lo. E faremos mais
-          algumas modificacoes, ficando da seguinte forma:
+          Feito isso, não precisaremos mais chamar o
+          <span>setVisibleGoods</span> nessa etapa. Portanto, podemos apagá-lo.
+          Faremos mais algumas modificações, deixando o código da seguinte
+          forma:
         </p>
 
         <div class="content">
@@ -181,27 +182,31 @@ export const App = () => {
         </div>
 
         <p>
-          Podemos observar que foram feitas diversas mudancas pequenas. Em nossa
-          funcao <span>reset</span> apagamos o <span>setVisibleGoods</span>.
-          Mudamos tambem em nosso <span>sortById</span> tambem apagamos nosso
-          <span>setVisibleGoods</span> recortamos apenas nosso
-          <span>.sort((good1, good2) => good1.id - good2.id)</span>
+          Podemos observar que foram feitas diversas pequenas mudanças. Em nossa
+          função <span>reset</span>, retiramos a chamada de
+          <span>setVisibleGoods</span>. Fizemos o mesmo em nossa função
+          <span>sortById</span>, retirando a chamada de
+          <span>setVisibleGoods</span> e mantendo apenas a ordenação com
+          <span>.sort((good1, good2) => good1.id - good2.id)</span>, que agora
+          será realizada em outro local.
         </p>
         <p>
-          Feito isso nossa ordenacao sera feita imediatamente antes da
-          <strong>renderizacao</strong>.
-        </p>
-
-        <p>
-          Feito isso criamos nossa <strong>condicional</strong>
-          <span>if (sortField)</span> se tivermos
-          <strong>sortField(nao estiver vazio)</strong>, realizamos a ordenacao.
+          Feito isso, nossa ordenação será realizada durante a execução do
+          componente, antes de o React atualizar a interface com a nova
+          renderização.
         </p>
 
         <p>
-          Feito isso podemos ate simplificar o <strong>codigo</strong>. Onde
-          podemos passar uma <strong>arrow function</strong> em nosso
-          <span>reset</span> e <span>sortById</span>. Ficando da seguinte forma:
+          Para isso, criamos a <strong>condicional</strong>
+          <span>if (sortField)</span>. Se <strong>sortField</strong> tiver um
+          valor (ou seja, não estiver vazio), realizaremos a ordenação.
+        </p>
+
+        <p>
+          Feito isso, podemos simplificar ainda mais o <strong>código</strong>,
+          passando <strong>arrow functions</strong> diretamente para os eventos
+          <span>onClick</span> dos botões <span>Reset</span> e <span>id</span>.
+          Ficando da seguinte forma:
         </p>
 
         <div class="content">
@@ -252,14 +257,15 @@ export const App = () => {
 
           <img
             src="assets/imgs/add-simplificando-codigo.png"
-            alt="Simplificando codigo"
+            alt="Simplificando o código"
           />
         </div>
 
         <p>
-          Com isso apagamos tambem as fucoes <span>sortById</span> e
-          <span>reset</span>, ja que nao sao mais necessarias, pois as passamos
-          diretamente em <strong>arrow function</strong>.
+          Com isso, apagamos também as funções <span>sortById</span> e
+          <span>reset</span>, já que elas não são mais necessárias. Agora,
+          passamos diretamente as <strong>arrow functions</strong> para os
+          eventos <span>onClick</span> dos botões.
         </p>
       </div>
 
@@ -267,9 +273,12 @@ export const App = () => {
         <h3 class="separado">Filtrando Dados</h3>
 
         <p>
-          Se quisermos agora adicionar uma filtragem de nossos dados, podemos
-          estar fazendo <span>visibleGoods = visibleGoods.filter</span> ficando
-          da seguinte forma:
+          Se quisermos adicionar uma filtragem aos nossos dados, podemos
+          utilizar o método <span>filter()</span> e atribuir o resultado
+          novamente à variável <strong>visibleGoods</strong>. Para isso,
+          precisaremos utilizar <strong>let</strong> em vez de
+          <strong>const</strong>, pois iremos reatribuir um novo valor à
+          variável. Ficando da seguinte forma:
         </p>
 
         <div class="content">
@@ -298,12 +307,12 @@ export const App = () => {
     < div className="App">
 
       < header>
-        < button onClick={() => setSortField('')}< /button> >Reset< /button>
+        < button onClick={() => setSortField('')} >Reset< /button>
 
         < div>
           Sort by:
           < button
-            onClick={() => setSortField(SORT_FIELD_ID)}< /button>
+            onClick={() => setSortField(SORT_FIELD_ID)}
             className={cn({ active: sortField === SORT_FIELD_ID } )} 
           >
             id
@@ -320,42 +329,46 @@ export const App = () => {
 };
 </pre>
 
-          <img src="assets/imgs/add-filter.png" alt="Adicionando filter" />
+          <img
+            src="assets/imgs/add-filter.png"
+            alt="Adicionando o método filter"
+          />
         </div>
 
-        <h3 class="separado">Organizando Codigo:</h3>
+        <h3 class="separado">Organizando o Código:</h3>
 
         <p>
-          Para organizarmos melhor nosso codigo podemos estar criando uma
-          <strong>function</strong> onde ela recebe alguns parametros que
-          desejarmos, primeiro iremos passar o parametro de nosso
-          <strong>array</strong> ficando da seguinte forma:
-          <span>function getPreparedGoods(goods, { sortField, query })</span>,
-          passamos <strong>goods</strong> pois é a <strong>array</strong>.
-          <strong>sortField</strong> pois sera nossa organizador e
-          <strong>query</strong> nosso filtragem.
+          Para organizarmos melhor nosso código, podemos criar uma
+          <strong>function</strong> que recebe alguns parâmetros que desejarmos.
+          Primeiro, iremos passar a nossa <strong>array</strong>, ficando da
+          seguinte forma:
+          <span>function getPreparedGoods(goods, { sortField, query })</span>.
+          Passamos <strong>goods</strong> porque representa a array de produtos,
+          <strong>sortField</strong> porque será o campo utilizado para a
+          ordenação e <strong>query</strong> porque será o valor utilizado na
+          filtragem.
         </p>
 
         <pre>
 function getPreparedGoods(goods, { sortField, query }) {
-  //Criamos uma variavel para desestruturar nosso array <code>goods</code>
+  // Criamos uma variável para copiar a array <code>goods</code>
   let preparedGoods = [...goods];
 
-  //Aqui criamos nossa filtragem
+  // Aqui criamos nossa filtragem
   preparedGoods = preparedGoods.filter(good => good.name.includes(query));
 
-  //Essa sera nossa condicional para ordenar
+  // Essa será nossa condicional para ordenar
   if (sortField) {
     preparedGoods.sort((good1, good2) => good1.id - good2.id);
   }
 
-  //Por fim fazemos o retorno
+  // Por fim, retornamos o resultado
   return preparedGoods;
 }
 </pre
         >
 
-        <p>Tudo ficara da seguinte forma:</p>
+        <p>Tudo ficará da seguinte forma:</p>
 
         <div class="content">
           <pre>
@@ -413,17 +426,14 @@ export const App = () => {
 };
 </pre>
 
-          <img
-            src="assets/imgs/add-organizacao.png"
-            alt="Feita organizacao do codigo"
-          />
+          <img src="assets/imgs/add-organizacao.png" alt="Código organizado" />
         </div>
 
         <p>
-          Porem nossa filtragem so faz sentido se houver algum
-          <span>query</span>, entao iremos adicionar uma condicao para nosso
-          <strong>query</strong>, onde mudaremos apenas essa parte de nosso
-          codigo:
+          Porém, nossa filtragem só faz sentido se houver algum valor em
+          <span>query</span>. Então, iremos adicionar uma condição para
+          verificar se <strong>query</strong> possui um valor. Para isso,
+          mudaremos apenas essa parte do nosso código:
         </p>
 
         <pre>
@@ -444,17 +454,18 @@ function getPreparedGoods(goods, { sortField, query }) {
 </pre>
 
         <p>
-          Apos fazermos isso nosso <strong>query</strong> ja nao é mais
-          obrigatorio.
+          Após fazermos isso, <strong>query</strong> poderá ser omitido ou
+          receber uma string vazia, pois a filtragem só será realizada se ele
+          possuir um valor verdadeiro.
         </p>
 
         <p class="junto">
-          Dessa forma que temos nosso codigo agora, nossa
-          <strong>ordenacao</strong> funciona apenas para um
-          <strong>campo(id)</strong>, entao iremos fazer uma modificacao em
-          nossa <strong>condicional</strong> <span>if (sortField)</span>, uma
-          opcao que temos e iremos fazer é o uso de <span>switch</span> nela,
-          onde agora ira ficar da seguinte forma:
+          Da forma como nosso código está agora, a
+          <strong>ordenação</strong> funciona apenas para um campo
+          (<strong>id</strong>). Então, iremos modificar nossa
+          <strong>condicional</strong> <span>if (sortField)</span>. Uma das
+          opções que temos é utilizar o <span>switch</span>, que ficará da
+          seguinte forma:
         </p>
 
         <div class="content">
@@ -472,40 +483,76 @@ function getPreparedGoods(goods, { sortField, query }) {
         case SORT_FIELD_ID:
           return good1[sortField] - good2[sortField];
 
-        case  SORT_FIELD_NAME:
-        case  SORT_FIELD_COLOR:
+        case SORT_FIELD_NAME:
+        case SORT_FIELD_COLOR:
           return good1[sortField].localeCompare(good2[sortField]);
-        
 
         default:
           return 0;
       }
     });
+  }
   </code>
   return preparedGoods;
 }
 </pre>
 
-          <img src="assets/imgs/add-switch.png" alt="Adicionando switch" />
+          <img src="assets/imgs/add-switch.png" alt="Adicionando o switch" />
         </div>
 
         <p>
-          Adicionamos um corpo<strong>{}</strong> a essa funcao, onde dependendo
-          do campo de <strong>ordenacao</strong>, precisaremos comparar produtos
-          de maneiras diferentes
+          Adicionamos um corpo <strong>{}</strong> à nossa função de comparação
+          dentro do <span>.sort()</span>. Assim, dependendo do campo de
+          <strong>ordenação</strong>, precisaremos comparar os produtos de
+          maneiras diferentes.
         </p>
 
+        <p class="junto">
+          Por que usamos <span>good1[sortField]</span> e
+          <span>good2[sortField]</span> em vez de <span>good1.id</span> e
+          <span>good2.id</span>?
+        </p>
         <p>
-          Poque usamos good1[sortField] e good2[sortField] ao inves de good1. e
-          good2. ?
+          Usamos <span>good1[sortField]</span> e
+          <span>good2[sortField]</span> porque queremos acessar a propriedade
+          dinamicamente, de acordo com o valor de <span>sortField</span>.
+        </p>
+        <p>
+          Por exemplo, se <span>sortField</span> for <span>'id'</span>, será o
+          mesmo que escrever <span>good1.id</span>. Se for <span>'name'</span>,
+          será o mesmo que escrever <span>good1.name</span>.
         </p>
 
+        <p class="junto">
+          Essa definição vem do valor que passamos para
+          <span>setSortField()</span> nos botões.
+        </p>
+
+        <ul>
+          <li>
+            Por exemplo:
+            <ul>
+              <li>setSortField(SORT_FIELD_ID) → sortField recebe 'id'.</li>
+              <li>setSortField(SORT_FIELD_NAME) → sortField recebe 'name'.</li>
+              <li>
+                setSortField(SORT_FIELD_COLOR) → sortField recebe 'color'.
+              </li>
+            </ul>
+          </li>
+        </ul>
         <p>
-          Apos fazermos todas as mudancas em nossa <strong>funciton</strong>,
-          dentro de nosso <strong>componente</strong>, apenas iremos precisar
-          chamar a <strong>funcao</strong> e passar a array inicial, e todos os
-          parametros de <strong>orgenacao, filtragem e etc</strong> que
-          desejamos no caso sendo essa parte:
+          Esses valores são definidos pelas constantes no início do código. O
+          <strong>switch</strong> identifica o valor de
+          <strong>sortField</strong> e decide como fazer a
+          <strong>ordenação</strong>.
+        </p>
+
+        <p class="separado">
+          Após fazermos todas as mudanças em nossa <strong>function</strong>,
+          dentro do nosso <strong>componente</strong>, precisaremos apenas
+          chamar a função e passar a array inicial, além dos parâmetros de
+          <strong>ordenação, filtragem</strong> e outros que desejarmos. No
+          nosso caso, essa parte ficará assim:
         </p>
 
         <pre>
@@ -513,17 +560,19 @@ const visibleGoods = getPreparedGoods(goodsFromServer, { sortField, query: '' })
 </pre
         >
 
-        <h3 class="separado">Modificacoes Buttons</h3>
+        <h3 class="separado">Modificações nos Botões</h3>
+
         <p>
-          Por fim podemos fazer a aplicacao nos <span>buttons</span>, ficando da
-          seguinte forma:
+          Por fim, podemos aplicar as modificações nos <span>buttons</span>,
+          permitindo que cada botão altere o campo utilizado na ordenação.
+          Ficando da seguinte forma:
         </p>
 
         <div class="content">
           <pre style="font-size: 14px">
 export const App = () => {
   const [sortField, setSortField] = useState('');
-  // Criamos essa variavel para receber nossa funcao com os argumentos desejados
+  // Criamos essa variável para receber o resultado da nossa função com os argumentos desejados
   const visibleGoods = getPreparedGoods(goodsFromServer, { sortField, query: '' });
 
   return (
@@ -547,7 +596,7 @@ export const App = () => {
             name
           < /button>
           < button
-            onClick={<code>() => setSortField(SORT_FIELD_COLOR</code>)}
+            onClick={<code>() => setSortField(SORT_FIELD_COLOR)</code>}
             className={<code>cn({ active: sortField === SORT_FIELD_COLOR } )</code>} 
           >
             color
@@ -564,7 +613,7 @@ export const App = () => {
 
           <img
             src="assets/imgs/app-button.png"
-            alt="Aplicando modificacoes nos botoes"
+            alt="Aplicando as modificações nos botões"
           />
         </div>
       </div>
@@ -575,7 +624,9 @@ export const App = () => {
     </main>
 
     <div class="content-link">
-      <a class="next" href="../"> Proxima Aula: </a>
+      <a class="next" href="../03_why_key_is_important/index.html">
+        Proxima Aula: Why Key is Important
+      </a>
     </div>
   </body>
 </html>

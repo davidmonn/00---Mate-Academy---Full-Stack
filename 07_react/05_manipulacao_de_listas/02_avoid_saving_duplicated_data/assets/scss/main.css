@@ -39,6 +39,17 @@ header {
   width: fit-content;
 }
 
+ul {
+  font-weight: bolder;
+  font-size: 18px;
+  margin-inline: 35px;
+  background-color: #ccc;
+  border-radius: 15px;
+  list-style: none;
+  padding: 15px;
+  width: fit-content;
+}
+
 article {
   background-color: #fff;
   padding: 35px;
