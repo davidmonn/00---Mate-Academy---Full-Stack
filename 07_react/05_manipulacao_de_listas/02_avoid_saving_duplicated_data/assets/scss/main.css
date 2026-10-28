@@ -168,6 +168,7 @@ article,
   margin-block: 20px;
   box-shadow: 5px -3px 5px purple;
   border: 1px solid purple;
+  padding-block: 20px;
 }
 
 .content {

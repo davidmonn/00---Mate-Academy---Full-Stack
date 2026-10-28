@@ -1,48 +1,581 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/scss/main.css">
-  <title>Document</title>
-</head>
-<body>
-  <div >
-    <a class="prev" href="../">
-      Aula Anterior: 
-    </a>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/scss/main.css" />
+    <title>Avoid Saving Duplicated Data</title>
+  </head>
+  <body>
+    <div>
+      <a class="prev" href="../01_how_to_sort_a_list/index.html">
+        Aula Anterior: How to Sort a List
+      </a>
+    </div>
 
-  <header>
-    <h1 class="title-princ">Document</h1>
-  </header>
+    <header>
+      <h1 class="title-princ">Avoid Saving Duplicated Data</h1>
+    </header>
 
-  <main>
+    <main>
+      <article>
+        <h3>Intro:</h3>
+        <p>
+          Anteriormente fizemos a <strong>implementacao</strong> de organizacao
+          ao clicarmos em <strong>id</strong> assim como tambem o
+          <strong>reset</strong> para voltar ao padrao. Porem nos deparamos com
+          uma pequena <strong>duplicacao</strong> de dados. Atualmente temos os
+          produtos iniciais<strong>(goodsFromServer)</strong> e o
+          <strong>sortField</strong>, a partir dos quais podemos calcular a
+          <strong>ordem</strong> atual. Porem o
+          <strong>visibleGoods</strong> armazena as mesmas
+          <strong>informacoes</strong>. Se em algum momento alterarmos o
+          <strong>sortField</strong> e esquecermos o
+          <strong>visibleGoods</strong>, ou vice-versa.
+        </p>
+        <p>
+          Teremos uma <strong>dessincronizacao</strong>, e nao ficara claro onde
+          os dados corretos estao armazenados. Entao para evitarmos isso,
+          podemos calcular o <strong>visibleGoods</strong> a cada
+          <strong>renderizacao</strong>, em ves de salva-los.
+        </p>
+      </article>
 
-    <article>
-      <h3>Intro:</h3>
-      <p>
+      <div class="conteudo">
+        <h3 class="separado">Entendendo Melhor:</h3>
+        <p>
+          Para fazermos isso iremos continuar de onde paramos da aula anterior
+          em nosso <strong>projeto</strong> <span>react-app</span>.
+        </p>
+        <p>
+          Iremos comecar criando uma <strong>const</strong> nao no
+          <span>estado</span>, mas simplesmente copiar a primeira
+          <strong>array</strong>. Ou seja, iremos escrever que
+          <strong>visibleGoods</strong> sera uma copia da array de produtos
+          iniciais. Ficando da seguinte forma:
+        </p>
 
-      </p>
-    </article>
+        <div class="content">
+          <pre>
+import { useState } from 'react';
+import cn from 'classnames';
+import './App.scss';
+import goodsFromServer from './goods.json';
+import { GoodList } from './components/GoodList/GoodList';
 
-    <div class="conteudo">
-      <h3 class="separado">Entendendo Melhor:</h3>
-      <p>
+const SORT_FIELD_ID = 'id';
+
+export const App = () => {
+  const [sortField, setSortField] = useState('');
+  <code>const visibleGoods = [...goodsFromServer];</code>
+
+  const reset = () => {
+    setVisibleGoods(goodsFromServer);
+    setSortField('');
+  }
+
+  const sortById = () => {
+    setVisibleGoods(
+      [...visibleGoods].sort((good1, good2) => good1.id - good2.id)
+    );
+    setSortField(SORT_FIELD_ID);
+  };
+
+  return (
+    < div className="App">
+
+      < header>
+        < button onClick={reset} >Reset< /button>
+
+        < div>
+          Sort by:
+          < button
+            onClick={sortById}
+            className={cn({ active: sortField === SORT_FIELD_ID } )} 
+          >
+            id
+          < /button>
+          < button>name< /button>
+          < button>color< /button>
+        < /div>
+      < /header>
+
+      < GoodList goods={visibleGoods} />
+
+    < /div>
+  )
+};
+</pre>
+
+          <img
+            src="assets/imgs/alteracao-const-visibleGoods.png"
+            alt="Alteracao const visibleGoods"
+          />
+        </div>
+
+        <p>
+          Feito isso agora nao chamaremos mais o
+          <span>setVisibleGoods</span> entao podemos apaga-lo. E faremos mais
+          algumas modificacoes, ficando da seguinte forma:
+        </p>
+
+        <div class="content">
+          <pre>
+import { useState } from 'react';
+import cn from 'classnames';
+import './App.scss';
+import goodsFromServer from './goods.json';
+import { GoodList } from './components/GoodList/GoodList';
+
+const SORT_FIELD_ID = 'id';
+
+export const App = () => {
+  const [sortField, setSortField] = useState('');
+  <code>const visibleGoods = [...goodsFromServer];</code>
+
+  <code>
+  if (sortField) {
+    visibleGoods.sort((good1, good2) => good1.id - good2.id);
+  }
+  </code>
+  <code>
+  const reset = () => {
+    setVisibleGoods(goodsFromServer);
+  }
+
+  const sortById = () => {
+    setSortField(SORT_FIELD_ID);
+  };
+  </code>
+
+  return (
+    < div className="App">
+
+      < header>
+        < button onClick={reset} >Reset< /button>
+
+        < div>
+          Sort by:
+          < button
+            onClick={sortById}
+            className={cn({ active: sortField === SORT_FIELD_ID } )} 
+          >
+            id
+          < /button>
+          < button>name< /button>
+          < button>color< /button>
+        < /div>
+      < /header>
+
+      < GoodList goods={visibleGoods} />
+
+    < /div>
+  )
+};
+</pre>
+
+          <img
+            src="assets/imgs/add-condicional.png"
+            alt="Adicionando condicional"
+          />
+        </div>
+
+        <p>
+          Podemos observar que foram feitas diversas mudancas pequenas. Em nossa
+          funcao <span>reset</span> apagamos o <span>setVisibleGoods</span>.
+          Mudamos tambem em nosso <span>sortById</span> tambem apagamos nosso
+          <span>setVisibleGoods</span> recortamos apenas nosso
+          <span>.sort((good1, good2) => good1.id - good2.id)</span>
+        </p>
+        <p>
+          Feito isso nossa ordenacao sera feita imediatamente antes da
+          <strong>renderizacao</strong>.
+        </p>
+
+        <p>
+          Feito isso criamos nossa <strong>condicional</strong>
+          <span>if (sortField)</span> se tivermos
+          <strong>sortField(nao estiver vazio)</strong>, realizamos a ordenacao.
+        </p>
+
+        <p>
+          Feito isso podemos ate simplificar o <strong>codigo</strong>. Onde
+          podemos passar uma <strong>arrow function</strong> em nosso
+          <span>reset</span> e <span>sortById</span>. Ficando da seguinte forma:
+        </p>
+
+        <div class="content">
+          <pre>
+import { useState } from 'react';
+import cn from 'classnames';
+import './App.scss';
+import goodsFromServer from './goods.json';
+import { GoodList } from './components/GoodList/GoodList';
+
+const SORT_FIELD_ID = 'id';
+
+export const App = () => {
+  const [sortField, setSortField] = useState('');
+  <code>const visibleGoods = [...goodsFromServer];</code>
+
+  <code>
+  if (sortField) {
+    visibleGoods.sort((good1, good2) => good1.id - good2.id);
+  }
+  </code>
+
+  return (
+    < div className="App">
+
+      < header>
+        < button onClick={<code>() => setSortField('')</code>}< /button> >Reset< /button>
+
+        < div>
+          Sort by:
+          < button
+            onClick=<code>{() => setSortField(SORT_FIELD_ID)}</code>< /button>
+            className={cn({ active: sortField === SORT_FIELD_ID } )} 
+          >
+            id
+          < /button>
+          < button>name< /button>
+          < button>color< /button>
+        < /div>
+      < /header>
+
+      < GoodList goods={visibleGoods} />
+
+    < /div>
+  )
+};
+</pre>
+
+          <img
+            src="assets/imgs/add-simplificando-codigo.png"
+            alt="Simplificando codigo"
+          />
+        </div>
+
+        <p>
+          Com isso apagamos tambem as fucoes <span>sortById</span> e
+          <span>reset</span>, ja que nao sao mais necessarias, pois as passamos
+          diretamente em <strong>arrow function</strong>.
+        </p>
+      </div>
+
+      <div class="conteudo">
+        <h3 class="separado">Filtrando Dados</h3>
+
+        <p>
+          Se quisermos agora adicionar uma filtragem de nossos dados, podemos
+          estar fazendo <span>visibleGoods = visibleGoods.filter</span> ficando
+          da seguinte forma:
+        </p>
+
+        <div class="content">
+          <pre>
+import { useState } from 'react';
+import cn from 'classnames';
+import './App.scss';
+import goodsFromServer from './goods.json';
+import { GoodList } from './components/GoodList/GoodList';
+
+const SORT_FIELD_ID = 'id';
+
+export const App = () => {
+  const [sortField, setSortField] = useState('');
+  <code>let</code> visibleGoods = [...goodsFromServer];
+
+  <code>
+  visibleGoods = visibleGoods.filter(good => good.name.includes('o'));
+  </code>
+
+  if (sortField) {
+    visibleGoods.sort((good1, good2) => good1.id - good2.id);
+  }
+
+  return (
+    < div className="App">
+
+      < header>
+        < button onClick={() => setSortField('')}< /button> >Reset< /button>
+
+        < div>
+          Sort by:
+          < button
+            onClick={() => setSortField(SORT_FIELD_ID)}< /button>
+            className={cn({ active: sortField === SORT_FIELD_ID } )} 
+          >
+            id
+          < /button>
+          < button>name< /button>
+          < button>color< /button>
+        < /div>
+      < /header>
+
+      < GoodList goods={visibleGoods} />
+
+    < /div>
+  )
+};
+</pre>
+
+          <img src="assets/imgs/add-filter.png" alt="Adicionando filter" />
+        </div>
+
+        <h3 class="separado">Organizando Codigo:</h3>
+
+        <p>
+          Para organizarmos melhor nosso codigo podemos estar criando uma
+          <strong>function</strong> onde ela recebe alguns parametros que
+          desejarmos, primeiro iremos passar o parametro de nosso
+          <strong>array</strong> ficando da seguinte forma:
+          <span>function getPreparedGoods(goods, { sortField, query })</span>,
+          passamos <strong>goods</strong> pois é a <strong>array</strong>.
+          <strong>sortField</strong> pois sera nossa organizador e
+          <strong>query</strong> nosso filtragem.
+        </p>
+
+        <pre>
+function getPreparedGoods(goods, { sortField, query }) {
+  //Criamos uma variavel para desestruturar nosso array <code>goods</code>
+  let preparedGoods = [...goods];
+
+  //Aqui criamos nossa filtragem
+  preparedGoods = preparedGoods.filter(good => good.name.includes(query));
+
+  //Essa sera nossa condicional para ordenar
+  if (sortField) {
+    preparedGoods.sort((good1, good2) => good1.id - good2.id);
+  }
+
+  //Por fim fazemos o retorno
+  return preparedGoods;
+}
+</pre
+        >
+
+        <p>Tudo ficara da seguinte forma:</p>
+
+        <div class="content">
+          <pre>
+import { useState } from 'react';
+import cn from 'classnames';
+import './App.scss';
+import goodsFromServer from './goods.json';
+import { GoodList } from './components/GoodList/GoodList';
+
+const SORT_FIELD_ID = 'id';
+<code>
+function getPreparedGoods(goods, { sortField, query }) {
+  let preparedGoods = [...goods];
+
+  preparedGoods = preparedGoods.filter(
+    good => good.name.includes(query)
+  );
+
+  if (sortField) {
+    preparedGoods.sort((good1, good2) => good1.id - good2.id);
+  }
+
+  return preparedGoods;
+}
+</code>
+export const App = () => {
+  const [sortField, setSortField] = useState('');
+  const visibleGoods = getPreparedGoods(
+    goodsFromServer, { sortField, query: 'o' }
+  );
+
+  return (
+    < div className="App">
+
+      < header>
+        < button onClick={() => setSortField('')} >Reset< /button>
+
+        < div>
+          Sort by:
+          < button
+            onClick={() => setSortField(SORT_FIELD_ID)}
+            className={cn({ active: sortField === SORT_FIELD_ID } )} 
+          >
+            id
+          < /button>
+          < button>name< /button>
+          < button>color< /button>
+        < /div>
+      < /header>
+
+      < GoodList goods={visibleGoods} />
+
+    < /div>
+  )
+};
+</pre>
+
+          <img
+            src="assets/imgs/add-organizacao.png"
+            alt="Feita organizacao do codigo"
+          />
+        </div>
+
+        <p>
+          Porem nossa filtragem so faz sentido se houver algum
+          <span>query</span>, entao iremos adicionar uma condicao para nosso
+          <strong>query</strong>, onde mudaremos apenas essa parte de nosso
+          codigo:
+        </p>
+
+        <pre>
+function getPreparedGoods(goods, { sortField, query }) {
+  let preparedGoods = [...goods];
+  <code>
+  if (query) {
+    preparedGoods = preparedGoods.filter(good => good.name.includes(query));
+  }
+  </code>
+
+  if (sortField) {
+    preparedGoods.sort((good1, good2) => good1.id - good2.id);
+  }
+
+  return preparedGoods;
+}
+</pre>
+
+        <p>
+          Apos fazermos isso nosso <strong>query</strong> ja nao é mais
+          obrigatorio.
+        </p>
+
+        <p class="junto">
+          Dessa forma que temos nosso codigo agora, nossa
+          <strong>ordenacao</strong> funciona apenas para um
+          <strong>campo(id)</strong>, entao iremos fazer uma modificacao em
+          nossa <strong>condicional</strong> <span>if (sortField)</span>, uma
+          opcao que temos e iremos fazer é o uso de <span>switch</span> nela,
+          onde agora ira ficar da seguinte forma:
+        </p>
+
+        <div class="content">
+          <pre>
+function getPreparedGoods(goods, { sortField, query }) {
+  let preparedGoods = [...goods];
+
+  if (query) {
+    preparedGoods = preparedGoods.filter(good => good.name.includes(query));
+  }
+  <code>
+  if (sortField) {
+    preparedGoods.sort((good1, good2) => {
+      switch (sortField) {
+        case SORT_FIELD_ID:
+          return good1[sortField] - good2[sortField];
+
+        case  SORT_FIELD_NAME:
+        case  SORT_FIELD_COLOR:
+          return good1[sortField].localeCompare(good2[sortField]);
         
-      </p>
+
+        default:
+          return 0;
+      }
+    });
+  </code>
+  return preparedGoods;
+}
+</pre>
+
+          <img src="assets/imgs/add-switch.png" alt="Adicionando switch" />
+        </div>
+
+        <p>
+          Adicionamos um corpo<strong>{}</strong> a essa funcao, onde dependendo
+          do campo de <strong>ordenacao</strong>, precisaremos comparar produtos
+          de maneiras diferentes
+        </p>
+
+        <p>
+          Poque usamos good1[sortField] e good2[sortField] ao inves de good1. e
+          good2. ?
+        </p>
+
+        <p>
+          Apos fazermos todas as mudancas em nossa <strong>funciton</strong>,
+          dentro de nosso <strong>componente</strong>, apenas iremos precisar
+          chamar a <strong>funcao</strong> e passar a array inicial, e todos os
+          parametros de <strong>orgenacao, filtragem e etc</strong> que
+          desejamos no caso sendo essa parte:
+        </p>
+
+        <pre>
+const visibleGoods = getPreparedGoods(goodsFromServer, { sortField, query: '' });
+</pre
+        >
+
+        <h3 class="separado">Modificacoes Buttons</h3>
+        <p>
+          Por fim podemos fazer a aplicacao nos <span>buttons</span>, ficando da
+          seguinte forma:
+        </p>
+
+        <div class="content">
+          <pre style="font-size: 14px">
+export const App = () => {
+  const [sortField, setSortField] = useState('');
+  // Criamos essa variavel para receber nossa funcao com os argumentos desejados
+  const visibleGoods = getPreparedGoods(goodsFromServer, { sortField, query: '' });
+
+  return (
+    < div className="App">
+
+      < header>
+        < button onClick={() => setSortField('')} >Reset< /button>
+
+        < div>
+          Sort by:
+          < button
+            onClick={() => setSortField(SORT_FIELD_ID)}
+            className={cn({ active: sortField === SORT_FIELD_ID } )} 
+          >
+            id
+          < /button>
+          < button
+            onClick={<code>() => setSortField(SORT_FIELD_NAME)</code>}
+            className={<code>cn({ active: sortField === SORT_FIELD_NAME }</code> )} 
+          >
+            name
+          < /button>
+          < button
+            onClick={<code>() => setSortField(SORT_FIELD_COLOR</code>)}
+            className={<code>cn({ active: sortField === SORT_FIELD_COLOR } )</code>} 
+          >
+            color
+          < /button>
+        < /div>
+      < /header>
+
+      < GoodList goods={visibleGoods} />
+
+    < /div>
+  )
+};
+</pre>
+
+          <img
+            src="assets/imgs/app-button.png"
+            alt="Aplicando modificacoes nos botoes"
+          />
+        </div>
+      </div>
+
+      <div class="link-aula">
+        <!-- <a href="./tests.html" class="conteudo-aula">Conteudo Aula</a> -->
+      </div>
+    </main>
+
+    <div class="content-link">
+      <a class="next" href="../"> Proxima Aula: </a>
     </div>
-
-    <div class="link-aula">
-      <!-- <a href="./tests.html" class="conteudo-aula">Conteudo Aula</a> -->
-    </div>
-
-  </main>
-
-  <div class="content-link">
-    <a class="next" href="../">
-      Proxima Aula: 
-    </a>
-  </div>
-</body>
+  </body>
 </html>
